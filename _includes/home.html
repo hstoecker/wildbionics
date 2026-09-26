@@ -1,0 +1,195 @@
+{%- comment -%} Landing page. All copy comes from _data/i18n.yml via `t`. {%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">{{ t.hero.eyebrow }}</p>
+      <h1 id="hero-title" class="hero__title">{{ t.hero.title_html }}</h1>
+      <p class="hero__lede">{{ t.hero.lede }}</p>
+      <div class="actions">
+        <a class="button button--primary" href="#lens">{{ t.hero.cta_primary }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+        <a class="button button--ghost" href="{{ site.repository_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>{{ t.hero.cta_secondary }}</a>
+      </div>
+    </div>
+    <figure class="hero__figure">
+      {% include svg/hero-echolocation.svg %}
+      <figcaption class="caption caption--dark"><span class="caption__label">{{ t.hero.fig_label }}</span> {{ t.hero.fig_caption }}</figcaption>
+    </figure>
+  </div>
+  <div class="container">
+    <div class="disciplines">
+      <p class="disciplines__label">{{ t.hero.disciplines_label }}</p>
+      <ul>
+        {%- for d in t.hero.disciplines %}
+        <li>{{ d }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lens" class="section section--paper" aria-labelledby="lens-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--ink">{{ t.lens.eyebrow }}</p>
+      <h2 id="lens-title" class="section-title">{{ t.lens.title_html }}</h2>
+      <p class="section-intro">{{ t.lens.intro }}</p>
+    </header>
+
+    <div class="lens" data-lens>
+      <div class="lens__tabs" role="tablist" aria-label="{{ t.lens.tabs_label }}" hidden>
+        {%- assign lenses = "physics,math,cs" | split: "," -%}
+        {%- for key in lenses %}
+        <button class="lens__tab" role="tab" type="button" id="tab-{{ key }}" aria-controls="panel-{{ key }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
+          <span class="lens__tab-index">0{{ forloop.index }}</span> {{ t.lens[key].tab }}
+        </button>
+        {%- endfor %}
+      </div>
+
+      <article class="lens__panel" id="panel-physics" role="tabpanel" aria-labelledby="tab-physics">
+        <div class="lens__text">
+          <p class="kicker">{{ t.lens.physics.kicker }}</p>
+          <h3 class="lens__title">{{ t.lens.physics.title }}</h3>
+          <p>{{ t.lens.physics.text }}</p>
+          <div class="formula" role="math" aria-label="Delta f approximately equals 2 v f0 over c">
+            <var>Δf</var> ≈ <span class="frac"><span class="frac__num">2 <var>v</var> <var>f</var><sub>0</sub></span><span class="frac__den"><var>c</var></span></span>
+          </div>
+          <p class="example">{{ t.lens.physics.example_html }}</p>
+        </div>
+        <div class="lens__figure">
+          {% include svg/lens-physics.svg %}
+        </div>
+      </article>
+
+      <article class="lens__panel" id="panel-math" role="tabpanel" aria-labelledby="tab-math">
+        <div class="lens__text">
+          <p class="kicker">{{ t.lens.math.kicker }}</p>
+          <h3 class="lens__title">{{ t.lens.math.title }}</h3>
+          <p>{{ t.lens.math.text }}</p>
+          <div class="formula formula--pair">
+            <span role="math" aria-label="d equals c times delta t over 2"><var>d</var> = <span class="frac"><span class="frac__num"><var>c</var> · <var>Δt</var></span><span class="frac__den">2</span></span></span>
+            <span role="math" aria-label="theta equals arcsine of c times delta tau over b"><var>θ</var> = arcsin <span class="paren">(</span><span class="frac"><span class="frac__num"><var>c</var> · <var>Δτ</var></span><span class="frac__den"><var>b</var></span></span><span class="paren">)</span></span>
+          </div>
+          <p class="example">{{ t.lens.math.example_html }}</p>
+        </div>
+        <div class="lens__figure">
+          {% include svg/lens-math.svg %}
+        </div>
+      </article>
+
+      <article class="lens__panel" id="panel-cs" role="tabpanel" aria-labelledby="tab-cs">
+        <div class="lens__text">
+          <p class="kicker">{{ t.lens.cs.kicker }}</p>
+          <h3 class="lens__title">{{ t.lens.cs.title }}</h3>
+          <p>{{ t.lens.cs.text }}</p>
+        </div>
+        <div class="lens__figure">
+          <div class="code-card">
+            <div class="code-card__bar"><span class="code-card__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>sonar.py</span><span class="code-card__lang">{{ t.lens.cs.code_label }}</span></div>
+{% highlight python %}
+import numpy as np
+
+SPEED_OF_SOUND = 343.0  # m/s, air at 20 °C
+
+def echo_distance(chirp, recording, sample_rate):
+    """Find the echo with a matched filter; return metres."""
+    corr = np.correlate(recording, chirp, mode="valid")
+    delay = np.argmax(np.abs(corr)) / sample_rate  # round trip, s
+    return SPEED_OF_SOUND * delay / 2
+{% endhighlight %}
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="dimensions" class="section section--sand" aria-labelledby="dimensions-title">
+  <div class="container">
+    <header class="section-head section-head--split">
+      <div>
+        <p class="eyebrow eyebrow--ink">{{ t.dimensions.eyebrow }}</p>
+        <h2 id="dimensions-title" class="section-title">{{ t.dimensions.title }}</h2>
+      </div>
+      <p class="section-intro">{{ t.dimensions.intro }}</p>
+    </header>
+    <ol class="dimensions">
+      {%- for d in t.dimensions.items %}
+      <li class="dimension dimension--{{ d.key }}">
+        <div class="dimension__top">
+          <svg class="dimension__icon" aria-hidden="true" focusable="false"><use href="#icon-{{ d.key }}"/></svg>
+          <span class="dimension__index" aria-hidden="true">0{{ forloop.index }}</span>
+        </div>
+        <h3 class="dimension__title">{{ d.title }}</h3>
+        <p class="dimension__sub">{{ d.sub }}</p>
+        <p class="dimension__text">{{ d.text }}</p>
+        <ul class="chips">
+          {%- for e in d.examples %}
+          <li>{{ e }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="flagship" class="section section--ocean" aria-labelledby="flagship-title">
+  <div class="container flagship">
+    <figure class="flagship__figure">
+      {% include svg/cavitation.svg %}
+      <figcaption class="caption caption--dark"><span class="caption__label">{{ t.flagship.fig_label }}</span> {{ t.flagship.fig_caption }}</figcaption>
+    </figure>
+    <div class="flagship__copy">
+      <p class="eyebrow">{{ t.flagship.eyebrow }}</p>
+      <h2 id="flagship-title" class="section-title">{{ t.flagship.title }}</h2>
+      <p class="flagship__text">{{ t.flagship.text }}</p>
+      <dl class="stats">
+        {%- for s in t.flagship.stats %}
+        <div class="stat">
+          <dt>{{ s.label }}</dt>
+          <dd>{{ s.value }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+      <ul class="chips chips--dark">
+        {%- for tag in t.flagship.tags %}
+        <li>{{ tag }}</li>
+        {%- endfor %}
+      </ul>
+      <div class="sources">
+        <h3 class="sources__label">{{ t.flagship.sources_label }}</h3>
+        <ol>
+          <li>Versluis, M., Schmitz, B., von der Heydt, A. &amp; Lohse, D. (2000). How snapping shrimp snap: through cavitating bubbles. <cite>Science</cite> 289, 2114–2117. <a href="https://doi.org/10.1126/science.289.5487.2114">doi:10.1126/science.289.5487.2114</a></li>
+          <li>Lohse, D., Schmitz, B. &amp; Versluis, M. (2001). Snapping shrimp make flashing bubbles. <cite>Nature</cite> 413, 477–478. <a href="https://doi.org/10.1038/35097152">doi:10.1038/35097152</a></li>
+        </ol>
+      </div>
+      <a class="link-arrow" href="{{ site.repository_url }}">{{ t.flagship.cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="contribute" class="section section--paper" aria-labelledby="contribute-title">
+  <div class="container contribute">
+    <header class="contribute__head">
+      <p class="eyebrow eyebrow--ink">{{ t.contribute.eyebrow }}</p>
+      <h2 id="contribute-title" class="section-title">{{ t.contribute.title_html }}</h2>
+      <p class="section-intro">{{ t.contribute.text }}</p>
+      <div class="actions">
+        <a class="button button--dark" href="{{ site.repository_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>{{ t.contribute.cta }}</a>
+        <a class="button button--outline" href="{{ site.repository_url }}/issues/new">{{ t.contribute.cta_secondary }}</a>
+      </div>
+    </header>
+    <ul class="ways">
+      {%- for w in t.contribute.ways %}
+      <li class="way">
+        <svg class="way__icon" aria-hidden="true" focusable="false"><use href="#icon-{{ w.key }}"/></svg>
+        <h3 class="way__title">{{ w.title }}</h3>
+        <p>{{ w.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

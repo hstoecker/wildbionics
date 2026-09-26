@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href="{{ home_url | relative_url }}">
+          <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+          <span class="brand__name">Wild<em>Bionics</em></span>
+        </a>
+        <p class="site-footer__tagline">{{ t.footer.tagline }}</p>
+      </div>
+      <nav aria-labelledby="footer-project">
+        <h2 id="footer-project" class="site-footer__heading">{{ t.footer.project }}</h2>
+        <ul>
+          <li><a href="{{ site.repository_url }}">{{ t.footer.repository }}</a></li>
+          <li><a href="{{ site.repository_url }}/issues">{{ t.footer.issues }}</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-licenses">
+        <h2 id="footer-licenses" class="site-footer__heading">{{ t.footer.licenses }}</h2>
+        <ul>
+          <li><a href="{{ site.repository_url }}/blob/main/LICENSE">{{ t.footer.code_license }}</a></li>
+          <li><a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">{{ t.footer.content_license }}</a></li>
+          <li><a href="{{ site.repository_url }}/blob/main/assets/fonts/OFL-LICENSES.txt">{{ t.footer.font_license }}</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__heading" aria-hidden="true">{{ t.footer.language }}</h2>
+        {% include lang-switch.html %}
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© {{ site.time | date: "%Y" }} {{ t.footer.copyright }}</p>
+      <p>{{ t.footer.built_with }}</p>
+    </div>
+  </div>
+</footer>

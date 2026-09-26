@@ -1,0 +1,53 @@
+<svg class="cav-svg" viewBox="0 0 520 300" role="img" aria-labelledby="cav-title cav-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="cav-title">{{ t.flagship.svg_title }}</title>
+  <desc id="cav-desc">{{ t.flagship.svg_desc }}</desc>
+  <defs>
+    <radialGradient id="cav-flash" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff8e1" stop-opacity="1"/>
+      <stop offset=".35" stop-color="var(--accent)" stop-opacity=".85"/>
+      <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cav-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--signal)" stop-opacity=".28"/>
+      <stop offset="1" stop-color="var(--signal)" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bubble snapshots (schematic sizes) -->
+  <g class="bubbles">
+    <circle cx="110" cy="44" r="9"/>
+    <circle cx="210" cy="44" r="22"/>
+    <circle cx="300" cy="44" r="13"/>
+    <circle cx="338" cy="44" r="3.5"/>
+  </g>
+  <g class="bubble-shine" fill="none">
+    <path d="M104,40 a6,6 0 0 1 5,-4"/>
+    <path d="M197,36 a15,15 0 0 1 11,-10"/>
+    <path d="M292,39 a9,9 0 0 1 6,-6"/>
+  </g>
+  <path class="guide" d="M110,58 V160 M210,70 V90 M300,62 V190 M338,52 V256"/>
+
+  <!-- Axes -->
+  <path class="axis" d="M56,90 V256 H496"/>
+  <path class="axis-arrow" d="M56,80 l-4,9 h8 Z M504,256 l-9,-4 v8 Z"/>
+  <text transform="translate(38 176) rotate(-90)" text-anchor="middle" class="label label-muted">{{ t.flagship.svg_radius }}</text>
+  <text x="496" y="280" text-anchor="end" class="label label-muted">{{ t.flagship.svg_time }}</text>
+
+  <!-- R(t): growth, Rayleigh-like collapse, rebounds -->
+  <path class="curve-area" d="M56,256 C74,140 130,90 210,90 C286,90 330,140 346,256 Z"/>
+  <path class="curve" d="M56,256 C74,140 130,90 210,90 C286,90 330,140 346,256 C351,222 364,222 370,256 C374,242 382,242 386,256"/>
+
+  <!-- Collapse: flash + shock wave -->
+  <g class="shock" fill="none">
+    <path d="M330,256 A16,16 0 0 1 362,256"/>
+    <path d="M316,256 A30,30 0 0 1 376,256"/>
+    <path d="M302,256 A44,44 0 0 1 390,256"/>
+  </g>
+  <circle cx="346" cy="256" r="22" fill="url(#cav-flash)" class="flash"/>
+
+  <text x="56" y="280" text-anchor="middle" class="label">{{ t.flagship.svg_snap }}</text>
+  <text x="346" y="280" text-anchor="middle" class="label">{{ t.flagship.svg_collapse }}</text>
+  <text x="146" y="176" class="label label-muted">{{ t.flagship.svg_growth }}</text>
+  <path class="callout-line" d="M362,234 L372,204 H380"/>
+  <text x="384" y="208" class="label label-accent">{{ t.flagship.svg_flash }}</text>
+</svg>

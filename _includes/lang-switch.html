@@ -1,0 +1,16 @@
+{%- comment -%} Links to every translation of the current page (matched by `ref`). {%- endcomment -%}
+<nav class="lang-switch" aria-label="{{ t.nav.language }}">
+  <ul>
+    {%- for code in site.languages -%}
+      {%- assign target = translations | where: "lang", code | first -%}
+      {%- if target -%}{%- assign target_url = target.url -%}{%- elsif code == site.lang -%}{%- assign target_url = "/" -%}{%- else -%}{%- assign target_url = "/" | append: code | append: "/" -%}{%- endif -%}
+      <li>
+        {%- if code == lang -%}
+        <span aria-current="true" lang="{{ code }}" title="{{ site.data.i18n[code].lang_name }}">{{ code | upcase }}</span>
+        {%- else -%}
+        <a href="{{ target_url | relative_url }}" hreflang="{{ code }}" lang="{{ code }}" title="{{ site.data.i18n[code].lang_name }}"><span class="visually-hidden">{{ site.data.i18n[code].lang_name }}</span><span aria-hidden="true">{{ code | upcase }}</span></a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

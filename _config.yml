@@ -10,3 +10,9 @@ exclude:
   - Gemfile.lock
   - vendor/
   - .bundle/
+
+languages: [en, de]   # first entry lives at the site root
+repository_url: "https://github.com/hstoecker/wildbionics"
+
+# Syntax highlighting for code blocks (built into GitHub Pages)
+highlighter: rouge

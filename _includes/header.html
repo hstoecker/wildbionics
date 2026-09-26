@@ -1,0 +1,24 @@
+{%- if lang == site.lang -%}{%- assign home_url = "/" -%}{%- else -%}{%- assign home_url = "/" | append: lang | append: "/" -%}{%- endif -%}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ home_url | relative_url }}">
+      <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+      <span class="brand__name">Wild<em>Bionics</em></span>
+    </a>
+    <nav class="site-nav" aria-label="{{ t.nav.label }}">
+      <ul>
+        <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
+        <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
+        <li><a href="{{ home_url | relative_url }}#flagship">{{ t.nav.flagship }}</a></li>
+        <li><a href="{{ home_url | relative_url }}#contribute">{{ t.nav.contribute }}</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__tools">
+      {% include lang-switch.html %}
+      <a class="icon-link" href="{{ site.repository_url }}">
+        <svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+        <span class="visually-hidden">{{ t.nav.github }}</span>
+      </a>
+    </div>
+  </div>
+</header>

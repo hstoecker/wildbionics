@@ -1,0 +1,279 @@
+# UI strings per language. Usage in templates:
+#   {% assign t = site.data.i18n[page.lang] %} … {{ t.hero.title }}
+# To add a language, copy the `en` block and translate every value.
+
+en:
+  lang_name: "English"
+  skip: "Skip to content"
+  nav:
+    label: "Main"
+    lens: "Lenses"
+    dimensions: "Dimensions"
+    flagship: "Flagship"
+    contribute: "Contribute"
+    github: "WildBionics on GitHub"
+    language: "Language"
+  hero:
+    eyebrow: "An open-source compendium"
+    title_html: "Nature’s <em>physics</em>, explained."
+    lede: "How does a bat see in the dark? Why does a shrimp’s snap flash with light? WildBionics explains physics, mathematics and computer science through animals, plants and the living planet – and shows how engineers borrow nature’s solutions."
+    cta_primary: "See the lens in action"
+    cta_secondary: "Contribute on GitHub"
+    fig_label: "Fig. 1"
+    fig_caption: "Echolocation. A bat sends out a frequency-modulated call; the delay of the echo reveals how far away the moth is."
+    svg_title: "Diagram of bat echolocation"
+    svg_desc: "A bat emits sound waves towards a moth. Echo waves travel back. The echo delay of 17.5 milliseconds corresponds to a distance of about 3 metres. An inset spectrogram shows the call sweeping down from 80 to 40 kilohertz."
+    svg_call: "Call · FM 80→40 kHz"
+    svg_echo: "Echo · Δt = 17.5 ms"
+    svg_distance: "d = c·Δt / 2 ≈ 3.0 m"
+    svg_moth: "Moth"
+    svg_spectrogram: "Spectrogram"
+    disciplines_label: "Explained through"
+    disciplines: ["Physics", "Mathematics", "Computer science", "Chemistry"]
+  lens:
+    eyebrow: "The lens"
+    title_html: "<span class=\"line\">One phenomenon.</span> <span class=\"line\">Three ways of seeing it.</span>"
+    intro: "Every WildBionics article can be read through different lenses. Switch between them to follow the same bat hunt as a physicist, a mathematician and a programmer would."
+    tabs_label: "Choose a lens"
+    physics:
+      tab: "Physics"
+      kicker: "Acoustics · Doppler effect"
+      title: "Hearing speed"
+      text: "A bat flying towards a moth hears the echo at a higher pitch than the call it sent. The size of this Doppler shift tells it how fast it is closing in. Horseshoe bats even lower their call in flight, so that the echo always lands in their most sensitive band of hearing."
+      example_html: "At <var>v</var> = 5 m/s and <var>f</var><sub>0</sub> = 50 kHz, the echo returns about 1.5 kHz higher."
+      svg_title: "Doppler effect of a flying bat"
+      svg_desc: "Wavefronts bunch up ahead of the moving bat and spread out behind it."
+      svg_ahead: "Ahead: compressed · higher f"
+      svg_behind: "Behind: stretched · lower f"
+    math:
+      tab: "Mathematics"
+      kicker: "Geometry · Trigonometry"
+      title: "Measuring distance with time"
+      text: "Sound travels at about 343 m/s in air. Halve the round-trip time of the echo and you have the distance. The tiny difference in arrival time between the left and the right ear adds the direction – two measurements, one position."
+      example_html: "An echo after 17.5 ms puts the moth 3.0 m away. <span class=\"legend\"><var>Δτ</var>: time difference between the ears, <var>b</var>: distance between the ears.</span>"
+      svg_title: "Geometry of echo ranging"
+      svg_desc: "A right triangle from the bat to the moth with distance d and angle theta, above a timeline showing the call and the echo 17.5 milliseconds later."
+      svg_call: "Call"
+      svg_echo: "Echo"
+      svg_dt: "Δt = 17.5 ms"
+    cs:
+      tab: "Computer science"
+      kicker: "Signal processing · Sonar"
+      title: "From chirp to code"
+      text: "Autonomous drones and parking sensors use the same trick. A matched filter slides the known chirp along the recording; the peak of the cross-correlation marks the echo – robust even in noise."
+      code_label: "Python · NumPy"
+  dimensions:
+    eyebrow: "The ontology"
+    title: "Four dimensions to map the living world"
+    intro: "Every article is a node in a knowledge graph. Follow a phenomenon through time, across habitats, down to the physical rules behind it – and out into the sciences it inspires."
+    items:
+      - key: time
+        title: "Time"
+        sub: "Evolution & geology"
+        text: "From the Big Bang to humanoid robots: when did a solution appear, and how long did nature refine it?"
+        examples: ["Cambrian", "Cenozoic", "Modern era"]
+      - key: space
+        title: "Space"
+        sub: "Habitats & scales"
+        text: "From the microcosm to the stratosphere: where does a phenomenon happen, and at what scale?"
+        examples: ["Deep sea", "Desert", "Microcosm"]
+      - key: rules
+        title: "Rules"
+        sub: "The laws of physics"
+        text: "Mechanics, thermodynamics, optics, acoustics, electromagnetism: the rules every organism has to play by."
+        examples: ["Acoustics", "Fluid dynamics", "Optics"]
+      - key: adjacent
+        title: "Adjacent sciences"
+        sub: "Maths, CS & engineering"
+        text: "Where the insight leads: mathematics, computer science, medical technology, materials science and bionics."
+        examples: ["Bionics", "Materials", "AI"]
+  flagship:
+    eyebrow: "Flagship article · in preparation"
+    title: "The pistol shrimp and the physics of cavitation"
+    text: "With a single snap of its oversized claw, a shrimp just a few centimetres long shoots out a jet of water so fast that the pressure behind it drops below the vapour pressure. A bubble forms and collapses – and for a split second its core reaches thousands of kelvin and emits a flash of light."
+    stats:
+      - value: "25 m/s"
+        label: "speed of the water jet"
+      - value: "≥ 5,000 K"
+        label: "inside the collapsing bubble"
+      - value: "3–5 cm"
+        label: "body length of the shrimp"
+    tags: ["Cenozoic", "Coasts & reefs", "Thermodynamics", "Fluid dynamics", "Medical technology"]
+    sources_label: "Sources"
+    cta: "Follow the progress on GitHub"
+    fig_label: "Fig. 2"
+    fig_caption: "Life of a cavitation bubble: rapid growth, violent collapse, weak rebounds. The whole cycle takes less than a millisecond."
+    svg_title: "Radius of a cavitation bubble over time"
+    svg_desc: "The bubble radius rises after the snap, then drops steeply to zero at the collapse, where a flash and a shock wave occur, followed by two small rebounds."
+    svg_radius: "Radius R"
+    svg_time: "Time t"
+    svg_snap: "Snap"
+    svg_growth: "Vapour bubble grows"
+    svg_collapse: "Collapse"
+    svg_flash: "Flash & shock wave"
+  contribute:
+    eyebrow: "Open source"
+    title_html: "<span class=\"line\">Built in the open.</span> <span class=\"line\">Written by curious minds.</span>"
+    text: "WildBionics lives on GitHub. Everything – articles, translations, code – is open for you to read, reuse and improve."
+    ways:
+      - key: write
+        title: "Write an article"
+        text: "Know a phenomenon that deserves the lens treatment? Propose it, or draft it in Markdown."
+      - key: translate
+        title: "Translate"
+        text: "Help bring WildBionics to more languages. English and German are just the beginning."
+      - key: code
+        title: "Improve the site"
+        text: "Accessibility, the knowledge graph, visualisations: the code is MIT-licensed."
+    cta: "Open the repository"
+    cta_secondary: "Suggest a phenomenon"
+  footer:
+    tagline: "Nature’s physics, explained."
+    project: "Project"
+    repository: "Repository"
+    issues: "Issues & ideas"
+    licenses: "Licences"
+    code_license: "Code: MIT"
+    content_license: "Content: CC BY-SA 4.0"
+    font_license: "Fonts: SIL OFL 1.1"
+    language: "Language"
+    copyright: "Hendrik Stöcker & contributors"
+    built_with: "Built with Jekyll on GitHub Pages."
+
+de:
+  lang_name: "Deutsch"
+  skip: "Zum Inhalt springen"
+  nav:
+    label: "Hauptnavigation"
+    lens: "Linsen"
+    dimensions: "Dimensionen"
+    flagship: "Leitartikel"
+    contribute: "Mitmachen"
+    github: "WildBionics auf GitHub"
+    language: "Sprache"
+  hero:
+    eyebrow: "Ein Open-Source-Kompendium"
+    title_html: "Die <em>Physik</em> der Natur, erklärt."
+    lede: "Wie sieht eine Fledermaus im Dunkeln? Warum blitzt es, wenn ein Krebs mit der Schere knallt? WildBionics erklärt Physik, Mathematik und Informatik anhand von Tieren, Pflanzen und unserem lebendigen Planeten – und zeigt, wie Ingenieure sich Lösungen von der Natur abschauen."
+    cta_primary: "Die Linse ausprobieren"
+    cta_secondary: "Auf GitHub mitmachen"
+    fig_label: "Abb. 1"
+    fig_caption: "Echoortung. Eine Fledermaus sendet einen frequenzmodulierten Ruf aus; die Verzögerung des Echos verrät, wie weit die Motte entfernt ist."
+    svg_title: "Schema der Echoortung einer Fledermaus"
+    svg_desc: "Eine Fledermaus sendet Schallwellen zu einer Motte. Echowellen laufen zurück. Die Echoverzögerung von 17,5 Millisekunden entspricht einer Entfernung von etwa 3 Metern. Ein Spektrogramm zeigt, wie der Ruf von 80 auf 40 Kilohertz abfällt."
+    svg_call: "Ruf · FM 80→40 kHz"
+    svg_echo: "Echo · Δt = 17,5 ms"
+    svg_distance: "d = c·Δt / 2 ≈ 3,0 m"
+    svg_moth: "Motte"
+    svg_spectrogram: "Spektrogramm"
+    disciplines_label: "Erklärt durch"
+    disciplines: ["Physik", "Mathematik", "Informatik", "Chemie"]
+  lens:
+    eyebrow: "Die Linse"
+    title_html: "<span class=\"line\">Ein Phänomen.</span> <span class=\"line\">Drei Arten, es zu sehen.</span>"
+    intro: "Jeder WildBionics-Artikel lässt sich durch verschiedene Linsen lesen. Wechsle zwischen ihnen und verfolge dieselbe Fledermausjagd mit den Augen einer Physikerin, eines Mathematikers und einer Programmiererin."
+    tabs_label: "Linse wählen"
+    physics:
+      tab: "Physik"
+      kicker: "Akustik · Doppler-Effekt"
+      title: "Geschwindigkeit hören"
+      text: "Fliegt eine Fledermaus auf eine Motte zu, hört sie das Echo höher, als sie gerufen hat. Die Größe dieser Doppler-Verschiebung verrät ihr, wie schnell sie sich nähert. Hufeisennasen senken im Flug sogar ihre Ruffrequenz, damit das Echo immer in ihrem empfindlichsten Hörbereich landet."
+      example_html: "Bei <var>v</var> = 5 m/s und <var>f</var><sub>0</sub> = 50 kHz kommt das Echo etwa 1,5 kHz höher zurück."
+      svg_title: "Doppler-Effekt einer fliegenden Fledermaus"
+      svg_desc: "Vor der fliegenden Fledermaus drängen sich die Wellenfronten, hinter ihr liegen sie weiter auseinander."
+      svg_ahead: "Vorne: gestaucht · höheres f"
+      svg_behind: "Hinten: gedehnt · tieferes f"
+    math:
+      tab: "Mathematik"
+      kicker: "Geometrie · Trigonometrie"
+      title: "Entfernung mit Zeit messen"
+      text: "Schall legt in Luft rund 343 m/s zurück. Die halbe Laufzeit des Echos ergibt die Entfernung. Der winzige Zeitunterschied zwischen linkem und rechtem Ohr liefert die Richtung – zwei Messungen, eine Position."
+      example_html: "Ein Echo nach 17,5 ms bedeutet: Die Motte ist 3,0 m entfernt. <span class=\"legend\"><var>Δτ</var>: Laufzeitunterschied zwischen den Ohren, <var>b</var>: Ohrabstand.</span>"
+      svg_title: "Geometrie der Echo-Entfernungsmessung"
+      svg_desc: "Ein rechtwinkliges Dreieck von der Fledermaus zur Motte mit Entfernung d und Winkel Theta, darunter eine Zeitachse mit dem Ruf und dem Echo 17,5 Millisekunden später."
+      svg_call: "Ruf"
+      svg_echo: "Echo"
+      svg_dt: "Δt = 17,5 ms"
+    cs:
+      tab: "Informatik"
+      kicker: "Signalverarbeitung · Sonar"
+      title: "Vom Chirp zum Code"
+      text: "Autonome Drohnen und Einparksensoren nutzen denselben Trick. Ein Matched Filter schiebt den bekannten Chirp über die Aufnahme; das Maximum der Kreuzkorrelation markiert das Echo – robust selbst im Rauschen."
+      code_label: "Python · NumPy"
+  dimensions:
+    eyebrow: "Die Ontologie"
+    title: "Vier Dimensionen, um die lebendige Welt zu kartieren"
+    intro: "Jeder Artikel ist ein Knoten in einem Wissensgraphen. Verfolge ein Phänomen durch die Zeit, über Lebensräume hinweg, hinab zu den physikalischen Regeln dahinter – und hinaus in die Wissenschaften, die es inspiriert."
+    items:
+      - key: time
+        title: "Zeit"
+        sub: "Evolution & Geologie"
+        text: "Vom Urknall bis zu humanoiden Robotern: Wann ist eine Lösung entstanden, und wie lange hat die Natur sie verfeinert?"
+        examples: ["Kambrium", "Känozoikum", "Neuzeit"]
+      - key: space
+        title: "Raum"
+        sub: "Lebensräume & Skalen"
+        text: "Vom Mikrokosmos bis zur Stratosphäre: Wo spielt sich ein Phänomen ab, und auf welcher Größenskala?"
+        examples: ["Tiefsee", "Wüste", "Mikrokosmos"]
+      - key: rules
+        title: "Regeln"
+        sub: "Die Gesetze der Physik"
+        text: "Mechanik, Thermodynamik, Optik, Akustik, Elektromagnetismus: die Regeln, an die sich jedes Lebewesen halten muss."
+        examples: ["Akustik", "Strömungslehre", "Optik"]
+      - key: adjacent
+        title: "Nachbarwissenschaften"
+        sub: "Mathe, Informatik & Technik"
+        text: "Wohin die Erkenntnis führt: Mathematik, Informatik, Medizintechnik, Materialwissenschaft und Bionik."
+        examples: ["Bionik", "Werkstoffe", "KI"]
+  flagship:
+    eyebrow: "Leitartikel · in Arbeit"
+    title: "Der Knallkrebs und die Physik der Kavitation"
+    text: "Mit einem einzigen Schlag seiner übergroßen Schere schießt ein nur wenige Zentimeter großer Krebs einen Wasserstrahl ab – so schnell, dass der Druck dahinter unter den Dampfdruck fällt. Eine Blase entsteht und kollabiert, und für einen winzigen Moment erreicht ihr Kern Tausende Kelvin und sendet einen Lichtblitz aus."
+    stats:
+      - value: "25 m/s"
+        label: "Geschwindigkeit des Wasserstrahls"
+      - value: "≥ 5.000 K"
+        label: "im Inneren der kollabierenden Blase"
+      - value: "3–5 cm"
+        label: "Körperlänge des Krebses"
+    tags: ["Känozoikum", "Küsten & Riffe", "Thermodynamik", "Strömungslehre", "Medizintechnik"]
+    sources_label: "Quellen"
+    cta: "Den Fortschritt auf GitHub verfolgen"
+    fig_label: "Abb. 2"
+    fig_caption: "Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwinger. Der ganze Zyklus dauert weniger als eine Millisekunde."
+    svg_title: "Radius einer Kavitationsblase im Zeitverlauf"
+    svg_desc: "Der Blasenradius steigt nach dem Schlag an und fällt dann steil auf null ab. Beim Kollaps entstehen ein Lichtblitz und eine Stoßwelle, danach folgen zwei kleine Nachschwinger."
+    svg_radius: "Radius R"
+    svg_time: "Zeit t"
+    svg_snap: "Schlag"
+    svg_growth: "Dampfblase wächst"
+    svg_collapse: "Kollaps"
+    svg_flash: "Blitz & Stoßwelle"
+  contribute:
+    eyebrow: "Open Source"
+    title_html: "<span class=\"line\">Offen entwickelt.</span> <span class=\"line\">Von Neugierigen geschrieben.</span>"
+    text: "WildBionics lebt auf GitHub. Alles – Artikel, Übersetzungen, Code – ist offen: zum Lesen, Weiterverwenden und Verbessern."
+    ways:
+      - key: write
+        title: "Einen Artikel schreiben"
+        text: "Du kennst ein Phänomen, das eine eigene Linse verdient? Schlag es vor oder entwirf es in Markdown."
+      - key: translate
+        title: "Übersetzen"
+        text: "Hilf mit, WildBionics in weitere Sprachen zu bringen. Englisch und Deutsch sind erst der Anfang."
+      - key: code
+        title: "Die Website verbessern"
+        text: "Barrierefreiheit, Wissensgraph, Visualisierungen: Der Code steht unter MIT-Lizenz."
+    cta: "Zum Repository"
+    cta_secondary: "Ein Phänomen vorschlagen"
+  footer:
+    tagline: "Die Physik der Natur, erklärt."
+    project: "Projekt"
+    repository: "Repository"
+    issues: "Issues & Ideen"
+    licenses: "Lizenzen"
+    code_license: "Code: MIT"
+    content_license: "Inhalte: CC BY-SA 4.0"
+    font_license: "Schriften: SIL OFL 1.1"
+    language: "Sprache"
+    copyright: "Hendrik Stöcker & Mitwirkende"
+    built_with: "Gebaut mit Jekyll auf GitHub Pages."
