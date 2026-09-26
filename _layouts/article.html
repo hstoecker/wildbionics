@@ -1,0 +1,95 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | plus: 1 -%}
+{%- assign date_format = "%B %-d, %Y" -%}{%- if lang == "de" -%}{%- assign date_format = "%d.%m.%Y" -%}{%- endif -%}
+{%- capture edit_url -%}{{ site.repository_url }}/blob/main/{{ page.path }}{%- endcapture -%}
+<article class="article">
+  <header class="article-header">
+    <div class="container article-header__grid">
+      <div class="article-header__copy">
+        <nav class="breadcrumb" aria-label="{{ t.article.breadcrumb }}">
+          <ol>
+            <li><a href="{{ home_url | relative_url }}">{{ site.title }}</a></li>
+            <li><a href="{{ t.articles.url | relative_url }}">{{ t.articles.title }}</a></li>
+            <li><span aria-current="page">{{ page.short_title | default: page.title }}</span></li>
+          </ol>
+        </nav>
+        {%- if page.kicker %}<p class="eyebrow">{{ page.kicker }}</p>{% endif %}
+        <h1 class="article-header__title">{{ page.title }}</h1>
+        <p class="article-header__dek">{{ page.dek | default: page.description }}</p>
+        <dl class="article-meta">
+          <div><dt>{{ t.article.by }}</dt><dd><a href="{{ site.author.url }}" rel="author">{{ site.author.name }}</a></dd></div>
+          <div><dt>{{ t.article.published }}</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time></dd></div>
+          {%- if page.updated %}
+          <div><dt>{{ t.article.updated }}</dt><dd><time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: date_format }}</time></dd></div>
+          {%- endif %}
+          <div><dt class="visually-hidden">{{ t.article.reading_time }}</dt><dd>{{ minutes }} {{ t.article.reading_time }}</dd></div>
+        </dl>
+      </div>
+      {%- if page.hero_figure %}
+      <figure class="article-header__figure">
+        {% include {{ page.hero_figure }} %}
+        {%- if page.hero_caption %}<figcaption class="caption caption--dark">{{ page.hero_caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="article-body">
+    <div class="container article-body__grid">
+      {%- if page.key_facts %}
+      <aside class="key-facts" aria-labelledby="key-facts-title">
+        <h2 id="key-facts-title" class="key-facts__title">{{ t.article.key_facts }}</h2>
+        <ul>
+          {%- for f in page.key_facts %}
+          <li>{{ f | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+          {%- endfor %}
+        </ul>
+      </aside>
+      {%- endif %}
+
+      <div class="prose">
+        {{ content }}
+      </div>
+
+      {%- if page.faq %}
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">{{ t.article.faq }}</h2>
+        {%- for q in page.faq %}
+        <details class="faq__item"{% if forloop.first %} open{% endif %}>
+          <summary><h3>{{ q.q }}</h3></summary>
+          <p>{{ q.a }}</p>
+        </details>
+        {%- endfor %}
+      </section>
+      {%- endif %}
+
+      {%- if page.sources %}
+      <section class="references" aria-labelledby="sources-title">
+        <h2 id="sources-title">{{ t.article.sources }}</h2>
+        <ol>
+          {%- for s in page.sources %}
+          <li id="ref-{{ forloop.index }}">{{ s.authors | join: ", " }} ({{ s.year }}). {{ s.title }}. <cite>{{ s.journal }}</cite> {{ s.volume }}, {{ s.pages }}. <a href="https://doi.org/{{ s.doi }}">doi:{{ s.doi }}</a>{% if s.open_access %} · <span class="badge">Open Access</span>{% endif %}</li>
+          {%- endfor %}
+        </ol>
+      </section>
+      {%- endif %}
+
+      {%- if page.dimensions %}
+      <section class="graph-tags" aria-labelledby="dims-title">
+        <h2 id="dims-title">{{ t.article.dimensions }}</h2>
+        <dl>
+          {%- for d in page.dimensions %}
+          {% assign dim_key = d[0] %}<div><dt>{{ t.article.dimension_names[dim_key] }}</dt><dd><ul class="chips">{% for v in d[1] %}<li>{{ site.data.taxonomy[v][lang] | default: v }}</li>{% endfor %}</ul></dd></div>
+          {%- endfor %}
+        </dl>
+      </section>
+      {%- endif %}
+
+      <p class="article-license">{{ t.article.license_html | replace: "%REPO%", site.repository_url | replace: "%EDIT%", edit_url }}</p>
+    </div>
+  </div>
+</article>

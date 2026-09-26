@@ -50,11 +50,18 @@ status: draft
 ```
 
 ## Roadmap (keep it simple, quick wins first)
-- [ ] **Phase 0** – Minimal live site: `_config.yml`, `index.md` (EN), `de/index.md` (DE), `CNAME`; DNS check (A records to GitHub Pages, `www` CNAME), enforce HTTPS, verify domain in GitHub.
-- [ ] **Phase 1** – Mac setup: Homebrew, git, gh, Ruby + Bundler + Jekyll; clone repo; `bundle exec jekyll serve`.
-- [ ] **Phase 2** – Landing page design: hero + tagline ("Nature's physics, explained."), lens demo (bat, 3 tabs), 4 dimensions, flagship article teaser, "Contribute on GitHub", language switcher, footer with licenses.
-- [ ] **Phase 3** – First flagship article with lens feature, JSON-LD, DOI sources; `llms.txt`.
+- [x] **Phase 0** – Minimal live site: `_config.yml`, `index.md` (EN), `de/index.md` (DE), `CNAME`; DNS check (A records to GitHub Pages, `www` CNAME), enforce HTTPS, verify domain in GitHub.
+- [x] **Phase 1** – Mac setup: Homebrew, git, gh, Ruby + Bundler + Jekyll; clone repo; `bundle exec jekyll serve`.
+- [x] **Phase 2** – Landing page design: hero + tagline ("Nature's physics, explained."), lens demo (bat, 3 tabs), 4 dimensions, flagship article teaser, "Contribute on GitHub", language switcher, footer with licenses.
+- [x] **Phase 3** – First flagship article with lens feature, JSON-LD, DOI sources; `llms.txt`.
 - [ ] **Phase 4** – `graph.json` from front matter + interactive graph view.
+
+## How things are built (as of Phase 3)
+- **Deploy:** GitHub Actions (`.github/workflows/deploy.yml`): Jekyll build → `.github/scripts/check_site.py` quality gate → GitHub Pages → IndexNow (`.github/scripts/indexnow.py`, key in `_config.yml` + `/<key>.txt`). PRs only build + check.
+- **Articles:** `_articles/<slug>.<lang>.md`, layout `article`; lenses via `{% include lens-tabs.html %}` + `lens-start`/`lens-end`; key facts, FAQ, sources (with DOI) in front matter → rendered + JSON-LD (Article, FAQPage, BreadcrumbList). Ontology slugs need a display name in `_data/taxonomy.yml`.
+- **UI strings:** `_data/i18n.yml` (EN/DE keys must match). SVG figures in `_includes/svg/` pull labels from i18n.
+- **Machine readability:** `sitemap.xml` (hreflang), `robots.txt` (AI crawlers allowed), `llms.txt`, OG images in `assets/og/` (1200×630, rendered from `_includes/og-card.html`).
+- Check locally: `bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
 
 ## Working style
 - Step by step, small verifiable wins. Explain commands before running them (owner is setting up a fresh Mac).

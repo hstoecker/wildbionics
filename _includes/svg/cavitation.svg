@@ -1,3 +1,4 @@
+{%- include i18n.html -%}
 <svg class="cav-svg" viewBox="0 0 520 300" role="img" aria-labelledby="cav-title cav-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="cav-title">{{ t.flagship.svg_title }}</title>
   <desc id="cav-desc">{{ t.flagship.svg_desc }}</desc>

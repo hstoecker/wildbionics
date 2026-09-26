@@ -1,0 +1,27 @@
+{%- include i18n.html -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}"><head><meta charset="utf-8">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { background: radial-gradient(700px 480px at 78% 45%, rgba(92,203,182,.16), transparent 70%), linear-gradient(160deg, {{ include.bg1 }} 0%, {{ include.bg2 }} 100%); color: var(--on-dark);
+         --text: var(--on-dark); --text-2: var(--on-dark-2); --eyebrow: var(--accent); }
+  .og { display: grid; grid-template-columns: 540px 1fr; gap: 24px; align-items: center; height: 630px; padding: 0 56px 0 72px; box-sizing: border-box; }
+  .og .brand { margin-bottom: 44px; } .og .brand__mark { width: 40px; height: 40px; } .og .brand__name { font-size: 1.9rem; }
+  .og h1 { margin: 18px 0 22px; font-family: var(--font-display); font-weight: 340; font-size: {{ include.size | default: 64 }}px; line-height: 1.02; letter-spacing: -0.025em; font-variation-settings: "opsz" 144, "SOFT" 40; }
+  .og h1 em { color: var(--accent); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+  .og p.sub { color: var(--on-dark-2); font-size: 22px; line-height: 1.45; margin: 0; }
+  .og .url { position: absolute; left: 72px; bottom: 40px; font-family: var(--font-mono); font-size: 16px; letter-spacing: .08em; color: var(--on-dark-2); }
+  .og svg .label { font-size: 13px; }
+</style></head>
+<body>{% include sprite.svg %}
+<div class="og">
+  <div>
+    <div class="brand"><svg class="brand__mark"><use href="#logo-mark"/></svg><span class="brand__name">Wild<em>Bionics</em></span></div>
+    <p class="eyebrow">{{ include.eyebrow }}</p>
+    <h1>{{ include.title }}</h1>
+    <p class="sub">{{ include.sub }}</p>
+  </div>
+  <div>{% include {{ include.figure }} %}</div>
+</div>
+</body></html>

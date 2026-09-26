@@ -1,0 +1,22 @@
+# Display names for ontology slugs used in article front matter (`dimensions:`).
+# Slugs are language-neutral and feed the knowledge graph; add every new slug here.
+
+# Time
+cenozoic:            { en: "Cenozoic", de: "Känozoikum" }
+modern-era:          { en: "Modern era", de: "Neuzeit" }
+# Space
+coastal:             { en: "Coasts", de: "Küsten" }
+coral-reef:          { en: "Coral reefs", de: "Korallenriffe" }
+seagrass:            { en: "Seagrass meadows", de: "Seegraswiesen" }
+lab:                 { en: "Laboratory", de: "Labor" }
+# Rules (physics)
+fluid-dynamics:      { en: "Fluid dynamics", de: "Strömungslehre" }
+thermodynamics:      { en: "Thermodynamics", de: "Thermodynamik" }
+acoustics:           { en: "Acoustics", de: "Akustik" }
+optics:              { en: "Optics", de: "Optik" }
+# Adjacent sciences
+mathematics:         { en: "Mathematics", de: "Mathematik" }
+computer-science:    { en: "Computer science", de: "Informatik" }
+medical-technology:  { en: "Medical technology", de: "Medizintechnik" }
+materials-science:   { en: "Materials science", de: "Materialwissenschaft" }
+bionics:             { en: "Bionics", de: "Bionik" }

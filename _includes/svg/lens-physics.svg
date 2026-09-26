@@ -1,3 +1,4 @@
+{%- include i18n.html -%}
 <svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-physics-title lens-physics-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="lens-physics-title">{{ t.lens.physics.svg_title }}</title>
   <desc id="lens-physics-desc">{{ t.lens.physics.svg_desc }}</desc>

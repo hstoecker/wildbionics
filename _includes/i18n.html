@@ -1,0 +1,4 @@
+{%- comment -%} Sets `lang`, `t` (UI strings) and `home_url` for the current page. {%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == site.lang -%}{%- assign home_url = "/" -%}{%- else -%}{%- assign home_url = "/" | append: lang | append: "/" -%}{%- endif -%}

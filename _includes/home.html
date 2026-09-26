@@ -1,6 +1,5 @@
 {%- comment -%} Landing page. All copy comes from _data/i18n.yml via `t`. {%- endcomment -%}
-{%- assign lang = page.lang | default: site.lang -%}
-{%- assign t = site.data.i18n[lang] -%}
+{%- include i18n.html -%}
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="container hero__grid">
@@ -39,7 +38,7 @@
     </header>
 
     <div class="lens" data-lens>
-      <div class="lens__tabs" role="tablist" aria-label="{{ t.lens.tabs_label }}" hidden>
+      <div class="lens__tabs" role="tablist" aria-label="{{ t.lens.tabs_label }}" data-lens-tabs hidden>
         {%- assign lenses = "physics,math,cs" | split: "," -%}
         {%- for key in lenses %}
         <button class="lens__tab" role="tab" type="button" id="tab-{{ key }}" aria-controls="panel-{{ key }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
@@ -144,7 +143,7 @@ def echo_distance(chirp, recording, sample_rate):
     </figure>
     <div class="flagship__copy">
       <p class="eyebrow">{{ t.flagship.eyebrow }}</p>
-      <h2 id="flagship-title" class="section-title">{{ t.flagship.title }}</h2>
+      <h2 id="flagship-title" class="section-title"><a class="title-link" href="{{ site.articles | where: "ref", "pistol-shrimp-cavitation" | where: "lang", lang | map: "url" | first | relative_url }}">{{ t.flagship.title }}</a></h2>
       <p class="flagship__text">{{ t.flagship.text }}</p>
       <dl class="stats">
         {%- for s in t.flagship.stats %}
@@ -166,7 +165,8 @@ def echo_distance(chirp, recording, sample_rate):
           <li>Lohse, D., Schmitz, B. &amp; Versluis, M. (2001). Snapping shrimp make flashing bubbles. <cite>Nature</cite> 413, 477–478. <a href="https://doi.org/10.1038/35097152">doi:10.1038/35097152</a></li>
         </ol>
       </div>
-      <a class="link-arrow" href="{{ site.repository_url }}">{{ t.flagship.cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      {%- assign flagship = site.articles | where: "ref", "pistol-shrimp-cavitation" | where: "lang", lang | first -%}
+      <a class="button button--primary" href="{{ flagship.url | relative_url }}">{{ t.flagship.cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
     </div>
   </div>
 </section>

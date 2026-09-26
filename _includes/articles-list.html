@@ -1,0 +1,24 @@
+{%- include i18n.html -%}
+{%- assign articles = site.articles | where: "lang", lang | where: "status", "published" | sort: "date" | reverse -%}
+<section class="section section--paper index-page" aria-labelledby="index-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--ink">WildBionics</p>
+      <h1 id="index-title" class="section-title">{{ t.articles.title }}</h1>
+      <p class="section-intro">{{ t.articles.intro }}</p>
+    </header>
+    <ol class="article-cards">
+      {%- for a in articles %}
+      <li class="article-card">
+        <p class="kicker">{{ a.kicker }}</p>
+        <h2 class="article-card__title"><a href="{{ a.url | relative_url }}">{{ a.title }}</a></h2>
+        <p class="article-card__dek">{{ a.description }}</p>
+        <ul class="chips">
+          {%- for d in a.dimensions.physics %}<li>{{ site.data.taxonomy[d][lang] | default: d }}</li>{% endfor %}
+        </ul>
+        <p class="article-card__more" aria-hidden="true">{{ t.articles.read }} →</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

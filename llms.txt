@@ -1,0 +1,45 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign en = site.data.i18n.en -%}
+{%- capture cite_ial -%}{:.cite}{%- endcapture -%}
+# WildBionics
+
+> WildBionics is a bilingual (English/German) open-source compendium that explains physics, mathematics, computer science and chemistry through animals, plants, geology and bionics. Every article views one natural phenomenon through several "lenses" (physics, mathematics, computer science) and cites peer-reviewed sources with DOIs.
+
+- Content licence: CC BY-SA 4.0 – reuse is welcome with attribution to "WildBionics ({{ site.url }})".
+- Code licence: MIT. Source and issue tracker: {{ site.repository_url }}
+- English lives at the site root, German under /de/. Translations share a `ref` and are linked with hreflang.
+- Maintainer: {{ site.author.name }} ({{ site.author.url }})
+
+## Articles
+{% assign articles = site.articles | where: "lang", "en" | where: "status", "published" | sort: "date" | reverse %}
+{%- for a in articles %}
+- [{{ a.title }}]({{ a.url | absolute_url }}): {{ a.description }}
+{%- endfor %}
+
+## Key facts
+{% for a in articles %}
+### {{ a.title }}
+{%- for f in a.key_facts %}
+- {{ f | replace: cite_ial, "" | replace: "(#ref-1)", "" | replace: "(#ref-2)", "" | replace: "(#ref-3)", "" | replace: "(#ref-4)", "" | replace: "(#ref-5)", "" | replace: "(#ref-6)", "" | strip }}
+{%- endfor %}
+
+Sources:
+{%- for s in a.sources %}
+[{{ forloop.index }}] {{ s.authors | join: ", " }} ({{ s.year }}). {{ s.title }}. {{ s.journal }} {{ s.volume }}, {{ s.pages }}. https://doi.org/{{ s.doi }}
+{%- endfor %}
+{% endfor %}
+## Deutsch
+{% assign articles_de = site.articles | where: "lang", "de" | where: "status", "published" | sort: "date" | reverse %}
+{%- for a in articles_de %}
+- [{{ a.title }}]({{ a.url | absolute_url }}): {{ a.description }}
+{%- endfor %}
+
+## Optional
+
+- [Home (English)]({{ '/' | absolute_url }}): overview, the lens concept and the four dimensions of the knowledge graph (time, space, rules of physics, adjacent sciences)
+- [Startseite (Deutsch)]({{ '/de/' | absolute_url }})
+- [All articles]({{ en.articles.url | absolute_url }})
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})

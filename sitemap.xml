@@ -1,0 +1,22 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign all = site.pages | concat: site.articles -%}
+{%- for p in all -%}
+  {%- if p.lang == nil or p.sitemap == false -%}{%- continue -%}{%- endif -%}
+  {%- assign translations = all | where: "ref", p.ref %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    <lastmod>{{ p.updated | default: p.date | default: site.time | date_to_xmlschema }}</lastmod>
+    {%- for tr in translations %}
+    <xhtml:link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr.url | absolute_url }}"/>
+    {%- if tr.lang == site.lang %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ tr.url | absolute_url }}"/>
+    {%- endif %}
+    {%- endfor %}
+  </url>
+{%- endfor %}
+</urlset>

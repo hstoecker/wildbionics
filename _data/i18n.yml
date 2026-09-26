@@ -88,19 +88,19 @@ en:
         text: "Where the insight leads: mathematics, computer science, medical technology, materials science and bionics."
         examples: ["Bionics", "Materials", "AI"]
   flagship:
-    eyebrow: "Flagship article · in preparation"
+    eyebrow: "Flagship article"
     title: "The pistol shrimp and the physics of cavitation"
     text: "With a single snap of its oversized claw, a shrimp just a few centimetres long shoots out a jet of water so fast that the pressure behind it drops below the vapour pressure. A bubble forms and collapses – and for a split second its core reaches thousands of kelvin and emits a flash of light."
     stats:
-      - value: "25 m/s"
+      - value: "≈ 25 m/s"
         label: "speed of the water jet"
       - value: "≥ 5,000 K"
         label: "inside the collapsing bubble"
       - value: "3–5 cm"
         label: "body length of the shrimp"
-    tags: ["Cenozoic", "Coasts & reefs", "Thermodynamics", "Fluid dynamics", "Medical technology"]
+    tags: ["Coral reefs", "Fluid dynamics", "Thermodynamics", "Acoustics", "Bionics"]
     sources_label: "Sources"
-    cta: "Follow the progress on GitHub"
+    cta: "Read the article"
     fig_label: "Fig. 2"
     fig_caption: "Life of a cavitation bubble: rapid growth, violent collapse, weak rebounds. The whole cycle takes less than a millisecond."
     svg_title: "Radius of a cavitation bubble over time"
@@ -140,6 +140,53 @@ en:
     copyright: "Hendrik Stöcker & contributors"
     built_with: "Built with Jekyll on GitHub Pages."
 
+  article:
+    by: "By"
+    published: "Published"
+    updated: "Updated"
+    reading_time: "min read"
+    key_facts: "In short"
+    lenses_label: "Read this through a lens"
+    lenses_hint: "The same phenomenon, explained three ways. Pick a lens – or read all three."
+    faq: "Frequently asked questions"
+    sources: "Sources"
+    dimensions: "Where this sits in the knowledge graph"
+    dimension_names:
+      time: "Time"
+      space: "Space"
+      physics: "Rules"
+      adjacent_sciences: "Adjacent sciences"
+    license_html: "Text and figures: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"license\">CC BY-SA 4.0</a>. Found a mistake? <a href=\"%REPO%/issues/new\">Open an issue</a> or edit this article on <a href=\"%EDIT%\">GitHub</a>."
+    breadcrumb: "Breadcrumb"
+  articles:
+    title: "Articles"
+    description: "Every WildBionics article: one phenomenon from nature, explained through physics, mathematics and computer science."
+    intro: "One phenomenon per article, viewed through several lenses – with sources you can check."
+    read: "Read the article"
+    url: "/articles/"
+  not_found:
+    title: "Page not found"
+    text: "This page has gone extinct – or never evolved. Try the home page or the list of articles."
+    home: "Back to the home page"
+  figures:
+    claw:
+      title: "Schematic of a snapping shrimp claw"
+      desc: "The movable finger of the claw, the dactyl, carries a plunger. When the claw snaps shut, the plunger drives water out of a socket as a fast jet. A cavitation bubble forms in the jet and collapses, sending out a shock wave."
+      dactyl: "Dactyl with plunger"
+      socket: "Socket"
+      jet: "Jet ≈ 25 m/s"
+      bubble: "Cavitation bubble"
+      shock: "Shock wave"
+      note: "Schematic · not to scale"
+    bernoulli:
+      title: "Static pressure in a water jet as a function of its speed"
+      desc: "According to Bernoulli, the static pressure falls with the square of the jet speed. Above about 14 metres per second it drops below the vapour pressure of water and cavitation sets in. The shrimp's jet reaches about 25 metres per second."
+      x: "Jet speed v (m/s)"
+      y: "Static pressure p (kPa)"
+      pv: "Vapour pressure of water (2.3 kPa)"
+      cav: "Cavitation zone"
+      shrimp: "Shrimp jet"
+      crit: "v ≈ 14 m/s"
 de:
   lang_name: "Deutsch"
   skip: "Zum Inhalt springen"
@@ -226,19 +273,19 @@ de:
         text: "Wohin die Erkenntnis führt: Mathematik, Informatik, Medizintechnik, Materialwissenschaft und Bionik."
         examples: ["Bionik", "Werkstoffe", "KI"]
   flagship:
-    eyebrow: "Leitartikel · in Arbeit"
+    eyebrow: "Leitartikel"
     title: "Der Knallkrebs und die Physik der Kavitation"
     text: "Mit einem einzigen Schlag seiner übergroßen Schere schießt ein nur wenige Zentimeter großer Krebs einen Wasserstrahl ab – so schnell, dass der Druck dahinter unter den Dampfdruck fällt. Eine Blase entsteht und kollabiert, und für einen winzigen Moment erreicht ihr Kern Tausende Kelvin und sendet einen Lichtblitz aus."
     stats:
-      - value: "25 m/s"
+      - value: "≈ 25 m/s"
         label: "Geschwindigkeit des Wasserstrahls"
       - value: "≥ 5.000 K"
         label: "im Inneren der kollabierenden Blase"
       - value: "3–5 cm"
         label: "Körperlänge des Krebses"
-    tags: ["Känozoikum", "Küsten & Riffe", "Thermodynamik", "Strömungslehre", "Medizintechnik"]
+    tags: ["Korallenriffe", "Strömungslehre", "Thermodynamik", "Akustik", "Bionik"]
     sources_label: "Quellen"
-    cta: "Den Fortschritt auf GitHub verfolgen"
+    cta: "Artikel lesen"
     fig_label: "Abb. 2"
     fig_caption: "Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwinger. Der ganze Zyklus dauert weniger als eine Millisekunde."
     svg_title: "Radius einer Kavitationsblase im Zeitverlauf"
@@ -277,3 +324,50 @@ de:
     language: "Sprache"
     copyright: "Hendrik Stöcker & Mitwirkende"
     built_with: "Gebaut mit Jekyll auf GitHub Pages."
+  article:
+    by: "Von"
+    published: "Veröffentlicht"
+    updated: "Aktualisiert"
+    reading_time: "Min. Lesezeit"
+    key_facts: "Kurz gesagt"
+    lenses_label: "Durch eine Linse lesen"
+    lenses_hint: "Dasselbe Phänomen, auf drei Arten erklärt. Wähle eine Linse – oder lies alle drei."
+    faq: "Häufige Fragen"
+    sources: "Quellen"
+    dimensions: "Einordnung im Wissensgraphen"
+    dimension_names:
+      time: "Zeit"
+      space: "Raum"
+      physics: "Regeln"
+      adjacent_sciences: "Nachbarwissenschaften"
+    license_html: "Text und Abbildungen: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.de\" rel=\"license\">CC BY-SA 4.0</a>. Fehler gefunden? <a href=\"%REPO%/issues/new\">Issue eröffnen</a> oder den Artikel auf <a href=\"%EDIT%\">GitHub</a> bearbeiten."
+    breadcrumb: "Brotkrumennavigation"
+  articles:
+    title: "Artikel"
+    description: "Alle WildBionics-Artikel: ein Phänomen aus der Natur, erklärt durch Physik, Mathematik und Informatik."
+    intro: "Ein Phänomen pro Artikel, betrachtet durch mehrere Linsen – mit überprüfbaren Quellen."
+    read: "Artikel lesen"
+    url: "/de/artikel/"
+  not_found:
+    title: "Seite nicht gefunden"
+    text: "Diese Seite ist ausgestorben – oder hat sich nie entwickelt. Versuch es mit der Startseite oder der Artikelübersicht."
+    home: "Zur Startseite"
+  figures:
+    claw:
+      title: "Schema der Schere eines Knallkrebses"
+      desc: "Der bewegliche Scherenfinger, der Daktylus, trägt einen Kolben. Schnappt die Schere zu, drückt der Kolben Wasser als schnellen Strahl aus einer Mulde. Im Strahl entsteht eine Kavitationsblase, die kollabiert und eine Stoßwelle aussendet."
+      dactyl: "Daktylus mit Kolben"
+      socket: "Mulde"
+      jet: "Strahl ≈ 25 m/s"
+      bubble: "Kavitationsblase"
+      shock: "Stoßwelle"
+      note: "Schematisch · nicht maßstäblich"
+    bernoulli:
+      title: "Statischer Druck in einem Wasserstrahl in Abhängigkeit von seiner Geschwindigkeit"
+      desc: "Nach Bernoulli fällt der statische Druck mit dem Quadrat der Strahlgeschwindigkeit. Oberhalb von etwa 14 Metern pro Sekunde sinkt er unter den Dampfdruck des Wassers, und Kavitation setzt ein. Der Strahl des Krebses erreicht etwa 25 Meter pro Sekunde."
+      x: "Strahlgeschwindigkeit v (m/s)"
+      y: "Statischer Druck p (kPa)"
+      pv: "Dampfdruck von Wasser (2,3 kPa)"
+      cav: "Kavitationsbereich"
+      shrimp: "Strahl des Krebses"
+      crit: "v ≈ 14 m/s"

@@ -1,4 +1,3 @@
-{%- if lang == site.lang -%}{%- assign home_url = "/" -%}{%- else -%}{%- assign home_url = "/" | append: lang | append: "/" -%}{%- endif -%}
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="{{ home_url | relative_url }}">
@@ -7,9 +6,9 @@
     </a>
     <nav class="site-nav" aria-label="{{ t.nav.label }}">
       <ul>
+        <li><a href="{{ t.articles.url | relative_url }}"{% if page.url == t.articles.url or page.collection == "articles" %} aria-current="page"{% endif %}>{{ t.articles.title }}</a></li>
         <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
         <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
-        <li><a href="{{ home_url | relative_url }}#flagship">{{ t.nav.flagship }}</a></li>
         <li><a href="{{ home_url | relative_url }}#contribute">{{ t.nav.contribute }}</a></li>
       </ul>
     </nav>

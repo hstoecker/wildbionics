@@ -1,0 +1,79 @@
+{%- include i18n.html -%}
+<svg class="claw-svg" viewBox="0 0 720 400" role="img" aria-labelledby="claw-title claw-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="claw-title">{{ t.figures.claw.title }}</title>
+  <desc id="claw-desc">{{ t.figures.claw.desc }}</desc>
+  <defs>
+    <linearGradient id="claw-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2cfa3"/>
+      <stop offset="1" stop-color="#a98d5d"/>
+    </linearGradient>
+    <linearGradient id="claw-finger" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eddcb2"/>
+      <stop offset="1" stop-color="#c2a674"/>
+    </linearGradient>
+    <linearGradient id="claw-jet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="var(--signal)" stop-opacity=".95"/>
+      <stop offset="1" stop-color="var(--signal)" stop-opacity=".15"/>
+    </linearGradient>
+    <radialGradient id="claw-bubble" cx="40%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".35"/>
+      <stop offset=".6" stop-color="var(--signal)" stop-opacity=".12"/>
+      <stop offset="1" stop-color="var(--signal)" stop-opacity=".3"/>
+    </radialGradient>
+    <pattern id="claw-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+  </defs>
+
+  <radialGradient id="claw-fade" cx="55%" cy="50%" r="55%">
+    <stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </radialGradient>
+  <mask id="claw-mask"><rect width="720" height="400" fill="url(#claw-fade)"/></mask>
+  <rect class="hero-grid" width="720" height="400" fill="url(#claw-grid)" mask="url(#claw-mask)"/>
+
+  <!-- Carpus (wrist) -->
+  <path class="shell" d="M14,236 C14,220 32,212 64,213 L68,292 C36,293 14,284 14,268 Z" opacity=".75"/>
+  <!-- Propodus (palm) with fixed finger -->
+  <path class="shell" d="M60,250 C60,200 110,178 190,176 L330,180 C372,182 405,198 438,226 L446,236 C420,242 380,246 340,250 L336,300 C300,318 160,322 96,300 C70,290 60,276 60,250 Z"/>
+  <path class="shell-line" d="M110,196 C170,186 260,186 330,192 M96,288 C160,304 280,300 330,286"/>
+  <!-- Socket in the palm -->
+  <ellipse class="socket" cx="398" cy="214" rx="15" ry="9"/>
+  <!-- Dactyl (movable finger) with plunger, closed -->
+  <path class="finger" d="M296,176 C300,150 350,138 398,160 C428,174 446,200 452,222 C454,230 446,234 440,228 C420,204 392,190 350,186 C330,184 310,184 296,176 Z"/>
+  <path class="plunger" d="M388,191 C391,202 397,209 406,210 C408,203 404,195 397,190 Z"/>
+  <circle class="hinge" cx="318" cy="176" r="5"/>
+
+  <!-- Jet, bubble, shock wave -->
+  <path class="jet" d="M446,227 C480,227 512,229 548,231 L548,234 C512,236 480,238 446,238 Z"/>
+  <path class="speed" d="M468,219 H492 M500,221 H520 M472,246 H500 M510,244 H528"/>
+  <g class="shock-rings" fill="none">
+    <path d="M605.7,188.8 A46,46 0 0 1 605.7,275.2"/>
+    <path d="M611.9,171.9 A64,64 0 0 1 611.9,292.1"/>
+    <path d="M618.7,153 A84,84 0 0 1 618.7,311"/>
+  </g>
+  <circle class="bubble" cx="590" cy="232" r="30"/>
+  <path class="bubble-hi" d="M574,214 a22,22 0 0 1 16,-8"/>
+
+  <!-- Callouts -->
+  <g class="callout">
+    <path d="M372,160 L346,112 H330"/><circle cx="372" cy="160" r="2.5"/>
+    <text x="324" y="116" text-anchor="end" class="label">{{ t.figures.claw.dactyl }}</text>
+  </g>
+  <g class="callout">
+    <path d="M398,222 V338 H410"/><circle cx="398" cy="222" r="2.5"/>
+    <text x="416" y="342" class="label">{{ t.figures.claw.socket }}</text>
+  </g>
+  <g class="callout">
+    <path d="M500,232 V150 H514"/><circle cx="500" cy="232" r="2.5"/>
+    <text x="520" y="154" class="label label-signal">{{ t.figures.claw.jet }}</text>
+  </g>
+  <g class="callout">
+    <path d="M590,262 V378 H578"/><circle cx="590" cy="262" r="2.5"/>
+    <text x="572" y="382" text-anchor="end" class="label">{{ t.figures.claw.bubble }}</text>
+  </g>
+  <g class="callout">
+    <path d="M644,168 L660,124"/><circle cx="644" cy="168" r="2.5"/>
+    <text x="708" y="116" text-anchor="end" class="label label-accent">{{ t.figures.claw.shock }}</text>
+  </g>
+  <text x="14" y="396" class="label label-tick">{{ t.figures.claw.note }}</text>
+</svg>

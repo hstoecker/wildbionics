@@ -1,0 +1,53 @@
+# Build → check → deploy to GitHub Pages → notify search engines via IndexNow.
+name: Build, check & deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:          # build + check only, never deploys
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - name: Build with Jekyll (same gem set as classic GitHub Pages)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Quality gate (SEO metadata, JSON-LD, links, sitemap)
+        run: python3 .github/scripts/check_site.py _site
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  indexnow:
+    if: github.event_name != 'pull_request'
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Submit URLs to IndexNow
+        run: python3 .github/scripts/indexnow.py

@@ -1,0 +1,27 @@
+---
+layout: default
+lang: en
+ref: "404"
+title: "Page not found"
+description: "This page does not exist. Find nature's physics explained on the WildBionics home page or in the list of articles."
+permalink: /404.html
+robots: "noindex, follow"
+sitemap: false
+---
+{%- assign de = site.data.i18n.de.not_found -%}
+<section class="section section--paper not-found">
+  <div class="container">
+    <p class="eyebrow eyebrow--ink">404</p>
+    <h1 class="section-title">{{ site.data.i18n.en.not_found.title }}</h1>
+    <p class="section-intro">{{ site.data.i18n.en.not_found.text }}</p>
+    <div class="actions">
+      <a class="button button--dark" href="{{ '/' | relative_url }}">{{ site.data.i18n.en.not_found.home }}</a>
+      <a class="button button--outline" href="{{ '/articles/' | relative_url }}">{{ site.data.i18n.en.articles.title }}</a>
+    </div>
+    <div lang="de" class="not-found__de">
+      <h2>{{ de.title }}</h2>
+      <p>{{ de.text }}</p>
+      <p><a href="{{ '/de/' | relative_url }}">{{ de.home }}</a> · <a href="{{ '/de/artikel/' | relative_url }}">{{ site.data.i18n.de.articles.title }}</a></p>
+    </div>
+  </div>
+</section>

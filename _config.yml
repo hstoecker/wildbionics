@@ -2,6 +2,31 @@ title: WildBionics
 description: "Nature's physics, explained."
 url: "https://wildbionics.com"
 lang: en
+languages: [en, de]   # first entry lives at the site root
+repository_url: "https://github.com/hstoecker/wildbionics"
+
+# IndexNow (https://www.indexnow.org): the key is public by design and must be
+# served at /<key>.txt. The deploy workflow reads it from here.
+indexnow_key: "25858893bc7b0d8f97cb8693d857d252"
+
+author:
+  name: "Hendrik Stöcker"
+  url: "https://github.com/hstoecker"
+
+# Articles: one file per language, linked via `ref` (see CLAUDE.md)
+collections:
+  articles:
+    output: true
+
+defaults:
+  - scope: { path: "", type: articles }
+    values: { layout: article }
+
+# Syntax highlighting for code blocks (built into GitHub Pages)
+highlighter: rouge
+kramdown:
+  auto_ids: true
+  toc_levels: 2..3
 
 exclude:
   - CLAUDE.md
@@ -10,9 +35,3 @@ exclude:
   - Gemfile.lock
   - vendor/
   - .bundle/
-
-languages: [en, de]   # first entry lives at the site root
-repository_url: "https://github.com/hstoecker/wildbionics"
-
-# Syntax highlighting for code blocks (built into GitHub Pages)
-highlighter: rouge
