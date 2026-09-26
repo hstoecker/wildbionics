@@ -6,3 +6,7 @@ lang: en
 exclude:
   - CLAUDE.md
   - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
