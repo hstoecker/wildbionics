@@ -1,0 +1,8 @@
+title: WildBionics
+description: "Nature's physics, explained."
+url: "https://wildbionics.com"
+lang: en
+
+exclude:
+  - CLAUDE.md
+  - README.md
