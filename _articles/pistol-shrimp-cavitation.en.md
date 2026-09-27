@@ -12,7 +12,7 @@ permalink: /articles/pistol-shrimp-cavitation/
 image: /assets/og/pistol-shrimp-cavitation-en.jpg
 image_alt: "Schematic of a pistol shrimp claw firing a water jet that creates a cavitation bubble and a shock wave."
 hero_figure: svg/claw.svg
-hero_caption: "<span class=\"caption__label\">Fig. 1</span> The snapping claw. A plunger on the movable finger (dactyl) drives water out of a socket; the jet creates a cavitation bubble whose collapse sends out a shock wave."
+hero_caption: "<span class=\"caption__label\">Fig. 1</span> A pistol shrimp and its oversized snapping claw. A plunger on the movable finger (dactyl) drives water out of a socket; the jet creates a cavitation bubble whose collapse sends out a shock wave."
 educational_level: "Intermediate"
 keywords: ["pistol shrimp", "snapping shrimp", "Alpheidae", "cavitation", "cavitation bubble", "shrimpoluminescence", "Bernoulli's principle", "Rayleigh–Plesset equation", "cavitation erosion", "shock wave", "bionics"]
 about:

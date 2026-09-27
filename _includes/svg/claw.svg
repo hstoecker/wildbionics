@@ -1,15 +1,21 @@
 {%- include i18n.html -%}
-<svg class="claw-svg" viewBox="0 0 720 400" role="img" aria-labelledby="claw-title claw-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="claw-svg" viewBox="0 0 720 420" role="img" aria-labelledby="claw-title claw-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="claw-title">{{ t.figures.claw.title }}</title>
   <desc id="claw-desc">{{ t.figures.claw.desc }}</desc>
   <defs>
-    <linearGradient id="claw-shell" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e2cfa3"/>
-      <stop offset="1" stop-color="#a98d5d"/>
+    <linearGradient id="shrimp-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d3a4"/>
+      <stop offset=".55" stop-color="#cfae78"/>
+      <stop offset="1" stop-color="#a88657"/>
     </linearGradient>
-    <linearGradient id="claw-finger" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#eddcb2"/>
-      <stop offset="1" stop-color="#c2a674"/>
+    <linearGradient id="shrimp-claw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eec58c"/>
+      <stop offset=".6" stop-color="#d59a5c"/>
+      <stop offset="1" stop-color="#a86f3c"/>
+    </linearGradient>
+    <linearGradient id="shrimp-finger" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d3a0"/>
+      <stop offset="1" stop-color="#c98a4e"/>
     </linearGradient>
     <linearGradient id="claw-jet" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="var(--signal)" stop-opacity=".95"/>
@@ -23,57 +29,109 @@
     <pattern id="claw-grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
     </pattern>
+    <radialGradient id="claw-fade" cx="55%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="claw-mask"><rect width="720" height="420" fill="url(#claw-fade)"/></mask>
   </defs>
 
-  <radialGradient id="claw-fade" cx="55%" cy="50%" r="55%">
-    <stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-  </radialGradient>
-  <mask id="claw-mask"><rect width="720" height="400" fill="url(#claw-fade)"/></mask>
-  <rect class="hero-grid" width="720" height="400" fill="url(#claw-grid)" mask="url(#claw-mask)"/>
+  <rect class="hero-grid" width="720" height="420" fill="url(#claw-grid)" mask="url(#claw-mask)"/>
 
-  <!-- Carpus (wrist) -->
-  <path class="shell" d="M14,236 C14,220 32,212 64,213 L68,292 C36,293 14,284 14,268 Z" opacity=".75"/>
-  <!-- Propodus (palm) with fixed finger -->
-  <path class="shell" d="M60,250 C60,200 110,178 190,176 L330,180 C372,182 405,198 438,226 L446,236 C420,242 380,246 340,250 L336,300 C300,318 160,322 96,300 C70,290 60,276 60,250 Z"/>
-  <path class="shell-line" d="M110,196 C170,186 260,186 330,192 M96,288 C160,304 280,300 330,286"/>
-  <!-- Socket in the palm -->
-  <ellipse class="socket" cx="398" cy="214" rx="15" ry="9"/>
-  <!-- Dactyl (movable finger) with plunger, closed -->
-  <path class="finger" d="M296,176 C300,150 350,138 398,160 C428,174 446,200 452,222 C454,230 446,234 440,228 C420,204 392,190 350,186 C330,184 310,184 296,176 Z"/>
-  <path class="plunger" d="M388,191 C391,202 397,209 406,210 C408,203 404,195 397,190 Z"/>
-  <circle class="hinge" cx="318" cy="176" r="5"/>
+  <!-- ===== Pistol shrimp, side view, facing right ===== -->
+  <g class="shrimp" transform="translate(-16 0)">
+    <!-- Antennae and antennules (behind everything) -->
+    <path class="antenna" d="M356,176 C400,138 470,104 560,86 C600,78 640,76 690,80"/>
+    <path class="antenna" d="M358,182 C420,160 500,148 600,150"/>
+    <path class="antenna antenna--short" d="M360,178 C380,160 400,150 424,146 M360,180 C384,168 408,164 432,166"/>
+    <path class="antenna-base" d="M350,184 L372,178 L376,186 L352,192 Z"/>
 
-  <!-- Jet, bubble, shock wave -->
-  <path class="jet" d="M446,227 C480,227 512,229 548,231 L548,234 C512,236 480,238 446,238 Z"/>
-  <path class="speed" d="M468,219 H492 M500,221 H520 M472,246 H500 M510,244 H528"/>
+    <!-- Walking legs (behind the body) -->
+    <g class="legs">
+      <path d="M262,236 L254,262 L248,290 L242,294"/>
+      <path d="M282,238 L278,266 L276,294 L270,298"/>
+      <path d="M302,238 L302,266 L306,294 L300,298"/>
+      <path d="M320,236 L326,262 L334,290 L328,294"/>
+    </g>
+    <!-- Swimmerets under the abdomen -->
+    <path class="pleopods" d="M236,248 l-4,14 M208,250 l-4,14 M180,250 l-4,13 M152,246 l-4,12 M126,238 l-4,11"/>
+
+    <!-- Tail fan: telson and uropods -->
+    <path class="shell tail" d="M98,206 C80,190 56,180 30,184 C34,198 48,212 66,220 C46,224 30,236 28,252 C52,250 78,240 98,230 Z"/>
+    <path class="shell-line" d="M96,212 C76,202 56,194 40,190 M96,226 C76,234 56,242 40,248 M98,218 L52,218"/>
+
+    <!-- Abdomen: six segments -->
+    <path class="shell" d="M254,176 C222,164 184,164 152,171 C128,177 108,190 96,206 L98,232 C104,237 114,239 122,237 C128,244 138,246 146,243 C152,251 164,252 172,247 C180,254 192,254 200,248 C208,254 220,253 228,246 C236,252 248,250 254,242 Z"/>
+    <path class="shell-line" d="M228,168 C221,192 222,222 228,246 M200,166 C193,192 194,222 200,248 M172,167 C165,192 166,221 172,247 M146,173 C140,195 141,220 146,243 M122,184 C117,201 118,220 122,237"/>
+    <path class="shell-shine" d="M150,178 C180,172 220,172 248,180"/>
+
+    <!-- Carapace with eye hoods and tiny rostrum -->
+    <path class="shell carapace" d="M250,174 C282,156 332,154 354,168 L364,176 L356,182 C362,192 360,206 352,216 L350,232 C332,244 290,246 250,242 Z"/>
+    <path class="shell-line" d="M268,166 C280,200 282,222 276,244"/>
+    <path class="shell-shine" d="M262,170 C290,160 324,160 346,170"/>
+    <ellipse class="eye" cx="344" cy="182" rx="6" ry="5"/>
+
+    <!-- Small pincer claw (minor chela), below the snapping claw -->
+    <path class="shell limb" d="M332,236 L350,274 L380,290 L378,298 L344,284 L324,246 Z"/>
+    <path class="shell limb" d="M376,286 C390,282 404,284 414,290 C402,291 390,293 380,298 Z"/>
+    <path class="shell limb" d="M378,296 C390,300 402,302 412,300 C402,306 390,306 378,302 Z"/>
+
+    <!-- Snapping claw (major chela): arm, huge palm, fixed finger, dactyl – scaled up,
+         because the oversized claw is what makes a pistol shrimp recognisable -->
+    <g transform="translate(380 240) scale(1.3) translate(-380 -240)">
+    <path class="claw arm" d="M334,212 C350,207 370,213 386,226 L390,248 C372,251 352,246 338,238 Z"/>
+    <path class="claw-line" d="M362,211 C358,222 358,236 364,247"/>
+    <path class="claw palm" d="M380,232 C379,208 406,196 440,197 C466,198 484,210 494,228 L500,242 C490,250 472,256 454,260 C432,274 402,278 387,268 C377,260 376,246 380,232 Z"/>
+    <path class="claw-line" d="M392,212 C418,204 450,204 472,212 M394,266 C414,272 436,270 452,262"/>
+    <path class="claw-shine" d="M400,208 C420,201 446,200 466,205"/>
+    <ellipse class="socket" cx="480" cy="236" rx="7" ry="5"/>
+    <path class="dactyl" d="M450,206 C466,192 492,198 504,218 C510,228 508,240 500,246 C494,236 482,226 466,222 C458,220 450,214 450,206 Z"/>
+    <path class="plunger" d="M479,226 C480,231 483,234 488,235 C488,230 486,227 483,225 Z"/>
+    <path class="claw-line" d="M452,204 C455,210 460,214 466,216"/>
+    </g>
+  </g>
+
+  <!-- ===== Jet, bubble, shock wave ===== -->
+  <path class="jet" d="M520,242 C546,242 568,244 588,246 L588,249 C568,251 546,253 520,253 Z"/>
+  <path class="speed" d="M534,234 H554 M562,236 H578 M536,261 H560 M568,259 H584"/>
   <g class="shock-rings" fill="none">
-    <path d="M605.7,188.8 A46,46 0 0 1 605.7,275.2"/>
-    <path d="M611.9,171.9 A64,64 0 0 1 611.9,292.1"/>
-    <path d="M618.7,153 A84,84 0 0 1 618.7,311"/>
+    <path d="M631.7,210.4 A40,40 0 0 1 631.7,285.6"/>
+    <path d="M637.2,195.4 A56,56 0 0 1 637.2,300.6"/>
+    <path d="M642.6,180.3 A72,72 0 0 1 642.6,315.7"/>
   </g>
-  <circle class="bubble" cx="590" cy="232" r="30"/>
-  <path class="bubble-hi" d="M574,214 a22,22 0 0 1 16,-8"/>
+  <circle class="bubble" cx="618" cy="248" r="26"/>
+  <path class="bubble-hi" d="M604,232 a19,19 0 0 1 14,-7"/>
 
-  <!-- Callouts -->
+  <!-- ===== Callouts ===== -->
+  <text x="40" y="126" class="label label-title">{{ t.figures.claw.animal }}</text>
+  <text x="40" y="146" class="label label-muted label-taxon">{{ t.figures.claw.taxon }}</text>
   <g class="callout">
-    <path d="M372,160 L346,112 H330"/><circle cx="372" cy="160" r="2.5"/>
-    <text x="324" y="116" text-anchor="end" class="label">{{ t.figures.claw.dactyl }}</text>
+    <path d="M489,191 L462,122 H442"/><circle cx="489" cy="191" r="2.5"/>
+    <text x="436" y="126" text-anchor="end" class="label">{{ t.figures.claw.dactyl }}</text>
   </g>
   <g class="callout">
-    <path d="M398,222 V338 H410"/><circle cx="398" cy="222" r="2.5"/>
-    <text x="416" y="342" class="label">{{ t.figures.claw.socket }}</text>
+    <path d="M494,236 V334 H504"/><circle cx="494" cy="236" r="2.5"/>
+    <text x="510" y="338" class="label">{{ t.figures.claw.socket }}</text>
   </g>
   <g class="callout">
-    <path d="M500,232 V150 H514"/><circle cx="500" cy="232" r="2.5"/>
-    <text x="520" y="154" class="label label-signal">{{ t.figures.claw.jet }}</text>
+    <path d="M406,284 V362 H396"/><circle cx="406" cy="284" r="2.5"/>
+    <text x="390" y="366" text-anchor="end" class="label label-strong">{{ t.figures.claw.major }}</text>
   </g>
   <g class="callout">
-    <path d="M590,262 V378 H578"/><circle cx="590" cy="262" r="2.5"/>
-    <text x="572" y="382" text-anchor="end" class="label">{{ t.figures.claw.bubble }}</text>
+    <path d="M372,298 L360,326 H350"/><circle cx="372" cy="298" r="2.5"/>
+    <text x="344" y="330" text-anchor="end" class="label label-muted">{{ t.figures.claw.minor }}</text>
   </g>
   <g class="callout">
-    <path d="M644,168 L660,124"/><circle cx="644" cy="168" r="2.5"/>
-    <text x="708" y="116" text-anchor="end" class="label label-accent">{{ t.figures.claw.shock }}</text>
+    <path d="M556,248 V186"/><circle cx="556" cy="248" r="2.5"/>
+    <text x="556" y="178" text-anchor="middle" class="label label-signal">{{ t.figures.claw.jet }}</text>
   </g>
-  <text x="14" y="396" class="label label-tick">{{ t.figures.claw.note }}</text>
+  <g class="callout">
+    <path d="M618,274 V390 H606"/><circle cx="618" cy="274" r="2.5"/>
+    <text x="600" y="394" text-anchor="end" class="label">{{ t.figures.claw.bubble }}</text>
+  </g>
+  <g class="callout">
+    <path d="M659,189 L678,132"/><circle cx="659" cy="189" r="2.5"/>
+    <text x="708" y="124" text-anchor="end" class="label label-accent">{{ t.figures.claw.shock }}</text>
+  </g>
+  <text x="14" y="410" class="label label-tick">{{ t.figures.claw.note }}</text>
 </svg>

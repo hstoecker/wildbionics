@@ -12,7 +12,7 @@ permalink: /de/artikel/knallkrebs-kavitation/
 image: /assets/og/pistol-shrimp-cavitation-de.jpg
 image_alt: "Schema der Schere eines Knallkrebses, die einen Wasserstrahl abschießt, der eine Kavitationsblase und eine Stoßwelle erzeugt."
 hero_figure: svg/claw.svg
-hero_caption: "<span class=\"caption__label\">Abb. 1</span> Die Knallschere. Ein Zapfen am beweglichen Scherenfinger (Dactylus) drückt Wasser aus einer Grube; der Strahl erzeugt eine Kavitationsblase, deren Kollaps eine Stoßwelle aussendet."
+hero_caption: "<span class=\"caption__label\">Abb. 1</span> Ein Knallkrebs mit seiner übergroßen Knallschere. Ein Zapfen am beweglichen Scherenfinger (Dactylus) drückt Wasser aus einer Grube; der Strahl erzeugt eine Kavitationsblase, deren Kollaps eine Stoßwelle aussendet."
 educational_level: "Intermediate"
 keywords: ["Knallkrebs", "Pistolenkrebs", "Alpheidae", "Kavitation", "Kavitationsblase", "Shrimpolumineszenz", "Bernoulli-Gleichung", "Rayleigh-Plesset-Gleichung", "Kavitationserosion", "Stoßwelle", "Bionik"]
 about:

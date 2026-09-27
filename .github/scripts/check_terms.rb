@@ -24,6 +24,7 @@ taxonomy = YAML.load_file("_data/taxonomy.yml")
 langs = YAML.load_file("_config.yml").fetch("languages")
 
 # "Stoßwelle*" → /(?<![\p{L}\p{N}])Stoßwelle\p{L}*(?![\p{L}\p{N}])/i
+# A leading * allows German compounds: "*schere*" matches "Knallschere", "Greifscheren".
 def term_regex(term)
   body = term.split("*", -1).map { |part| Regexp.escape(part).gsub("\\ ", "\\s+") }.join("\\p{L}*")
   Regexp.new("(?<![\\p{L}\\p{N}])#{body}(?![\\p{L}\\p{N}])", Regexp::IGNORECASE)

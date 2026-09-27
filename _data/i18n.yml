@@ -204,8 +204,12 @@ en:
     home: "Back to the home page"
   figures:
     claw:
-      title: "Schematic of a snapping shrimp claw"
-      desc: "The movable finger of the claw, the dactyl, carries a plunger. When the claw snaps shut, the plunger drives water out of a socket as a fast jet. A cavitation bubble forms in the jet and collapses, sending out a shock wave."
+      title: "Pistol shrimp with its snapping claw"
+      desc: "Side view of a pistol shrimp: a smooth carapace hooding the eyes, a segmented abdomen with tail fan, walking legs, long antennae, a small pincer claw and a huge snapping claw. The movable finger of the snapping claw, the dactyl, carries a plunger. When the claw snaps shut, the plunger drives water out of a socket as a fast jet. A cavitation bubble forms in the jet and collapses, sending out a shock wave."
+      animal: "Pistol shrimp"
+      taxon: "Alpheidae"
+      major: "Snapping claw"
+      minor: "Pincer claw"
       dactyl: "Dactyl with plunger"
       socket: "Socket"
       jet: "Jet ≈ 25 m/s"
@@ -422,8 +426,12 @@ de:
     home: "Zur Startseite"
   figures:
     claw:
-      title: "Schema der Schere eines Knallkrebses"
-      desc: "Der bewegliche Scherenfinger, der Dactylus, trägt einen Zapfen. Schnappt die Schere zu, drückt der Zapfen Wasser als schnellen Strahl aus einer Grube. Im Strahl entsteht eine Kavitationsblase, die kollabiert und eine Stoßwelle aussendet."
+      title: "Knallkrebs mit seiner Knallschere"
+      desc: "Seitenansicht eines Knallkrebses: ein glatter Rückenpanzer, der die Augen überdeckt, ein gegliederter Hinterleib mit Schwanzfächer, Laufbeine, lange Antennen, eine kleine Greifschere und eine riesige Knallschere. Der bewegliche Scherenfinger der Knallschere, der Dactylus, trägt einen Zapfen. Schnappt die Schere zu, drückt der Zapfen Wasser als schnellen Strahl aus einer Grube. Im Strahl entsteht eine Kavitationsblase, die kollabiert und eine Stoßwelle aussendet."
+      animal: "Knallkrebs"
+      taxon: "Alpheidae"
+      major: "Knallschere"
+      minor: "Greifschere"
       dactyl: "Dactylus mit Zapfen"
       socket: "Grube"
       jet: "Strahl ≈ 25 m/s"

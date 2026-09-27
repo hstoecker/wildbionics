@@ -6,13 +6,14 @@
 #   en/de  – if an English term occurs in an EN article, the German term (or one of
 #            `de_alt`) must occur in its DE translation → warning
 # Matching is case-insensitive on whole words; a trailing * matches any word ending
-# (inflection, plural): "Stoßwelle*" matches "Stoßwellen".
+# (inflection, plural): "Stoßwelle*" matches "Stoßwellen". A leading * allows compounds:
+# "*schere*" matches "Knallschere".
 #
 # Add every new technical term here the first time it is translated.
 
 terms:
   # --- Zoology / biology ---------------------------------------------------------
-  - { en: "claw*", de: "Schere*", avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere, Krallen)." }
+  - { en: "claw*", de: "Schere*", de_alt: ["*schere*"], avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere, Krallen)." }
   - { en: "snapping claw*", de: "Knallschere*" }
   - { en: "pincer claw*", de: "Greifschere*" }
   - { en: "dactyl*", de: "Dactylus", avoid: ["Daktylus"], why: "Zoologische Nomenklatur: Dactylus (beweglicher Scherenfinger)." }

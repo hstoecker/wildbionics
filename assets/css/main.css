@@ -1039,13 +1039,22 @@ var {
 .article-meta dd { color: var(--on-dark); }
 .article-meta a { text-underline-offset: 3px; }
 
-/* Claw schematic */
-.claw-svg .shell { fill: url(#claw-shell); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1; }
-.claw-svg .shell-line { fill: none; stroke: rgba(80, 58, 20, 0.35); stroke-width: 1; }
-.claw-svg .finger { fill: url(#claw-finger); stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; }
-.claw-svg .plunger { fill: #8a6d3b; }
-.claw-svg .hinge { fill: #6f5429; }
-.claw-svg .socket { fill: rgba(8, 23, 30, 0.55); stroke: rgba(255, 255, 255, 0.5); stroke-dasharray: 3 3; }
+/* Pistol shrimp illustration */
+.claw-svg .shell { fill: url(#shrimp-shell); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1; stroke-linejoin: round; }
+.claw-svg .shell-line { fill: none; stroke: rgba(90, 64, 26, 0.45); stroke-width: 1.1; stroke-linecap: round; }
+.claw-svg .shell-shine { fill: none; stroke: rgba(255, 248, 230, 0.55); stroke-width: 2; stroke-linecap: round; }
+.claw-svg .eye { fill: #3b2a16; opacity: 0.55; }
+.claw-svg .antenna { fill: none; stroke: #d9bf8e; stroke-width: 1.4; stroke-linecap: round; opacity: 0.85; }
+.claw-svg .antenna--short { stroke-width: 1.2; opacity: 0.7; }
+.claw-svg .antenna-base { fill: #caa874; }
+.claw-svg .legs path { fill: none; stroke: #c4a372; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.claw-svg .pleopods { fill: none; stroke: #b8966a; stroke-width: 2.2; stroke-linecap: round; }
+.claw-svg .claw { fill: url(#shrimp-claw); stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; stroke-linejoin: round; }
+.claw-svg .claw-line { fill: none; stroke: rgba(110, 60, 20, 0.4); stroke-width: 1.1; stroke-linecap: round; }
+.claw-svg .dactyl { fill: url(#shrimp-finger); stroke: rgba(255, 255, 255, 0.55); stroke-width: 1; }
+.claw-svg .plunger { fill: #c58a4f; stroke: rgba(90, 50, 15, 0.5); stroke-width: 0.8; }
+.claw-svg .claw-shine { fill: none; stroke: rgba(255, 244, 222, 0.6); stroke-width: 2; stroke-linecap: round; }
+.claw-svg .socket { fill: rgba(8, 23, 30, 0.6); stroke: rgba(255, 255, 255, 0.55); stroke-dasharray: 2.5 2.5; }
 .claw-svg .jet { fill: url(#claw-jet); }
 .claw-svg .speed { fill: none; stroke: var(--signal); stroke-width: 1.2; stroke-linecap: round; opacity: 0.6; }
 .claw-svg .bubble { fill: url(#claw-bubble); stroke: var(--signal); stroke-width: 1.5; }
@@ -1053,6 +1062,9 @@ var {
 .claw-svg .shock-rings path { stroke: var(--accent); stroke-width: 1.4; }
 .claw-svg .shock-rings path:nth-child(2) { opacity: 0.6; }
 .claw-svg .shock-rings path:nth-child(3) { opacity: 0.3; }
+.claw-svg .label-title { font-family: var(--font-display); font-size: 20px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
+.claw-svg .label-taxon { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0; }
+.claw-svg .label-strong { fill: #eec58c; }
 .label-signal { fill: var(--signal); }
 .lens__panel .label-signal, .figure:not(.figure--dark) .label-signal { fill: var(--signal-ink); }
 .figure:not(.figure--dark) .label-accent { fill: var(--accent-ink); }
