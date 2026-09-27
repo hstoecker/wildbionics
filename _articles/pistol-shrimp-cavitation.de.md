@@ -250,7 +250,7 @@ plt.show()
 
 Was das Ergebnis zeigt:
 
-- **Die Kollapszeit ist robust.** Egal wie viel Gas in der Blase ist: Sie kollabiert nach **275–279 µs**, höchstens etwa 1 % neben Rayleighs Formel. Einer Vorhersage, die kaum von einer unbekannten Eingangsgröße abhängt, kann man trauen.
+- **Die Kollapszeit ist robust.** Egal wie viel Gas in der Blase ist: Sie kollabiert nach **275–279 µs**, höchstens etwa 1 % neben Rayleighs Formel (1,1 % bei der größten Gasmenge). Einer Vorhersage, die kaum von einer unbekannten Eingangsgröße abhängt, kann man trauen.
 - **Der Endpunkt ist es nicht.** Der kleinste Radius reicht von 137 µm bis hinunter zu 3 µm – ein Faktor von etwa 45. Weil die Temperatur mit (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup> wächst, schwankt die Abschätzung zwischen etwa 12.000 K und über einer Million Kelvin. Die Temperatur kann das Modell nicht festlegen.
 - **Das Modell zeigt seine eigenen Grenzen.** Mit 10 oder 100 Pa Gas bewegte sich die Blasenwand mit 5 bis 90 km/s – schneller als die Schallgeschwindigkeit in Wasser (etwa 1,5 km/s). Die Rayleigh-Plesset-Gleichung behandelt Wasser als inkompressibel und vernachlässigt Wärmeverluste; in dieser letzten Phase sind ihre Zahlen daher nicht mehr physikalisch. Echte Blasen werden durch Wasserdampf, Wärmeleitung und die Kompressibilität des Wassers abgebremst; der beim Krebs gemessene Lichtblitz deutet auf mindestens 5.000 K hin [2](#ref-2){:.cite}.
 
@@ -262,8 +262,8 @@ Auch einige Ideen aus der Programmierung lohnen einen zweiten Blick:
 
 Probier es selbst aus – jede Änderung ist eine Zeile:
 
-- Setze `R_MAX = 6.0e-3`: Die Kollapszeit verdoppelt sich auf 551 µs und jeder Radius verdoppelt sich, Geschwindigkeiten und Temperaturen bleiben aber gleich – es kommt nur auf das Verhältnis *R*<sub>max</sub>/*R*<sub>min</sub> an.
-- Setze `P_INF = 201_325.0` (10 m Wassertiefe): Die Blase kollabiert schon nach 194 µs – und heftiger, alle Geschwindigkeiten und Temperaturen steigen.
+- Setze `R_MAX = 6.0e-3`: Die Kollapszeit verdoppelt sich auf 551–557 µs und jeder Radius verdoppelt sich, Geschwindigkeiten und Temperaturen bleiben aber gleich – es kommt nur auf das Verhältnis *R*<sub>max</sub>/*R*<sub>min</sub> an.
+- Setze `P_INF = 201_325.0` (10 m Wassertiefe): Die Blase kollabiert schon nach 194–195 µs – und heftiger, alle Geschwindigkeiten und Temperaturen steigen.
 - Ergänze `10_000` in der Liste der Gasdrücke: Das Gas federt den Kollaps ab, die Blase stoppt nach 308 µs bei 800 µm und erwärmt sich nur auf etwa 1.400 K.
 
 {% include lens-end.html %}

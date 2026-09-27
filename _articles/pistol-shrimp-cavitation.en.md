@@ -250,7 +250,7 @@ plt.show()
 
 What the result teaches:
 
-- **The collapse time is robust.** However much gas is inside, the bubble collapses after **275–279 µs**, within about 1 % of Rayleigh's formula. A prediction that barely depends on an unknown input is one you can trust.
+- **The collapse time is robust.** However much gas is inside, the bubble collapses after **275–279 µs**, within about 1 % of Rayleigh's formula (1.1 % for the most gas). A prediction that barely depends on an unknown input is one you can trust.
 - **The end point is not.** The smallest radius ranges from 137 µm down to 3 µm – a factor of about 45. Because the temperature grows with (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup>, the estimate swings from about 12,000 K to over a million kelvin. The model cannot pin down the temperature.
 - **The model shows its own limits.** With 10 or 100 Pa of gas, the bubble wall would move at 5 to 90 km/s – faster than sound travels in water (about 1.5 km/s). The Rayleigh–Plesset equation treats water as incompressible and ignores heat loss, so in this last phase its numbers are no longer physical. Real bubbles are cushioned by water vapour, heat conduction and the compressibility of water; the flash measured for the shrimp points to at least 5,000 K [2](#ref-2){:.cite}.
 
@@ -262,8 +262,8 @@ A few programming ideas are worth noticing, too:
 
 Try it yourself – each change takes one line:
 
-- Set `R_MAX = 6.0e-3`: the collapse time doubles to 551 µs and every radius doubles, but speeds and temperatures stay the same – only the ratio *R*<sub>max</sub>/*R*<sub>min</sub> matters.
-- Set `P_INF = 201_325.0` (10 m of water depth): the bubble collapses after only 194 µs – and harder, so all speeds and temperatures rise.
+- Set `R_MAX = 6.0e-3`: the collapse time doubles to 551–557 µs and every radius doubles, but speeds and temperatures stay the same – only the ratio *R*<sub>max</sub>/*R*<sub>min</sub> matters.
+- Set `P_INF = 201_325.0` (10 m of water depth): the bubble collapses after only 194–195 µs – and harder, so all speeds and temperatures rise.
 - Add `10_000` to the list of gas pressures: the gas cushions the collapse, the bubble stops at 800 µm after 308 µs and heats up to only about 1,400 K.
 
 {% include lens-end.html %}
