@@ -1518,6 +1518,31 @@ a.cite:hover { text-decoration: underline; }
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+/* Step-by-step sections */
+.guide-way__more { margin-top: auto; padding-top: 8px; }
+.guide-way__more .link-arrow { color: var(--accent-ink); border-bottom-color: rgba(138, 90, 0, 0.35); font-size: 0.95rem; }
+.guide-howto {
+  margin-bottom: clamp(40px, 5vw, 64px);
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+.guide-howto__num { margin-bottom: 8px; color: var(--accent-ink); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.guide-howto__meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; margin: 4px 0 28px; }
+.guide-howto__meta dt { color: var(--signal-ink); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.guide-howto__meta dd { margin-top: 4px; color: var(--ink-2); }
+.guide-steps--howto { gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.guide-steps--howto li { min-width: 0; overflow-wrap: anywhere; }
+.guide-howto { min-width: 0; }
+.guide-steps--howto li { color: var(--ink); }
+.guide-steps--howto a { color: var(--signal-ink); text-underline-offset: 3px; }
+.guide-steps--howto code { padding: 0.1em 0.35em; border-radius: 5px; background: rgba(22, 33, 29, 0.07); font-family: var(--font-mono); font-size: 0.86em; }
+.guide-steps--howto .guide-code { margin: 10px 0; }
+.guide-steps--howto .guide-code code { padding: 0; background: none; font-size: 1em; }
+.guide-howto__cta { margin-top: 24px; }
+.guide-howto__tip { margin-top: 24px; padding: 14px 18px; border-left: 3px solid var(--signal-ink); background: var(--paper); color: var(--ink-2); }
 .guide-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); margin-bottom: clamp(56px, 7vw, 88px); }
 .guide-steps { counter-reset: step; display: grid; gap: 14px; }
 .guide-steps li { position: relative; padding-left: 48px; color: var(--ink-2); line-height: 1.6; counter-increment: step; }
@@ -1546,7 +1571,7 @@ a.cite:hover { text-decoration: underline; }
 .guide-together p + p { margin-top: 16px; }
 .guide-together .link-arrow { color: var(--accent-ink); border-bottom-color: rgba(138, 90, 0, 0.35); }
 @media (max-width: 920px) {
-  .guide-ways, .guide-grid { grid-template-columns: minmax(0, 1fr); }
+  .guide-ways, .guide-grid, .guide-howto__meta { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------- Responsive ---------- */

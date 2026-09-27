@@ -22,13 +22,31 @@
         <span class="guide-way__num" aria-hidden="true">0{{ forloop.index }}</span>
         <h3 class="guide-way__title">{{ w.title }}</h3>
         <p>{{ w.text }}</p>
-        {%- if forloop.index == 2 %}
-        <pre class="guide-code"><code>/plugin marketplace add hstoecker/wildbionics
-/plugin install wildbionics@wildbionics</code></pre>
-        {%- endif %}
+        <p class="guide-way__more"><a class="link-arrow" href="#way-{{ forloop.index }}">{{ g.details_link }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
       </li>
       {%- endfor %}
     </ol>
+
+    {%- capture prefill_url -%}https://claude.ai/code?repositories=hstoecker%2Fwildbionics&amp;environment=WildBionics&amp;prompt={{ g.prefill | url_encode }}{%- endcapture -%}
+    {%- for w in g.ways %}
+    <section class="guide-howto" id="way-{{ forloop.index }}" aria-labelledby="way-{{ forloop.index }}-title">
+      <p class="guide-howto__num" aria-hidden="true">0{{ forloop.index }} · {{ g.steps_label }}</p>
+      <h2 id="way-{{ forloop.index }}-title" class="guide__h2">{{ w.title }}</h2>
+      <dl class="guide-howto__meta">
+        <div><dt>{{ g.who_label }}</dt><dd>{{ w.who }}</dd></div>
+        <div><dt>{{ g.needs_label }}</dt><dd>{{ w.needs }}</dd></div>
+      </dl>
+      <ol class="guide-steps guide-steps--howto">
+        {%- for step in w.steps_html %}
+        <li>{{ step }}</li>
+        {%- endfor %}
+      </ol>
+      {%- if forloop.index == 2 %}
+      <p class="guide-howto__cta"><a class="button button--dark" href="{{ prefill_url }}">{{ g.open_claude }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+      {%- endif %}
+      <p class="guide-howto__tip"><strong>{{ g.tip_label }}:</strong> {{ w.tip }}</p>
+    </section>
+    {%- endfor %}
 
     <div class="guide-grid">
       <div>

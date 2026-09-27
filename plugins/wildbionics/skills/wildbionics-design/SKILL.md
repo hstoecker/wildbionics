@@ -31,6 +31,12 @@ text.
 - Container `min(1200px, 100% − 2 × gutter)`, gutter 16–40 px; article text column 760 px.
 - Breakpoints: 1080 px (2-column cards), 920 px (single column, no main nav), 600 px (phone).
 - No horizontal scrolling at 390 px; tap targets ≥ 44 px; labels in SVGs enlarged on phones.
+- Long links, commands and code in narrow columns must wrap (`overflow-wrap: anywhere`, grid columns
+  `minmax(0, 1fr)`, `white-space: pre-wrap` for command blocks). Measure instead of eyeballing:
+  run the renderer with `SHOT_PRINT_TITLE=1 SHOT_JS='…'` (macOS) where the script compares
+  `document.documentElement.scrollWidth` with `clientWidth` and lists elements whose right edge
+  exceeds the viewport – the result must be 0 on every changed page. Rebuild (`jekyll build`) before
+  measuring; a stale local server shows old CSS.
 
 ## Accessibility (WCAG 2.2 AA)
 
