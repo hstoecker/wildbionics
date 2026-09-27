@@ -70,6 +70,10 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
 | `.github/CODEOWNERS` | every PR | the maintainer is the required reviewer |
 
+**Branch protection on `main`:** changes only via pull requests; required checks `build` and
+`plugin` must pass; one approving review from the code owner; new commits dismiss earlier
+approvals; no force-push or deletion. Admins may merge their own PRs (GitHub forbids self-approval).
+
 Claude in CI needs the repository secret `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) and the
 Claude GitHub App; without them the review job only prints a notice. Fork PRs receive no secrets –
 the maintainer reviews them by hand (or runs `wildbionics-review` locally).
