@@ -45,4 +45,4 @@ jobs:
           prompt: "/wildbionics:wildbionics-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
           claude_args: |
             --max-turns 80
-            --allowedTools "Read,Grep,Glob,WebFetch,WebSearch,Task,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git diff:*),Bash(git log:*),Bash(ruby .github/scripts/*),Bash(python3 *),Bash(curl -s *)"
+            --allowedTools "Read,Grep,Glob,Write,WebFetch,WebSearch,Task,Bash(gh pr view:*),Bash(gh pr checks:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git diff:*),Bash(git log:*),Bash(ruby .github/scripts/*),Bash(python3 *),Bash(curl -s *)"
