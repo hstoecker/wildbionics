@@ -49,4 +49,5 @@ Sources:
 - [All articles]({{ en.articles.url | absolute_url }})
 - [How to contribute]({{ en.guide.url | absolute_url }}): three ways to add or correct articles, translations and figures – with Claude Code (recommended), with @claude on GitHub or by hand; every change is checked automatically and approved by the maintainer
 - [Mitmachen (Deutsch)]({{ site.data.i18n.de.guide.url | absolute_url }})
+- [Run the code examples]({{ '/run-code/' | absolute_url }}): every Python example on the site is a complete program, tested at every build; how to run it in Google Colab or locally
 - [Sitemap]({{ '/sitemap.xml' | absolute_url }})

@@ -1,0 +1,6 @@
+# Libraries the WildBionics code examples use. CI runs every example with exactly these versions
+# (.github/scripts/code_examples.py). To just run an example, any recent version works:
+#   python3 -m pip install numpy scipy matplotlib
+numpy==2.0.2
+scipy==1.13.1
+matplotlib==3.9.4

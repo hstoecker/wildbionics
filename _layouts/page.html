@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- comment -%}
+  Plain text page (e.g. /run-code/): article header and prose column without lenses, key facts or
+  sources. Front matter: title, kicker, dek (optional, default: description), lang, ref, permalink.
+{%- endcomment -%}
+{%- include i18n.html -%}
+<article class="article">
+  <header class="article-header article-header--page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{{ t.article.breadcrumb }}">
+        <ol>
+          <li><a href="{{ home_url | relative_url }}">{{ site.title }}</a></li>
+          <li><span aria-current="page">{{ page.short_title | default: page.title }}</span></li>
+        </ol>
+      </nav>
+      {%- if page.kicker %}<p class="eyebrow">{{ page.kicker }}</p>{% endif %}
+      <h1 class="article-header__title">{{ page.title }}</h1>
+      <p class="article-header__dek">{{ page.dek | default: page.description }}</p>
+    </div>
+  </header>
+  <div class="article-body">
+    <div class="container article-body__grid">
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</article>

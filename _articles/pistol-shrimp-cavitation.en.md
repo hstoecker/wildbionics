@@ -191,47 +191,92 @@ Rayleigh's formula assumes an empty bubble. To model a real one – with gas ins
 
 <div class="formula" role="math" aria-label="R times R double dot plus three halves R dot squared equals p B minus p infinity over rho"><var>R</var> <var>R̈</var> + <span class="frac"><span class="frac__num">3</span><span class="frac__den">2</span></span> <var>Ṙ</var><sup>2</sup> = <span class="frac"><span class="frac__num"><var>p</var><sub>B</sub> − <var>p</var><sub>∞</sub></span><span class="frac__den"><var>ρ</var></span></span></div>
 
-Here *p*<sub>B</sub> is the pressure in the liquid at the bubble wall: gas pressure plus vapour pressure, minus the effects of surface tension and viscosity. Solving it numerically takes a few lines of Python:
+Here *p*<sub>B</sub> is the pressure in the liquid at the bubble wall: gas pressure plus vapour pressure, minus the effects of surface tension and viscosity.
+
+One number in this model is unknown: how much gas the shrimp's bubble contains. Nobody has measured it. So the program below does what scientists do with an unknown input – it tries several values. It simulates the collapse with 10, 100 and 1,000 Pa of gas pressure (at the largest radius), prints collapse time, smallest radius, top wall speed and the temperature estimate from the physics lens, and draws the radius over time:
 
 ```python
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
 # Water at 20 °C
 RHO, P_INF, P_V = 998.0, 101_325.0, 2_339.0   # density (kg/m³), ambient and vapour pressure (Pa)
 SIGMA, MU = 0.0728, 1.0e-3                    # surface tension (N/m), viscosity (Pa·s)
+T0 = 293.0                                    # temperature of the water (K)
 
 R_MAX = 3.0e-3        # bubble radius at its largest (m)
-P_GAS = 100.0         # pressure of non-condensable gas at R_MAX (Pa), assumed
 GAMMA = 1.4           # polytropic exponent of the gas
+C_WATER = 1482.0      # speed of sound in water (m/s)
 
-def rayleigh_plesset(t, y):
-    """Bubble radius R and wall speed dR/dt → their time derivatives."""
-    R, dR = y
-    p_gas = P_GAS * (R_MAX / R) ** (3 * GAMMA)
-    p_wall = p_gas + P_V - 2 * SIGMA / R - 4 * MU * dR / R
-    ddR = ((p_wall - P_INF) / RHO - 1.5 * dR**2) / R
-    return [dR, ddR]
+def collapse(p_gas):
+    """Simulate the collapse from R_MAX; p_gas = gas pressure in the bubble at R_MAX (Pa)."""
+    def rayleigh_plesset(t, y):
+        R, dR = y
+        p_wall = p_gas * (R_MAX / R) ** (3 * GAMMA) + P_V - 2 * SIGMA / R - 4 * MU * dR / R
+        ddR = ((p_wall - P_INF) / RHO - 1.5 * dR**2) / R
+        return [dR, ddR]
 
-def minimum(t, y):        # event: the bubble wall turns around
-    return y[1]
-minimum.terminal, minimum.direction = True, 1
+    def turnaround(t, y):    # event: the bubble wall stops and turns around
+        return y[1]
+    turnaround.terminal, turnaround.direction = True, 1
 
-sol = solve_ivp(rayleigh_plesset, (0, 2e-3), [R_MAX, 0.0], method="LSODA",
-                events=minimum, rtol=1e-10, atol=1e-13, max_step=1e-6)
+    return solve_ivp(rayleigh_plesset, (0, 2e-3), [R_MAX, 0.0], method="LSODA",
+                     events=turnaround, rtol=1e-10, atol=1e-13, max_step=1e-6)
 
 rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
-print(f"collapse after {sol.t[-1] * 1e6:.0f} µs (Rayleigh: {rayleigh * 1e6:.0f} µs)")
-# → collapse after 276 µs (Rayleigh: 276 µs)
-```
+print(f"Rayleigh's formula (empty bubble): {rayleigh * 1e6:.0f} µs\n")
+print("gas (Pa)   collapse (µs)   R_min (µm)   max. speed (km/s)   T_max (1000 K)")
 
-A few things are worth noticing:
+fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
+for p_gas in [10, 100, 1000]:     # nobody has measured how much gas the shrimp's bubble holds
+    sol = collapse(p_gas)
+    r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
+    t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatic heating (physics lens)
+    print(f"{p_gas:8}   {sol.t[-1] * 1e6:13.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:17.1f}   {t_max / 1e3:14,.1f}")
+    t_us, r_um = sol.t * 1e6, sol.y[0] * 1e6
+    fast = np.abs(sol.y[1]) > C_WATER         # wall faster than sound: the model no longer holds
+    i = np.argmax(fast) if fast.any() else len(fast)
+    for ax in (whole, end):
+        line, = ax.plot(t_us[:i + 1], r_um[:i + 1])
+        ax.plot(t_us[i:], r_um[i:], ":", color=line.get_color())
+    end.annotate(f"{p_gas} Pa", (t_us[-1], r_um[-1]), xytext=(5, 0), textcoords="offset points",
+                 va="center", backgroundcolor="white")
+
+for ax in (whole, end):
+    ax.axvline(rayleigh * 1e6, color="grey", linestyle="--", label="Rayleigh's formula")
+    ax.set_xlabel("time (µs)")
+whole.plot([], [], ":", color="grey", label="wall faster than sound: model not valid")
+whole.set(ylabel="bubble radius (µm)", title="The whole collapse: the curves overlap")
+whole.legend(loc="lower left")
+end.set(ylabel="bubble radius (µm, log scale)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 5), yscale="log",
+        title="Last microseconds: the model reaches its limit")
+end.yaxis.set_major_formatter("{x:g}")
+plt.show()
+```
+{% include code-result.html file="rayleigh_plesset.py" label="Fig. 4" caption="Output of the program above. Left: the whole collapse – the three curves lie on top of each other and end at Rayleigh's collapse time. Right: the last microseconds on a logarithmic scale – here the amount of gas decides how small the bubble gets. Dotted: the bubble wall moves faster than sound in water, so the model no longer holds." alt="Two line charts of bubble radius over time for 10, 100 and 1,000 pascals of gas. Left: all three curves fall from 3,000 micrometres to almost zero at about 276 microseconds, next to a dashed line for Rayleigh's formula. Right, zoomed in on 272 to 280 microseconds with a logarithmic axis: the 10 Pa bubble shrinks to 3 micrometres at 275 microseconds, the 100 Pa bubble to 20 micrometres at 276, the 1,000 Pa bubble only to 137 micrometres at 279. For 10 and 100 pascals the curves are dotted below about 90 micrometres, where the bubble wall moves faster than sound and the model is no longer valid." %}
+
+What the result teaches:
+
+- **The collapse time is robust.** However much gas is inside, the bubble collapses after **275–279 µs**, within about 1 % of Rayleigh's formula (1.1 % for the most gas). A prediction that barely depends on an unknown input is one you can trust.
+- **The end point is not.** The smallest radius ranges from 137 µm down to 3 µm – a factor of about 45. Because the temperature grows with (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup>, the estimate swings from about 12,000 K to over a million kelvin. The model cannot pin down the temperature.
+- **The model shows its own limits.** With 10 or 100 Pa of gas, once the bubble is smaller than about 90 µm (dotted in Fig. 4), the wall would move at 5 to 90 km/s – faster than sound travels in water (about 1.5 km/s). The Rayleigh–Plesset equation treats water as incompressible and ignores heat loss, so in this last phase its numbers are no longer physical. Real bubbles are cushioned by water vapour, heat conduction and the compressibility of water; the flash measured for the shrimp points to at least 5,000 K [2](#ref-2){:.cite}.
+
+A few programming ideas are worth noticing, too:
 
 - **Stiffness.** Near the collapse, the radius changes extremely fast. An adaptive solver such as LSODA shrinks its time step automatically where needed.
 - **Events.** Instead of guessing how long to simulate, the code stops exactly when the bubble wall turns around – the moment of maximum compression.
-- **Validation.** With almost no gas inside, the simulation must agree with Rayleigh's analytical result – and it does, to the microsecond. Comparing numerics with a known limit is a habit worth keeping.
+- **Validation.** With almost no gas inside, the simulation must agree with Rayleigh's analytical result – and it does, to within a microsecond. Comparing numerics with a known limit is a habit worth keeping.
 
-Try it yourself: double `R_MAX` and check that the collapse time doubles, or raise `P_INF` to simulate a bubble in deeper water.
+Try it yourself – each change takes one line:
+
+- Set `R_MAX = 6.0e-3`: the collapse time doubles to 551–557 µs and every radius doubles, but speeds and temperatures stay the same – only the ratio *R*<sub>max</sub>/*R*<sub>min</sub> matters.
+- Set `P_INF = 201_325.0` (10 m of water depth): the bubble collapses after only 194–195 µs – and harder, so all speeds and temperatures rise.
+- Add `10_000` to the list of gas pressures: the gas cushions the collapse, the bubble stops at about 800 µm after 308 µs and heats up to only about 1,400 K.
+
+{% include code-variant.html file="rayleigh_plesset.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557 6.0 41.0 274.0 89.7 5.1" %}
+{% include code-variant.html file="rayleigh_plesset.py" id="deeper" replace="101_325.0" with="201_325.0" label="P_INF = 201_325.0" expect="194 195" %}
+{% include code-variant.html file="rayleigh_plesset.py" id="more-gas" replace="[10, 100, 1000]" with="[10, 100, 1000, 10_000]" label="p_gas: 10_000" expect="308 799.8 1.4" %}
 
 {% include lens-end.html %}
 

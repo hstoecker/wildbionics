@@ -20,7 +20,8 @@ check every claim. Reference article: `_articles/pistol-shrimp-cavitation.en.md`
    write "at least 5,000 K", not "5,000 K".
 4. Derived numbers (e.g. a collapse time from Rayleigh's formula) are **calculated in a script**,
    and the worked calculation is shown in the article with its assumptions labelled.
-5. Code in an article must be **run**; its printed output is pasted from the actual run.
+5. Code in an article is a **complete, tested program** (section 4) – its output and chart on the
+   page come from an actual run, never from typing.
 6. Anything speculative or hypothetical (e.g. superintelligence, future robots) is written as a
    scenario with sources for the positions described – never as fact.
 
@@ -75,13 +76,74 @@ cited at least once and every citation must have a source.
 (`figure--dark` for dark figures). Figures follow `wildbionics-figures`.
 **Numbers:** a non-breaking space (U+00A0) between number and unit.
 
-## 4. Writing style
+## 4. Code examples
+
+Every code example teaches **one idea** and is a program the reader can run unchanged. The gate
+`.github/scripts/code_examples.py` runs every example at every build; readers learn how to run
+them on `/run-code/` (`run-code/index.md`, DE `de/code-ausfuehren/index.md`).
+
+**Markup** – the include directly after the block marks it as an example:
+
+````markdown
+```python
+…complete program…
+```
+{% include code-result.html file="rayleigh_plesset.py" label="Fig. 4" caption="…" alt="…" %}
+````
+
+The include renders the action bar (Open in Colab, Download .py, How to run), the tested
+**Output** box and – if the program draws one – the chart with caption. Output, chart and
+downloads come from `_data/code_examples.yml` and `examples/<ref>/<name>.<lang>.{py,ipynb,svg}`,
+which the script writes; never edit them by hand. Code inside an include (home page) passes
+`ref="home" lang="en"` and `variant="card"`. `assets/js/code.js` adds the copy button.
+
+**Rules for the program** (the gate enforces the first five):
+- Complete and self-contained: imports, constants with units in comments, no files, no network,
+  no user input. Only `numpy`, `scipy`, `matplotlib` (versions pinned in `examples/requirements.txt`).
+- Runs in under 60 s, prints no warnings, prints its result; random numbers use a fixed seed
+  (`np.random.default_rng(1)`) and the result must not hinge on the seed – check a few hundred
+  seeds before you publish.
+- At most **one** chart (one figure, subplots allowed), ended with `plt.show()`. Axis labels with
+  units, a title that states the takeaway, a legend; German labels in the DE version, short enough
+  not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
+  valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if
+  they were real; distinguish curves by more than colour (direct labels or line styles). Every chart needs `alt` (what the
+  chart shows, with the key numbers) and a numbered `label`/`caption` like any figure.
+- Print only as many digits as are **stable across platforms** – CI runs Linux, you may run macOS.
+  Quantities that depend strongly on solver steps (peaks, minima, anything raised to a high power)
+  get 2–3 significant figures, e.g. `{speed / 1e3:.1f}` km/s instead of `{speed:,.0f}` m/s; otherwise
+  the gate reports `_data/code_examples.yml` as stale in CI (it prints the diff).
+- The printed result is **meaningful**: numbers with units that answer a question, ideally compared
+  with a known limit (analytical formula, measurement from a cited source) – "validation".
+- Readable over clever: short functions, descriptive names, comments explain *why*.
+
+**Text around the code** (this is what makes the reader learn):
+1. Before the code: what question the program answers and what is unknown or assumed.
+2. After the code: "What the result teaches" – interpret the printed numbers and the chart in
+   2–4 bullets (which result is robust, which is sensitive, where the model breaks down).
+3. "Try it yourself": 2–3 one-line changes, each with its outcome. Every change is a **tested
+   variant** – after the list, one include per change:
+   `{% include code-variant.html file="x.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557" %}`.
+   The gate replaces `replace` (must occur exactly once), runs the program and fails unless every
+   number in `expect` – list all numbers the text quotes for this change – appears in the output.
+   The page shows the variant's output as a collapsible "Tested output with …" (optional
+   `label="…"` names the change when `with` alone is unclear).
+Numbers quoted in the text must match the Output box; rerun the script after every code change.
+
+**Run the gate** (needs Python ≥ 3.9 with the pinned libraries):
+```bash
+python3 -m venv .venv && source .venv/bin/activate && python3 -m pip install -r examples/requirements.txt
+python3 .github/scripts/code_examples.py          # run all examples, write generated files – commit them
+python3 .github/scripts/code_examples.py --check  # what CI runs: fails on errors or stale files
+```
+
+## 5. Writing style
 
 Answer-first, concrete, friendly, precise. Short paragraphs, active voice, one idea per
 paragraph. Explain every technical term at first use. Put the most important number in bold.
 No marketing language, no unverifiable superlatives ("loudest animal" needs a source or goes).
 
-## 5. SEO, AEO, GEO
+## 6. SEO, AEO, GEO
 
 - `description` is the search snippet; `key_facts` and FAQ make the article answer-ready for
   answer engines; JSON-LD (Article, FAQPage, BreadcrumbList named by `short_title`, citations
@@ -90,7 +152,7 @@ No marketing language, no unverifiable superlatives ("loudest animal" needs a so
 - Create the OG image (1200×630) with `_includes/og-card.html` (see `wildbionics-figures`).
 - `llms.txt`, `sitemap.xml` and `graph.json` update automatically on build.
 
-## 6. Finish
+## 7. Finish
 
 Add new ontology terms/organisms via `wildbionics-graph`, translate via `wildbionics-translate`,
 then run all gates (see `wildbionics-contribute`) and review with `wildbionics-review`.

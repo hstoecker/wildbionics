@@ -66,7 +66,7 @@ end
 # --- every path mentioned in the rulebook exists -------------------------------------
 rulebook = Dir["#{PLUGIN}/skills/*/SKILL.md"] + Dir["#{PLUGIN}/agents/*.md"] +
            %w[CLAUDE.md AGENTS.md CONTRIBUTING.md README.md].select { |f| File.exist?(f) }
-PATHISH = %r{\A(?:\.github/|\.claude/|\.claude-plugin/|_articles/|_data/|_includes/|_layouts/|assets/|plugins/|de/|articles/|graph/)|
+PATHISH = %r{\A(?:\.github/|\.claude/|\.claude-plugin/|_articles/|_data/|_includes/|_layouts/|assets/|plugins/|de/|articles/|graph/|examples/|run-code/)|
              \A(?:CLAUDE|AGENTS|CONTRIBUTING|README)\.md\z|\A(?:graph\.json|sitemap\.xml|robots\.txt|llms\.txt|Gemfile|_config\.yml)\z}x
 rulebook.each do |file|
   File.read(file).scan(/`([^`\s]+)`/).flatten.uniq.each do |token|

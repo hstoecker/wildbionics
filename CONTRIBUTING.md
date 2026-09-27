@@ -63,6 +63,7 @@ Repository not in the list or push refused? Accept the collaborator invitation f
    ruby .github/scripts/check_terms.rb
    ruby .github/scripts/check_content.rb
    ruby .github/scripts/check_plugin.rb
+   python3 .github/scripts/code_examples.py --check   # after: python3 -m pip install -r examples/requirements.txt
    bundle exec jekyll build && python3 .github/scripts/check_site.py _site
    ```
 4. Pull request (fill in the template)
