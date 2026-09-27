@@ -42,6 +42,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           plugin_marketplaces: "https://github.com/hstoecker/wildbionics.git"
           plugins: "wildbionics@wildbionics"
+          show_full_output: "true"   # TEMPORARY – debugging the first run, remove again
           prompt: "/wildbionics:wildbionics-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
           claude_args: |
             --max-turns 80
