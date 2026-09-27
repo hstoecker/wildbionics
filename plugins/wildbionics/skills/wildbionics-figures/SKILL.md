@@ -64,8 +64,9 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page <url> <out.png> 1440 <y> <h>    # in context
    plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page <url> <out.png> 390 <y> <h>     # phone
    ```
-   Render EN **and** DE (labels differ in length). `SHOT_JS="…"` can click tabs or focus nodes
-   first. Alternative: the Browser pane (`preview_start` + screenshot). Local server:
+   Render EN **and** DE (labels differ in length). On macOS `SHOT_JS="…"` can click tabs or focus
+   nodes first; on Linux (cloud sessions) the script uses headless Chrome and captures the top of
+   the page. Without any renderer, open the PR and review the CI screenshots (`preview-pr-<n>`). Alternative: the Browser pane (`preview_start` + screenshot). Local server:
    `bundle exec jekyll serve --livereload` → http://localhost:4000.
 4. **Critique** each render against the checklist below and write the findings down as a list
    (what is wrong, why, the fix). Look at the large render for detail and the phone render for

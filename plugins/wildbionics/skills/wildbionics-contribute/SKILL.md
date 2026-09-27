@@ -98,6 +98,30 @@ Opening the repository in Claude Code loads these skills automatically (`.claude
 to the plugin). Outside the repository, install the plugin from the marketplace:
 `/plugin marketplace add hstoecker/wildbionics` and `/plugin install wildbionics@wildbionics`.
 
+## Claude Code on the web (claude.ai/code) – one-time setup
+
+Cloud sessions run in an Ubuntu VM (Ruby 3.3, Python, Node preinstalled) whose default network
+level **Trusted** blocks the research APIs the fact-checking needs. Create a cloud environment
+named `WildBionics` with network access **Custom**, tick *Also include default list of common
+package managers*, and allow these domains:
+
+```text
+api.crossref.org
+doi.org
+eutils.ncbi.nlm.nih.gov
+pubmed.ncbi.nlm.nih.gov
+www.ncbi.nlm.nih.gov
+api.semanticscholar.org
+www.wikidata.org
+*.wikipedia.org
+```
+
+Then start sessions on `hstoecker/wildbionics` with that environment. `bundle install` works
+(RubyGems is allowlisted); figures are rendered with `shots.sh` if Chrome/Chromium is available,
+otherwise use the screenshots CI attaches to every pull request (artifact `preview-pr-<n>`).
+On Windows, prefer claude.ai/code: `.claude/skills` are symlinks, which plain Windows git may
+check out as text files.
+
 ## Ground rules
 
 - English is the source language; German must use the glossary terms.

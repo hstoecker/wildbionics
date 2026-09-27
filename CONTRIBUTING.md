@@ -20,6 +20,23 @@ same rules in [AGENTS.md](AGENTS.md) and in the skills under `plugins/wildbionic
    repository – the WildBionics skills load automatically – and describe your task.
 3. **By hand**: fork, branch, edit Markdown/YAML, run the gates, open a pull request.
 
+## Claude Code on the web – one-time setup
+
+1. Accept the collaborator invitation (maintainer adds you) and sign in at [claude.ai/code](https://claude.ai/code) (Claude Pro, Max, Team or Enterprise).
+2. Connect GitHub when asked.
+3. Create a cloud environment `WildBionics`: network access **Custom**, tick *Also include default list of common package managers*, allow:
+   ```text
+   api.crossref.org
+   doi.org
+   eutils.ncbi.nlm.nih.gov
+   pubmed.ncbi.nlm.nih.gov
+   www.ncbi.nlm.nih.gov
+   api.semanticscholar.org
+   www.wikidata.org
+   *.wikipedia.org
+   ```
+4. Start a session on `hstoecker/wildbionics` with this environment and describe your task, e.g. *"Write a new article about how geckos stick to walls, following the WildBionics skills."* Review the diff and create the pull request from the session.
+
 ## The workflow
 
 1. Issue → branch (`article/<slug>`, `fix/<topic>`)
