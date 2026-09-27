@@ -213,14 +213,38 @@ en:
     cta_issue: "Propose a phenomenon"
     cta_guide: "Read CONTRIBUTING.md"
     ways:
-      - icon: "github"
+      - id: "claude-code"
+        icon: "terminal"
+        ribbon: "Recommended"
+        title: "Work with Claude Code"
+        best: "The recommended way: Claude researches, writes and checks – you steer every step."
+        badges: ["Claude Pro or Max", "Browser, app or terminal", "Full control"]
+        time: "about 20 minutes to set up (once)"
+        who: "Everyone with their own Claude plan – the recommended way to contribute."
+        needs: "A GitHub account with an invitation to the repository and Claude Pro, Max, Team or Enterprise."
+        tip: "On Windows use claude.ai/code: the skills are linked with symlinks, which Windows sometimes checks out incorrectly."
+        steps:
+          - { t: "Create a GitHub account and get invited", d: "Free at <a href=\"https://github.com/signup\">github.com/signup</a>. Then open an issue titled “Collaborator request” with your GitHub username in the <a href=\"https://github.com/hstoecker/wildbionics/issues/new\">repository</a> – or ask the maintainer directly – and accept the invitation via the e-mail from GitHub or at <a href=\"https://github.com/hstoecker/wildbionics/invitations\">github.com/hstoecker/wildbionics/invitations</a>." }
+          - { t: "Sign in to Claude and connect GitHub", d: "Open <a href=\"https://claude.ai/code\">claude.ai/code</a>, sign in with your Claude plan and <strong>connect GitHub</strong> when asked. Accept the invitation first: until then <code>hstoecker/wildbionics</code> does not appear in the repository list. If it is still missing, reconnect GitHub at <a href=\"https://claude.ai/connect-github\">claude.ai/connect-github</a>." }
+          - { t: "Create the WildBionics cloud environment (once)", d: "Every session runs on a fresh cloud machine; its <em>environment</em> decides which websites it may reach and what is installed. Environment selector next to the message box → <strong>Add cloud environment</strong> (to change an existing one: the environment menu in the session’s title bar → <strong>Edit</strong>). Fill in four fields:<dl class=\"guide-fields\"><div><dt>Name</dt><dd><code>WildBionics</code></dd></div><div><dt>Network access</dt><dd><strong>Custom</strong>, tick <em>Also include default list of common package managers</em> (RubyGems, for Jekyll) and allow these domains – without them Claude cannot verify sources (Crossref, DOI, PubMed, Semantic Scholar, Wikidata, Wikipedia):<pre class=\"guide-code\"><code>api.crossref.org\ndoi.org\neutils.ncbi.nlm.nih.gov\npubmed.ncbi.nlm.nih.gov\nwww.ncbi.nlm.nih.gov\napi.semanticscholar.org\nwww.wikidata.org\n*.wikipedia.org</code></pre></dd></div><div><dt>Environment variables</dt><dd><pre class=\"guide-code\"><code>LANG=C.UTF-8</code></pre>The cloud machine has no UTF-8 locale by default – without this line Jekyll and the checks crash at the first umlaut.</dd></div><div><dt>Setup script</dt><dd><pre class=\"guide-code\"><code>#!/bin/bash\nset -e\ngem install github-pages -v 232 --no-document\nln -sf \"$(ruby -e 'print Gem.bindir')/jekyll\" /usr/local/bin/jekyll</code></pre>Installs Jekyll in exactly the versions GitHub Pages uses. The last line puts <code>jekyll</code> on the path – the cloud machine installs gem programs in a folder the shell does not search.</dd></div></dl>Then select <strong>Create environment</strong>. Screenshots need nothing extra: Chromium is preinstalled." }
+          - { t: "Start a session", d: "Use the button below – repository and environment are preselected. Or choose <code>hstoecker/wildbionics</code> (branch <code>main</code>) and the <em>WildBionics</em> environment yourself.", cta: true }
+          - { t: "Check the setup", d: "Send this as your first message:<pre class=\"guide-code\"><code>Run all local checks from CLAUDE.md and check that api.crossref.org is reachable.</code></pre>All four checks should report 0 errors. If not, see “If something doesn’t work” below." }
+          - { t: "Describe your task", d: "For example:<pre class=\"guide-code\"><code>Write a new WildBionics article about how geckos stick to walls. Start with the wildbionics-contribute skill and follow the article, figures, translate and graph skills.</code></pre>" }
+          - { t: "Work together with Claude", d: "Answer its questions, ask to see the figures and pages as screenshots, and finish with: “Run all gates and review your work with wildbionics-review.”" }
+          - { t: "Review the changes", d: "Open the diff via the <strong>+/−</strong> indicator. Comment on single lines if something should change." }
+          - { t: "Create the pull request", d: "Select <strong>Create PR</strong> at the top of the diff view. After about 3 minutes the checks are done and Claude has posted a review; screenshots of the new pages are under <strong>Checks → Build, check &amp; deploy → Artifacts → preview-pr-…</strong>. Ask Claude in the session to fix any findings – it pushes to the same pull request. The maintainer approves; a few minutes after the merge your contribution is online." }
+          - { t: "If something doesn’t work", d: "<dl class=\"guide-fields guide-fields--fix\"><div><dt>“invalid byte sequence in US-ASCII”</dt><dd>The environment variable <code>LANG=C.UTF-8</code> is missing.</dd></div><div><dt>“bundler: command not found: jekyll”</dt><dd>The setup script is missing or failed – check it in the environment settings.</dd></div><div><dt>Crossref, DOI or PubMed blocked (403, “host not allowed”)</dt><dd>Network access is not <strong>Custom</strong>, or the domain is missing from the list.</dd></div><div><dt>Repository missing from the list, push refused</dt><dd>Accept the invitation, then reconnect GitHub.</dd></div><div><dt>Environment changed, nothing happens</dt><dd>Settings only apply to new sessions – start a new one.</dd></div></dl>Still stuck? Open an issue with the error message." }
+          - { t: "Optional: on your own computer", d: "Clone the repository and start Claude Code in it – the skills load automatically:<pre class=\"guide-code\"><code>git clone https://github.com/hstoecker/wildbionics.git\ncd wildbionics\nclaude</code></pre>The plugin commands <code>/plugin marketplace add hstoecker/wildbionics</code> and <code>/plugin install wildbionics@wildbionics</code> are only needed outside this repository." }
+      - id: "github"
+        icon: "github"
+        ribbon: "Friends & Family"
         title: "Ask Claude on GitHub"
-        best: "You don’t want to install anything."
+        best: "Nothing to install – only for friends and family of the maintainer."
         badges: ["No installation", "No Claude plan needed", "Browser only"]
         time: "about 10 minutes to set up"
-        who: "Everyone – Claude runs on the project’s account."
+        who: "Friends and family only: Claude runs on the maintainer’s account, so every request uses the maintainer’s Claude tokens."
         needs: "A free GitHub account and an invitation to the repository."
-        tip: "One topic per issue. The more precise the request – phenomenon, audience, sources you know – the better the result."
+        tip: "One topic per issue, and as precise as possible – phenomenon, audience, sources you know. That gives better results and saves the maintainer’s tokens."
         steps:
           - { t: "Create a GitHub account", d: "Free at <a href=\"https://github.com/signup\">github.com/signup</a>. GitHub is where the whole project lives." }
           - { t: "Ask for an invitation", d: "Open an issue titled “Collaborator request” with your GitHub username in the <a href=\"https://github.com/hstoecker/wildbionics/issues/new\">repository</a> – or ask the maintainer directly." }
@@ -232,32 +256,16 @@ en:
           - { t: "Check the result", d: "After about 3 minutes the checks are done and Claude has posted a review. Screenshots of the new pages: <strong>Checks → Build, check &amp; deploy → Artifacts → preview-pr-…</strong>." }
           - { t: "Ask for changes", d: "Comment in the pull request and start with <strong>@claude</strong> – e.g. “@claude make the figure larger and add a FAQ entry about …”. Claude pushes the change." }
           - { t: "Approval and go-live", d: "The maintainer reviews and approves. A few minutes after the merge your contribution is online." }
-      - icon: "terminal"
-        title: "Work with Claude Code"
-        best: "You have a Claude plan and want to steer every step."
-        badges: ["Claude Pro or Max", "Browser, app or terminal", "Full control"]
-        time: "about 20 minutes to set up (once)"
-        who: "Contributors with their own Claude plan."
-        needs: "A GitHub account with an invitation and Claude Pro, Max, Team or Enterprise."
-        tip: "On Windows use claude.ai/code: the skills are linked with symlinks, which Windows sometimes checks out incorrectly."
-        steps:
-          - { t: "Get an invitation", d: "As in the first way, steps 1–3: GitHub account, ask for an invitation, accept it." }
-          - { t: "Sign in to Claude", d: "Open <a href=\"https://claude.ai/code\">claude.ai/code</a>, sign in with your Claude plan and <strong>connect GitHub</strong> when asked." }
-          - { t: "Create the WildBionics environment (once)", d: "Environment selector above the message box → <strong>Add cloud environment</strong>. Name <code>WildBionics</code>, network access <strong>Custom</strong>, tick <em>Also include default list of common package managers</em> and allow these domains so Claude can verify sources:<pre class=\"guide-code\"><code>api.crossref.org\ndoi.org\neutils.ncbi.nlm.nih.gov\npubmed.ncbi.nlm.nih.gov\nwww.ncbi.nlm.nih.gov\napi.semanticscholar.org\nwww.wikidata.org\n*.wikipedia.org</code></pre>Optional setup script: <code>bundle install</code>. Then select <strong>Create environment</strong>." }
-          - { t: "Start a session", d: "Use the button below – repository and environment are preselected. Or choose <code>hstoecker/wildbionics</code> (branch <code>main</code>) and <em>WildBionics</em> yourself." }
-          - { t: "Describe your task", d: "For example:<pre class=\"guide-code\"><code>Write a new WildBionics article about how geckos stick to walls. Start with the wildbionics-contribute skill and follow the article, figures, translate and graph skills.</code></pre>" }
-          - { t: "Work together with Claude", d: "Answer its questions, ask to see the figures, and finish with: “Run all gates and review your work with wildbionics-review.”" }
-          - { t: "Review the changes", d: "Open the diff via the <strong>+/−</strong> indicator. Comment on single lines if something should change." }
-          - { t: "Create the pull request", d: "Select <strong>Create PR</strong> at the top of the diff view. Checks, preview, review and approval follow as in the first way." }
-          - { t: "Optional: on your own computer", d: "Clone the repository and start Claude Code in it – the skills load automatically:<pre class=\"guide-code\"><code>git clone https://github.com/hstoecker/wildbionics.git\ncd wildbionics\nclaude</code></pre>The plugin commands <code>/plugin marketplace add hstoecker/wildbionics</code> and <code>/plugin install wildbionics@wildbionics</code> are only needed outside this repository." }
-      - icon: "write"
+      - id: "by-hand"
+        icon: "write"
+        ribbon: "Experts only"
         title: "Work by hand"
-        best: "You prefer to write and edit yourself."
-        badges: ["No Claude needed", "GitHub account", "Optional: git and Ruby"]
+        best: "Only for absolute experts the maintainer knows personally."
+        badges: ["No Claude needed", "git and Ruby", "Experienced developers"]
         time: "5 minutes for a small fix"
-        who: "Everyone who likes to edit files directly."
-        needs: "A GitHub account. For larger changes: git and, for a local preview, Ruby 3.3."
-        tip: "Pull requests from forks get no automatic Claude review, because GitHub withholds secrets from forks – the maintainer reviews them by hand."
+        who: "Absolute experts the maintainer knows personally – git, Jekyll and the project rules are second nature to you."
+        needs: "A GitHub account, git and, for the local preview and checks, Ruby 3.3."
+        tip: "Talk to the maintainer before larger changes. Pull requests from forks get no automatic Claude review, because GitHub withholds secrets from forks – the maintainer reviews them by hand."
         steps:
           - { t: "Read the rules", d: "<a href=\"https://github.com/hstoecker/wildbionics/blob/main/CONTRIBUTING.md\">CONTRIBUTING.md</a> and the skills in <a href=\"https://github.com/hstoecker/wildbionics/tree/main/plugins/wildbionics/skills\">plugins/wildbionics/skills</a> – plain Markdown, just as useful for people." }
           - { t: "Small change: edit in the browser", d: "Open the file on GitHub (e.g. an article in <code>_articles/</code>), select the pencil icon, edit, then <strong>Commit changes… → Create a new branch → Propose changes</strong>. GitHub creates a fork if needed. Continue with step 6." }
@@ -296,6 +304,7 @@ en:
       - { t: "Pull request", d: "A request to take over the changes of a branch. It is checked and reviewed first." }
       - { t: "Merge", d: "Taking over the changes of an approved pull request – a few minutes later they are live." }
       - { t: "Skill", d: "Instructions Claude loads for a task. Our skills contain the project’s rules." }
+      - { t: "Cloud environment", d: "The settings of the cloud machine a Claude Code session runs on: which websites it may reach, environment variables and a setup script." }
   graph:
     nav: "Graph"
     title: "The knowledge graph"
@@ -553,14 +562,38 @@ de:
     cta_issue: "Ein Phänomen vorschlagen"
     cta_guide: "CONTRIBUTING.md lesen"
     ways:
-      - icon: "github"
+      - id: "claude-code"
+        icon: "terminal"
+        ribbon: "Empfohlen"
+        title: "Mit Claude Code arbeiten"
+        best: "Der empfohlene Weg: Claude recherchiert, schreibt und prüft – du steuerst jeden Schritt."
+        badges: ["Claude Pro oder Max", "Browser, App oder Terminal", "Volle Kontrolle"]
+        time: "etwa 20 Minuten Einrichtung (einmalig)"
+        who: "Alle mit eigenem Claude-Abo – der empfohlene Weg, um mitzumachen."
+        needs: "Ein GitHub-Konto mit Einladung ins Repository und Claude Pro, Max, Team oder Enterprise."
+        tip: "Unter Windows nimm claude.ai/code: Die Skills sind per Symlink verknüpft, und Windows checkt diese manchmal falsch aus."
+        steps:
+          - { t: "GitHub-Konto anlegen und einladen lassen", d: "Kostenlos auf <a href=\"https://github.com/signup\">github.com/signup</a>. Dann im <a href=\"https://github.com/hstoecker/wildbionics/issues/new\">Repository</a> ein Issue mit dem Titel „Collaborator request“ und deinem GitHub-Benutzernamen öffnen – oder den Maintainer direkt fragen – und die Einladung über die E-Mail von GitHub oder unter <a href=\"https://github.com/hstoecker/wildbionics/invitations\">github.com/hstoecker/wildbionics/invitations</a> annehmen." }
+          - { t: "Bei Claude anmelden und GitHub verbinden", d: "<a href=\"https://claude.ai/code\">claude.ai/code</a> öffnen, mit deinem Claude-Abo anmelden und, wenn gefragt, <strong>GitHub verbinden</strong>. Nimm vorher die Einladung an: Bis dahin taucht <code>hstoecker/wildbionics</code> nicht in der Repository-Liste auf. Fehlt es danach immer noch, GitHub unter <a href=\"https://claude.ai/connect-github\">claude.ai/connect-github</a> neu verbinden." }
+          - { t: "Cloud-Umgebung „WildBionics“ anlegen (einmalig)", d: "Jede Sitzung läuft auf einem frischen Cloud-Rechner; seine <em>Umgebung</em> legt fest, welche Websites er erreichen darf und was installiert ist. Umgebungsauswahl neben dem Eingabefeld → <strong>Add cloud environment</strong> (eine bestehende ändern: Umgebungsmenü in der Titelleiste der Sitzung → <strong>Edit</strong>). Vier Felder ausfüllen:<dl class=\"guide-fields\"><div><dt>Name</dt><dd><code>WildBionics</code></dd></div><div><dt>Network access</dt><dd><strong>Custom</strong>, Haken bei <em>Also include default list of common package managers</em> (RubyGems, für Jekyll) und diese Domains erlauben – ohne sie kann Claude keine Quellen prüfen (Crossref, DOI, PubMed, Semantic Scholar, Wikidata, Wikipedia):<pre class=\"guide-code\"><code>api.crossref.org\ndoi.org\neutils.ncbi.nlm.nih.gov\npubmed.ncbi.nlm.nih.gov\nwww.ncbi.nlm.nih.gov\napi.semanticscholar.org\nwww.wikidata.org\n*.wikipedia.org</code></pre></dd></div><div><dt>Environment variables</dt><dd><pre class=\"guide-code\"><code>LANG=C.UTF-8</code></pre>Der Cloud-Rechner hat standardmäßig kein UTF-8-Locale – ohne diese Zeile stürzen Jekyll und die Prüfungen beim ersten Umlaut ab.</dd></div><div><dt>Setup script</dt><dd><pre class=\"guide-code\"><code>#!/bin/bash\nset -e\ngem install github-pages -v 232 --no-document\nln -sf \"$(ruby -e 'print Gem.bindir')/jekyll\" /usr/local/bin/jekyll</code></pre>Installiert Jekyll in genau den Versionen, die GitHub Pages verwendet. Die letzte Zeile legt <code>jekyll</code> in den Suchpfad – der Cloud-Rechner installiert Gem-Programme in einen Ordner, den die Shell nicht durchsucht.</dd></div></dl>Dann <strong>Create environment</strong>. Für Screenshots brauchst du nichts weiter: Chromium ist vorinstalliert." }
+          - { t: "Sitzung starten", d: "Mit dem Knopf unten – Repository und Umgebung sind vorausgewählt. Oder selbst <code>hstoecker/wildbionics</code> (Branch <code>main</code>) und die Umgebung <em>WildBionics</em> wählen.", cta: true }
+          - { t: "Einrichtung prüfen", d: "Schick das als erste Nachricht:<pre class=\"guide-code\"><code>Führe alle lokalen Prüfungen aus CLAUDE.md aus und prüfe, ob api.crossref.org erreichbar ist.</code></pre>Alle vier Prüfungen sollten 0 Fehler melden. Wenn nicht: siehe „Wenn etwas nicht klappt“ unten." }
+          - { t: "Aufgabe beschreiben", d: "Zum Beispiel:<pre class=\"guide-code\"><code>Schreibe einen neuen WildBionics-Artikel darüber, wie Geckos an Wänden haften. Beginne mit dem Skill wildbionics-contribute und folge den Skills article, figures, translate und graph.</code></pre>" }
+          - { t: "Mit Claude zusammenarbeiten", d: "Beantworte Rückfragen, lass dir Abbildungen und Seiten als Screenshots zeigen, und zum Schluss: „Führe alle Prüfungen aus und prüfe deine Arbeit mit wildbionics-review.“" }
+          - { t: "Änderungen prüfen", d: "Über die Anzeige <strong>+/−</strong> die Änderungen öffnen. Einzelne Zeilen kommentieren, wenn sich etwas ändern soll." }
+          - { t: "Pull Request erstellen", d: "Oben in der Änderungsansicht auf <strong>Create PR</strong> klicken. Nach etwa 3 Minuten sind die Prüfungen fertig, und Claude hat ein Review geschrieben; Screenshots der neuen Seiten findest du unter <strong>Checks → Build, check &amp; deploy → Artifacts → preview-pr-…</strong>. Bitte Claude in der Sitzung, Hinweise zu beheben – es pusht in denselben Pull Request. Der Maintainer gibt frei; wenige Minuten nach dem Merge ist dein Beitrag online." }
+          - { t: "Wenn etwas nicht klappt", d: "<dl class=\"guide-fields guide-fields--fix\"><div><dt>„invalid byte sequence in US-ASCII“</dt><dd>Die Umgebungsvariable <code>LANG=C.UTF-8</code> fehlt.</dd></div><div><dt>„bundler: command not found: jekyll“</dt><dd>Das Setup-Skript fehlt oder ist fehlgeschlagen – in den Einstellungen der Umgebung prüfen.</dd></div><div><dt>Crossref, DOI oder PubMed gesperrt (403, „host not allowed“)</dt><dd>Network access steht nicht auf <strong>Custom</strong>, oder die Domain fehlt in der Liste.</dd></div><div><dt>Repository fehlt in der Liste, Push abgelehnt</dt><dd>Einladung annehmen, dann GitHub neu verbinden.</dd></div><div><dt>Umgebung geändert, nichts passiert</dt><dd>Einstellungen gelten nur für neue Sitzungen – eine neue starten.</dd></div></dl>Kommst du nicht weiter? Öffne ein Issue mit der Fehlermeldung." }
+          - { t: "Optional: auf dem eigenen Rechner", d: "Repository klonen und Claude Code darin starten – die Skills laden automatisch:<pre class=\"guide-code\"><code>git clone https://github.com/hstoecker/wildbionics.git\ncd wildbionics\nclaude</code></pre>Die Plugin-Befehle <code>/plugin marketplace add hstoecker/wildbionics</code> und <code>/plugin install wildbionics@wildbionics</code> brauchst du nur außerhalb dieses Repositorys." }
+      - id: "github"
+        icon: "github"
+        ribbon: "Friends & Family"
         title: "Claude auf GitHub fragen"
-        best: "Du möchtest nichts installieren."
+        best: "Nichts installieren – nur für Freunde und Familie des Maintainers."
         badges: ["Keine Installation", "Kein Claude-Abo nötig", "Nur Browser"]
         time: "etwa 10 Minuten Einrichtung"
-        who: "Alle – Claude läuft über das Konto des Projekts."
+        who: "Nur Friends & Family: Claude läuft über das Konto des Maintainers – jede Anfrage verbraucht dessen Claude-Tokens."
         needs: "Ein kostenloses GitHub-Konto und eine Einladung ins Repository."
-        tip: "Ein Thema pro Issue. Je genauer die Anfrage – Phänomen, Zielgruppe, bekannte Quellen –, desto besser das Ergebnis."
+        tip: "Ein Thema pro Issue, und so genau wie möglich – Phänomen, Zielgruppe, bekannte Quellen. Das ergibt bessere Ergebnisse und spart die Tokens des Maintainers."
         steps:
           - { t: "GitHub-Konto anlegen", d: "Kostenlos auf <a href=\"https://github.com/signup\">github.com/signup</a>. Auf GitHub liegt das ganze Projekt." }
           - { t: "Einladung anfragen", d: "Im <a href=\"https://github.com/hstoecker/wildbionics/issues/new\">Repository</a> ein Issue mit dem Titel „Collaborator request“ und deinem GitHub-Benutzernamen öffnen – oder den Maintainer direkt fragen." }
@@ -572,32 +605,16 @@ de:
           - { t: "Ergebnis ansehen", d: "Nach etwa 3 Minuten sind die Prüfungen fertig, und Claude hat ein Review geschrieben. Screenshots der neuen Seiten: <strong>Checks → Build, check &amp; deploy → Artifacts → preview-pr-…</strong>." }
           - { t: "Änderungen wünschen", d: "Im Pull Request kommentieren und mit <strong>@claude</strong> beginnen – z. B. „@claude mach die Abbildung größer und ergänze eine FAQ zu …“. Claude pusht die Änderung." }
           - { t: "Freigabe und online", d: "Der Maintainer prüft und gibt frei. Wenige Minuten nach dem Merge ist dein Beitrag online." }
-      - icon: "terminal"
-        title: "Mit Claude Code arbeiten"
-        best: "Du hast ein Claude-Abo und willst jeden Schritt steuern."
-        badges: ["Claude Pro oder Max", "Browser, App oder Terminal", "Volle Kontrolle"]
-        time: "etwa 20 Minuten Einrichtung (einmalig)"
-        who: "Mitwirkende mit eigenem Claude-Abo."
-        needs: "Ein GitHub-Konto mit Einladung und Claude Pro, Max, Team oder Enterprise."
-        tip: "Unter Windows nimm claude.ai/code: Die Skills sind per Symlink verknüpft, und Windows checkt diese manchmal falsch aus."
-        steps:
-          - { t: "Einladung holen", d: "Wie beim ersten Weg, Schritte 1–3: GitHub-Konto, Einladung anfragen, annehmen." }
-          - { t: "Bei Claude anmelden", d: "<a href=\"https://claude.ai/code\">claude.ai/code</a> öffnen, mit deinem Claude-Abo anmelden und, wenn gefragt, <strong>GitHub verbinden</strong>." }
-          - { t: "Umgebung „WildBionics“ anlegen (einmalig)", d: "Umgebungsauswahl über dem Eingabefeld → <strong>Add cloud environment</strong>. Name <code>WildBionics</code>, Network access <strong>Custom</strong>, Haken bei <em>Also include default list of common package managers</em> und diese Domains erlauben, damit Claude Quellen prüfen kann:<pre class=\"guide-code\"><code>api.crossref.org\ndoi.org\neutils.ncbi.nlm.nih.gov\npubmed.ncbi.nlm.nih.gov\nwww.ncbi.nlm.nih.gov\napi.semanticscholar.org\nwww.wikidata.org\n*.wikipedia.org</code></pre>Optionales Setup-Skript: <code>bundle install</code>. Dann <strong>Create environment</strong>." }
-          - { t: "Sitzung starten", d: "Mit dem Knopf unten – Repository und Umgebung sind vorausgewählt. Oder selbst <code>hstoecker/wildbionics</code> (Branch <code>main</code>) und <em>WildBionics</em> wählen." }
-          - { t: "Aufgabe beschreiben", d: "Zum Beispiel:<pre class=\"guide-code\"><code>Schreibe einen neuen WildBionics-Artikel darüber, wie Geckos an Wänden haften. Beginne mit dem Skill wildbionics-contribute und folge den Skills article, figures, translate und graph.</code></pre>" }
-          - { t: "Mit Claude zusammenarbeiten", d: "Beantworte Rückfragen, lass dir die Abbildungen zeigen, und zum Schluss: „Führe alle Prüfungen aus und prüfe deine Arbeit mit wildbionics-review.“" }
-          - { t: "Änderungen prüfen", d: "Über die Anzeige <strong>+/−</strong> die Änderungen öffnen. Einzelne Zeilen kommentieren, wenn sich etwas ändern soll." }
-          - { t: "Pull Request erstellen", d: "Oben in der Änderungsansicht auf <strong>Create PR</strong> klicken. Prüfungen, Vorschau, Review und Freigabe folgen wie beim ersten Weg." }
-          - { t: "Optional: auf dem eigenen Rechner", d: "Repository klonen und Claude Code darin starten – die Skills laden automatisch:<pre class=\"guide-code\"><code>git clone https://github.com/hstoecker/wildbionics.git\ncd wildbionics\nclaude</code></pre>Die Plugin-Befehle <code>/plugin marketplace add hstoecker/wildbionics</code> und <code>/plugin install wildbionics@wildbionics</code> brauchst du nur außerhalb dieses Repositorys." }
-      - icon: "write"
+      - id: "by-hand"
+        icon: "write"
+        ribbon: "Absolute Experten"
         title: "Von Hand arbeiten"
-        best: "Du schreibst und bearbeitest lieber selbst."
-        badges: ["Kein Claude nötig", "GitHub-Konto", "Optional: git und Ruby"]
+        best: "Nur für absolute Experten, die der Maintainer persönlich kennt."
+        badges: ["Kein Claude nötig", "git und Ruby", "Erfahrene Entwickler"]
         time: "5 Minuten für eine kleine Korrektur"
-        who: "Alle, die Dateien gern direkt bearbeiten."
-        needs: "Ein GitHub-Konto. Für größere Änderungen: git und für die lokale Vorschau Ruby 3.3."
-        tip: "Pull Requests aus Forks bekommen kein automatisches Claude-Review, weil GitHub Forks keine Secrets gibt – der Maintainer prüft sie von Hand."
+        who: "Absolute Experten, die der Maintainer persönlich kennt – git, Jekyll und die Projektregeln sind dir vertraut."
+        needs: "Ein GitHub-Konto, git und für die lokale Vorschau und die Prüfungen Ruby 3.3."
+        tip: "Sprich größere Änderungen vorher mit dem Maintainer ab. Pull Requests aus Forks bekommen kein automatisches Claude-Review, weil GitHub Forks keine Secrets gibt – der Maintainer prüft sie von Hand."
         steps:
           - { t: "Regeln lesen", d: "<a href=\"https://github.com/hstoecker/wildbionics/blob/main/CONTRIBUTING.md\">CONTRIBUTING.md</a> und die Skills in <a href=\"https://github.com/hstoecker/wildbionics/tree/main/plugins/wildbionics/skills\">plugins/wildbionics/skills</a> – einfaches Markdown, für Menschen genauso nützlich." }
           - { t: "Kleine Änderung: im Browser bearbeiten", d: "Datei auf GitHub öffnen (z. B. einen Artikel in <code>_articles/</code>), auf das Stift-Symbol klicken, bearbeiten, dann <strong>Commit changes… → Create a new branch → Propose changes</strong>. GitHub legt bei Bedarf einen Fork an. Weiter mit Schritt 6." }
@@ -636,6 +653,7 @@ de:
       - { t: "Pull Request", d: "Die Bitte, die Änderungen eines Branches zu übernehmen. Er wird vorher geprüft und begutachtet." }
       - { t: "Merge", d: "Das Übernehmen der Änderungen eines freigegebenen Pull Requests – wenige Minuten später sind sie online." }
       - { t: "Skill", d: "Eine Anleitung, die Claude für eine Aufgabe lädt. Unsere Skills enthalten die Regeln des Projekts." }
+      - { t: "Cloud-Umgebung", d: "Die Einstellungen des Cloud-Rechners, auf dem eine Claude-Code-Sitzung läuft: welche Websites er erreichen darf, Umgebungsvariablen und ein Setup-Skript." }
   graph:
     nav: "Wissensgraph"
     title: "Der Wissensgraph"

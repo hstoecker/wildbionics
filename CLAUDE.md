@@ -71,7 +71,7 @@ status: draft
 - **Translation:** follow the project skill `plugins/wildbionics/skills/wildbionics-translate/`; German technical terms are fixed in `_data/glossary.yml` and enforced by `.github/scripts/check_terms.rb` (runs first in CI; forbidden variants fail the build).
 - **Knowledge graph:** `graph.json` (Liquid, built from `_data/taxonomy.yml` with `dim`/`order`, `_data/beings.yml`, `_data/lenses.yml` and article front matter) → `assets/js/graph.js` (own force layout, no dependencies; dimensions are fixed anchors, label-collision pass via getBBox). The page `_includes/graph-page.html` also renders a full no-JS list. `check_site.py` validates graph.json.
 - **Machine readability:** `sitemap.xml` (hreflang), `robots.txt` (AI crawlers allowed), `llms.txt`, OG images in `assets/og/` (1200×630, rendered from `_includes/og-card.html`).
-- Check locally: `ruby .github/scripts/check_terms.rb && ruby .github/scripts/check_content.rb && ruby .github/scripts/check_plugin.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
+- Check locally (cloud sessions first need `LANG=C.UTF-8` and the setup script from the `wildbionics-contribute` skill): `ruby .github/scripts/check_terms.rb && ruby .github/scripts/check_content.rb && ruby .github/scripts/check_plugin.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
 
 ## Working style
 - Step by step, small verifiable wins. Explain commands before running them (owner is setting up a fresh Mac).

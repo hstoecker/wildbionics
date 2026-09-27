@@ -1,5 +1,7 @@
 {%- comment -%}
   Contribution guide (/contribute/, /de/mitmachen/). Copy: _data/i18n.yml `guide`.
+  Each way has an `id` (anchor, e.g. /contribute/#claude-code) and a `ribbon` (corner banner on the
+  card, tag in the section head); a step with `cta: true` gets the "Open Claude Code" button.
   Progressive enhancement: assets/js/guide.js adds copy buttons and highlights the sub-navigation.
 {%- endcomment -%}
 {%- include i18n.html -%}
@@ -15,18 +17,19 @@
     <h2 class="guide-chooser__title">{{ g.chooser_title }}</h2>
     <ol class="guide-chooser">
       {%- for w in g.ways %}
-      <li class="guide-choice">
+      <li class="guide-choice guide-choice--{{ w.id }}">
         <div class="guide-choice__top">
           <svg class="guide-choice__icon" aria-hidden="true" focusable="false"><use href="#icon-{{ w.icon }}"/></svg>
           <span class="guide-choice__num" aria-hidden="true">0{{ forloop.index }}</span>
         </div>
         <h3 class="guide-choice__title">{{ w.title }}</h3>
+        <p class="guide-ribbon guide-ribbon--{{ w.id }}">{{ w.ribbon }}</p>
         <p class="guide-choice__best">{{ w.best }}</p>
         <ul class="guide-badges">
           {%- for b in w.badges %}<li>{{ b }}</li>{% endfor %}
         </ul>
         <p class="guide-choice__time"><svg aria-hidden="true" focusable="false"><use href="#icon-clock"/></svg>{{ w.time }}</p>
-        <a class="button button--primary guide-choice__cta" href="#way-{{ forloop.index }}">{{ g.start_label }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+        <a class="button button--primary guide-choice__cta" href="#{{ w.id }}">{{ g.start_label }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
       </li>
       {%- endfor %}
     </ol>
@@ -37,7 +40,7 @@
   <div class="container">
     <ul>
       {%- for w in g.ways %}
-      <li><a href="#way-{{ forloop.index }}"><span aria-hidden="true">{{ forloop.index }}</span> {{ w.title }}</a></li>
+      <li><a href="#{{ w.id }}"><span aria-hidden="true">{{ forloop.index }}</span> {{ w.title }}</a></li>
       {%- endfor %}
       <li><a href="#flow">{{ g.jump_flow }}</a></li>
       <li><a href="#rules">{{ g.jump_rules }}</a></li>
@@ -50,13 +53,14 @@
   <div class="container">
     {%- for w in g.ways %}
     {%- assign way_index = forloop.index %}
-    <section class="guide-howto" id="way-{{ way_index }}" aria-labelledby="way-{{ way_index }}-title">
+    <section class="guide-howto" id="{{ w.id }}" aria-labelledby="{{ w.id }}-title">
       <header class="guide-howto__head">
         <span class="guide-howto__badge" aria-hidden="true"><svg><use href="#icon-{{ w.icon }}"/></svg></span>
         <div>
           <p class="guide-howto__num">{{ way_index }} · {{ g.steps_label }}</p>
-          <h2 id="way-{{ way_index }}-title" class="guide-howto__title">{{ w.title }}</h2>
+          <h2 id="{{ w.id }}-title" class="guide-howto__title">{{ w.title }}</h2>
         </div>
+        <p class="guide-tag guide-tag--{{ w.id }}">{{ w.ribbon }}</p>
       </header>
       <dl class="guide-howto__meta">
         <div><dt>{{ g.who_label }}</dt><dd>{{ w.who }}</dd></div>
@@ -70,7 +74,7 @@
           <div class="guide-step__body">
             <h3 class="guide-step__title"><span class="visually-hidden">{{ g.step_word }} {{ forloop.index }}: </span>{{ s.t }}</h3>
             <div class="guide-step__text">{{ s.d }}</div>
-            {%- if way_index == 2 and forloop.index == 4 %}
+            {%- if s.cta %}
             <p class="guide-step__cta"><a class="button button--dark" href="{{ prefill_url }}">{{ g.open_claude }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
             {%- endif %}
           </div>
