@@ -22,6 +22,10 @@ defaults:
   - scope: { path: "", type: articles }
     values: { layout: article }
 
+# No theme: the github-pages gem otherwise adds jekyll-theme-primer and ships its unused
+# 136 KB assets/css/style.css. All layouts and styles are our own.
+theme: null
+
 # Syntax highlighting for code blocks (built into GitHub Pages)
 highlighter: rouge
 kramdown:

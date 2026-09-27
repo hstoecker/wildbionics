@@ -108,6 +108,9 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
 ## Policy
 
 - No new dependencies, frameworks, CDNs or tracking; fonts and scripts are self-hosted and small.
+  `_config.yml` sets `theme: null` – the github-pages default theme would ship an unused 136 KB
+  stylesheet. Icons: `/favicon.ico` (16/32/48 px, for browsers and crawlers that ask for it),
+  `assets/favicon.svg`, `assets/apple-touch-icon.png` (180 px).
 - Plain CSS in `main.css`, vanilla JS in `assets/js/` loaded with `defer`, only on pages that need it.
 - Visual changes are checked with screenshots on desktop (1440 px) and phone (390 px) in EN and
   DE – renderer: `plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh`.
