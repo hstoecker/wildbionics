@@ -27,6 +27,14 @@
     }
   }
 
+  // Code that scrolls sideways (Python keeps its indentation) must be reachable by keyboard.
+  const markScrollable = () => document.querySelectorAll(".prose .highlight pre, .code-card pre").forEach((pre) => {
+    if (pre.scrollWidth > pre.clientWidth + 1) pre.setAttribute("tabindex", "0");
+    else pre.removeAttribute("tabindex");
+  });
+  markScrollable();
+  window.addEventListener("resize", markScrollable);
+
   const blocks = document.querySelectorAll(".prose div.highlighter-rouge, .code-card");
   blocks.forEach((block) => {
     const code = block.querySelector("pre code");

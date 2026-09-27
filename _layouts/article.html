@@ -26,7 +26,7 @@ layout: default
           {%- if page.updated %}
           <div><dt>{{ t.article.updated }}</dt><dd><time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: date_format }}</time></dd></div>
           {%- endif %}
-          <div><dt class="visually-hidden">{{ t.article.reading_time }}</dt><dd>{{ minutes }} {{ t.article.reading_time }}</dd></div>
+          <div><dt class="visually-hidden">{{ t.article.reading_time_label }}</dt><dd>{{ minutes }} {{ t.article.reading_time }}</dd></div>
         </dl>
       </div>
       {%- if page.hero_figure %}
@@ -72,7 +72,7 @@ layout: default
         <h2 id="sources-title">{{ t.article.sources }}</h2>
         <ol>
           {%- for s in page.sources %}
-          <li id="ref-{{ forloop.index }}">{{ s.authors | join: ", " }} ({{ s.year }}). {{ s.title }}. <cite>{{ s.journal }}</cite> {{ s.volume }}, {{ s.pages }}. <a href="https://doi.org/{{ s.doi }}">doi:{{ s.doi }}</a>{% if s.open_access %} · <span class="badge">Open Access</span>{% endif %}</li>
+          <li id="ref-{{ forloop.index }}">{{ s.authors | join: ", " }} ({{ s.year }}). {% assign s_lang = s.lang | default: "en" %}{% if s_lang != lang %}<span lang="{{ s_lang }}">{{ s.title }}</span>{% else %}{{ s.title }}{% endif %}. <cite>{{ s.journal }}</cite> {{ s.volume }}, {{ s.pages }}. <a href="https://doi.org/{{ s.doi }}">doi:{{ s.doi }}</a>{% if s.open_access %} · <span class="badge">{{ t.article.open_access }}</span>{% endif %}</li>
           {%- endfor %}
         </ol>
       </section>

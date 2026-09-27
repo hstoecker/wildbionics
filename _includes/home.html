@@ -42,7 +42,7 @@
         {%- assign lenses = "biology,physics,math,cs" | split: "," -%}
         {%- for key in lenses %}
         <button class="lens__tab" role="tab" type="button" id="tab-{{ key }}" aria-controls="panel-{{ key }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
-          <span class="lens__tab-index">0{{ forloop.index }}</span> {{ t.lens[key].tab }}
+          <span class="lens__tab-index" aria-hidden="true">0{{ forloop.index }}</span> {{ t.lens[key].tab }}
         </button>
         {%- endfor %}
       </div>
@@ -64,7 +64,7 @@
           <p class="kicker">{{ t.lens.physics.kicker }}</p>
           <h3 class="lens__title">{{ t.lens.physics.title }}</h3>
           <p>{{ t.lens.physics.text }}</p>
-          <div class="formula" role="math" aria-label="Delta f approximately equals 2 v f0 over c">
+          <div class="formula" role="math" aria-label="{{ t.lens.physics.formula_label }}">
             <var>Δf</var> ≈ <span class="frac"><span class="frac__num">2 <var>v</var> <var>f</var><sub>0</sub></span><span class="frac__den"><var>c</var></span></span>
           </div>
           <p class="example">{{ t.lens.physics.example_html }}</p>
@@ -80,8 +80,8 @@
           <h3 class="lens__title">{{ t.lens.math.title }}</h3>
           <p>{{ t.lens.math.text }}</p>
           <div class="formula formula--pair">
-            <span role="math" aria-label="d equals c times delta t over 2"><var>d</var> = <span class="frac"><span class="frac__num"><var>c</var> · <var>Δt</var></span><span class="frac__den">2</span></span></span>
-            <span role="math" aria-label="theta equals arcsine of c times delta tau over b"><var>θ</var> = arcsin <span class="paren">(</span><span class="frac"><span class="frac__num"><var>c</var> · <var>Δτ</var></span><span class="frac__den"><var>b</var></span></span><span class="paren">)</span></span>
+            <span role="math" aria-label="{{ t.lens.math.formula_d_label }}"><var>d</var> = <span class="frac"><span class="frac__num"><var>c</var> · <var>Δt</var></span><span class="frac__den">2</span></span></span>
+            <span role="math" aria-label="{{ t.lens.math.formula_theta_label }}"><var>θ</var> = arcsin <span class="paren">(</span><span class="frac"><span class="frac__num"><var>c</var> · <var>Δτ</var></span><span class="frac__den"><var>b</var></span></span><span class="paren">)</span></span>
           </div>
           <p class="example">{{ t.lens.math.example_html }}</p>
         </div>
@@ -183,12 +183,14 @@ print(f"moth at {echo_distance(chirp, recording, rate):.2f} m")
       </ul>
       <div class="sources">
         <h3 class="sources__label">{{ t.flagship.sources_label }}</h3>
+        {%- assign flagship = site.articles | where: "ref", "pistol-shrimp-cavitation" | where: "lang", lang | first %}
         <ol>
-          <li>Versluis, M., Schmitz, B., von der Heydt, A. &amp; Lohse, D. (2000). How snapping shrimp snap: through cavitating bubbles. <cite>Science</cite> 289, 2114–2117. <a href="https://doi.org/10.1126/science.289.5487.2114">doi:10.1126/science.289.5487.2114</a></li>
-          <li>Lohse, D., Schmitz, B. &amp; Versluis, M. (2001). Snapping shrimp make flashing bubbles. <cite>Nature</cite> 413, 477–478. <a href="https://doi.org/10.1038/35097152">doi:10.1038/35097152</a></li>
+          {%- for s in flagship.sources limit: 2 %}
+          {%- assign s_lang = s.lang | default: "en" %}
+          <li>{{ s.authors | join: ", " }} ({{ s.year }}). {% if s_lang != lang %}<span lang="{{ s_lang }}">{{ s.title }}</span>{% else %}{{ s.title }}{% endif %}. <cite>{{ s.journal }}</cite> {{ s.volume }}, {{ s.pages }}. <a href="https://doi.org/{{ s.doi }}">doi:{{ s.doi }}</a></li>
+          {%- endfor %}
         </ol>
       </div>
-      {%- assign flagship = site.articles | where: "ref", "pistol-shrimp-cavitation" | where: "lang", lang | first -%}
       <a class="button button--primary" href="{{ flagship.url | relative_url }}">{{ t.flagship.cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
     </div>
   </div>

@@ -17,6 +17,7 @@
   <div class="graph-stage" data-graph="{{ '/graph.json' | relative_url }}" data-lang="{{ lang }}"
        data-label-article="{{ t.graph.article }}" data-label-being="{{ t.graph.being }}"
        data-label-unused="{{ t.graph.no_article }}"
+       data-node-name="{{ t.graph.node_name }}" data-node-name-dim="{{ t.graph.node_name_dim }}"
        {% for d in dims %}data-label-{{ d | replace: '_', '-' }}="{{ t.article.dimension_names[d] }}" {% endfor %}>
     <div class="container graph-toolbar">
       <fieldset class="graph-filter">
@@ -40,7 +41,7 @@
   </div>
 
   <div class="container graph-list">
-    <details>
+    <details open data-graph-list>{%- comment -%} open without JS; graph.js closes it once the graph is drawn {%- endcomment -%}
       <summary><h2>{{ t.graph.list_title }}</h2></summary>
       <div class="graph-list__grid">
         {%- for d in dims %}

@@ -24,6 +24,9 @@
   const ARTICLE_TERM = 210;
 
   let data, nodes, edges, byId, layoutKind, pinned = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const nameTpl = stage.dataset.nodeName || "%NAME% (%TYPE%), %N%";
+  const nameDimTpl = stage.dataset.nodeNameDim || "%NAME%, %N%";
 
   // ---------------------------------------------------------------------------
   // Layout
@@ -127,6 +130,10 @@
 
   function render() {
     svg.textContent = "";
+    // tap area of at least 22 px radius on screen, whatever the scale of the drawing
+    const ctm = svg.getScreenCTM();          // real scale, also when max-height letterboxes the drawing
+    const scale = (ctm && ctm.a) || 1;
+    const hitRadius = 22 / scale;
     const gEdges = el("g", { class: "edges" }, svg);
     const gNodes = el("g", { class: "nodes" }, svg);
 
@@ -137,14 +144,17 @@
     nodes.forEach((n) => {
       const label = n.label[lang] || n.label.en;
       const count = n.links.length;
-      const name = `${label} – ${describe(n)}`;
+      // "Mechanics (Rules), 3 connections" – dimension nodes without the repeated type
+      const name = (n.type === "dimension" ? nameDimTpl : nameTpl)
+        .replace("%NAME%", label).replace("%TYPE%", describe(n)).replace("%N%", count);
       let g;
       if (n.type === "article") {
-        g = el("a", { href: n.url[lang] || n.url.en, class: "node node--article", "aria-label": `${name}, ${count}` }, gNodes);
+        g = el("a", { href: n.url[lang] || n.url.en, class: "node node--article", "aria-label": name }, gNodes);
       } else {
-        g = el("g", { class: `node node--${n.type}${n.used === false ? " is-unused" : ""}`, tabindex: "0", role: "button", "aria-label": `${name}, ${count}` }, gNodes);
+        g = el("g", { class: `node node--${n.type}${n.used === false ? " is-unused" : ""}`, tabindex: "0", role: "button", "aria-pressed": "false", "aria-label": name }, gNodes);
       }
       if (n.dim) g.setAttribute("data-dim", n.dim);
+      el("circle", { class: "node-hit", r: Math.max(RADIUS[n.type], hitRadius) }, g);
       el("circle", { r: RADIUS[n.type] }, g);
       // Term labels point away from their dimension (radially), others sit below the node.
       let attrs = { class: "node-label", "text-anchor": "middle", y: RADIUS[n.type] + 15 };
@@ -166,7 +176,15 @@
       g.addEventListener("focus", () => highlight(n));
       g.addEventListener("blur", () => { if (!pinned) highlight(null); });
       if (n.type !== "article") {
-        const toggle = () => { pinned = pinned === n ? null : n; highlight(pinned || n); };
+        const toggle = () => {
+          pinned = pinned === n ? null : n;
+          nodes.forEach((m) => { if (m.g.getAttribute("role") === "button") m.g.setAttribute("aria-pressed", String(pinned === m)); });
+          highlight(pinned || n);
+          // on phones the info panel sits below the drawing – bring it into view
+          if (pinned && window.matchMedia("(max-width: 640px)").matches) {
+            info.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+          }
+        };
         g.addEventListener("click", toggle);
         g.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(); } });
       }
@@ -176,13 +194,20 @@
     position();
   }
 
+  function visibleBox(g) {
+    const parts = [...g.children].filter((c) => !c.classList.contains("node-hit")).map((c) => c.getBBox());
+    const x0 = Math.min(...parts.map((p) => p.x)), y0 = Math.min(...parts.map((p) => p.y));
+    const x1 = Math.max(...parts.map((p) => p.x + p.width)), y1 = Math.max(...parts.map((p) => p.y + p.height));
+    return { x: x0, y: y0, width: x1 - x0, height: y1 - y0 };
+  }
+
   // Second pass: the force layout only knows circles. Measure the real label boxes and
   // push overlapping terms, organisms and articles apart (dimensions stay where they are).
   function relaxLabels() {
     const vb = svg.viewBox.baseVal;
     nodes.forEach((n) => {
       n.g.setAttribute("transform", `translate(${n.x} ${n.y})`);
-      const b = n.g.getBBox();
+      const b = visibleBox(n.g);   // circle + label, not the invisible tap area
       const pad = 3;
       n.box = { x0: b.x - pad, y0: b.y - pad, x1: b.x + b.width + pad, y1: b.y + b.height + pad };
       n.movable = n.type !== "dimension";
@@ -305,10 +330,18 @@
       }
       stage.classList.add("is-ready");
       build();
+      const list = document.querySelector("[data-graph-list]");
+      if (list) list.open = false;   // the drawing replaces the list; it stays one click away
       stage.querySelectorAll(".graph-filter input").forEach((i) => i.addEventListener("change", applyFilter));
       let t;
       window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(build, 200); });
-      document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && pinned) { pinned = null; highlight(null); } });
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key === "Escape" && pinned) {
+          pinned = null;
+          nodes.forEach((m) => { if (m.g.getAttribute("role") === "button") m.g.setAttribute("aria-pressed", "false"); });
+          highlight(null);
+        }
+      });
     })
     .catch(() => stage.classList.add("is-failed"));
 })();
