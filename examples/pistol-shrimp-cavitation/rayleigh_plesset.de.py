@@ -32,14 +32,14 @@ def collapse(p_gas):
 
 rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh-Formel (leere Blase): {rayleigh * 1e6:.0f} µs\n")
-print("Gas (Pa)   Kollaps (µs)   R_min (µm)   max. Geschw. (m/s)   T_max (K)")
+print("Gas (Pa)   Kollaps (µs)   R_min (µm)   max. Geschw. (km/s)   T_max (1000 K)")
 
 fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # wie viel Gas die Blase des Krebses enthält, hat niemand gemessen
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatische Erwärmung (Physik-Linse)
-    print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed:18.0f}   {t_max:9.0f}")
+    print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:19.1f}   {t_max / 1e3:14.1f}")
     for ax in (whole, end):
         ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa Gas")
 

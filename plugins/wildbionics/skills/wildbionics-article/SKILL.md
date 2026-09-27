@@ -107,6 +107,10 @@ which the script writes; never edit them by hand. Code inside an include (home p
   units, a title that states the takeaway, a legend; German labels in the DE version, short enough
   not to be clipped. Look at the rendered SVG before you commit. Every chart needs `alt` (what the
   chart shows, with the key numbers) and a numbered `label`/`caption` like any figure.
+- Print only as many digits as are **stable across platforms** – CI runs Linux, you may run macOS.
+  Quantities that depend strongly on solver steps (peaks, minima, anything raised to a high power)
+  get 2–3 significant figures, e.g. `{speed / 1e3:.1f}` km/s instead of `{speed:,.0f}` m/s; otherwise
+  the gate reports `_data/code_examples.yml` as stale in CI (it prints the diff).
 - The printed result is **meaningful**: numbers with units that answer a question, ideally compared
   with a known limit (analytical formula, measurement from a cited source) – "validation".
 - Readable over clever: short functions, descriptive names, comments explain *why*.

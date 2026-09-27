@@ -225,14 +225,14 @@ def collapse(p_gas):
 
 rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh-Formel (leere Blase): {rayleigh * 1e6:.0f} µs\n")
-print("Gas (Pa)   Kollaps (µs)   R_min (µm)   max. Geschw. (m/s)   T_max (K)")
+print("Gas (Pa)   Kollaps (µs)   R_min (µm)   max. Geschw. (km/s)   T_max (1000 K)")
 
 fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # wie viel Gas die Blase des Krebses enthält, hat niemand gemessen
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatische Erwärmung (Physik-Linse)
-    print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed:18.0f}   {t_max:9.0f}")
+    print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:19.1f}   {t_max / 1e3:14.1f}")
     for ax in (whole, end):
         ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa Gas")
 
@@ -252,7 +252,7 @@ Was das Ergebnis zeigt:
 
 - **Die Kollapszeit ist robust.** Egal wie viel Gas in der Blase ist: Sie kollabiert nach **275–279 µs**, höchstens etwa 1 % neben Rayleighs Formel. Einer Vorhersage, die kaum von einer unbekannten Eingangsgröße abhängt, kann man trauen.
 - **Der Endpunkt ist es nicht.** Der kleinste Radius reicht von 137 µm bis hinunter zu 3 µm – ein Faktor von etwa 45. Weil die Temperatur mit (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup> wächst, schwankt die Abschätzung zwischen etwa 12.000 K und über einer Million Kelvin. Die Temperatur kann das Modell nicht festlegen.
-- **Das Modell zeigt seine eigenen Grenzen.** Mit 10 oder 100 Pa Gas bewegte sich die Blasenwand mit 5.000 bis 90.000 m/s – schneller als die Schallgeschwindigkeit in Wasser (etwa 1.500 m/s). Die Rayleigh-Plesset-Gleichung behandelt Wasser als inkompressibel und vernachlässigt Wärmeverluste; in dieser letzten Phase sind ihre Zahlen daher nicht mehr physikalisch. Echte Blasen werden durch Wasserdampf, Wärmeleitung und die Kompressibilität des Wassers abgebremst; der beim Krebs gemessene Lichtblitz deutet auf mindestens 5.000 K hin [2](#ref-2){:.cite}.
+- **Das Modell zeigt seine eigenen Grenzen.** Mit 10 oder 100 Pa Gas bewegte sich die Blasenwand mit 5 bis 90 km/s – schneller als die Schallgeschwindigkeit in Wasser (etwa 1,5 km/s). Die Rayleigh-Plesset-Gleichung behandelt Wasser als inkompressibel und vernachlässigt Wärmeverluste; in dieser letzten Phase sind ihre Zahlen daher nicht mehr physikalisch. Echte Blasen werden durch Wasserdampf, Wärmeleitung und die Kompressibilität des Wassers abgebremst; der beim Krebs gemessene Lichtblitz deutet auf mindestens 5.000 K hin [2](#ref-2){:.cite}.
 
 Auch einige Ideen aus der Programmierung lohnen einen zweiten Blick:
 

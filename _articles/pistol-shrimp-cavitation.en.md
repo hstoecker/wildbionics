@@ -225,14 +225,14 @@ def collapse(p_gas):
 
 rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh's formula (empty bubble): {rayleigh * 1e6:.0f} µs\n")
-print("gas (Pa)   collapse (µs)   R_min (µm)   max. speed (m/s)   T_max (K)")
+print("gas (Pa)   collapse (µs)   R_min (µm)   max. speed (km/s)   T_max (1000 K)")
 
 fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # nobody has measured how much gas the shrimp's bubble holds
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatic heating (physics lens)
-    print(f"{p_gas:8}   {sol.t[-1] * 1e6:13.0f}   {r_min * 1e6:10.1f}   {speed:16,.0f}   {t_max:9,.0f}")
+    print(f"{p_gas:8}   {sol.t[-1] * 1e6:13.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:17.1f}   {t_max / 1e3:14,.1f}")
     for ax in (whole, end):
         ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa gas")
 
@@ -252,7 +252,7 @@ What the result teaches:
 
 - **The collapse time is robust.** However much gas is inside, the bubble collapses after **275–279 µs**, within about 1 % of Rayleigh's formula. A prediction that barely depends on an unknown input is one you can trust.
 - **The end point is not.** The smallest radius ranges from 137 µm down to 3 µm – a factor of about 45. Because the temperature grows with (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup>, the estimate swings from about 12,000 K to over a million kelvin. The model cannot pin down the temperature.
-- **The model shows its own limits.** With 10 or 100 Pa of gas, the bubble wall would move at 5,000 to 90,000 m/s – faster than sound travels in water (about 1,500 m/s). The Rayleigh–Plesset equation treats water as incompressible and ignores heat loss, so in this last phase its numbers are no longer physical. Real bubbles are cushioned by water vapour, heat conduction and the compressibility of water; the flash measured for the shrimp points to at least 5,000 K [2](#ref-2){:.cite}.
+- **The model shows its own limits.** With 10 or 100 Pa of gas, the bubble wall would move at 5 to 90 km/s – faster than sound travels in water (about 1.5 km/s). The Rayleigh–Plesset equation treats water as incompressible and ignores heat loss, so in this last phase its numbers are no longer physical. Real bubbles are cushioned by water vapour, heat conduction and the compressibility of water; the flash measured for the shrimp points to at least 5,000 K [2](#ref-2){:.cite}.
 
 A few programming ideas are worth noticing, too:
 
