@@ -178,6 +178,52 @@ en:
     intro: "One phenomenon per article, viewed through several lenses – with sources you can check."
     read: "Read the article"
     url: "/articles/"
+  guide:
+    nav: "Guide"
+    url: "/contribute/"
+    title: "Contribute to WildBionics"
+    description: "How to contribute articles, corrections, translations and figures to WildBionics – with Claude or by hand, reviewed before anything goes live."
+    eyebrow: "Open source"
+    intro: "WildBionics grows with everyone who is curious. You can report mistakes, propose phenomena, write articles, translate, draw figures or improve the site – on your own or together with Claude. Every change is checked automatically and approved by a person before it goes live."
+    ways_title: "Three ways to work"
+    ways:
+      - title: "Ask Claude on GitHub"
+        text: "Collaborators write an issue or comment that mentions @claude – for example “@claude draft an article about how geckos stick to walls”. Claude researches, writes with the project’s skills and opens a pull request for review."
+      - title: "Work with Claude Code"
+        text: "Open the repository in the Claude desktop app, the terminal or on claude.ai/code. The WildBionics skills load automatically. Outside the repository you can install them from our plugin marketplace:"
+      - title: "Work by hand"
+        text: "Fork the repository, edit Markdown and YAML files, run the checks and open a pull request. The rules are the same – they are written down in CONTRIBUTING.md and in the skills."
+    steps_title: "From idea to live page"
+    steps:
+      - "Open an issue: an article idea, a correction or a translation."
+      - "Work on a branch with the matching skill – research, English text, figures, German translation, knowledge graph."
+      - "Run the checks locally, review your own work, open a pull request."
+      - "Automatic checks: terminology, structure, skills, SEO and links – plus a preview with screenshots and a review by Claude."
+      - "The maintainer reads the review, looks at the preview and approves."
+      - "Merged changes go live on wildbionics.com within minutes."
+    live_note: "Nothing goes live without a person’s approval."
+    rules_title: "Quality rules"
+    rules:
+      - "Every fact has a verifiable source, usually a peer-reviewed paper with DOI. Derived numbers are recalculated, code is run."
+      - "Hypotheses such as superintelligence are presented as scenarios, never as facts."
+      - "German texts use the correct technical terms from our glossary."
+      - "Figures must be recognisable, conceptually clear, correct and attractive."
+      - "Accessible (WCAG 2.2 AA), works without JavaScript, no new dependencies."
+    skills_title: "The skills – our rulebook"
+    skills_intro: "Skills are instructions that Claude loads when a task needs them. They are the same rules a human contributor follows."
+    skills:
+      - { name: "wildbionics-contribute", text: "orientation, workflow and setup – start here" }
+      - { name: "wildbionics-article", text: "research, sources, structure, lenses, search and answer engines" }
+      - { name: "wildbionics-translate", text: "English ⇄ German with the project glossary" }
+      - { name: "wildbionics-figures", text: "conceptual figures that pass the quality bar" }
+      - { name: "wildbionics-graph", text: "ontology and knowledge graph" }
+      - { name: "wildbionics-design", text: "UI/UX, accessibility, front-end rules" }
+      - { name: "wildbionics-review", text: "reviewing pull requests, with a fact-checking agent" }
+    together_title: "Working together"
+    together_text: "Families, classes and teams can work on WildBionics together: each person uses their own GitHub account and their own Claude access, the maintainer adds them as collaborators, and everyone contributes through pull requests. The review process keeps the quality the same, no matter who – or which agent – wrote a change."
+    cta_repo: "Open the repository"
+    cta_issue: "Propose a phenomenon"
+    cta_guide: "Read CONTRIBUTING.md"
   graph:
     nav: "Graph"
     title: "The knowledge graph"
@@ -400,6 +446,52 @@ de:
     intro: "Ein Phänomen pro Artikel, betrachtet durch mehrere Linsen – mit überprüfbaren Quellen."
     read: "Artikel lesen"
     url: "/de/artikel/"
+  guide:
+    nav: "Anleitung"
+    url: "/de/mitmachen/"
+    title: "Bei WildBionics mitmachen"
+    description: "So trägst du Artikel, Korrekturen, Übersetzungen und Abbildungen zu WildBionics bei – mit Claude oder von Hand, geprüft vor der Veröffentlichung."
+    eyebrow: "Open Source"
+    intro: "WildBionics wächst mit allen, die neugierig sind. Du kannst Fehler melden, Phänomene vorschlagen, Artikel schreiben, übersetzen, Abbildungen zeichnen oder die Website verbessern – allein oder zusammen mit Claude. Jede Änderung wird automatisch geprüft und von einem Menschen freigegeben, bevor sie online geht."
+    ways_title: "Drei Arten mitzuarbeiten"
+    ways:
+      - title: "Claude auf GitHub fragen"
+        text: "Mitwirkende schreiben ein Issue oder einen Kommentar mit @claude – zum Beispiel „@claude entwirf einen Artikel darüber, wie Geckos an Wänden haften“. Claude recherchiert, schreibt mit den Skills des Projekts und öffnet einen Pull Request zur Prüfung."
+      - title: "Mit Claude Code arbeiten"
+        text: "Öffne das Repository in der Claude-Desktop-App, im Terminal oder auf claude.ai/code. Die WildBionics-Skills laden automatisch. Außerhalb des Repositorys installierst du sie aus unserem Plugin-Marketplace:"
+      - title: "Von Hand arbeiten"
+        text: "Forke das Repository, bearbeite Markdown- und YAML-Dateien, lass die Prüfungen laufen und öffne einen Pull Request. Die Regeln sind dieselben – sie stehen in CONTRIBUTING.md und in den Skills."
+    steps_title: "Von der Idee zur Seite"
+    steps:
+      - "Issue öffnen: eine Artikelidee, eine Korrektur oder eine Übersetzung."
+      - "Auf einem Branch mit dem passenden Skill arbeiten – Recherche, englischer Text, Abbildungen, deutsche Übersetzung, Wissensgraph."
+      - "Prüfungen lokal laufen lassen, die eigene Arbeit prüfen, Pull Request öffnen."
+      - "Automatische Prüfungen: Terminologie, Struktur, Skills, SEO und Links – dazu eine Vorschau mit Screenshots und ein Review durch Claude."
+      - "Der Maintainer liest das Review, sieht sich die Vorschau an und gibt frei."
+      - "Freigegebene Änderungen sind nach wenigen Minuten auf wildbionics.com online."
+    live_note: "Nichts geht ohne die Freigabe eines Menschen online."
+    rules_title: "Qualitätsregeln"
+    rules:
+      - "Jede Aussage hat eine überprüfbare Quelle, meist eine begutachtete Veröffentlichung mit DOI. Abgeleitete Zahlen werden nachgerechnet, Code wird ausgeführt."
+      - "Hypothesen wie Superintelligenz werden als Szenarien dargestellt, nie als Tatsachen."
+      - "Deutsche Texte verwenden die korrekten Fachbegriffe aus unserem Glossar."
+      - "Abbildungen müssen erkennbar, konzeptionell klar, korrekt und ansprechend sein."
+      - "Barrierefrei (WCAG 2.2 AA), funktioniert ohne JavaScript, keine neuen Abhängigkeiten."
+    skills_title: "Die Skills – unser Regelwerk"
+    skills_intro: "Skills sind Anleitungen, die Claude lädt, wenn eine Aufgabe sie braucht. Es sind dieselben Regeln, die auch menschliche Mitwirkende befolgen."
+    skills:
+      - { name: "wildbionics-contribute", text: "Orientierung, Ablauf und Einrichtung – hier anfangen" }
+      - { name: "wildbionics-article", text: "Recherche, Quellen, Aufbau, Linsen, Such- und Antwortmaschinen" }
+      - { name: "wildbionics-translate", text: "Englisch ⇄ Deutsch mit dem Projektglossar" }
+      - { name: "wildbionics-figures", text: "konzeptionelle Abbildungen, die den Qualitätsmaßstab erfüllen" }
+      - { name: "wildbionics-graph", text: "Ontologie und Wissensgraph" }
+      - { name: "wildbionics-design", text: "UI/UX, Barrierefreiheit, Frontend-Regeln" }
+      - { name: "wildbionics-review", text: "Pull Requests prüfen, mit einem Agenten zur Faktenprüfung" }
+    together_title: "Gemeinsam arbeiten"
+    together_text: "Familien, Schulklassen und Teams können gemeinsam an WildBionics arbeiten: Jede Person nutzt ihr eigenes GitHub-Konto und ihren eigenen Claude-Zugang, der Maintainer fügt sie als Mitwirkende hinzu, und alle tragen über Pull Requests bei. Der Prüfprozess hält die Qualität gleich – egal, wer oder welcher Agent eine Änderung geschrieben hat."
+    cta_repo: "Zum Repository"
+    cta_issue: "Ein Phänomen vorschlagen"
+    cta_guide: "CONTRIBUTING.md lesen"
   graph:
     nav: "Wissensgraph"
     title: "Der Wissensgraph"

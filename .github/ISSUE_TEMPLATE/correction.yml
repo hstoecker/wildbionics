@@ -1,0 +1,20 @@
+name: Correction
+description: Report a factual error, a wrong term or a broken page
+labels: [correction]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page (URL)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong – and what is right?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction (DOI or link)

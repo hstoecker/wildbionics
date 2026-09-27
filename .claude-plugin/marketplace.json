@@ -1,0 +1,15 @@
+{
+  "name": "wildbionics",
+  "description": "Skills and agents to write, translate, illustrate and review WildBionics – an open compendium that connects biology with physics, mathematics, chemistry, computer science and Physical AI.",
+  "owner": {
+    "name": "Hendrik Stöcker",
+    "url": "https://github.com/hstoecker"
+  },
+  "plugins": [
+    {
+      "name": "wildbionics",
+      "source": "./plugins/wildbionics",
+      "description": "Everything you need to contribute to wildbionics.com with Claude: article structure, fact-checking, EN⇄DE terminology, figure quality, knowledge graph, UI/UX rules and the review procedure."
+    }
+  ]
+}

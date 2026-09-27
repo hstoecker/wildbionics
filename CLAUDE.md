@@ -52,20 +52,26 @@ status: draft
 ```
 
 ## Roadmap (keep it simple, quick wins first)
-- [x] **Phase 0** – Minimal live site: `_config.yml`, `index.md` (EN), `de/index.md` (DE), `CNAME`; DNS check (A records to GitHub Pages, `www` CNAME), enforce HTTPS, verify domain in GitHub.
+- [x] **Phase 0** – Minimal live site: `_config.yml`, home pages (EN at `/`, DE at `/de/`), `CNAME`; DNS check (A records to GitHub Pages, `www` CNAME), enforce HTTPS, verify domain in GitHub.
 - [x] **Phase 1** – Mac setup: Homebrew, git, gh, Ruby + Bundler + Jekyll; clone repo; `bundle exec jekyll serve`.
 - [x] **Phase 2** – Landing page design: hero + tagline ("Nature's physics, explained."), lens demo (bat, 3 tabs), 4 dimensions, flagship article teaser, "Contribute on GitHub", language switcher, footer with licenses.
 - [x] **Phase 3** – First flagship article with lens feature, JSON-LD, DOI sources; `llms.txt`.
 - [x] **Phase 4** – `graph.json` from front matter + interactive graph view (`/graph/`, `/de/wissensgraph/`).
 
+## Contribution system (plugin, skills, review)
+- The repository is a **Claude Code plugin marketplace**: `.claude-plugin/marketplace.json` → plugin `plugins/wildbionics/` (skills `wildbionics-contribute`, `-article`, `-translate`, `-figures`, `-graph`, `-design`, `-review`; agent `wildbionics-fact-checker`). `.claude/skills/*` and `.claude/agents/*` are symlinks to the plugin, so opening the repo loads them. Install elsewhere: `/plugin marketplace add hstoecker/wildbionics`, `/plugin install wildbionics@wildbionics`.
+- **The skills are the rulebook.** Any change of a convention updates the matching skill in the same PR and bumps the plugin `version`; `check_plugin.rb` enforces references, coverage and the version bump.
+- Every change goes through a PR: gates + preview + Claude review (`claude-review.yml`), `@claude` in issues/PRs (`claude.yml`); the maintainer approves and merges (`CODEOWNERS`). Human guide: `CONTRIBUTING.md`, website `/contribute/`; agents: `AGENTS.md`.
+
 ## How things are built (as of Phase 4)
 - **Deploy:** GitHub Actions (`.github/workflows/deploy.yml`): Jekyll build → `.github/scripts/check_site.py` quality gate → GitHub Pages → IndexNow (`.github/scripts/indexnow.py`, key in `_config.yml` + `/<key>.txt`). PRs only build + check.
 - **Articles:** `_articles/<slug>.<lang>.md`, layout `article`; lenses via `{% include lens-tabs.html %}` + `lens-start`/`lens-end`; key facts, FAQ, sources (with DOI) in front matter → rendered + JSON-LD (Article, FAQPage, BreadcrumbList). Ontology slugs need a display name in `_data/taxonomy.yml`.
 - **UI strings:** `_data/i18n.yml` (EN/DE keys must match). SVG figures in `_includes/svg/` pull labels from i18n.
-- **Translation:** follow the project skill `.claude/skills/wildbionics-translate/`; German technical terms are fixed in `_data/glossary.yml` and enforced by `.github/scripts/check_terms.rb` (runs first in CI; forbidden variants fail the build).
+- **Figures:** follow the project skill `plugins/wildbionics/skills/wildbionics-figures/` – every figure must be recognisable, conceptually clear, correct and attractive; iterate with rendered screenshots (`scripts/shots.sh`) until its acceptance checklist passes, and show the user the final render.
+- **Translation:** follow the project skill `plugins/wildbionics/skills/wildbionics-translate/`; German technical terms are fixed in `_data/glossary.yml` and enforced by `.github/scripts/check_terms.rb` (runs first in CI; forbidden variants fail the build).
 - **Knowledge graph:** `graph.json` (Liquid, built from `_data/taxonomy.yml` with `dim`/`order`, `_data/beings.yml`, `_data/lenses.yml` and article front matter) → `assets/js/graph.js` (own force layout, no dependencies; dimensions are fixed anchors, label-collision pass via getBBox). The page `_includes/graph-page.html` also renders a full no-JS list. `check_site.py` validates graph.json.
 - **Machine readability:** `sitemap.xml` (hreflang), `robots.txt` (AI crawlers allowed), `llms.txt`, OG images in `assets/og/` (1200×630, rendered from `_includes/og-card.html`).
-- Check locally: `ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
+- Check locally: `ruby .github/scripts/check_terms.rb && ruby .github/scripts/check_content.rb && ruby .github/scripts/check_plugin.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
 
 ## Working style
 - Step by step, small verifiable wins. Explain commands before running them (owner is setting up a fresh Mac).
