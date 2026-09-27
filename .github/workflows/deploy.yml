@@ -1,4 +1,4 @@
-# Quality gates → build → (PR: preview) → deploy to GitHub Pages → IndexNow.
+# Quality gates (terms, content, plugin, code examples) → build → (PR: preview) → deploy to GitHub Pages → IndexNow.
 # Rules behind every gate: plugins/wildbionics/skills (see wildbionics-contribute).
 name: Build, check & deploy
 
@@ -30,6 +30,15 @@ jobs:
         run: ruby .github/scripts/check_content.rb
       - name: Plugin gate (skills up to date, version bump)
         run: ruby .github/scripts/check_plugin.rb ${{ github.event_name == 'pull_request' && format('--base origin/{0}', github.base_ref) || '' }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: examples/requirements.txt
+      - name: Code gate (run every code example; output, charts, notebooks up to date)
+        run: |
+          python -m pip install -r examples/requirements.txt
+          python .github/scripts/code_examples.py --check
       - uses: actions/configure-pages@v6
       - name: Build with Jekyll (same gem set as classic GitHub Pages)
         uses: actions/jekyll-build-pages@v1

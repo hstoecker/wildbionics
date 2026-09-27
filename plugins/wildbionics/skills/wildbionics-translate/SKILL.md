@@ -51,7 +51,12 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
 - **Address:** informal *du* (as on the rest of the site), consistent within a text.
 - **Keep unchanged:** DOIs, English titles of cited papers, author names, formulas and
   variable names, Liquid tags (`{% include … %}`), HTML/ids/anchors (`#ref-3`, `#lens-math`),
-  code identifiers. Code *comments* and printed strings may be translated.
+  code identifiers. In code examples, translate comments, docstrings, printed strings and chart
+  labels (keep chart titles short enough not to be clipped); keep identifiers, numbers and the
+  `file=` name identical. The DE program must compute exactly what the EN one does; avoid Python's
+  English thousands separator in DE output (`{x:.0f}` instead of `{x:,.0f}`). Then run
+  `.github/scripts/code_examples.py` – output, chart and notebook of the DE version are generated,
+  and numbers quoted in the DE text must match its Output box (with decimal comma in the text).
 - **Same structure:** identical number of key facts, FAQ entries, sources and citations
   `[n](#ref-n)` in both languages – the gate checks this.
 - **SVG labels** come from `_data/i18n.yml` (`figures.*`, `hero.svg_*`, `lens.*.svg_*`);

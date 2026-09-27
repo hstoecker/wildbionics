@@ -22,6 +22,7 @@ Run (or read the CI results of) all gates; any error is a **must-fix**:
 ruby .github/scripts/check_terms.rb      # terminology, EN/DE consistency, taxonomy
 ruby .github/scripts/check_content.rb    # article structure, citations, figures
 ruby .github/scripts/check_plugin.rb     # skills/plugin integrity and coverage
+python3 .github/scripts/code_examples.py --check   # every code example runs; output/charts up to date
 bundle exec jekyll build && python3 .github/scripts/check_site.py _site   # SEO, JSON-LD, links, graph.json
 ```
 
@@ -34,6 +35,11 @@ Go through every area the change touches; skip areas it doesn't touch and say so
    mismatching DOIs; calculations that don't reproduce; hypotheses stated as facts.
 2. **Structure** (`wildbionics-article`) – front matter complete, lens panels match `lenses`,
    citations ↔ sources, key facts answer-first, FAQ useful, title/description lengths.
+2b. **Code examples** (`wildbionics-article`, section 4) – does the program teach one idea? Is the
+   printed result meaningful (units, comparison with a known limit)? Does the text interpret the
+   output and chart, and do all numbers in the text (incl. "Try it yourself") match the Output box
+   or a tested variant? Chart readable (labels, units, takeaway title, `alt`)? Rerun a variant
+   yourself if a claim looks off.
 3. **Language** (`wildbionics-translate`) – correct technical terms (glossary), same meaning and
    hedging in EN and DE, typography (decimal comma, „…“, non-breaking spaces), consistent *du*.
 4. **Figures** (`wildbionics-figures`) – render the changed figures (large, desktop, phone,

@@ -47,4 +47,5 @@ Sources:
 - [Home (English)]({{ '/' | absolute_url }}): overview, the lens concept and the four dimensions of the knowledge graph (time, space, rules of physics, adjacent sciences)
 - [Startseite (Deutsch)]({{ '/de/' | absolute_url }})
 - [All articles]({{ en.articles.url | absolute_url }})
+- [Run the code examples]({{ '/run-code/' | absolute_url }}): every Python example on the site is a complete program, tested at every build; how to run it in Google Colab or locally
 - [Sitemap]({{ '/sitemap.xml' | absolute_url }})

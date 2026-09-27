@@ -10,3 +10,7 @@ vendor/
 # Local only: the github-pages gem pins all versions; a committed lockfile
 # conflicts with the gem set of the GitHub Pages build container.
 Gemfile.lock
+
+# Python environment for the code examples
+.venv/
+__pycache__/

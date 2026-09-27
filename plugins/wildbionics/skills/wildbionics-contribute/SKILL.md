@@ -33,6 +33,9 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 - `_includes/` – page parts; `_includes/svg/` – figures; `_layouts/` – page layouts
 - `assets/css/main.css`, `assets/js/` – design system and the only scripts (no dependencies)
 - `graph.json`, `sitemap.xml`, `robots.txt`, `llms.txt` – generated machine-readable files
+- `examples/` – generated downloads, Colab notebooks and charts of the code examples, plus
+  `examples/requirements.txt`; `_data/code_examples.yml` – their tested output (both written by
+  `.github/scripts/code_examples.py`, see `wildbionics-article`)
 - `.github/scripts/` – quality gates · `.github/workflows/` – CI, deploy, review
 - `plugins/wildbionics/` – this plugin (skills, agent) · `.claude-plugin/marketplace.json` – marketplace
 
@@ -47,6 +50,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
    ruby .github/scripts/check_terms.rb
    ruby .github/scripts/check_content.rb
    ruby .github/scripts/check_plugin.rb
+   python3 .github/scripts/code_examples.py --check   # needs examples/requirements.txt installed
    bundle exec jekyll build && python3 .github/scripts/check_site.py _site
    ```
 5. **Self-review** with `wildbionics-review` and fix every must-fix finding.
@@ -59,12 +63,13 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 
 | Workflow / script | When | What |
 |---|---|---|
-| `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines |
+| `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines |
 | `.github/workflows/claude-review.yml` | PR opened/updated (branches of this repo) | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment |
 | `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills and opens a pull request |
 | `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/lenses |
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
+| `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files |
 | `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD, links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
@@ -93,7 +98,10 @@ skill; CI fails a PR that changes the plugin without a version bump.
 brew install ruby@3.3 gh          # GitHub Pages builds with Ruby 3.3
 bundle install                    # github-pages gem (no Gemfile.lock in the repo, on purpose)
 bundle exec jekyll serve --livereload   # http://localhost:4000
+python3 -m venv .venv && source .venv/bin/activate
+python3 -m pip install -r examples/requirements.txt   # for the code examples
 ```
+If `jekyll build` fails with "Invalid US-ASCII character", set `export LANG=en_US.UTF-8`.
 Opening the repository in Claude Code loads these skills automatically (`.claude/skills/` links
 to the plugin). Outside the repository, install the plugin from the marketplace:
 `/plugin marketplace add hstoecker/wildbionics` and `/plugin install wildbionics@wildbionics`.

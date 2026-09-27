@@ -1,0 +1,45 @@
+{%- comment -%}
+  Result of a code example – place it directly after the code block (rules: wildbionics-article):
+    ```python … ```
+    {% include code-result.html file="name.py" alt="…" label="Fig. 4" caption="…" %}
+  Output, chart, download and notebook come from _data/code_examples.yml, which
+  .github/scripts/code_examples.py writes by actually running the code.
+  Parameters: file (required); alt, label, caption (for a chart); ref, lang (default: the page's;
+  set them when the code lives in an include, e.g. the home page); variant="card" (inside .code-card).
+  assets/js/code.js adds the copy button to the code block itself.
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign ex_ref = include.ref | default: page.ref -%}
+{%- assign ex_lang = include.lang | default: page.lang -%}
+{%- assign ex = site.data.code_examples[ex_ref][ex_lang][include.file] -%}
+{%- assign c = t.code -%}
+{%- if ex -%}
+{%- capture colab_url -%}https://colab.research.google.com/github/{{ site.repository_url | remove: "https://github.com/" }}/blob/main/{{ ex.notebook }}{%- endcapture -%}
+{%- capture actions -%}
+<ul class="code-actions" aria-label="{{ c.actions_label }}">
+<li><a class="code-action" href="{{ colab_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-play"/></svg>{{ c.colab }}</a></li>
+<li><a class="code-action" href="{{ ex.py | relative_url }}" download="{{ include.file }}"><svg aria-hidden="true" focusable="false"><use href="#icon-download"/></svg>{{ c.download }}</a></li>
+<li><a class="code-action code-action--help" href="{{ c.howto_url | relative_url }}">{{ c.howto }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></li>
+</ul>
+{%- endcapture -%}
+{%- if include.variant == "card" %}
+<div class="code-card__foot">
+<p class="code-card__out"><span>{{ c.output }}</span> <samp>{{ ex.output | escape }}</samp></p>
+{{ actions }}
+</div>
+{%- else %}
+<div class="code-result">
+{{ actions }}
+<div class="code-output">
+<p class="code-output__label"><svg aria-hidden="true" focusable="false"><use href="#icon-check"/></svg>{{ c.output }} <span>· {{ c.tested }}</span></p>
+<pre><samp>{{ ex.output | escape }}</samp></pre>
+</div>
+{%- if ex.chart %}
+<figure class="figure code-chart">
+<a href="{{ ex.chart | relative_url }}"><img src="{{ ex.chart | relative_url }}" width="{{ ex.chart_width }}" height="{{ ex.chart_height }}" alt="{{ include.alt | escape }}" loading="lazy" decoding="async"></a>
+<figcaption class="caption">{% if include.label %}<span class="caption__label">{{ include.label }}</span> {% endif %}{{ include.caption | default: c.chart }}</figcaption>
+</figure>
+{%- endif %}
+</div>
+{%- endif %}
+{%- endif -%}
