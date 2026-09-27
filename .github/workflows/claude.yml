@@ -40,4 +40,5 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_args: |
             --max-turns 120
+            --allowedTools "Edit,Write,Read,Glob,Grep,WebFetch,WebSearch,Task,Bash(ruby .github/scripts/*),Bash(python3 *),Bash(bundle install*),Bash(bundle exec jekyll build*),Bash(curl -s *),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(ls *)"
             --append-system-prompt "You work on WildBionics. Start with the wildbionics-contribute skill, follow the matching WildBionics skills (article, translate, figures, graph, design), run the gates from wildbionics-contribute and self-review with wildbionics-review before you open a pull request. Never push to main."

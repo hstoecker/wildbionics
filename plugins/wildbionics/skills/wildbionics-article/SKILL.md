@@ -13,7 +13,8 @@ check every claim. Reference article: `_articles/pistol-shrimp-cavitation.en.md`
 1. Collect **primary sources**: peer-reviewed papers, ideally with DOI; prefer open access.
 2. **Verify every source** via Crossref (`https://api.crossref.org/works/<doi>`) or PubMed
    (E-utilities) – title, authors, journal, volume, pages, year must match what you cite.
-   A DOI you have not resolved is not a source.
+   A DOI you have not resolved is not a source. In a cloud session these APIs must be allowed
+   in the environment (see `wildbionics-contribute`); if a lookup fails, say so – never guess.
 3. Read at least the abstract (PubMed `efetch`, Semantic Scholar, open-access full text).
    Note for each number *where exactly* it comes from. If a source says "at least 5,000 K",
    write "at least 5,000 K", not "5,000 K".
