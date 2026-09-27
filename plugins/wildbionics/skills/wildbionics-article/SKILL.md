@@ -105,7 +105,9 @@ which the script writes; never edit them by hand. Code inside an include (home p
   seeds before you publish.
 - At most **one** chart (one figure, subplots allowed), ended with `plt.show()`. Axis labels with
   units, a title that states the takeaway, a legend; German labels in the DE version, short enough
-  not to be clipped. Look at the rendered SVG before you commit. Every chart needs `alt` (what the
+  not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
+  valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if
+  they were real; distinguish curves by more than colour (direct labels or line styles). Every chart needs `alt` (what the
   chart shows, with the key numbers) and a numbered `label`/`caption` like any figure.
 - Print only as many digits as are **stable across platforms** – CI runs Linux, you may run macOS.
   Quantities that depend strongly on solver steps (peaks, minima, anything raised to a high power)
@@ -119,8 +121,13 @@ which the script writes; never edit them by hand. Code inside an include (home p
 1. Before the code: what question the program answers and what is unknown or assumed.
 2. After the code: "What the result teaches" – interpret the printed numbers and the chart in
    2–4 bullets (which result is robust, which is sensitive, where the model breaks down).
-3. "Try it yourself": 2–3 one-line changes, each with the **tested** outcome (run the variant and
-   quote its numbers).
+3. "Try it yourself": 2–3 one-line changes, each with its outcome. Every change is a **tested
+   variant** – after the list, one include per change:
+   `{% include code-variant.html file="x.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557" %}`.
+   The gate replaces `replace` (must occur exactly once), runs the program and fails unless every
+   number in `expect` – list all numbers the text quotes for this change – appears in the output.
+   The page shows the variant's output as a collapsible "Tested output with …" (optional
+   `label="…"` names the change when `with` alone is unclear).
 Numbers quoted in the text must match the Output box; rerun the script after every code change.
 
 **Run the gate** (needs Python ≥ 3.9 with the pinned libraries):

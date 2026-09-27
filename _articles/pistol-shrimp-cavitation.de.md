@@ -207,6 +207,7 @@ T0 = 293.0                                    # Temperatur des Wassers (K)
 
 R_MAX = 3.0e-3        # größter Blasenradius (m)
 GAMMA = 1.4           # Polytropenexponent des Gases
+C_WATER = 1482.0      # Schallgeschwindigkeit in Wasser (m/s)
 
 def collapse(p_gas):
     """Simuliert den Kollaps ab R_MAX; p_gas = Gasdruck in der Blase bei R_MAX (Pa)."""
@@ -233,26 +234,33 @@ for p_gas in [10, 100, 1000]:     # wie viel Gas die Blase des Krebses enthält,
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatische Erwärmung (Physik-Linse)
     print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:19.1f}   {t_max / 1e3:14.1f}")
+    t_us, r_um = sol.t * 1e6, sol.y[0] * 1e6
+    fast = np.abs(sol.y[1]) > C_WATER         # Wand schneller als der Schall: Das Modell gilt nicht mehr
+    i = np.argmax(fast) if fast.any() else len(fast)
     for ax in (whole, end):
-        ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa Gas")
+        line, = ax.plot(t_us[:i + 1], r_um[:i + 1])
+        ax.plot(t_us[i:], r_um[i:], ":", color=line.get_color())
+    end.annotate(f"{p_gas} Pa", (t_us[-1], r_um[-1]), xytext=(5, 0), textcoords="offset points",
+                 va="center", backgroundcolor="white")
 
 for ax in (whole, end):
     ax.axvline(rayleigh * 1e6, color="grey", linestyle="--", label="Rayleigh-Formel")
     ax.set_xlabel("Zeit (µs)")
+whole.plot([], [], ":", color="grey", label="Wand schneller als Schall: Modell ungültig")
 whole.set(ylabel="Blasenradius (µm)", title="Ganzer Kollaps: Die Kurven decken sich")
-end.set(ylabel="Blasenradius (µm, logarithmisch)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 4),
-        yscale="log", title="Letzte µs: Das Gas bestimmt, wie klein")
+whole.legend(loc="lower left")
+end.set(ylabel="Blasenradius (µm, logarithmisch)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 5),
+        yscale="log", title="Letzte µs: Hier endet das Modell")
 end.yaxis.set_major_formatter("{x:g}")
-end.legend()
 plt.show()
 ```
-{% include code-result.html file="rayleigh_plesset.py" label="Abb. 4" caption="Ausgabe des Programms oben. Links: der ganze Kollaps – die drei Kurven liegen übereinander und enden bei Rayleighs Kollapszeit. Rechts: die letzten acht Mikrosekunden auf logarithmischer Skala – hier entscheidet die Gasmenge, wie klein die Blase wird." alt="Zwei Liniendiagramme des Blasenradius über der Zeit für 10, 100 und 1.000 Pascal Gas. Links fallen alle drei Kurven von 3.000 Mikrometern bei etwa 276 Mikrosekunden auf fast null, neben einer gestrichelten Linie für die Rayleigh-Formel. Rechts, vergrößert auf 272 bis 280 Mikrosekunden mit logarithmischer Achse: Die Blase mit 10 Pa schrumpft bei 275 Mikrosekunden auf 3 Mikrometer, die mit 100 Pa bei 276 auf 20 Mikrometer, die mit 1.000 Pa bei 279 nur auf 137 Mikrometer." %}
+{% include code-result.html file="rayleigh_plesset.py" label="Abb. 4" caption="Ausgabe des Programms oben. Links: der ganze Kollaps – die drei Kurven liegen übereinander und enden bei Rayleighs Kollapszeit. Rechts: die letzten Mikrosekunden auf logarithmischer Skala – hier entscheidet die Gasmenge, wie klein die Blase wird. Gepunktet: Die Blasenwand ist schneller als der Schall in Wasser, das Modell gilt dort nicht mehr." alt="Zwei Liniendiagramme des Blasenradius über der Zeit für 10, 100 und 1.000 Pascal Gas. Links fallen alle drei Kurven von 3.000 Mikrometern bei etwa 276 Mikrosekunden auf fast null, neben einer gestrichelten Linie für die Rayleigh-Formel. Rechts, vergrößert auf 272 bis 280 Mikrosekunden mit logarithmischer Achse: Die Blase mit 10 Pa schrumpft bei 275 Mikrosekunden auf 3 Mikrometer, die mit 100 Pa bei 276 auf 20 Mikrometer, die mit 1.000 Pa bei 279 nur auf 137 Mikrometer. Für 10 und 100 Pascal sind die Kurven unterhalb von etwa 90 Mikrometern gepunktet: Dort ist die Blasenwand schneller als der Schall, und das Modell gilt nicht mehr." %}
 
 Was das Ergebnis zeigt:
 
 - **Die Kollapszeit ist robust.** Egal wie viel Gas in der Blase ist: Sie kollabiert nach **275–279 µs**, höchstens etwa 1 % neben Rayleighs Formel (1,1 % bei der größten Gasmenge). Einer Vorhersage, die kaum von einer unbekannten Eingangsgröße abhängt, kann man trauen.
 - **Der Endpunkt ist es nicht.** Der kleinste Radius reicht von 137 µm bis hinunter zu 3 µm – ein Faktor von etwa 45. Weil die Temperatur mit (*R*<sub>max</sub>/*R*<sub>min</sub>)<sup>3(*γ* − 1)</sup> wächst, schwankt die Abschätzung zwischen etwa 12.000 K und über einer Million Kelvin. Die Temperatur kann das Modell nicht festlegen.
-- **Das Modell zeigt seine eigenen Grenzen.** Mit 10 oder 100 Pa Gas bewegte sich die Blasenwand mit 5 bis 90 km/s – schneller als die Schallgeschwindigkeit in Wasser (etwa 1,5 km/s). Die Rayleigh-Plesset-Gleichung behandelt Wasser als inkompressibel und vernachlässigt Wärmeverluste; in dieser letzten Phase sind ihre Zahlen daher nicht mehr physikalisch. Echte Blasen werden durch Wasserdampf, Wärmeleitung und die Kompressibilität des Wassers abgebremst; der beim Krebs gemessene Lichtblitz deutet auf mindestens 5.000 K hin [2](#ref-2){:.cite}.
+- **Das Modell zeigt seine eigenen Grenzen.** Mit 10 oder 100 Pa Gas bewegte sich die Blasenwand, sobald die Blase kleiner als etwa 90 µm ist (gepunktet in Abb. 4), mit 5 bis 90 km/s – schneller als die Schallgeschwindigkeit in Wasser (etwa 1,5 km/s). Die Rayleigh-Plesset-Gleichung behandelt Wasser als inkompressibel und vernachlässigt Wärmeverluste; in dieser letzten Phase sind ihre Zahlen daher nicht mehr physikalisch. Echte Blasen werden durch Wasserdampf, Wärmeleitung und die Kompressibilität des Wassers abgebremst; der beim Krebs gemessene Lichtblitz deutet auf mindestens 5.000 K hin [2](#ref-2){:.cite}.
 
 Auch einige Ideen aus der Programmierung lohnen einen zweiten Blick:
 
@@ -264,7 +272,11 @@ Probier es selbst aus – jede Änderung ist eine Zeile:
 
 - Setze `R_MAX = 6.0e-3`: Die Kollapszeit verdoppelt sich auf 551–557 µs und jeder Radius verdoppelt sich, Geschwindigkeiten und Temperaturen bleiben aber gleich – es kommt nur auf das Verhältnis *R*<sub>max</sub>/*R*<sub>min</sub> an.
 - Setze `P_INF = 201_325.0` (10 m Wassertiefe): Die Blase kollabiert schon nach 194–195 µs – und heftiger, alle Geschwindigkeiten und Temperaturen steigen.
-- Ergänze `10_000` in der Liste der Gasdrücke: Das Gas federt den Kollaps ab, die Blase stoppt nach 308 µs bei 800 µm und erwärmt sich nur auf etwa 1.400 K.
+- Ergänze `10_000` in der Liste der Gasdrücke: Das Gas federt den Kollaps ab, die Blase stoppt nach 308 µs bei etwa 800 µm und erwärmt sich nur auf etwa 1.400 K.
+
+{% include code-variant.html file="rayleigh_plesset.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557 6.0 41.0 274.0 89.7 5.1" %}
+{% include code-variant.html file="rayleigh_plesset.py" id="deeper" replace="101_325.0" with="201_325.0" label="P_INF = 201_325.0" expect="194 195" %}
+{% include code-variant.html file="rayleigh_plesset.py" id="more-gas" replace="[10, 100, 1000]" with="[10, 100, 1000, 10_000]" label="p_gas: 10_000" expect="308 799.8 1.4" %}
 
 {% include lens-end.html %}
 

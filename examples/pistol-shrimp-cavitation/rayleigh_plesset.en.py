@@ -14,6 +14,7 @@ T0 = 293.0                                    # temperature of the water (K)
 
 R_MAX = 3.0e-3        # bubble radius at its largest (m)
 GAMMA = 1.4           # polytropic exponent of the gas
+C_WATER = 1482.0      # speed of sound in water (m/s)
 
 def collapse(p_gas):
     """Simulate the collapse from R_MAX; p_gas = gas pressure in the bubble at R_MAX (Pa)."""
@@ -40,15 +41,22 @@ for p_gas in [10, 100, 1000]:     # nobody has measured how much gas the shrimp'
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatic heating (physics lens)
     print(f"{p_gas:8}   {sol.t[-1] * 1e6:13.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:17.1f}   {t_max / 1e3:14,.1f}")
+    t_us, r_um = sol.t * 1e6, sol.y[0] * 1e6
+    fast = np.abs(sol.y[1]) > C_WATER         # wall faster than sound: the model no longer holds
+    i = np.argmax(fast) if fast.any() else len(fast)
     for ax in (whole, end):
-        ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa gas")
+        line, = ax.plot(t_us[:i + 1], r_um[:i + 1])
+        ax.plot(t_us[i:], r_um[i:], ":", color=line.get_color())
+    end.annotate(f"{p_gas} Pa", (t_us[-1], r_um[-1]), xytext=(5, 0), textcoords="offset points",
+                 va="center", backgroundcolor="white")
 
 for ax in (whole, end):
     ax.axvline(rayleigh * 1e6, color="grey", linestyle="--", label="Rayleigh's formula")
     ax.set_xlabel("time (µs)")
+whole.plot([], [], ":", color="grey", label="wall faster than sound: model not valid")
 whole.set(ylabel="bubble radius (µm)", title="The whole collapse: the curves overlap")
-end.set(ylabel="bubble radius (µm, log scale)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 4), yscale="log",
-        title="Last microseconds: the gas decides how small")
+whole.legend(loc="lower left")
+end.set(ylabel="bubble radius (µm, log scale)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 5), yscale="log",
+        title="Last microseconds: the model reaches its limit")
 end.yaxis.set_major_formatter("{x:g}")
-end.legend()
 plt.show()

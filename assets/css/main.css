@@ -1266,6 +1266,10 @@ a.cite:hover { text-decoration: underline; }
 .code-output__label svg { width: 16px; height: 16px; margin-right: 7px; vertical-align: -3px; }
 .code-output__label span { color: var(--ink-2); font-weight: 400; letter-spacing: 0; text-transform: none; }
 .code-output pre { margin-top: 8px; overflow-x: auto; color: var(--ink); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.65; }
+.code-variant { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.code-variant summary { padding: 10px 14px; color: var(--signal-ink); font: 500 0.85rem/1.4 var(--font-sans); cursor: pointer; }
+.code-variant summary code { font-size: 0.95em; }
+.code-variant pre { margin: 0 14px 14px; overflow-x: auto; color: var(--ink); font: 0.78rem/1.65 var(--font-mono); }
 .code-chart { margin-top: 18px; margin-bottom: 0; background: var(--card); }
 .code-chart img { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
 
@@ -1390,6 +1394,7 @@ a.cite:hover { text-decoration: underline; }
   .has-copy .highlight pre { padding-top: 54px; }
   .code-action--help { margin-left: 0; }
   .code-action, .code-copy, .code-card__foot .code-action { min-height: 44px; }
+  .code-variant summary { min-height: 44px; }
   .key-facts { padding: 22px 20px; }
   .graph-tags dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .formula--steps { font-size: 1.05rem; }

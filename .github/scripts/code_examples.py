@@ -9,6 +9,13 @@ by the include that follows it:
     ```                                        {% endhighlight %}
     {% include code-result.html file="x.py" %} {% include code-result.html file="x.py" ref="home" lang="en" %}
 
+"Try it yourself" changes are tested, too. Each one is an include anywhere in the same file:
+
+    {% include code-variant.html file="x.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557" %}
+
+The script replaces the `replace` text (it must occur exactly once), runs the changed program and
+checks that every number in `expect` – the numbers the text quotes – appears in its output.
+
 This script finds every example, runs it (Matplotlib without a window) and writes
 
     examples/<ref>/<name>.<lang>.py      download (code + header with source and how to run)
@@ -42,11 +49,12 @@ DATA = ROOT / "_data" / "code_examples.yml"
 SITE_URL = "https://wildbionics.com"
 TIMEOUT = 60
 SKIP_DIRS = {"_site", "vendor", "plugins", "examples", ".git", ".jekyll-cache", "node_modules", ".bundle"}
-SKIP_FILES = {"CLAUDE.md", "AGENTS.md", "CONTRIBUTING.md", "README.md"}
+SKIP_FILES = {"CLAUDE.md", "AGENTS.md", "CONTRIBUTING.md", "README.md", "code-result.html", "code-variant.html"}
 
 FENCE = re.compile(r"^```python[ \t]*\n(.*?)^```[ \t]*$", re.S | re.M)
 HIGHLIGHT = re.compile(r"\{%-?\s*highlight python\s*-?%\}\n(.*?)\{%-?\s*endhighlight\s*-?%\}", re.S)
 INCLUDE = re.compile(r"\s*\{%-?\s*include code-result\.html\b(.*?)-?%\}", re.S)
+VARIANT = re.compile(r"\{%-?\s*include code-variant\.html\b(.*?)-?%\}", re.S)
 PARAM = re.compile(r'(\w+)="([^"]*)"')
 PACKAGES = {"numpy": "numpy", "scipy": "scipy", "matplotlib": "matplotlib"}
 
@@ -144,12 +152,24 @@ def find_examples(errors):
                     "url": fm.get("permalink", "/" if params.get("ref") == "home" else ""),
                     "params": params,
                 }
+                ex["variants"] = []
                 if not re.fullmatch(r"[a-z0-9_]+\.py", ex["file"]):
                     errors.append(f"{ex['where']}: file=\"{ex['file']}\" must be a snake_case .py name")
                 elif ex["lang"] not in TEXT or not ex["ref"]:
                     errors.append(f"{ex['where']}: needs ref and lang (front matter or include parameters)")
                 else:
                     examples.append(ex)
+        for m in VARIANT.finditer(text):
+            v = dict(PARAM.findall(m.group(1)))
+            v["where"] = f"{rel}:{text.count(chr(10), 0, m.start()) + 1}"
+            owner = [ex for ex in examples if ex["where"].startswith(f"{rel}:") and ex["file"] == v.get("file")]
+            missing = [k for k in ("file", "id", "replace", "with", "expect") if not v.get(k)]
+            if missing:
+                errors.append(f"{v['where']}: code-variant needs {', '.join(missing)}")
+            elif not owner:
+                errors.append(f"{v['where']}: code-variant for {v['file']}, but that example is not in this file")
+            else:
+                owner[0]["variants"].append(v)
     seen = {}
     for ex in examples:
         key = (ex["ref"], ex["lang"], ex["file"])
@@ -218,6 +238,8 @@ def run(ex, svg_path, errors):
         if not output:
             errors.append(f"{ex['where']}: {ex['file']} prints nothing – an example must print its result")
         size = None
+        if svg_path is None:
+            return output, None
         if chart.exists():
             svg = chart.read_text(encoding="utf-8")
             svg_path.write_text(svg, encoding="utf-8")
@@ -263,8 +285,22 @@ def main():
             entry.update(chart=f"/{rel}.svg", chart_width=size[0], chart_height=size[1])
         if size and ex["params"].get("variant") != "card" and not ex["params"].get("alt"):
             errors.append(f"{ex['where']}: {ex['file']} draws a chart – describe it with alt=\"…\" in the include")
+        for v in ex["variants"]:
+            if ex["code"].count(v["replace"]) != 1:
+                errors.append(f"{v['where']}: replace=\"{v['replace']}\" must occur exactly once in {ex['file']}")
+                continue
+            changed = dict(ex, code=ex["code"].replace(v["replace"], v["with"]), where=v["where"])
+            out, _ = run(changed, None, errors)
+            if out is None:
+                continue
+            for number in v["expect"].split():
+                if not re.search(rf"(?<![\w.]){re.escape(number)}(?![\w]|\.\d)", out):
+                    errors.append(f"{v['where']}: variant \"{v['id']}\" does not print {number} – "
+                                  f"the text quotes it. Output:\n    " + out.replace("\n", "\n    "))
+            entry.setdefault("variants", {})[v["id"]] = {"with": v["with"], "output": out}
         entries.setdefault(ex["ref"], {}).setdefault(ex["lang"], {})[ex["file"]] = entry
-        print(f"ok   {ex['where']}  {ex['file']} ({ex['lang']}){'  + chart' if size else ''}")
+        extras = ("  + chart" if size else "") + (f"  + {len(ex['variants'])} variants" if ex["variants"] else "")
+        print(f"ok   {ex['where']}  {ex['file']} ({ex['lang']}){extras}")
     if errors:                              # keep the committed files when something failed
         for e in errors:
             print(f"ERROR: {e}")

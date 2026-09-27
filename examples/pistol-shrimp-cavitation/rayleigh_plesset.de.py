@@ -14,6 +14,7 @@ T0 = 293.0                                    # Temperatur des Wassers (K)
 
 R_MAX = 3.0e-3        # größter Blasenradius (m)
 GAMMA = 1.4           # Polytropenexponent des Gases
+C_WATER = 1482.0      # Schallgeschwindigkeit in Wasser (m/s)
 
 def collapse(p_gas):
     """Simuliert den Kollaps ab R_MAX; p_gas = Gasdruck in der Blase bei R_MAX (Pa)."""
@@ -40,15 +41,22 @@ for p_gas in [10, 100, 1000]:     # wie viel Gas die Blase des Krebses enthält,
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
     t_max = T0 * (R_MAX / r_min) ** (3 * (GAMMA - 1))    # adiabatische Erwärmung (Physik-Linse)
     print(f"{p_gas:8}   {sol.t[-1] * 1e6:12.0f}   {r_min * 1e6:10.1f}   {speed / 1e3:19.1f}   {t_max / 1e3:14.1f}")
+    t_us, r_um = sol.t * 1e6, sol.y[0] * 1e6
+    fast = np.abs(sol.y[1]) > C_WATER         # Wand schneller als der Schall: Das Modell gilt nicht mehr
+    i = np.argmax(fast) if fast.any() else len(fast)
     for ax in (whole, end):
-        ax.plot(sol.t * 1e6, sol.y[0] * 1e6, label=f"{p_gas} Pa Gas")
+        line, = ax.plot(t_us[:i + 1], r_um[:i + 1])
+        ax.plot(t_us[i:], r_um[i:], ":", color=line.get_color())
+    end.annotate(f"{p_gas} Pa", (t_us[-1], r_um[-1]), xytext=(5, 0), textcoords="offset points",
+                 va="center", backgroundcolor="white")
 
 for ax in (whole, end):
     ax.axvline(rayleigh * 1e6, color="grey", linestyle="--", label="Rayleigh-Formel")
     ax.set_xlabel("Zeit (µs)")
+whole.plot([], [], ":", color="grey", label="Wand schneller als Schall: Modell ungültig")
 whole.set(ylabel="Blasenradius (µm)", title="Ganzer Kollaps: Die Kurven decken sich")
-end.set(ylabel="Blasenradius (µm, logarithmisch)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 4),
-        yscale="log", title="Letzte µs: Das Gas bestimmt, wie klein")
+whole.legend(loc="lower left")
+end.set(ylabel="Blasenradius (µm, logarithmisch)", xlim=(rayleigh * 1e6 - 4, rayleigh * 1e6 + 5),
+        yscale="log", title="Letzte µs: Hier endet das Modell")
 end.yaxis.set_major_formatter("{x:g}")
-end.legend()
 plt.show()

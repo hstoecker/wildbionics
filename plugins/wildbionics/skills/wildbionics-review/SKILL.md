@@ -38,7 +38,8 @@ Go through every area the change touches; skip areas it doesn't touch and say so
 2b. **Code examples** (`wildbionics-article`, section 4) – does the program teach one idea? Is the
    printed result meaningful (units, comparison with a known limit)? Does the text interpret the
    output and chart, and do all numbers in the text (incl. "Try it yourself") match the Output box
-   or a tested variant? Chart readable (labels, units, takeaway title, `alt`)? Rerun a variant
+   or a `code-variant` whose `expect` lists them? Chart readable (labels, units, takeaway title,
+   `alt`) and scientifically honest (invalid model regions marked, not colour-only)? Rerun a variant
    yourself if a claim looks off.
 3. **Language** (`wildbionics-translate`) – correct technical terms (glossary), same meaning and
    hedging in EN and DE, typography (decimal comma, „…“, non-breaking spaces), consistent *du*.

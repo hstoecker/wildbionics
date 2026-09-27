@@ -1,0 +1,15 @@
+{%- comment -%}
+  Tested output of a "Try it yourself" change (rules: wildbionics-article, section 4):
+    {% include code-variant.html file="x.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557" %}
+  Optional label="…" names the change in the summary when `with` alone is unclear.
+  .github/scripts/code_examples.py runs the changed program, checks that every number in `expect`
+  (the numbers the text quotes) is printed and stores the output in _data/code_examples.yml.
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign v = site.data.code_examples[page.ref][page.lang][include.file].variants[include.id] -%}
+{%- if v %}
+<details class="code-variant">
+<summary>{{ t.code.variant }} <code>{{ include.label | default: v.with | escape }}</code></summary>
+<pre><samp>{{ v.output | escape }}</samp></pre>
+</details>
+{%- endif %}

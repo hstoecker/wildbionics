@@ -192,6 +192,7 @@ en:
     output: "Output"
     tested: "what the code prints, re-run at every build"
     chart: "Chart drawn by the code above."
+    variant: "Tested output with"
   guide:
     nav: "Guide"
     url: "/contribute/"
@@ -555,6 +556,7 @@ de:
     output: "Ausgabe"
     tested: "das gibt der Code aus, bei jedem Build neu ausgeführt"
     chart: "Diagramm, das der Code oben zeichnet."
+    variant: "Getestete Ausgabe mit"
   guide:
     nav: "Anleitung"
     url: "/de/mitmachen/"
