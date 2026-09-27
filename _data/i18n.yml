@@ -5,6 +5,7 @@
 en:
   lang_name: "English"
   skip: "Skip to content"
+  og_image_alt: "WildBionics preview card: “Nature’s physics, explained.” – a bat sends ultrasound calls towards a moth; the echo returns after 17.5 ms, so the moth is 3.0 m away."
   nav:
     label: "Main"
     lens: "Lenses"
@@ -355,6 +356,7 @@ en:
 de:
   lang_name: "Deutsch"
   skip: "Zum Inhalt springen"
+  og_image_alt: "WildBionics-Vorschaukarte: „Die Physik der Natur, erklärt.“ – eine Fledermaus sendet Ultraschallrufe zu einer Motte; das Echo kehrt nach 17,5 ms zurück, die Motte ist also 3,0 m entfernt."
   nav:
     label: "Hauptnavigation"
     lens: "Linsen"

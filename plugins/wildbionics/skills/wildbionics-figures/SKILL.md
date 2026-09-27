@@ -94,5 +94,6 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 - [ ] Labels: EN + DE from i18n, glossary terms, no overlaps, nothing clipped, dots on target.
 - [ ] Legible and uncluttered at phone width (390 px) and in the article layout (desktop).
 - [ ] `<title>`/`<desc>` describe the concept in both languages; contrast OK; not colour-only.
-- [ ] OG images regenerated if they contain the figure; captions updated; gates pass.
+- [ ] OG images regenerated if they contain the figure; captions and `image_alt` (describes the
+      OG image; also its JSON-LD caption) updated; gates pass.
 - [ ] Final large render shown to the user.

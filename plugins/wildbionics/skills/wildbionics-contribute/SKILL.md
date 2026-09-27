@@ -65,7 +65,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/lenses |
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
-| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD, links, sitemap, graph.json |
+| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
 | `.github/CODEOWNERS` | every PR | the maintainer is the required reviewer |

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Quality gate for the built site (_site): SEO metadata, JSON-LD, links, sitemap.
+"""Quality gate for the built site (_site): SEO metadata, JSON-LD (linked graph, breadcrumbs,
+licensed preview image), links, sitemap.
 
 Runs in CI before every deploy and locally with:  python3 .github/scripts/check_site.py _site
 Uses only the Python standard library. Exits non-zero if any error is found.
@@ -29,7 +30,9 @@ class Page(HTMLParser):
         self.h1 = 0
         self.imgs_without_alt = 0
         self.jsonld = []
+        self.crumbs = []         # visible breadcrumb (nav.breadcrumb li texts)
         self._in_title = self._in_jsonld = False
+        self._in_crumbs = False
         self._svg = 0           # <title> inside inline SVG is not the page title
         self._buf = ""
 
@@ -57,6 +60,10 @@ class Page(HTMLParser):
             self.imgs_without_alt += 1
         elif tag == "script" and a.get("type") == "application/ld+json":
             self._in_jsonld, self._buf = True, ""
+        elif tag == "nav" and "breadcrumb" in a.get("class", "").split():
+            self._in_crumbs = True
+        elif tag == "li" and self._in_crumbs:
+            self.crumbs.append("")
 
     def handle_endtag(self, tag):
         if tag == "svg":
@@ -66,12 +73,16 @@ class Page(HTMLParser):
         elif tag == "script" and self._in_jsonld:
             self._in_jsonld = False
             self.jsonld.append(self._buf)
+        elif tag == "nav":
+            self._in_crumbs = False
 
     def handle_data(self, data):
         if self._in_title:
             self.title += data
         if self._in_jsonld:
             self._buf += data
+        if self._in_crumbs and self.crumbs:
+            self.crumbs[-1] += data
 
 
 def url_to_file(url):
@@ -95,6 +106,57 @@ for f in sorted(root.rglob("*.html")):
     p = Page()
     p.feed(f.read_text(encoding="utf-8"))
     pages[f] = p
+
+
+def types_of(node):
+    t = node.get("@type", [])
+    return {t} if isinstance(t, str) else set(t)
+
+
+def id_refs(obj):
+    """Yield every {"@id": …} reference inside a JSON-LD value."""
+    if isinstance(obj, dict):
+        if set(obj) == {"@id"}:
+            yield obj["@id"]
+        else:
+            for v in obj.values():
+                yield from id_refs(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from id_refs(v)
+
+
+def check_graph(where, nodes, page_url, noindex, crumbs):
+    """Linked-graph rules: references resolve, breadcrumbs end at the page, the preview image is licensed."""
+    ids = {n.get("@id") for n in nodes}
+    local = {SITE_URL + "/", page_url}
+    for n in nodes:
+        for ref in id_refs({k: v for k, v in n.items() if k != "@id"}):
+            if ref.split("#")[0] in local and ref not in ids:
+                errors.append(f"{where}: JSON-LD reference {ref} points to no node")
+    by_id = {n.get("@id"): n for n in nodes}
+    webpage = by_id.get(f"{page_url}#webpage")
+    if webpage is None:
+        errors.append(f"{where}: JSON-LD has no {page_url}#webpage node")
+    else:
+        img = webpage.get("primaryImageOfPage") or {}
+        img = by_id.get(img.get("@id"), img)          # resolve a reference
+        for k in ("contentUrl", "caption", "license", "acquireLicensePage", "creditText", "creator", "copyrightNotice"):
+            if not img.get(k):
+                errors.append(f"{where}: preview image (primaryImageOfPage) lacks {k}")
+    for bc in (n for n in nodes if "BreadcrumbList" in types_of(n)):
+        items = bc.get("itemListElement", [])
+        if noindex:
+            errors.append(f"{where}: noindex page must not have a BreadcrumbList")
+        if [i.get("position") for i in items] != list(range(1, len(items) + 1)):
+            errors.append(f"{where}: breadcrumb positions must run 1, 2, 3 …")
+        if items and items[-1].get("item") != page_url:
+            errors.append(f"{where}: last breadcrumb must be the page itself ({page_url}), not {items[-1].get('item')}")
+        names = [i.get("name") for i in items]
+        visible = [" ".join(c.split()) for c in crumbs]
+        if visible and names != visible:
+            errors.append(f"{where}: JSON-LD breadcrumb {names} differs from the visible one {visible}")
+
 
 for f, p in pages.items():
     rel = f.relative_to(root)
@@ -136,6 +198,7 @@ for f, p in pages.items():
             for k in ("headline", "datePublished", "author", "image", "inLanguage"):
                 if not art.get(k):
                     errors.append(f"{where}: Article JSON-LD lacks {k}")
+        check_graph(where, data.get("@graph", [data]), canon[0] if canon else None, noindex, p.crumbs)
     # hreflang: every alternate must exist and point back
     for r, href, hl in p.links:
         if r == "alternate" and hl and hl != "x-default":
