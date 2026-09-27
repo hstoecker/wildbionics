@@ -4,19 +4,26 @@
 # Time
 cenozoic:            { en: "Cenozoic", de: "Känozoikum" }
 modern-era:          { en: "Modern era", de: "Neuzeit" }
+age-of-ai:           { en: "Age of AI", de: "KI-Zeitalter" }
+future-scenarios:    { en: "Future scenarios", de: "Zukunftsszenarien" }
 # Space
 coastal:             { en: "Coasts", de: "Küsten" }
 coral-reef:          { en: "Coral reefs", de: "Korallenriffe" }
 seagrass:            { en: "Seagrass meadows", de: "Seegraswiesen" }
 lab:                 { en: "Laboratory", de: "Labor" }
 # Rules (physics)
-fluid-dynamics:      { en: "Fluid dynamics", de: "Strömungslehre" }
+fluid-dynamics:      { en: "Fluid dynamics", de: "Strömungsmechanik" }
 thermodynamics:      { en: "Thermodynamics", de: "Thermodynamik" }
 acoustics:           { en: "Acoustics", de: "Akustik" }
 optics:              { en: "Optics", de: "Optik" }
 # Adjacent sciences
+biology:             { en: "Biology", de: "Biologie" }
+chemistry:           { en: "Chemistry", de: "Chemie" }
 mathematics:         { en: "Mathematics", de: "Mathematik" }
 computer-science:    { en: "Computer science", de: "Informatik" }
+artificial-intelligence: { en: "Artificial intelligence", de: "Künstliche Intelligenz" }
+physical-ai:         { en: "Physical AI", de: "Physical AI" }
+robotics:            { en: "Robotics", de: "Robotik" }
 medical-technology:  { en: "Medical technology", de: "Medizintechnik" }
 materials-science:   { en: "Materials science", de: "Materialwissenschaft" }
 bionics:             { en: "Bionics", de: "Bionik" }

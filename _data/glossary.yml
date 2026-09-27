@@ -1,0 +1,75 @@
+# Terminology for EN → DE translations (Fachbegriffe).
+#
+# Checked on every build by .github/scripts/check_terms.rb:
+#   avoid  – variants that must NOT appear in German content → error
+#            (per entry `level: warn` turns this into a warning)
+#   en/de  – if an English term occurs in an EN article, the German term (or one of
+#            `de_alt`) must occur in its DE translation → warning
+# Matching is case-insensitive on whole words; a trailing * matches any word ending
+# (inflection, plural): "Stoßwelle*" matches "Stoßwellen".
+#
+# Add every new technical term here the first time it is translated.
+
+terms:
+  # --- Zoology / biology ---------------------------------------------------------
+  - { en: "claw*", de: "Schere*", avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere, Krallen)." }
+  - { en: "snapping claw*", de: "Knallschere*" }
+  - { en: "pincer claw*", de: "Greifschere*" }
+  - { en: "dactyl*", de: "Dactylus", avoid: ["Daktylus"], why: "Zoologische Nomenklatur: Dactylus (beweglicher Scherenfinger)." }
+  - { en: "plunger*", de: "Zapfen*", avoid: ["Kolben*"], why: "Der Fortsatz am Dactylus heißt in der Zoologie Zapfen; Kolben ist Maschinenbau." }
+  - { en: "socket*", de: "Grube*", avoid: ["Mulde*"], why: "Gegenstück zum Zapfen: Grube im unbeweglichen Scherenteil." }
+  - { en: "moult*", de: "Häutung*", avoid: ["Mauser*"], why: "Mauser = Federwechsel bei Vögeln; Krebse häuten sich." }
+  - { en: "exuvia*", de: "Exuvie*" }
+  - { en: "display posture", de: "Drohhaltung" }
+  - { en: "genus", de: "Gattung" }
+  - { en: "sensory ecology", de: "Sinnesökologie" }
+  - { en: "tiger moth*", de: "Bärenspinner*", avoid: ["Tigermotte*", "Tigerfalter*"], why: "Arctiinae heißen im Deutschen Bärenspinner." }
+  - { en: "echolocation", de: "Echoortung", avoid: ["Echolokation", "Echolokalisation"], level: warn, why: "Einheitlich Echoortung verwenden." }
+  - { en: "biological noise", de: "Unterwasserlärm*", de_alt: ["biologische* Lärm*"] }
+  - { en: "snapping shrimp", de: "Knallkrebs*", de_alt: ["Pistolenkrebs*"] }
+
+  # --- Physics -------------------------------------------------------------------
+  - { en: "hydrophone*", de: "Hydrophon*", avoid: ["Hydrofon*"], why: "In der Akustik ist die Schreibung Hydrophon üblich." }
+  - { en: "shock wave*", de: "Stoßwelle*", avoid: ["Schockwelle*"], why: "Physikalischer Fachbegriff: Stoßwelle." }
+  - { en: "cavitation erosion", de: "Kavitationserosion" }
+  - { en: "cavitation number", de: "Kavitationszahl", avoid: ["Kavitationsnummer"] }
+  - { en: "vapour pressure", de: "Dampfdruck*", avoid: ["Dampfspannung"], level: warn }
+  - { en: "atmospheric pressure", de: "Atmosphärendruck*" }
+  - { en: "fluid dynamics", de: "Strömungsmechanik", de_alt: ["Fluiddynamik"], avoid: ["Strömungslehre"], level: warn, why: "Einheitlich Strömungsmechanik (Strömungslehre ist veraltet)." }
+  - { en: "Bernoulli's principle", de: "Bernoulli-Gleichung", de_alt: ["Bernoulli-Prinzip"] }
+  - { en: "streamline", de: "Stromlinie" }
+  - { en: "static pressure", de: "statische* Druck*" }
+  - { en: "dynamic pressure", de: "dynamische* Druck*" }
+  - { en: "adiabatic index", de: "Adiabatenexponent*", de_alt: ["Isentropenexponent*"] }
+  - { en: "polytropic exponent", de: "Polytropenexponent*" }
+  - { en: "surface tension", de: "Oberflächenspannung" }
+  - { en: "speed of sound", de: "Schallgeschwindigkeit" }
+  - { en: "Reynolds number*", de: "Reynolds-Zahl*", de_alt: ["Reynoldszahl*"] }
+  - { en: "sonoluminescence", de: "Sonolumineszenz", avoid: ["Sonoluminiszenz", "Sonoluminescenz"], why: "Rechtschreibung: Lumineszenz." }
+  - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
+  - { en: "Doppler shift", de: "Doppler-Verschiebung", de_alt: ["Dopplerverschiebung"] }
+  - { en: "source level*", de: "Quellpegel" }
+  - { en: "peak-to-peak", de: "Spitze-Spitze" }
+
+  # --- Mathematics / computer science --------------------------------------------
+  - { en: "interaural time difference", de: "interaurale* Laufzeitunterschied*" }
+  - { en: "matched filter", de: "Optimalfilter" }
+  - { en: "cross-correlation", de: "Kreuzkorrelation" }
+  - { en: "spectrogram", de: "Spektrogramm" }
+  - { en: "micro-computed tomography", de: "Mikro-Computertomografie", de_alt: ["µCT", "Mikro-CT"] }
+
+  # --- Artificial intelligence / robotics -----------------------------------------
+  - { en: "Physical AI", de: "Physical AI", de_alt: ["verkörperte* KI", "verkörperte* künstliche* Intelligenz"], avoid: ["physikalische* KI", "physikalische* künstliche* Intelligenz"], why: "Falscher Freund: physikalisch = die Physik betreffend. Gemeint ist verkörperte KI; im Deutschen ist der Begriff Physical AI etabliert." }
+  - { en: "embodied AI", de: "verkörperte* KI", de_alt: ["verkörperte* künstliche* Intelligenz", "Embodied AI"] }
+  - { en: "artificial intelligence", de: "künstliche* Intelligenz", de_alt: ["KI"], avoid: ["artifizielle* Intelligenz"], why: "Fachbegriff: künstliche Intelligenz (KI)." }
+  - { en: "humanoid robot*", de: "humanoide* Roboter*", avoid: ["menschenähnliche* Roboter*"], level: warn, why: "Fachbegriff: humanoider Roboter (menschenähnlich gestaltet); Androide nur bei täuschend echtem Aussehen." }
+  - { en: "superintelligence", de: "Superintelligenz", avoid: ["Super-Intelligenz", "Überintelligenz"], level: warn, why: "Etablierter Begriff: Superintelligenz (hypothetisch – als Szenario kennzeichnen)." }
+  - { en: "robotics", de: "Robotik" }
+  - { en: "Age of AI", de: "KI-Zeitalter" }
+
+  # --- Medicine / engineering ----------------------------------------------------
+  - { en: "shock wave lithotripsy", de: "Stoßwellenlithotripsie", avoid: ["Stoßwellenlithotrypsie", "Lithotrypsie"], why: "Rechtschreibung: Lithotripsie." }
+
+  # --- Site vocabulary -----------------------------------------------------------
+  - { en: "flagship article", de: "Schwerpunktartikel", avoid: ["Leitartikel*"], why: "Leitartikel = Meinungsbeitrag der Redaktion (editorial), nicht Hauptartikel." }
+  - { en: "breadcrumb", de: "Brotkrumennavigation" }

@@ -39,13 +39,25 @@
 
     <div class="lens" data-lens>
       <div class="lens__tabs" role="tablist" aria-label="{{ t.lens.tabs_label }}" data-lens-tabs hidden>
-        {%- assign lenses = "physics,math,cs" | split: "," -%}
+        {%- assign lenses = "biology,physics,math,cs" | split: "," -%}
         {%- for key in lenses %}
         <button class="lens__tab" role="tab" type="button" id="tab-{{ key }}" aria-controls="panel-{{ key }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
           <span class="lens__tab-index">0{{ forloop.index }}</span> {{ t.lens[key].tab }}
         </button>
         {%- endfor %}
       </div>
+
+      <article class="lens__panel" id="panel-biology" role="tabpanel" aria-labelledby="tab-biology">
+        <div class="lens__text">
+          <p class="kicker">{{ t.lens.biology.kicker }}</p>
+          <h3 class="lens__title">{{ t.lens.biology.title }}</h3>
+          <p>{{ t.lens.biology.text }}</p>
+          <p class="example source-line">{{ t.lens.biology.source_html }}</p>
+        </div>
+        <div class="lens__figure">
+          {% include svg/lens-biology.svg %}
+        </div>
+      </article>
 
       <article class="lens__panel" id="panel-physics" role="tabpanel" aria-labelledby="tab-physics">
         <div class="lens__text">

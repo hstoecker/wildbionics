@@ -1,0 +1,29 @@
+{%- include i18n.html -%}
+<svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-bio-title lens-bio-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="lens-bio-title">{{ t.lens.biology.svg_title }}</title>
+  <desc id="lens-bio-desc">{{ t.lens.biology.svg_desc }}</desc>
+  <!-- Bat at (92,176) calling towards the moth at (372,118) -->
+  <g transform="translate(92 176) rotate(-12)" fill="none">
+    <g class="bio-call">
+      <path d="M44.2,-23.5 A50,50 0 0 1 44.2,23.5"/>
+      <path d="M79.5,-42.3 A90,90 0 0 1 79.5,42.3"/>
+      <path d="M114.8,-61 A130,130 0 0 1 114.8,61"/>
+      <path d="M150.1,-79.8 A170,170 0 0 1 150.1,79.8"/>
+    </g>
+  </g>
+  <use href="#bat" class="bat bat-ink" x="47" y="166" width="90" height="28"/>
+  <!-- Evasive loop of the moth -->
+  <path class="bio-path" d="M262,236 C316,232 340,196 338,160 C336,122 378,100 404,124 C428,146 404,176 380,164 C368,158 366,140 372,130"/>
+  <text x="300" y="258" class="label label-muted">{{ t.lens.biology.svg_path }}</text>
+  <!-- Moth with jamming clicks -->
+  <g class="bio-clicks" fill="none">
+    <path d="M354,104 A22,22 0 0 0 354,132"/>
+    <path d="M344,96 A34,34 0 0 0 344,140"/>
+    <path d="M334,88 A46,46 0 0 0 334,148"/>
+  </g>
+  <use href="#moth" class="moth moth-ink" x="352" y="104" width="40" height="27"/>
+  <rect x="8" y="12" width="210" height="28" rx="14" class="chip-bg"/>
+  <text x="113" y="30.5" text-anchor="middle" class="label label-signal">{{ t.lens.biology.svg_bat }}</text>
+  <rect x="254" y="12" width="218" height="28" rx="14" class="chip-bg chip-accent"/>
+  <text x="363" y="30.5" text-anchor="middle" class="label">{{ t.lens.biology.svg_moth }}</text>
+</svg>

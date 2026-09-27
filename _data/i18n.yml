@@ -16,7 +16,7 @@ en:
   hero:
     eyebrow: "An open-source compendium"
     title_html: "Nature’s <em>physics</em>, explained."
-    lede: "How does a bat see in the dark? Why does a shrimp’s snap flash with light? WildBionics explains physics, mathematics and computer science through animals, plants and the living planet – and shows how engineers borrow nature’s solutions."
+    lede: "How does a bat see in the dark? Why does a shrimp’s snap flash with light? WildBionics connects biology with physics, mathematics, chemistry, computer science and Physical AI – through animals, plants and the living planet – and shows how engineers borrow nature’s solutions."
     cta_primary: "See the lens in action"
     cta_secondary: "Contribute on GitHub"
     fig_label: "Fig. 1"
@@ -29,12 +29,23 @@ en:
     svg_moth: "Moth"
     svg_spectrogram: "Spectrogram"
     disciplines_label: "Explained through"
-    disciplines: ["Physics", "Mathematics", "Computer science", "Chemistry"]
+    disciplines: ["Biology", "Physics", "Mathematics", "Chemistry", "Computer science", "Physical AI"]
   lens:
     eyebrow: "The lens"
-    title_html: "<span class=\"line\">One phenomenon.</span> <span class=\"line\">Three ways of seeing it.</span>"
-    intro: "Every WildBionics article can be read through different lenses. Switch between them to follow the same bat hunt as a physicist, a mathematician and a programmer would."
+    title_html: "<span class=\"line\">One phenomenon.</span> <span class=\"line\">Four ways of seeing it.</span>"
+    intro: "Every WildBionics article can be read through different lenses. Switch between them to follow the same bat hunt as a biologist, a physicist, a mathematician and a programmer would."
     tabs_label: "Choose a lens"
+    biology:
+      tab: "Biology"
+      kicker: "Sensory ecology · Evolution"
+      title: "An arms race in the dark"
+      text: "Echolocation made bats formidable night hunters – and turned their prey into listeners. Many moths have evolved ears that pick up bat calls and trigger evasive flight. Some tiger moths go one step further: <em>Bertholdia trigona</em> answers an attacking bat with ultrasonic clicks of its own that jam the bat’s sonar."
+      source_html: "Corcoran, Barber &amp; Conner (2009), <cite>Science</cite> 325, 325–327. <a href=\"https://doi.org/10.1126/science.1174096\">doi:10.1126/science.1174096</a>"
+      svg_title: "Bat and tiger moth: sonar and sonar jamming"
+      svg_desc: "A bat sends sonar calls towards a tiger moth. The moth flies an evasive loop and answers with ultrasonic clicks that jam the bat's sonar."
+      svg_bat: "Bat: sonar call"
+      svg_moth: "Moth: ultrasonic clicks"
+      svg_path: "evasive flight"
     physics:
       tab: "Physics"
       kicker: "Acoustics · Doppler effect"
@@ -56,6 +67,8 @@ en:
       svg_call: "Call"
       svg_echo: "Echo"
       svg_dt: "Δt = 17.5 ms"
+    physical-ai:
+      tab: "Physical AI"
     cs:
       tab: "Computer science"
       kicker: "Signal processing · Sonar"
@@ -70,8 +83,8 @@ en:
       - key: time
         title: "Time"
         sub: "Evolution & geology"
-        text: "From the Big Bang to humanoid robots: when did a solution appear, and how long did nature refine it?"
-        examples: ["Cambrian", "Cenozoic", "Modern era"]
+        text: "From the Big Bang to humanoid robots – and on to the open question of superintelligence: when did a solution appear, and how long did nature, or technology, refine it?"
+        examples: ["Cambrian", "Cenozoic", "Age of AI"]
       - key: space
         title: "Space"
         sub: "Habitats & scales"
@@ -84,9 +97,9 @@ en:
         examples: ["Acoustics", "Fluid dynamics", "Optics"]
       - key: adjacent
         title: "Adjacent sciences"
-        sub: "Maths, CS & engineering"
-        text: "Where the insight leads: mathematics, computer science, medical technology, materials science and bionics."
-        examples: ["Bionics", "Materials", "AI"]
+        sub: "Maths, AI & engineering"
+        text: "Where the insight leads: mathematics, computer science, Physical AI and robotics, medical technology, materials science and bionics."
+        examples: ["Bionics", "Physical AI", "Robotics"]
   flagship:
     eyebrow: "Flagship article"
     title: "The pistol shrimp and the physics of cavitation"
@@ -147,7 +160,7 @@ en:
     reading_time: "min read"
     key_facts: "In short"
     lenses_label: "Read this through a lens"
-    lenses_hint: "The same phenomenon, explained three ways. Pick a lens – or read all three."
+    lenses_hint: "The same phenomenon, seen through several disciplines. Pick a lens – or read them all."
     faq: "Frequently asked questions"
     sources: "Sources"
     dimensions: "Where this sits in the knowledge graph"
@@ -160,7 +173,7 @@ en:
     breadcrumb: "Breadcrumb"
   articles:
     title: "Articles"
-    description: "Every WildBionics article: one phenomenon from nature, explained through physics, mathematics and computer science."
+    description: "Every WildBionics article: one phenomenon from nature, explained through biology, physics, mathematics, chemistry, computer science and Physical AI."
     intro: "One phenomenon per article, viewed through several lenses – with sources you can check."
     read: "Read the article"
     url: "/articles/"
@@ -194,14 +207,14 @@ de:
     label: "Hauptnavigation"
     lens: "Linsen"
     dimensions: "Dimensionen"
-    flagship: "Leitartikel"
+    flagship: "Schwerpunkt"
     contribute: "Mitmachen"
     github: "WildBionics auf GitHub"
     language: "Sprache"
   hero:
     eyebrow: "Ein Open-Source-Kompendium"
     title_html: "Die <em>Physik</em> der Natur, erklärt."
-    lede: "Wie sieht eine Fledermaus im Dunkeln? Warum blitzt es, wenn ein Krebs mit der Schere knallt? WildBionics erklärt Physik, Mathematik und Informatik anhand von Tieren, Pflanzen und unserem lebendigen Planeten – und zeigt, wie Ingenieure sich Lösungen von der Natur abschauen."
+    lede: "Wie sieht eine Fledermaus im Dunkeln? Warum blitzt es, wenn ein Krebs mit der Schere knallt? WildBionics verbindet Biologie mit Physik, Mathematik, Chemie, Informatik und Physical AI – anhand von Tieren, Pflanzen und unserem lebendigen Planeten – und zeigt, wie Ingenieure sich Lösungen von der Natur abschauen."
     cta_primary: "Die Linse ausprobieren"
     cta_secondary: "Auf GitHub mitmachen"
     fig_label: "Abb. 1"
@@ -214,12 +227,23 @@ de:
     svg_moth: "Motte"
     svg_spectrogram: "Spektrogramm"
     disciplines_label: "Erklärt durch"
-    disciplines: ["Physik", "Mathematik", "Informatik", "Chemie"]
+    disciplines: ["Biologie", "Physik", "Mathematik", "Chemie", "Informatik", "Physical AI"]
   lens:
     eyebrow: "Die Linse"
-    title_html: "<span class=\"line\">Ein Phänomen.</span> <span class=\"line\">Drei Arten, es zu sehen.</span>"
-    intro: "Jeder WildBionics-Artikel lässt sich durch verschiedene Linsen lesen. Wechsle zwischen ihnen und verfolge dieselbe Fledermausjagd mit den Augen einer Physikerin, eines Mathematikers und einer Programmiererin."
+    title_html: "<span class=\"line\">Ein Phänomen.</span> <span class=\"line\">Vier Arten, es zu sehen.</span>"
+    intro: "Jeder WildBionics-Artikel lässt sich durch verschiedene Linsen lesen. Wechsle zwischen ihnen und verfolge dieselbe Fledermausjagd mit den Augen eines Biologen, einer Physikerin, eines Mathematikers und einer Programmiererin."
     tabs_label: "Linse wählen"
+    biology:
+      tab: "Biologie"
+      kicker: "Sinnesökologie · Evolution"
+      title: "Wettrüsten im Dunkeln"
+      text: "Die Echoortung machte Fledermäuse zu gefürchteten Nachtjägern – und ihre Beute zu Zuhörern. Viele Nachtfalter haben Ohren entwickelt, die Fledermausrufe wahrnehmen und ein Ausweichmanöver auslösen. Manche Bärenspinner gehen noch weiter: <em>Bertholdia trigona</em> antwortet einer angreifenden Fledermaus mit eigenen Ultraschall-Klicks, die deren Sonar stören."
+      source_html: "Corcoran, Barber &amp; Conner (2009), <cite>Science</cite> 325, 325–327. <a href=\"https://doi.org/10.1126/science.1174096\">doi:10.1126/science.1174096</a>"
+      svg_title: "Fledermaus und Bärenspinner: Sonar und Sonarstörung"
+      svg_desc: "Eine Fledermaus sendet Sonarrufe zu einem Bärenspinner. Der Falter fliegt eine Ausweichschleife und antwortet mit Ultraschall-Klicks, die das Sonar der Fledermaus stören."
+      svg_bat: "Fledermaus: Sonarruf"
+      svg_moth: "Falter: Ultraschall-Klicks"
+      svg_path: "Ausweichflug"
     physics:
       tab: "Physik"
       kicker: "Akustik · Doppler-Effekt"
@@ -234,18 +258,20 @@ de:
       tab: "Mathematik"
       kicker: "Geometrie · Trigonometrie"
       title: "Entfernung mit Zeit messen"
-      text: "Schall legt in Luft rund 343 m/s zurück. Die halbe Laufzeit des Echos ergibt die Entfernung. Der winzige Zeitunterschied zwischen linkem und rechtem Ohr liefert die Richtung – zwei Messungen, eine Position."
-      example_html: "Ein Echo nach 17,5 ms bedeutet: Die Motte ist 3,0 m entfernt. <span class=\"legend\"><var>Δτ</var>: Laufzeitunterschied zwischen den Ohren, <var>b</var>: Ohrabstand.</span>"
+      text: "Schall legt in Luft rund 343 m/s zurück. Die halbe Laufzeit des Echos ergibt die Entfernung. Der winzige Laufzeitunterschied zwischen linkem und rechtem Ohr – der interaurale Laufzeitunterschied – liefert die Richtung – zwei Messungen, eine Position."
+      example_html: "Ein Echo nach 17,5 ms bedeutet: Die Motte ist 3,0 m entfernt. <span class=\"legend\"><var>Δτ</var>: interauraler Laufzeitunterschied, <var>b</var>: Ohrabstand.</span>"
       svg_title: "Geometrie der Echo-Entfernungsmessung"
       svg_desc: "Ein rechtwinkliges Dreieck von der Fledermaus zur Motte mit Entfernung d und Winkel Theta, darunter eine Zeitachse mit dem Ruf und dem Echo 17,5 Millisekunden später."
       svg_call: "Ruf"
       svg_echo: "Echo"
       svg_dt: "Δt = 17,5 ms"
+    physical-ai:
+      tab: "Physical AI"
     cs:
       tab: "Informatik"
       kicker: "Signalverarbeitung · Sonar"
       title: "Vom Chirp zum Code"
-      text: "Autonome Drohnen und Einparksensoren nutzen denselben Trick. Ein Matched Filter schiebt den bekannten Chirp über die Aufnahme; das Maximum der Kreuzkorrelation markiert das Echo – robust selbst im Rauschen."
+      text: "Autonome Drohnen und Ultraschall-Parksensoren nutzen denselben Trick. Ein Optimalfilter (Matched Filter) schiebt den bekannten Chirp über die Aufnahme; das Maximum der Kreuzkorrelation markiert das Echo – robust selbst im Rauschen."
       code_label: "Python · NumPy"
   dimensions:
     eyebrow: "Die Ontologie"
@@ -255,8 +281,8 @@ de:
       - key: time
         title: "Zeit"
         sub: "Evolution & Geologie"
-        text: "Vom Urknall bis zu humanoiden Robotern: Wann ist eine Lösung entstanden, und wie lange hat die Natur sie verfeinert?"
-        examples: ["Kambrium", "Känozoikum", "Neuzeit"]
+        text: "Vom Urknall bis zu humanoiden Robotern – und weiter zur offenen Frage der Superintelligenz: Wann ist eine Lösung entstanden, und wie lange haben Natur oder Technik sie verfeinert?"
+        examples: ["Kambrium", "Känozoikum", "KI-Zeitalter"]
       - key: space
         title: "Raum"
         sub: "Lebensräume & Skalen"
@@ -266,16 +292,16 @@ de:
         title: "Regeln"
         sub: "Die Gesetze der Physik"
         text: "Mechanik, Thermodynamik, Optik, Akustik, Elektromagnetismus: die Regeln, an die sich jedes Lebewesen halten muss."
-        examples: ["Akustik", "Strömungslehre", "Optik"]
+        examples: ["Akustik", "Strömungsmechanik", "Optik"]
       - key: adjacent
         title: "Nachbarwissenschaften"
-        sub: "Mathe, Informatik & Technik"
-        text: "Wohin die Erkenntnis führt: Mathematik, Informatik, Medizintechnik, Materialwissenschaft und Bionik."
-        examples: ["Bionik", "Werkstoffe", "KI"]
+        sub: "Mathematik, KI & Technik"
+        text: "Wohin die Erkenntnis führt: Mathematik, Informatik, Physical AI und Robotik, Medizintechnik, Materialwissenschaft und Bionik."
+        examples: ["Bionik", "Physical AI", "Robotik"]
   flagship:
-    eyebrow: "Leitartikel"
+    eyebrow: "Schwerpunktartikel"
     title: "Der Knallkrebs und die Physik der Kavitation"
-    text: "Mit einem einzigen Schlag seiner übergroßen Schere schießt ein nur wenige Zentimeter großer Krebs einen Wasserstrahl ab – so schnell, dass der Druck dahinter unter den Dampfdruck fällt. Eine Blase entsteht und kollabiert, und für einen winzigen Moment erreicht ihr Kern Tausende Kelvin und sendet einen Lichtblitz aus."
+    text: "Mit einem einzigen Zuschnappen seiner übergroßen Schere schießt ein nur wenige Zentimeter großer Krebs einen Wasserstrahl ab – so schnell, dass der Druck dahinter unter den Dampfdruck fällt. Eine Blase entsteht und kollabiert, und für einen winzigen Moment erreicht ihr Kern Tausende Kelvin und sendet einen Lichtblitz aus."
     stats:
       - value: "≈ 25 m/s"
         label: "Geschwindigkeit des Wasserstrahls"
@@ -283,19 +309,19 @@ de:
         label: "im Inneren der kollabierenden Blase"
       - value: "3–5 cm"
         label: "Körperlänge des Krebses"
-    tags: ["Korallenriffe", "Strömungslehre", "Thermodynamik", "Akustik", "Bionik"]
+    tags: ["Korallenriffe", "Strömungsmechanik", "Thermodynamik", "Akustik", "Bionik"]
     sources_label: "Quellen"
     cta: "Artikel lesen"
     fig_label: "Abb. 2"
-    fig_caption: "Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwinger. Der ganze Zyklus dauert weniger als eine Millisekunde."
+    fig_caption: "Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwingungen. Der ganze Zyklus dauert weniger als eine Millisekunde."
     svg_title: "Radius einer Kavitationsblase im Zeitverlauf"
-    svg_desc: "Der Blasenradius steigt nach dem Schlag an und fällt dann steil auf null ab. Beim Kollaps entstehen ein Lichtblitz und eine Stoßwelle, danach folgen zwei kleine Nachschwinger."
+    svg_desc: "Der Blasenradius steigt nach dem Zuschnappen an und fällt dann steil auf null ab. Beim Kollaps entstehen ein Lichtblitz und eine Stoßwelle, danach folgen zwei kleine Nachschwingungen."
     svg_radius: "Radius R"
     svg_time: "Zeit t"
-    svg_snap: "Schlag"
+    svg_snap: "Zuschnappen"
     svg_growth: "Dampfblase wächst"
     svg_collapse: "Kollaps"
-    svg_flash: "Blitz & Stoßwelle"
+    svg_flash: "Lichtblitz & Stoßwelle"
   contribute:
     eyebrow: "Open Source"
     title_html: "<span class=\"line\">Offen entwickelt.</span> <span class=\"line\">Von Neugierigen geschrieben.</span>"
@@ -331,7 +357,7 @@ de:
     reading_time: "Min. Lesezeit"
     key_facts: "Kurz gesagt"
     lenses_label: "Durch eine Linse lesen"
-    lenses_hint: "Dasselbe Phänomen, auf drei Arten erklärt. Wähle eine Linse – oder lies alle drei."
+    lenses_hint: "Dasselbe Phänomen, betrachtet durch mehrere Disziplinen. Wähle eine Linse – oder lies alle."
     faq: "Häufige Fragen"
     sources: "Quellen"
     dimensions: "Einordnung im Wissensgraphen"
@@ -344,7 +370,7 @@ de:
     breadcrumb: "Brotkrumennavigation"
   articles:
     title: "Artikel"
-    description: "Alle WildBionics-Artikel: ein Phänomen aus der Natur, erklärt durch Physik, Mathematik und Informatik."
+    description: "Alle WildBionics-Artikel: ein Phänomen aus der Natur, erklärt durch Biologie, Physik, Mathematik, Chemie, Informatik und Physical AI."
     intro: "Ein Phänomen pro Artikel, betrachtet durch mehrere Linsen – mit überprüfbaren Quellen."
     read: "Artikel lesen"
     url: "/de/artikel/"
@@ -355,9 +381,9 @@ de:
   figures:
     claw:
       title: "Schema der Schere eines Knallkrebses"
-      desc: "Der bewegliche Scherenfinger, der Daktylus, trägt einen Kolben. Schnappt die Schere zu, drückt der Kolben Wasser als schnellen Strahl aus einer Mulde. Im Strahl entsteht eine Kavitationsblase, die kollabiert und eine Stoßwelle aussendet."
-      dactyl: "Daktylus mit Kolben"
-      socket: "Mulde"
+      desc: "Der bewegliche Scherenfinger, der Dactylus, trägt einen Zapfen. Schnappt die Schere zu, drückt der Zapfen Wasser als schnellen Strahl aus einer Grube. Im Strahl entsteht eine Kavitationsblase, die kollabiert und eine Stoßwelle aussendet."
+      dactyl: "Dactylus mit Zapfen"
+      socket: "Grube"
       jet: "Strahl ≈ 25 m/s"
       bubble: "Kavitationsblase"
       shock: "Stoßwelle"

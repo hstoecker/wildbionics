@@ -1,22 +1,24 @@
 # WildBionics – Project Context for Claude
 
 ## What this is
-**wildbionics.com** – a bilingual open-source compendium that explains science (physics, math, computer science, chemistry) through examples from animals, plants, geology and bionics.
+**wildbionics.com** – a bilingual open-source compendium that connects biology with physics, math, chemistry, computer science and Physical AI – through examples from animals, plants, geology and bionics, up to robots and AI.
 - Primary language: **English** (site root `/`), secondary: **German** (`/de/`). More languages later via community (`/fr/`, …).
 - Owner: Hendrik Stöcker. Communicates in German; site content EN first, then DE.
 - Target audience: nature enthusiasts, students, developers, open-source community.
 
 ## Core USP: the "Lens" feature
 Each article can be viewed through switchable lenses on the same phenomenon, e.g. bat echolocation:
+- Biology lens: sensory ecology, bat–moth arms race
 - Physics lens: acoustics, Doppler effect
 - Math lens: trigonometry of distance measurement
 - CS lens: code for radar/sonar algorithms of autonomous drones
+- Physical AI lens (key `physical-ai`, no content yet): embodied AI and robots that sense and act in the physical world, e.g. sonar-guided robots
 
 ## Ontology – 4 dimensions (knowledge graph)
-1. **Time** – evolution & geology (Big Bang → humanoid robots)
+1. **Time** – evolution & geology, continued into technology (Big Bang → … → age of AI → humanoid robots → superintelligence). Slugs `age-of-ai`, `future-scenarios`. Superintelligence does not exist today: always present it as a hypothesis/scenario with sources, never as fact.
 2. **Space** – habitats & scales (microcosm, deep sea, desert, stratosphere, lab, urban)
 3. **Rules** – physics (mechanics, thermodynamics, optics, acoustics, EM, quantum, relativity)
-4. **Adjacent sciences** – math, CS/AI, medical technology, bionics, materials science
+4. **Adjacent sciences** – biology, chemistry, math, CS, artificial intelligence, **Physical AI** & robotics, medical technology, bionics, materials science
 
 ## Architecture decisions (agreed, 2026-09-26)
 - **Static site: Jekyll on GitHub Pages** with custom domain wildbionics.com. No server.
@@ -60,8 +62,9 @@ status: draft
 - **Deploy:** GitHub Actions (`.github/workflows/deploy.yml`): Jekyll build → `.github/scripts/check_site.py` quality gate → GitHub Pages → IndexNow (`.github/scripts/indexnow.py`, key in `_config.yml` + `/<key>.txt`). PRs only build + check.
 - **Articles:** `_articles/<slug>.<lang>.md`, layout `article`; lenses via `{% include lens-tabs.html %}` + `lens-start`/`lens-end`; key facts, FAQ, sources (with DOI) in front matter → rendered + JSON-LD (Article, FAQPage, BreadcrumbList). Ontology slugs need a display name in `_data/taxonomy.yml`.
 - **UI strings:** `_data/i18n.yml` (EN/DE keys must match). SVG figures in `_includes/svg/` pull labels from i18n.
+- **Translation:** follow the project skill `.claude/skills/wildbionics-translate/`; German technical terms are fixed in `_data/glossary.yml` and enforced by `.github/scripts/check_terms.rb` (runs first in CI; forbidden variants fail the build).
 - **Machine readability:** `sitemap.xml` (hreflang), `robots.txt` (AI crawlers allowed), `llms.txt`, OG images in `assets/og/` (1200×630, rendered from `_includes/og-card.html`).
-- Check locally: `bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
+- Check locally: `ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site`
 
 ## Working style
 - Step by step, small verifiable wins. Explain commands before running them (owner is setting up a fresh Mac).
