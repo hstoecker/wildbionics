@@ -14,6 +14,11 @@ the website: **[wildbionics.com/contribute](https://wildbionics.com/contribute/)
 [wildbionics.com/de/mitmachen](https://wildbionics.com/de/mitmachen/)), details in
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Step-by-step guides for the three ways to work:
+[1 · Ask Claude on GitHub](https://wildbionics.com/contribute/#way-1) ·
+[2 · Work with Claude Code](https://wildbionics.com/contribute/#way-2) ·
+[3 · Work by hand](https://wildbionics.com/contribute/#way-3)
+
 **With Claude Code**, the project's rules come as skills. Open this repository in Claude Code and
 they load automatically – or install them anywhere from this repository's plugin marketplace:
 
