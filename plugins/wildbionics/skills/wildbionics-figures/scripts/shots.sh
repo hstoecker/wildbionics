@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Render WildBionics pages for figure review.
 #   macOS: WebKit renderer (shot.swift, compiled on first use) – supports clips and SHOT_JS.
-#   Linux (Claude Code on the web, CI): headless Chrome/Chromium – full width, top of page.
+#   Linux (Claude Code on the web, CI): headless Chrome/Chromium – full width, top of page
+#   (found on PATH or at $PLAYWRIGHT_BROWSERS_PATH/chromium, preinstalled in cloud sessions).
 #
 #   shots.sh page   <url> <out.png> <width> [y h]   # page, or a clip (CSS px)
 #   shots.sh figure <url> <out.png>                 # article hero figure, rendered large
@@ -14,8 +15,9 @@ DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 BIN="${TMPDIR:-/tmp}/wildbionics-figures/shot"
 cmd=${1:-}
 
-chrome() {
-  command -v google-chrome || command -v chromium || command -v chromium-browser || command -v google-chrome-stable || true
+chrome() {   # on PATH, else the Playwright Chromium preinstalled in Claude Code cloud sessions
+  command -v google-chrome || command -v chromium || command -v chromium-browser || command -v google-chrome-stable \
+    || { local p="${PLAYWRIGHT_BROWSERS_PATH:-/opt/pw-browsers}/chromium"; [ -x "$p" ] && echo "$p"; } || true
 }
 
 linux_shot() {   # url out width height
@@ -25,7 +27,7 @@ linux_shot() {   # url out width height
     echo "or open a pull request and use the CI screenshots (artifact preview-pr-<n>)." >&2
     exit 2
   fi
-  "$c" --headless=new --no-sandbox --hide-scrollbars --disable-gpu --force-device-scale-factor=2 \
+  "$c" --headless=new --no-sandbox --hide-scrollbars --disable-gpu --no-first-run --disable-background-networking --disable-component-update --force-device-scale-factor=2 \
     --window-size="$3,$4" --screenshot="$2" "$1" >/dev/null 2>&1
   echo "wrote $2"
 }
@@ -35,7 +37,7 @@ if [ "$(uname)" != "Darwin" ]; then
     page)   h=$(( ${5:-0} + ${6:-2400} )); linux_shot "$2" "$3" "$4" "$h" ;;
     figure) linux_shot "$2" "$3" 1440 1100 ;;
     build)  echo "nothing to build on Linux (uses headless Chrome)" ;;
-    *) sed -n '2,11p' "$0"; exit 1 ;;
+    *) sed -n '2,12p' "$0"; exit 1 ;;
   esac
   exit 0
 fi
@@ -53,5 +55,5 @@ case "$cmd" in
     [ -x "$BIN" ] || "$0" build
     SHOT_JS="document.querySelector('.article-header__grid').style.gridTemplateColumns='1fr';document.querySelector('.article-header__copy').style.display='none';${SHOT_JS:-}" \
       "$BIN" "$2" "$3" 1440 120 820 ;;
-  *) sed -n '2,11p' "$0"; exit 1 ;;
+  *) sed -n '2,12p' "$0"; exit 1 ;;
 esac

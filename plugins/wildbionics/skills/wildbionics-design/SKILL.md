@@ -51,7 +51,23 @@ text.
 
 `_layouts/default.html` + `_includes/jsonld.html`: title, description, canonical, hreflang incl.
 `x-default`, Open Graph/Twitter image, JSON-LD @graph. New page types need a `ref` (translations),
-`lang`, `title`, `description` (50–160 chars) and, if special, `schema_type`.
+`lang`, `title`, `description` (50–160 chars), a `short_title` if the title is long (breadcrumb
+name) and, if special, `schema_type` (`CollectionPage` lists its articles as an `ItemList`).
+
+Rules for the JSON-LD graph (enforced by `check_site.py`):
+- **Every page:** Organization, Person, WebSite, WebPage (`#webpage`) and one preview
+  `ImageObject` (`#primaryimage`) with caption, `license`, `acquireLicensePage`, `creditText`,
+  `creator` and `copyrightNotice` – the page and the article reference it by `@id`, never inline.
+- **Captions describe the image:** `page.image_alt` for pages with their own `image`; pages that
+  use the default card get `og_image_alt` from `_data/i18n.yml` (same text as `og:image:alt`) –
+  never the page description.
+- **Breadcrumbs:** Home › page, articles Home › Articles › article; names = `short_title | default:
+  title`, identical to the visible `nav.breadcrumb`; the last item is the page itself; no
+  breadcrumb on the home page and on `noindex` pages.
+- Every `@id` reference to a node of the same page or the site must resolve.
+- Figures are inline SVG (`role="img"`, `<title>`, `<desc>`) – accessible, but without an own URL
+  they are not indexed as images and have no `ImageObject` yet (planned: figure files under
+  `/assets/figures/` plus one `ImageObject` per figure).
 
 ## Policy
 

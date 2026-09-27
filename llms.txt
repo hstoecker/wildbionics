@@ -47,4 +47,6 @@ Sources:
 - [Home (English)]({{ '/' | absolute_url }}): overview, the lens concept and the four dimensions of the knowledge graph (time, space, rules of physics, adjacent sciences)
 - [Startseite (Deutsch)]({{ '/de/' | absolute_url }})
 - [All articles]({{ en.articles.url | absolute_url }})
+- [How to contribute]({{ en.guide.url | absolute_url }}): three ways to add or correct articles, translations and figures – with Claude Code (recommended), with @claude on GitHub or by hand; every change is checked automatically and approved by the maintainer
+- [Mitmachen (Deutsch)]({{ site.data.i18n.de.guide.url | absolute_url }})
 - [Sitemap]({{ '/sitemap.xml' | absolute_url }})
