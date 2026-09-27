@@ -65,8 +65,10 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page <url> <out.png> 390 <y> <h>     # phone
    ```
    Render EN **and** DE (labels differ in length). On macOS `SHOT_JS="…"` can click tabs or focus
-   nodes first; on Linux (cloud sessions) the script uses headless Chrome and captures the top of
-   the page. Without any renderer, open the PR and review the CI screenshots (`preview-pr-<n>`). Alternative: the Browser pane (`preview_start` + screenshot). Local server:
+   nodes first; on Linux (cloud sessions) the script uses headless Chrome (on `PATH` or the
+   preinstalled Playwright Chromium) and captures the top of the page. Headless Chrome has a minimum
+   window width of about 500 px, so its 390 px renders look cut off on the right – for true phone
+   views use Playwright (preinstalled in cloud sessions) with a 390 px viewport, or the CI screenshots. Without any renderer, open the PR and review the CI screenshots (`preview-pr-<n>`). Alternative: the Browser pane (`preview_start` + screenshot). Local server:
    `bundle exec jekyll serve --livereload` → http://localhost:4000.
 4. **Critique** each render against the checklist below and write the findings down as a list
    (what is wrong, why, the fix). Look at the large render for detail and the phone render for
@@ -92,5 +94,6 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 - [ ] Labels: EN + DE from i18n, glossary terms, no overlaps, nothing clipped, dots on target.
 - [ ] Legible and uncluttered at phone width (390 px) and in the article layout (desktop).
 - [ ] `<title>`/`<desc>` describe the concept in both languages; contrast OK; not colour-only.
-- [ ] OG images regenerated if they contain the figure; captions updated; gates pass.
+- [ ] OG images regenerated if they contain the figure; captions and `image_alt` (describes the
+      OG image; also its JSON-LD caption) updated; gates pass.
 - [ ] Final large render shown to the user.

@@ -1,11 +1,19 @@
 {%- comment -%}
   Schema.org JSON-LD for every page, as one linked @graph.
-  Expects from the layout: lang, t, home_url, full_title, description, page_image, translations.
+  Expects from the layout: lang, t, home_url, full_title, description, page_image, image_alt,
+  translations.
+  Breadcrumbs: Home > page (articles: Home > Articles > article), named by short_title like the
+  visible breadcrumb; none on the home page and on noindex pages. The preview image is one
+  ImageObject (#primaryimage) with licence and credit, referenced by the page and the article.
+  A CollectionPage lists its articles as an ItemList. Rules: wildbionics-design skill.
 {%- endcomment -%}
 {%- assign site_url = site.url | append: "/" -%}
 {%- assign page_url = page.url | absolute_url -%}
 {%- assign is_home = false -%}{%- if page.ref == "home" -%}{%- assign is_home = true -%}{%- endif -%}
 {%- assign is_article = false -%}{%- if page.collection == "articles" -%}{%- assign is_article = true -%}{%- endif -%}
+{%- assign has_breadcrumb = true -%}
+{%- if is_home or page.robots contains "noindex" -%}{%- assign has_breadcrumb = false -%}{%- endif -%}
+{%- assign content_license = "https://creativecommons.org/licenses/by-sa/4.0/" -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,7 +41,7 @@
       "description": {{ site.data.i18n.en.footer.tagline | jsonify }},
       "inLanguage": {{ site.languages | jsonify }},
       "publisher": { "@id": "{{ site_url }}#organization" },
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "license": "{{ content_license }}"
     },
     {
       "@type": {{ page.schema_type | default: "WebPage" | jsonify }},
@@ -43,30 +51,57 @@
       "description": {{ description | jsonify }},
       "inLanguage": {{ lang | jsonify }},
       "isPartOf": { "@id": "{{ site_url }}#website" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": {{ page_image | jsonify }}, "width": 1200, "height": 630 }
-      {%- unless is_home %},
-      "breadcrumb": { "@id": "{{ page_url }}#breadcrumb" }{% endunless %}
+      "primaryImageOfPage": { "@id": "{{ page_url }}#primaryimage" }
+      {%- if has_breadcrumb %},
+      "breadcrumb": { "@id": "{{ page_url }}#breadcrumb" }{% endif %}
       {%- if is_article %},
-      "mainEntity": { "@id": "{{ page_url }}#article" }{% endif %}
+      "mainEntity": { "@id": "{{ page_url }}#article" }
+      {%- elsif page.schema_type == "CollectionPage" %},
+      "mainEntity": { "@id": "{{ page_url }}#itemlist" }{% endif %}
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_url }}#primaryimage",
+      "url": {{ page_image | jsonify }},
+      "contentUrl": {{ page_image | jsonify }},
+      "width": 1200,
+      "height": 630,
+      "caption": {{ image_alt | jsonify }},
+      "inLanguage": {{ lang | jsonify }},
+      "license": "{{ content_license }}",
+      "acquireLicensePage": {{ site.repository_url | append: "/blob/main/LICENSE-CONTENT.txt" | jsonify }},
+      "creditText": {{ site.title | jsonify }},
+      "creator": { "@id": "{{ site_url }}#organization" },
+      "copyrightNotice": {{ t.footer.copyright | prepend: "© " | append: " – CC BY-SA 4.0" | jsonify }}
     }
-    {%- unless is_home %},
+    {%- if has_breadcrumb %},
     {
       "@type": "BreadcrumbList",
       "@id": "{{ page_url }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": {{ site.title | jsonify }}, "item": {{ home_url | absolute_url | jsonify }} },
-        {%- if page.ref == "graph" %}
-        { "@type": "ListItem", "position": 2, "name": {{ t.graph.title | jsonify }}, "item": "{{ page_url }}" }
-        {%- elsif is_article or page.ref == "articles" %}
-        { "@type": "ListItem", "position": 2, "name": {{ t.articles.title | jsonify }}, "item": {{ t.articles.url | absolute_url | jsonify }} }
+        {%- if is_article %}
+        { "@type": "ListItem", "position": 2, "name": {{ t.articles.title | jsonify }}, "item": {{ t.articles.url | absolute_url | jsonify }} },
+        { "@type": "ListItem", "position": 3, "name": {{ page.short_title | default: page.title | jsonify }}, "item": "{{ page_url }}" }
         {%- else %}
-        { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": "{{ page_url }}" }
+        { "@type": "ListItem", "position": 2, "name": {{ page.short_title | default: page.title | jsonify }}, "item": "{{ page_url }}" }
         {%- endif %}
-        {%- if is_article %},
-        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page_url }}" }{% endif %}
       ]
     }
-    {%- endunless %}
+    {%- endif %}
+    {%- if page.schema_type == "CollectionPage" %}
+    {%- assign listed = site.articles | where: "lang", lang | where: "status", "published" | sort: "date" | reverse %},
+    {
+      "@type": "ItemList",
+      "@id": "{{ page_url }}#itemlist",
+      "numberOfItems": {{ listed | size }},
+      "itemListElement": [
+        {%- for a in listed %}
+        { "@type": "ListItem", "position": {{ forloop.index }}, "url": {{ a.url | absolute_url | jsonify }}, "name": {{ a.title | jsonify }} }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ]
+    }
+    {%- endif %}
     {%- if is_article %},
     {
       "@type": ["Article", "LearningResource"],
@@ -74,7 +109,7 @@
       "headline": {{ page.title | jsonify }},
       "description": {{ description | jsonify }},
       "abstract": {{ page.key_facts | join: " " | jsonify }},
-      "image": [{{ page_image | jsonify }}],
+      "image": { "@id": "{{ page_url }}#primaryimage" },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
       "inLanguage": {{ lang | jsonify }},
@@ -82,7 +117,7 @@
       "publisher": { "@id": "{{ site_url }}#organization" },
       "mainEntityOfPage": { "@id": "{{ page_url }}#webpage" },
       "isPartOf": { "@id": "{{ site_url }}#website" },
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license": "{{ content_license }}",
       "isAccessibleForFree": true,
       "learningResourceType": "Article",
       "educationalLevel": {{ page.educational_level | default: "Beginner" | jsonify }},
@@ -121,7 +156,7 @@
       "description": {{ t.graph.data_note | jsonify }},
       "url": "{{ page_url }}",
       "inLanguage": {{ site.languages | jsonify }},
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license": "{{ content_license }}",
       "isAccessibleForFree": true,
       "creator": { "@id": "{{ site_url }}#organization" },
       "isPartOf": { "@id": "{{ site_url }}#website" },

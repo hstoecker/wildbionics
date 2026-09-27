@@ -70,7 +70,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
 | `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files |
-| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD, links, sitemap, graph.json |
+| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
 | `.github/CODEOWNERS` | every PR | the maintainer is the required reviewer |
@@ -108,10 +108,15 @@ to the plugin). Outside the repository, install the plugin from the marketplace:
 
 ## Claude Code on the web (claude.ai/code) – one-time setup
 
-Cloud sessions run in an Ubuntu VM (Ruby 3.3, Python, Node preinstalled) whose default network
-level **Trusted** blocks the research APIs the fact-checking needs. Create a cloud environment
-named `WildBionics` with network access **Custom**, tick *Also include default list of common
-package managers*, and allow these domains:
+The website guide recommends this way first (1 · Claude Code, recommended; 2 · `@claude` on
+GitHub, friends & family only, because it uses the maintainer's Claude tokens; 3 · by hand, only
+experts the maintainer knows personally – anchors `#claude-code`, `#github`, `#by-hand`).
+
+Cloud sessions run in an Ubuntu VM (Ruby 3.3, Python, Node, Playwright Chromium preinstalled) whose
+default network level **Trusted** blocks the research APIs the fact-checking needs. Create a cloud
+environment named `WildBionics` (environment selector → *Add cloud environment*; later: environment
+menu in the session's title bar → *Edit*) with network access **Custom**, tick *Also include
+default list of common package managers*, and allow these domains:
 
 ```text
 api.crossref.org
@@ -124,9 +129,28 @@ www.wikidata.org
 *.wikipedia.org
 ```
 
-Then start sessions on `hstoecker/wildbionics` with that environment. `bundle install` works
-(RubyGems is allowlisted); figures are rendered with `shots.sh` if Chrome/Chromium is available,
-otherwise use the screenshots CI attaches to every pull request (artifact `preview-pr-<n>`).
+Two more fields are required – both learnt from failing sessions:
+
+- **Environment variables:** `LANG=C.UTF-8`. The VM has no UTF-8 locale (`LC_CTYPE=POSIX`);
+  without it Jekyll and all Ruby gates crash with `invalid byte sequence in US-ASCII`.
+- **Setup script:**
+  ```bash
+  #!/bin/bash
+  set -e
+  gem install github-pages -v 232 --no-document
+  ln -sf "$(ruby -e 'print Gem.bindir')/jekyll" /usr/local/bin/jekyll
+  python3 -m pip install numpy scipy matplotlib   # code examples (code_examples.py)
+  ```
+  `ruby` on the `PATH` installs gems into an rbenv Ruby whose `bin/` is not on the `PATH`, so
+  `bundle exec jekyll` fails with `bundler: command not found: jekyll` until `jekyll` is linked.
+
+Then start a **new** session on `hstoecker/wildbionics` with that environment (environment
+settings only apply to new sessions) and verify it first: all five local gates report 0 errors and
+`api.crossref.org` answers. In a session without these settings, `export LANG=C.UTF-8` and the same
+two commands fix it for that session. Figures are rendered with `shots.sh`, which finds the
+preinstalled Chromium; CI also attaches screenshots to every pull request (artifact
+`preview-pr-<n>`). If the repository is missing from the list or a push is refused, the
+contributor has not accepted the collaborator invitation or must reconnect GitHub.
 On Windows, prefer claude.ai/code: `.claude/skills` are symlinks, which plain Windows git may
 check out as text files.
 

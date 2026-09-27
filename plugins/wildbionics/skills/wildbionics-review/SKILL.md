@@ -49,7 +49,9 @@ Go through every area the change touches; skip areas it doesn't touch and say so
    justified, graph renders cleanly.
 6. **UI/UX & accessibility** (`wildbionics-design`) – components and tokens reused, no hard-coded
    strings, WCAG 2.2 AA, works without JS, no new dependencies, desktop + phone screenshots OK.
-7. **SEO/AEO/GEO** – description, OG image, JSON-LD validity, hreflang, llms.txt/sitemap entries.
+7. **SEO/AEO/GEO** – description, OG image with a truthful `image_alt`, JSON-LD validity and
+   graph rules (breadcrumb = visible breadcrumb and ends at the page, licensed `#primaryimage`,
+   resolving `@id`s – see `wildbionics-design`), hreflang, llms.txt/sitemap entries.
 8. **Skill upkeep** (`wildbionics-contribute`) – if conventions changed, the skills were updated
    and the plugin version bumped.
 9. **Licence & safety** – content compatible with CC BY-SA 4.0 (images: licence and attribution),
