@@ -36,13 +36,22 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 5. **Labels that help.** Short, from `_data/i18n.yml` (EN + DE, German terms per the glossary),
    callouts with a leader line and a dot that sits *on* the element meant. No overlaps with
    each other, with shapes or with other leader lines; nothing clipped at the edge; readable on
-   a phone (roughly ≥ 9 px effective size – enlarge labels in the ≤ 600 px media query).
-6. **Accessible.** `role="img"` with bilingual `<title>` and `<desc>` that describe the concept,
+   a phone: ≥ 9 px effective size = CSS font-size × (rendered width ÷ viewBox width); enlarge
+   labels per figure class in the ≤ 600 px media query and leave viewBox margin for the bigger
+   phone labels (rotated axis titles, x-axis title below the tick numbers). Values from a formula
+   use a real minus sign (−100, not -100).
+6. **Accessible.** `role="img"`, `aria-labelledby="<id>-title" aria-describedby="<id>-desc"` (the
+   title is the name, the long description stays a description – `check_content.rb` enforces it),
+   with bilingual `<title>` and `<desc>` that describe the concept,
    not just the objects; enough contrast on dark and light surfaces; never encode meaning by
    colour alone (add shape, dash pattern or label).
 
 ### Pitfalls seen before – check for them explicitly
-- Dots or dark shapes that read as eyes or faces (a hinge dot made the claw look like a head).
+- Dots or dark shapes that read as eyes or faces (a hinge dot made the claw look like a head; a
+  callout dot in the middle of the dark socket oval read as a pupil – callout dots go on the rim,
+  recesses are drawn in the shell colour, not dark).
+- Snapshots that contradict the plot next to them (bubble sizes must follow the R(t) curve;
+  guide lines end on the curve).
 - Abstract fragments without context (the first claw figure).
 - Proportions that hide the story (the snapping claw was too small to be the obvious "weapon").
 - Hard, angular artefacts on organic shapes (a step in the claw outline).

@@ -58,7 +58,8 @@ text.
 - Everything works without JavaScript: tabs degrade to stacked panels, the graph to a list.
 - Respect `prefers-reduced-motion`; animations are decorative only.
 - Interactive widgets follow WAI-ARIA patterns (tabs with arrow keys, buttons with `aria-pressed`/labels).
-- SVG figures: `role="img"`, `<title>`, `<desc>` in the page language.
+- SVG figures: `role="img"`, `aria-labelledby` → `<title>` and `aria-describedby` → `<desc>`, both in
+  the page language.
 
 ## Metadata (layouts handle it – keep it that way)
 

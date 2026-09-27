@@ -1,5 +1,5 @@
 {%- include i18n.html -%}
-<svg class="cav-svg" viewBox="0 0 520 300" role="img" aria-labelledby="cav-title cav-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="cav-svg" viewBox="0 0 520 300" role="img" aria-labelledby="cav-title" aria-describedby="cav-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="cav-title">{{ t.flagship.svg_title }}</title>
   <desc id="cav-desc">{{ t.flagship.svg_desc }}</desc>
   <defs>
@@ -14,19 +14,20 @@
     </linearGradient>
   </defs>
 
-  <!-- Bubble snapshots (schematic sizes) -->
+  <!-- Bubble snapshots: radius proportional to the R(t) curve below at the same time
+       (76 %, 100 %, 77 %, 26 % of R_max = 22); guides end on the curve -->
   <g class="bubbles">
-    <circle cx="110" cy="44" r="9"/>
+    <circle cx="110" cy="44" r="16.8"/>
     <circle cx="210" cy="44" r="22"/>
-    <circle cx="300" cy="44" r="13"/>
-    <circle cx="338" cy="44" r="3.5"/>
+    <circle cx="300" cy="44" r="16.8"/>
+    <circle cx="338" cy="44" r="5.7"/>
   </g>
   <g class="bubble-shine" fill="none">
-    <path d="M104,40 a6,6 0 0 1 5,-4"/>
+    <path d="M99,37 a11,11 0 0 1 9,-7"/>
     <path d="M197,36 a15,15 0 0 1 11,-10"/>
-    <path d="M292,39 a9,9 0 0 1 6,-6"/>
+    <path d="M289,37 a11,11 0 0 1 9,-7"/>
   </g>
-  <path class="guide" d="M110,58 V160 M210,70 V90 M300,62 V190 M338,52 V256"/>
+  <path class="guide" d="M110,61 V129 M210,66 V90 M300,61 V129 M338,50 V213"/>
 
   <!-- Axes -->
   <path class="axis" d="M56,90 V256 H496"/>
@@ -49,6 +50,7 @@
   <text x="56" y="280" text-anchor="middle" class="label">{{ t.flagship.svg_snap }}</text>
   <text x="346" y="280" text-anchor="middle" class="label">{{ t.flagship.svg_collapse }}</text>
   <text x="146" y="176" class="label label-muted">{{ t.flagship.svg_growth }}</text>
-  <path class="callout-line" d="M362,234 L372,204 H380"/>
-  <text x="384" y="208" class="label label-accent">{{ t.flagship.svg_flash }}</text>
+  {%- assign flash = t.flagship.svg_flash | split: " & " %}
+  <path class="callout-line" d="M358,236 L382,196 H386"/>
+  <text x="390" y="192" class="label label-accent">{{ flash[0] }}{% if flash[1] %} &amp;<tspan x="390" dy="17">{{ flash[1] }}</tspan>{% endif %}</text>
 </svg>

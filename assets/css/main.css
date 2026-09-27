@@ -538,6 +538,8 @@ var {
 .hero-svg, .lens-svg, .cav-svg { width: 100%; height: auto; overflow: visible; }
 .lens-svg { overflow: hidden; }
 .lens-svg .label { font-size: 11.5px; }
+.claw-svg .label-tick, .gecko-svg .label-tick { font-size: 12px; }   /* "not to scale" note ≥ 9 px */
+.hero-svg .label-tick { font-size: 11px; }
 
 .label {
   font-family: var(--font-mono);
@@ -1117,7 +1119,7 @@ var {
 .claw-svg .dactyl { fill: url(#shrimp-finger); stroke: rgba(255, 255, 255, 0.55); stroke-width: 1; }
 .claw-svg .plunger { fill: #c58a4f; stroke: rgba(90, 50, 15, 0.5); stroke-width: 0.8; }
 .claw-svg .claw-shine { fill: none; stroke: rgba(255, 244, 222, 0.6); stroke-width: 2; stroke-linecap: round; }
-.claw-svg .socket { fill: rgba(8, 23, 30, 0.6); stroke: rgba(255, 255, 255, 0.55); stroke-dasharray: 2.5 2.5; }
+.claw-svg .socket { fill: rgba(110, 60, 20, 0.28); stroke: rgba(90, 50, 15, 0.6); stroke-dasharray: 2.5 2.5; }   /* a recess in the shell, not a dark "pupil"; callout dot on its rim */
 .claw-svg .jet { fill: url(#claw-jet); }
 .claw-svg .speed { fill: none; stroke: var(--signal); stroke-width: 1.2; stroke-linecap: round; opacity: 0.6; }
 .claw-svg .bubble { fill: url(#claw-bubble); stroke: var(--signal); stroke-width: 1.5; }
@@ -1490,10 +1492,12 @@ a.cite:hover { text-decoration: underline; }
   .key-facts { padding: 22px 20px; }
   .graph-tags dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .formula--steps { font-size: 1.05rem; }
-  .claw-svg .label { font-size: 15px; }
-  .gecko-svg .label { font-size: 15px; }
+  /* figure labels: at least 9 px on a 390 px phone (font-size × figure scale) */
+  .claw-svg .label, .gecko-svg .label { font-size: 18px; }
   .fig-svg .label { font-size: 15px; }
-  .fig-svg .label-tick { font-size: 14px; }
+  .fig-svg .label-tick { font-size: 15px; }
+  .cav-svg .label { font-size: 15px; }
+  .lens-svg .label { font-size: 13.5px; }
 }
 
 /* ==========================================================================
@@ -1980,7 +1984,7 @@ a.cite:hover { text-decoration: underline; }
   .disciplines ul { gap: 2px 20px; }
   .disciplines li { font-size: 1.15rem; }
   .hero-svg .label { font-size: 18px; }
-  .hero-svg .label-tick { font-size: 15px; }
+  .hero-svg .label-tick { font-size: 18px; }
   .lens__tab-index { display: none; }
   .lens__tabs { flex-wrap: wrap; column-gap: 4px; overflow: visible; }
 }

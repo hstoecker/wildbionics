@@ -1,5 +1,5 @@
 {%- include i18n.html -%}
-<svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-bio-title lens-bio-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-bio-title" aria-describedby="lens-bio-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="lens-bio-title">{{ t.lens.biology.svg_title }}</title>
   <desc id="lens-bio-desc">{{ t.lens.biology.svg_desc }}</desc>
   <!-- Bat at (92,176) calling towards the moth at (372,118) -->
