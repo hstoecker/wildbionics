@@ -71,5 +71,7 @@ terms:
   - { en: "shock wave lithotripsy", de: "Stoßwellenlithotripsie", avoid: ["Stoßwellenlithotrypsie", "Lithotrypsie"], why: "Rechtschreibung: Lithotripsie." }
 
   # --- Site vocabulary -----------------------------------------------------------
+  - { en: "knowledge graph", de: "Wissensgraph*", avoid: ["Wissensgraf*"], level: warn, why: "In Mathematik und Informatik: Graph (Graf = Adelstitel)." }
+  - { en: "organism*", de: "Lebewesen", de_alt: ["Organismus", "Organismen"] }
   - { en: "flagship article", de: "Schwerpunktartikel", avoid: ["Leitartikel*"], why: "Leitartikel = Meinungsbeitrag der Redaktion (editorial), nicht Hauptartikel." }
   - { en: "breadcrumb", de: "Brotkrumennavigation" }

@@ -1,0 +1,62 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Knowledge graph, derived at build time from article front matter (see CLAUDE.md).
+  Node types: dimension · term · article · being. Lens edges point to the discipline
+  node named in _data/lenses.yml. Labels and URLs per language.
+{%- endcomment -%}
+{%- assign dims = "time,space,physics,adjacent_sciences" | split: "," -%}
+{%- assign published = site.articles | where: "status", "published" -%}
+{%- assign canonical = published | where: "lang", site.lang -%}
+{%- capture used -%}|{% for a in canonical %}{% for d in a.dimensions %}{% for s in d[1] %}{{ s }}|{% endfor %}{% endfor %}{% endfor %}{%- endcapture -%}
+{%- capture nodes -%}
+{%- for d in dims %}
+    {"id": "dim:{{ d }}", "type": "dimension", "dim": "{{ d }}", "label": { {% for l in site.languages %}"{{ l }}": {{ site.data.i18n[l].article.dimension_names[d] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
+{%- endfor %}
+{%- for term in site.data.taxonomy %}
+  {%- assign slug = term[0] -%}{%- assign t = term[1] -%}{%- capture key -%}|{{ slug }}|{%- endcapture %}
+    {"id": "term:{{ slug }}", "type": "term", "dim": "{{ t.dim }}", {% if t.order %}"order": {{ t.order }}, {% endif %}"used": {% if used contains key %}true{% else %}false{% endif %}, "label": { {% for l in site.languages %}"{{ l }}": {{ t[l] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
+{%- endfor %}
+{%- for b in site.data.beings %}
+    {"id": "being:{{ b[0] }}", "type": "being", "taxon": {{ b[1].taxon | jsonify }}, "wikidata": {{ b[1].wikidata | jsonify }}, "label": { {% for l in site.languages %}"{{ l }}": {{ b[1][l] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
+{%- endfor %}
+
+{%- for a in canonical %}
+  {%- assign versions = published | where: "ref", a.ref %}
+    {"id": "article:{{ a.ref }}", "type": "article", "date": "{{ a.date | date: '%Y-%m-%d' }}", "label": { {% for v in versions %}"{{ v.lang }}": {{ v.short_title | default: v.title | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }, "title": { {% for v in versions %}"{{ v.lang }}": {{ v.title | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }, "url": { {% for v in versions %}"{{ v.lang }}": {{ v.url | absolute_url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
+{%- endfor %}
+{%- endcapture -%}
+{%- capture edges -%}
+{%- for term in site.data.taxonomy %}
+    {"source": "dim:{{ term[1].dim }}", "target": "term:{{ term[0] }}", "type": "contains"},
+{%- endfor %}
+{%- for a in canonical %}
+  {%- for d in a.dimensions %}{% for s in d[1] %}
+    {"source": "article:{{ a.ref }}", "target": "term:{{ s }}", "type": "{{ d[0] }}"},
+  {%- endfor %}{% endfor %}
+  {%- for b in a.beings %}
+    {"source": "article:{{ a.ref }}", "target": "being:{{ b }}", "type": "about"},
+  {%- endfor %}
+  {%- for l in a.lenses %}
+    {"source": "article:{{ a.ref }}", "target": "{{ site.data.lenses[l] }}", "type": "lens", "lens": "{{ l }}"},
+  {%- endfor %}
+{%- endfor %}
+{%- endcapture -%}
+{%- comment -%} Drop the trailing comma of each list (Liquid 4 has no remove_last). {%- endcomment -%}
+{%- assign nodes = nodes | strip -%}{%- assign n_len = nodes | size | minus: 1 -%}
+{%- assign edges = edges | strip -%}{%- assign e_len = edges | size | minus: 1 -%}
+{
+  "name": "WildBionics knowledge graph",
+  "url": {{ '/graph.json' | absolute_url | jsonify }},
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "generated": "{{ site.time | date_to_xmlschema }}",
+  "languages": {{ site.languages | jsonify }},
+  "nodes": [
+    {{ nodes | slice: 0, n_len }}
+  ],
+  "edges": [
+    {{ edges | slice: 0, e_len }}
+  ]
+}

@@ -1,0 +1,77 @@
+{%- comment -%}
+  Knowledge graph page. The interactive view (assets/js/graph.js) loads /graph.json;
+  the list below is rendered at build time from the same data, so the page works without JS.
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign dims = "time,space,physics,adjacent_sciences" | split: "," -%}
+{%- assign published = site.articles | where: "status", "published" -%}
+{%- assign local_articles = published | where: "lang", lang -%}
+<section class="graph-page" aria-labelledby="graph-title">
+  <div class="container graph-head">
+    <p class="eyebrow">{{ t.graph.eyebrow }}</p>
+    <h1 id="graph-title" class="section-title">{{ t.graph.title }}</h1>
+    <p class="section-intro">{{ t.graph.intro }}</p>
+    <p class="graph-stats" data-graph-stats data-template="{{ t.graph.stats }}" aria-live="polite"></p>
+  </div>
+
+  <div class="graph-stage" data-graph="{{ '/graph.json' | relative_url }}" data-lang="{{ lang }}"
+       data-label-article="{{ t.graph.article }}" data-label-being="{{ t.graph.being }}"
+       data-label-unused="{{ t.graph.no_article }}"
+       {% for d in dims %}data-label-{{ d | replace: '_', '-' }}="{{ t.article.dimension_names[d] }}" {% endfor %}>
+    <div class="container graph-toolbar">
+      <fieldset class="graph-filter">
+        <legend>{{ t.graph.filter }}</legend>
+        {%- for d in dims %}
+        <label class="graph-chip" data-dim="{{ d }}"><input type="checkbox" value="{{ d }}" checked> <span class="swatch" aria-hidden="true"></span>{{ t.article.dimension_names[d] }}</label>
+        {%- endfor %}
+      </fieldset>
+      <ul class="graph-legend" aria-label="{{ t.graph.legend }}">
+        <li><span class="swatch swatch--article" aria-hidden="true"></span>{{ t.graph.article }}</li>
+        <li><span class="swatch swatch--being" aria-hidden="true"></span>{{ t.graph.being }}</li>
+        <li><span class="swatch swatch--lens" aria-hidden="true"></span>{{ t.graph.lens }}</li>
+        <li><span class="swatch swatch--unused" aria-hidden="true"></span>{{ t.graph.concept_unused }}</li>
+      </ul>
+    </div>
+    <div class="graph-canvas">
+      <svg class="graph-svg" role="group" aria-label="{{ t.graph.svg_label }}" aria-describedby="graph-hint" xmlns="http://www.w3.org/2000/svg"></svg>
+      <aside class="graph-info" aria-live="polite" hidden></aside>
+    </div>
+    <p class="container graph-hint" id="graph-hint">{{ t.graph.hint }}</p>
+  </div>
+
+  <div class="container graph-list">
+    <details>
+      <summary><h2>{{ t.graph.list_title }}</h2></summary>
+      <div class="graph-list__grid">
+        {%- for d in dims %}
+        <section class="graph-list__dim" data-dim="{{ d }}">
+          <h3>{{ t.article.dimension_names[d] }}</h3>
+          <ul>
+            {%- for term in site.data.taxonomy %}{% if term[1].dim == d %}
+            {%- assign slug = term[0] -%}
+            {%- assign hits = "" | split: "" -%}
+            {%- for a in local_articles %}{% assign slugs = a.dimensions[d] %}{% if slugs contains slug %}{% assign hits = hits | push: a %}{% endif %}{% endfor %}
+            <li{% if hits.size == 0 %} class="is-unused"{% endif %}>
+              <span class="graph-list__term">{{ term[1][lang] }}</span>
+              {%- if hits.size > 0 %} → {% for a in hits %}<a href="{{ a.url | relative_url }}">{{ a.short_title | default: a.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+              {%- else %} <span class="graph-list__none">({{ t.graph.no_article }})</span>{% endif %}
+            </li>
+            {%- endif %}{% endfor %}
+          </ul>
+        </section>
+        {%- endfor %}
+        <section class="graph-list__dim">
+          <h3>{{ t.graph.being }} · {{ t.graph.lens }}</h3>
+          <ul>
+            {%- for a in local_articles %}
+            <li><a href="{{ a.url | relative_url }}">{{ a.short_title | default: a.title }}</a>:
+              {% for b in a.beings %}{{ site.data.beings[b][lang] }} (<i>{{ site.data.beings[b].taxon }}</i>){% endfor %} ·
+              {% for l in a.lenses %}{% assign lens_i18n = t.lens %}{{ lens_i18n[l].tab }}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+            {%- endfor %}
+          </ul>
+        </section>
+      </div>
+    </details>
+    <p class="graph-data"><a href="{{ '/graph.json' | relative_url }}" download>{{ t.graph.data }}</a> – {{ t.graph.data_note }}</p>
+  </div>
+</section>

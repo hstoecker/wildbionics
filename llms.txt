@@ -37,6 +37,11 @@ Sources:
 - [{{ a.title }}]({{ a.url | absolute_url }}): {{ a.description }}
 {%- endfor %}
 
+## Data
+
+- [Knowledge graph (JSON)]({{ '/graph.json' | absolute_url }}): all articles, organisms, lenses and ontology terms (time, space, rules of physics, adjacent sciences) with EN/DE labels and links – generated from article front matter at every build, CC BY-SA 4.0
+- [Knowledge graph (interactive)]({{ site.data.i18n.en.graph.url | absolute_url }})
+
 ## Optional
 
 - [Home (English)]({{ '/' | absolute_url }}): overview, the lens concept and the four dimensions of the knowledge graph (time, space, rules of physics, adjacent sciences)

@@ -179,6 +179,30 @@ else:
     for f in indexable - listed:
         warnings.append(f"sitemap.xml: indexable page not listed: /{f.relative_to(root)}")
 
+# knowledge graph data
+graph_file = root / "graph.json"
+if not graph_file.exists():
+    errors.append("graph.json missing")
+else:
+    try:
+        graph = json.loads(graph_file.read_text(encoding="utf-8"))
+        ids = [n["id"] for n in graph["nodes"]]
+        if len(ids) != len(set(ids)):
+            errors.append("graph.json: duplicate node ids")
+        for e in graph["edges"]:
+            if e["source"] not in ids or e["target"] not in ids:
+                errors.append(f"graph.json: edge points to unknown node {e}")
+        for n in graph["nodes"]:
+            for lang in graph["languages"]:
+                if not (n.get("label") or {}).get(lang):
+                    errors.append(f"graph.json: {n['id']} has no {lang} label")
+            for lang, url in (n.get("url") or {}).items():
+                t = url_to_file(url)
+                if not t or not t.exists():
+                    errors.append(f"graph.json: {n['id']} links to missing page {url}")
+    except (json.JSONDecodeError, KeyError) as e:
+        errors.append(f"graph.json invalid: {e}")
+
 # robots.txt, llms.txt, IndexNow key
 for name in ("robots.txt", "llms.txt"):
     if not (root / name).exists():

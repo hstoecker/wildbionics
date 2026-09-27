@@ -1,0 +1,7 @@
+# Which node of the knowledge graph each article lens points to.
+# Lens keys are the ones used in `lenses:` front matter and in _data/i18n.yml `lens.*`.
+biology: term:biology
+physics: dim:physics            # the "Rules" dimension
+math: term:mathematics
+cs: term:computer-science
+physical-ai: term:physical-ai

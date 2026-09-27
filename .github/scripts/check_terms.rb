@@ -175,13 +175,36 @@ langs.each do |l|
   (keys[langs.first] - keys[l]).each { |k| errors << "_data/i18n.yml: #{l}.#{k} missing" }
   (keys[l] - keys[langs.first]).each { |k| errors << "_data/i18n.yml: #{l}.#{k} has no #{langs.first} counterpart" }
 end
+DIMS = %w[time space physics adjacent_sciences].freeze
 taxonomy.each do |slug, names|
   langs.each { |l| errors << "_data/taxonomy.yml: #{slug} has no #{l} name" if names.to_h[l].to_s.strip.empty? }
+  errors << "_data/taxonomy.yml: #{slug} needs dim: one of #{DIMS.join(', ')}" unless DIMS.include?(names.to_h["dim"])
+  errors << "_data/taxonomy.yml: time term #{slug} needs a numeric order" if names.to_h["dim"] == "time" && !names["order"].is_a?(Integer)
+end
+lenses = YAML.load_file("_data/lenses.yml")
+lens_keys = i18n.fetch(langs.first).fetch("lens").select { |_, v| v.is_a?(Hash) && v["tab"] }.keys
+(lens_keys - lenses.keys).each { |k| errors << "_data/lenses.yml: lens „#{k}“ has no graph target" }
+lenses.each do |k, target|
+  kind, slug = target.to_s.split(":", 2)
+  ok = (kind == "term" && taxonomy.key?(slug)) || (kind == "dim" && DIMS.include?(slug))
+  errors << "_data/lenses.yml: #{k} → „#{target}“ is not a taxonomy term or dimension" unless ok
+end
+beings = YAML.load_file("_data/beings.yml")
+beings.each do |slug, names|
+  langs.each { |l| errors << "_data/beings.yml: #{slug} has no #{l} name" if names.to_h[l].to_s.strip.empty? }
 end
 articles.each do |a|
-  a[:fm].fetch("dimensions", {}).each_value do |slugs|
-    Array(slugs).each { |slug| errors << "#{a[:file]}: dimension slug „#{slug}“ missing in _data/taxonomy.yml" unless taxonomy.key?(slug) }
+  a[:fm].fetch("dimensions", {}).each do |dim, slugs|
+    Array(slugs).each do |slug|
+      if !taxonomy.key?(slug)
+        errors << "#{a[:file]}: dimension slug „#{slug}“ missing in _data/taxonomy.yml"
+      elsif taxonomy[slug]["dim"] != dim
+        errors << "#{a[:file]}: „#{slug}“ is listed under #{dim}, but _data/taxonomy.yml puts it in #{taxonomy[slug]['dim']}"
+      end
+    end
   end
+  Array(a[:fm]["lenses"]).each { |l| errors << "#{a[:file]}: lens „#{l}“ missing in _data/lenses.yml" unless lenses.key?(l) }
+  Array(a[:fm]["beings"]).each { |b| errors << "#{a[:file]}: being „#{b}“ missing in _data/beings.yml" unless beings.key?(b) }
 end
 
 warnings.uniq.each { |w| puts "warning: #{w}" }

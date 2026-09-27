@@ -1,0 +1,3 @@
+# Organisms (and later: machines) that articles are about – front matter `beings:`.
+# Display names per language; `taxon` in italics on the page; `wikidata` for linked data.
+pistol-shrimp: { en: "Pistol shrimp", de: "Knallkrebs", taxon: "Alpheidae", wikidata: Q311534 }

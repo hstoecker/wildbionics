@@ -1,29 +1,38 @@
-# Display names for ontology slugs used in article front matter (`dimensions:`).
-# Slugs are language-neutral and feed the knowledge graph; add every new slug here.
+# Ontology terms used in article front matter (`dimensions:`) and in the knowledge graph.
+#   dim   – which of the four dimensions the term belongs to
+#           (time | space | physics | adjacent_sciences; `physics` = "Rules")
+#   order – time terms only: position on the time axis (Big Bang → … → future)
+#   en/de – display names (every language in _config.yml `languages`)
+# Slugs are language-neutral. Add every new slug here; the terminology gate checks it.
 
-# Time
-cenozoic:            { en: "Cenozoic", de: "Känozoikum" }
-modern-era:          { en: "Modern era", de: "Neuzeit" }
-age-of-ai:           { en: "Age of AI", de: "KI-Zeitalter" }
-future-scenarios:    { en: "Future scenarios", de: "Zukunftsszenarien" }
-# Space
-coastal:             { en: "Coasts", de: "Küsten" }
-coral-reef:          { en: "Coral reefs", de: "Korallenriffe" }
-seagrass:            { en: "Seagrass meadows", de: "Seegraswiesen" }
-lab:                 { en: "Laboratory", de: "Labor" }
-# Rules (physics)
-fluid-dynamics:      { en: "Fluid dynamics", de: "Strömungsmechanik" }
-thermodynamics:      { en: "Thermodynamics", de: "Thermodynamik" }
-acoustics:           { en: "Acoustics", de: "Akustik" }
-optics:              { en: "Optics", de: "Optik" }
-# Adjacent sciences
-biology:             { en: "Biology", de: "Biologie" }
-chemistry:           { en: "Chemistry", de: "Chemie" }
-mathematics:         { en: "Mathematics", de: "Mathematik" }
-computer-science:    { en: "Computer science", de: "Informatik" }
-artificial-intelligence: { en: "Artificial intelligence", de: "Künstliche Intelligenz" }
-physical-ai:         { en: "Physical AI", de: "Physical AI" }
-robotics:            { en: "Robotics", de: "Robotik" }
-medical-technology:  { en: "Medical technology", de: "Medizintechnik" }
-materials-science:   { en: "Materials science", de: "Materialwissenschaft" }
-bionics:             { en: "Bionics", de: "Bionik" }
+# --- Time: evolution & geology, continued into technology -------------------------
+big-bang:                { dim: time, order: 10, en: "Big Bang", de: "Urknall" }
+cambrian:                { dim: time, order: 30, en: "Cambrian", de: "Kambrium" }
+cenozoic:                { dim: time, order: 50, en: "Cenozoic", de: "Känozoikum" }
+modern-era:              { dim: time, order: 70, en: "Modern era", de: "Neuzeit" }
+age-of-ai:               { dim: time, order: 80, en: "Age of AI", de: "KI-Zeitalter" }
+future-scenarios:        { dim: time, order: 90, en: "Future scenarios", de: "Zukunftsszenarien" }
+
+# --- Space: habitats & scales ------------------------------------------------------
+coastal:                 { dim: space, en: "Coasts", de: "Küsten" }
+coral-reef:              { dim: space, en: "Coral reefs", de: "Korallenriffe" }
+seagrass:                { dim: space, en: "Seagrass meadows", de: "Seegraswiesen" }
+lab:                     { dim: space, en: "Laboratory", de: "Labor" }
+
+# --- Rules: physics ----------------------------------------------------------------
+fluid-dynamics:          { dim: physics, en: "Fluid dynamics", de: "Strömungsmechanik" }
+thermodynamics:          { dim: physics, en: "Thermodynamics", de: "Thermodynamik" }
+acoustics:               { dim: physics, en: "Acoustics", de: "Akustik" }
+optics:                  { dim: physics, en: "Optics", de: "Optik" }
+
+# --- Adjacent sciences -------------------------------------------------------------
+biology:                 { dim: adjacent_sciences, en: "Biology", de: "Biologie" }
+chemistry:               { dim: adjacent_sciences, en: "Chemistry", de: "Chemie" }
+mathematics:             { dim: adjacent_sciences, en: "Mathematics", de: "Mathematik" }
+computer-science:        { dim: adjacent_sciences, en: "Computer science", de: "Informatik" }
+artificial-intelligence: { dim: adjacent_sciences, en: "Artificial intelligence", de: "Künstliche Intelligenz" }
+physical-ai:             { dim: adjacent_sciences, en: "Physical AI", de: "Physical AI" }
+robotics:                { dim: adjacent_sciences, en: "Robotics", de: "Robotik" }
+medical-technology:      { dim: adjacent_sciences, en: "Medical technology", de: "Medizintechnik" }
+materials-science:       { dim: adjacent_sciences, en: "Materials science", de: "Materialwissenschaft" }
+bionics:                 { dim: adjacent_sciences, en: "Bionics", de: "Bionik" }
