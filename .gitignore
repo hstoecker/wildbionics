@@ -6,3 +6,7 @@ vendor/
 .bundle/
 .DS_Store
 .obsidian/
+
+# Local only: the github-pages gem pins all versions; a committed lockfile
+# conflicts with the gem set of the GitHub Pages build container.
+Gemfile.lock
