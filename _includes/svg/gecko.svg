@@ -1,0 +1,243 @@
+{%- include i18n.html -%}
+{%- assign g = t.figures.gecko -%}
+<svg class="gecko-svg" viewBox="0 0 720 420" role="img" aria-labelledby="gecko-title gecko-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="gecko-title">{{ g.title }}</title>
+  <desc id="gecko-desc">{{ g.desc }}</desc>
+  <defs>
+    <linearGradient id="gecko-skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9bccb"/>
+      <stop offset=".55" stop-color="#7f95a9"/>
+      <stop offset="1" stop-color="#5d7288"/>
+    </linearGradient>
+    <linearGradient id="gecko-pad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7d9c2"/>
+      <stop offset="1" stop-color="#bda888"/>
+    </linearGradient>
+    <radialGradient id="gecko-lens" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#16333d"/>
+      <stop offset="1" stop-color="#0a1c23"/>
+    </radialGradient>
+    <pattern id="gecko-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="gecko-fade" cx="40%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gecko-mask"><rect width="720" height="420" fill="url(#gecko-fade)"/></mask>
+    <clipPath id="gecko-c1"><circle cx="402" cy="108" r="66"/></clipPath>
+    <clipPath id="gecko-c2"><circle cx="548" cy="214" r="66"/></clipPath>
+    <clipPath id="gecko-c3"><circle cx="630" cy="322" r="66"/></clipPath>
+  </defs>
+
+  <rect class="hero-grid" width="720" height="420" fill="url(#gecko-grid)" mask="url(#gecko-mask)"/>
+
+  <!-- ===== Tokay gecko on a vertical wall, seen from behind (dorsal view), head up ===== -->
+  <g class="gecko">
+    <path class="limb" d="M152,140 Q104,150 98,110"/>
+    <path class="limb" d="M198,140 Q246,150 252,110"/>
+    <path class="limb" d="M154,226 Q104,222 100,268"/>
+    <path class="limb" d="M196,226 Q246,222 250,268"/>
+    <path class="toe" d="M98,110 L80.2,106.5"/>
+    <ellipse class="toepad" cx="78.4" cy="106.2" rx="4.2" ry="6" transform="rotate(-79 78.4 106.2)"/>
+    <path class="toe" d="M98,110 L81.5,94.6"/>
+    <ellipse class="toepad" cx="79.8" cy="93" rx="4.2" ry="6" transform="rotate(-47 79.8 93)"/>
+    <path class="toe" d="M98,110 L92.1,88.2"/>
+    <ellipse class="toepad" cx="91.5" cy="85.9" rx="4.2" ry="6" transform="rotate(-15 91.5 85.9)"/>
+    <path class="toe" d="M98,110 L104.6,88.4"/>
+    <ellipse class="toepad" cx="105.3" cy="86.1" rx="4.2" ry="6" transform="rotate(17 105.3 86.1)"/>
+    <path class="toe" d="M98,110 L111.7,98.1"/>
+    <ellipse class="toepad" cx="113.1" cy="96.9" rx="4.2" ry="6" transform="rotate(49 113.1 96.9)"/>
+    <path class="toe" d="M252,110 L238.3,98.1"/>
+    <ellipse class="toepad" cx="236.9" cy="96.9" rx="4.2" ry="6" transform="rotate(-49 236.9 96.9)"/>
+    <path class="toe" d="M252,110 L245.4,88.4"/>
+    <ellipse class="toepad" cx="244.7" cy="86.1" rx="4.2" ry="6" transform="rotate(-17 244.7 86.1)"/>
+    <path class="toe" d="M252,110 L257.9,88.2"/>
+    <ellipse class="toepad" cx="258.5" cy="85.9" rx="4.2" ry="6" transform="rotate(15 258.5 85.9)"/>
+    <path class="toe" d="M252,110 L268.5,94.6"/>
+    <ellipse class="toepad" cx="270.2" cy="93" rx="4.2" ry="6" transform="rotate(47 270.2 93)"/>
+    <path class="toe" d="M252,110 L269.8,106.5"/>
+    <ellipse class="toepad" cx="271.6" cy="106.2" rx="4.2" ry="6" transform="rotate(79 271.6 106.2)"/>
+    <path class="toe" d="M100,268 L111.4,282.1"/>
+    <ellipse class="toepad" cx="112.6" cy="283.5" rx="4.2" ry="6" transform="rotate(141 112.6 283.5)"/>
+    <path class="toe" d="M100,268 L102.8,290.5"/>
+    <ellipse class="toepad" cx="103" cy="292.8" rx="4.2" ry="6" transform="rotate(173 103 292.8)"/>
+    <path class="toe" d="M100,268 L90.4,288.5"/>
+    <ellipse class="toepad" cx="89.5" cy="290.6" rx="4.2" ry="6" transform="rotate(205 89.5 290.6)"/>
+    <path class="toe" d="M100,268 L81,280.3"/>
+    <ellipse class="toepad" cx="79.1" cy="281.6" rx="4.2" ry="6" transform="rotate(237 79.1 281.6)"/>
+    <path class="toe" d="M100,268 L81.9,268.3"/>
+    <ellipse class="toepad" cx="80.1" cy="268.3" rx="4.2" ry="6" transform="rotate(269 80.1 268.3)"/>
+    <path class="toe" d="M250,268 L268.1,268.3"/>
+    <ellipse class="toepad" cx="269.9" cy="268.3" rx="4.2" ry="6" transform="rotate(91 269.9 268.3)"/>
+    <path class="toe" d="M250,268 L269,280.3"/>
+    <ellipse class="toepad" cx="270.9" cy="281.6" rx="4.2" ry="6" transform="rotate(123 270.9 281.6)"/>
+    <path class="toe" d="M250,268 L259.6,288.5"/>
+    <ellipse class="toepad" cx="260.5" cy="290.6" rx="4.2" ry="6" transform="rotate(155 260.5 290.6)"/>
+    <path class="toe" d="M250,268 L247.2,290.5"/>
+    <ellipse class="toepad" cx="247" cy="292.8" rx="4.2" ry="6" transform="rotate(187 247 292.8)"/>
+    <path class="toe" d="M250,268 L238.6,282.1"/>
+    <ellipse class="toepad" cx="237.4" cy="283.5" rx="4.2" ry="6" transform="rotate(219 237.4 283.5)"/>
+    <path class="skin" d="M162,238 C156,286 164,326 190,356 C214,382 250,398 292,406 C256,390 228,368 212,342 C196,314 190,282 190,238 Z"/>
+    <path class="skin" d="M160,100 C148,118 139,140 137,166 C135,200 145,228 160,246 L190,246 C205,228 215,200 213,166 C211,140 202,118 190,100 Z"/>
+    <path class="skin" d="M175,24 C186,24 196,30 204,42 C214,56 222,74 218,88 C213,101 199,108 188,113 L162,113 C151,108 137,101 132,88 C128,74 136,56 146,42 C154,30 164,24 175,24 Z"/>
+    <path class="skin-shine" d="M175,112 C173,150 173,200 176,240 C178,280 186,320 204,350"/>
+    <circle class="spot" cx="160" cy="130" r="3.6"/>
+    <circle class="spot" cx="190" cy="134" r="3.6"/>
+    <circle class="spot spot--pale" cx="150" cy="168" r="3.6"/>
+    <circle class="spot" cx="200" cy="172" r="3.6"/>
+    <circle class="spot" cx="172" cy="152" r="3.6"/>
+    <circle class="spot spot--pale" cx="158" cy="204" r="3.6"/>
+    <circle class="spot" cx="192" cy="208" r="3.6"/>
+    <circle class="spot" cx="176" cy="186" r="3.6"/>
+    <circle class="spot spot--pale" cx="170" cy="228" r="3.6"/>
+    <circle class="spot" cx="168" cy="262" r="3"/>
+    <circle class="spot" cx="181" cy="296" r="2.5"/>
+    <circle class="spot spot--pale" cx="192" cy="326" r="2.2"/>
+    <circle class="spot" cx="209" cy="352" r="1.9"/>
+    <circle class="spot" cx="232" cy="374" r="1.6"/>
+    <circle class="spot spot--pale" cx="146" cy="150" r="3.6"/>
+    <circle class="spot" cx="204" cy="150" r="3.6"/>
+    <ellipse class="eye" cx="143" cy="62" rx="9" ry="8"/>
+    <path class="pupil" d="M143,55.5 C144.5,59 144.5,65 143,68.5 C141.5,65 141.5,59 143,55.5 Z"/>
+    <ellipse class="eye" cx="207" cy="62" rx="9" ry="8"/>
+    <path class="pupil" d="M207,55.5 C208.5,59 208.5,65 207,68.5 C205.5,65 205.5,59 207,55.5 Z"/>
+  </g>
+
+  <!-- ===== Zoom chain: toe pad → setae → spatulae ===== -->
+  <g class="zoom">
+    <circle cx="254" cy="92" r="30"/>
+    <path d="M268,66 L372,48 M276,110 L350,150"/>
+    <path d="M458,142 L494,178 M436,164 L486,244"/>
+    <path d="M596,256 L604,262 M566,274 L570,308"/>
+  </g>
+
+  <!-- Inset 1: underside of a toe with its lamellae (scansors) -->
+  <circle class="lens" cx="402" cy="108" r="66"/>
+  <g clip-path="url(#gecko-c1)">
+    <g transform="translate(402 108) rotate(-38)">
+      <path class="skin" d="M-95,-8 C-60,-8 -42,-9 -34,-12 L-34,12 C-42,9 -60,8 -95,8 Z"/>
+      <path class="pad" d="M-40,-10 C-26,-24 8,-28 30,-24 C50,-20 60,-10 60,0 C60,10 50,20 30,24 C8,28 -26,24 -40,10 C-44,4 -44,-4 -40,-10 Z"/>
+      <g>
+        <path class="lamella" d="M-30,-14.7 C-23,-7.3 -23,7.3 -30,14.7"/>
+        <path class="lamella" d="M-22,-18.1 C-15,-9.1 -15,9.1 -22,18.1"/>
+        <path class="lamella" d="M-14,-20.4 C-7,-10.2 -7,10.2 -14,20.4"/>
+        <path class="lamella" d="M-6,-21.9 C1,-10.9 1,10.9 -6,21.9"/>
+        <path class="lamella" d="M2,-22.7 C9,-11.4 9,11.4 2,22.7"/>
+        <path class="lamella" d="M10,-23.0 C17,-11.5 17,11.5 10,23.0"/>
+        <path class="lamella" d="M18,-22.7 C25,-11.4 25,11.4 18,22.7"/>
+        <path class="lamella" d="M26,-21.9 C33,-10.9 33,10.9 26,21.9"/>
+        <path class="lamella" d="M34,-20.4 C41,-10.2 41,10.2 34,20.4"/>
+        <path class="lamella" d="M42,-18.1 C49,-9.1 49,9.1 42,18.1"/>
+        <path class="lamella" d="M50,-14.7 C57,-7.3 57,7.3 50,14.7"/>
+      </g>
+    </g>
+  </g>
+  <circle class="lens-ring" cx="402" cy="108" r="66"/>
+
+  <!-- Inset 2: setae on one lamella, each ending in a brush of spatulae -->
+  <circle class="lens" cx="548" cy="214" r="66"/>
+  <g clip-path="url(#gecko-c2)">
+    <rect class="pad" x="470" y="250" width="160" height="40"/>
+    <g>
+      <path class="seta" d="M494,252 Q490,212 520,176"/>
+      <path class="seta-tip" d="M520,176 l2.7,-7.5"/>
+      <path class="seta-tip" d="M520,176 l5.7,-5.7"/>
+      <path class="seta-tip" d="M520,176 l7.5,-2.7"/>
+      <path class="seta-tip" d="M520,176 l8,0.7"/>
+      <path class="seta-tip" d="M520,176 l6.9,4"/>
+      <path class="seta" d="M506.5,252 Q502.5,212 532.5,182"/>
+      <path class="seta-tip" d="M532.5,182 l2.7,-7.5"/>
+      <path class="seta-tip" d="M532.5,182 l5.7,-5.7"/>
+      <path class="seta-tip" d="M532.5,182 l7.5,-2.7"/>
+      <path class="seta-tip" d="M532.5,182 l8,0.7"/>
+      <path class="seta-tip" d="M532.5,182 l6.9,4"/>
+      <path class="seta" d="M519,252 Q515,212 545,176"/>
+      <path class="seta-tip" d="M545,176 l2.7,-7.5"/>
+      <path class="seta-tip" d="M545,176 l5.7,-5.7"/>
+      <path class="seta-tip" d="M545,176 l7.5,-2.7"/>
+      <path class="seta-tip" d="M545,176 l8,0.7"/>
+      <path class="seta-tip" d="M545,176 l6.9,4"/>
+      <path class="seta" d="M531.5,252 Q527.5,212 557.5,182"/>
+      <path class="seta-tip" d="M557.5,182 l2.7,-7.5"/>
+      <path class="seta-tip" d="M557.5,182 l5.7,-5.7"/>
+      <path class="seta-tip" d="M557.5,182 l7.5,-2.7"/>
+      <path class="seta-tip" d="M557.5,182 l8,0.7"/>
+      <path class="seta-tip" d="M557.5,182 l6.9,4"/>
+      <path class="seta" d="M544,252 Q540,212 570,176"/>
+      <path class="seta-tip" d="M570,176 l2.7,-7.5"/>
+      <path class="seta-tip" d="M570,176 l5.7,-5.7"/>
+      <path class="seta-tip" d="M570,176 l7.5,-2.7"/>
+      <path class="seta-tip" d="M570,176 l8,0.7"/>
+      <path class="seta-tip" d="M570,176 l6.9,4"/>
+      <path class="seta" d="M556.5,252 Q552.5,212 582.5,182"/>
+      <path class="seta-tip" d="M582.5,182 l2.7,-7.5"/>
+      <path class="seta-tip" d="M582.5,182 l5.7,-5.7"/>
+      <path class="seta-tip" d="M582.5,182 l7.5,-2.7"/>
+      <path class="seta-tip" d="M582.5,182 l8,0.7"/>
+      <path class="seta-tip" d="M582.5,182 l6.9,4"/>
+      <path class="seta" d="M569,252 Q565,212 595,176"/>
+      <path class="seta-tip" d="M595,176 l2.7,-7.5"/>
+      <path class="seta-tip" d="M595,176 l5.7,-5.7"/>
+      <path class="seta-tip" d="M595,176 l7.5,-2.7"/>
+      <path class="seta-tip" d="M595,176 l8,0.7"/>
+      <path class="seta-tip" d="M595,176 l6.9,4"/>
+      <path class="seta" d="M581.5,252 Q577.5,212 607.5,182"/>
+      <path class="seta-tip" d="M607.5,182 l2.7,-7.5"/>
+      <path class="seta-tip" d="M607.5,182 l5.7,-5.7"/>
+      <path class="seta-tip" d="M607.5,182 l7.5,-2.7"/>
+      <path class="seta-tip" d="M607.5,182 l8,0.7"/>
+      <path class="seta-tip" d="M607.5,182 l6.9,4"/>
+      <path class="seta" d="M594,252 Q590,212 620,176"/>
+      <path class="seta-tip" d="M620,176 l2.7,-7.5"/>
+      <path class="seta-tip" d="M620,176 l5.7,-5.7"/>
+      <path class="seta-tip" d="M620,176 l7.5,-2.7"/>
+      <path class="seta-tip" d="M620,176 l8,0.7"/>
+      <path class="seta-tip" d="M620,176 l6.9,4"/>
+    </g>
+  </g>
+  <circle class="lens-ring" cx="548" cy="214" r="66"/>
+
+  <!-- Inset 3: spatulae lying flat on the wall – van der Waals attraction -->
+  <circle class="lens" cx="630" cy="322" r="66"/>
+  <g clip-path="url(#gecko-c3)">
+    <rect class="wall" x="560" y="355" width="150" height="40"/>
+    <path class="wall-line" d="M560,355 H700"/>
+    <g>
+      <path class="seta seta--thick" d="M572,262 C588,280 600,292 612,302"/>
+      <path class="seta" d="M612,302 C597,318 578,334 582,344"/>
+      <path class="spatula" d="M575,348 L589,348 L586,344 L580,343 Z"/>
+      <path class="seta" d="M612,302 C604.5,318 593,334 597,344"/>
+      <path class="spatula" d="M590,348 L604,348 L601,344 L595,343 Z"/>
+      <path class="seta" d="M612,302 C612,318 608,334 612,344"/>
+      <path class="spatula" d="M605,348 L619,348 L616,344 L610,343 Z"/>
+      <path class="seta" d="M612,302 C619.5,318 623,334 627,344"/>
+      <path class="spatula" d="M620,348 L634,348 L631,344 L625,343 Z"/>
+      <path class="seta" d="M612,302 C627,318 638,334 642,344"/>
+      <path class="spatula" d="M635,348 L649,348 L646,344 L640,343 Z"/>
+      <path class="seta" d="M612,302 C634.5,318 653,334 657,344"/>
+      <path class="spatula" d="M650,348 L664,348 L661,344 L655,343 Z"/>
+      <path class="seta" d="M612,302 C642,318 668,334 672,344"/>
+      <path class="spatula" d="M665,348 L679,348 L676,344 L670,343 Z"/>
+      <path class="vdw" d="M597,349 v7 m-2.8,-2.8 l2.8,2.8 l2.8,-2.8"/>
+      <path class="vdw" d="M627,349 v7 m-2.8,-2.8 l2.8,2.8 l2.8,-2.8"/>
+      <path class="vdw" d="M657,349 v7 m-2.8,-2.8 l2.8,2.8 l2.8,-2.8"/>
+    </g>
+  </g>
+  <circle class="lens-ring" cx="630" cy="322" r="66"/>
+
+  <!-- ===== Labels ===== -->
+  <text x="24" y="338" class="label label-title">{{ g.animal }}</text>
+  <text x="24" y="358" class="label label-muted label-taxon">{{ g.taxon }}</text>
+  <text x="478" y="44" class="label label-strong">{{ g.toe }}</text>
+  <text x="478" y="62" class="label label-muted">{{ g.toe_size }}</text>
+  <text x="476" y="206" text-anchor="end" class="label label-strong">{{ g.setae }}</text>
+  <text x="476" y="224" text-anchor="end" class="label label-muted">{{ g.setae_size }}</text>
+  <text x="556" y="300" text-anchor="end" class="label label-strong">{{ g.spatulae }}</text>
+  <text x="556" y="318" text-anchor="end" class="label label-muted">{{ g.spatulae_size }}</text>
+  <g class="callout">
+    <path d="M601,354 L574,392 H562"/><circle cx="601" cy="354" r="2.5"/>
+    <text x="556" y="396" text-anchor="end" class="label label-accent">{{ g.vdw }}</text>
+  </g>
+  <text x="14" y="412" class="label label-tick">{{ g.note }}</text>
+</svg>

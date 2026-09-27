@@ -18,12 +18,16 @@ coastal:                 { dim: space, en: "Coasts", de: "Küsten" }
 coral-reef:              { dim: space, en: "Coral reefs", de: "Korallenriffe" }
 seagrass:                { dim: space, en: "Seagrass meadows", de: "Seegraswiesen" }
 lab:                     { dim: space, en: "Laboratory", de: "Labor" }
+microcosm:               { dim: space, en: "Microcosm", de: "Mikrokosmos" }
+outer-space:             { dim: space, en: "Outer space", de: "Weltraum" }
 
 # --- Rules: physics ----------------------------------------------------------------
+mechanics:               { dim: physics, en: "Mechanics", de: "Mechanik" }
 fluid-dynamics:          { dim: physics, en: "Fluid dynamics", de: "Strömungsmechanik" }
 thermodynamics:          { dim: physics, en: "Thermodynamics", de: "Thermodynamik" }
 acoustics:               { dim: physics, en: "Acoustics", de: "Akustik" }
 optics:                  { dim: physics, en: "Optics", de: "Optik" }
+electromagnetism:        { dim: physics, en: "Electromagnetism", de: "Elektromagnetismus" }
 
 # --- Adjacent sciences -------------------------------------------------------------
 biology:                 { dim: adjacent_sciences, en: "Biology", de: "Biologie" }

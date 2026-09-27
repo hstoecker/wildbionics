@@ -12,7 +12,7 @@ Each article can be viewed through switchable lenses on the same phenomenon, e.g
 - Physics lens: acoustics, Doppler effect
 - Math lens: trigonometry of distance measurement
 - CS lens: code for radar/sonar algorithms of autonomous drones
-- Physical AI lens (key `physical-ai`, no content yet): embodied AI and robots that sense and act in the physical world, e.g. sonar-guided robots
+- Physical AI lens (key `physical-ai`, first used in the gecko article: gecko-inspired climbing robots and grippers): embodied AI and robots that sense and act in the physical world, e.g. sonar-guided robots
 
 ## Ontology – 4 dimensions (knowledge graph)
 1. **Time** – evolution & geology, continued into technology (Big Bang → … → age of AI → humanoid robots → superintelligence). Slugs `age-of-ai`, `future-scenarios`. Superintelligence does not exist today: always present it as a hypothesis/scenario with sources, never as fact.
