@@ -34,7 +34,8 @@ text.
 
 - Container `min(1200px, 100% − 2 × gutter)`, gutter 16–40 px; article text column 760 px.
 - Breakpoints: 1080 px (2-column cards), 920 px (single column; the main nav moves into the menu),
-  600 px (phone), 420 px (tighter header gaps), 385 px (menu button shows only its icon).
+  640 px (graph page), 600 px (phone), 420 px (tighter header gaps), 385 px (menu button shows only
+  its icon).
 - **Navigation on phones:** `_includes/header.html` writes the nav items once and renders them
   twice – inline `site-nav` (desktop) and the `menu` disclosure (≤ 920 px, a `<details>` element,
   so it works without JavaScript; `assets/js/nav.js` closes it on link click, Escape and outside

@@ -17,9 +17,10 @@ same rules in [AGENTS.md](AGENTS.md) and in the skills under `plugins/wildbionic
    your own Claude plan): open this repository – the WildBionics skills load automatically – and
    describe your task.
 2. **Ask Claude on GitHub – friends & family only**: write an issue or a comment that contains
-   `@claude`, e.g. *"@claude draft an article about how geckos stick to walls"*. Claude works with
-   the project skills and opens a pull request for review. It runs on the maintainer's account and
-   uses the maintainer's Claude tokens.
+   `@claude`, e.g. *"@claude fix the typo in the second FAQ answer of the gecko article"*. Claude
+   works with the project skills, pushes a branch and posts a link to create the pull request. It
+   runs on the maintainer's account and uses the maintainer's Claude tokens, and a run has a turn
+   limit – use it for small, focused tasks; write whole articles with Claude Code.
 3. **By hand – absolute experts the maintainer knows personally**: fork, branch, edit
    Markdown/YAML, run the gates, open a pull request.
 
@@ -42,15 +43,17 @@ same rules in [AGENTS.md](AGENTS.md) and in the skills under `plugins/wildbionic
    - **Environment variables:** `LANG=C.UTF-8` – the cloud machine has no UTF-8 locale; without it
      Jekyll and the gates fail with `invalid byte sequence in US-ASCII`.
    - **Setup script** – installs Jekyll and puts it on the `PATH` (gem programs land in a folder the
-     shell does not search, which gives `bundler: command not found: jekyll`):
+     shell does not search, which gives `bundler: command not found: jekyll`), plus the Python
+     libraries the code-example gate needs (same pins as `examples/requirements.txt`):
      ```bash
      #!/bin/bash
      set -e
      gem install github-pages -v 232 --no-document
      ln -sf "$(ruby -e 'print Gem.bindir')/jekyll" /usr/local/bin/jekyll
+     python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4
      ```
-4. Start a **new** session on `hstoecker/wildbionics` with this environment (settings only apply to new sessions). First message: *"Run all local checks from CLAUDE.md and check that api.crossref.org is reachable."* – all four gates must report 0 errors.
-5. Describe your task, e.g. *"Write a new article about how geckos stick to walls, following the WildBionics skills."* Review the diff and create the pull request from the session.
+4. Start a **new** session on `hstoecker/wildbionics` with this environment (settings only apply to new sessions). First message: *"Run all local checks from CLAUDE.md and check that api.crossref.org is reachable."* – all five gates must report 0 errors.
+5. Describe your task, e.g. *"Write a new article about how bats find their prey with echolocation, following the WildBionics skills."* Review the diff and create the pull request from the session.
 
 Repository not in the list or push refused? Accept the collaborator invitation first, then reconnect GitHub at [claude.ai/connect-github](https://claude.ai/connect-github).
 

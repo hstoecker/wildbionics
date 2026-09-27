@@ -65,11 +65,11 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 |---|---|---|
 | `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines |
 | `.github/workflows/claude-review.yml` | PR opened/updated (branches of this repo) | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment |
-| `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills and opens a pull request |
+| `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills, pushes a branch after every major step and posts a link to create the pull request; for small, focused tasks (turn limit, maintainer's tokens) – whole articles are written with Claude Code |
 | `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/lenses |
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
-| `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files |
+| `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
 | `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
@@ -97,9 +97,9 @@ skill; CI fails a PR that changes the plugin without a version bump.
 ```bash
 brew install ruby@3.3 gh          # GitHub Pages builds with Ruby 3.3
 bundle install                    # github-pages gem (no Gemfile.lock in the repo, on purpose)
-bundle exec jekyll serve --livereload   # http://localhost:4000
 python3 -m venv .venv && source .venv/bin/activate
 python3 -m pip install -r examples/requirements.txt   # for the code examples
+bundle exec jekyll serve --livereload   # http://localhost:4000 (keeps running – last line)
 ```
 If `jekyll build` fails with "Invalid US-ASCII character", set `export LANG=en_US.UTF-8`.
 Opening the repository in Claude Code loads these skills automatically (`.claude/skills/` links
@@ -139,7 +139,7 @@ Two more fields are required – both learnt from failing sessions:
   set -e
   gem install github-pages -v 232 --no-document
   ln -sf "$(ruby -e 'print Gem.bindir')/jekyll" /usr/local/bin/jekyll
-  python3 -m pip install numpy scipy matplotlib   # code examples (code_examples.py)
+  python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4   # code examples, pinned as in examples/requirements.txt
   ```
   `ruby` on the `PATH` installs gems into an rbenv Ruby whose `bin/` is not on the `PATH`, so
   `bundle exec jekyll` fails with `bundler: command not found: jekyll` until `jekyll` is linked.
@@ -147,7 +147,7 @@ Two more fields are required – both learnt from failing sessions:
 Then start a **new** session on `hstoecker/wildbionics` with that environment (environment
 settings only apply to new sessions) and verify it first: all five local gates report 0 errors and
 `api.crossref.org` answers. In a session without these settings, `export LANG=C.UTF-8` and the same
-two commands fix it for that session. Figures are rendered with `shots.sh`, which finds the
+setup-script commands fix it for that session. Figures are rendered with `shots.sh`, which finds the
 preinstalled Chromium; CI also attaches screenshots to every pull request (artifact
 `preview-pr-<n>`). If the repository is missing from the list or a push is refused, the
 contributor has not accepted the collaborator invitation or must reconnect GitHub.

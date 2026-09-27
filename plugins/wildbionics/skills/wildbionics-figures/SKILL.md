@@ -76,8 +76,27 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    and understand what happens?*
 5. **Fix and repeat** steps 3–4 until the checklist passes completely. Several rounds are normal
    (the pistol shrimp needed four).
-6. **Finish:** regenerate OG images that contain the figure (`_includes/og-card.html`, see
-   CLAUDE.md), update captions and alt texts in both languages, run the gates:
+6. **Finish:** regenerate OG images that contain the figure, update captions and alt texts in both
+   languages (`image_alt` describes the OG image), then run the gates. **OG image recipe** (one
+   per article and language, 1200×630 JPEG in `assets/og/<slug>-<lang>.jpg`):
+   ```bash
+   cat > og-tmp.html <<'OG'     # temporary page – never commit it
+   ---
+   layout: null
+   lang: en
+   sitemap: false
+   permalink: /og-tmp/card.html
+   ---
+   {% include og-card.html eyebrow="Physics · Biology" title="How geckos <em>stick</em> to walls" sub="One line that says why it matters." figure="svg/gecko.svg" bg1="#0d1a16" bg2="#0a1512" %}
+   OG
+   bundle exec jekyll build && (cd _site && python3 -m http.server 4000 &)
+   plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page http://localhost:4000/og-tmp/card.html card.png 1200 0 630
+   sips -s format jpeg -s formatOptions 85 card.png --out assets/og/<slug>-en.jpg     # macOS
+   # Linux: python3 -c "from PIL import Image; Image.open('card.png').convert('RGB').save('assets/og/<slug>-en.jpg', quality=85, optimize=True)"
+   rm og-tmp.html card.png
+   ```
+   Repeat with `lang: de` and German texts. Title size: `title_px` (default 64) – not `size`, which
+   Liquid reserves. Check the JPEG: exactly 1200×630, under 300 KB, no clipped text. Gates:
    ```bash
    ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site
    ```

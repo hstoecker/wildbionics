@@ -11,7 +11,9 @@ For each article or text you are given:
 
 1. **Extract claims.** List every factual statement with a number, a comparison, a causal claim,
    an attribution ("Versluis et al. showed …") or a superlative – from the body, key facts, FAQ,
-   captions, figure labels (`_includes/svg/*.svg`, `_data/i18n.yml` `figures.*`) and front matter.
+   captions, figure labels (`_includes/svg/*.svg`, `_data/i18n.yml` `figures.*`), front matter,
+   and the numbers the text quotes from code output (`_data/code_examples.yml`, `code-variant`
+   `expect` values) – those must match the printed output.
 2. **Check the sources.** For every entry in `sources`, resolve the DOI:
    `curl -s https://api.crossref.org/works/<doi>` – compare title, authors, journal, volume,
    pages, year with the front matter. Find the abstract (PubMed E-utilities `esearch`/`efetch`,
