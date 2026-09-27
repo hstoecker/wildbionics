@@ -57,7 +57,9 @@
       {%- if is_article %},
       "mainEntity": { "@id": "{{ page_url }}#article" }
       {%- elsif page.schema_type == "CollectionPage" %},
-      "mainEntity": { "@id": "{{ page_url }}#itemlist" }{% endif %}
+      "mainEntity": { "@id": "{{ page_url }}#itemlist" }
+      {%- elsif page.dataset %},
+      "mainEntity": { "@id": "{{ page_url }}#dataset" }{% endif %}
     },
     {
       "@type": "ImageObject",
@@ -108,7 +110,9 @@
       "@id": "{{ page_url }}#article",
       "headline": {{ page.title | jsonify }},
       "description": {{ description | jsonify }},
-      "abstract": {{ page.key_facts | join: " " | jsonify }},
+      {%- assign facts = "" | split: "" -%}
+      {%- for f in page.key_facts -%}{%- capture pf -%}{% include plain-text.html text=f n=page.sources.size %}{%- endcapture -%}{%- assign facts = facts | push: pf -%}{%- endfor %}
+      "abstract": {{ facts | join: " " | jsonify }},
       "image": { "@id": "{{ page_url }}#primaryimage" },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
@@ -148,13 +152,16 @@
       ]
     }
     {%- endif %}
-    {%- if page.dataset %},
+    {%- if page.dataset %}
+    {%- assign newest = "" -%}
+    {%- for a in site.articles -%}{%- assign d = a.updated | default: a.date | date: "%Y-%m-%d" -%}{%- if d > newest -%}{%- assign newest = d -%}{%- endif -%}{%- endfor %},
     {
       "@type": "Dataset",
-      "@id": "{{ '/graph.json' | absolute_url }}#dataset",
+      "@id": "{{ page_url }}#dataset",
       "name": {{ t.graph.title | jsonify }},
       "description": {{ t.graph.data_note | jsonify }},
       "url": "{{ page_url }}",
+      "dateModified": "{{ newest }}",
       "inLanguage": {{ site.languages | jsonify }},
       "license": "{{ content_license }}",
       "isAccessibleForFree": true,

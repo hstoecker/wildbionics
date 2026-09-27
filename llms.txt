@@ -3,10 +3,9 @@ layout: null
 sitemap: false
 ---
 {%- assign en = site.data.i18n.en -%}
-{%- capture cite_ial -%}{:.cite}{%- endcapture -%}
 # WildBionics
 
-> WildBionics is a bilingual (English/German) open-source compendium that connects biology with physics, mathematics, chemistry, computer science and Physical AI (embodied, robotic AI) – through animals, plants, geology and bionics. Its time axis runs from the Big Bang to humanoid robots and the open question of superintelligence. Every article views one natural phenomenon through several "lenses" (biology, physics, mathematics, computer science) and cites peer-reviewed sources with DOIs.
+> WildBionics is a bilingual (English/German) open-source compendium that connects biology with physics, mathematics, chemistry, computer science and Physical AI (embodied, robotic AI) – through animals, plants, geology and bionics. Its time axis runs from the Big Bang to humanoid robots and the open question of superintelligence. Every article views one natural phenomenon through several "lenses" (biology, physics, mathematics, computer science, Physical AI) and cites peer-reviewed sources with DOIs.
 
 - Content licence: CC BY-SA 4.0 – reuse is welcome with attribution to "WildBionics ({{ site.url }})".
 - Code licence: MIT. Source and issue tracker: {{ site.repository_url }}
@@ -23,7 +22,7 @@ sitemap: false
 {% for a in articles %}
 ### {{ a.title }}
 {%- for f in a.key_facts %}
-- {{ f | replace: cite_ial, "" | replace: "(#ref-1)", "" | replace: "(#ref-2)", "" | replace: "(#ref-3)", "" | replace: "(#ref-4)", "" | replace: "(#ref-5)", "" | replace: "(#ref-6)", "" | replace: "(#ref-7)", "" | replace: "(#ref-8)", "" | replace: "(#ref-9)", "" | strip }}
+- {% include plain-text.html text=f n=a.sources.size refs="keep" %}
 {%- endfor %}
 
 Sources:

@@ -5,7 +5,7 @@ ref: run-code
 title: "Die Code-Beispiele ausführen"
 short_title: "Code ausführen"
 kicker: "Anleitung · Python"
-description: "So führst du die getesteten Python-Beispiele von WildBionics aus – im Browser mit Google Colab oder auf deinem Rechner – und welches Ergebnis du erwarten kannst."
+description: "So führst du die getesteten Python-Beispiele von WildBionics aus – in Google Colab oder auf deinem Rechner – und welches Ergebnis du erwarten kannst."
 dek: "Jedes Code-Beispiel auf WildBionics ist ein vollständiges, getestetes Python-Programm. Führe es im Browser oder auf deinem Rechner aus, prüfe das Ergebnis und experimentiere los."
 permalink: /de/code-ausfuehren/
 ---

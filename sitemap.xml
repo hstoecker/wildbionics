@@ -10,7 +10,10 @@ sitemap: false
   {%- assign translations = all | where: "ref", p.ref %}
   <url>
     <loc>{{ p.url | absolute_url }}</loc>
-    <lastmod>{{ p.updated | default: p.date | default: site.time | date_to_xmlschema }}</lastmod>
+    {%- assign lastmod = p.updated | default: p.date -%}
+    {%- if lastmod %}
+    <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+    {%- endif %}
     {%- for tr in translations %}
     <xhtml:link rel="alternate" hreflang="{{ tr.lang }}" href="{{ tr.url | absolute_url }}"/>
     {%- if tr.lang == site.lang %}

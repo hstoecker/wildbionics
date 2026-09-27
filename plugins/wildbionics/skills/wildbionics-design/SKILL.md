@@ -78,6 +78,15 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   title`, identical to the visible `nav.breadcrumb`; the last item is the page itself; no
   breadcrumb on the home page and on `noindex` pages.
 - Every `@id` reference to a node of the same page or the site must resolve.
+- **No Markdown in data:** key facts go through `_includes/plain-text.html` before they reach
+  JSON-LD (`abstract`) or `llms.txt` (citation links, `**`, `{:.cite}` removed; `refs="keep"`
+  keeps "[3]" where a source list follows). The gate fails on `**`, `{:` or `](#` in either.
+- **Collection and data pages:** a `CollectionPage` has `mainEntity` → `ItemList` of its articles;
+  a page with `dataset: true` has `mainEntity` → its own `#dataset` node (one per language).
+- **Dates:** only real dates – `updated | default: date`; pages without a date get no `lastmod`.
+- **`noindex` pages** (404) carry no canonical and no hreflang. Titles never repeat the brand:
+  the layout skips " · WildBionics" when the title already contains it. Descriptions 50–160
+  characters (the gate warns outside). `og:locale` is `en_GB` (British spelling) / `de_DE`.
 - Figures are inline SVG (`role="img"`, `<title>`, `<desc>`) – accessible, but without an own URL
   they are not indexed as images and have no `ImageObject` yet (planned: figure files under
   `/assets/figures/` plus one `ImageObject` per figure).

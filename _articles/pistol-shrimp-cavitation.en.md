@@ -8,9 +8,10 @@ kicker: "Flagship article · Fluid dynamics"
 description: "How a pistol shrimp boils water without heat: its claw fires a jet that forms a cavitation bubble, a flash of light and a shock wave. Physics, maths and code."
 dek: "How a shrimp a few centimetres long makes water boil without heat: one snap of its claw fires a jet, creates a cavitation bubble and ends in a flash of light and a shock wave – explained through physics, mathematics and code."
 date: 2026-09-26
+updated: 2026-09-27
 permalink: /articles/pistol-shrimp-cavitation/
 image: /assets/og/pistol-shrimp-cavitation-en.jpg
-image_alt: "Schematic of a pistol shrimp claw firing a water jet that creates a cavitation bubble and a shock wave."
+image_alt: "Preview card: schematic of a whole pistol shrimp whose oversized snapping claw fires a water jet of about 25 m/s – a cavitation bubble forms and sends out a shock wave."
 hero_figure: svg/claw.svg
 hero_caption: "<span class=\"caption__label\">Fig. 1</span> A pistol shrimp and its oversized snapping claw. A plunger on the movable finger (dactyl) drives water out of a socket; the jet creates a cavitation bubble whose collapse sends out a shock wave."
 educational_level: "Intermediate"
