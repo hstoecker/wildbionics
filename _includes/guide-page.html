@@ -1,81 +1,135 @@
-{%- comment -%} Contribution guide (/contribute/, /de/mitmachen/). Copy: _data/i18n.yml `guide`. {%- endcomment -%}
+{%- comment -%}
+  Contribution guide (/contribute/, /de/mitmachen/). Copy: _data/i18n.yml `guide`.
+  Progressive enhancement: assets/js/guide.js adds copy buttons and highlights the sub-navigation.
+{%- endcomment -%}
 {%- include i18n.html -%}
 {%- assign g = t.guide -%}
+{%- capture prefill_url -%}https://claude.ai/code?repositories=hstoecker%2Fwildbionics&amp;environment=WildBionics&amp;prompt={{ g.prefill | url_encode }}{%- endcapture -%}
+
 <section class="guide-hero" aria-labelledby="guide-title">
   <div class="container">
     <p class="eyebrow">{{ g.eyebrow }}</p>
     <h1 id="guide-title" class="section-title">{{ g.title }}</h1>
     <p class="section-intro">{{ g.intro }}</p>
-    <div class="actions">
-      <a class="button button--primary" href="{{ site.repository_url }}">{{ g.cta_repo }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
-      <a class="button button--ghost" href="{{ site.repository_url }}/issues/new/choose">{{ g.cta_issue }}</a>
-    </div>
-  </div>
-</section>
 
-<section class="section section--paper guide" aria-labelledby="ways-title">
-  <div class="container">
-    <h2 id="ways-title" class="guide__h2">{{ g.ways_title }}</h2>
-    <ol class="guide-ways">
+    <h2 class="guide-chooser__title">{{ g.chooser_title }}</h2>
+    <ol class="guide-chooser">
       {%- for w in g.ways %}
-      <li class="guide-way">
-        <span class="guide-way__num" aria-hidden="true">0{{ forloop.index }}</span>
-        <h3 class="guide-way__title">{{ w.title }}</h3>
-        <p>{{ w.text }}</p>
-        <p class="guide-way__more"><a class="link-arrow" href="#way-{{ forloop.index }}">{{ g.details_link }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+      <li class="guide-choice">
+        <div class="guide-choice__top">
+          <svg class="guide-choice__icon" aria-hidden="true" focusable="false"><use href="#icon-{{ w.icon }}"/></svg>
+          <span class="guide-choice__num" aria-hidden="true">0{{ forloop.index }}</span>
+        </div>
+        <h3 class="guide-choice__title">{{ w.title }}</h3>
+        <p class="guide-choice__best">{{ w.best }}</p>
+        <ul class="guide-badges">
+          {%- for b in w.badges %}<li>{{ b }}</li>{% endfor %}
+        </ul>
+        <p class="guide-choice__time"><svg aria-hidden="true" focusable="false"><use href="#icon-clock"/></svg>{{ w.time }}</p>
+        <a class="button button--primary guide-choice__cta" href="#way-{{ forloop.index }}">{{ g.start_label }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
       </li>
       {%- endfor %}
     </ol>
+  </div>
+</section>
 
-    {%- capture prefill_url -%}https://claude.ai/code?repositories=hstoecker%2Fwildbionics&amp;environment=WildBionics&amp;prompt={{ g.prefill | url_encode }}{%- endcapture -%}
+<nav class="guide-subnav" aria-label="{{ g.jump_label }}">
+  <div class="container">
+    <ul>
+      {%- for w in g.ways %}
+      <li><a href="#way-{{ forloop.index }}"><span aria-hidden="true">{{ forloop.index }}</span> {{ w.title }}</a></li>
+      {%- endfor %}
+      <li><a href="#flow">{{ g.jump_flow }}</a></li>
+      <li><a href="#rules">{{ g.jump_rules }}</a></li>
+      <li><a href="#terms">{{ g.jump_terms }}</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="guide-body" data-guide data-copy-label="{{ g.copy_label }}" data-copied-label="{{ g.copied_label }}">
+  <div class="container">
     {%- for w in g.ways %}
-    <section class="guide-howto" id="way-{{ forloop.index }}" aria-labelledby="way-{{ forloop.index }}-title">
-      <p class="guide-howto__num" aria-hidden="true">0{{ forloop.index }} · {{ g.steps_label }}</p>
-      <h2 id="way-{{ forloop.index }}-title" class="guide__h2">{{ w.title }}</h2>
+    {%- assign way_index = forloop.index %}
+    <section class="guide-howto" id="way-{{ way_index }}" aria-labelledby="way-{{ way_index }}-title">
+      <header class="guide-howto__head">
+        <span class="guide-howto__badge" aria-hidden="true"><svg><use href="#icon-{{ w.icon }}"/></svg></span>
+        <div>
+          <p class="guide-howto__num">{{ way_index }} · {{ g.steps_label }}</p>
+          <h2 id="way-{{ way_index }}-title" class="guide-howto__title">{{ w.title }}</h2>
+        </div>
+      </header>
       <dl class="guide-howto__meta">
         <div><dt>{{ g.who_label }}</dt><dd>{{ w.who }}</dd></div>
         <div><dt>{{ g.needs_label }}</dt><dd>{{ w.needs }}</dd></div>
+        <div><dt>{{ g.time_label }}</dt><dd>{{ w.time }}</dd></div>
       </dl>
-      <ol class="guide-steps guide-steps--howto">
-        {%- for step in w.steps_html %}
-        <li>{{ step }}</li>
+      <ol class="guide-timeline">
+        {%- for s in w.steps %}
+        <li class="guide-step">
+          <span class="guide-step__num" aria-hidden="true">{{ forloop.index }}</span>
+          <div class="guide-step__body">
+            <h3 class="guide-step__title"><span class="visually-hidden">{{ g.step_word }} {{ forloop.index }}: </span>{{ s.t }}</h3>
+            <div class="guide-step__text">{{ s.d }}</div>
+            {%- if way_index == 2 and forloop.index == 4 %}
+            <p class="guide-step__cta"><a class="button button--dark" href="{{ prefill_url }}">{{ g.open_claude }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+            {%- endif %}
+          </div>
+        </li>
         {%- endfor %}
       </ol>
-      {%- if forloop.index == 2 %}
-      <p class="guide-howto__cta"><a class="button button--dark" href="{{ prefill_url }}">{{ g.open_claude }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
-      {%- endif %}
       <p class="guide-howto__tip"><strong>{{ g.tip_label }}:</strong> {{ w.tip }}</p>
     </section>
     {%- endfor %}
 
+    <section class="guide-block" id="flow" aria-labelledby="flow-title">
+      <h2 id="flow-title" class="guide__h2">{{ g.flow_title }}</h2>
+      <ol class="guide-flow">
+        {%- for f in g.flow %}
+        <li class="guide-flow__item">
+          <span class="guide-flow__icon" aria-hidden="true"><svg><use href="#icon-{{ f.icon }}"/></svg></span>
+          <h3 class="guide-flow__title">{{ f.t }}</h3>
+          <p>{{ f.d }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+      <p class="guide-note">{{ g.live_note }}</p>
+    </section>
+
     <div class="guide-grid">
-      <div>
-        <h2 class="guide__h2">{{ g.steps_title }}</h2>
-        <ol class="guide-steps">
-          {%- for s in g.steps %}<li>{{ s }}</li>{% endfor %}
-        </ol>
-        <p class="guide-note">{{ g.live_note }}</p>
-      </div>
-      <div>
-        <h2 class="guide__h2">{{ g.rules_title }}</h2>
+      <section class="guide-block" id="rules" aria-labelledby="rules-title">
+        <h2 id="rules-title" class="guide__h2">{{ g.rules_title }}</h2>
         <ul class="guide-rules">
           {%- for r in g.rules %}<li>{{ r }}</li>{% endfor %}
         </ul>
-      </div>
+      </section>
+      <section class="guide-block" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="guide__h2">{{ g.skills_title }}</h2>
+        <p class="guide-muted">{{ g.skills_intro }}</p>
+        <dl class="guide-skills">
+          {%- for k in g.skills %}
+          <div><dt><code>{{ k.name }}</code></dt><dd>{{ k.text }}</dd></div>
+          {%- endfor %}
+        </dl>
+      </section>
     </div>
 
-    <h2 class="guide__h2">{{ g.skills_title }}</h2>
-    <p class="section-intro">{{ g.skills_intro }}</p>
-    <dl class="guide-skills">
-      {%- for k in g.skills %}
-      <div><dt><code>{{ k.name }}</code></dt><dd>{{ k.text }}</dd></div>
-      {%- endfor %}
-    </dl>
+    <section class="guide-block" id="terms" aria-labelledby="terms-title">
+      <h2 id="terms-title" class="guide__h2">{{ g.terms_title }}</h2>
+      <dl class="guide-terms">
+        {%- for term in g.terms %}
+        <div><dt>{{ term.t }}</dt><dd>{{ term.d }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </section>
 
     <aside class="guide-together" aria-labelledby="together-title">
       <h2 id="together-title" class="guide__h2">{{ g.together_title }}</h2>
       <p>{{ g.together_text }}</p>
-      <p><a class="link-arrow" href="{{ site.repository_url }}/blob/main/CONTRIBUTING.md">{{ g.cta_guide }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+      <div class="actions">
+        <a class="button button--dark" href="{{ site.repository_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>{{ g.cta_repo }}</a>
+        <a class="button button--outline" href="{{ site.repository_url }}/issues/new/choose">{{ g.cta_issue }}</a>
+        <a class="link-arrow" href="{{ site.repository_url }}/blob/main/CONTRIBUTING.md">{{ g.cta_guide }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      </div>
     </aside>
   </div>
-</section>
+</div>

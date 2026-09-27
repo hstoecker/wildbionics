@@ -10,7 +10,7 @@
         <li><a href="{{ t.graph.url | relative_url }}"{% if page.ref == "graph" %} aria-current="page"{% endif %}>{{ t.graph.nav }}</a></li>
         <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
         <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
-        <li><a href="{{ home_url | relative_url }}#contribute">{{ t.nav.contribute }}</a></li>
+        <li><a href="{{ t.guide.url | relative_url }}"{% if page.ref == "guide" %} aria-current="page"{% endif %}>{{ t.nav.contribute }}</a></li>
       </ul>
     </nav>
     <div class="site-header__tools">
