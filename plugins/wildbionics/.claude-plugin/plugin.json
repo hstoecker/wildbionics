@@ -1,0 +1,13 @@
+{
+  "name": "wildbionics",
+  "version": "1.0.0",
+  "description": "Contribute to wildbionics.com with Claude: write and fact-check articles, translate EN⇄DE with the project glossary, create figures that pass the quality bar, extend the knowledge graph, follow the UI/UX rules and review pull requests.",
+  "author": {
+    "name": "Hendrik Stöcker",
+    "url": "https://github.com/hstoecker"
+  },
+  "homepage": "https://wildbionics.com/contribute/",
+  "repository": "https://github.com/hstoecker/wildbionics",
+  "license": "MIT",
+  "keywords": ["wildbionics", "bionics", "science-communication", "jekyll", "i18n", "fact-checking", "knowledge-graph", "svg"]
+}

@@ -1,0 +1,63 @@
+{%- comment -%} Contribution guide (/contribute/, /de/mitmachen/). Copy: _data/i18n.yml `guide`. {%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign g = t.guide -%}
+<section class="guide-hero" aria-labelledby="guide-title">
+  <div class="container">
+    <p class="eyebrow">{{ g.eyebrow }}</p>
+    <h1 id="guide-title" class="section-title">{{ g.title }}</h1>
+    <p class="section-intro">{{ g.intro }}</p>
+    <div class="actions">
+      <a class="button button--primary" href="{{ site.repository_url }}">{{ g.cta_repo }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+      <a class="button button--ghost" href="{{ site.repository_url }}/issues/new/choose">{{ g.cta_issue }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper guide" aria-labelledby="ways-title">
+  <div class="container">
+    <h2 id="ways-title" class="guide__h2">{{ g.ways_title }}</h2>
+    <ol class="guide-ways">
+      {%- for w in g.ways %}
+      <li class="guide-way">
+        <span class="guide-way__num" aria-hidden="true">0{{ forloop.index }}</span>
+        <h3 class="guide-way__title">{{ w.title }}</h3>
+        <p>{{ w.text }}</p>
+        {%- if forloop.index == 2 %}
+        <pre class="guide-code"><code>/plugin marketplace add hstoecker/wildbionics
+/plugin install wildbionics@wildbionics</code></pre>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+
+    <div class="guide-grid">
+      <div>
+        <h2 class="guide__h2">{{ g.steps_title }}</h2>
+        <ol class="guide-steps">
+          {%- for s in g.steps %}<li>{{ s }}</li>{% endfor %}
+        </ol>
+        <p class="guide-note">{{ g.live_note }}</p>
+      </div>
+      <div>
+        <h2 class="guide__h2">{{ g.rules_title }}</h2>
+        <ul class="guide-rules">
+          {%- for r in g.rules %}<li>{{ r }}</li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="guide__h2">{{ g.skills_title }}</h2>
+    <p class="section-intro">{{ g.skills_intro }}</p>
+    <dl class="guide-skills">
+      {%- for k in g.skills %}
+      <div><dt><code>{{ k.name }}</code></dt><dd>{{ k.text }}</dd></div>
+      {%- endfor %}
+    </dl>
+
+    <aside class="guide-together" aria-labelledby="together-title">
+      <h2 id="together-title" class="guide__h2">{{ g.together_title }}</h2>
+      <p>{{ g.together_text }}</p>
+      <p><a class="link-arrow" href="{{ site.repository_url }}/blob/main/CONTRIBUTING.md">{{ g.cta_guide }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+    </aside>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 ---
 name: wildbionics-translate
-description: Translate or review WildBionics content between English and German (articles in _articles/, UI strings in _data/i18n.yml, SVG labels, taxonomy). Use whenever a German (or other) translation is written, updated or reviewed, or when the user asks to check terminology (Fachbegriffe). Enforces the project glossary and runs the terminology gate.
+description: "Translate or review WildBionics content between English and German (articles in _articles/, UI strings in _data/i18n.yml, SVG labels, taxonomy). Use whenever a German (or other) translation is written, updated or reviewed, or when the user asks to check terminology (Fachbegriffe). Enforces the project glossary and runs the terminology gate."
 ---
 
 # WildBionics translation (EN ⇄ DE)
@@ -55,7 +55,8 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
 - **Same structure:** identical number of key facts, FAQ entries, sources and citations
   `[n](#ref-n)` in both languages – the gate checks this.
 - **SVG labels** come from `_data/i18n.yml` (`figures.*`, `hero.svg_*`, `lens.*.svg_*`);
-  translate them there, keeping them short enough for the figure.
+  translate them there, keeping them short enough for the figure. German labels are often
+  longer – re-render the figure in DE and check it with the `wildbionics-figures` skill.
 
 ## Adding a language
 

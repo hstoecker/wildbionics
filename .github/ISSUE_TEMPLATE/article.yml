@@ -1,0 +1,26 @@
+name: Article idea
+description: Propose a natural phenomenon for a new WildBionics article
+labels: [article]
+body:
+  - type: input
+    id: phenomenon
+    attributes:
+      label: Phenomenon
+      placeholder: "e.g. How bats hunt with echolocation"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What makes it interesting – and which lenses fit?
+      description: Biology, physics, mathematics, computer science, Physical AI …
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources you know (DOI or link)
+  - type: checkboxes
+    id: claude
+    attributes:
+      label: Let Claude draft it
+      options:
+        - label: "@claude please research and draft this article following the WildBionics skills"

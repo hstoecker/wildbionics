@@ -1,10 +1,11 @@
-# Terminology check → build → quality gate → deploy to GitHub Pages → IndexNow.
+# Quality gates → build → (PR: preview) → deploy to GitHub Pages → IndexNow.
+# Rules behind every gate: plugins/wildbionics/skills (see wildbionics-contribute).
 name: Build, check & deploy
 
 on:
   push:
     branches: [main]
-  pull_request:          # build + check only, never deploys
+  pull_request:          # checks + preview only, never deploys
   workflow_dispatch:
 
 permissions:
@@ -21,22 +22,49 @@ jobs:
     runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0       # the plugin gate compares against the PR base
       - name: Translation gate (German technical terms, EN/DE consistency, typography)
         run: ruby .github/scripts/check_terms.rb
+      - name: Content gate (article structure, citations, figures)
+        run: ruby .github/scripts/check_content.rb
+      - name: Plugin gate (skills up to date, version bump)
+        run: ruby .github/scripts/check_plugin.rb ${{ github.event_name == 'pull_request' && format('--base origin/{0}', github.base_ref) || '' }}
       - uses: actions/configure-pages@v6
       - name: Build with Jekyll (same gem set as classic GitHub Pages)
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-      - name: Quality gate (SEO metadata, JSON-LD, links, sitemap)
+      - name: Site gate (SEO metadata, JSON-LD, links, sitemap, graph.json)
         run: python3 .github/scripts/check_site.py _site
+      - name: Preview screenshots (pull requests)
+        if: github.event_name == 'pull_request'
+        run: .github/scripts/preview_shots.sh _site preview/screenshots origin/${{ github.base_ref }}
+      - name: Upload preview (built site + screenshots)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: preview-pr-${{ github.event.pull_request.number }}
+          path: |
+            _site
+            preview
+          retention-days: 14
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'
 
+  plugin:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate marketplace and plugin with Claude Code
+        run: |
+          npx --yes @anthropic-ai/claude-code plugin validate .
+          npx --yes @anthropic-ai/claude-code plugin validate ./plugins/wildbionics
+
   deploy:
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: [build, plugin]
     runs-on: ubuntu-26.04
     environment:
       name: github-pages

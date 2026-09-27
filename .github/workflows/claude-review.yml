@@ -1,0 +1,48 @@
+# Claude reviews every pull request with the project's own review skill
+# (plugins/wildbionics/skills/wildbionics-review) and posts one summary comment.
+# The skill is loaded from the marketplace on main, so a PR cannot weaken its own review.
+# Needs the repository secret CLAUDE_CODE_OAUTH_TOKEN (or ANTHROPIC_API_KEY); without it the
+# job only prints a notice. Fork PRs get no secrets – the maintainer reviews those manually.
+name: Claude review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  id-token: write
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    env:
+      HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' || secrets.ANTHROPIC_API_KEY != '' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: No Claude credentials configured
+        if: env.HAS_CLAUDE != 'true'
+        run: echo "::notice::Claude review skipped – add CLAUDE_CODE_OAUTH_TOKEN (claude setup-token) or ANTHROPIC_API_KEY as a repository secret."
+      - uses: actions/checkout@v7
+        if: env.HAS_CLAUDE == 'true'
+        with:
+          fetch-depth: 0
+      - uses: anthropics/claude-code-action@v1
+        if: env.HAS_CLAUDE == 'true'
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          plugin_marketplaces: "https://github.com/hstoecker/wildbionics.git"
+          plugins: "wildbionics@wildbionics"
+          prompt: "/wildbionics:wildbionics-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Grep,Glob,WebFetch,Task,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git diff:*),Bash(git log:*),Bash(ruby .github/scripts/*),Bash(python3 *),Bash(curl -s *)"
