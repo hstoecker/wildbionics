@@ -27,6 +27,7 @@ Charts are always rewritten and never compared (fonts and library versions chang
 bytes); CI regenerates them before the Jekyll build, so the site always shows the current run.
 """
 
+import difflib
 import json
 import os
 import re
@@ -280,6 +281,9 @@ def main():
         old = path.read_text(encoding="utf-8") if path.exists() else None
         if old != content:
             stale.append(f"{path.relative_to(ROOT)} was out of date")
+            if check and old is not None:          # show what changed, so CI logs explain it
+                diff = difflib.unified_diff(old.splitlines(), content.splitlines(), "committed", "this run", lineterm="", n=0)
+                print("\n".join(list(diff)[:40]))
             path.write_text(content, encoding="utf-8")
     for d in sorted(OUT.glob("*/"), reverse=True):
         if d.is_dir() and not any(d.iterdir()):
