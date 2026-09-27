@@ -25,15 +25,24 @@ Concept: **field notebook meets lab journal** – editorial serif, precise mono 
 code examples (`_includes/code-result.html`: `code-actions`, `code-output`, `code-chart`,
 `code-card__foot`, `code-variant` (`_includes/code-variant.html`); copy buttons from `assets/js/code.js` with a clipboard fallback and a
 `role="status"` announcement), plain text pages (`_layouts/page.html`, e.g. `run-code/index.md`),
-`key-facts`, `faq__item`, `references`, `graph-tags`, `article-card`, `dimension` cards, graph page.
+`key-facts`, `faq__item`, `references`, `graph-tags`, `article-card`, `dimension` cards, graph page,
+header `menu` (mobile navigation, below).
 New UI strings go into `_data/i18n.yml` for **every** language; templates never contain hard-coded
 text.
 
 ## Layout and responsiveness
 
 - Container `min(1200px, 100% − 2 × gutter)`, gutter 16–40 px; article text column 760 px.
-- Breakpoints: 1080 px (2-column cards), 920 px (single column, no main nav), 600 px (phone).
-- No horizontal scrolling at 390 px; tap targets ≥ 44 px; labels in SVGs enlarged on phones.
+- Breakpoints: 1080 px (2-column cards), 920 px (single column; the main nav moves into the menu),
+  600 px (phone), 420 px (tighter header gaps), 385 px (menu button shows only its icon).
+- **Navigation on phones:** `_includes/header.html` writes the nav items once and renders them
+  twice – inline `site-nav` (desktop) and the `menu` disclosure (≤ 920 px, a `<details>` element,
+  so it works without JavaScript; `assets/js/nav.js` closes it on link click, Escape and outside
+  tap). The GitHub link moves into the menu on phones. Never hide navigation without a
+  replacement; new top-level pages are added to `nav_items` only.
+- No horizontal scrolling from 320 px (WCAG reflow) – check 320, 390 and 920 px; tap targets ≥ 44 px;
+  labels in SVGs enlarged on phones; long German compounds need `hyphens: auto` plus
+  `overflow-wrap: break-word` (not every browser has a German hyphenation dictionary).
 - Long links, commands and code in narrow columns must wrap (`overflow-wrap: anywhere`, grid columns
   `minmax(0, 1fr)`, `white-space: pre-wrap` for command blocks). Measure instead of eyeballing:
   run the renderer with `SHOT_PRINT_TITLE=1 SHOT_JS='…'` (macOS) where the script compares

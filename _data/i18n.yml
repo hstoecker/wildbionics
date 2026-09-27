@@ -13,6 +13,7 @@ en:
     flagship: "Flagship"
     contribute: "Contribute"
     github: "WildBionics on GitHub"
+    menu: "Menu"
     language: "Language"
   hero:
     eyebrow: "An open-source compendium"
@@ -401,6 +402,7 @@ de:
     flagship: "Schwerpunkt"
     contribute: "Mitmachen"
     github: "WildBionics auf GitHub"
+    menu: "Menü"
     language: "Sprache"
   hero:
     eyebrow: "Ein Open-Source-Kompendium"

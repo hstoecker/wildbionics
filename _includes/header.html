@@ -1,3 +1,16 @@
+{%- comment -%}
+  Site header. The nav items are written once and used twice: as the inline main nav (desktop)
+  and inside the menu disclosure (≤ 920 px). The menu is a <details> element, so it opens and
+  closes without JavaScript; assets/js/nav.js only adds closing on link click, Escape and
+  outside click.
+{%- endcomment -%}
+{%- capture nav_items -%}
+        <li><a href="{{ t.articles.url | relative_url }}"{% if page.url == t.articles.url or page.collection == "articles" %} aria-current="page"{% endif %}>{{ t.articles.title }}</a></li>
+        <li><a href="{{ t.graph.url | relative_url }}"{% if page.ref == "graph" %} aria-current="page"{% endif %}>{{ t.graph.nav }}</a></li>
+        <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
+        <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
+        <li><a href="{{ t.guide.url | relative_url }}"{% if page.ref == "guide" %} aria-current="page"{% endif %}>{{ t.nav.contribute }}</a></li>
+{%- endcapture -%}
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="{{ home_url | relative_url }}">
@@ -6,11 +19,7 @@
     </a>
     <nav class="site-nav" aria-label="{{ t.nav.label }}">
       <ul>
-        <li><a href="{{ t.articles.url | relative_url }}"{% if page.url == t.articles.url or page.collection == "articles" %} aria-current="page"{% endif %}>{{ t.articles.title }}</a></li>
-        <li><a href="{{ t.graph.url | relative_url }}"{% if page.ref == "graph" %} aria-current="page"{% endif %}>{{ t.graph.nav }}</a></li>
-        <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
-        <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
-        <li><a href="{{ t.guide.url | relative_url }}"{% if page.ref == "guide" %} aria-current="page"{% endif %}>{{ t.nav.contribute }}</a></li>
+{{ nav_items }}
       </ul>
     </nav>
     <div class="site-header__tools">
@@ -19,6 +28,15 @@
         <svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
         <span class="visually-hidden">{{ t.nav.github }}</span>
       </a>
+      <details class="menu" data-menu>
+        <summary class="menu__button"><span class="menu__icon" aria-hidden="true"></span><span class="menu__label">{{ t.nav.menu }}</span></summary>
+        <nav class="menu__panel" aria-label="{{ t.nav.label }}">
+          <ul>
+{{ nav_items }}
+            <li class="menu__extra"><a href="{{ site.repository_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>{{ t.nav.github }}</a></li>
+          </ul>
+        </nav>
+      </details>
     </div>
   </div>
 </header>

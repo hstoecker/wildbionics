@@ -314,7 +314,7 @@ var {
   color: var(--on-dark);
   text-decoration: none;
 }
-.brand__mark { width: 30px; height: 30px; }
+.brand__mark { flex: none; width: 30px; height: 30px; }
 .brand__name {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -379,6 +379,68 @@ var {
 .lang-switch a { color: var(--on-dark-2); }
 .lang-switch a:hover { color: var(--on-dark); background: rgba(238, 242, 234, 0.08); }
 .lang-switch span[aria-current] { background: var(--on-dark); color: var(--night); }
+
+/* Mobile menu (≤ 920 px): a <details> disclosure, the panel spans the sticky header */
+.menu { display: none; }
+.menu__button {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px;
+  padding: 0 14px 0 12px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  color: var(--on-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+.menu__button::-webkit-details-marker { display: none; }
+.menu__button:hover { background: rgba(238, 242, 234, 0.08); }
+.menu__icon,
+.menu__icon::before,
+.menu__icon::after {
+  display: block;
+  width: 16px; height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+}
+.menu__icon { position: relative; }
+.menu__icon::before, .menu__icon::after { content: ""; position: absolute; left: 0; }
+.menu__icon::before { top: -5px; }
+.menu__icon::after { top: 5px; }
+.menu[open] .menu__button { border-color: var(--accent); }
+.menu[open] .menu__icon { background: transparent; }
+.menu[open] .menu__icon::before { top: 0; transform: rotate(45deg); }
+.menu[open] .menu__icon::after { top: 0; transform: rotate(-45deg); }
+.menu__panel {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  max-height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  padding: 8px var(--gutter) 20px;
+  border-bottom: 1px solid var(--line-dark);
+  background: var(--night);
+  box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.8);
+}
+.menu__panel ul { width: min(var(--max), 100%); margin: 0 auto; }
+.menu__panel li + li { border-top: 1px solid var(--line-dark); }
+.menu__panel a {
+  display: flex; align-items: center; gap: 10px;
+  min-height: 52px;
+  color: var(--on-dark);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 420;
+  text-decoration: none;
+}
+.menu__panel a:hover { color: var(--accent); }
+.menu__panel a[aria-current] { color: var(--accent); }
+.menu__panel a[aria-current]::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.menu__extra a { font-family: var(--font-sans); font-size: 0.95rem; color: var(--on-dark-2); }
+.menu__extra svg { width: 18px; height: 18px; }
 
 .icon-link {
   display: grid;
@@ -790,6 +852,7 @@ var {
   font-variation-settings: "opsz" 48, "SOFT" 30;
   line-height: 1.15;
   hyphens: auto;
+  overflow-wrap: break-word;   /* fallback where the browser has no hyphenation dictionary */
 }
 .dimension__sub {
   margin: 6px 0 16px;
@@ -1898,6 +1961,8 @@ a.cite:hover { text-decoration: underline; }
   .flagship__figure { order: 2; position: static; }
   .site-nav { display: none; }
   .site-header__tools { margin-left: auto; }
+  .menu { display: block; }
+  .site-header__tools > .icon-link { display: none; }   /* GitHub moves into the menu */
   .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-footer__brand { grid-column: 1 / -1; }
 }
@@ -1920,7 +1985,19 @@ a.cite:hover { text-decoration: underline; }
   .lens__tabs { flex-wrap: wrap; column-gap: 4px; overflow: visible; }
 }
 
+@media (max-width: 420px) {             /* phones: tighter header so brand, languages and menu fit */
+  .site-header__inner { gap: 12px; }
+  .site-header__tools { gap: 8px; }
+  .brand { gap: 8px; }
+}
+@media (max-width: 385px) {             /* narrow phones: icon-only menu button, label stays for screen readers */
+  .menu__button { width: 44px; padding: 0; justify-content: center; }
+  .menu__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
 @media (forced-colors: active) {
   .button, .lens__tab[aria-selected="true"] { border: 2px solid CanvasText; }
   .guide-ribbon, .guide-tag { border: 1px solid CanvasText; }
+  .menu__icon, .menu__icon::before, .menu__icon::after { background: CanvasText; }
+  .menu[open] .menu__icon { background: transparent; }
 }
