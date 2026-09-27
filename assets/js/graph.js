@@ -64,8 +64,8 @@
           let dx = b.x - a.x, dy = b.y - a.y;
           let d2 = dx * dx + dy * dy;
           if (d2 < 1) { dx = seeded(i + j); dy = seeded(i - j); d2 = 1; }
-          // Terms need room for their labels, which sit beside them
-          const labelRoom = a.type === "term" && b.type === "term" ? 48 : 26;
+          // Terms need room for their labels, which sit beside them; articles for their long titles
+          const labelRoom = a.type === "article" && b.type === "article" ? 140 : a.type === "term" && b.type === "term" ? 48 : 26;
           const min = RADIUS[a.type] + RADIUS[b.type] + labelRoom;
           const force = (min * min * 2.2) / d2 * alpha;
           const d = Math.sqrt(d2);
@@ -177,7 +177,7 @@
   }
 
   // Second pass: the force layout only knows circles. Measure the real label boxes and
-  // push overlapping terms/organisms apart (dimensions and articles stay where they are).
+  // push overlapping terms, organisms and articles apart (dimensions stay where they are).
   function relaxLabels() {
     const vb = svg.viewBox.baseVal;
     nodes.forEach((n) => {
@@ -185,7 +185,7 @@
       const b = n.g.getBBox();
       const pad = 3;
       n.box = { x0: b.x - pad, y0: b.y - pad, x1: b.x + b.width + pad, y1: b.y + b.height + pad };
-      n.movable = n.type === "term" || n.type === "being";
+      n.movable = n.type !== "dimension";
     });
     for (let iter = 0; iter < 200; iter++) {
       let moved = false;

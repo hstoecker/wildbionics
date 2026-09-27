@@ -13,7 +13,7 @@
 
 terms:
   # --- Zoology / biology ---------------------------------------------------------
-  - { en: "claw*", de: "Schere*", de_alt: ["*schere*"], avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere, Krallen)." }
+  - { en: "claw*", de: "Schere*", de_alt: ["*schere*", "Kralle*"], avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere). Echsen und andere Wirbeltiere haben Krallen." }
   - { en: "snapping claw*", de: "Knallschere*" }
   - { en: "pincer claw*", de: "Greifschere*" }
   - { en: "dactyl*", de: "Dactylus", avoid: ["Daktylus"], why: "Zoologische Nomenklatur: Dactylus (beweglicher Scherenfinger)." }
@@ -29,6 +29,13 @@ terms:
   - { en: "biological noise", de: "Unterwasserlärm*", de_alt: ["biologische* Lärm*"] }
   - { en: "snapping shrimp", de: "Knallkrebs*", de_alt: ["Pistolenkrebs*"] }
 
+  - { en: "seta", de: "Seta", de_alt: ["Setae", "Haftborste*"] }
+  - { en: "setae", de: "Setae", de_alt: ["Haftborste*"], avoid: ["Setas"], why: "Lateinischer Plural: Seta – Setae." }
+  - { en: "spatula*", de: "Spatula*", de_alt: ["Spatulae"], avoid: ["Spatel"], why: "Zoologischer Fachbegriff für die Endplättchen der Setae; Spatel ist ein Werkzeug." }
+  - { en: "lamella*", de: "Lamelle*" }
+  - { en: "toe pad*", de: "Haftpolster*", de_alt: ["Haftzehe*"] }
+  - { en: "tokay gecko*", de: "Tokeh*", avoid: ["Tokay-Gecko*"], level: warn, why: "Deutscher Name der Art Gekko gecko: Tokeh." }
+  - { en: "convergent evolution", de: "konvergente Evolution" }
   # --- Physics -------------------------------------------------------------------
   - { en: "hydrophone*", de: "Hydrophon*", avoid: ["Hydrofon*"], why: "In der Akustik ist die Schreibung Hydrophon üblich." }
   - { en: "shock wave*", de: "Stoßwelle*", avoid: ["Schockwelle*"], why: "Physikalischer Fachbegriff: Stoßwelle." }
@@ -52,6 +59,13 @@ terms:
   - { en: "source level*", de: "Quellpegel" }
   - { en: "peak-to-peak", de: "Spitze-Spitze" }
 
+  - { en: "van der Waals force*", de: "Van-der-Waals-Kr*", avoid: ["van der Waals Kr*", "Van der Waals-Kr*", "Van-der-Waals Kr*"], why: "Duden: Van-der-Waals-Kräfte (durchgekoppelt, groß am Satzanfang wie im Wort)." }
+  - { en: "Hamaker constant", de: "Hamaker-Konstante" }
+  - { en: "work of adhesion", de: "Adhäsionsarbeit" }
+  - { en: "contact splitting", de: "Kontaktaufspaltung" }
+  - { en: "frictional adhesion", de: "Reibungsadhäsion" }
+  - { en: "shear force*", de: "Scherkr*" }
+  - { en: "microgravity", de: "Mikrogravitation", de_alt: ["Schwerelosigkeit"] }
   # --- Mathematics / computer science --------------------------------------------
   - { en: "interaural time difference", de: "interaurale* Laufzeitunterschied*" }
   - { en: "matched filter", de: "Optimalfilter" }
@@ -68,6 +82,8 @@ terms:
   - { en: "robotics", de: "Robotik" }
   - { en: "Age of AI", de: "KI-Zeitalter" }
 
+  - { en: "dry adhesive*", de: "Trockenklebstoff*", de_alt: ["trockene Klebstoffe", "Trockenhaft*"] }
+  - { en: "space debris", de: "Weltraumschrott" }
   # --- Medicine / engineering ----------------------------------------------------
   - { en: "shock wave lithotripsy", de: "Stoßwellenlithotripsie", avoid: ["Stoßwellenlithotrypsie", "Lithotrypsie"], why: "Rechtschreibung: Lithotripsie." }
 
