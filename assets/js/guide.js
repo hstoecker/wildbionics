@@ -4,30 +4,60 @@
   const guide = document.querySelector("[data-guide]");
   if (!guide) return;
 
-  // Copy buttons
+  // Copy buttons – placed next to the <pre> (not inside it, so "Copy" never becomes part of the
+  // command for screen readers or a manual selection). Clipboard API with a fallback; the result
+  // is announced in a status region.
   const copyLabel = guide.dataset.copyLabel || "Copy";
   const copiedLabel = guide.dataset.copiedLabel || "Copied";
+  const status = document.createElement("p");
+  status.className = "visually-hidden";
+  status.setAttribute("role", "status");
+  guide.appendChild(status);
+  const copy = async (code) => {
+    const text = code.innerText.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      let copied = false;
+      try { copied = document.execCommand("copy"); } catch (e2) { /* stays selected for Ctrl+C */ }
+      if (copied) selection.removeAllRanges();
+      return copied;
+    }
+  };
   guide.querySelectorAll("pre.guide-code").forEach((pre) => {
-    if (!navigator.clipboard) return;
+    const code = pre.querySelector("code");
+    if (!code) return;
+    const wrap = document.createElement("div");
+    wrap.className = "guide-code-wrap";
+    pre.before(wrap);
     const button = document.createElement("button");
     button.type = "button";
     button.className = "guide-copy";
     button.innerHTML = "<span>" + copyLabel + "</span>";
+    let timer;
     button.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(pre.querySelector("code").innerText.trim());
-        button.classList.add("is-done");
-        button.querySelector("span").textContent = copiedLabel;
-        setTimeout(() => {
-          button.classList.remove("is-done");
-          button.querySelector("span").textContent = copyLabel;
-        }, 2000);
-      } catch (e) { /* clipboard blocked – the text stays selectable */ }
+      if (!(await copy(code))) return; // left selected
+      button.classList.add("is-done");
+      button.querySelector("span").textContent = copiedLabel;
+      status.textContent = copiedLabel;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        button.classList.remove("is-done");
+        button.querySelector("span").textContent = copyLabel;
+        status.textContent = "";
+      }, 2000);
     });
-    pre.appendChild(button);
+    wrap.append(button, pre);
   });
 
   // Sub-navigation: mark the section in view
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const links = [...document.querySelectorAll(".guide-subnav a[href^='#']")];
   const sections = links.map((a) => document.getElementById(a.hash.slice(1))).filter(Boolean);
   if (!("IntersectionObserver" in window) || !sections.length) return;
@@ -36,7 +66,7 @@
       a.setAttribute("aria-current", "true");
       // keep the active pill visible in the horizontally scrolling bar (never scroll the page)
       const bar = a.closest("ul");
-      bar.scrollTo({ left: a.parentElement.offsetLeft - 16, behavior: "smooth" });
+      bar.scrollTo({ left: a.parentElement.offsetLeft - 16, behavior: reduceMotion ? "auto" : "smooth" });
     } else {
       a.removeAttribute("aria-current");
     }

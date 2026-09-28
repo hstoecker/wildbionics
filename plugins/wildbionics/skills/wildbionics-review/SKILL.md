@@ -17,7 +17,7 @@ kind; every finding names the file/line, the problem and a concrete fix.
 
 ## Step 1 – automated gates
 
-Run (or read the CI results of) all gates; any error is a **must-fix**:
+Run (or read the CI results of) all gates; any error is a **must-fix**. In the CI review job the gates have already run in the `build` check – read them with `gh pr checks <n>` (pass/fail per job) and `gh pr view <n> --json statusCheckRollup` instead of re-running them; the `build` job runs all five gates, so a green `build` means all passed (bundle, jekyll and pip are not available there):
 ```bash
 ruby .github/scripts/check_terms.rb      # terminology, EN/DE consistency, taxonomy
 ruby .github/scripts/check_content.rb    # article structure, citations, figures
@@ -71,6 +71,7 @@ Use exactly this structure (German if the PR author writes German, otherwise Eng
 |---|---|---|
 | Gates | ✅/❌ | … |
 | Facts | ✅/⚠️/❌ | … |
+| Code examples | … | … |
 | Structure | … | … |
 | Language | … | … |
 | Figures | … | … |

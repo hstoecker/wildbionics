@@ -8,9 +8,10 @@ kicker: "Schwerpunktartikel · Strömungsmechanik"
 description: "Wie ein Knallkrebs Wasser ohne Hitze sieden lässt: Seine Schere erzeugt Strahl, Kavitationsblase, Lichtblitz und Stoßwelle. Mit Physik, Mathe und Code."
 dek: "Wie ein nur wenige Zentimeter großer Krebs Wasser ohne Hitze zum Sieden bringt: Ein Schlag seiner Schere erzeugt einen Strahl, eine Kavitationsblase, einen Lichtblitz und eine Stoßwelle – erklärt mit Physik, Mathematik und Code."
 date: 2026-09-26
+updated: 2026-09-27
 permalink: /de/artikel/knallkrebs-kavitation/
 image: /assets/og/pistol-shrimp-cavitation-de.jpg
-image_alt: "Schema der Schere eines Knallkrebses, die einen Wasserstrahl abschießt, der eine Kavitationsblase und eine Stoßwelle erzeugt."
+image_alt: "Vorschaukarte: Schema eines ganzen Knallkrebses, dessen übergroße Knallschere einen Wasserstrahl mit rund 25 m/s abschießt – eine Kavitationsblase entsteht und sendet eine Stoßwelle aus."
 hero_figure: svg/claw.svg
 hero_caption: "<span class=\"caption__label\">Abb. 1</span> Ein Knallkrebs mit seiner übergroßen Knallschere. Ein Zapfen am beweglichen Scherenfinger (Dactylus) drückt Wasser aus einer Grube; der Strahl erzeugt eine Kavitationsblase, deren Kollaps eine Stoßwelle aussendet."
 educational_level: "Intermediate"

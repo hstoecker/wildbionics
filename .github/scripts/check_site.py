@@ -126,9 +126,30 @@ def id_refs(obj):
             yield from id_refs(v)
 
 
+MARKDOWN_LEAKS = ("**", "{:", "](#")
+
+
+def strings_in(obj):
+    """Yield every string value inside a JSON-LD value."""
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            yield from strings_in(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from strings_in(v)
+
+
 def check_graph(where, nodes, page_url, noindex, crumbs):
-    """Linked-graph rules: references resolve, breadcrumbs end at the page, the preview image is licensed."""
+    """Linked-graph rules: references resolve, breadcrumbs end at the page, the preview image is licensed,
+    collection pages list their articles, no Markdown leaks into the data."""
     ids = {n.get("@id") for n in nodes}
+    for text in strings_in(nodes):
+        leak = next((m for m in MARKDOWN_LEAKS if m in text), None)
+        if leak:
+            errors.append(f"{where}: JSON-LD text contains Markdown {leak!r}: {text[:80]!r}")
+            break
     local = {SITE_URL + "/", page_url}
     for n in nodes:
         for ref in id_refs({k: v for k, v in n.items() if k != "@id"}):
@@ -144,6 +165,18 @@ def check_graph(where, nodes, page_url, noindex, crumbs):
         for k in ("contentUrl", "caption", "license", "acquireLicensePage", "creditText", "creator", "copyrightNotice"):
             if not img.get(k):
                 errors.append(f"{where}: preview image (primaryImageOfPage) lacks {k}")
+    if webpage is not None and "CollectionPage" in types_of(webpage):
+        lst = by_id.get((webpage.get("mainEntity") or {}).get("@id"))
+        if not lst or "ItemList" not in types_of(lst):
+            errors.append(f"{where}: CollectionPage needs mainEntity → ItemList of its articles")
+        else:
+            items = lst.get("itemListElement", [])
+            if lst.get("numberOfItems") != len(items):
+                errors.append(f"{where}: ItemList numberOfItems {lst.get('numberOfItems')} ≠ {len(items)} items")
+            for it in items:
+                target = url_to_file(it.get("url", ""))
+                if not target or not target.exists():
+                    errors.append(f"{where}: ItemList links to a missing page {it.get('url')}")
     for bc in (n for n in nodes if "BreadcrumbList" in types_of(n)):
         items = bc.get("itemListElement", [])
         if noindex:
@@ -168,16 +201,20 @@ for f, p in pages.items():
         errors.append(f"{where}: missing <title>")
     elif len(p.title) > 70:
         warnings.append(f"{where}: title is {len(p.title)} chars (> 70)")
+    if p.title.count("WildBionics") > 1:
+        warnings.append(f"{where}: brand name twice in <title>: {p.title!r}")
     desc = p.meta.get("description", "")
     if not desc:
         errors.append(f"{where}: missing meta description")
-    elif not 50 <= len(desc) <= 180:
-        warnings.append(f"{where}: meta description is {len(desc)} chars (aim for 50–180)")
+    elif not 50 <= len(desc) <= 160:
+        warnings.append(f"{where}: meta description is {len(desc)} chars (aim for 50–160)")
     if p.h1 != 1:
         errors.append(f"{where}: expected exactly one <h1>, found {p.h1}")
     if p.imgs_without_alt:
         errors.append(f"{where}: {p.imgs_without_alt} <img> without alt")
     canon = [h for r, h, _ in p.links if r == "canonical"]
+    if noindex and (canon or any(r == "alternate" and hl for r, _, hl in p.links)):
+        errors.append(f"{where}: noindex page must not declare canonical or hreflang")
     if not noindex and (len(canon) != 1 or not canon[0].startswith(SITE_URL)):
         errors.append(f"{where}: needs exactly one absolute canonical URL")
     for key in ("og:title", "og:description", "og:image", "og:url"):
@@ -198,7 +235,8 @@ for f, p in pages.items():
             for k in ("headline", "datePublished", "author", "image", "inLanguage"):
                 if not art.get(k):
                     errors.append(f"{where}: Article JSON-LD lacks {k}")
-        check_graph(where, data.get("@graph", [data]), canon[0] if canon else None, noindex, p.crumbs)
+        own_url = canon[0] if canon else SITE_URL + "/" + rel.as_posix().removesuffix("index.html")
+        check_graph(where, data.get("@graph", [data]), own_url, noindex, p.crumbs)
     # hreflang: every alternate must exist and point back
     for r, href, hl in p.links:
         if r == "alternate" and hl and hl != "x-default":
@@ -225,6 +263,15 @@ for f, p in pages.items():
             errors.append(f"{where}: broken link {href}")
         elif target and u.fragment and target in pages and u.fragment not in pages[target].ids:
             errors.append(f"{where}: broken anchor {href}")
+
+# llms.txt: plain text for language models – no Markdown link or attribute leftovers from key facts
+llms = root / "llms.txt"
+if not llms.exists():
+    errors.append("llms.txt missing")
+else:
+    for n, line in enumerate(llms.read_text(encoding="utf-8").splitlines(), 1):
+        if "](#" in line or "{:" in line:
+            errors.append(f"llms.txt:{n}: Markdown leftover: {line.strip()[:80]}")
 
 # sitemap
 sitemap = root / "sitemap.xml"

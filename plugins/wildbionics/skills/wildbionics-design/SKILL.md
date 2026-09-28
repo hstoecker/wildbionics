@@ -34,13 +34,16 @@ text.
 
 - Container `min(1200px, 100% − 2 × gutter)`, gutter 16–40 px; article text column 760 px.
 - Breakpoints: 1080 px (2-column cards), 920 px (single column; the main nav moves into the menu),
-  600 px (phone), 420 px (tighter header gaps), 385 px (menu button shows only its icon).
+  640 px (graph page), 600 px (phone), 420 px (tighter header gaps), 389 px (menu button shows only
+  its icon).
 - **Navigation on phones:** `_includes/header.html` writes the nav items once and renders them
   twice – inline `site-nav` (desktop) and the `menu` disclosure (≤ 920 px, a `<details>` element,
   so it works without JavaScript; `assets/js/nav.js` closes it on link click, Escape and outside
   tap). The GitHub link moves into the menu on phones. Never hide navigation without a
   replacement; new top-level pages are added to `nav_items` only.
-- No horizontal scrolling from 320 px (WCAG reflow) – check 320, 390 and 920 px; tap targets ≥ 44 px;
+- No horizontal scrolling from 320 px (WCAG reflow) – check 320, 390 and 920 px; tap targets ≥ 44 px
+  on phones (language switch, copy buttons, pills, chips, footer and breadcrumb links – see the
+  600 px block);
   labels in SVGs enlarged on phones; long German compounds need `hyphens: auto` plus
   `overflow-wrap: break-word` (not every browser has a German hyphenation dictionary).
 - Long links, commands and code in narrow columns must wrap (`overflow-wrap: anywhere`, grid columns
@@ -57,7 +60,19 @@ text.
 - Everything works without JavaScript: tabs degrade to stacked panels, the graph to a list.
 - Respect `prefers-reduced-motion`; animations are decorative only.
 - Interactive widgets follow WAI-ARIA patterns (tabs with arrow keys, buttons with `aria-pressed`/labels).
-- SVG figures: `role="img"`, `<title>`, `<desc>` in the page language.
+- **One landmark per purpose:** the footer's language list is a plain list labelled by its visible
+  heading (`lang-switch.html context="footer"`), not a second "Language" navigation.
+- **Foreign words:** English UI labels, error messages and paper titles on German pages carry
+  `lang="en"` (sources: `lang` field, default `en`); formula `aria-label`s come from i18n.
+- **Decorative glyphs** are not read aloud (`content: "+" / ""`, `aria-hidden` on "01"-style indices).
+- **Copy buttons** sit next to the `<pre>`, never inside it, announce "Copied" in a `role="status"`
+  region and fall back to selecting the text; code that scrolls sideways gets `tabindex="0"`.
+- **Graph:** node names from the i18n templates `graph.node_name`/`node_name_dim` (no plural
+  trouble: "connections: 3"), `aria-pressed` on pinnable nodes, an invisible tap circle of ≥ 44 px
+  on screen (`.node-hit`, excluded from the label-collision boxes), the info panel scrolls into
+  view on phones, and the no-JS list renders open.
+- SVG figures: `role="img"`, `aria-labelledby` → `<title>` and `aria-describedby` → `<desc>`, both in
+  the page language.
 
 ## Metadata (layouts handle it – keep it that way)
 
@@ -77,6 +92,15 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   title`, identical to the visible `nav.breadcrumb`; the last item is the page itself; no
   breadcrumb on the home page and on `noindex` pages.
 - Every `@id` reference to a node of the same page or the site must resolve.
+- **No Markdown in data:** key facts go through `_includes/plain-text.html` before they reach
+  JSON-LD (`abstract`) or `llms.txt` (citation links, `**`, `{:.cite}` removed; `refs="keep"`
+  keeps "[3]" where a source list follows). The gate fails on `**`, `{:` or `](#` in either.
+- **Collection and data pages:** a `CollectionPage` has `mainEntity` → `ItemList` of its articles;
+  a page with `dataset: true` has `mainEntity` → its own `#dataset` node (one per language).
+- **Dates:** only real dates – `updated | default: date`; pages without a date get no `lastmod`.
+- **`noindex` pages** (404) carry no canonical and no hreflang. Titles never repeat the brand:
+  the layout skips " · WildBionics" when the title already contains it. Descriptions 50–160
+  characters (the gate warns outside). `og:locale` is `en_GB` (British spelling) / `de_DE`.
 - Figures are inline SVG (`role="img"`, `<title>`, `<desc>`) – accessible, but without an own URL
   they are not indexed as images and have no `ImageObject` yet (planned: figure files under
   `/assets/figures/` plus one `ImageObject` per figure).
@@ -84,6 +108,9 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
 ## Policy
 
 - No new dependencies, frameworks, CDNs or tracking; fonts and scripts are self-hosted and small.
+  `_config.yml` sets `theme: null` – the github-pages default theme would ship an unused 136 KB
+  stylesheet. Icons: `/favicon.ico` (16/32/48 px, for browsers and crawlers that ask for it),
+  `assets/favicon.svg`, `assets/apple-touch-icon.png` (180 px).
 - Plain CSS in `main.css`, vanilla JS in `assets/js/` loaded with `defer`, only on pages that need it.
 - Visual changes are checked with screenshots on desktop (1440 px) and phone (390 px) in EN and
   DE – renderer: `plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh`.

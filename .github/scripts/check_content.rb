@@ -108,6 +108,8 @@ Dir["_includes/svg/*.svg"].sort.each do |f|
   s = File.read(f)
   errors << "#{f}: must start with {%- include i18n.html -%}" unless s.start_with?("{%- include i18n.html -%}")
   errors << "#{f}: <svg> needs role=\"img\" and aria-labelledby" unless s.match?(/<svg[^>]*role="img"[^>]*aria-labelledby=/m)
+  # the title is the accessible name, the description is read as description – not both as the name
+  errors << "#{f}: use aria-labelledby=\"x-title\" aria-describedby=\"x-desc\"" unless s.match?(/<svg[^>]*aria-describedby="[\w-]+-desc"/m)
   %w[title desc].each { |tag| errors << "#{f}: missing <#{tag}>" unless s.include?("<#{tag} ") }
   warnings << "#{f}: hard-coded text in <text> (use _data/i18n.yml)" if s.match?(/<text[^>]*>[A-Za-zÄÖÜäöü]{4,}[^{<]*<\/text>/)
 end

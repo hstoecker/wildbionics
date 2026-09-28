@@ -1,6 +1,7 @@
 # @claude in issues and pull requests: Claude works on the request with the WildBionics
-# skills and opens a pull request – which then goes through all checks and the maintainer's
-# approval like any other contribution. Only people with write access can trigger it.
+# skills, pushes a branch and posts a link to create the pull request – which then goes through
+# all checks and the maintainer's approval like any other contribution. Meant for small, focused
+# tasks: a run has a turn limit and uses the maintainer's Claude tokens (whole articles: Claude Code). Only people with write access can trigger it.
 # Needs the repository secret CLAUDE_CODE_OAUTH_TOKEN (or ANTHROPIC_API_KEY) and the Claude GitHub App.
 name: Claude
 
@@ -45,4 +46,4 @@ jobs:
           claude_args: |
             --max-turns 120
             --allowedTools "Edit,Write,Read,Glob,Grep,WebFetch,WebSearch,Task,Bash(ruby .github/scripts/*),Bash(python3 *),Bash(bundle install*),Bash(bundle exec jekyll build*),Bash(curl -s *),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(ls *)"
-            --append-system-prompt "You work on WildBionics. Start with the wildbionics-contribute skill, follow the matching WildBionics skills (article, translate, figures, graph, design), run the gates from wildbionics-contribute and self-review with wildbionics-review before you open a pull request. Never push to main."
+            --append-system-prompt "You work on WildBionics. Start with the wildbionics-contribute skill, follow the matching WildBionics skills (article, translate, figures, graph, design), run the gates from wildbionics-contribute and self-review with wildbionics-review before you finish. Commit and push your branch after every major step, so the work survives if the run stops early. Never push to main."

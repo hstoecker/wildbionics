@@ -1,6 +1,12 @@
-{%- comment -%} Links to every translation of the current page (matched by `ref`). {%- endcomment -%}
+{%- comment -%} Links to every translation of the current page (matched by `ref`).
+  context="footer": a plain list labelled by the footer heading – one "Language" landmark per page. {%- endcomment -%}
+{%- if include.context == "footer" -%}
+<div class="lang-switch">
+  <ul aria-labelledby="footer-language">
+{%- else -%}
 <nav class="lang-switch" aria-label="{{ t.nav.language }}">
   <ul>
+{%- endif %}
     {%- for code in site.languages -%}
       {%- assign target = translations | where: "lang", code | first -%}
       {%- if target -%}{%- assign target_url = target.url -%}{%- elsif code == site.lang -%}{%- assign target_url = "/" -%}{%- else -%}{%- assign target_url = "/" | append: code | append: "/" -%}{%- endif -%}
@@ -13,4 +19,4 @@
       </li>
     {%- endfor -%}
   </ul>
-</nav>
+{% if include.context == "footer" %}</div>{% else %}</nav>{% endif %}

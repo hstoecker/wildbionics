@@ -1,5 +1,5 @@
 {%- include i18n.html -%}
-<svg class="claw-svg" viewBox="0 0 720 420" role="img" aria-labelledby="claw-title claw-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="claw-svg" viewBox="0 0 720 420" role="img" aria-labelledby="claw-title" aria-describedby="claw-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="claw-title">{{ t.figures.claw.title }}</title>
   <desc id="claw-desc">{{ t.figures.claw.desc }}</desc>
   <defs>
@@ -110,7 +110,7 @@
     <text x="436" y="126" text-anchor="end" class="label">{{ t.figures.claw.dactyl }}</text>
   </g>
   <g class="callout">
-    <path d="M494,236 V334 H504"/><circle cx="494" cy="236" r="2.5"/>
+    <path d="M494,241.3 V334 H504"/><circle cx="494" cy="241.3" r="2.5"/>
     <text x="510" y="338" class="label">{{ t.figures.claw.socket }}</text>
   </g>
   <g class="callout">

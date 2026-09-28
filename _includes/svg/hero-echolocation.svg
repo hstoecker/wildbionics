@@ -1,5 +1,5 @@
 {%- include i18n.html -%}
-<svg class="hero-svg" viewBox="0 0 720 560" role="img" aria-labelledby="hero-svg-title hero-svg-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="hero-svg" viewBox="0 0 720 560" role="img" aria-labelledby="hero-svg-title" aria-describedby="hero-svg-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="hero-svg-title">{{ t.hero.svg_title }}</title>
   <desc id="hero-svg-desc">{{ t.hero.svg_desc }}</desc>
   <defs>

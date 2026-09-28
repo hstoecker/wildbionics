@@ -1,6 +1,6 @@
 {%- include i18n.html -%}
 {%- assign g = t.figures.gecko -%}
-<svg class="gecko-svg" viewBox="0 0 720 420" role="img" aria-labelledby="gecko-title gecko-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="gecko-svg" viewBox="0 0 720 432" role="img" aria-labelledby="gecko-title" aria-describedby="gecko-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="gecko-title">{{ g.title }}</title>
   <desc id="gecko-desc">{{ g.desc }}</desc>
   <defs>
@@ -239,5 +239,5 @@
     <path d="M601,354 L574,392 H562"/><circle cx="601" cy="354" r="2.5"/>
     <text x="556" y="396" text-anchor="end" class="label label-accent">{{ g.vdw }}</text>
   </g>
-  <text x="14" y="412" class="label label-tick">{{ g.note }}</text>
+  <text x="14" y="426" class="label label-tick">{{ g.note }}</text>
 </svg>

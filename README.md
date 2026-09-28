@@ -40,13 +40,14 @@ they load automatically – or install them anywhere from this repository's plug
 ## How a change goes live
 
 1. Branch → work with the skills → local gates → pull request
-2. CI: terminology, content, plugin and site gates · preview with screenshots · Claude review
+2. CI: terminology, content, plugin, code-example and site gates · preview with screenshots · Claude review
 3. The maintainer reviews and merges → GitHub Pages deploy → search engines notified (IndexNow)
 
 ## Tech
 
 Static [Jekyll](https://jekyllrb.com) site on GitHub Pages, no dependencies beyond the
-`github-pages` gem, self-hosted fonts, vanilla JS. Local preview:
+`github-pages` gem (the code examples use numpy/scipy/matplotlib, pinned in
+`examples/requirements.txt`), self-hosted fonts, vanilla JS. Local preview:
 
 ```bash
 bundle install && bundle exec jekyll serve --livereload

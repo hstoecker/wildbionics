@@ -36,13 +36,22 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 5. **Labels that help.** Short, from `_data/i18n.yml` (EN + DE, German terms per the glossary),
    callouts with a leader line and a dot that sits *on* the element meant. No overlaps with
    each other, with shapes or with other leader lines; nothing clipped at the edge; readable on
-   a phone (roughly ≥ 9 px effective size – enlarge labels in the ≤ 600 px media query).
-6. **Accessible.** `role="img"` with bilingual `<title>` and `<desc>` that describe the concept,
+   a phone: ≥ 9 px effective size = CSS font-size × (rendered width ÷ viewBox width); enlarge
+   labels per figure class in the ≤ 600 px media query and leave viewBox margin for the bigger
+   phone labels (rotated axis titles, x-axis title below the tick numbers). Values from a formula
+   use a real minus sign (−100, not -100).
+6. **Accessible.** `role="img"`, `aria-labelledby="<id>-title" aria-describedby="<id>-desc"` (the
+   title is the name, the long description stays a description – `check_content.rb` enforces it),
+   with bilingual `<title>` and `<desc>` that describe the concept,
    not just the objects; enough contrast on dark and light surfaces; never encode meaning by
    colour alone (add shape, dash pattern or label).
 
 ### Pitfalls seen before – check for them explicitly
-- Dots or dark shapes that read as eyes or faces (a hinge dot made the claw look like a head).
+- Dots or dark shapes that read as eyes or faces (a hinge dot made the claw look like a head; a
+  callout dot in the middle of the dark socket oval read as a pupil – callout dots go on the rim,
+  recesses are drawn in the shell colour, not dark).
+- Snapshots that contradict the plot next to them (bubble sizes must follow the R(t) curve;
+  guide lines end on the curve).
 - Abstract fragments without context (the first claw figure).
 - Proportions that hide the story (the snapping claw was too small to be the obvious "weapon").
 - Hard, angular artefacts on organic shapes (a step in the claw outline).
@@ -76,8 +85,27 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    and understand what happens?*
 5. **Fix and repeat** steps 3–4 until the checklist passes completely. Several rounds are normal
    (the pistol shrimp needed four).
-6. **Finish:** regenerate OG images that contain the figure (`_includes/og-card.html`, see
-   CLAUDE.md), update captions and alt texts in both languages, run the gates:
+6. **Finish:** regenerate OG images that contain the figure, update captions and alt texts in both
+   languages (`image_alt` describes the OG image), then run the gates. **OG image recipe** (one
+   per article and language, 1200×630 JPEG in `assets/og/<slug>-<lang>.jpg`):
+   ```bash
+   cat > og-tmp.html <<'OG'     # temporary page – never commit it
+   ---
+   layout: null
+   lang: en
+   sitemap: false
+   permalink: /og-tmp/card.html
+   ---
+   {% include og-card.html eyebrow="Physics · Biology" title="How geckos <em>stick</em> to walls" sub="One line that says why it matters." figure="svg/gecko.svg" bg1="#0d1a16" bg2="#0a1512" %}
+   OG
+   bundle exec jekyll build && (cd _site && python3 -m http.server 4000 &)
+   plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page http://localhost:4000/og-tmp/card.html card.png 1200 0 630
+   sips -s format jpeg -s formatOptions 85 card.png --out assets/og/<slug>-en.jpg     # macOS
+   # Linux: python3 -c "from PIL import Image; Image.open('card.png').convert('RGB').save('assets/og/<slug>-en.jpg', quality=85, optimize=True)"
+   rm og-tmp.html card.png
+   ```
+   Repeat with `lang: de` and German texts. Title size: `title_px` (default 64) – not `size`, which
+   Liquid reserves. Check the JPEG: exactly 1200×630, under 300 KB, no clipped text. Gates:
    ```bash
    ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site
    ```

@@ -1,0 +1,13 @@
+{%- comment -%}
+  Markdown key fact → plain text for JSON-LD and llms.txt: drops citation links
+  ("[3](#ref-3){:.cite}") and emphasis markers. Params: text, n (number of sources, default 30),
+  refs="keep" to keep the numbers as "[3]" (llms.txt lists the sources below).
+{%- endcomment -%}
+{%- assign pt = include.text | replace: "{:.cite}", "" -%}
+{%- assign pt_n = include.n | default: 30 -%}
+{%- for i in (1..pt_n) -%}
+  {%- capture pt_cite %}[{{ i }}](#ref-{{ i }}){% endcapture -%}
+  {%- if include.refs == "keep" -%}{%- capture pt_keep %}[{{ i }}]{% endcapture -%}{%- else -%}{%- assign pt_keep = "" -%}{%- endif -%}
+  {%- assign pt = pt | replace: pt_cite, pt_keep -%}
+{%- endfor -%}
+{{- pt | replace: "**", "" | replace: "*", "" | replace: "  ", " " | replace: "  ", " " | replace: " .", "." | replace: " ,", "," | replace: " ;", ";" | strip -}}

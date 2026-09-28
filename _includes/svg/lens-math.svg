@@ -1,5 +1,5 @@
 {%- include i18n.html -%}
-<svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-math-title lens-math-desc" xmlns="http://www.w3.org/2000/svg">
+<svg class="lens-svg" viewBox="0 0 480 300" role="img" aria-labelledby="lens-math-title" aria-describedby="lens-math-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="lens-math-title">{{ t.lens.math.svg_title }}</title>
   <desc id="lens-math-desc">{{ t.lens.math.svg_desc }}</desc>
   <!-- Triangle: bat (84,196), moth (396,70), foot (396,196); θ = atan(126/312) ≈ 22° -->

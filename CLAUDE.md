@@ -30,26 +30,8 @@ Each article can be viewed through switchable lenses on the same phenomenon, e.g
 - Licenses: `LICENSE` = MIT (code), `LICENSE-CONTENT.txt` = CC BY-SA 4.0 (content).
 - Deferred: Google Trends integration, graph database, complex tooling.
 
-## Article front matter (draft)
-```yaml
----
-id: "pistol-shrimp-cavitation"
-lang: en
-ref: pistol-shrimp-cavitation   # same value across translations
-title: "The Pistol Shrimp and the Physics of Cavitation"
-date: 2026-09-26
-dimensions:
-  time: ["cenozoic", "modern-era"]
-  space: ["deep-sea", "coastal"]
-  physics: ["thermodynamics", "fluid-dynamics", "acoustics"]
-  adjacent_sciences: ["medical-technology", "materials-science"]
-beings: ["pistol-shrimp"]
-sources:
-  - title: "How snapping shrimp snap: through cavitating bubbles"
-    doi: "10.1126/science.289.5487.2114"
-status: draft
----
-```
+## Article front matter
+The complete, current field list (incl. `short_title`, `description`, `image`/`image_alt`, `lenses`, `key_facts`, `faq`, `sources` with DOI, `about` with Wikidata IDs, optional `updated`) is in the `wildbionics-article` skill, section 2, and is enforced by `.github/scripts/check_content.rb`. Look at `_articles/gecko-adhesion.en.md` for a complete example.
 
 ## Roadmap (keep it simple, quick wins first)
 - [x] **Phase 0** – Minimal live site: `_config.yml`, home pages (EN at `/`, DE at `/de/`), `CNAME`; DNS check (A records to GitHub Pages, `www` CNAME), enforce HTTPS, verify domain in GitHub.
@@ -65,10 +47,10 @@ status: draft
 
 ## How things are built (as of Phase 4)
 - **Deploy:** GitHub Actions (`.github/workflows/deploy.yml`): gates (terms, content, plugin, code examples) → Jekyll build → `.github/scripts/check_site.py` quality gate → GitHub Pages → IndexNow (`.github/scripts/indexnow.py`, key in `_config.yml` + `/<key>.txt`). PRs only build + check.
-- **Articles:** `_articles/<slug>.<lang>.md`, layout `article`; lenses via `{% include lens-tabs.html %}` + `lens-start`/`lens-end`; key facts, FAQ, sources (with DOI) in front matter → rendered + JSON-LD (Article, FAQPage, BreadcrumbList). Ontology slugs need a display name in `_data/taxonomy.yml`.
+- **Articles:** `_articles/<slug>.<lang>.md`, layout `article`; lenses via `{% include lens-tabs.html lenses="…" %}` + `lens-start`/`lens-end`; key facts, FAQ, sources (with DOI) in front matter → rendered + JSON-LD (Article, FAQPage, BreadcrumbList). Ontology slugs need a display name in `_data/taxonomy.yml`.
 - **Code examples:** every Python block in the site is a complete program followed by `{% include code-result.html file="…" %}`. `.github/scripts/code_examples.py` runs them all (CI: Python 3.12, `examples/requirements.txt`, `--check`) and writes the tested output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks (`examples/<ref>/`). Copy buttons: `assets/js/code.js`. Reader guide: `/run-code/`, `/de/code-ausfuehren/` (layout `page`). Rules: `wildbionics-article` section 4. No in-browser Python runtime (decided 2026-09-27: static result + Colab instead).
 - **UI strings:** `_data/i18n.yml` (EN/DE keys must match). SVG figures in `_includes/svg/` pull labels from i18n.
-- **Figures:** follow the project skill `plugins/wildbionics/skills/wildbionics-figures/` – every figure must be recognisable, conceptually clear, correct and attractive; iterate with rendered screenshots (`scripts/shots.sh`) until its acceptance checklist passes, and show the user the final render.
+- **Figures:** follow the project skill `plugins/wildbionics/skills/wildbionics-figures/` – every figure must be recognisable, conceptually clear, correct and attractive; iterate with rendered screenshots (`plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh`) until its acceptance checklist passes, and show the user the final render.
 - **Translation:** follow the project skill `plugins/wildbionics/skills/wildbionics-translate/`; German technical terms are fixed in `_data/glossary.yml` and enforced by `.github/scripts/check_terms.rb` (runs first in CI; forbidden variants fail the build).
 - **Knowledge graph:** `graph.json` (Liquid, built from `_data/taxonomy.yml` with `dim`/`order`, `_data/beings.yml`, `_data/lenses.yml` and article front matter) → `assets/js/graph.js` (own force layout, no dependencies; dimensions are fixed anchors, label-collision pass via getBBox). The page `_includes/graph-page.html` also renders a full no-JS list. `check_site.py` validates graph.json.
 - **Machine readability:** `sitemap.xml` (hreflang), `robots.txt` (AI crawlers allowed), `llms.txt`, OG images in `assets/og/` (1200×630, rendered from `_includes/og-card.html`). JSON-LD graph rules (breadcrumbs = visible breadcrumb, licensed `#primaryimage`, `ItemList` on collection pages) live in the `wildbionics-design` skill and are enforced by `check_site.py`.
