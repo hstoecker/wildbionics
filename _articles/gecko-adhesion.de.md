@@ -15,7 +15,7 @@ image_alt: "Schema eines Tokehs an einer Wand mit Vergrößerungen seines Haftpo
 hero_figure: svg/gecko.svg
 hero_caption: "<span class=\"caption__label\">Abb. 1</span> Ein Tokeh an einer Wand. Seine Haftpolster sind mit Plättchen (Lamellen) bedeckt, die haarfeine Setae tragen; jede Seta spaltet sich in Hunderte Spatulae auf, nur 0,2–0,5 µm breit, die flach auf der Wand liegen – nah genug, damit Van-der-Waals-Kräfte wirken."
 educational_level: "Intermediate"
-keywords: ["Gecko", "Tokeh", "Gekko gecko", "Gecko-Haftung", "Van-der-Waals-Kräfte", "Setae", "Spatulae", "Trockenklebstoff", "Kontaktaufspaltung", "Gecko-inspirierte Haftmaterialien", "Stickybot", "Bionik"]
+keywords: ["Gecko", "Tokeh", "Gekko gecko", "Gecko-Haftung", "Van-der-Waals-Kräfte", "Setae", "Spatulae", "Trockenklebstoff", "Kontaktaufspaltung", "Schälwinkel", "Schälmodell nach Kendall", "Gecko-inspirierte Haftmaterialien", "Stickybot", "Bionik"]
 about:
   - { name: "Geckoartige (Gekkota)", wikidata: Q1008888, wikipedia: "https://de.wikipedia.org/wiki/Geckoartige" }
   - { name: "Van-der-Waals-Kräfte", wikidata: Q189627, wikipedia: "https://de.wikipedia.org/wiki/Van-der-Waals-Kr%C3%A4fte" }
@@ -26,9 +26,9 @@ dimensions:
   time: ["modern-era"]
   space: ["microcosm", "lab", "outer-space"]
   physics: ["mechanics", "electromagnetism"]
-  adjacent_sciences: ["biology", "mathematics", "materials-science", "robotics", "physical-ai", "bionics"]
+  adjacent_sciences: ["biology", "mathematics", "computer-science", "materials-science", "robotics", "physical-ai", "bionics"]
 beings: ["tokay-gecko"]
-lenses: ["biology", "physics", "math", "physical-ai"]
+lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "Die Zehen eines Geckos tragen Millionen haarfeiner **Setae**, jede 30–130 µm lang, die sich in Hunderte **Spatulae** von 0,2–0,5 µm Breite verzweigen [1](#ref-1){:.cite}."
   - "Die Spatulae haften hauptsächlich über **Van-der-Waals-Kräfte**: Gecko-Zehen halten auf wasserabweisenden und wasseranziehenden Oberflächen gleich gut [2](#ref-2){:.cite}. Luftfeuchtigkeit verstärkt die Kraft auf der Ebene einer einzelnen Spatula [4](#ref-4){:.cite}."
@@ -134,6 +134,20 @@ sources:
     volume: 2
     pages: "eaan4545"
     doi: "10.1126/scirobotics.aan4545"
+  - authors: ["Kendall, K."]
+    year: 1975
+    title: "Thin-film peeling-the elastic term"
+    journal: "Journal of Physics D: Applied Physics"
+    volume: 8
+    pages: "1449–1452"
+    doi: "10.1088/0022-3727/8/13/005"
+  - authors: ["Huber, G.", "Gorb, S. N.", "Spolenak, R.", "Arzt, E."]
+    year: 2005
+    title: "Resolving the nanoscale adhesion of individual gecko spatulae by atomic force microscopy"
+    journal: "Biology Letters"
+    volume: 1
+    pages: "2–4"
+    doi: "10.1098/rsbl.2004.0254"
 status: published
 ---
 
@@ -150,7 +164,7 @@ Wie diese Strukturen haften, war über ein Jahrhundert lang umstritten. Saugwirk
 3. **Halten.** Milliarden Spatulae liegen flach auf der Oberfläche. Jede hält nur eine winzige Kraft, zusammen tragen sie das Tier – sogar an einer einzigen Zehe [6](#ref-6){:.cite}.
 4. **Lösen.** Der Gecko rollt seine Zehen nach oben und hinten ab. Erreicht der Schaft einer Seta einen Winkel von etwa 30° zur Wand, lässt sie los; ein Fuß ist in etwa **15 ms** frei [3](#ref-3){:.cite} [7](#ref-7){:.cite}.
 
-{% include lens-tabs.html lenses="biology,physics,math,physical-ai" %}
+{% include lens-tabs.html lenses="biology,physics,math,cs,physical-ai" %}
 
 {% include lens-start.html lens="biology" %}
 
@@ -210,6 +224,105 @@ Dabei ist *W* die Adhäsionsarbeit, die Energie, die nötig ist, um eine Fläche
 Ein Kontakt, aufgespalten in 100 Spitzen, hält 10-mal mehr; in 10.000 Spitzen 100-mal mehr; in eine Million Spitzen 1.000-mal mehr. Das ist das Prinzip der **Kontaktaufspaltung**. Arzt, Gorb und Spolenak verglichen Haftstrukturen von Fliegen, Käfern, Spinnen und Geckos und fanden einen deutlichen Trend: Je schwerer das Tier, desto feiner seine Kontaktelemente. Fliegen und Käfern genügen Spitzen im Mikrometerbereich, Geckos brauchen Spitzen unter einem Mikrometer [5](#ref-5){:.cite}. Autumn und Kollegen kamen zum selben Schluss: Die Theorie sagt eine größere Haftung schon durch bloßes Unterteilen der Setae voraus [2](#ref-2){:.cite}.
 
 Die √*n*-Regel ist ein vereinfachtes Modell: Sie setzt gleiche, unabhängige Spitzen voraus, die alle gleichzeitig Kontakt haben. Echte Setae teilen sich die Last ungleichmäßig, und das Modell versagt, wenn die Spitzen so klein und dicht werden, dass sie aneinander haften. Den Haupttrend erklärt es trotzdem – und Ingenieure nutzen es als Konstruktionsregel.
+
+{% include lens-end.html %}
+
+{% include lens-start.html lens="cs" %}
+
+## Informatik-Linse: ein Klebstoff, den ein Winkel schaltet
+
+Wie kann derselbe Fuß fest halten und in 15 ms loslassen? Yu Tian und Kollegen erklärten das mit einem **Klebebandmodell**: Jede Spatula verhält sich wie ein winziger Streifen Klebeband, und der Winkel, unter dem an ihr gezogen wird, entscheidet, wie viel Kraft das Abschälen kostet [7](#ref-7){:.cite}. Für ein elastisches Band der Breite *b*, der Dicke *h* und mit dem Elastizitätsmodul *E*, das unter dem Winkel *θ* zur Wand gezogen wird, verknüpft Kendalls Schälgleichung die Schälkraft *F* mit der Adhäsionsarbeit *W* [12](#ref-12){:.cite}:
+
+<div class="formula" role="math" aria-label="F durch b zum Quadrat, geteilt durch 2 E h, plus F durch b mal 1 minus Kosinus theta, gleich W"><span class="frac"><span class="frac__num">(<var>F</var>/<var>b</var>)<sup>2</sup></span><span class="frac__den">2 <var>E</var> <var>h</var></span></span> + <span class="frac"><span class="frac__num"><var>F</var></span><span class="frac__den"><var>b</var></span></span> (1 − cos <var>θ</var>) = <var>W</var></div>
+
+Der zweite Term ist die Arbeit, die beim Wegziehen des abgelösten Streifens von der Wand verrichtet wird; der erste die Energie, die im gedehnten Band steckt. Das Programm unten löst diese Gleichung für jeden Winkel nach *F* auf. *W* übernimmt es aus der Physik-Linse – integriert man den Van-der-Waals-Druck vom Kontakt nach außen, ergibt sich *W* = *A* / (12π*D*<sup>2</sup>) –, dazu eine Spatula-Breite von etwa 200 nm [13](#ref-13){:.cite}. Dicke und Steifigkeit des Spatula-Plättchens sind nicht genau gemessen; das Programm verwendet deshalb **angenommene Modellwerte**: 10 nm und 2 GPa (ein typischer Wert für Keratin). Die Frage: Wie viel stärker hält die Spatula bei flachem als bei steilem Winkel – und was begrenzt den Halt?
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import brentq
+
+# Adhäsionsarbeit aus der Physik-Linse: P = A/(6πD³) vom Kontakt bis unendlich integriert
+A_HAMAKER = 1e-19     # Hamaker-Konstante (J), typisch für Festkörper
+D_CONTACT = 0.3e-9    # Abstand von Flächen in Kontakt (m), etwa ein Atom
+W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # Energie, um 1 m² Kontakt zu trennen (J/m²)
+
+# Die Spatula als dünnes elastisches Band – Modellwerte, keine Messwerte
+WIDTH = 200e-9        # Breite der Spatula (m), etwa 200 nm
+THICKNESS = 10e-9     # Dicke des Spatula-Plättchens (m), angenommen
+MODULUS = 2e9         # Elastizitätsmodul von Keratin (Pa), angenommen
+
+
+def peel_force(angle_deg):
+    """Kraft (N), die das Band unter einem Winkel zur Wand abschält.
+
+    Kendalls Gleichung (F/b)²/(2Eh) + (F/b)(1 − cos θ) = W, nach F aufgelöst.
+    So geschrieben, dass keine zwei fast gleichen Zahlen subtrahiert werden –
+    das würde Stellen verschenken (1 − cos θ bei kleinem θ, −a + √(a² + ε) bei großem θ).
+    """
+    one_minus_cos = 2 * np.sin(np.radians(angle_deg) / 2) ** 2
+    stretch = 2 * W / (MODULUS * THICKNESS)    # wie stark sich das Band dehnen lässt
+    return WIDTH * 2 * W / (one_minus_cos + np.sqrt(one_minus_cos**2 + stretch))
+
+
+def rigid_tape_force(angle_deg):
+    """Dasselbe ohne Dehnung (E → ∞): F = bW / (1 − cos θ)."""
+    return WIDTH * W / (2 * np.sin(np.radians(angle_deg) / 2) ** 2)
+
+
+print(f"Adhäsionsarbeit W = {W * 1e3:.0f} mJ/m²")
+print("Winkel   Schälkraft   starres Band")
+for angle in [0, 10, 30, 60, 90]:
+    rigid = f"{rigid_tape_force(angle) * 1e9:7.1f} nN" if angle else "  unendlich"
+    print(f"{angle:5d}°   {peel_force(angle) * 1e9:6.1f} nN   {rigid}")
+
+# Der Schalter: Wie weit muss der Fuß kippen, damit 90 % des Halts verloren gehen?
+f_max = peel_force(0)
+release = brentq(lambda a: peel_force(a) - 0.1 * f_max, 0, 90)
+print(f"Schaltverhältnis F(10°) / F(90°) = {peel_force(10) / peel_force(90):.0f}")
+print(f"Halt sinkt bei {release:.0f}° auf 10 % des Höchstwerts")
+print("gemessen für eine Spatula: etwa 10 nN (Huber et al. 2005)")
+
+angles = np.linspace(0, 90, 361)
+plt.rcParams["font.size"] = 13      # große Schrift: Das Diagramm bleibt auf dem Handy lesbar
+fig, ax = plt.subplots(figsize=(6.4, 5.2), layout="constrained")
+ax.semilogy(angles, peel_force(angles) * 1e9, lw=2.5, label="elastisches Band (Kendall)")
+ax.semilogy(angles[8:], rigid_tape_force(angles[8:]) * 1e9, "--", lw=1.8, label="starres Band (ohne Dehnung)")
+ax.plot([90], [10], "ko", ms=7, label="gemessen: etwa 10 nN")
+ax.axvline(release, color="gray", lw=1, ls=":")
+ax.text(release + 1.5, 300, f"10 % Halt\nbei {release:.0f}°", color="dimgray")
+ax.set_xlabel("Schälwinkel θ (Grad)")
+ax.set_ylabel("Kraft zum Abschälen einer Spatula (nN)")
+ax.set_title("Flach hält, steil löst")
+ax.set_xlim(0, 93)
+ax.set_ylim(2, 1000)
+ax.legend(loc="lower left")
+plt.show()
+```
+{% include code-result.html file="peel_angle.py" label="Abb. 3" caption="Ausgabe des Programms oben: die Kraft, die nötig ist, um eine als elastisches Band modellierte Spatula abzuschälen, über dem Schälwinkel (logarithmische Achse). Durchgezogen: Kendalls Gleichung mit Dehnung. Gestrichelt: ein starres Band, das bei 0° eine unendliche Kraft bräuchte. Punkt: die für einzelne Spatulae gemessene Haftkraft von etwa 10 nN. Dicke und Steifigkeit der Spatula sind angenommene Modellwerte." alt="Liniendiagramm der Schälkraft einer Spatula in Nanonewton über dem Schälwinkel von 0 bis 90 Grad, mit logarithmischer Kraftachse. Die durchgezogene Kurve für ein elastisches Band beginnt bei etwa 217 Nanonewton bei 0 Grad und fällt auf 42 bei 30 Grad und 5,9 bei 90 Grad. Eine gestrichelte Kurve für ein starres Band steigt zu kleinen Winkeln steil an und geht oberhalb von etwa 30 Grad in die durchgezogene Kurve über. Eine gepunktete senkrechte Linie bei 43 Grad markiert, wo der Halt auf 10 Prozent gesunken ist. Ein schwarzer Punkt bei 90 Grad markiert den gemessenen Wert von etwa 10 Nanonewton." %}
+
+Was das Ergebnis zeigt:
+
+- **Der Winkel ist ein Schalter.** Fast entlang der Wand gezogen, hält eine Spatula etwa **217 nN**; im rechten Winkel gezogen nur **5,9 nN**. Zwischen 10° und 90° sinkt die Kraft um den Faktor 28, und bei 43° ist nur noch ein Zehntel des Halts übrig. Das Klebebandmodell allein erklärt einen Teil des Gecko-Tricks. Mit der Reibung des Spatula-Teils, der noch Kontakt hat, und der Hebelwirkung des Seta-Schafts fanden Tian und Kollegen, dass sich Haftung und Reibung eines ganzen Gecko-Fußes um drei Größenordnungen ändern können [7](#ref-7){:.cite}.
+- **Die Dehnung setzt die Obergrenze.** Ein starres Band bräuchte bei 0° eine unendliche Kraft – physikalisch unmöglich. Weil sich die echte Spatula dehnt, ist die Kraft bei flachen Winkeln auf *b*√(2*EhW*) begrenzt. Dieser Wert hängt von der angenommenen Dicke und Steifigkeit ab und ist nur eine Schätzung. Bei steilen Winkeln spielt die Dehnung kaum eine Rolle: Dort ist die Kraft fast genau *bW* und hängt nur von der Van-der-Waals-Haftung und der Breite ab.
+- **Die Größenordnung passt.** Bei 90° liefert das Modell etwa 6 nN; Messungen mit dem Rasterkraftmikroskop an einzelnen Spatulae ergaben etwa 10 nN [13](#ref-13){:.cite}. Das Modell vernachlässigt die echte Form der Spatula und den Beitrag der Luftfeuchtigkeit [4](#ref-4){:.cite}; eine Übereinstimmung bis auf einen Faktor zwei ist daher so gut, wie man erwarten kann.
+- Der Schälwinkel einer Spatula ist nicht der Winkel des Seta-Schafts: Die Setae lassen bei einem Schaftwinkel von etwa 30° los [3](#ref-3){:.cite}, und der Schaft wirkt als Hebel, der die Spatulae auf einen steilen Schälwinkel dreht [7](#ref-7){:.cite}.
+
+Auch ein paar Programmierideen lohnen einen Blick:
+
+- **Numerische Stabilität.** Wer zwei fast gleiche Zahlen subtrahiert, verschenkt gültige Stellen. Der Code vermeidet das zweimal: Er berechnet 1 − cos *θ* als 2 sin<sup>2</sup>(*θ*/2), und er schreibt die Lösung der quadratischen Gleichung in einer Form ohne Differenz. Beide Umformungen sind mathematisch exakt, verlieren in Gleitkommazahlen aber weniger Stellen – eine Gewohnheit, die vor allem bei den 32-Bit-Zahlen kleiner Robotersteuerungen zählt.
+- **Nullstellensuche.** `brentq` findet den Winkel, bei dem die Kraft auf 10 % sinkt – genau die Frage, die sich die Steuerung eines Kletterroboters stellt: Wie weit muss ein Fuß kippen, bevor er loslässt?
+- **Validierung.** Bei 90° müssen elastisches und starres Band übereinstimmen, und das Ergebnis muss in der Größenordnung der Messung liegen. Beide Prüfungen gelingen.
+
+Probier es selbst aus – jede Änderung ist eine Zeile:
+
+- Setze `THICKNESS = 40e-9`: Ein viermal dickeres Plättchen verdoppelt den größten Halt auf 434 nN, während die Kraft bei 90° bei 5,9 nN bleibt – der Schalter wird stärker (Verhältnis 43), und der Halt sinkt schon bei 30° auf 10 %.
+- Setze `WIDTH = 500e-9`, das obere Ende der gemessenen Spatula-Breite [1](#ref-1){:.cite}: Jede Kraft wächst um den Faktor 2,5 (14,7 nN bei 90°), das Schaltverhältnis bleibt aber bei 28 – der Schalter ist eine Frage des Winkels, nicht der Größe.
+- Setze `D_CONTACT = 0.4e-9`: Bei einem nur 0,1 nm größeren Spalt sinkt die Adhäsionsarbeit von 29 auf 17 mJ/m² und die Kraft bei 90° auf 3,3 nN – das steile Abstandsgesetz der Physik-Linse bei der Arbeit.
+
+{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="434.3 5.9 43 30" %}
+{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 28 43" %}
+{% include code-variant.html file="peel_angle.py" id="gap" replace="D_CONTACT = 0.3e-9" with="D_CONTACT = 0.4e-9" expect="17 3.3" %}
 
 {% include lens-end.html %}
 
