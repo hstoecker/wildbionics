@@ -283,6 +283,9 @@ def main():
         entry = {"output": output, "py": f"/{rel}.py", "notebook": f"{rel}.ipynb"}
         if size:
             entry.update(chart=f"/{rel}.svg", chart_width=size[0], chart_height=size[1])
+            for key in ("label", "caption", "alt"):     # for the chart's ImageObject in the page's JSON-LD
+                if ex["params"].get(key):
+                    entry[f"chart_{key}"] = " ".join(re.sub(r"<[^>]+>", "", ex["params"][key]).split())
         if size and ex["params"].get("variant") != "card" and not ex["params"].get("alt"):
             errors.append(f"{ex['where']}: {ex['file']} draws a chart – describe it with alt=\"…\" in the include")
         for v in ex["variants"]:

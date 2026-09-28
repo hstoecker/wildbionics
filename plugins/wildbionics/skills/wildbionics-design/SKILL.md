@@ -101,9 +101,14 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
 - **`noindex` pages** (404) carry no canonical and no hreflang. Titles never repeat the brand:
   the layout skips " · WildBionics" when the title already contains it. Descriptions 50–160
   characters (the gate warns outside). `og:locale` is `en_GB` (British spelling) / `de_DE`.
+- **Charts of code examples** (`/examples/<ref>/<name>.<lang>.svg`) are one `ImageObject` each
+  (`#chart-<name>`): `contentUrl`, `encodingFormat`, size, `name` = the include's `label`,
+  `caption` = its `caption`, `description` = its `alt`, and the same licence fields as the preview
+  image; the article lists them in `associatedMedia`. `code_examples.py` copies label, caption and
+  alt into `_data/code_examples.yml`; the gate fails on a chart without its ImageObject.
 - Figures are inline SVG (`role="img"`, `<title>`, `<desc>`) – accessible, but without an own URL
   they are not indexed as images and have no `ImageObject` yet (planned: figure files under
-  `/assets/figures/` plus one `ImageObject` per figure).
+  `/assets/figures/` plus one `ImageObject` per figure; open question: fonts in standalone SVG).
 
 ## Policy
 

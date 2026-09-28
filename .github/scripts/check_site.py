@@ -29,6 +29,7 @@ class Page(HTMLParser):
         self.ids = set()
         self.h1 = 0
         self.imgs_without_alt = 0
+        self.imgs = []
         self.jsonld = []
         self.crumbs = []         # visible breadcrumb (nav.breadcrumb li texts)
         self._in_title = self._in_jsonld = False
@@ -56,8 +57,10 @@ class Page(HTMLParser):
             self.hrefs.append(a["href"])
         elif tag == "h1":
             self.h1 += 1
-        elif tag == "img" and "alt" not in a:
-            self.imgs_without_alt += 1
+        elif tag == "img":
+            self.imgs.append(a.get("src", ""))
+            if "alt" not in a:
+                self.imgs_without_alt += 1
         elif tag == "script" and a.get("type") == "application/ld+json":
             self._in_jsonld, self._buf = True, ""
         elif tag == "nav" and "breadcrumb" in a.get("class", "").split():
@@ -141,7 +144,7 @@ def strings_in(obj):
             yield from strings_in(v)
 
 
-def check_graph(where, nodes, page_url, noindex, crumbs):
+def check_graph(where, nodes, page_url, noindex, crumbs, imgs=()):
     """Linked-graph rules: references resolve, breadcrumbs end at the page, the preview image is licensed,
     collection pages list their articles, no Markdown leaks into the data."""
     ids = {n.get("@id") for n in nodes}
@@ -165,6 +168,21 @@ def check_graph(where, nodes, page_url, noindex, crumbs):
         for k in ("contentUrl", "caption", "license", "acquireLicensePage", "creditText", "creator", "copyrightNotice"):
             if not img.get(k):
                 errors.append(f"{where}: preview image (primaryImageOfPage) lacks {k}")
+    article = by_id.get(f"{page_url}#article")
+    media = {m.get("@id") for m in (article or {}).get("associatedMedia", [])}
+    for src in imgs:                                  # charts of code examples: licensed ImageObjects
+        if not (src.startswith("/examples/") and src.endswith(".svg")):
+            continue
+        url = SITE_URL + src
+        img = next((n for n in nodes if "ImageObject" in types_of(n) and n.get("contentUrl") == url), None)
+        if img is None:
+            errors.append(f"{where}: chart {src} has no ImageObject in the JSON-LD")
+            continue
+        for k in ("caption", "description", "license", "acquireLicensePage", "creditText", "creator"):
+            if not img.get(k):
+                errors.append(f"{where}: chart ImageObject {src} lacks {k}")
+        if article is not None and img.get("@id") not in media:
+            errors.append(f"{where}: chart {src} is not in the article's associatedMedia")
     if webpage is not None and "CollectionPage" in types_of(webpage):
         lst = by_id.get((webpage.get("mainEntity") or {}).get("@id"))
         if not lst or "ItemList" not in types_of(lst):
@@ -236,7 +254,7 @@ for f, p in pages.items():
                 if not art.get(k):
                     errors.append(f"{where}: Article JSON-LD lacks {k}")
         own_url = canon[0] if canon else SITE_URL + "/" + rel.as_posix().removesuffix("index.html")
-        check_graph(where, data.get("@graph", [data]), own_url, noindex, p.crumbs)
+        check_graph(where, data.get("@graph", [data]), own_url, noindex, p.crumbs, p.imgs)
     # hreflang: every alternate must exist and point back
     for r, href, hl in p.links:
         if r == "alternate" and hl and hl != "x-default":
