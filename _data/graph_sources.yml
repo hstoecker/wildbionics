@@ -5,7 +5,7 @@
   title: "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases"
   venue: "GRADES-NDA 2024 (ACM)"
   url: "https://doi.org/10.1145/3661304.3661901"
-- authors: "Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S. & Larson, J."
+- authors: "Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S. et al."
   year: 2024
   title: "From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
   venue: "arXiv:2404.16130"

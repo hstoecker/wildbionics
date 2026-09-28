@@ -1649,7 +1649,6 @@ a.cite:hover { text-decoration: underline; }
 .graph-hint { margin-top: 12px; color: var(--on-dark-2); font-size: 0.85rem; }
 
 .graph-explain { margin-top: clamp(48px, 6vw, 80px); }
-.graph-explain [data-dim="adjacent_sciences"] { --c: var(--dim-adjacent_sciences); }
 .graph-explain__title { margin-bottom: 14px; font-family: var(--font-display); font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); font-weight: 420; line-height: 1.15; }
 .graph-explain__intro { max-width: 62ch; color: var(--on-dark-2); font-size: 1.05rem; }
 .graph-explain__intro strong { color: var(--on-dark); font-weight: 600; }
