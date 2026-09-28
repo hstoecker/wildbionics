@@ -15,7 +15,7 @@ image_alt: "Schematic of a tokay gecko on a wall with zooms into its toe pad, th
 hero_figure: svg/gecko.svg
 hero_caption: "<span class=\"caption__label\">Fig. 1</span> A tokay gecko clinging to a wall. Its toe pads are covered with plates (lamellae) that carry hair-like setae; each seta splits into hundreds of spatulae only 0.2–0.5 µm wide, which lie flat on the wall – close enough for van der Waals forces to act."
 educational_level: "Intermediate"
-keywords: ["gecko", "tokay gecko", "Gekko gecko", "gecko adhesion", "van der Waals force", "setae", "spatulae", "dry adhesive", "contact splitting", "gecko-inspired adhesive", "Stickybot", "bionics"]
+keywords: ["gecko", "tokay gecko", "Gekko gecko", "gecko adhesion", "van der Waals force", "setae", "spatulae", "dry adhesive", "contact splitting", "peel angle", "Kendall peeling model", "gecko-inspired adhesive", "Stickybot", "bionics"]
 about:
   - { name: "Geckos (Gekkota)", wikidata: Q1008888, wikipedia: "https://en.wikipedia.org/wiki/Gekkota" }
   - { name: "Van der Waals force", wikidata: Q189627, wikipedia: "https://en.wikipedia.org/wiki/Van_der_Waals_force" }
@@ -26,9 +26,9 @@ dimensions:
   time: ["modern-era"]
   space: ["microcosm", "lab", "outer-space"]
   physics: ["mechanics", "electromagnetism"]
-  adjacent_sciences: ["biology", "mathematics", "materials-science", "robotics", "physical-ai", "bionics"]
+  adjacent_sciences: ["biology", "mathematics", "computer-science", "materials-science", "robotics", "physical-ai", "bionics"]
 beings: ["tokay-gecko"]
-lenses: ["biology", "physics", "math", "physical-ai"]
+lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "A gecko's toes carry millions of hair-like **setae**, each 30–130 µm long, that branch into hundreds of **spatulae** 0.2–0.5 µm wide [1](#ref-1){:.cite}."
   - "The spatulae stick mainly by **van der Waals forces**: gecko toes hold equally well on water-repellent and water-attracting surfaces [2](#ref-2){:.cite}. Humidity adds to the force at the level of a single spatula [4](#ref-4){:.cite}."
@@ -134,12 +134,40 @@ sources:
     volume: 2
     pages: "eaan4545"
     doi: "10.1126/scirobotics.aan4545"
+  - authors: ["Kendall, K."]
+    year: 1975
+    title: "Thin-film peeling-the elastic term"
+    journal: "Journal of Physics D: Applied Physics"
+    volume: 8
+    pages: "1449–1452"
+    doi: "10.1088/0022-3727/8/13/005"
+  - authors: ["Huber, G.", "Gorb, S. N.", "Spolenak, R.", "Arzt, E."]
+    year: 2005
+    title: "Resolving the nanoscale adhesion of individual gecko spatulae by atomic force microscopy"
+    journal: "Biology Letters"
+    volume: 1
+    pages: "2–4"
+    doi: "10.1098/rsbl.2004.0254"
+  - authors: ["Russell, A. P."]
+    year: 2002
+    title: "Integrative functional morphology of the gekkotan adhesive system (Reptilia: Gekkota)"
+    journal: "Integrative and Comparative Biology"
+    volume: 42
+    pages: "1154–1163"
+    doi: "10.1093/icb/42.6.1154"
+  - authors: ["Peattie, A. M.", "Majidi, C.", "Corder, A.", "Full, R. J."]
+    year: 2007
+    title: "Ancestrally high elastic modulus of gecko setal β-keratin"
+    journal: "Journal of the Royal Society Interface"
+    volume: 4
+    pages: "1071–1076"
+    doi: "10.1098/rsif.2007.0226"
 status: published
 ---
 
 ## Running up glass without glue
 
-A gecko can race up a pane of glass and hang from the ceiling by one foot. It needs no glue, no suction cups and no claws for this. The secret lies on the underside of its toes: broad pads covered with thin plates, the **lamellae**. Under a microscope, each lamella turns out to be a dense forest of hair-like **setae**, each 30–130 µm long and only a tenth as thick as a human hair. Every seta branches into hundreds of flat tips, the **spatulae**, just 0.2–0.5 µm wide [1](#ref-1){:.cite}. A tokay gecko carries about a billion of them [4](#ref-4){:.cite}.
+A gecko can race up a pane of glass and hang from the ceiling by one foot. It needs no glue, no suction cups and no claws for this. The secret lies on the underside of its toes: broad pads covered with thin plates, the **lamellae** [14](#ref-14){:.cite}. Under a microscope, each lamella turns out to be a dense forest of hair-like **setae**, each 30–130 µm long and only a tenth as thick as a human hair. Every seta branches into hundreds of flat tips, the **spatulae**, just 0.2–0.5 µm wide [1](#ref-1){:.cite}. A tokay gecko carries about a billion of them [4](#ref-4){:.cite}.
 
 How these structures stick was debated for more than a century. Suction, glue-like secretions, interlocking with tiny bumps and water films were all proposed. In 2002, Kellar Autumn and colleagues tested the question directly: the toes of live tokay geckos stuck equally well to strongly water-repellent and strongly water-attracting surfaces, and so did a single isolated seta. This pointed to **van der Waals forces** – weak attractions between all molecules, independent of the surface chemistry [2](#ref-2){:.cite}. Later measurements on single spatulae showed that humidity adds a significant contribution at the nanoscale [4](#ref-4){:.cite}. Today, van der Waals forces are regarded as the main mechanism, with water films adding to it.
 
@@ -150,7 +178,7 @@ How these structures stick was debated for more than a century. Suction, glue-li
 3. **Hold.** Billions of spatulae lie flat on the surface. Each one holds only a tiny force, but together they carry the animal – even from a single toe [6](#ref-6){:.cite}.
 4. **Release.** The gecko rolls its toes up and back. When the setal shaft reaches an angle of about 30° to the wall, the setae let go; a foot comes free in about **15 ms** [3](#ref-3){:.cite} [7](#ref-7){:.cite}.
 
-{% include lens-tabs.html lenses="biology,physics,math,physical-ai" %}
+{% include lens-tabs.html lenses="biology,physics,math,cs,physical-ai" %}
 
 {% include lens-start.html lens="biology" %}
 
@@ -210,6 +238,106 @@ Here *W* is the work of adhesion, the energy needed to separate a unit area of c
 Split a contact into 100 tips and it holds 10 times more; into 10,000 tips, 100 times more; into a million tips, 1,000 times more. This is the principle of **contact splitting**. Arzt, Gorb and Spolenak compared attachment hairs across flies, beetles, spiders and geckos and found a strong trend: the heavier the animal, the finer its contact elements. Flies and beetles get by with micrometre-sized tips, while geckos need tips below a micrometre [5](#ref-5){:.cite}. Autumn and colleagues had come to the same conclusion: theory predicts greater adhesion simply from subdividing setae [2](#ref-2){:.cite}.
 
 The √*n* rule is a simplified model: it assumes identical, independent tips that all touch at once. Real setae share the load unevenly, and the model breaks down when tips get so small and dense that they stick to each other. Still, it explains the main trend – and it is a design rule engineers use.
+
+{% include lens-end.html %}
+
+{% include lens-start.html lens="cs" %}
+
+## Computer science lens: an adhesive switched by an angle
+
+How can the same foot hold on firmly and let go in 15 ms? Yu Tian and colleagues explained it with a **tape model**: each spatula behaves like a tiny strip of adhesive tape, and the angle at which it is pulled decides how much force it takes to peel it off [7](#ref-7){:.cite}. For an elastic tape of width *b*, thickness *h* and Young's modulus *E*, pulled at an angle *θ* to the wall, Kendall's peeling equation relates the peel force *F* to the work of adhesion *W* [12](#ref-12){:.cite}:
+
+<div class="formula" role="math" aria-label="F over b squared, divided by 2 E h, plus F over b times 1 minus cosine theta, equals W"><span class="frac"><span class="frac__num">(<var>F</var>/<var>b</var>)<sup>2</sup></span><span class="frac__den">2 <var>E</var> <var>h</var></span></span> + <span class="frac"><span class="frac__num"><var>F</var></span><span class="frac__den"><var>b</var></span></span> (1 − cos <var>θ</var>) = <var>W</var></div>
+
+The second term is the work done when the peeled strip is pulled away from the wall; the first is the energy stored by stretching it. The program below solves this equation for *F* at every angle. It takes *W* from the physics lens – integrating the van der Waals pressure from contact outwards gives *W* = *A* / (12π*D*<sup>2</sup>) – a spatula about 200 nm across [13](#ref-13){:.cite} and the stiffness measured for the setal keratin of tokay geckos, 1.6 GPa [15](#ref-15){:.cite}. The thickness of the spatula pad has not been measured precisely, so the program uses an **assumed model value** of 10 nm. The question: how much stronger is the grip at a flat angle than at a steep one – and what limits it?
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import brentq
+
+# Work of adhesion from the physics lens: integrating P = A/(6πD³) from contact to infinity
+A_HAMAKER = 1e-19     # Hamaker constant (J), typical for solids
+D_CONTACT = 0.3e-9    # distance of surfaces in contact (m), about one atom
+W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # energy to separate 1 m² of contact (J/m²)
+
+# The spatula as a thin elastic tape
+WIDTH = 200e-9        # spatula width (m), about 200 nm
+THICKNESS = 10e-9     # thickness of the spatula pad (m), assumed
+MODULUS = 1.6e9       # Young's modulus of setal keratin (Pa), measured in tokay geckos
+
+
+def peel_force(angle_deg):
+    """Force (N) that peels the tape off at a given angle to the wall.
+
+    Kendall's equation (F/b)²/(2Eh) + (F/b)(1 − cos θ) = W, solved for F.
+    Written so that no two nearly equal numbers are subtracted – that would
+    throw away digits (1 − cos θ for small θ, −a + √(a² + ε) for large θ).
+    """
+    one_minus_cos = 2 * np.sin(np.radians(angle_deg) / 2) ** 2
+    stretch = 2 * W / (MODULUS * THICKNESS)    # how much the tape can stretch
+    return WIDTH * 2 * W / (one_minus_cos + np.sqrt(one_minus_cos**2 + stretch))
+
+
+def rigid_tape_force(angle_deg):
+    """The same without stretching (E → ∞): F = bW / (1 − cos θ)."""
+    return WIDTH * W / (2 * np.sin(np.radians(angle_deg) / 2) ** 2)
+
+
+print(f"work of adhesion W = {W * 1e3:.0f} mJ/m²")
+print("angle   peel force   rigid tape")
+for angle in [0, 10, 30, 60, 90]:
+    rigid = f"{rigid_tape_force(angle) * 1e9:7.1f} nN" if angle else "   infinite"
+    print(f"{angle:4d}°   {peel_force(angle) * 1e9:6.1f} nN   {rigid}")
+
+# The switch: how far must the foot tilt to lose 90 % of the grip?
+f_max = peel_force(0)
+release = brentq(lambda a: peel_force(a) - 0.1 * f_max, 0, 90)
+print(f"switch ratio F(10°) / F(90°) = {peel_force(10) / peel_force(90):.0f}")
+print(f"grip falls to 10 % of its maximum at {release:.0f}°")
+print("measured for one spatula: about 10 nN (Huber et al. 2005)")
+
+angles = np.linspace(0, 90, 361)
+plt.rcParams["font.size"] = 13      # large type: the chart stays readable on a phone
+fig, ax = plt.subplots(figsize=(6.4, 5.2), layout="constrained")
+ax.semilogy(angles, peel_force(angles) * 1e9, lw=2.5, label="elastic tape (Kendall)")
+ax.semilogy(angles[8:], rigid_tape_force(angles[8:]) * 1e9, "--", lw=1.8, label="rigid tape (no stretching)")
+ax.plot([90], [10], "ko", ms=7, label="measured: about 10 nN")
+ax.axvline(release, color="gray", lw=1, ls=":")
+ax.text(release + 1.5, 300, f"10 % grip\nleft at {release:.0f}°", color="dimgray")
+ax.set_xlabel("peel angle θ (degrees)")
+ax.set_ylabel("force to peel one spatula (nN)")
+ax.set_title("Flat angle holds, steep angle lets go")
+ax.set_xlim(0, 93)
+ax.set_ylim(2, 1000)
+ax.yaxis.set_major_formatter("{x:g}")   # plain numbers: 10, 100, 1000
+ax.legend(loc="lower left")
+plt.show()
+```
+{% include code-result.html file="peel_angle.py" label="Fig. 3" caption="Output of the program above: the force needed to peel one spatula, modelled as an elastic tape, over the peel angle (logarithmic axis). Solid: Kendall's equation with stretching. Dashed: a rigid tape, which would need an infinite force at 0°. Dot: the adhesion force measured for single spatulae, about 10 nN. The thickness of the spatula is an assumed model value." alt="Line chart of the peel force of one spatula in nanonewtons over the peel angle from 0 to 90 degrees, with a logarithmic force axis. The solid curve for an elastic tape starts at about 194 nanonewtons at 0 degrees and falls to 42 at 30 degrees and 5.9 at 90 degrees. A dashed curve for a rigid tape rises steeply towards small angles and merges with the solid curve above about 30 degrees. A dotted vertical line at 46 degrees marks where the grip has fallen to 10 percent. A black dot at 90 degrees marks the measured value of about 10 nanonewtons." %}
+
+What the result teaches:
+
+- **The angle is a switch.** Pulled almost along the wall, one spatula holds about **194 nN**; pulled at right angles, only **5.9 nN**. Between 10° and 90° the force drops by a factor of 26, and by 46° only a tenth of the grip is left. The tape model alone explains part of the gecko's trick. Including friction from the part of the spatula still in contact and the lever action of the setal shaft, Tian and colleagues calculated that the adhesion and friction forces of geckos can change by three orders of magnitude [7](#ref-7){:.cite}.
+- **Stretching sets the upper limit.** A rigid tape would need an infinite force at 0° – physically impossible. Because the real spatula stretches, the force at flat angles is capped at *b*√(2*EhW*). This value depends on the assumed thickness and is only an estimate. At steep angles the stretching hardly matters: there the force is almost exactly *bW* and depends only on the van der Waals adhesion and the width.
+- **The order of magnitude fits.** At 90° the model gives about 6 nN; atomic force microscope measurements on single spatulae found about 10 nN [13](#ref-13){:.cite}. The model ignores the real shape of the spatula and the contribution of humidity [4](#ref-4){:.cite}, so agreement within a factor of two is as good as can be expected.
+- The peel angle of a spatula is not the angle of the setal shaft: the setae let go at a shaft angle of about 30° [3](#ref-3){:.cite}, and the shaft acts as a lever that turns the spatulae to a steep peel angle [7](#ref-7){:.cite}.
+
+A few programming ideas are worth noticing, too:
+
+- **Numerical stability.** Subtracting two almost equal numbers throws away significant digits. The code avoids it twice: it computes 1 − cos *θ* as 2 sin<sup>2</sup>(*θ*/2), and it writes the solution of the quadratic equation in a form without a difference. Both rewrites are exact in mathematics but lose fewer digits in floating point – a habit that matters most with the 32-bit numbers of small robot controllers.
+- **Root finding.** `brentq` finds the angle at which the force falls to 10 % – the kind of question a controller of a climbing robot asks: how far must a foot tilt before it lets go?
+- **Validation.** At 90° the elastic and the rigid tape must agree, and the result must be of the same order as the measurement. Both checks pass.
+
+Try it yourself – each change takes one line:
+
+- Set `THICKNESS = 40e-9`: a four times thicker pad doubles the maximum grip to 388.5 nN, while the force at 90° stays at 5.9 nN – the switch gets stronger (ratio 41), and the grip falls to 10 % already at 32°.
+- Set `WIDTH = 500e-9`, the upper end of the measured spatula width [1](#ref-1){:.cite}: every force grows by a factor of 2.5 (14.7 nN at 90°), but the switch ratio stays at 26 – the switch is a matter of the angle, not of size.
+- Set `D_CONTACT = 0.4e-9`: with a gap only 0.1 nm larger, the work of adhesion drops from 29 to 17 mJ/m², and the force at 90° to 3.3 nN – the steep distance law of the physics lens at work.
+
+{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="388.5 5.9 41 32" %}
+{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 26 46" %}
+{% include code-variant.html file="peel_angle.py" id="gap" replace="D_CONTACT = 0.3e-9" with="D_CONTACT = 0.4e-9" expect="17 3.3" %}
 
 {% include lens-end.html %}
 

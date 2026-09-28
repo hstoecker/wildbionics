@@ -33,7 +33,7 @@ beings: ["pistol-shrimp"]
 lenses: ["biology", "physics", "math", "cs"]
 key_facts:
   - "Der laute Knall eines Knallkrebses entsteht nicht, wenn die Scherenhälften aufeinanderschlagen, sondern durch eine **kollabierende Kavitationsblase** [1](#ref-1){:.cite}."
-  - "Beim Zuschnappen schießt die Schere einen **Wasserstrahl mit rund 25 m/s** ab. Bei dieser Geschwindigkeit sinkt der Druck im Strahl unter den Dampfdruck des Wassers, und eine Dampfblase entsteht [1](#ref-1){:.cite} [3](#ref-3){:.cite}."
+  - "Beim Zuschnappen schießt die Schere einen **Wasserstrahl mit rund 25 m/s** ab – geschätzt aus Hochgeschwindigkeitsaufnahmen der zuschnappenden Schere [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Bei dieser Geschwindigkeit sinkt der Druck im Strahl unter den Dampfdruck des Wassers, und eine Dampfblase entsteht [1](#ref-1){:.cite}."
   - "Die Blase kollabiert in **weniger als einer Millisekunde**. Dabei sendet sie eine Stoßwelle aus, die Beutetiere betäuben kann – und einen kurzen Lichtblitz, die sogenannte *Shrimpolumineszenz* [2](#ref-2){:.cite}."
   - "Im Inneren der kollabierenden Blase herrschen **mindestens 5.000 K** [2](#ref-2){:.cite}."
   - "Ingenieure haben eine funktionsfähige Nachbildung der Schere im 3D-Drucker hergestellt, die Lichtblitz und Stoßwelle reproduziert [3](#ref-3){:.cite}."
@@ -102,6 +102,14 @@ sources:
     volume: 103
     pages: "41–47"
     doi: "10.1121/1.423234"
+  - authors: ["Koukouvinis, P.", "Bruecker, C.", "Gavaises, M."]
+    year: 2017
+    title: "Unveiling the physical mechanism behind pistol shrimp cavitation"
+    journal: "Scientific Reports"
+    volume: 7
+    pages: "13994"
+    doi: "10.1038/s41598-017-14312-0"
+    open_access: true
 status: published
 ---
 
@@ -142,14 +150,14 @@ Die **Bernoulli-Gleichung** besagt: Entlang einer Stromlinie bleibt die Summe au
 
 <div class="formula" role="math" aria-label="p gleich p null minus ein halb rho v Quadrat"><var>p</var> = <var>p</var><sub>0</sub> − <span class="frac"><span class="frac__num">1</span><span class="frac__den">2</span></span> <var>ρ</var> <var>v</var><sup>2</sup></div>
 
-Mit *p*<sub>0</sub> = 101 kPa (Atmosphärendruck) und *ρ* = 998 kg/m³ für Wasser beträgt der dynamische Druck bei 25 m/s ½ · 998 · 25² ≈ 312 kPa – das Dreifache des Atmosphärendrucks. Schon lange vorher, bei etwa **14 m/s**, erreicht der statische Druck den Dampfdruck von Wasser (2,3 kPa bei 20 °C). Das Wasser kann nicht mehr flüssig bleiben: Es kavitiert.
+Versluis und Kollegen schätzten die Geschwindigkeit des Strahls aus Hochgeschwindigkeitsaufnahmen der sich schließenden Schere: etwa 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Mit *p*<sub>0</sub> = 101 kPa (Atmosphärendruck) und *ρ* = 998 kg/m³ für Wasser beträgt der dynamische Druck bei 25 m/s ½ · 998 · 25² ≈ 312 kPa – das Dreifache des Atmosphärendrucks. Schon lange vorher, bei etwa **14 m/s**, erreicht der statische Druck den Dampfdruck von Wasser (2,3 kPa bei 20 °C). Das Wasser kann nicht mehr flüssig bleiben: Es kavitiert. Simulationen zeigen, dass es im Detail komplizierter ist: Der Unterdruck entsteht im Kern eines Wirbelrings, der sich um den Strahl aufrollt – der Hohlraum ist eher ringförmig als kugelförmig [8](#ref-8){:.cite}.
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}
 <figcaption class="caption"><span class="caption__label">Abb. 2</span> Statischer Druck in einem Wasserstrahl nach Bernoulli. Oberhalb von etwa 14 m/s fällt er unter den Dampfdruck des Wassers. Der Strahl des Krebses liegt mit rund 25 m/s tief im Kavitationsbereich.</figcaption>
 </figure>
 
-Ingenieure fassen das in der **Kavitationszahl** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²) zusammen. Je kleiner σ, desto wahrscheinlicher ist Kavitation. Für einen Strahl mit 25 m/s ist σ ≈ 0,3. Die mechanische Nachbildung der Schere von Tang und Staack erzeugte Strahlen mit σ = 0,14 bis 0,30 – vergleichbar mit dem echten Krebs [3](#ref-3){:.cite}.
+Ingenieure fassen das in der **Kavitationszahl** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²) zusammen. Je kleiner σ, desto wahrscheinlicher ist Kavitation. Für einen Strahl mit 25 m/s ist σ ≈ 0,3. Die mechanische Nachbildung der Schere von Tang und Staack erzeugte Strahlen mit etwa 26 bis 37 m/s und σ = 0,14 bis 0,30 – vergleichbar mit dem echten Krebs [3](#ref-3){:.cite}.
 
 Dann folgt der dramatische Teil. Ist der Strahl vorbei, wirkt der volle Umgebungsdruck auf die Blase, und sie fällt immer schneller in sich zusammen. Das bisschen Gas darin wird so heftig komprimiert, dass es sich auf **mindestens 5.000 K** erhitzt und für einen Augenblick leuchtet – *Shrimpolumineszenz*, nach Kenntnis der Autoren die erste Beobachtung dieser Art der Lichterzeugung bei einem Tier [2](#ref-2){:.cite}. Im selben Moment rast eine Stoßwelle mit Schallgeschwindigkeit durch das Wasser, rund 1.500 m/s [3](#ref-3){:.cite}.
 
