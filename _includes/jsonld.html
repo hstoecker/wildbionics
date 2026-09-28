@@ -7,6 +7,8 @@
   ImageObject (#primaryimage) with licence and credit, referenced by the page and the article.
   Every chart of a code example on an article is an ImageObject (#chart-<name>) with the same
   licence fields, linked from the article as associatedMedia (data: _data/code_examples.yml).
+  An article lists its ontology terms as DefinedTerms (keywords) and its lenses as
+  educationalAlignment, with the stable IRIs of /graph.jsonld.
   A CollectionPage lists its articles as an ItemList. Rules: wildbionics-design skill.
 {%- endcomment -%}
 {%- assign site_url = site.url | append: "/" -%}
@@ -130,7 +132,12 @@
       "learningResourceType": "Article",
       "educationalLevel": {{ page.educational_level | default: "Beginner" | jsonify }},
       "wordCount": {{ content | strip_html | number_of_words }},
-      "keywords": {{ page.keywords | join: ", " | jsonify }},
+      {%- comment -%} Free keywords plus the article's ontology terms as DefinedTerms with the stable IRIs of /graph.jsonld {%- endcomment -%}
+      {%- assign g = site.url | append: "/graph/#" %}
+      "keywords": [{% for k in page.keywords %}{{ k | jsonify }}, {% endfor %}{% assign first = true %}{% for d in page.dimensions %}{% for s in d[1] %}{% assign term = site.data.taxonomy[s] %}{% unless first %}, {% endunless %}{ "@type": "DefinedTerm", "@id": "{{ g }}term-{{ s }}", "name": {{ term[lang] | jsonify }}, "inDefinedTermSet": "{{ g }}dim-{{ term.dim }}" }{% assign first = false %}{% endfor %}{% endfor %}],
+      {%- if page.lenses %}
+      "educationalAlignment": [{% for l in page.lenses %}{% assign target = site.data.lenses[l] | split: ":" %}{% assign lens_i18n = t.lens[l] %}{ "@type": "AlignmentObject", "alignmentType": "educationalSubject", "targetName": {{ lens_i18n.tab | jsonify }}, "targetUrl": "{{ g }}{% if target[0] == 'dim' %}dim-{% else %}term-{% endif %}{{ target[1] }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      {%- endif %}
       {%- if page.about %}
       "about": [{% for a in page.about %}{ "@type": "Thing", "name": {{ a.name | jsonify }}, "sameAs": ["https://www.wikidata.org/wiki/{{ a.wikidata }}"{% if a.wikipedia %}, {{ a.wikipedia | jsonify }}{% endif %}] }{% unless forloop.last %}, {% endunless %}{% endfor %}],
       {%- endif %}
@@ -198,7 +205,10 @@
       "creator": { "@id": "{{ site_url }}#organization" },
       "isPartOf": { "@id": "{{ site_url }}#website" },
       "keywords": ["knowledge graph", "bionics", "biology", "physics", "Physical AI", "ontology"],
-      "distribution": { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ '/graph.json' | absolute_url | jsonify }} }
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/ld+json", "contentUrl": {{ '/graph.jsonld' | absolute_url | jsonify }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ '/graph.json' | absolute_url | jsonify }} }
+      ]
     }
     {%- endif %}
     {%- if page.faq %},

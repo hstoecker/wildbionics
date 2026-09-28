@@ -96,7 +96,11 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   JSON-LD (`abstract`) or `llms.txt` (citation links, `**`, `{:.cite}` removed; `refs="keep"`
   keeps "[3]" where a source list follows). The gate fails on `**`, `{:` or `](#` in either.
 - **Collection and data pages:** a `CollectionPage` has `mainEntity` → `ItemList` of its articles;
-  a page with `dataset: true` has `mainEntity` → its own `#dataset` node (one per language).
+  a page with `dataset: true` has `mainEntity` → its own `#dataset` node (one per language) with
+  two distributions, `/graph.jsonld` (application/ld+json) and `/graph.json`.
+- **Articles link into the graph:** `keywords` = the free keywords plus every ontology term as a
+  `DefinedTerm` with the stable IRI `<site>/graph/#term-<slug>` and `inDefinedTermSet`; lenses are
+  `educationalAlignment` (educationalSubject → the lens's discipline IRI). See `wildbionics-graph`.
 - **Dates:** only real dates – `updated | default: date`; pages without a date get no `lastmod`.
 - **`noindex` pages** (404) carry no canonical and no hreflang. Titles never repeat the brand:
   the layout skips " · WildBionics" when the title already contains it. Descriptions 50–160

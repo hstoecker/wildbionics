@@ -331,6 +331,49 @@ else:
     except (json.JSONDecodeError, KeyError) as e:
         errors.append(f"graph.json invalid: {e}")
 
+# graph.jsonld: the same graph as linked data – valid, resolving, and in step with graph.json
+ld_file = root / "graph.jsonld"
+if not ld_file.exists():
+    errors.append("graph.jsonld missing")
+else:
+    try:
+        ld = {n["@id"]: n for n in json.loads(ld_file.read_text(encoding="utf-8"))["@graph"]}
+        G = SITE_URL + "/graph/#"
+        def ref_ids(v):
+            return {x["@id"] for x in (v if isinstance(v, list) else [v]) if isinstance(x, dict) and "@id" in x}
+        for i, n in ld.items():
+            for k, v in n.items():
+                for r in ref_ids(v) if k != "@id" else ():
+                    if r.startswith(G) and r not in ld:
+                        errors.append(f"graph.jsonld: {i} → {r} points to no node")
+            if "DefinedTerm" == n.get("@type") and not str(n.get("inDefinedTermSet", {}).get("@id", "")).startswith(G + "dim-"):
+                errors.append(f"graph.jsonld: {i} has no inDefinedTermSet")
+            same = n.get("sameAs")
+            if same and not re.fullmatch(r"https://www\.wikidata\.org/wiki/Q\d+", same):
+                errors.append(f"graph.jsonld: {i} sameAs is not a Wikidata item URL: {same}")
+        if graph_file.exists():
+            graph = json.loads(graph_file.read_text(encoding="utf-8"))
+            prefix = {"term": "term-", "being": "being-", "dimension": "dim-"}
+            for n in graph["nodes"]:
+                kind, slug = n["id"].split(":", 1)
+                if kind in prefix and G + prefix[kind] + slug not in ld:
+                    errors.append(f"graph.jsonld: {n['id']} from graph.json is missing")
+            for n in (x for x in graph["nodes"] if x["type"] == "article"):
+                edges = [e for e in graph["edges"] if e["source"] == n["id"]]
+                terms = {G + "term-" + e["target"].split(":", 1)[1] for e in edges if e["type"] not in ("about", "lens")}
+                beings = {G + "being-" + e["target"].split(":", 1)[1] for e in edges if e["type"] == "about"}
+                for url in n["url"].values():
+                    art = ld.get(url + "#article")
+                    if art is None:
+                        errors.append(f"graph.jsonld: no Article {url}#article")
+                        continue
+                    if ref_ids(art.get("keywords", [])) != terms:
+                        errors.append(f"graph.jsonld: {url} keywords differ from graph.json's term edges")
+                    if ref_ids(art.get("about", [])) != beings:
+                        errors.append(f"graph.jsonld: {url} about differs from graph.json's organism edges")
+    except (json.JSONDecodeError, KeyError, ValueError) as e:
+        errors.append(f"graph.jsonld invalid: {e}")
+
 # robots.txt, llms.txt, IndexNow key
 for name in ("robots.txt", "llms.txt"):
     if not (root / name).exists():

@@ -1,0 +1,84 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  The knowledge graph as linked data (schema.org JSON-LD), built from the same sources as
+  graph.json: _data/taxonomy.yml, _data/beings.yml, _data/lenses.yml and article front matter.
+  Stable IRIs, independent of language:
+    <site>/graph/#dim-<dimension>   DefinedTermSet (time, space, physics = "Rules", adjacent_sciences)
+    <site>/graph/#term-<slug>       DefinedTerm (sameAs Wikidata where the item matches exactly)
+    <site>/graph/#being-<slug>      Taxon (sameAs Wikidata)
+    <article url>#article           Article – the same @id as in the article page's own JSON-LD
+  Article → term edges are `keywords` (DefinedTerm), → organisms `about`, lenses
+  `educationalAlignment` (educationalSubject → the lens's discipline). Rules: wildbionics-graph skill.
+{%- endcomment -%}
+{%- assign g = site.url | append: "/graph/#" -%}
+{%- assign dims = "time,space,physics,adjacent_sciences" | split: "," -%}
+{%- assign published = site.articles | where: "status", "published" -%}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "@id": "{{ g }}dataset",
+      "name": {{ site.data.i18n.en.graph.title | jsonify }},
+      "url": {{ site.data.i18n.en.graph.url | absolute_url | jsonify }},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "creator": { "@id": "{{ site.url }}/#organization" },
+      "dateModified": "{{ site.time | date_to_xmlschema }}",
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/ld+json", "contentUrl": {{ '/graph.jsonld' | absolute_url | jsonify }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ '/graph.json' | absolute_url | jsonify }} }
+      ],
+      "hasPart": [{% for d in dims %}{ "@id": "{{ g }}dim-{{ d }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    },
+    {%- for d in dims %}
+    {
+      "@type": "DefinedTermSet",
+      "@id": "{{ g }}dim-{{ d }}",
+      "name": [{% for l in site.languages %}{ "@language": "{{ l }}", "@value": {{ site.data.i18n[l].article.dimension_names[d] | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "isPartOf": { "@id": "{{ g }}dataset" },
+      "hasDefinedTerm": [{% assign first = true %}{% for term in site.data.taxonomy %}{% if term[1].dim == d %}{% unless first %}, {% endunless %}{ "@id": "{{ g }}term-{{ term[0] }}" }{% assign first = false %}{% endif %}{% endfor %}]
+    },
+    {%- endfor %}
+    {%- for term in site.data.taxonomy %}
+    {%- assign t = term[1] %}
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ g }}term-{{ term[0] }}",
+      "termCode": {{ term[0] | jsonify }},
+      "name": [{% for l in site.languages %}{ "@language": "{{ l }}", "@value": {{ t[l] | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "inDefinedTermSet": { "@id": "{{ g }}dim-{{ t.dim }}" }{% if t.order %},
+      "position": {{ t.order }}{% endif %}{% if t.wikidata %},
+      "sameAs": "https://www.wikidata.org/wiki/{{ t.wikidata }}"{% endif %}
+    },
+    {%- endfor %}
+    {%- for b in site.data.beings %}
+    {
+      "@type": "Taxon",
+      "@id": "{{ g }}being-{{ b[0] }}",
+      "name": [{% for l in site.languages %}{ "@language": "{{ l }}", "@value": {{ b[1][l] | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "alternateName": {{ b[1].taxon | jsonify }},
+      "sameAs": "https://www.wikidata.org/wiki/{{ b[1].wikidata }}"
+    },
+    {%- endfor %}
+    {%- for a in published %}
+    {%- assign tr = published | where: "ref", a.ref %}
+    {
+      "@type": "Article",
+      "@id": "{{ a.url | absolute_url }}#article",
+      "url": {{ a.url | absolute_url | jsonify }},
+      "headline": {{ a.title | jsonify }},
+      "inLanguage": {{ a.lang | jsonify }},
+      {%- for v in tr %}{% if v.lang != a.lang %}
+      "{% if a.lang == site.lang %}workTranslation{% else %}translationOfWork{% endif %}": { "@id": "{{ v.url | absolute_url }}#article" },
+      {%- endif %}{% endfor %}
+      "isPartOf": { "@id": "{{ g }}dataset" },
+      "about": [{% for b in a.beings %}{ "@id": "{{ g }}being-{{ b }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "keywords": [{% assign first = true %}{% for d in dims %}{% for s in a.dimensions[d] %}{% unless first %}, {% endunless %}{ "@id": "{{ g }}term-{{ s }}" }{% assign first = false %}{% endfor %}{% endfor %}],
+      "educationalAlignment": [{% for l in a.lenses %}{% assign target = site.data.lenses[l] | split: ":" %}{% assign lens_i18n = site.data.i18n[a.lang].lens[l] %}{ "@type": "AlignmentObject", "alignmentType": "educationalSubject", "targetName": {{ lens_i18n.tab | jsonify }}, "targetUrl": "{{ g }}{% if target[0] == 'dim' %}dim-{% else %}term-{% endif %}{{ target[1] }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

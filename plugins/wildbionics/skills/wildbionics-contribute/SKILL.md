@@ -32,7 +32,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 - `_data/taxonomy.yml`, `_data/beings.yml`, `_data/lenses.yml` – ontology and graph data
 - `_includes/` – page parts; `_includes/svg/` – figures; `_layouts/` – page layouts
 - `assets/css/main.css`, `assets/js/` – design system and the only scripts (no dependencies)
-- `graph.json`, `sitemap.xml`, `robots.txt`, `llms.txt` – generated machine-readable files
+- `graph.json`, `graph.jsonld`, `sitemap.xml`, `robots.txt`, `llms.txt` – generated machine-readable files
 - `examples/` – generated downloads, Colab notebooks and charts of the code examples, plus
   `examples/requirements.txt`; `_data/code_examples.yml` – their tested output (both written by
   `.github/scripts/code_examples.py`, see `wildbionics-article`)

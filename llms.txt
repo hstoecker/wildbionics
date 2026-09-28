@@ -39,6 +39,7 @@ Sources:
 ## Data
 
 - [Knowledge graph (JSON)]({{ '/graph.json' | absolute_url }}): all articles, organisms, lenses and ontology terms (time, space, rules of physics, adjacent sciences) with EN/DE labels and links – generated from article front matter at every build, CC BY-SA 4.0
+- [Knowledge graph (JSON-LD)]({{ '/graph.jsonld' | absolute_url }}): the same graph as schema.org linked data – dimensions as DefinedTermSets, ontology terms as DefinedTerms with stable IRIs (<site>/graph/#term-<slug>) and Wikidata sameAs, organisms as Taxa, articles linked by keywords, about and educationalAlignment (lenses)
 - [Knowledge graph (interactive)]({{ site.data.i18n.en.graph.url | absolute_url }})
 
 ## Optional

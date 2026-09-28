@@ -346,6 +346,7 @@ en:
     list_title: "All connections as a list"
     no_article: "no article yet"
     data: "Download the graph as JSON"
+    data_ld: "as JSON-LD (linked data, schema.org)"
     data_note: "Open data (CC BY-SA 4.0), generated from the articles' front matter at every build."
     url: "/graph/"
     explain:
@@ -809,6 +810,7 @@ de:
     list_title: "Alle Verbindungen als Liste"
     no_article: "noch kein Artikel"
     data: "Graph als JSON herunterladen"
+    data_ld: "als JSON-LD (Linked Data, schema.org)"
     data_note: "Offene Daten (CC BY-SA 4.0), bei jedem Build aus dem Front Matter der Artikel erzeugt."
     url: "/de/wissensgraph/"
     explain:
