@@ -1,0 +1,108 @@
+{%- include i18n.html -%}
+{%- assign f = t.figures.falling_cat -%}
+<svg class="fallcat-svg" viewBox="0 0 720 500" role="img" aria-labelledby="fallcat-title" aria-describedby="fallcat-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fallcat-title">{{ f.title }}</title>
+  <desc id="fallcat-desc">{{ f.desc }}</desc>
+  <defs>
+    <pattern id="fallcat-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="fallcat-fade" cx="50%" cy="50%" r="62%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="fallcat-mask"><rect width="720" height="500" fill="url(#fallcat-fade)"/></mask>
+  </defs>
+
+  <rect class="grid" width="720" height="500" fill="url(#fallcat-grid)" mask="url(#fallcat-mask)"/>
+
+  <!-- Fall: the cat drops while it turns; snapshots move down and to the right in time -->
+  <path class="fall" d="M200,78 L636,242"/>
+  <path class="fall-head" d="M642,244 l-13,1 l5,-10 Z"/>
+  <text x="40" y="52" class="label label-muted">{{ f.time }}</text>
+  <text x="680" y="52" text-anchor="end" class="math">L = 0</text>
+  <text x="680" y="74" text-anchor="end" class="label label-accent">{{ f.zero }}</text>
+
+  <!-- Ground -->
+  <path class="ground" d="M500,366 H700"/>
+
+  <g class="stage" transform="translate(100 116)">
+      <g transform="scale(1 -1)"><g class="half half--rear">
+        <path class="leg" d="M30,9 L27,35 M42,7 L47,34"/>
+        <path class="tail" d="M52,-3 C68,-8 78,-22 74,-38"/>
+        <ellipse cx="22" cy="0" rx="32" ry="16"/>
+      </g></g>
+      <g transform="scale(1 -1)"><g class="half half--front">
+        <path class="leg" d="M-40,8 L-43,34 M-28,9 L-29,35"/>
+        <ellipse cx="-22" cy="0" rx="30" ry="15"/>
+        <circle cx="-56" cy="-7" r="13"/>
+        <ellipse cx="-68" cy="-3" rx="6.5" ry="5.5"/>
+        <path d="M-63,-16 L-68,-31 L-55,-20 Z M-52,-19 L-47,-32 L-43,-16 Z"/>
+        <circle class="eye" cx="-61" cy="-9" r="1.8"/>
+      </g></g>
+      
+    </g>
+    <g class="stage" transform="translate(270 186)">
+      <g transform="scale(1 -1)"><g class="half half--rear">
+        <path class="leg" d="M30,9 L27,35 M42,7 L47,34"/>
+        <path class="tail" d="M52,-3 C68,-8 78,-22 74,-38"/>
+        <ellipse cx="22" cy="0" rx="32" ry="16"/>
+      </g></g>
+      <g transform="scale(1 1)"><g class="half half--front">
+        <path class="leg" d="M-40,8 L-47,19 M-28,9 L-35,20"/>
+        <ellipse cx="-22" cy="0" rx="30" ry="15"/>
+        <circle cx="-56" cy="-7" r="13"/>
+        <ellipse cx="-68" cy="-3" rx="6.5" ry="5.5"/>
+        <path d="M-63,-16 L-68,-31 L-55,-20 Z M-52,-19 L-47,-32 L-43,-16 Z"/>
+        <circle class="eye" cx="-61" cy="-9" r="1.8"/>
+      </g></g>
+      <ellipse class="roll" cx="-24" cy="0" rx="9" ry="27"/><path class="roll-head" d="M-24,-27 l8,-4 l-3,8 Z"/>
+    </g>
+    <g class="stage" transform="translate(440 256)">
+      <g transform="scale(1 1)"><g class="half half--rear">
+        <path class="leg" d="M30,9 L22,20 M42,7 L36,19"/>
+        <path class="tail" d="M52,-3 C68,-8 78,-22 74,-38"/>
+        <ellipse cx="22" cy="0" rx="32" ry="16"/>
+      </g></g>
+      <g transform="scale(1 1)"><g class="half half--front">
+        <path class="leg" d="M-40,8 L-43,34 M-28,9 L-29,35"/>
+        <ellipse cx="-22" cy="0" rx="30" ry="15"/>
+        <circle cx="-56" cy="-7" r="13"/>
+        <ellipse cx="-68" cy="-3" rx="6.5" ry="5.5"/>
+        <path d="M-63,-16 L-68,-31 L-55,-20 Z M-52,-19 L-47,-32 L-43,-16 Z"/>
+        <circle class="eye" cx="-61" cy="-9" r="1.8"/>
+      </g></g>
+      <ellipse class="roll" cx="24" cy="0" rx="9" ry="28"/><path class="roll-head" d="M24,-28 l8,-4 l-3,8 Z"/>
+    </g>
+    <g class="stage" transform="translate(610 318)">
+      <g transform="scale(1 1)"><g class="half half--rear">
+        <path class="leg" d="M30,9 L27,35 M42,7 L47,34"/>
+        <path class="tail" d="M52,-3 C68,-8 78,-22 74,-38"/>
+        <ellipse cx="22" cy="0" rx="32" ry="16"/>
+      </g></g>
+      <g transform="scale(1 1)"><g class="half half--front">
+        <path class="leg" d="M-40,8 L-43,34 M-28,9 L-29,35"/>
+        <ellipse cx="-22" cy="0" rx="30" ry="15"/>
+        <circle cx="-56" cy="-7" r="13"/>
+        <ellipse cx="-68" cy="-3" rx="6.5" ry="5.5"/>
+        <path d="M-63,-16 L-68,-31 L-55,-20 Z M-52,-19 L-47,-32 L-43,-16 Z"/>
+        <circle class="eye" cx="-61" cy="-9" r="1.8"/>
+      </g></g>
+      
+    </g>
+
+  <!-- Stage labels -->
+  <g class="marker"><circle cx="100" cy="175.5" r="10"/><text x="100" y="180" text-anchor="middle">1</text></g>
+  <g class="marker"><circle cx="270" cy="245.5" r="10"/><text x="270" y="250" text-anchor="middle">2</text></g>
+  <g class="marker"><circle cx="440" cy="315.5" r="10"/><text x="440" y="320" text-anchor="middle">3</text></g>
+  <g class="marker"><circle cx="610" cy="387.5" r="10"/><text x="610" y="392" text-anchor="middle">4</text></g>
+
+  <!-- Legend: stages and colours -->
+  <text x="40" y="426" class="label">1 {{ f.s1 }} · 2 {{ f.s2 }}</text>
+  <text x="40" y="450" class="label">3 {{ f.s3 }} · 4 {{ f.s4 }}</text>
+  <g class="key">
+    <rect class="key-front" x="40" y="463" width="14" height="10" rx="3"/><text x="60" y="472" class="label">{{ f.front }}</text>
+    <rect class="key-rear" x="260" y="463" width="14" height="10" rx="3"/><text x="280" y="472" class="label">{{ f.rear }}</text>
+  </g>
+  <text x="40" y="494" class="label label-tick">{{ f.note }}</text>
+</svg>
