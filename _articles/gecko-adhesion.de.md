@@ -148,12 +148,19 @@ sources:
     volume: 1
     pages: "2–4"
     doi: "10.1098/rsbl.2004.0254"
+  - authors: ["Russell, A. P."]
+    year: 2002
+    title: "Integrative functional morphology of the gekkotan adhesive system (Reptilia: Gekkota)"
+    journal: "Integrative and Comparative Biology"
+    volume: 42
+    pages: "1154–1163"
+    doi: "10.1093/icb/42.6.1154"
 status: published
 ---
 
 ## Glaswände hoch – ohne Kleber
 
-Ein Gecko kann eine Glasscheibe hinaufrennen und an einem Fuß von der Decke hängen. Kleber, Saugnäpfe oder Krallen braucht er dafür nicht. Das Geheimnis liegt auf der Unterseite seiner Zehen: breite Haftpolster, bedeckt mit dünnen Plättchen, den **Lamellen**. Unter dem Mikroskop entpuppt sich jede Lamelle als dichter Wald haarfeiner **Setae** (Haftborsten), jede 30–130 µm lang und nur ein Zehntel so dick wie ein menschliches Haar. Jede Seta verzweigt sich in Hunderte flache Enden, die **Spatulae**, nur 0,2–0,5 µm breit [1](#ref-1){:.cite}. Ein Tokeh trägt rund eine Milliarde davon [4](#ref-4){:.cite}.
+Ein Gecko kann eine Glasscheibe hinaufrennen und an einem Fuß von der Decke hängen. Kleber, Saugnäpfe oder Krallen braucht er dafür nicht. Das Geheimnis liegt auf der Unterseite seiner Zehen: breite Haftpolster, bedeckt mit dünnen Plättchen, den **Lamellen** [14](#ref-14){:.cite}. Unter dem Mikroskop entpuppt sich jede Lamelle als dichter Wald haarfeiner **Setae** (Haftborsten), jede 30–130 µm lang und nur ein Zehntel so dick wie ein menschliches Haar. Jede Seta verzweigt sich in Hunderte flache Enden, die **Spatulae**, nur 0,2–0,5 µm breit [1](#ref-1){:.cite}. Ein Tokeh trägt rund eine Milliarde davon [4](#ref-4){:.cite}.
 
 Wie diese Strukturen haften, war über ein Jahrhundert lang umstritten. Saugwirkung, klebrige Sekrete, Verhaken an winzigen Unebenheiten und Wasserfilme wurden vorgeschlagen. 2002 prüften Kellar Autumn und Kollegen die Frage direkt: Die Zehen lebender Tokehs hafteten auf stark wasserabweisenden und stark wasseranziehenden Oberflächen gleich gut, ebenso eine einzelne isolierte Seta. Das sprach für **Van-der-Waals-Kräfte** – schwache Anziehungskräfte zwischen allen Molekülen, unabhängig von der Oberflächenchemie [2](#ref-2){:.cite}. Spätere Messungen an einzelnen Spatulae zeigten, dass Luftfeuchtigkeit auf der Nanoskala deutlich beiträgt [4](#ref-4){:.cite}. Heute gelten Van-der-Waals-Kräfte als Hauptmechanismus, Wasserfilme verstärken ihn.
 

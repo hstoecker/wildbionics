@@ -148,12 +148,19 @@ sources:
     volume: 1
     pages: "2–4"
     doi: "10.1098/rsbl.2004.0254"
+  - authors: ["Russell, A. P."]
+    year: 2002
+    title: "Integrative functional morphology of the gekkotan adhesive system (Reptilia: Gekkota)"
+    journal: "Integrative and Comparative Biology"
+    volume: 42
+    pages: "1154–1163"
+    doi: "10.1093/icb/42.6.1154"
 status: published
 ---
 
 ## Running up glass without glue
 
-A gecko can race up a pane of glass and hang from the ceiling by one foot. It needs no glue, no suction cups and no claws for this. The secret lies on the underside of its toes: broad pads covered with thin plates, the **lamellae**. Under a microscope, each lamella turns out to be a dense forest of hair-like **setae**, each 30–130 µm long and only a tenth as thick as a human hair. Every seta branches into hundreds of flat tips, the **spatulae**, just 0.2–0.5 µm wide [1](#ref-1){:.cite}. A tokay gecko carries about a billion of them [4](#ref-4){:.cite}.
+A gecko can race up a pane of glass and hang from the ceiling by one foot. It needs no glue, no suction cups and no claws for this. The secret lies on the underside of its toes: broad pads covered with thin plates, the **lamellae** [14](#ref-14){:.cite}. Under a microscope, each lamella turns out to be a dense forest of hair-like **setae**, each 30–130 µm long and only a tenth as thick as a human hair. Every seta branches into hundreds of flat tips, the **spatulae**, just 0.2–0.5 µm wide [1](#ref-1){:.cite}. A tokay gecko carries about a billion of them [4](#ref-4){:.cite}.
 
 How these structures stick was debated for more than a century. Suction, glue-like secretions, interlocking with tiny bumps and water films were all proposed. In 2002, Kellar Autumn and colleagues tested the question directly: the toes of live tokay geckos stuck equally well to strongly water-repellent and strongly water-attracting surfaces, and so did a single isolated seta. This pointed to **van der Waals forces** – weak attractions between all molecules, independent of the surface chemistry [2](#ref-2){:.cite}. Later measurements on single spatulae showed that humidity adds a significant contribution at the nanoscale [4](#ref-4){:.cite}. Today, van der Waals forces are regarded as the main mechanism, with water films adding to it.
 
