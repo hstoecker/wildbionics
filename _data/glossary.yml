@@ -36,6 +36,11 @@ terms:
   - { en: "toe pad*", de: "Haftpolster*", de_alt: ["Haftzehe*"] }
   - { en: "tokay gecko*", de: "Tokeh*", avoid: ["Tokay-Gecko*"], level: warn, why: "Deutscher Name der Art Gekko gecko: Tokeh." }
   - { en: "convergent evolution", de: "konvergente Evolution" }
+  - { en: "feeding buzz", de: "Feeding Buzz", de_alt: ["Fang-Buzz", "Final Buzz"] }
+  - { en: "big brown bat*", de: "Große* Braune* Fledermaus", de_alt: ["Große* Braune* Fledermäuse"] }
+  - { en: "horseshoe bat*", de: "Hufeisennase*", avoid: ["Hufeisenfledermaus", "Hufeisenfledermäuse"], level: warn, why: "Deutscher Name der Rhinolophidae: Hufeisennasen." }
+  - { en: "moustached bat", de: "Schnurrbartfledermaus" }
+  - { en: "bulldog bat*", de: "Hasenmaul", de_alt: ["Hasenmäuler*"] }
   # --- Physics -------------------------------------------------------------------
   - { en: "hydrophone*", de: "Hydrophon*", avoid: ["Hydrofon*"], why: "In der Akustik ist die Schreibung Hydrophon üblich." }
   - { en: "shock wave*", de: "Stoßwelle*", avoid: ["Schockwelle*"], why: "Physikalischer Fachbegriff: Stoßwelle." }
@@ -57,6 +62,11 @@ terms:
   - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
   - { en: "Doppler shift", de: "Doppler-Verschiebung", de_alt: ["Dopplerverschiebung"] }
   - { en: "source level*", de: "Quellpegel" }
+  - { en: "Doppler shift compensation", de: "Dopplereffekt-Kompensation", de_alt: ["Doppler-Kompensation"] }
+  - { en: "auditory fovea", de: "akustische* Fovea" }
+  - { en: "duty cycle", de: "Tastgrad", de_alt: ["Duty Cycle"] }
+  - { en: "range resolution", de: "Entfernungsauflösung" }
+  - { en: "bandwidth", de: "Bandbreite" }
   - { en: "peak-to-peak", de: "Spitze-Spitze" }
 
   - { en: "van der Waals force*", de: "Van-der-Waals-Kr*", avoid: ["van der Waals Kr*", "Van der Waals-Kr*", "Van-der-Waals Kr*"], why: "Duden: Van-der-Waals-Kräfte (durchgekoppelt, groß am Satzanfang wie im Wort)." }
@@ -74,6 +84,10 @@ terms:
   - { en: "matched filter", de: "Optimalfilter" }
   - { en: "cross-correlation", de: "Kreuzkorrelation" }
   - { en: "spectrogram", de: "Spektrogramm" }
+  - { en: "envelope", de: "Einhüllende*" }
+  - { en: "side lobe*", de: "Nebenkeule*", avoid: ["Seitenlappen"], why: "Fachbegriff der Signalverarbeitung: Nebenkeule." }
+  - { en: "simultaneous localisation and mapping", de: "simultane Lokalisierung und Kartierung", de_alt: ["SLAM"] }
+  - { en: "balanced accuracy", de: "balanciert* Genauigkeit" }
   - { en: "numerical stability", de: "numerische* Stabilität" }
   - { en: "root finding", de: "Nullstellensuche" }
   - { en: "floating point", de: "Gleitkomma*", avoid: ["Fließkomma*"], level: warn, why: "DIN/Informatik: Gleitkommazahl (Fließkommazahl ist umgangssprachlich)." }

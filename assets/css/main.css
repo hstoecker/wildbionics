@@ -2104,3 +2104,28 @@ a.cite:hover { text-decoration: underline; }
   .menu__icon, .menu__icon::before, .menu__icon::after { background: CanvasText; }
   .menu[open] .menu__icon { background: transparent; }
 }
+
+/* Bat hunt, hero of the echolocation article (_includes/svg/bat-hunt.svg) */
+.bathunt-svg { width: 100%; height: auto; overflow: visible; }
+.bathunt-svg .grid { color: rgba(238, 242, 234, 0.07); }
+.bathunt-svg .callout-accent circle { fill: var(--accent); }
+.bathunt-svg .phase-lines path { stroke: var(--text-2); stroke-width: 1; stroke-dasharray: 2 5; opacity: 0.55; }
+.bathunt-svg .label-phase { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--text); }
+.bathunt-svg .label-phase.label-accent { fill: var(--accent); }
+.bathunt-svg .flight { fill: none; stroke: var(--text-2); stroke-width: 1.2; stroke-dasharray: 1 5; stroke-linecap: round; opacity: 0.8; }
+.bathunt-svg .call { fill: none; stroke: var(--signal); stroke-width: 1.6; stroke-linecap: round; }
+.bathunt-svg .call--search:nth-child(2n) { opacity: 0.5; }
+.bathunt-svg .call-dots circle { fill: var(--signal); }
+.bathunt-svg .buzz { stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; }
+.bathunt-svg .echo path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 3; stroke-linecap: round; }
+.bathunt-svg .echo path + path { opacity: 0.55; }
+.bathunt-svg .axis { stroke: var(--text-2); stroke-width: 1; }
+.bathunt-svg .axis-arrow { fill: var(--text-2); }
+.bathunt-svg .tick { stroke: var(--signal); stroke-width: 1.6; stroke-linecap: round; }
+.bathunt-svg .tick--buzz { stroke: var(--accent); stroke-width: 1.2; }
+.bathunt-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .bathunt-svg .label { font-size: 20px; }          /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .bathunt-svg .label-phase { font-size: 20px; letter-spacing: 0.04em; }
+  .bathunt-svg .label-tick { font-size: 20px; }
+}
