@@ -1,0 +1,123 @@
+{%- include i18n.html -%}
+{%- assign l = t.figures.lotus -%}
+<svg class="lotus-svg" viewBox="0 0 720 432" role="img" aria-labelledby="lotus-title" aria-describedby="lotus-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="lotus-title">{{ l.title }}</title>
+  <desc id="lotus-desc">{{ l.desc }}</desc>
+  <defs>
+    <radialGradient id="lotus-leaf" cx="45%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#8fb58f"/>
+      <stop offset=".6" stop-color="#5f9272"/>
+      <stop offset="1" stop-color="#3f6f58"/>
+    </radialGradient>
+    <radialGradient id="lotus-drop" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#f4fbff" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#bfe3f0" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#6fb6cf" stop-opacity=".55"/>
+    </radialGradient>
+    <radialGradient id="lotus-lens" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#16333d"/>
+      <stop offset="1" stop-color="#0a1c23"/>
+    </radialGradient>
+    <pattern id="lotus-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="lotus-fade" cx="40%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="lotus-mask"><rect width="720" height="420" fill="url(#lotus-fade)"/></mask>
+    <clipPath id="lotus-leafclip"><ellipse cx="200" cy="236" rx="170" ry="92"/></clipPath>
+    <clipPath id="lotus-c1"><circle cx="412" cy="104" r="64"/></clipPath>
+    <clipPath id="lotus-c2"><circle cx="548" cy="214" r="66"/></clipPath>
+    <clipPath id="lotus-c3"><circle cx="632" cy="324" r="64"/></clipPath>
+  </defs>
+  <rect class="hero-grid" width="720" height="420" fill="url(#lotus-grid)" mask="url(#lotus-mask)"/>
+  <!-- ===== Sacred lotus leaf held above the water: round, peltate (stalk joins the middle), cupped ===== -->
+  <path class="pond" d="M20,392 Q220,382 440,392"/>
+  <path class="pond pond--faint" d="M60,404 Q200,398 340,404"/>
+  <path class="stem" d="M204,300 C206,330 200,360 206,392"/>
+  <path class="stem stem--flower" d="M396,318 C390,346 400,370 394,392"/>
+  <g class="flower"><path class="petal petal--back" d="M396.0,306.0 Q367.2,303.8 356.5,280.7 Q381.3,275.0 396.0,306.0 Z"/><path class="petal petal--back" d="M396.0,306.0 Q410.7,275.0 435.5,280.7 Q424.8,303.8 396.0,306.0 Z"/><path class="petal petal--back" d="M396.0,306.0 Q372.6,296.4 369.2,275.9 Q390.0,277.1 396.0,306.0 Z"/><path class="petal petal--back" d="M396.0,306.0 Q402.0,277.1 422.8,275.9 Q419.4,296.4 396.0,306.0 Z"/><path class="petal" d="M396.0,306.0 Q367.0,285.7 369.5,257.6 Q395.8,267.7 396.0,306.0 Z"/><path class="petal" d="M396.0,306.0 Q396.2,267.7 422.5,257.6 Q425.0,285.7 396.0,306.0 Z"/><path class="petal" d="M396.0,306.0 Q377.4,282.4 385.0,261.5 Q402.4,275.3 396.0,306.0 Z"/><path class="petal" d="M396.0,306.0 Q389.6,275.3 407.0,261.5 Q414.6,282.4 396.0,306.0 Z"/><path class="petal" d="M396.0,306.0 Q379.0,270.3 396.0,246.0 Q413.0,270.3 396.0,306.0 Z"/><ellipse class="receptacle" cx="396" cy="297" rx="10" ry="5"/></g>
+  <g class="leaf">
+    <path class="leaf-under" d="M371.8,245.0 L373.4,251.6 L372.8,258.1 L369.6,264.5 L364.4,270.5 L358.1,276.1 L351.8,281.6 L346.1,287.1 L341.3,292.8 L336.7,298.8 L331.6,304.7 L325.1,310.4 L316.8,315.2 L306.8,318.9 L295.6,321.7 L284.1,323.9 L272.8,325.8 L262.0,328.1 L251.5,330.7 L240.9,333.7 L229.8,336.5 L218.2,338.6 L206.1,339.4 L193.9,338.8 L182.1,337.0 L170.8,334.7 L159.8,332.2 L148.9,330.2 L137.6,328.6 L125.9,327.2 L114.1,325.5 L102.8,323.0 L92.6,319.4 L84.0,314.7 L77.0,309.3 L71.1,303.5 L65.6,297.9 L59.6,292.5 L52.9,287.3 L45.6,282.2 L38.6,276.8 L32.9,270.9 L29.3,264.6 L28.3,258.1 L29.4,251.5 L31.8,245.0 L34.3,238.7 L36.1,232.5 L37.0,226.3 L37.6,219.8 L38.6,213.2 L41.2,206.7 L45.9,200.7 L52.9,195.3 L61.6,190.6 L71.1,186.5 L80.5,182.5 L89.2,178.4 L97.4,174.0 L105.5,169.2 L114.1,164.5 L123.8,160.4 L134.6,157.4 L146.4,155.8 L158.6,155.2 L170.8,155.3 L182.6,155.6 L194.2,155.5 L205.8,154.9 L217.7,154.1 L229.8,153.5 L242.1,153.7 L253.9,155.2 L265.0,158.0 L275.0,161.8 L284.1,166.1 L292.9,170.5 L301.9,174.4 L311.5,178.0 L321.6,181.5 L331.6,185.3 L340.7,189.7 L348.0,195.0 L353.1,200.9 L356.2,207.4 L358.1,213.9 L359.7,220.2 L361.9,226.4 L365.0,232.5 L368.6,238.6 L371.8,245.0 Z"/>
+    <path class="leaf-blade" d="M371.8,236.0 L373.4,242.6 L372.8,249.1 L369.6,255.5 L364.4,261.5 L358.1,267.1 L351.8,272.6 L346.1,278.1 L341.3,283.8 L336.7,289.8 L331.6,295.7 L325.1,301.4 L316.8,306.2 L306.8,309.9 L295.6,312.7 L284.1,314.9 L272.8,316.8 L262.0,319.1 L251.5,321.7 L240.9,324.7 L229.8,327.5 L218.2,329.6 L206.1,330.4 L193.9,329.8 L182.1,328.0 L170.8,325.7 L159.8,323.2 L148.9,321.2 L137.6,319.6 L125.9,318.2 L114.1,316.5 L102.8,314.0 L92.6,310.4 L84.0,305.7 L77.0,300.3 L71.1,294.5 L65.6,288.9 L59.6,283.5 L52.9,278.3 L45.6,273.2 L38.6,267.8 L32.9,261.9 L29.3,255.6 L28.3,249.1 L29.4,242.5 L31.8,236.0 L34.3,229.7 L36.1,223.5 L37.0,217.3 L37.6,210.8 L38.6,204.2 L41.2,197.7 L45.9,191.7 L52.9,186.3 L61.6,181.6 L71.1,177.5 L80.5,173.5 L89.2,169.4 L97.4,165.0 L105.5,160.2 L114.1,155.5 L123.8,151.4 L134.6,148.4 L146.4,146.8 L158.6,146.2 L170.8,146.3 L182.6,146.6 L194.2,146.5 L205.8,145.9 L217.7,145.1 L229.8,144.5 L242.1,144.7 L253.9,146.2 L265.0,149.0 L275.0,152.8 L284.1,157.1 L292.9,161.5 L301.9,165.4 L311.5,169.0 L321.6,172.5 L331.6,176.3 L340.7,180.7 L348.0,186.0 L353.1,191.9 L356.2,198.4 L358.1,204.9 L359.7,211.2 L361.9,217.4 L365.0,223.5 L368.6,229.6 L371.8,236.0 Z"/>
+    <path class="vein" d="M200,236 Q292.3,244.1 364.1,244.9 M200,236 Q281.6,260.7 348.6,274.7 M200,236 Q261.1,274.3 315.1,299.9 M200,236 Q233.3,283.3 267.8,317.4 M200,236 Q201.4,286.6 212.3,325.0 M200,236 Q169.3,283.8 155.3,321.9 M200,236 Q140.9,275.2 103.7,308.4 M200,236 Q119.7,261.9 63.7,286.3 M200,236 Q108.2,245.5 40.2,258.0 M200,236 Q107.7,227.9 35.9,227.1 M200,236 Q118.4,211.3 51.4,197.3 M200,236 Q138.9,197.7 84.9,172.1 M200,236 Q166.7,188.7 132.2,154.6 M200,236 Q198.6,185.4 187.7,147.0 M200,236 Q230.7,188.2 244.7,150.1 M200,236 Q259.1,196.8 296.3,163.6 M200,236 Q280.3,210.1 336.3,185.7 M200,236 Q291.8,226.5 359.8,214.0"/>
+    <ellipse class="leaf-centre" cx="200" cy="236" rx="7" ry="4"/>
+    <path class="leaf-rim" d="M371.8,236.0 L373.4,242.6 L372.8,249.1 L369.6,255.5 L364.4,261.5 L358.1,267.1 L351.8,272.6 L346.1,278.1 L341.3,283.8 L336.7,289.8 L331.6,295.7 L325.1,301.4 L316.8,306.2 L306.8,309.9 L295.6,312.7 L284.1,314.9 L272.8,316.8 L262.0,319.1 L251.5,321.7 L240.9,324.7 L229.8,327.5 L218.2,329.6 L206.1,330.4 L193.9,329.8 L182.1,328.0 L170.8,325.7 L159.8,323.2 L148.9,321.2 L137.6,319.6 L125.9,318.2 L114.1,316.5 L102.8,314.0 L92.6,310.4 L84.0,305.7 L77.0,300.3 L71.1,294.5 L65.6,288.9 L59.6,283.5 L52.9,278.3 L45.6,273.2 L38.6,267.8 L32.9,261.9 L29.3,255.6 L28.3,249.1 L29.4,242.5 L31.8,236.0 L34.3,229.7 L36.1,223.5 L37.0,217.3 L37.6,210.8 L38.6,204.2 L41.2,197.7 L45.9,191.7 L52.9,186.3 L61.6,181.6 L71.1,177.5 L80.5,173.5 L89.2,169.4 L97.4,165.0 L105.5,160.2 L114.1,155.5 L123.8,151.4 L134.6,148.4 L146.4,146.8 L158.6,146.2 L170.8,146.3 L182.6,146.6 L194.2,146.5 L205.8,145.9 L217.7,145.1 L229.8,144.5 L242.1,144.7 L253.9,146.2 L265.0,149.0 L275.0,152.8 L284.1,157.1 L292.9,161.5 L301.9,165.4 L311.5,169.0 L321.6,172.5 L331.6,176.3 L340.7,180.7 L348.0,186.0 L353.1,191.9 L356.2,198.4 L358.1,204.9 L359.7,211.2 L361.9,217.4 L365.0,223.5 L368.6,229.6 L371.8,236.0 Z"/>
+  </g>
+  <g class="dirt" clip-path="url(#lotus-leafclip)"><circle cx="173.4" cy="264.8" r="1.2"/><circle cx="300.6" cy="262.6" r="1.8"/><circle cx="73.4" cy="196.7" r="1.5"/><circle cx="298.0" cy="248.7" r="1.2"/><circle cx="206.7" cy="297.4" r="1.2"/><circle cx="220.3" cy="300.7" r="1.2"/><circle cx="114.7" cy="211.7" r="1.5"/><circle cx="335.7" cy="258.1" r="1.8"/><circle cx="101.7" cy="265.6" r="1.8"/><circle cx="82.6" cy="210.7" r="1.2"/><circle cx="93.4" cy="203.5" r="1.8"/><circle cx="305.7" cy="276.2" r="1.2"/><circle cx="121.0" cy="196.3" r="2.2"/><circle cx="217.8" cy="180.3" r="2.2"/><circle cx="150.8" cy="267.5" r="1.5"/><circle cx="176.2" cy="197.2" r="1.8"/><circle cx="58.7" cy="223.8" r="2.2"/><circle cx="164.2" cy="315.7" r="1.2"/><circle cx="119.2" cy="303.0" r="2.2"/><circle cx="321.3" cy="252.5" r="1.8"/><circle cx="151.4" cy="277.3" r="2.2"/><circle cx="109.4" cy="209.1" r="1.2"/><circle cx="299.0" cy="216.6" r="1.2"/><circle cx="318.9" cy="261.8" r="2.2"/><circle cx="179.5" cy="286.2" r="1.8"/><circle cx="302.9" cy="243.9" r="1.5"/><circle cx="117.6" cy="198.7" r="1.5"/><circle cx="206.3" cy="206.4" r="1.5"/><circle cx="82.6" cy="283.4" r="2.2"/><circle cx="289.7" cy="262.9" r="1.8"/><circle cx="302.9" cy="185.9" r="1.8"/><circle cx="158.9" cy="156.8" r="2.2"/><circle cx="233.0" cy="271.7" r="1.5"/><circle cx="339.1" cy="241.7" r="1.5"/><circle cx="199.2" cy="241.3" r="2.2"/><circle cx="83.3" cy="222.1" r="1.8"/><circle cx="321.7" cy="216.0" r="1.2"/><circle cx="320.5" cy="215.7" r="2.2"/><circle cx="123.0" cy="267.1" r="2.2"/><circle cx="174.6" cy="220.6" r="1.2"/><circle cx="301.1" cy="230.7" r="1.2"/><circle cx="181.2" cy="252.0" r="1.2"/><circle cx="97.6" cy="211.3" r="1.8"/><circle cx="169.4" cy="221.6" r="1.5"/><circle cx="155.5" cy="215.0" r="1.8"/><circle cx="314.1" cy="218.3" r="2.2"/><circle cx="301.0" cy="289.2" r="2.2"/><circle cx="281.8" cy="292.4" r="1.8"/><circle cx="287.9" cy="221.2" r="1.2"/><circle cx="204.3" cy="190.9" r="1.2"/><circle cx="174.1" cy="196.1" r="1.8"/><circle cx="276.5" cy="209.1" r="1.5"/><circle cx="67.8" cy="221.1" r="1.8"/><circle cx="121.6" cy="187.0" r="1.5"/><circle cx="247.8" cy="165.7" r="1.5"/><circle cx="233.2" cy="291.3" r="1.2"/><circle cx="335.7" cy="231.2" r="2.2"/><circle cx="192.7" cy="304.8" r="1.8"/><circle cx="349.1" cy="229.9" r="1.8"/><circle cx="242.8" cy="248.8" r="2.2"/><circle cx="222.7" cy="271.4" r="1.2"/><circle cx="122.3" cy="169.2" r="1.5"/><circle cx="221.5" cy="189.7" r="2.2"/><circle cx="252.5" cy="252.8" r="1.5"/><circle cx="315.8" cy="247.0" r="2.2"/><circle cx="270.1" cy="163.3" r="1.8"/><circle cx="263.1" cy="286.9" r="1.2"/><circle cx="350.2" cy="243.3" r="1.2"/><circle cx="54.2" cy="222.7" r="2.2"/><circle cx="267.3" cy="232.9" r="1.5"/></g>
+  <circle class="ghost" cx="98" cy="252" r="9" opacity="0.35"/>
+  <circle class="ghost" cx="150" cy="240" r="11" opacity="0.5"/>
+  <circle class="ghost" cx="198" cy="226" r="13" opacity="0.7"/>
+  <g class="drops">
+    <ellipse class="drop-shadow" cx="129.5" cy="211.95" rx="6.3" ry="2.0"/><circle class="drop" cx="128" cy="206" r="7"/><ellipse class="drop-shine" cx="125.5" cy="203.2" rx="2.0" ry="1.3"/>
+    <ellipse class="drop-shadow" cx="301.5" cy="269.65" rx="8.1" ry="2.5"/><circle class="drop" cx="300" cy="262" r="9"/><ellipse class="drop-shine" cx="296.9" cy="258.4" rx="2.5" ry="1.6"/>
+    <ellipse class="drop-shadow" cx="251.5" cy="296.675" rx="5.0" ry="1.5"/><circle class="drop" cx="250" cy="292" r="5.5"/><ellipse class="drop-shine" cx="248.1" cy="289.8" rx="1.5" ry="1.0"/>
+    <ellipse class="drop-shadow" cx="97.5" cy="276.25" rx="4.5" ry="1.4"/><circle class="drop" cx="96" cy="272" r="5"/><ellipse class="drop-shine" cx="94.2" cy="270.0" rx="1.4" ry="0.9"/>
+    <ellipse class="drop-shadow" cx="319.5" cy="223.1" rx="5.4" ry="1.7"/><circle class="drop" cx="318" cy="218" r="6"/><ellipse class="drop-shine" cx="315.9" cy="215.6" rx="1.7" ry="1.1"/>
+    <ellipse class="drop-shadow" cx="171.5" cy="303.825" rx="4.0" ry="1.3"/><circle class="drop" cx="170" cy="300" r="4.5"/><ellipse class="drop-shine" cx="168.4" cy="298.2" rx="1.3" ry="0.8"/>
+    <ellipse class="drop-shadow" cx="248" cy="220.96" rx="16.1" ry="5.1"/>
+    <circle class="drop drop--big" cx="246" cy="206" r="17"/>
+    <g class="dirt dirt--in"><circle cx="240" cy="212" r="1.8"/><circle cx="249" cy="215" r="1.5"/><circle cx="253" cy="209" r="2"/><circle cx="244" cy="217" r="1.4"/></g>
+    <ellipse class="drop-shine" cx="240" cy="199" rx="5" ry="3.2"/>
+  </g>
+  <path class="roll" d="M196,236 Q208,230 222,222"/>
+  <path class="roll-head" d="M224,221 l-8,-1 l4,7 Z"/>
+  <g class="zoom">
+    <circle cx="246" cy="206" r="21"/>
+    <path d="M262,192 L356,128 M258,222 L364,146"/>
+    <path d="M460,138 L494,178 M438,160 L486,200"/>
+    <path d="M592,262 L600,280 M572,272 L590,288"/>
+  </g>
+  <g class="zoom-lens">
+    <circle class="lens" cx="412" cy="104" r="64"/>
+    <g clip-path="url(#lotus-c1)">
+      <rect class="surface" x="340" y="134" width="150" height="40"/>
+      <line class="surface-line" x1="340" y1="134" x2="490" y2="134"/>
+      <circle class="drop drop--side" cx="412" cy="100.64" r="35.5"/>
+      <ellipse class="drop-shine" cx="400" cy="85.6" rx="8" ry="5"/>
+      <path class="angle" d="M411.1,134 A13,13 0 0 1 436.4,129.6"/>
+      <line class="tangent" x1="424.1" y1="134" x2="456.1" y2="122.4"/>
+      <text x="421.1" y="117" text-anchor="middle" class="label label-theta">θ</text>
+    </g>
+    <circle class="lens-ring" cx="412" cy="104" r="64"/>
+  </g>
+  <g class="zoom-lens">
+    <circle class="lens" cx="548" cy="214" r="66"/>
+    <g clip-path="url(#lotus-c2)">
+      <rect class="surface" x="470" y="250" width="170" height="40"/>
+      <path class="papilla" d="M459,250 C459,230 463,220 470,220 C477,220 481,230 481,250 M485,250 C485,230 489,220 496,220 C503,220 507,230 507,250 M511,250 C511,230 515,220 522,220 C529,220 533,230 533,250 M537,250 C537,230 541,220 548,220 C555,220 559,230 559,250 M563,250 C563,230 567,220 574,220 C581,220 585,230 585,250 M589,250 C589,230 593,220 600,220 C607,220 611,230 611,250 M615,250 C615,230 619,220 626,220 C633,220 637,230 637,250"/>
+      <path class="tubule tubule--small" d="M463,223.8 l-1.8,-4 M466.5,221.9 l-0.9,-4 M470,220.0 l0.0,-4 M473.5,221.9 l0.9,-4 M477,223.8 l1.8,-4 M489,223.8 l-1.8,-4 M492.5,221.9 l-0.9,-4 M496,220.0 l0.0,-4 M499.5,221.9 l0.9,-4 M503,223.8 l1.8,-4 M515,223.8 l-1.8,-4 M518.5,221.9 l-0.9,-4 M522,220.0 l0.0,-4 M525.5,221.9 l0.9,-4 M529,223.8 l1.8,-4 M541,223.8 l-1.8,-4 M544.5,221.9 l-0.9,-4 M548,220.0 l0.0,-4 M551.5,221.9 l0.9,-4 M555,223.8 l1.8,-4 M567,223.8 l-1.8,-4 M570.5,221.9 l-0.9,-4 M574,220.0 l0.0,-4 M577.5,221.9 l0.9,-4 M581,223.8 l1.8,-4 M593,223.8 l-1.8,-4 M596.5,221.9 l-0.9,-4 M600,220.0 l0.0,-4 M603.5,221.9 l0.9,-4 M607,223.8 l1.8,-4 M619,223.8 l-1.8,-4 M622.5,221.9 l-0.9,-4 M626,220.0 l0.0,-4 M629.5,221.9 l0.9,-4 M633,223.8 l1.8,-4"/>
+      <path class="air" d="M476,222 L620,222"/>
+      <path class="drop-bottom" d="M470,219 Q548,213 630,219 L630,140 L470,140 Z"/>
+    </g>
+    <circle class="lens-ring" cx="548" cy="214" r="66"/>
+  </g>
+  <g class="zoom-lens">
+    <circle class="lens" cx="632" cy="324" r="64"/>
+    <g clip-path="url(#lotus-c3)">
+      <path class="papilla papilla--big" d="M572,400 C574,352 600,318 632,318 C664,318 690,352 692,400 Z"/>
+      <path class="tubule" d="M578.6,380.6 L569.5,379.7 M580.4,372.8 L570.9,366.2 M582.7,365.2 L573.7,359.5 M585.6,358.0 L573.2,353.6 M588.9,351.3 L582.5,340.4 M592.8,345.2 L587.1,334.3 M597.1,339.7 L592.9,328.9 M601.8,334.8 L592.6,325.1 M606.8,330.6 L603.0,321.6 M612.1,327.3 L610.5,314.0 M617.6,324.7 L617.3,312.7 M623.3,323.0 L619.7,313.9 M629.1,322.1 L625.4,310.6 M634.9,322.1 L636.5,312.9 M640.7,323.0 L642.1,311.4 M646.4,324.7 L652.4,313.3 M651.9,327.3 L652.8,318.0 M657.2,330.6 L658.3,321.5 M662.2,334.8 L664.1,323.7 M666.9,339.7 L670.8,326.8 M671.2,345.2 L680.3,339.7 M675.1,351.3 L681.8,341.4 M678.4,358.0 L686.7,351.8 M681.3,365.2 L692.5,358.6 M683.6,372.8 L693.0,368.7 M685.4,380.6 L698.7,380.6"/>
+    </g>
+    <circle class="lens-ring" cx="632" cy="324" r="64"/>
+  </g>
+  <g class="labels">
+    <text x="30" y="118" class="label-title">{{ l.plant }}</text>
+    <text x="30" y="144" class="label label-taxon">{{ l.taxon }}</text>
+    <path class="leader" d="M150,318 L150,346 L112,346"/><circle class="dot" cx="150" cy="318" r="2.2"/>
+    <text x="108" y="350" text-anchor="end" class="label">{{ l.dirt }}</text>
+    <path class="leader" d="M150,229 L150,210"/><circle class="dot" cx="150" cy="229" r="2.2"/>
+    <text x="30" y="178" class="label label-accent label-halo">{{ l.trail }}</text>
+    <text x="30" y="202" class="label label-accent label-halo">{{ l.trail2 }}</text>
+    <text x="486" y="54" class="label label-strong">{{ l.angle }}</text>
+    <text x="486" y="78" class="label">{{ l.angle_value }}</text>
+    <path class="leader" d="M598,222 L630,162 L700,162"/><circle class="dot" cx="598" cy="222" r="2.2"/>
+    <text x="714" y="128" text-anchor="end" class="label label-strong">{{ l.papillae }}</text>
+    <text x="714" y="152" text-anchor="end" class="label">{{ l.papillae_size }}</text>
+    <path class="leader" d="M562,240 L600,248 L622,248"/><circle class="dot" cx="562" cy="240" r="2"/><text x="626" y="253" class="label label-air">{{ l.air }}</text>
+    <path class="leader" d="M600,334 L566,334"/><circle class="dot" cx="600" cy="334" r="2.2"/>
+    <text x="562" y="339" text-anchor="end" class="label label-strong">{{ l.wax }}</text>
+    <text x="562" y="363" text-anchor="end" class="label">{{ l.wax_size }}</text>
+    <text x="24" y="426" class="label label-tick">{{ l.note }}</text>
+  </g>
+</svg>

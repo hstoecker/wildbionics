@@ -23,6 +23,7 @@ forest:                  { dim: space, en: "Forests", de: "Wälder", wikidata: Q
 lab:                     { dim: space, en: "Laboratory", de: "Labor", wikidata: Q483242 }
 microcosm:               { dim: space, en: "Microcosm", de: "Mikrokosmos" }
 outer-space:             { dim: space, en: "Outer space", de: "Weltraum", wikidata: Q4169 }
+wetland:                 { dim: space, en: "Wetlands", de: "Feuchtgebiete", wikidata: Q170321 }
 
 # --- Rules: physics ----------------------------------------------------------------
 mechanics:               { dim: physics, en: "Mechanics", de: "Mechanik", wikidata: Q41217 }
