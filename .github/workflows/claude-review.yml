@@ -54,17 +54,20 @@ jobs:
       # The report must never get lost silently: keep the full transcript, list the tool calls the
       # allowlist blocked, and tell the PR when no review comment was posted.
       - name: List blocked tool calls
-        if: always() && steps.claude.outputs.execution_file != ''
+        if: always() && env.HAS_CLAUDE == 'true'
         run: |
+          f="${{ runner.temp }}/claude-execution-output.json"   # written by claude-code-action
+          [ -f "$f" ] || { echo "no transcript at $f"; exit 0; }
           jq -r '.[] | select(.type == "result") | .permission_denials[]? | "::warning title=Blocked tool call::\(.tool_name) \(.tool_input | tostring | .[0:300])"' \
-            "${{ steps.claude.outputs.execution_file }}" || true
+            "$f" || true
       - name: Keep the review transcript
-        if: always() && steps.claude.outputs.execution_file != ''
+        if: always() && env.HAS_CLAUDE == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: claude-review-pr-${{ github.event.pull_request.number }}
-          path: ${{ steps.claude.outputs.execution_file }}
+          path: ${{ runner.temp }}/claude-execution-output.json
           retention-days: 14
+          if-no-files-found: warn
       - name: Tell the PR if no review comment was posted
         if: always() && env.HAS_CLAUDE == 'true'
         run: |
