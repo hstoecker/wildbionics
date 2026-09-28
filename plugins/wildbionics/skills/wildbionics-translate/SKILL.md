@@ -66,7 +66,7 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
 ## Adding a language
 
 Copy the `en:` block in `_data/i18n.yml`, add the code to `languages` in `_config.yml`, add a
-column to `_data/taxonomy.yml` and a name to every entry of `_data/beings.yml` (the terminology
+column to `_data/taxonomy.yml` and a name to every entry of `_data/beings.yml` and `_data/thought_experiments.yml` (the terminology
 gate requires both), translate the pages under `/<lang>/` (home, article index, graph, contribute,
 run-code – copy the `de/` folder as a template and give each page the same `ref`), and extend this
 skill and the glossary with the new language.

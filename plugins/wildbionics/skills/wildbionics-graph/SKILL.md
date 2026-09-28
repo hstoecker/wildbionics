@@ -7,7 +7,7 @@ description: "Extend or change the WildBionics knowledge graph and ontology – 
 
 The graph is **derived at build time from article front matter** – there is no database.
 Every published article becomes a node linked to the terms of its four dimensions, to its
-organisms (beings) and, through its lenses, to disciplines.
+organisms (beings) or thought experiments and, through its lenses, to disciplines.
 
 ## Data files
 
@@ -15,8 +15,9 @@ organisms (beings) and, through its lenses, to disciplines.
 |---|---|---|
 | `_data/taxonomy.yml` | ontology terms: `slug: { dim, order?, en, de }` | `dim` ∈ `time`, `space`, `physics` (= "Rules"), `adjacent_sciences`; time terms need an integer `order` on the axis Big Bang → … → future; names in every language; optional `wikidata: Q…` only when a Wikidata item is *exactly* this concept – verify label and description via the Wikidata API (becomes `sameAs`) |
 | `_data/beings.yml` | organisms (later also machines): `slug: { en, de, taxon, wikidata }` | verify the Wikidata ID; `taxon` is the scientific name (rendered in italics) |
+| `_data/thought_experiments.yml` | thought experiments – imagined setups, not real organisms or experiments: `slug: { en, de, author, year, wikidata }` | node type `thought-experiment` (dashed lilac circle, legend "Thought experiment"); never put them in `beings.yml`; the article's kicker and hero figure say "thought experiment" too |
 | `_data/lenses.yml` | lens key → graph node (`term:<slug>` or `dim:<dimension>`) | every lens in `_data/i18n.yml` `lens.*` needs an entry |
-| article front matter | `dimensions`, `beings`, `lenses` | slugs must exist and sit under the matching dimension |
+| article front matter | `dimensions`, `beings`, `thought_experiments`, `lenses` | slugs must exist and sit under the matching dimension |
 
 ## Ontology rules
 
@@ -35,11 +36,11 @@ organisms (beings) and, through its lenses, to disciplines.
 
 - `graph.jsonld` (Liquid, same sources) → the graph as schema.org linked data with **stable IRIs**:
   `<site>/graph/#dim-<dimension>` (DefinedTermSet), `#term-<slug>` (DefinedTerm, `sameAs` Wikidata),
-  `#being-<slug>` (Taxon), articles as `<url>#article` (the same `@id` as on the article page) with
-  `keywords` → terms, `about` → organisms, `educationalAlignment` → lens disciplines. Article pages
+  `#being-<slug>` (Taxon), `#thought-experiment-<slug>` (CreativeWork, genre "thought experiment", `additionalType` Wikidata Q147027), articles as `<url>#article` (the same `@id` as on the article page) with
+  `keywords` → terms, `about` → organisms and thought experiments, `educationalAlignment` → lens disciplines. Article pages
   repeat their terms as DefinedTerms with these IRIs. Never rename a slug that is live – the IRI
   would break; add a new term instead.
-- `graph.json` (Liquid) → nodes `dimension`, `term` (with `used`), `article`, `being`;
+- `graph.json` (Liquid) → nodes `dimension`, `term` (with `used`), `article`, `being`, `thought-experiment`;
   edges `contains`, `<dimension>`, `about`, `lens`. Labels and URLs per language, CC BY-SA.
 - `_includes/graph-page.html` → pages `/graph/` and `/de/wissensgraph/`, including a complete
   no-JS list of all connections and a reader explainer (`graph.explain` in `_data/i18n.yml`): five

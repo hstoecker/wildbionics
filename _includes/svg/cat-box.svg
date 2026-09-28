@@ -1,0 +1,115 @@
+{%- include i18n.html -%}
+{%- assign c = t.figures.cat_box -%}
+<svg class="catbox-svg" viewBox="0 0 720 470" role="img" aria-labelledby="catbox-title" aria-describedby="catbox-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="catbox-title">{{ c.title }}</title>
+  <desc id="catbox-desc">{{ c.desc }}</desc>
+  <defs>
+    <pattern id="catbox-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="catbox-fade" cx="50%" cy="50%" r="62%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="catbox-mask"><rect width="720" height="470" fill="url(#catbox-fade)"/></mask>
+    <linearGradient id="catbox-steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fa3ad"/>
+      <stop offset=".5" stop-color="#6b7f89"/>
+      <stop offset="1" stop-color="#4f626b"/>
+    </linearGradient>
+    <radialGradient id="catbox-inside" cx="60%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#15282e"/>
+      <stop offset="1" stop-color="#0a1519"/>
+    </radialGradient>
+    <radialGradient id="catbox-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".55"/>
+      <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="catbox-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9eef0" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#9fc4c9" stop-opacity=".25"/>
+    </linearGradient>
+    <!-- Sitting cat, side view, facing left; tail wrapped round the front paws. Origin = floor under the chest. -->
+    <g id="cat-sitting">
+      <path d="M-20,0 C-24,-34 -24,-64 -12,-86 L10,-92 C34,-84 50,-58 52,-30 C54,-14 50,-4 44,0 Z"/>
+      <circle cx="30" cy="-24" r="24"/>
+      <circle cx="-20" cy="-106" r="24"/>
+      <ellipse cx="-40" cy="-100" rx="9" ry="8"/>
+      <path d="M-38,-118 L-44,-148 L-22,-128 Z M-12,-129 L-4,-152 L4,-122 Z"/>
+      <path d="M50,-4 C30,4 -10,4 -32,0 C-42,-2 -46,-10 -40,-16 C-38,-8 -30,-6 -18,-6 C8,-6 30,-8 48,-12 Z"/>
+    </g>
+    <!-- Cat lying on its side, legs stretched forward, eyes closed. Origin = floor under the belly. -->
+    <g id="cat-lying">
+      <ellipse cx="6" cy="-24" rx="60" ry="24"/>
+      <circle cx="44" cy="-26" r="26"/>
+      <circle cx="-62" cy="-24" r="21"/>
+      <ellipse cx="-80" cy="-18" rx="8" ry="7"/>
+      <path d="M-74,-38 L-84,-62 L-62,-44 Z M-56,-44 L-48,-66 L-42,-40 Z"/>
+      <path d="M-30,-10 L-94,-8 C-100,-8 -100,-1 -94,-1 L-28,-2 Z M20,-6 L-40,2 C-46,3 -45,9 -39,8 L26,4 Z"/>
+      <path d="M64,-10 C76,-6 86,-6 92,-12 C96,-16 96,-24 90,-26 C90,-18 84,-14 76,-15 C72,-16 68,-18 64,-20 Z"/>
+    </g>
+  </defs>
+
+  <rect class="grid" width="720" height="470" fill="url(#catbox-grid)" mask="url(#catbox-mask)"/>
+
+  <!-- The sealed steel chamber -->
+  <rect class="box-wall" x="50" y="78" width="620" height="300" rx="10"/>
+  <rect class="box-inside" x="62" y="90" width="596" height="276" rx="6"/>
+  <path class="box-floor" d="M62,332 H658"/>
+  <g class="rivets">
+    <circle cx="62" cy="84" r="2.4"/><circle cx="160" cy="84" r="2.4"/><circle cx="260" cy="84" r="2.4"/><circle cx="360" cy="84" r="2.4"/>
+    <circle cx="460" cy="84" r="2.4"/><circle cx="560" cy="84" r="2.4"/><circle cx="658" cy="84" r="2.4"/>
+    <circle cx="62" cy="372" r="2.4"/><circle cx="160" cy="372" r="2.4"/><circle cx="260" cy="372" r="2.4"/><circle cx="360" cy="372" r="2.4"/>
+    <circle cx="460" cy="372" r="2.4"/><circle cx="560" cy="372" r="2.4"/><circle cx="658" cy="372" r="2.4"/>
+  </g>
+
+  <!-- The apparatus, left to right: sample → counter tube → relay → hammer → flask -->
+  <g class="apparatus">
+    <path class="shelf" d="M80,332 V256 H330 V332"/>
+    <circle cx="112" cy="236" r="28" fill="url(#catbox-glow)"/>
+    <path class="dish" d="M94,248 H130 L126,256 H98 Z"/>
+    <circle class="sample" cx="112" cy="243" r="5"/>
+    <path class="rays" d="M108,234 L104,206 M116,234 L120,206"/>
+    <rect class="tube" x="84" y="180" width="80" height="22" rx="11"/>
+    <path class="tube-wire" d="M94,191 H154"/>
+    <path class="wire" d="M164,191 H214 V156 H232"/>
+    <rect class="relay" x="232" y="138" width="40" height="36" rx="4"/>
+    <circle class="pivot" cx="282" cy="156" r="4"/>
+    <path class="hammer-arm" d="M282,156 L300,192"/>
+    <rect class="hammer-head" x="288" y="190" width="26" height="14" rx="3" transform="rotate(26 301 197)"/>
+    <path class="swing" d="M318,182 A40,40 0 0 1 320,214"/>
+    <path class="swing-tip" d="M320,214 l-6,-6 m6,6 l3,-8"/>
+    <path class="flask" d="M294,220 V232 C280,238 274,250 280,260 C286,270 312,270 318,260 C324,250 318,238 304,232 V220 Z"/>
+    <path class="flask-liquid" d="M277,254 C280,266 318,266 321,254 C314,250 284,250 277,254 Z"/>
+    <path class="flask-neck" d="M292,220 H306"/>
+  </g>
+
+  <!-- Numbered markers (see legend below the chamber) -->
+  <g class="marker"><circle cx="148" cy="244" r="11"/><text x="148" y="248.5" text-anchor="middle">1</text></g>
+  <g class="marker"><circle cx="124" cy="160" r="11"/><text x="124" y="164.5" text-anchor="middle">2</text></g>
+  <g class="marker"><circle cx="252" cy="116" r="11"/><text x="252" y="120.5" text-anchor="middle">3</text></g>
+  <g class="marker"><circle cx="299" cy="292" r="11"/><text x="299" y="296.5" text-anchor="middle">4</text></g>
+
+  <!-- The cat in superposition: alive and dead at the same time, both translucent -->
+  <g class="cat cat--dead" transform="translate(562 332)">
+    <use href="#cat-lying"/>
+    <path class="cat-eye-closed" d="M-72,-28 q5,4 10,0"/>
+  </g>
+  <g class="cat cat--alive" transform="translate(436 332)">
+    <use href="#cat-sitting"/>
+    <ellipse class="cat-eye" cx="-28" cy="-110" rx="3.2" ry="4"/>
+    <path class="whisker" d="M-44,-98 L-68,-104 M-44,-95 L-68,-93"/>
+  </g>
+
+  <!-- State of the whole box -->
+  <text x="508" y="132" text-anchor="middle" class="math">ψ = (|<tspan class="math-alive">{{ c.alive }}</tspan>⟩ + |<tspan class="math-dead">{{ c.dead }}</tspan>⟩) / √2</text>
+  <text x="416" y="170" text-anchor="middle" class="label label-alive">{{ c.alive_label }}</text>
+  <text x="590" y="266" text-anchor="middle" class="label label-dead">{{ c.dead_label }}</text>
+
+  <!-- Outside the chamber -->
+  <text x="50" y="58" class="label">{{ c.sealed }}</text>
+  <text x="670" y="58" text-anchor="end" class="label label-accent">{{ c.after_hour }}</text>
+  <text x="50" y="408" class="label label-legend">1 {{ c.sample }} · 2 {{ c.counter }}</text>
+  <text x="50" y="432" class="label label-legend">3 {{ c.hammer }} · 4 {{ c.poison }}</text>
+  <text x="50" y="458" class="label label-tick">{{ c.note }}</text>
+</svg>

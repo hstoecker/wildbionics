@@ -31,6 +31,7 @@ thermodynamics:          { dim: physics, en: "Thermodynamics", de: "Thermodynami
 acoustics:               { dim: physics, en: "Acoustics", de: "Akustik", wikidata: Q82811 }
 optics:                  { dim: physics, en: "Optics", de: "Optik", wikidata: Q14620 }
 electromagnetism:        { dim: physics, en: "Electromagnetism", de: "Elektromagnetismus", wikidata: Q11406 }
+quantum-mechanics:       { dim: physics, en: "Quantum mechanics", de: "Quantenmechanik", wikidata: Q944 }
 
 # --- Adjacent sciences -------------------------------------------------------------
 biology:                 { dim: adjacent_sciences, en: "Biology", de: "Biologie", wikidata: Q420 }

@@ -30,7 +30,7 @@ For each article or text you are given:
    result). Check units, orders of magnitude and that EN and DE versions state the same values.
 5. **Hypotheses:** statements about the future, superintelligence or speculative technology must
    be framed as scenarios and attributed; flag any that read as fact.
-6. **Identifiers:** check Wikidata IDs in `about`/`mentions`/`_data/beings.yml` resolve to the
+6. **Identifiers:** check Wikidata IDs in `about`/`mentions`/`_data/beings.yml`/`_data/thought_experiments.yml` resolve to the
    intended item.
 
 Return a Markdown report: a table `claim | location | verdict | evidence/source | fix`, then a list

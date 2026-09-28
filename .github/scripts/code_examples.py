@@ -141,6 +141,9 @@ def find_examples(errors):
                     errors.append(f"{rel}:{line}: Python block without "
                                   '{% include code-result.html file="<name>.py" %} right after it')
                     continue
+                if '\\"' in inc.group(1):
+                    errors.append(f"{rel}:{line}: code-result parameters contain \\\" – Liquid has no escapes, "
+                                  "the value would be cut off; use typographic quotes “…” instead")
                 params = dict(PARAM.findall(inc.group(1)))
                 ex = {
                     "where": f"{rel}:{line}",
@@ -160,6 +163,9 @@ def find_examples(errors):
                 else:
                     examples.append(ex)
         for m in VARIANT.finditer(text):
+            if '\\"' in m.group(1):
+                errors.append(f"{rel}:{text.count(chr(10), 0, m.start()) + 1}: code-variant parameters contain \\\" – "
+                              "use typographic quotes “…” instead")
             v = dict(PARAM.findall(m.group(1)))
             v["where"] = f"{rel}:{text.count(chr(10), 0, m.start()) + 1}"
             owner = [ex for ex in examples if ex["where"].startswith(f"{rel}:") and ex["file"] == v.get("file")]

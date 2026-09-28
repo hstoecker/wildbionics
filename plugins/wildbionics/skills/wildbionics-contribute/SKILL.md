@@ -29,7 +29,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 
 - `_articles/<slug>.<lang>.md` – articles (one file per language, linked by `ref`)
 - `_data/i18n.yml` – all UI strings (EN/DE keys must match) · `_data/glossary.yml` – EN→DE terms
-- `_data/taxonomy.yml`, `_data/beings.yml`, `_data/lenses.yml` – ontology and graph data
+- `_data/taxonomy.yml`, `_data/beings.yml`, `_data/thought_experiments.yml`, `_data/lenses.yml` – ontology and graph data
 - `_includes/` – page parts; `_includes/svg/` – figures; `_layouts/` – page layouts
 - `assets/css/main.css`, `assets/js/` – design system and the only scripts (no dependencies)
 - `graph.json`, `graph.jsonld`, `sitemap.xml`, `robots.txt`, `llms.txt` – generated machine-readable files
@@ -66,7 +66,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines of the changed pages |
 | `.github/workflows/claude-review.yml` | PR opened/updated (branches of this repo) | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment; the transcript is kept as artifact `claude-review-pr-<n>`, blocked tool calls appear as warnings; if Claude did not post its report, the job posts Claude's final message (or a notice). Changes to this workflow are only tested after merging – the action refuses to run on a PR that edits its own workflow |
 | `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills, pushes a branch after every major step and posts a link to create the pull request; for small, focused tasks (turn limit, maintainer's tokens) – whole articles are written with Claude Code |
-| `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/lenses |
+| `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/thought experiments/lenses |
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
 | `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |

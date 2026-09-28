@@ -62,6 +62,20 @@ terms:
   - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
   - { en: "Doppler shift", de: "Doppler-Verschiebung", de_alt: ["Dopplerverschiebung"] }
   - { en: "source level*", de: "Quellpegel" }
+  - { en: "thought experiment*", de: "Gedankenexperiment*" }
+  - { en: "superposition*", de: "Überlagerung*", de_alt: ["Superposition*"] }
+  - { en: "decoherence", de: "Dekohärenz" }
+  - { en: "coherence", de: "Kohärenz" }
+  - { en: "density matrix", de: "Dichtematrix" }
+  - { en: "Born rule", de: "Bornsche* Regel", de_alt: ["Bornsche* Wahrscheinlichkeitsinterpretation"] }
+  - { en: "measurement problem", de: "Messproblem", avoid: ["Messungsproblem"], level: warn }
+  - { en: "cat state*", de: "Katzenzust*" }
+  - { en: "cat qubit*", de: "Katzen-Qubit*" }
+  - { en: "half-life", de: "Halbwertszeit", de_alt: ["Halbwertzeit"] }
+  - { en: "bit-flip*", de: "Bitflip*" }
+  - { en: "phase-flip*", de: "Phasenflip*" }
+  - { en: "Geiger counter", de: "Zählrohr", de_alt: ["Geigerzähler"] }
+  - { en: "hydrocyanic acid", de: "Blausäure" }
   - { en: "Doppler shift compensation", de: "Dopplereffekt-Kompensation", de_alt: ["Doppler-Kompensation"] }
   - { en: "auditory fovea", de: "akustische* Fovea" }
   - { en: "duty cycle", de: "Tastgrad", de_alt: ["Duty Cycle"] }

@@ -15,11 +15,12 @@
   const typeLabel = {
     article: stage.dataset.labelArticle,
     being: stage.dataset.labelBeing,
+    "thought-experiment": stage.dataset.labelThoughtExperiment,
   };
   const dimLabel = Object.fromEntries(DIMS.map((d) => [d, stage.dataset["label" + d.split("_").map((w) => w[0].toUpperCase() + w.slice(1)).join("")]]));
 
   // Node sizes and preferred edge lengths (in viewBox units).
-  const RADIUS = { dimension: 28, article: 20, being: 11, term: 7 };
+  const RADIUS = { dimension: 28, article: 20, being: 11, "thought-experiment": 11, term: 7 };
   const LENGTH = { contains: 78, about: 120 };
   const ARTICLE_TERM = 210;
 

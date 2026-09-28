@@ -389,7 +389,7 @@ else:
                 errors.append(f"graph.jsonld: {i} sameAs is not a Wikidata item URL: {same}")
         if graph_file.exists():
             graph = json.loads(graph_file.read_text(encoding="utf-8"))
-            prefix = {"term": "term-", "being": "being-", "dimension": "dim-"}
+            prefix = {"term": "term-", "being": "being-", "thought-experiment": "thought-experiment-", "dimension": "dim-"}
             for n in graph["nodes"]:
                 kind, slug = n["id"].split(":", 1)
                 if kind in prefix and G + prefix[kind] + slug not in ld:
@@ -397,7 +397,7 @@ else:
             for n in (x for x in graph["nodes"] if x["type"] == "article"):
                 edges = [e for e in graph["edges"] if e["source"] == n["id"]]
                 terms = {G + "term-" + e["target"].split(":", 1)[1] for e in edges if e["type"] not in ("about", "lens")}
-                beings = {G + "being-" + e["target"].split(":", 1)[1] for e in edges if e["type"] == "about"}
+                about = {G + prefix[e["target"].split(":", 1)[0]] + e["target"].split(":", 1)[1] for e in edges if e["type"] == "about"}
                 for url in n["url"].values():
                     art = ld.get(url + "#article")
                     if art is None:
@@ -405,8 +405,8 @@ else:
                         continue
                     if ref_ids(art.get("keywords", [])) != terms:
                         errors.append(f"graph.jsonld: {url} keywords differ from graph.json's term edges")
-                    if ref_ids(art.get("about", [])) != beings:
-                        errors.append(f"graph.jsonld: {url} about differs from graph.json's organism edges")
+                    if ref_ids(art.get("about", [])) != about:
+                        errors.append(f"graph.jsonld: {url} about differs from graph.json's organism and thought-experiment edges")
     except (json.JSONDecodeError, KeyError, ValueError) as e:
         errors.append(f"graph.jsonld invalid: {e}")
 
