@@ -12,7 +12,7 @@ permalink: /articles/bat-echolocation/
 image: /assets/og/bat-echolocation-en.jpg
 image_alt: "Schematic of a bat closing in on a moth: along its flight path the echolocation calls become more and more frequent, from the search phase to the final buzz."
 hero_figure: svg/bat-hunt.svg
-hero_caption: "<span class=\"caption__label\">Fig. 1</span> An insect-eating bat hunting a moth. While searching, many bats call about every 100 ms. Once they have detected prey, they call faster and faster, ending in a feeding buzz of up to about 200 calls per second. The timeline below shows each call as a tick."
+hero_caption: "<span class=\"caption__label\">Fig. 1</span> An insect-eating bat hunting a moth. While searching, bats often call 5–20 times per second, for example every 100 ms. Once they have detected prey, they call faster and faster, ending in a feeding buzz of up to about 200 calls per second. The timeline below shows each call as a tick."
 educational_level: "Intermediate"
 keywords: ["bat", "echolocation", "biosonar", "ultrasound", "big brown bat", "Eptesicus fuscus", "feeding buzz", "Doppler shift", "Doppler shift compensation", "matched filter", "range resolution", "frequency-modulated chirp", "tiger moth", "sonar jamming", "Robat", "BatSLAM", "bionics"]
 about:
@@ -34,12 +34,12 @@ beings: ["big-brown-bat", "tiger-moth"]
 lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "Bat echolocation calls range from about **11 kHz to 212 kHz**; most insect-eating bats call between 20 and 60 kHz – above the range of human hearing [2](#ref-2){:.cite}."
-  - "Bats are among the **loudest animals in air**: bats that hunt over water reach average source levels of about 137 dB SPL, with maxima above **140 dB SPL** [3](#ref-3){:.cite}."
-  - "Big brown bats and other species can tell apart targets whose distances differ by only **1–3 cm** [4](#ref-4){:.cite}."
+  - "Bat calls are among the **most intense airborne sounds of any animal** [2](#ref-2){:.cite}: bats that hunt over water reach average source levels of about 137 dB SPL, with maxima above **140 dB SPL** [3](#ref-3){:.cite}."
+  - "In Simmons' classic experiments, big brown bats and three other species told apart targets whose distances differed by only **1–3 cm** [4](#ref-4){:.cite}."
   - "When closing in on prey, a bat calls faster and faster – in the final **feeding buzz** up to about 200 calls per second [2](#ref-2){:.cite}."
-  - "Horseshoe bats lower their call frequency the faster they fly, so that the Doppler-shifted echo always returns at the frequency they hear best [2](#ref-2){:.cite} [10](#ref-10){:.cite}."
+  - "Horseshoe bats lower their call frequency the faster they fly, so that the Doppler-shifted echo returns consistently at the frequency they hear best [2](#ref-2){:.cite} [10](#ref-10){:.cite}."
   - "The tiger moth *Bertholdia trigona* **jams the sonar** of attacking big brown bats with ultrasonic clicks [9](#ref-9){:.cite}."
-  - "Robots with one ultrasonic speaker and two microphones have mapped offices and outdoor terrain using only echoes [11](#ref-11){:.cite} [5](#ref-5){:.cite}."
+  - "Robots with one ultrasonic speaker and two microphones have mapped offices and greenhouses by sound, combining the echoes with their own movement data [11](#ref-11){:.cite} [5](#ref-5){:.cite}."
 faq:
   - q: "How does bat echolocation work?"
     a: "A bat produces short, loud calls in its larynx and emits them through its mouth or nose. The sound bounces off objects, and the bat listens to the returning echoes with its large ears. The delay of an echo tells it how far away an object is, the difference between its two ears tells it the direction, and changes in the echo's pitch and loudness reveal whether the object moves and how large it is."
@@ -48,11 +48,11 @@ faq:
   - q: "How loud are bats?"
     a: "Very loud. Annemarie Surlykke and Elisabeth Kalko measured wild bats in Panama: open-space and edge-space hunters reached source levels of 122 to 134 decibels, and two species that hunt over water averaged about 137 decibels, with maxima above 140 decibels. Such values, measured 10 centimetres in front of the bat, are among the most intense airborne sounds any animal makes. We do not hear them only because they are ultrasonic."
   - q: "How precisely can a bat measure distance?"
-    a: "In discrimination experiments, James Simmons found that four species of bats, including the big brown bat, can tell apart two targets whose distances differ by only 1 to 3 centimetres. The bats use the arrival time of the echoes. A call that sweeps over a wide range of frequencies makes this precision possible."
+    a: "In discrimination experiments, James Simmons found that four species of bats, including the big brown bat, can tell apart two targets whose distances differ by only 1 to 3 centimetres. Big brown bats use the arrival time of the echoes for this. A call that sweeps over a wide range of frequencies makes this precision possible."
   - q: "Can moths defend themselves against bats?"
     a: "Yes. Many moths have ears that detect bat calls and trigger evasive flight. Some tiger moths answer an attack with ultrasonic clicks: they warn the bat that they taste bad, some harmless species mimic these warnings, and the tiger moth Bertholdia trigona uses its clicks to jam the sonar of big brown bats."
   - q: "Are there robots that use echolocation like bats?"
-    a: "Yes. BatSLAM, built by Jan Steckel and Herbert Peremans, is a mobile robot with a bat-like sonar head that maps office environments from echoes alone. The Robat from Tel Aviv University moves autonomously through outdoor terrain with one ultrasonic speaker and two microphones, maps obstacles and uses a neural network to tell plants from other objects."
+    a: "Yes. BatSLAM, built by Jan Steckel and Herbert Peremans, is a mobile robot with a bat-like sonar head that maps office environments from its echoes combined with its own movement data. The Robat from Tel Aviv University moves autonomously through greenhouses with one ultrasonic speaker and two microphones, maps obstacles and uses a neural network to tell plants from other objects."
 sources:
   - authors: ["Griffin, D. R."]
     year: 1944
@@ -145,13 +145,13 @@ On a summer night, an insect-eating bat can chase a moth through complete darkne
 
 In 1944, the American zoologist Donald Griffin wrote a short paper whose title sums up the idea: *Echolocation by blind men, bats and radar* [1](#ref-1){:.cite}. The comparison with radar was apt. Bats use solutions that engineers also adopted in sonar and radar – broadband sweeps to measure distance, and the Doppler shift to measure speed [2](#ref-2){:.cite}.
 
-Most bat calls are **ultrasound**: they lie above about 20 kHz, the upper limit of human hearing. Across all species, the dominant frequencies of echolocation calls range from about 11 kHz to 212 kHz; most insect-eating bats call between 20 and 60 kHz [2](#ref-2){:.cite}. The calls are also remarkably loud. Bats hunting in the open reach source levels of 122–134 dB SPL, measured 10 cm in front of the mouth; two species of bulldog bats that hunt low over water average about 137 dB SPL, with maxima above **140 dB SPL** [3](#ref-3){:.cite}. These are among the most intense airborne sounds produced by any animal [2](#ref-2){:.cite}.
+Most bat calls are **ultrasound**: they lie above about 20 kHz, the upper limit of human hearing. Across all species, the dominant frequencies of echolocation calls range from about 11 kHz to 212 kHz; most insect-eating bats call between 20 and 60 kHz [2](#ref-2){:.cite}. The calls are also remarkably loud. Bats hunting in open space and along the edges of vegetation reach source levels of 122–134 dB SPL, measured 10 cm in front of the mouth; two species of bulldog bats that hunt low over water average about 137 dB SPL, with maxima above **140 dB SPL** [3](#ref-3){:.cite}. These are among the most intense airborne sounds produced by any animal [2](#ref-2){:.cite}.
 
-With these calls, bats measure distance with astonishing precision. In training experiments, four species – among them the big brown bat, *Eptesicus fuscus* – could tell apart two targets whose distances differed by only **1–3 cm** [4](#ref-4){:.cite}.
+With these calls, bats measure distance with astonishing precision. In James Simmons' classic training experiments, four species – among them the big brown bat, *Eptesicus fuscus* – could tell apart two targets whose distances differed by only **1–3 cm** [4](#ref-4){:.cite}.
 
 ## The hunt in three phases
 
-1. **Search.** The bat flies through its hunting ground and calls at a steady rhythm. Bats in open space use longer calls and longer intervals than bats in clutter [2](#ref-2){:.cite}; many foraging bats call about every 100 ms [5](#ref-5){:.cite}.
+1. **Search.** The bat flies through its hunting ground and calls at a steady rhythm. Bats in open space use longer calls and longer intervals than bats in clutter; in flight, bats often call 5–20 times per second [2](#ref-2){:.cite} – a call every 100 ms is typical of many foraging bats [5](#ref-5){:.cite}.
 2. **Approach.** As soon as the bat detects an insect, it turns towards it. The echo delay shrinks as the distance shrinks, so the bat calls at shorter and shorter intervals. It also shortens each call, because the loud outgoing call must not overlap with the faint returning echo [2](#ref-2){:.cite}.
 3. **Buzz.** Just before the capture, the calls merge into a rapid **feeding buzz** of up to about 200 calls per second [2](#ref-2){:.cite}. The bat now updates the position of its prey every few milliseconds.
 
@@ -171,7 +171,7 @@ The tiger moth *Bertholdia trigona* uses its clicks in yet another way. It is pa
 
 Bats, in turn, show counter-adaptations. Some call at frequencies outside the hearing range of most eared moths, some change the pattern and frequency of their calls during pursuit, and some use quiet, "stealth" echolocation [7](#ref-7){:.cite}.
 
-Echolocation calls themselves are shaped by the habitat more than by the family tree. Long constant-frequency calls with a high duty cycle – the sound is "on" most of the time – evolved independently in horseshoe bats and in the moustached bat *Pteronotus parnellii*: a textbook case of **convergent evolution** [2](#ref-2){:.cite}.
+Echolocation calls themselves are often shaped more by the habitat than by the family tree. Long constant-frequency calls with a high duty cycle – the sound is "on" most of the time – evolved independently in horseshoe bats and in the moustached bat *Pteronotus parnellii*: a textbook case of **convergent evolution** [2](#ref-2){:.cite}.
 
 {% include lens-end.html %}
 
@@ -181,9 +181,9 @@ Echolocation calls themselves are shaped by the habitat more than by the family 
 
 Sound travels through air at about 343 m/s at 20 °C. Its wavelength is the speed divided by the frequency, *λ* = *c* / *f*. At 20 kHz, a sound wave is about 17 mm long; at 100 kHz, only 3.4 mm. This matters because an object reflects sound well only if it is not much smaller than the wavelength. When the wing length of an insect drops from one wavelength to a fifth of it, its echo becomes about 25 dB weaker. Small prey therefore calls for high frequencies [2](#ref-2){:.cite}.
 
-High frequencies have a price, though: air absorbs them much more strongly than low frequencies, which limits the range of echolocation [2](#ref-2){:.cite}. In addition, sound spreads out on the way to the target and again on the way back. For a small target, the intensity of the echo falls with the fourth power of the distance: at twice the distance, the echo is 16 times, or 12 dB, weaker. Bats counter these losses with volume. Surlykke and Kalko found that the bats emitting the highest intensities also used the highest frequencies – so that species calling at very different frequencies ended up with similar detection distances for prey [3](#ref-3){:.cite}. When closing in on vegetation or the ground, bats lower their output again, by 4–7 dB per halving of the distance [3](#ref-3){:.cite}.
+High frequencies have a price, though: air absorbs them much more strongly than low frequencies, which limits the range of echolocation [2](#ref-2){:.cite}. In addition, sound spreads out on the way to the target and again on the way back. For a small target, the intensity of the echo falls with the fourth power of the distance: at twice the distance, the echo is 16 times, or 12 dB, weaker. Bats counter these losses with volume. Surlykke and Kalko found that the bats emitting the highest intensities also used the highest frequencies. Their estimates suggest that, as a result, species calling at very different frequencies have similar detection distances for prey [3](#ref-3){:.cite}. When closing in on vegetation or the ground, bats lower their output again, by 4–7 dB per halving of the distance [3](#ref-3){:.cite}.
 
-The third effect is the **Doppler shift**. When a bat flies towards an object, the echo returns at a higher frequency than the call – the bat is a moving source and, for the returning echo, a moving receiver. Horseshoe bats and the moustached bat turn this into a precision instrument: they lower the frequency of their calls the faster they fly, so that the echoes always return at the frequency they hear best [2](#ref-2){:.cite}. This **Doppler shift compensation** keeps the echoes in their **auditory fovea**: an expanded region of the inner ear devoted to a narrow band around this frequency, served along the whole auditory pathway by many sharply tuned nerve cells. There, the rhythmic changes in the echo caused by the beating wings of an insect – the "flutter" – stand out even in dense vegetation [10](#ref-10){:.cite}.
+The third effect is the **Doppler shift**. When a bat flies towards an object, the echo returns at a higher frequency than the call – the bat is a moving source and, for the returning echo, a moving receiver. Horseshoe bats and the moustached bat turn this into a precision instrument: they lower the frequency of their calls the faster they fly, so that the echoes return consistently at the frequency they hear best [2](#ref-2){:.cite}. This **Doppler shift compensation** keeps the echoes in their **auditory fovea**: an expanded region of the inner ear devoted to a narrow band around this frequency, served along the whole auditory pathway by many sharply tuned nerve cells. There, the rhythmic changes in the echo caused by the beating wings of an insect – the "flutter" – stand out even in clutter such as vegetation [10](#ref-10){:.cite}.
 
 {% include lens-end.html %}
 
@@ -201,13 +201,13 @@ Every metre of distance adds 2 m / 343 m/s ≈ **5.8 ms** of delay. An echo a
 
 <div class="formula" role="math" aria-label="delta d is approximately c over 2 B">Δ<var>d</var> ≈ <span class="frac"><span class="frac__num"><var>c</var></span><span class="frac__den">2 <var>B</var></span></span></div>
 
-A call sweeping from 80 to 40 kHz has *B* = 40 kHz and a resolution of about 343 / 80,000 m ≈ **4 mm**. A pure tone lasting 2 ms has a bandwidth of only about 1 / (2 ms) = 0.5 kHz – and a resolution of about 34 cm. Measured bats reach 1–3 cm [4](#ref-4){:.cite} – coarser than this ideal limit, but far finer than a pure tone would allow. The computer science lens tests the formula with a program.
+A call sweeping from 80 to 40 kHz has *B* = 40 kHz and a resolution of about 343 / 80,000 m ≈ **4 mm**. A pure tone lasting 2 ms has a bandwidth of only about 1 / (2 ms) = 0.5 kHz – and a resolution of about 34 cm. In Simmons' 1973 discrimination tests, bats resolved 1–3 cm [4](#ref-4){:.cite} – coarser than this ideal limit, but far finer than a pure tone would allow. The computer science lens tests the formula with a program.
 
 **Direction.** A sound from the side reaches the nearer ear slightly earlier. For ears a distance *b* apart and a sound arriving at an angle *θ* from straight ahead, the difference in arrival time is
 
 <div class="formula" role="math" aria-label="delta tau equals b times sine theta over c">Δ<var>τ</var> = <span class="frac"><span class="frac__num"><var>b</var> · sin <var>θ</var></span><span class="frac__den"><var>c</var></span></span></div>
 
-With an assumed ear spacing of 2 cm, a direction 10° off the centre line gives Δ*τ* = 0.02 m · sin 10° / 343 m/s ≈ **10 µs** – ten millionths of a second. Bats and other small mammals estimate direction to better than about 10° [5](#ref-5){:.cite}; together with the delay, this gives a position in space. Bats also use the loudness difference between their ears and the way their outer ears filter the sound [11](#ref-11){:.cite}.
+With an assumed ear spacing of 2 cm, a direction 10° off the centre line gives Δ*τ* = 0.02 m · sin 10° / 343 m/s ≈ **10 µs** – ten millionths of a second. Bats and other small mammals estimate direction to better than about 10°, which corresponds to time differences below about 10 µs [5](#ref-5){:.cite}; together with the delay, this gives a position in space. Bats also use the loudness difference between their ears and the way their outer ears filter the sound [11](#ref-11){:.cite}.
 
 **Speed.** For a bat flying at speed *v* towards a stationary object, the echo returns with the frequency
 
@@ -312,7 +312,7 @@ What the result teaches:
 
 - **Bandwidth beats duration.** Both calls last 2 ms and carry the same energy. The sweep separates the two targets exactly (error below 0.1 cm), just as the formula Δ*d* ≈ *c* / (2*B*) ≈ 0.4 cm predicts. The tone has a resolution of about 34 cm, far more than the 5 cm between the targets.
 - **Overlapping echoes do more than blur.** The two tone echoes overlap and interfere: depending on their phase difference, they add up or cancel. Here, the program reports two echoes at 1.43 and 1.62 m – both about 7 cm off. A pure tone is simply the wrong tool for measuring distance; bats that use long constant-frequency calls, like horseshoe bats, use the frequency-modulated part at the end of their calls for ranging [4](#ref-4){:.cite}.
-- **The model is idealised.** The simulated echoes are perfect copies of the call; real echoes are weakened, filtered by the target and the air, and shifted by the Doppler effect. The resolution of 0.4 cm is therefore a lower limit, not a prediction for a real bat. Measured bats reach 1–3 cm [4](#ref-4){:.cite}.
+- **The model is idealised.** The simulated echoes are perfect copies of the call; real echoes are weakened, filtered by the target and the air, and shifted by the Doppler effect. The resolution of 0.4 cm is therefore a lower limit, not a prediction for a real bat. In Simmons' 1973 tests, bats resolved 1–3 cm [4](#ref-4){:.cite}.
 
 A few programming ideas are worth noticing, too:
 
@@ -345,9 +345,9 @@ Physical AI is about machines that sense and act in the physical world. Cameras 
 - a model of the mammalian cochlea turns the echoes into time–frequency patterns;
 - a navigation model based on the hippocampus of rats (RatSLAM) links these patterns to places.
 
-The robot mapped unmodified office environments efficiently and consistently. It recognised places it had visited before without identifying individual objects in the echoes [11](#ref-11){:.cite}. SLAM stands for **simultaneous localisation and mapping**: the robot builds a map and finds its own position in it at the same time.
+The robot combined the echoes with its own movement commands (odometry). Odometry alone did not produce a useful map; together with the echoes, the robot mapped unmodified office environments efficiently and consistently. It recognised places it had visited before without identifying individual objects in the echoes [11](#ref-11){:.cite}. SLAM stands for **simultaneous localisation and mapping**: the robot builds a map and finds its own position in it at the same time.
 
-**Robat.** Itamar Eliakim, Yossi Yovel and colleagues at Tel Aviv University built a fully autonomous robot that moves through unknown outdoor terrain using nothing but echoes [5](#ref-5){:.cite}. Like a bat, it has one ultrasonic speaker as its "mouth" and two ultrasonic microphones as its "ears". Every 0.5 m it emitted wide-band frequency-modulated calls in three directions – mimicking a bat that flies at 5 m/s and calls every 100 ms. From the echoes it marked obstacles on a map, avoided dead ends and steered around objects. On average, the estimated borders of the objects were 42 cm from their real position. A neural network classified objects as plants or non-plants with a balanced accuracy of 68 %, clearly above the 50 % expected by chance [5](#ref-5){:.cite}.
+**Robat.** Itamar Eliakim, Yossi Yovel and colleagues at Tel Aviv University built a fully autonomous robot that maps unknown surroundings by sound alone [5](#ref-5){:.cite}. They tested it in two greenhouses of the university's botanical garden. Like a bat, it has one ultrasonic speaker as its "mouth" and two ultrasonic microphones as its "ears". Every 0.5 m – measured by its odometry – it stopped and emitted wide-band frequency-modulated calls in three directions – mimicking a bat that flies at 5 m/s and calls every 100 ms. From the echoes it marked obstacles on a map, avoided dead ends and steered around objects. On average, the estimated borders of the objects were 42 cm from their real position. A neural network classified objects as plants or non-plants with a balanced accuracy of 68 %, clearly above the 50 % expected by chance [5](#ref-5){:.cite}.
 
 These numbers show both the promise and the gap. A robot can map its surroundings with sound alone, but real bats still perceive far more detail from their echoes – and do it in flight. The lesson for Physical AI: the shape of the sensor itself – ears, noseleaf, a well-designed call – does part of the processing before any computer gets involved [11](#ref-11){:.cite}.
 
