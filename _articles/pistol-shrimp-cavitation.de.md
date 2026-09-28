@@ -8,7 +8,7 @@ kicker: "Schwerpunktartikel · Strömungsmechanik"
 description: "Wie ein Knallkrebs Wasser ohne Hitze sieden lässt: Seine Schere erzeugt Strahl, Kavitationsblase, Lichtblitz und Stoßwelle. Mit Physik, Mathe und Code."
 dek: "Wie ein nur wenige Zentimeter großer Krebs Wasser ohne Hitze zum Sieden bringt: Ein Schlag seiner Schere erzeugt einen Strahl, eine Kavitationsblase, einen Lichtblitz und eine Stoßwelle – erklärt mit Physik, Mathematik und Code."
 date: 2026-09-26
-updated: 2026-09-27
+updated: 2026-09-28
 permalink: /de/artikel/knallkrebs-kavitation/
 image: /assets/og/pistol-shrimp-cavitation-de.jpg
 image_alt: "Vorschaukarte: Schema eines ganzen Knallkrebses, dessen übergroße Knallschere einen Wasserstrahl mit rund 25 m/s abschießt – eine Kavitationsblase entsteht und sendet eine Stoßwelle aus."
@@ -229,7 +229,8 @@ rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh-Formel (leere Blase): {rayleigh * 1e6:.0f} µs\n")
 print("Gas (Pa)   Kollaps (µs)   R_min (µm)   max. Geschw. (km/s)   T_max (1000 K)")
 
-fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
+plt.rcParams["font.size"] = 13      # übereinander und mit größerer Schrift, damit die Grafik auch auf dem Handy lesbar bleibt
+fig, (whole, end) = plt.subplots(2, 1, figsize=(6.4, 8.4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # wie viel Gas die Blase des Krebses enthält, hat niemand gemessen
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
@@ -255,7 +256,7 @@ end.set(ylabel="Blasenradius (µm, logarithmisch)", xlim=(rayleigh * 1e6 - 4, ra
 end.yaxis.set_major_formatter("{x:g}")
 plt.show()
 ```
-{% include code-result.html file="rayleigh_plesset.py" label="Abb. 4" caption="Ausgabe des Programms oben. Links: der ganze Kollaps – die drei Kurven liegen übereinander und enden bei Rayleighs Kollapszeit. Rechts: die letzten Mikrosekunden auf logarithmischer Skala – hier entscheidet die Gasmenge, wie klein die Blase wird. Gepunktet: Die Blasenwand ist schneller als der Schall in Wasser, das Modell gilt dort nicht mehr." alt="Zwei Liniendiagramme des Blasenradius über der Zeit für 10, 100 und 1.000 Pascal Gas. Links fallen alle drei Kurven von 3.000 Mikrometern bei etwa 276 Mikrosekunden auf fast null, neben einer gestrichelten Linie für die Rayleigh-Formel. Rechts, vergrößert auf 272 bis 280 Mikrosekunden mit logarithmischer Achse: Die Blase mit 10 Pa schrumpft bei 275 Mikrosekunden auf 3 Mikrometer, die mit 100 Pa bei 276 auf 20 Mikrometer, die mit 1.000 Pa bei 279 nur auf 137 Mikrometer. Für 10 und 100 Pascal sind die Kurven unterhalb von etwa 90 Mikrometern gepunktet: Dort ist die Blasenwand schneller als der Schall, und das Modell gilt nicht mehr." %}
+{% include code-result.html file="rayleigh_plesset.py" label="Abb. 4" caption="Ausgabe des Programms oben. Oben: der ganze Kollaps – die drei Kurven liegen übereinander und enden bei Rayleighs Kollapszeit. Unten: die letzten Mikrosekunden auf logarithmischer Skala – hier entscheidet die Gasmenge, wie klein die Blase wird. Gepunktet: Die Blasenwand ist schneller als der Schall in Wasser, das Modell gilt dort nicht mehr." alt="Zwei Liniendiagramme des Blasenradius über der Zeit für 10, 100 und 1.000 Pascal Gas, übereinander. Oben fallen alle drei Kurven von 3.000 Mikrometern bei etwa 276 Mikrosekunden auf fast null, neben einer gestrichelten Linie für die Rayleigh-Formel. Unten, vergrößert auf 272 bis 280 Mikrosekunden mit logarithmischer Achse: Die Blase mit 10 Pa schrumpft bei 275 Mikrosekunden auf 3 Mikrometer, die mit 100 Pa bei 276 auf 20 Mikrometer, die mit 1.000 Pa bei 279 nur auf 137 Mikrometer. Für 10 und 100 Pascal sind die Kurven unterhalb von etwa 90 Mikrometern gepunktet: Dort ist die Blasenwand schneller als der Schall, und das Modell gilt nicht mehr." %}
 
 Was das Ergebnis zeigt:
 

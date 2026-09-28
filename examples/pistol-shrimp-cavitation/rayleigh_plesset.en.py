@@ -35,7 +35,8 @@ rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh's formula (empty bubble): {rayleigh * 1e6:.0f} µs\n")
 print("gas (Pa)   collapse (µs)   R_min (µm)   max. speed (km/s)   T_max (1000 K)")
 
-fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
+plt.rcParams["font.size"] = 13      # stacked and with larger type, so the chart stays readable on a phone
+fig, (whole, end) = plt.subplots(2, 1, figsize=(6.4, 8.4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # nobody has measured how much gas the shrimp's bubble holds
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()

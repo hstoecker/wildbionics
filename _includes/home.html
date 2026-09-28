@@ -99,6 +99,29 @@
         <div class="lens__figure">
           <div class="code-card">
             <div class="code-card__bar"><span class="code-card__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>sonar.py</span><span class="code-card__lang">{{ t.lens.cs.code_label }}</span></div>
+{%- if lang == "de" %}
+{% highlight python %}
+import numpy as np
+
+SPEED_OF_SOUND = 343.0  # m/s, Luft bei 20 °C
+
+def echo_distance(chirp, recording, sample_rate):
+    """Echo mit einem Optimalfilter finden; Entfernung in Metern."""
+    corr = np.correlate(recording, chirp, mode="valid")
+    delay = np.argmax(np.abs(corr)) / sample_rate  # Hin- und Rückweg, s
+    return SPEED_OF_SOUND * delay / 2
+
+# Demo: ein 2 ms langer Ruf von 80 → 40 kHz, Echo einer Motte in 1,7 m Entfernung
+rate = 250_000                                   # Abtastwerte pro Sekunde
+t = np.arange(0, 0.002, 1 / rate)
+chirp = np.sin(2 * np.pi * (80_000 * t - 1e7 * t**2))
+recording = np.random.default_rng(1).normal(0, 1, 5_000)  # 20 ms Rauschen
+start = round(2 * 1.7 / SPEED_OF_SOUND * rate)
+recording[start:start + chirp.size] += 0.5 * chirp  # Echo schwächer als das Rauschen
+print(f"Motte in {echo_distance(chirp, recording, rate):.2f} m Entfernung")
+{% endhighlight %}
+{% include code-result.html file="sonar.py" ref="home" lang="de" variant="card" %}
+{%- else %}
 {% highlight python %}
 import numpy as np
 
@@ -120,6 +143,7 @@ recording[start:start + chirp.size] += 0.5 * chirp  # echo weaker than the noise
 print(f"moth at {echo_distance(chirp, recording, rate):.2f} m")
 {% endhighlight %}
 {% include code-result.html file="sonar.py" ref="home" lang="en" variant="card" %}
+{%- endif %}
           </div>
         </div>
       </article>
