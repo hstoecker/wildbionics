@@ -154,7 +154,7 @@ Versluis und Kollegen schätzten die Geschwindigkeit des Strahls aus Hochgeschwi
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}
-<figcaption class="caption"><span class="caption__label">Abb. 2</span> Statischer Druck in einem Wasserstrahl nach Bernoulli. Oberhalb von etwa 14 m/s fällt er unter den Dampfdruck des Wassers. Der Strahl des Krebses liegt mit rund 25 m/s tief im Kavitationsbereich.</figcaption>
+<figcaption class="caption"><span class="caption__label">Abb. 2</span> Statischer Druck in einem Wasserstrahl nach Bernoulli. Oberhalb von etwa 14 m/s fällt er unter den Dampfdruck des Wassers. Der Strahl des Krebses liegt mit rund 25 m/s tief im Kavitationsbereich. {% include figure-link.html name="bernoulli" %}</figcaption>
 </figure>
 
 Ingenieure fassen das in der **Kavitationszahl** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²) zusammen. Je kleiner σ, desto wahrscheinlicher ist Kavitation. Für einen Strahl mit 25 m/s ist σ ≈ 0,3. Die mechanische Nachbildung der Schere von Tang und Staack erzeugte Strahlen mit etwa 26 bis 37 m/s und σ = 0,14 bis 0,30 – vergleichbar mit dem echten Krebs [3](#ref-3){:.cite}.
@@ -181,7 +181,7 @@ Aus der Formel folgen direkt zwei Dinge. Die Kollapszeit wächst **proportional 
 
 <figure class="figure figure--dark">
 {% include svg/cavitation.svg %}
-<figcaption class="caption caption--dark"><span class="caption__label">Abb. 3</span> Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwingungen (Rebounds). Der ganze Zyklus dauert weniger als eine Millisekunde.</figcaption>
+<figcaption class="caption caption--dark"><span class="caption__label">Abb. 3</span> Leben einer Kavitationsblase: schnelles Wachstum, heftiger Kollaps, schwache Nachschwingungen (Rebounds). Der ganze Zyklus dauert weniger als eine Millisekunde. {% include figure-link.html name="cavitation" %}</figcaption>
 </figure>
 
 Warum wird der Kollaps so heiß? Wird das Gas im Inneren schnell komprimiert, hat es keine Zeit, Wärme abzugeben – die Kompression ist *adiabatisch*. Für ein ideales Gas steigt die Temperatur dann wie

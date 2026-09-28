@@ -51,7 +51,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
    ruby .github/scripts/check_content.rb
    ruby .github/scripts/check_plugin.rb
    python3 .github/scripts/code_examples.py --check   # needs examples/requirements.txt installed
-   bundle exec jekyll build && python3 .github/scripts/check_site.py _site
+   bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
    ```
 5. **Self-review** with `wildbionics-review` and fix every must-fix finding.
 6. **Open a pull request** using the template. CI runs all gates, builds a preview (downloadable
@@ -70,6 +70,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
 | `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
+| `.github/scripts/figures.py` | CI + local (after `jekyll build`) | writes `/figures/<name>.<lang>.svg` for every figure in `_data/figures.yml`: cut from the built page, CSS from `main.css`, font subsets embedded (needs `.github/scripts/requirements.txt`: fonttools, brotli) |
 | `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (`main`) | `changed` (build job, before deploy): lists the pages whose HTML differs from the live site or are new; after deploy submits only those to IndexNow (key in `_config.yml`) – CSS, script or docs-only deploys submit nothing |
@@ -98,7 +99,7 @@ skill; CI fails a PR that changes the plugin without a version bump.
 brew install ruby@3.3 gh          # GitHub Pages builds with Ruby 3.3
 bundle install                    # github-pages gem (no Gemfile.lock in the repo, on purpose)
 python3 -m venv .venv && source .venv/bin/activate
-python3 -m pip install -r examples/requirements.txt   # for the code examples
+python3 -m pip install -r examples/requirements.txt -r .github/scripts/requirements.txt   # code examples + figure files
 bundle exec jekyll serve --livereload   # http://localhost:4000 (keeps running – last line)
 ```
 If `jekyll build` fails with "Invalid US-ASCII character", set `export LANG=en_US.UTF-8`.
@@ -139,7 +140,7 @@ Two more fields are required – both learnt from failing sessions:
   set -e
   gem install github-pages -v 232 --no-document
   ln -sf "$(ruby -e 'print Gem.bindir')/jekyll" /usr/local/bin/jekyll
-  python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4   # code examples, pinned as in examples/requirements.txt
+  python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4 fonttools==4.54.1 brotli==1.1.0   # code examples + figure files, pinned as in examples/ and .github/scripts/requirements.txt
   ```
   `ruby` on the `PATH` installs gems into an rbenv Ruby whose `bin/` is not on the `PATH`, so
   `bundle exec jekyll` fails with `bundler: command not found: jekyll` until `jekyll` is linked.

@@ -110,9 +110,12 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   `caption` = its `caption`, `description` = its `alt`, and the same licence fields as the preview
   image; the article lists them in `associatedMedia`. `code_examples.py` copies label, caption and
   alt into `_data/code_examples.yml`; the gate fails on a chart without its ImageObject.
-- Figures are inline SVG (`role="img"`, `<title>`, `<desc>`) – accessible, but without an own URL
-  they are not indexed as images and have no `ImageObject` yet (planned: figure files under
-  `/assets/figures/` plus one `ImageObject` per figure; open question: fonts in standalone SVG).
+- **Figures** stay inline SVG on the page (`role="img"`, `<title>`, `<desc>`) and are also published
+  as standalone files `/figures/<name>.<lang>.svg` (`.github/scripts/figures.py`, registry
+  `_data/figures.yml`, fonts embedded as subsets). Every page lists the figures it shows as one
+  `ImageObject` each (`#figure-<name>`: `contentUrl`, `encodingFormat`, `name` = title, `description`
+  = desc, licence fields) – from the article's `associatedMedia` or, on other pages, the WebPage's.
+  The gate fails on a figure without its ImageObject or file, and on a file whose fonts are not embedded.
 
 ## Policy
 

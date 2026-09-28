@@ -208,7 +208,7 @@ The catch is the *D*<sup>3</sup> in the denominator. Double the gap and the attr
 
 <figure class="figure">
 {% include svg/vdw.svg %}
-<figcaption class="caption"><span class="caption__label">Fig. 2</span> Van der Waals attraction between two flat surfaces, computed with a typical Hamaker constant of 10<sup>−19</sup> J. The attraction is strong only within about a nanometre – surfaces must be in intimate contact.</figcaption>
+<figcaption class="caption"><span class="caption__label">Fig. 2</span> Van der Waals attraction between two flat surfaces, computed with a typical Hamaker constant of 10<sup>−19</sup> J. The attraction is strong only within about a nanometre – surfaces must be in intimate contact. {% include figure-link.html name="vdw" %}</figcaption>
 </figure>
 
 This is the problem the gecko has solved. Its setae are made of keratin, but they are so thin and so finely branched that the spatulae can follow the unevenness of a surface and come within molecular distance of it [3](#ref-3){:.cite}. The adhesive properties of setae mainly result from the **size and shape** of their tips, not from their chemistry [2](#ref-2){:.cite}. In the 2002 experiments, Autumn and colleagues confirmed this with artificial setal tips made from two different materials: both stuck as predicted from their size [2](#ref-2){:.cite}.

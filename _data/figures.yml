@@ -1,0 +1,19 @@
+# Figures published as standalone files /figures/<name>.<lang>.svg (built after Jekyll by
+# .github/scripts/figures.py) and described as ImageObjects in the JSON-LD of every page that shows them.
+#   id       – prefix of the SVG's <title id="…-title">, used to find the figure on a page
+#   i18n     – where its title/desc (or svg_title/svg_desc) live in _data/i18n.yml
+#   context  – classes of the HTML around the figure on the site; their CSS (colours, custom
+#              properties) is copied into the standalone file so it looks the same
+#   bg       – background of the standalone file (the colour behind the figure on the site)
+#   page     – ref of the page the standalone file is cut from (EN and DE version)
+gecko:             { id: gecko,        i18n: figures.gecko,          context: "article-header",                     bg: "var(--ocean)", page: gecko-adhesion }
+vdw:               { id: vdw,          i18n: figures.vdw,            context: "prose figure",                       bg: "var(--card)",  page: gecko-adhesion }
+claw:              { id: claw,         i18n: figures.claw,           context: "article-header",                     bg: "var(--ocean)", page: pistol-shrimp-cavitation }
+bernoulli:         { id: bern,         i18n: figures.bernoulli,      context: "prose figure",                       bg: "var(--card)",  page: pistol-shrimp-cavitation }
+cavitation:        { id: cav,          i18n: flagship,               context: "prose figure figure--dark",          bg: "var(--ocean)", page: pistol-shrimp-cavitation }
+hero-echolocation: { id: hero-svg,     i18n: hero,                   context: "hero hero__figure",                  bg: "var(--night)", page: home }
+lens-biology:      { id: lens-bio,     i18n: lens.biology,           context: "lens__panel",                        bg: "var(--card)",  page: home }
+lens-physics:      { id: lens-physics, i18n: lens.physics,           context: "lens__panel",                        bg: "var(--card)",  page: home }
+lens-math:         { id: lens-math,    i18n: lens.math,              context: "lens__panel",                        bg: "var(--card)",  page: home }
+graph-anatomy:     { id: gx-anatomy,   i18n: graph.explain.anatomy,  context: "graph-page graph-explain gx-figure", bg: "var(--night)", page: graph }
+graph-shared:      { id: gx-shared,    i18n: graph.explain.shared,   context: "graph-page graph-explain gx-figure", bg: "var(--night)", page: graph }

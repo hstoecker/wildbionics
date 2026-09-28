@@ -32,7 +32,8 @@ layout: default
       {%- if page.hero_figure %}
       <figure class="article-header__figure">
         {% include {{ page.hero_figure }} %}
-        {%- if page.hero_caption %}<figcaption class="caption caption--dark">{{ page.hero_caption }}</figcaption>{% endif %}
+        {%- assign fig_name = page.hero_figure | remove_first: "svg/" | remove: ".svg" %}
+        {%- if page.hero_caption %}<figcaption class="caption caption--dark">{{ page.hero_caption }}{% if site.data.figures[fig_name] %} {% include figure-link.html name=fig_name %}{% endif %}</figcaption>{% endif %}
       </figure>
       {%- endif %}
     </div>

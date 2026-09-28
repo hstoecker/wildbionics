@@ -85,7 +85,18 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    and understand what happens?*
 5. **Fix and repeat** steps 3–4 until the checklist passes completely. Several rounds are normal
    (the pistol shrimp needed four).
-6. **Finish:** regenerate OG images that contain the figure, update captions and alt texts in both
+6. **Standalone file:** register the figure in `_data/figures.yml` (`id` = the prefix of its
+   `<title id="…-title">`, `i18n` = where its title/desc live, `context` = the classes of the HTML
+   around it on the site, `bg` = the background behind it, `page` = the ref of the page it is cut
+   from); `check_content.rb` fails without it. After `bundle exec jekyll build`, run
+   `python3 .github/scripts/figures.py _site`: it writes `/figures/<name>.<lang>.svg` with the
+   figure's CSS copied from `main.css` and the fonts embedded as subsets, so the file looks the same
+   everywhere (also as an `<img>` or a search preview). Open both files and compare them with the page –
+   nothing clipped, sprite symbols (bat, moth) present. Article captions link to the file with
+   `{% include figure-link.html name="<name>" %}` (hero captions do it automatically); every page
+   lists its figures as `ImageObject`s in its JSON-LD. Keep figure styles scoped by the figure's
+   class or by these context classes – `figures.py` copies only rules that can match.
+7. **Finish:** regenerate OG images that contain the figure, update captions and alt texts in both
    languages (`image_alt` describes the OG image), then run the gates. **OG image recipe** (one
    per article and language, 1200×630 JPEG in `assets/og/<slug>-<lang>.jpg`):
    ```bash
@@ -107,7 +118,7 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    Repeat with `lang: de` and German texts. Title size: `title_px` (default 64) – not `size`, which
    Liquid reserves. Check the JPEG: exactly 1200×630, under 300 KB, no clipped text. Gates:
    ```bash
-   ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/check_site.py _site
+   ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
    ```
    Then **show the user the final render** (send the large PNG) before committing, and say
    honestly if something is still schematic or simplified.
@@ -124,4 +135,6 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 - [ ] `<title>`/`<desc>` describe the concept in both languages; contrast OK; not colour-only.
 - [ ] OG images regenerated if they contain the figure; captions and `image_alt` (describes the
       OG image; also its JSON-LD caption) updated; gates pass.
+- [ ] Registered in `_data/figures.yml`; `/figures/<name>.<lang>.svg` (EN + DE) opened and identical
+      to the page; caption links to it.
 - [ ] Final large render shown to the user.

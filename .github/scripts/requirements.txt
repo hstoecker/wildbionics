@@ -1,0 +1,4 @@
+# Build tools for .github/scripts/figures.py (standalone figure files with embedded font subsets).
+# CI installs exactly these versions; locally: python3 -m pip install -r .github/scripts/requirements.txt
+fonttools==4.54.1
+brotli==1.1.0

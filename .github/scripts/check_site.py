@@ -209,6 +209,41 @@ def check_graph(where, nodes, page_url, noindex, crumbs, imgs=()):
             errors.append(f"{where}: JSON-LD breadcrumb {names} differs from the visible one {visible}")
 
 
+manifest_file = root / "figures" / "manifest.json"
+FIGURES = json.loads(manifest_file.read_text(encoding="utf-8"))["figures"] if manifest_file.exists() else []
+if not FIGURES:
+    errors.append("figures/manifest.json missing or empty")
+
+
+def check_figures(where, raw, lang, nodes):
+    """Every figure on the page: a licensed ImageObject of its standalone file, and the file is complete
+    (well-formed SVG, fonts embedded as data URIs, no links to the site's font files)."""
+    for fig in FIGURES:
+        if f'aria-labelledby="{fig["id"]}-title"' not in raw:
+            continue
+        url = f"{SITE_URL}/figures/{fig['name']}.{lang}.svg"
+        img = next((n for n in nodes if "ImageObject" in types_of(n) and n.get("contentUrl") == url), None)
+        if img is None:
+            errors.append(f"{where}: figure {fig['name']} has no ImageObject for {url}")
+        else:
+            for k in ("name", "description", "license", "acquireLicensePage", "creditText", "creator"):
+                if not img.get(k):
+                    errors.append(f"{where}: figure ImageObject {fig['name']} lacks {k}")
+        target = root / "figures" / f"{fig['name']}.{lang}.svg"
+        if not target.exists():
+            errors.append(f"{where}: {target.relative_to(root)} missing – run .github/scripts/figures.py {root}")
+        elif target not in checked_figures:
+            checked_figures.add(target)
+            svg = target.read_text(encoding="utf-8")
+            try:
+                ET.fromstring(svg.encode("utf-8"))
+            except ET.ParseError as e:
+                errors.append(f"/{target.relative_to(root)}: not well-formed ({e})")
+            if "data:font/woff2;base64," not in svg or re.search(r'url\(\s*(?!["\']?(?:data:|#))', svg):
+                errors.append(f"/{target.relative_to(root)}: fonts must be embedded as data URIs")
+
+
+checked_figures = set()
 for f, p in pages.items():
     rel = f.relative_to(root)
     where = f"/{rel}"
@@ -255,6 +290,7 @@ for f, p in pages.items():
                     errors.append(f"{where}: Article JSON-LD lacks {k}")
         own_url = canon[0] if canon else SITE_URL + "/" + rel.as_posix().removesuffix("index.html")
         check_graph(where, data.get("@graph", [data]), own_url, noindex, p.crumbs, p.imgs)
+        check_figures(where, f.read_text(encoding="utf-8"), p.lang, data.get("@graph", [data]))
     # hreflang: every alternate must exist and point back
     for r, href, hl in p.links:
         if r == "alternate" and hl and hl != "x-default":

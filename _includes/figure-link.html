@@ -1,0 +1,6 @@
+{%- comment -%}
+  Link from a figure caption to the figure's standalone file (/figures/<name>.<lang>.svg, written after
+  the build by .github/scripts/figures.py). Usage: {% include figure-link.html name="vdw" %}
+{%- endcomment -%}
+{%- include i18n.html -%}
+<a class="figure-link" href="{{ '/figures/' | append: include.name | append: '.' | append: lang | append: '.svg' | relative_url }}">{{ t.article.figure_open }}<span aria-hidden="true"> ↗</span></a>
