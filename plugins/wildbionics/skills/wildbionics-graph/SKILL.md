@@ -36,7 +36,9 @@ organisms (beings) and, through its lenses, to disciplines.
 - `graph.json` (Liquid) → nodes `dimension`, `term` (with `used`), `article`, `being`;
   edges `contains`, `<dimension>`, `about`, `lens`. Labels and URLs per language, CC BY-SA.
 - `_includes/graph-page.html` → pages `/graph/` and `/de/wissensgraph/`, including a complete
-  no-JS list of all connections; `assets/js/graph.js` draws the interactive view (own force
+  no-JS list of all connections and a reader explainer (`graph.explain` in `_data/i18n.yml`: what a
+  knowledge graph is, nodes and edges, dimensions, lenses, why links matter, what readers can do –
+  its example quotes the gecko article's real edges, so keep it true when that article changes); `assets/js/graph.js` draws the interactive view (own force
   layout with fixed dimension anchors and a label-collision pass – no dependencies).
 - `check_terms.rb` validates taxonomy/beings/lenses and article references;
   `check_site.py` validates graph.json (unique ids, no dangling edges, labels, links).
@@ -49,4 +51,4 @@ organisms (beings) and, through its lenses, to disciplines.
 - [ ] Graph page rendered on desktop and phone (see `wildbionics-figures` for the renderer):
       no overlapping labels, new nodes placed near their dimension.
 - [ ] If the ontology itself changes (new dimension, new node type): update `CLAUDE.md`, this
-      skill, `graph.json`, `graph.js`, the checks and the i18n legend in the same pull request.
+      skill, `graph.json`, `graph.js`, the checks, the i18n legend and the explainer (`graph.explain`) in the same pull request.
