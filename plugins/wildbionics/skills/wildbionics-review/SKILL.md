@@ -33,6 +33,10 @@ Go through every area the change touches; skip areas it doesn't touch and say so
 1. **Facts** – delegate to the `wildbionics-fact-checker` agent for every changed article or
    factual UI text. Must-fix: unsupported, contradicted or over-precise claims; unresolved or
    mismatching DOIs; calculations that don't reproduce; hypotheses stated as facts.
+   Run the agent in the **foreground** (`run_in_background: false`) and wait for its table: in CI
+   the session ends with your turn, so a background agent's result never arrives and no report
+   is posted (this lost three reviews of PR #21). Read the diff with `gh pr diff` or the Read tool –
+   shell redirects (`> file`) are not allowed in CI.
 2. **Structure** (`wildbionics-article`) – front matter complete, lens panels match `lenses`,
    citations ↔ sources, key facts answer-first, FAQ useful, title/description lengths.
 2b. **Code examples** (`wildbionics-article`, section 4) – does the program teach one idea? Is the
