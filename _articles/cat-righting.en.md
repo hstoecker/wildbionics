@@ -34,7 +34,7 @@ lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "Scientists have studied how falling cats turn over since **1894**. A cat turns in the air without pushing off anything – its total **angular momentum stays zero** [1](#ref-1){:.cite}."
   - "The trick is a change of shape: cats twist and bend their spine, which changes the **moment of inertia** of the front and rear body [1](#ref-1){:.cite}. A simple model of two cylinders joined at the waist already reproduces the turn [2](#ref-2){:.cite}."
-  - "The tail is not needed: cats with and without a tail right themselves equally well [1](#ref-1){:.cite}."
+  - "The tail is not needed: no difference in air-righting has been reported between cats with and without a tail [1](#ref-1){:.cite}."
   - "The air-righting reflex is mature in kittens by about **33 days** and is mainly controlled by the **balance organ** – kittens blind since birth learn it just as well [4](#ref-4){:.cite}."
   - "Landing on its feet does not mean landing unhurt: of 119 cats treated after falls from buildings, **96.5 %** survived, but **46.2 %** had broken limbs [6](#ref-6){:.cite}."
   - "Robots use the same physics: a lizard-sized robot stabilises its body with an active tail [8](#ref-8){:.cite}, and a legged robot uses only its legs to turn in low gravity [9](#ref-9){:.cite}."
@@ -44,7 +44,7 @@ faq:
   - q: "Doesn't a falling cat violate the conservation of angular momentum?"
     a: "No. A rigid body without angular momentum cannot start rotating. But a cat is not rigid: it can twist and bend its spine and move its legs. The rotations of its parts cancel at every moment, so the total angular momentum stays zero, yet the cat ends up in a different orientation. Divers and trampolinists use the same principle to twist in the air."
   - q: "Do cats need their tail to land on their feet?"
-    a: "No. Cats with and without a tail right themselves equally well; the turn comes from twisting and bending the body. Geckos are different: they swing their large tail to turn over and do it in about a tenth of a second, the fastest air-righting measured in animals without wings."
+    a: "No. No difference has been reported between cats with and without a tail; the turn comes from twisting and bending the body. Geckos are different: they swing their large tail to turn over and do it in about a tenth of a second, the shortest air-righting time reported for animals without wings as of 2008."
   - q: "At what age can kittens right themselves in the air?"
     a: "Kittens develop the air-righting reflex in their first weeks of life; it is mature by about 33 days. Kittens that were blind from birth develop it at the same pace as kittens with normal vision, which shows that the reflex is controlled mainly by the balance organ in the inner ear."
   - q: "Are cats safe when they fall from a window?"
@@ -146,9 +146,9 @@ At every moment the rotations of the two halves cancel each other – the total 
 
 Kittens are not born with a working air-righting reflex. It develops in the first weeks of life and is mature by about **33 days**. Cremieux and colleagues compared normal kittens with kittens that had been blind since birth: both developed the reflex at the same pace. The air-righting reflex is therefore mainly controlled by the **vestibular system**, the balance organ in the inner ear [4](#ref-4){:.cite}.
 
-The tail plays a surprisingly small role. Cats with and without a tail right themselves equally well – the turn comes from the spine [1](#ref-1){:.cite}. In geckos it is the other way round: a gecko that falls on its back swings its large tail and turns over in about **106 ms**, the shortest air-righting time reported for animals without wings [1](#ref-1){:.cite}.
+The tail plays a surprisingly small role. No difference in air-righting has been reported between cats with and without a tail – the turn comes from the spine [1](#ref-1){:.cite}. In geckos it is the other way round: a gecko that falls on its back swings its large tail and turns over in about **106 ms**, at the time (2008) the shortest air-righting time reported for animals without wings [1](#ref-1){:.cite}.
 
-The reflex does not make cats safe from falls. Veterinarians call the injuries of cats that fall from buildings **high-rise syndrome**. Of 132 cats treated over five months, 90 % had injuries to the chest; 90 % of the cats that needed treatment survived [5](#ref-5){:.cite}. A study of 119 cats from Zagreb found an average fall height of four storeys; 96.5 % of the cats survived, but 46.2 % had broken limbs, and falls from the seventh floor or higher caused more severe injuries [6](#ref-6){:.cite}. Landing on its feet spreads the impact over the legs, but it does not cancel it.
+The reflex does not make cats safe from falls. Veterinarians call the injuries of cats that fall from buildings **high-rise syndrome**. Of 132 cats seen over five months, 90 % had injuries to the chest; about 30 % needed no treatment, and 90 % of the treated cats survived [5](#ref-5){:.cite}. A study of 119 cats from Zagreb found an average fall height of four storeys; 96.5 % of the cats survived, but 46.2 % had broken limbs, and falls from the seventh floor or higher caused more severe injuries [6](#ref-6){:.cite}. Landing on its feet spreads the impact over the legs, but it does not cancel it.
 
 {% include lens-end.html %}
 
@@ -269,7 +269,7 @@ What the result teaches:
 
 - **Zero angular momentum, 180° turn.** The largest total angular momentum during the whole manoeuvre is 0.000 – yet after two cycles both halves have turned by 180°. Each cycle turns the cat by **90.0°**, exactly as the formula of the mathematics lens predicts.
 - **Forward far, back a little.** In the chart, each half moves a long way while its own legs are tucked and a short way back while they are stretched. This asymmetry is the whole trick.
-- **The model is slower than a cat.** With the assumed 0.1 s per twist, the model needs 0.40 s and falls about 78 cm. Real cats also bend their body and turn in one smooth movement [2](#ref-2){:.cite}, so they need less height.
+- **The model is slower than a cat.** With the assumed 0.1 s per twist, the model needs 0.40 s and falls about 78 cm. Real cats also bend their body while they twist [1](#ref-1){:.cite}, so they may need less time and height than this model – its numbers are an illustration, not a measurement.
 
 Two programming ideas are worth noticing:
 
@@ -300,7 +300,7 @@ A robot that jumps, falls or floats in space faces the cat's problem: it has not
 
 **Legs instead of a tail.** Nikita Rudin, Marco Hutter and colleagues trained a neural network with **deep reinforcement learning** to control the jumping four-legged robot SpaceBok – using only its legs to turn the body in mid-air, as a cat does. The policies were trained in simulation for low-gravity celestial bodies and then transferred to the real robot on a test bed for two-dimensional microgravity experiments, where it jumped and landed again and again [9](#ref-9){:.cite}.
 
-For Physical AI, the falling cat teaches that moving the body can itself be the control. No motor pushes against the ground, no thruster fires – shifting mass at the right moment is enough to change orientation. Learning systems like SpaceBok's controller discover such movement sequences by trial and error in simulation, much as a kitten needs a few weeks to master the reflex [4](#ref-4){:.cite}.
+For Physical AI, the falling cat teaches that moving the body can itself be the control. No motor pushes against the ground, no thruster fires – shifting mass at the right moment is enough to change orientation. Learning systems like SpaceBok's controller discover such movement sequences by trial and error in simulation. A comparison with kittens is only an analogy: their reflex matures within about 33 days [4](#ref-4){:.cite}, but how it develops is a different question from how a robot learns.
 
 {% include lens-end.html %}
 

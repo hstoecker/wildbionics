@@ -34,7 +34,7 @@ lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "Seit **1894** untersuchen Forscher, wie sich fallende Katzen umdrehen. Eine Katze dreht sich in der Luft, ohne sich irgendwo abzustoßen – ihr **Gesamtdrehimpuls bleibt null** [1](#ref-1){:.cite}."
   - "Der Trick ist eine Formänderung: Katzen verdrehen und beugen ihre Wirbelsäule und ändern so das **Trägheitsmoment** von vorderem und hinterem Körper [1](#ref-1){:.cite}. Schon ein einfaches Modell aus zwei Zylindern, die an der Taille verbunden sind, bildet die Drehung nach [2](#ref-2){:.cite}."
-  - "Der Schwanz wird nicht gebraucht: Katzen mit und ohne Schwanz richten sich gleich gut auf [1](#ref-1){:.cite}."
+  - "Der Schwanz wird nicht gebraucht: Zwischen Katzen mit und ohne Schwanz wurde kein Unterschied beim Aufrichten berichtet [1](#ref-1){:.cite}."
   - "Bei Kätzchen ist der Stellreflex nach etwa **33 Tagen** ausgereift und wird vor allem vom **Gleichgewichtsorgan** gesteuert – von Geburt an blinde Kätzchen lernen ihn genauso gut [4](#ref-4){:.cite}."
   - "Auf den Füßen zu landen heißt nicht, unverletzt zu landen: Von 119 Katzen, die nach Stürzen von Gebäuden behandelt wurden, überlebten **96,5 %**, aber **46,2 %** hatten Knochenbrüche an den Beinen [6](#ref-6){:.cite}."
   - "Roboter nutzen dieselbe Physik: Ein eidechsengroßer Roboter stabilisiert seinen Körper mit einem aktiven Schwanz [8](#ref-8){:.cite}, und ein Laufroboter dreht sich bei geringer Schwerkraft allein mit seinen Beinen [9](#ref-9){:.cite}."
@@ -44,7 +44,7 @@ faq:
   - q: "Verletzt eine fallende Katze nicht die Drehimpulserhaltung?"
     a: "Nein. Ein starrer Körper ohne Drehimpuls kann keine Drehung beginnen. Eine Katze ist aber nicht starr: Sie kann ihre Wirbelsäule verdrehen und beugen und ihre Beine bewegen. Die Drehungen ihrer Teile heben sich in jedem Augenblick auf, sodass der Gesamtdrehimpuls null bleibt – und doch ist die Katze am Ende anders ausgerichtet. Wasserspringer und Trampolinspringer nutzen dasselbe Prinzip, um sich in der Luft zu schrauben."
   - q: "Brauchen Katzen ihren Schwanz, um auf den Füßen zu landen?"
-    a: "Nein. Katzen mit und ohne Schwanz richten sich gleich gut auf; die Drehung entsteht durch Verdrehen und Beugen des Körpers. Bei Geckos ist es anders: Sie schwingen ihren großen Schwanz, um sich umzudrehen, und schaffen das in etwa einer Zehntelsekunde – die schnellste gemessene Drehung in der Luft bei Tieren ohne Flügel."
+    a: "Nein. Zwischen Katzen mit und ohne Schwanz wurde kein Unterschied berichtet; die Drehung entsteht durch Verdrehen und Beugen des Körpers. Bei Geckos ist es anders: Sie schwingen ihren großen Schwanz, um sich umzudrehen, und schaffen das in etwa einer Zehntelsekunde – bis 2008 die kürzeste berichtete Zeit für das Aufrichten in der Luft bei Tieren ohne Flügel."
   - q: "Ab welchem Alter können sich Kätzchen in der Luft aufrichten?"
     a: "Kätzchen entwickeln den Stellreflex in ihren ersten Lebenswochen; nach etwa 33 Tagen ist er ausgereift. Kätzchen, die von Geburt an blind waren, entwickeln ihn im selben Tempo wie sehende Kätzchen. Das zeigt, dass der Reflex vor allem vom Gleichgewichtsorgan im Innenohr gesteuert wird."
   - q: "Sind Katzen sicher, wenn sie aus dem Fenster fallen?"
@@ -146,9 +146,9 @@ In jedem Augenblick heben sich die Drehungen der beiden Hälften auf – der Ges
 
 Kätzchen kommen nicht mit einem fertigen Stellreflex zur Welt. Er entwickelt sich in den ersten Lebenswochen und ist nach etwa **33 Tagen** ausgereift. Cremieux und Kollegen verglichen normale Kätzchen mit Kätzchen, die von Geburt an blind waren: Beide entwickelten den Reflex im selben Tempo. Der Stellreflex wird also vor allem vom **Vestibularsystem** gesteuert, dem Gleichgewichtsorgan im Innenohr [4](#ref-4){:.cite}.
 
-Der Schwanz spielt eine überraschend kleine Rolle. Katzen mit und ohne Schwanz richten sich gleich gut auf – die Drehung kommt aus der Wirbelsäule [1](#ref-1){:.cite}. Bei Geckos ist es umgekehrt: Ein Gecko, der auf den Rücken fällt, schwingt seinen großen Schwanz und dreht sich in etwa **106 ms** um, die kürzeste Zeit, die für Tiere ohne Flügel berichtet wurde [1](#ref-1){:.cite}.
+Der Schwanz spielt eine überraschend kleine Rolle. Zwischen Katzen mit und ohne Schwanz wurde kein Unterschied beim Aufrichten berichtet – die Drehung kommt aus der Wirbelsäule [1](#ref-1){:.cite}. Bei Geckos ist es umgekehrt: Ein Gecko, der auf den Rücken fällt, schwingt seinen großen Schwanz und dreht sich in etwa **106 ms** um, damals (2008) die kürzeste Zeit, die für Tiere ohne Flügel berichtet wurde [1](#ref-1){:.cite}.
 
-Vor Stürzen schützt der Reflex Katzen nicht. Tierärzte nennen die Verletzungen von Katzen, die von Gebäuden fallen, **High-Rise-Syndrom**. Von 132 Katzen, die innerhalb von fünf Monaten behandelt wurden, hatten 90 % Verletzungen am Brustkorb; 90 % der behandlungsbedürftigen Katzen überlebten [5](#ref-5){:.cite}. Eine Studie mit 119 Katzen aus Zagreb fand eine mittlere Fallhöhe von vier Stockwerken; 96,5 % der Katzen überlebten, aber 46,2 % hatten Knochenbrüche an den Beinen, und Stürze aus dem siebten Stock oder höher führten zu schwereren Verletzungen [6](#ref-6){:.cite}. Die Landung auf den Füßen verteilt den Aufprall auf die Beine, hebt ihn aber nicht auf.
+Vor Stürzen schützt der Reflex Katzen nicht. Tierärzte nennen die Verletzungen von Katzen, die von Gebäuden fallen, **High-Rise-Syndrom**. Von 132 Katzen, die innerhalb von fünf Monaten untersucht wurden, hatten 90 % Verletzungen am Brustkorb; etwa 30 % brauchten keine Behandlung, und 90 % der behandelten Katzen überlebten [5](#ref-5){:.cite}. Eine Studie mit 119 Katzen aus Zagreb fand eine mittlere Fallhöhe von vier Stockwerken; 96,5 % der Katzen überlebten, aber 46,2 % hatten Knochenbrüche an den Beinen, und Stürze aus dem siebten Stock oder höher führten zu schwereren Verletzungen [6](#ref-6){:.cite}. Die Landung auf den Füßen verteilt den Aufprall auf die Beine, hebt ihn aber nicht auf.
 
 {% include lens-end.html %}
 
@@ -269,7 +269,7 @@ Was das Ergebnis lehrt:
 
 - **Drehimpuls null, Drehung um 180°.** Der größte Gesamtdrehimpuls während des ganzen Manövers ist 0,000 – und doch haben sich nach zwei Zyklen beide Hälften um 180° gedreht. Jeder Zyklus dreht die Katze um **90,0°**, genau wie die Formel der Mathematik-Linse vorhersagt.
 - **Vorwärts weit, zurück wenig.** Im Diagramm bewegt sich jede Hälfte weit, solange ihre eigenen Beine angezogen sind, und nur wenig zurück, solange sie gestreckt sind. In dieser Asymmetrie steckt der ganze Trick.
-- **Das Modell ist langsamer als eine Katze.** Mit den angenommenen 0,1 s pro Verdrehung braucht das Modell 0,40 s und fällt dabei etwa 78 cm. Echte Katzen beugen zusätzlich den Körper und drehen sich in einer fließenden Bewegung [2](#ref-2){:.cite}, deshalb brauchen sie weniger Höhe.
+- **Das Modell ist langsamer als eine Katze.** Mit den angenommenen 0,1 s pro Verdrehung braucht das Modell 0,40 s und fällt dabei etwa 78 cm. Echte Katzen beugen beim Verdrehen zusätzlich den Körper [1](#ref-1){:.cite} und brauchen daher möglicherweise weniger Zeit und Höhe als dieses Modell – seine Zahlen sind eine Veranschaulichung, keine Messung.
 
 Zwei Programmierideen lohnen einen Blick:
 
@@ -300,7 +300,7 @@ Ein Roboter, der springt, fällt oder im Weltraum schwebt, hat das Problem der K
 
 **Beine statt Schwanz.** Nikita Rudin, Marco Hutter und Kollegen trainierten mit **bestärkendem Lernen** (Deep Reinforcement Learning) ein neuronales Netz, das den springenden vierbeinigen Roboter SpaceBok steuert – und dabei wie eine Katze nur die Beine nutzt, um den Körper in der Luft zu drehen. Die Steuerungen wurden in der Simulation für Himmelskörper mit geringer Schwerkraft trainiert und dann auf den echten Roboter übertragen, auf einem Versuchsstand für zweidimensionale Experimente in Mikrogravitation. Dort sprang und landete er immer wieder [9](#ref-9){:.cite}.
 
-Für Physical AI – verkörperte künstliche Intelligenz – lehrt die fallende Katze, dass die Bewegung des Körpers selbst die Steuerung sein kann. Kein Motor drückt gegen den Boden, kein Triebwerk zündet – Masse im richtigen Moment zu verlagern genügt, um die Ausrichtung zu ändern. Lernende Systeme wie die Steuerung von SpaceBok entdecken solche Bewegungsabfolgen durch Ausprobieren in der Simulation, ähnlich wie ein Kätzchen einige Wochen braucht, bis es den Reflex beherrscht [4](#ref-4){:.cite}.
+Für Physical AI – verkörperte künstliche Intelligenz – lehrt die fallende Katze, dass die Bewegung des Körpers selbst die Steuerung sein kann. Kein Motor drückt gegen den Boden, kein Triebwerk zündet – Masse im richtigen Moment zu verlagern genügt, um die Ausrichtung zu ändern. Lernende Systeme wie die Steuerung von SpaceBok entdecken solche Bewegungsabfolgen durch Ausprobieren in der Simulation. Ein Vergleich mit Kätzchen ist nur eine Analogie: Ihr Reflex reift innerhalb von etwa 33 Tagen heran [4](#ref-4){:.cite}, doch wie er sich entwickelt, ist eine andere Frage als die, wie ein Roboter lernt.
 
 {% include lens-end.html %}
 
