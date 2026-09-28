@@ -23,7 +23,7 @@ ruby .github/scripts/check_terms.rb      # terminology, EN/DE consistency, taxon
 ruby .github/scripts/check_content.rb    # article structure, citations, figures
 ruby .github/scripts/check_plugin.rb     # skills/plugin integrity and coverage
 python3 .github/scripts/code_examples.py --check   # every code example runs; output/charts up to date
-bundle exec jekyll build && python3 .github/scripts/check_site.py _site   # SEO, JSON-LD, links, graph.json
+bundle exec jekyll build && python3 .github/scripts/check_site.py _site   # SEO, JSON-LD, links, graph.json/.jsonld
 ```
 
 ## Step 2 – manual review by area

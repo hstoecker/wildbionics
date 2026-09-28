@@ -181,6 +181,7 @@ taxonomy.each do |slug, names|
   langs.each { |l| errors << "_data/taxonomy.yml: #{slug} has no #{l} name" if names.to_h[l].to_s.strip.empty? }
   errors << "_data/taxonomy.yml: #{slug} needs dim: one of #{DIMS.join(', ')}" unless DIMS.include?(names.to_h["dim"])
   errors << "_data/taxonomy.yml: time term #{slug} needs a numeric order" if names.to_h["dim"] == "time" && !names["order"].is_a?(Integer)
+  errors << "_data/taxonomy.yml: #{slug} wikidata must look like Q123" if names.to_h.key?("wikidata") && names["wikidata"].to_s !~ /\AQ\d+\z/
 end
 lenses = YAML.load_file("_data/lenses.yml")
 lens_keys = i18n.fetch(langs.first).fetch("lens").select { |_, v| v.is_a?(Hash) && v["tab"] }.keys
