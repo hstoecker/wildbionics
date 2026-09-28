@@ -6,3 +6,4 @@ big-brown-bat: { en: "Big brown bat", de: "Große Braune Fledermaus", taxon: "Ep
 tiger-moth: { en: "Tiger moth", de: "Bärenspinner", taxon: "Bertholdia trigona", wikidata: Q13403125 }
 sacred-lotus: { en: "Sacred lotus", de: "Indische Lotosblume", taxon: "Nelumbo nucifera", wikidata: Q16528 }
 water-strider: { en: "Water strider", de: "Wasserläufer", taxon: "Gerridae", wikidata: Q270322 }
+domestic-cat: { en: "Domestic cat", de: "Hauskatze", taxon: "Felis catus", wikidata: Q146 }

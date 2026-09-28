@@ -2226,3 +2226,31 @@ a.cite:hover { text-decoration: underline; }
   .bathunt-svg .label-phase { font-size: 20px; letter-spacing: 0.04em; }
   .bathunt-svg .label-tick { font-size: 20px; }
 }
+
+/* Falling cat, hero of the cat-righting article (_includes/svg/falling-cat.svg) */
+.fallcat-svg { width: 100%; height: auto; overflow: visible; }
+.fallcat-svg .grid { color: rgba(238, 242, 234, 0.07); }
+.fallcat-svg .fall { fill: none; stroke: var(--on-dark-2); stroke-width: 1.2; stroke-dasharray: 2 6; stroke-linecap: round; opacity: 0.7; }
+.fallcat-svg .fall-head { fill: var(--on-dark-2); opacity: 0.7; }
+.fallcat-svg .ground { stroke: var(--on-dark-2); stroke-width: 2; }
+.fallcat-svg .half ellipse, .fallcat-svg .half circle, .fallcat-svg .half path:not(.leg):not(.tail) { stroke: rgba(10, 21, 25, 0.35); stroke-width: 1; }
+.fallcat-svg .half--front { fill: #8fd6c6; }
+.fallcat-svg .half--rear { fill: #efc98f; }
+.fallcat-svg .half--front .leg { fill: none; stroke: #8fd6c6; stroke-width: 8; stroke-linecap: round; }
+.fallcat-svg .half--rear .leg { fill: none; stroke: #efc98f; stroke-width: 9; stroke-linecap: round; }
+.fallcat-svg .tail { fill: none; stroke: #efc98f; stroke-width: 6; stroke-linecap: round; }
+.fallcat-svg .half .eye { fill: #0a1519; stroke: none; }
+.fallcat-svg .roll { fill: none; stroke: var(--on-dark); stroke-width: 1.6; stroke-dasharray: 4 3; }
+.fallcat-svg .roll-head { fill: var(--on-dark); }
+.fallcat-svg .key-front { fill: #8fd6c6; }
+.fallcat-svg .key-rear { fill: #efc98f; }
+.fallcat-svg .marker circle { fill: #0a1519; stroke: var(--on-dark-2); stroke-width: 1.2; }
+.fallcat-svg .marker text { font-family: var(--font-mono); font-size: 12px; font-weight: 600; fill: var(--on-dark); }
+.fallcat-svg .math { font-size: 20px; }
+.fallcat-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .fallcat-svg .label, .fallcat-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .fallcat-svg .math { font-size: 24px; }
+  .fallcat-svg .marker circle { r: 14px; }
+  .fallcat-svg .marker text { font-size: 18px; }
+}
