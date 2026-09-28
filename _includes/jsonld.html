@@ -5,6 +5,8 @@
   Breadcrumbs: Home > page (articles: Home > Articles > article), named by short_title like the
   visible breadcrumb; none on the home page and on noindex pages. The preview image is one
   ImageObject (#primaryimage) with licence and credit, referenced by the page and the article.
+  Every chart of a code example on an article is an ImageObject (#chart-<name>) with the same
+  licence fields, linked from the article as associatedMedia (data: _data/code_examples.yml).
   A CollectionPage lists its articles as an ItemList. Rules: wildbionics-design skill.
 {%- endcomment -%}
 {%- assign site_url = site.url | append: "/" -%}
@@ -104,7 +106,9 @@
       ]
     }
     {%- endif %}
-    {%- if is_article %},
+    {%- if is_article %}
+    {%- assign charts = "" | split: "" -%}
+    {%- for c in site.data.code_examples[page.ref][lang] -%}{%- if c[1].chart and c[1].chart_alt -%}{%- assign charts = charts | push: c -%}{%- endif -%}{%- endfor %},
     {
       "@type": ["Article", "LearningResource"],
       "@id": "{{ page_url }}#article",
@@ -136,6 +140,9 @@
       {%- for tr in translations %}{% if tr.lang != lang %}
       "{% if lang == site.lang %}workTranslation{% else %}translationOfWork{% endif %}": { "@id": "{{ tr.url | absolute_url }}#article" },
       {%- endif %}{% endfor %}
+      {%- if charts.size > 0 %}
+      "associatedMedia": [{% for c in charts %}{ "@id": "{{ page_url }}#chart-{{ c[0] | remove: '.py' }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      {%- endif %}
       "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".key-facts", ".article-header__dek"] },
       "citation": [
         {%- for s in page.sources %}
@@ -151,6 +158,29 @@
         {%- endfor %}
       ]
     }
+    {%- for c in charts %},
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_url }}#chart-{{ c[0] | remove: '.py' }}",
+      "url": {{ c[1].chart | absolute_url | jsonify }},
+      "contentUrl": {{ c[1].chart | absolute_url | jsonify }},
+      "encodingFormat": "image/svg+xml",
+      "width": {{ c[1].chart_width }},
+      "height": {{ c[1].chart_height }},
+      {%- if c[1].chart_label %}
+      "name": {{ c[1].chart_label | jsonify }},
+      {%- endif %}
+      "caption": {{ c[1].chart_caption | default: c[1].chart_alt | jsonify }},
+      "description": {{ c[1].chart_alt | jsonify }},
+      "inLanguage": {{ lang | jsonify }},
+      "isPartOf": { "@id": "{{ page_url }}#article" },
+      "license": "{{ content_license }}",
+      "acquireLicensePage": {{ site.repository_url | append: "/blob/main/LICENSE-CONTENT.txt" | jsonify }},
+      "creditText": {{ site.title | jsonify }},
+      "creator": { "@id": "{{ site_url }}#organization" },
+      "copyrightNotice": {{ t.footer.copyright | prepend: "© " | append: " – CC BY-SA 4.0" | jsonify }}
+    }
+    {%- endfor %}
     {%- endif %}
     {%- if page.dataset %}
     {%- assign newest = "" -%}
