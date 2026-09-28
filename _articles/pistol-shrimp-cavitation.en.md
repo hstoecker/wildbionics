@@ -33,7 +33,7 @@ beings: ["pistol-shrimp"]
 lenses: ["biology", "physics", "math", "cs"]
 key_facts:
   - "The loud snap of a pistol shrimp does not come from the claw halves hitting each other. It comes from a **collapsing cavitation bubble** [1](#ref-1){:.cite}."
-  - "Closing the claw fires a **water jet of roughly 25 m/s**. At that speed the pressure in the jet falls below the vapour pressure of water, and a vapour bubble forms [1](#ref-1){:.cite} [3](#ref-3){:.cite}."
+  - "Closing the claw fires a **water jet of roughly 25 m/s** – an estimate from high-speed video of the cavitation bubble [1](#ref-1){:.cite} [8](#ref-8){:.cite}. At that speed the pressure in the jet falls below the vapour pressure of water, and a vapour bubble forms [1](#ref-1){:.cite}."
   - "The bubble collapses in **less than a millisecond**, sending out a shock wave that can stun prey – and a short flash of light, dubbed *shrimpoluminescence* [2](#ref-2){:.cite}."
   - "Inside the collapsing bubble, temperatures reach **at least 5,000 K** [2](#ref-2){:.cite}."
   - "Engineers have 3D-printed a working replica of the claw that reproduces the flash and the shock wave [3](#ref-3){:.cite}."
@@ -102,6 +102,14 @@ sources:
     volume: 103
     pages: "41–47"
     doi: "10.1121/1.423234"
+  - authors: ["Koukouvinis, P.", "Bruecker, C.", "Gavaises, M."]
+    year: 2017
+    title: "Unveiling the physical mechanism behind pistol shrimp cavitation"
+    journal: "Scientific Reports"
+    volume: 7
+    pages: "13994"
+    doi: "10.1038/s41598-017-14312-0"
+    open_access: true
 status: published
 ---
 
@@ -142,14 +150,14 @@ We usually make water boil by heating it. But boiling depends on *pressure* just
 
 <div class="formula" role="math" aria-label="p equals p zero minus one half rho v squared"><var>p</var> = <var>p</var><sub>0</sub> − <span class="frac"><span class="frac__num">1</span><span class="frac__den">2</span></span> <var>ρ</var> <var>v</var><sup>2</sup></div>
 
-With *p*<sub>0</sub> = 101 kPa (atmospheric pressure) and *ρ* = 998 kg/m³ for water, the dynamic pressure at 25 m/s is ½ · 998 · 25² ≈ 312 kPa – three times the atmospheric pressure. Long before that point, at about **14 m/s**, the static pressure reaches the vapour pressure of water (2.3 kPa at 20 °C). The water can no longer stay liquid: it cavitates.
+Versluis and colleagues estimated the speed of the shrimp's jet from high-speed video of the cavitation bubble: about 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. With *p*<sub>0</sub> = 101 kPa (atmospheric pressure) and *ρ* = 998 kg/m³ for water, the dynamic pressure at 25 m/s is ½ · 998 · 25² ≈ 312 kPa – three times the atmospheric pressure. Long before that point, at about **14 m/s**, the static pressure reaches the vapour pressure of water (2.3 kPa at 20 °C). The water can no longer stay liquid: it cavitates.
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}
 <figcaption class="caption"><span class="caption__label">Fig. 2</span> Static pressure in a water jet according to Bernoulli. Above about 14 m/s it falls below the vapour pressure of water. The shrimp's jet, at roughly 25 m/s, is deep in the cavitation zone.</figcaption>
 </figure>
 
-Engineers capture this with the **cavitation number** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²). The smaller σ, the more likely cavitation. For a jet of 25 m/s, σ ≈ 0.3. The mechanical replica of the claw built by Tang and Staack produced jets with σ = 0.14 to 0.30 – comparable to the real shrimp [3](#ref-3){:.cite}.
+Engineers capture this with the **cavitation number** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²). The smaller σ, the more likely cavitation. For a jet of 25 m/s, σ ≈ 0.3. The mechanical replica of the claw built by Tang and Staack produced jets of about 26 to 37 m/s, with σ = 0.14 to 0.30 – comparable to the real shrimp [3](#ref-3){:.cite}.
 
 The dramatic part comes next. When the jet has passed, the full ambient pressure acts on the bubble, and it collapses faster and faster. The little gas left inside is compressed so violently that it heats up to **at least 5,000 K** and glows for an instant – *shrimpoluminescence*, to the authors' knowledge the first observation of this kind of light production in any animal [2](#ref-2){:.cite}. At the same moment, a shock wave races outwards at the speed of sound in water, about 1,500 m/s [3](#ref-3){:.cite}.
 
