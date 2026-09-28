@@ -1,0 +1,24 @@
+{%- include i18n.html -%}
+{%- assign x = t.graph.explain.shared -%}
+{%- assign shrimp = site.articles | where: "ref", "pistol-shrimp-cavitation" | where: "lang", lang | first -%}
+{%- assign gecko = site.articles | where: "ref", "gecko-adhesion" | where: "lang", lang | first -%}
+{%- assign tax = site.data.taxonomy -%}
+<svg class="gx-svg" viewBox="0 0 560 210" role="img" aria-labelledby="gx-shared-title" aria-describedby="gx-shared-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="gx-shared-title">{{ x.svg_title }}</title>
+  <desc id="gx-shared-desc">{{ x.svg_desc }}</desc>
+  <!-- Both articles link to "lab" (space) and "bionics" (adjacent sciences) in their front matter -->
+  <g class="gx-edges">
+    <line x1="124" y1="100" x2="280" y2="50" class="gx-edge" data-dim="space"/>
+    <line x1="436" y1="100" x2="280" y2="50" class="gx-edge" data-dim="space"/>
+    <line x1="124" y1="100" x2="280" y2="160" class="gx-edge" data-dim="adjacent_sciences"/>
+    <line x1="436" y1="100" x2="280" y2="160" class="gx-edge" data-dim="adjacent_sciences"/>
+  </g>
+  <circle cx="280" cy="50" r="13" class="gx-node gx-node--shared" data-dim="space"/>
+  <circle cx="280" cy="160" r="13" class="gx-node gx-node--shared" data-dim="adjacent_sciences"/>
+  <circle cx="124" cy="100" r="20" class="gx-node gx-node--article"/>
+  <circle cx="436" cy="100" r="20" class="gx-node gx-node--article"/>
+  <text x="280" y="24" text-anchor="middle" class="gx-name">{{ tax["lab"][lang] }}</text>
+  <text x="280" y="200" text-anchor="middle" class="gx-name">{{ tax["bionics"][lang] }}</text>
+  <text x="124" y="146" text-anchor="middle" class="gx-name gx-name--article gx-halo">{{ shrimp.short_title }}</text>
+  <text x="436" y="146" text-anchor="middle" class="gx-name gx-name--article gx-halo">{{ gecko.short_title }}</text>
+</svg>
