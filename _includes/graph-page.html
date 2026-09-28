@@ -94,7 +94,58 @@
         </div>
         <figure class="gx-figure">{% include svg/graph-shared.svg %}</figure>
       </li>
+      {%- comment -%} Token estimate from the site's own data: article text vs. the two graph edges that answer the question {%- endcomment -%}
+      {%- assign ai = gx.ai -%}
+      {%- assign loc = site.articles | where: "lang", lang | where: "status", "published" -%}
+      {%- assign chars = 0 -%}{%- for a in loc -%}{%- assign c = a.content | strip_html | size -%}{%- assign chars = chars | plus: c -%}{%- endfor -%}
+      {%- assign ktok = chars | divided_by: 4000.0 | round -%}
+      {%- capture e1 %}{"source": "article:gecko-adhesion", "target": "term:mechanics", "type": "physics"}{% endcapture -%}
+      {%- capture e2 %}{"source": "article:gecko-adhesion", "target": "term:physical-ai", "type": "adjacent_sciences"}{% endcapture -%}
+      {%- assign etok = e1 | size | plus: e2.size | divided_by: 4.0 | round -%}
+      {%- assign gecko = loc | where: "ref", "gecko-adhesion" | first -%}
+      {%- if lang == "de" -%}{%- assign sep = "." -%}{%- else -%}{%- assign sep = "," -%}{%- endif %}
+      <li class="gx-step gx-step--figure gx-step--ai">
+        <div class="gx-step__text">
+          <h3>{{ ai.title }}</h3>
+          <p>{{ ai.text }}</p>
+        </div>
+        <figure class="gx-compare">
+          <figcaption class="gx-compare__q"><span class="gx-compare__label">{{ ai.example }}</span> {{ ai.question }}</figcaption>
+          <div class="gx-compare__row gx-compare__row--without">
+            <p class="gx-compare__title">{{ ai.without_title }}</p>
+            <p class="gx-compare__how">{{ ai.without_text | replace: "%N%", loc.size }}</p>
+            <p class="gx-compare__tokens"><strong>≈ {{ ktok }}{{ sep }}000</strong> {{ ai.tokens }}</p>
+            <span class="gx-bar" style="--w: 100%" aria-hidden="true"></span>
+          </div>
+          <div class="gx-compare__row gx-compare__row--with">
+            <p class="gx-compare__title">{{ ai.with_title }}</p>
+            <p class="gx-compare__how">{{ ai.with_text }}</p>
+            <code class="gx-compare__edges">article:gecko-adhesion → term:mechanics<br>article:gecko-adhesion → term:physical-ai</code>
+            <p class="gx-compare__tokens"><strong>≈ {{ etok }}</strong> {{ ai.tokens }}</p>
+            <span class="gx-bar" style="--w: 3px" aria-hidden="true"></span>
+          </div>
+          <p class="gx-compare__answer"><span class="gx-compare__label">{{ ai.answer }}</span> <a href="{{ gecko.url | relative_url }}">{{ gecko.short_title }}</a></p>
+          <p class="gx-compare__note">{{ ai.note }}</p>
+        </figure>
+      </li>
     </ol>
+
+    <ul class="gx-findings">
+      {%- for f in ai.findings %}
+      <li class="gx-finding">
+        <h4>{{ f.title }}</h4>
+        <p>{{ f.text }}{% for i in f.src %} <a class="gx-cite" href="#gx-src-{{ i | plus: 1 }}">[{{ i | plus: 1 }}]</a>{% endfor %}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <details class="gx-sources">
+      <summary>{{ ai.sources_title }}</summary>
+      <ol>
+        {%- for s in site.data.graph_sources %}
+        <li id="gx-src-{{ forloop.index }}" lang="en">{{ s.authors }} ({{ s.year }}). <a href="{{ s.url }}">{{ s.title }}</a>. <i>{{ s.venue }}</i>.</li>
+        {%- endfor %}
+      </ol>
+    </details>
 
     <h3 class="gx-actions__title">{{ gx.actions.title }}</h3>
     <ul class="gx-actions">

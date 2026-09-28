@@ -1687,6 +1687,32 @@ a.cite:hover { text-decoration: underline; }
 .gx-lens__arrow { height: 0; border-top: 2px dashed #b9c7c0; position: relative; }
 .gx-lens__arrow::after { content: ""; position: absolute; right: -2px; top: -6px; border: 5px solid transparent; border-left: 7px solid #b9c7c0; }
 .gx-lens__target { justify-self: start; padding: 5px 12px; border: 1.5px solid var(--c); border-radius: 999px; background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--on-dark); font-size: 0.9rem; }
+/* Why AI needs it: token comparison and research findings */
+.gx-compare { display: grid; gap: 12px; margin: 0; padding: 18px; border: 1px solid var(--line-dark); border-radius: 12px; background: rgba(0, 0, 0, 0.18); }
+.gx-compare__q { color: var(--on-dark); font-family: var(--font-display); font-size: 1.1rem; line-height: 1.35; }
+.gx-compare__label { display: block; margin-bottom: 4px; color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.gx-compare__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: baseline; padding: 12px 14px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
+.gx-compare__title { font-weight: 600; }
+.gx-compare__how { grid-column: 1; color: var(--on-dark-2); font-size: 0.875rem; }
+.gx-compare__tokens { grid-column: 2; grid-row: 1 / span 2; color: var(--on-dark-2); font-size: 0.85rem; text-align: right; white-space: nowrap; }
+.gx-compare__tokens strong { display: block; color: var(--on-dark); font-family: var(--font-mono); font-size: 1.25rem; font-weight: 500; }
+.gx-compare__row--with .gx-compare__tokens strong { color: var(--signal); }
+.gx-compare__edges { grid-column: 1 / -1; margin-top: 6px; padding: 8px 10px; border-radius: 6px; background: rgba(0, 0, 0, 0.3); color: var(--signal); font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6; overflow-wrap: anywhere; }
+.gx-bar { grid-column: 1 / -1; display: block; width: var(--w); max-width: 100%; height: 6px; margin-top: 8px; border-radius: 3px; background: var(--on-dark-2); opacity: 0.6; }
+.gx-compare__row--with .gx-bar { background: var(--signal); opacity: 1; }
+.gx-compare__answer { color: var(--on-dark); }
+.gx-compare__answer .gx-compare__label { display: inline; margin-right: 6px; }
+.gx-compare__answer a, .gx-finding a, .gx-sources a { color: var(--signal); text-underline-offset: 3px; }
+.gx-compare__note { color: var(--on-dark-2); font-size: 0.78rem; line-height: 1.5; }
+.gx-findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; margin-top: 16px; }
+.gx-finding { padding: 16px 18px; border-left: 3px solid var(--signal); border-radius: 8px; background: rgba(92, 203, 182, 0.06); }
+.gx-finding h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 1.05rem; font-weight: 450; }
+.gx-finding p { color: var(--on-dark-2); font-size: 0.9rem; line-height: 1.55; }
+.gx-cite { font-family: var(--font-mono); font-size: 0.8em; text-decoration: none; }
+.gx-sources { margin-top: 14px; color: var(--on-dark-2); font-size: 0.85rem; }
+.gx-sources summary { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; color: var(--on-dark); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.gx-sources ol { display: grid; gap: 6px; padding-left: 1.4em; list-style: decimal; }
+.gx-sources li:target { color: var(--on-dark); }
 /* What you can do */
 .gx-actions__title { margin: clamp(32px, 4vw, 48px) 0 16px; font-family: var(--font-display); font-size: 1.35rem; font-weight: 450; }
 .gx-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }

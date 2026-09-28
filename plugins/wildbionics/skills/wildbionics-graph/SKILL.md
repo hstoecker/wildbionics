@@ -36,11 +36,14 @@ organisms (beings) and, through its lenses, to disciplines.
 - `graph.json` (Liquid) → nodes `dimension`, `term` (with `used`), `article`, `being`;
   edges `contains`, `<dimension>`, `about`, `lens`. Labels and URLs per language, CC BY-SA.
 - `_includes/graph-page.html` → pages `/graph/` and `/de/wissensgraph/`, including a complete
-  no-JS list of all connections and a reader explainer (`graph.explain` in `_data/i18n.yml`): four
+  no-JS list of all connections and a reader explainer (`graph.explain` in `_data/i18n.yml`): five
   numbered steps – nodes and edges (diagram `svg/graph-anatomy.svg`: the gecko article with its
   real edges), the four dimensions (question + example terms), lenses → disciplines (built from
   `_data/lenses.yml`), shared concepts (diagram `svg/graph-shared.svg`: shrimp and gecko meet at
-  `lab` and `bionics`) – and three actions (explore, find gaps, reuse the data). Names come from
+  `lab` and `bionics`), why AI needs it too (a token comparison computed at build time from the
+  articles' text vs. the two graph edges that answer an example question, plus research findings
+  citing `_data/graph_sources.yml` – verified sources only, same rules as articles) – and three
+  actions (explore, find gaps, reuse the data). Names come from
   the data files; the slugs used as examples must stay true when those articles change; `assets/js/graph.js` draws the interactive view (own force
   layout with fixed dimension anchors and a label-collision pass – no dependencies).
 - `check_terms.rb` validates taxonomy/beings/lenses and article references;

@@ -377,6 +377,34 @@ en:
         text: "Articles that seem unrelated meet at shared nodes. With every new article the web gets denser, and the next thing worth reading gets easier to find. Each article also describes its subjects as structured data (JSON-LD), so that search engines and AI assistants understand it."
         svg_title: "Two articles, two shared nodes"
         svg_desc: "The pistol shrimp article and the gecko article are both linked to the laboratory and to bionics – so the graph connects them, although one is about water and the other about walls."
+      ai:
+        title: "Why AI needs it, too"
+        text: "Language models are strong at language but weak at facts they cannot look up: they may invent plausible answers, and they have to read long texts to find a single relationship. A knowledge graph hands them explicit, sourced connections – that is why WildBionics publishes its graph as open data, adds JSON-LD to every page and offers an llms.txt."
+        example: "Example"
+        question: "In which article do mechanics and Physical AI meet?"
+        without_title: "Without a graph"
+        without_text: "Read every article – %N% so far"
+        with_title: "With the graph"
+        with_text: "Follow two edges"
+        tokens: "tokens"
+        answer: "Answer"
+        note: "The article side grows with every new article; the answer from the graph stays two edges. Estimated from this site’s current data at about 4 characters per token – a rule of thumb for English text; the exact count depends on the model and the language."
+        findings:
+          - title: "More accurate answers"
+            text: "In a benchmark of business questions, GPT-4 answered 16% correctly on a raw SQL database – and 54% when the questions were posed over a knowledge graph of the same data."
+            src: [0]
+          - title: "Better overviews"
+            text: "For questions about a whole collection, such as “what are the main themes?”, a graph index gave substantially more comprehensive and diverse answers than conventional retrieval (RAG)."
+            src: [1]
+          - title: "Traceable reasoning, lower cost"
+            text: "A model that explores a knowledge graph step by step can show its reasoning path; in some tasks a small model with a graph outperformed GPT-4."
+            src: [2]
+          - title: "Fewer hallucinations"
+            text: "Grounding answers in a graph of facts is a promising way to reduce plausible but false answers – still an active field of research."
+            src: [3, 4]
+          - title: "No mix-ups"
+            text: "WildBionics links its topics to Wikidata: “gecko” then means the lizard (Q1008888), not the browser engine of the same name."
+        sources_title: "Sources"
       actions:
         title: "What you can do"
         explore_title: "Explore"
@@ -812,6 +840,34 @@ de:
         text: "Artikel, die nichts miteinander zu tun zu haben scheinen, treffen sich an gemeinsamen Knoten. Mit jedem neuen Artikel wird das Netz dichter, und das nächste lesenswerte Thema ist leichter zu finden. Jeder Artikel beschreibt seine Themen außerdem als strukturierte Daten (JSON-LD), damit Suchmaschinen und KI-Assistenten ihn verstehen."
         svg_title: "Zwei Artikel, zwei gemeinsame Knoten"
         svg_desc: "Der Knallkrebs-Artikel und der Gecko-Artikel sind beide mit dem Labor und der Bionik verbunden – so verknüpft der Graph sie, obwohl der eine von Wasser und der andere von Wänden handelt."
+      ai:
+        title: "Warum auch KI ihn braucht"
+        text: "Sprachmodelle sind stark in Sprache, aber schwach bei Fakten, die sie nicht nachschlagen können: Sie erfinden mitunter plausible Antworten und müssen lange Texte lesen, um eine einzige Beziehung zu finden. Ein Wissensgraph liefert ihnen ausdrückliche, belegte Verbindungen – deshalb veröffentlicht WildBionics seinen Graphen als offene Daten, versieht jede Seite mit JSON-LD und bietet eine llms.txt an."
+        example: "Beispiel"
+        question: "In welchem Artikel treffen Mechanik und Physical AI aufeinander?"
+        without_title: "Ohne Graph"
+        without_text: "Jeden Artikel lesen – bisher %N%"
+        with_title: "Mit dem Graphen"
+        with_text: "Zwei Kanten folgen"
+        tokens: "Tokens"
+        answer: "Antwort"
+        note: "Die Artikelseite wächst mit jedem neuen Artikel; die Antwort aus dem Graphen bleibt bei zwei Kanten. Geschätzt aus den aktuellen Daten dieser Website mit etwa 4 Zeichen pro Token – eine Faustregel für englischen Text; die genaue Zahl hängt vom Modell und von der Sprache ab."
+        findings:
+          - title: "Genauere Antworten"
+            text: "In einem Benchmark mit Geschäftsfragen beantwortete GPT-4 direkt auf einer SQL-Datenbank 16 % richtig – und 54 %, wenn die Fragen über einen Wissensgraphen derselben Daten gestellt wurden."
+            src: [0]
+          - title: "Bessere Überblicke"
+            text: "Bei Fragen zu einer ganzen Sammlung, etwa „Was sind die Hauptthemen?“, lieferte ein Graph-Index deutlich umfassendere und vielfältigere Antworten als die übliche Textsuche (RAG)."
+            src: [1]
+          - title: "Nachvollziehbares Schließen, geringere Kosten"
+            text: "Ein Modell, das einen Wissensgraphen Schritt für Schritt erkundet, kann seinen Denkweg offenlegen; bei manchen Aufgaben übertraf ein kleines Modell mit Graph sogar GPT-4."
+            src: [2]
+          - title: "Weniger Halluzinationen"
+            text: "Antworten in einem Graphen aus Fakten zu verankern, ist ein vielversprechender Weg gegen plausible, aber falsche Antworten – ein Feld, an dem noch intensiv geforscht wird."
+            src: [3, 4]
+          - title: "Keine Verwechslungen"
+            text: "WildBionics verknüpft seine Themen mit Wikidata: „Gecko“ bedeutet dann die Echse (Q1008888), nicht die gleichnamige Browser-Engine."
+        sources_title: "Quellen"
       actions:
         title: "Was du damit machen kannst"
         explore_title: "Erkunden"
