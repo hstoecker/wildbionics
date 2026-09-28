@@ -1,0 +1,27 @@
+# Sources for the "Why AI needs it, too" step of the graph explainer (_includes/graph-page.html).
+# Verified via Crossref / Semantic Scholar (title, authors, venue, abstract) on 2026-09-28.
+- authors: "Sequeda, J., Allemang, D. & Jacob, B."
+  year: 2024
+  title: "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases"
+  venue: "GRADES-NDA 2024 (ACM)"
+  url: "https://doi.org/10.1145/3661304.3661901"
+- authors: "Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S. et al."
+  year: 2024
+  title: "From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
+  venue: "arXiv:2404.16130"
+  url: "https://arxiv.org/abs/2404.16130"
+- authors: "Sun, J., Xu, C., Tang, L., Wang, S., Lin, C., Gong, Y. et al."
+  year: 2024
+  title: "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph"
+  venue: "ICLR 2024 · arXiv:2307.07697"
+  url: "https://arxiv.org/abs/2307.07697"
+- authors: "Lavrinovics, E., Biswas, R., Bjerva, J. & Hose, K."
+  year: 2025
+  title: "Knowledge Graphs, Large Language Models, and Hallucinations: An NLP Perspective"
+  venue: "Journal of Web Semantics 85, 100844"
+  url: "https://doi.org/10.1016/j.websem.2024.100844"
+- authors: "Pan, S., Luo, L., Wang, Y., Chen, C., Wang, J. & Wu, X."
+  year: 2024
+  title: "Unifying Large Language Models and Knowledge Graphs: A Roadmap"
+  venue: "IEEE Transactions on Knowledge and Data Engineering 36, 3580–3599"
+  url: "https://doi.org/10.1109/TKDE.2024.3352100"

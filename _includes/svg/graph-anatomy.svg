@@ -1,0 +1,36 @@
+{%- include i18n.html -%}
+{%- assign x = t.graph.explain.anatomy -%}
+{%- assign art = site.articles | where: "ref", "gecko-adhesion" | where: "lang", lang | first -%}
+{%- assign tax = site.data.taxonomy -%}
+<svg class="gx-svg" viewBox="0 -8 480 316" role="img" aria-labelledby="gx-anatomy-title" aria-describedby="gx-anatomy-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="gx-anatomy-title">{{ x.svg_title }}</title>
+  <desc id="gx-anatomy-desc">{{ x.svg_desc }}</desc>
+  <!-- Same visual language as the graph: article = light node with amber ring, organism = amber, terms in their dimension colour, lens = dashed edge -->
+  <g class="gx-edges">
+    <line x1="240" y1="150" x2="84" y2="70" class="gx-edge gx-edge--about"/>
+    <line x1="240" y1="150" x2="396" y2="70" class="gx-edge" data-dim="space"/>
+    <line x1="240" y1="150" x2="84" y2="230" class="gx-edge" data-dim="physics"/>
+    <line x1="240" y1="150" x2="396" y2="230" class="gx-edge gx-edge--lens"/>
+  </g>
+  <g class="gx-edge-labels">
+    <text x="148" y="100" text-anchor="middle" class="gx-edge-label">{{ x.about }}</text>
+    <text x="332" y="100" text-anchor="middle" class="gx-edge-label">{{ x.space }}</text>
+    <text x="126" y="214" text-anchor="middle" class="gx-edge-label">{{ x.rule }}</text>
+    <text x="354" y="214" text-anchor="middle" class="gx-edge-label">{{ x.lens }}</text>
+  </g>
+  <circle cx="84" cy="70" r="13" class="gx-node gx-node--being"/>
+  <circle cx="396" cy="70" r="13" class="gx-node" data-dim="space"/>
+  <circle cx="84" cy="230" r="13" class="gx-node" data-dim="physics"/>
+  <circle cx="396" cy="230" r="13" class="gx-node" data-dim="adjacent_sciences"/>
+  <circle cx="240" cy="150" r="22" class="gx-node gx-node--article"/>
+  <text x="84" y="42" text-anchor="middle" class="gx-name gx-name--being">{{ site.data.beings["tokay-gecko"][lang] }}</text>
+  <text x="84" y="14" text-anchor="middle" class="gx-kind">{{ t.graph.being }}</text>
+  <text x="396" y="42" text-anchor="middle" class="gx-name">{{ tax["microcosm"][lang] }}</text>
+  <text x="396" y="14" text-anchor="middle" class="gx-kind">{{ t.article.dimension_names.space }}</text>
+  <text x="84" y="270" text-anchor="middle" class="gx-name">{{ tax["mechanics"][lang] }}</text>
+  <text x="84" y="290" text-anchor="middle" class="gx-kind">{{ t.article.dimension_names.physics }}</text>
+  <text x="396" y="270" text-anchor="middle" class="gx-name">{{ tax["mathematics"][lang] }}</text>
+  <text x="396" y="290" text-anchor="middle" class="gx-kind">{{ x.discipline }}</text>
+  <text x="240" y="194" text-anchor="middle" class="gx-name gx-name--article gx-halo">{{ art.short_title }}</text>
+  <text x="240" y="116" text-anchor="middle" class="gx-kind gx-halo">{{ t.graph.article }}</text>
+</svg>
