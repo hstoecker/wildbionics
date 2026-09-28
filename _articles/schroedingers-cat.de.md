@@ -200,7 +200,7 @@ Die **Bornsche Regel** macht aus Amplituden Wahrscheinlichkeiten: Man quadriert 
 
 Die Diagonalelemente sind die Wahrscheinlichkeiten für „lebendig“ und „tot“. Das Nebendiagonalelement *c* misst die **Kohärenz** – die Fähigkeit zu interferieren. Ein Test, der fragt „ist der Zustand (|lebendig⟩ + |tot⟩)/√2?“, antwortet mit der Wahrscheinlichkeit ½ + *c* mit „ja“: bei der Überlagerung immer, bei bloßem Unwissen nur in der Hälfte der Fälle. Dekohärenz lässt *c* abklingen, etwa wie *c*(*t*) = ½ e<sup>−*t*/*τ*</sup> mit einer Dekohärenzzeit *τ*.
 
-**Wie groß ist eine Katze?** Eine Katze von 4 kg besteht überwiegend aus Wasser, dessen Atome im Mittel 18 u / 3 ≈ 6 u wiegen. Mit einer angenommenen mittleren Atommasse von etwa 7 u enthält die Katze
+**Wie groß ist eine Katze?** Eine Katze von 4 kg besteht überwiegend aus Wasser, dessen Atome im Mittel 18 u / 3 ≈ 6 u wiegen. Eiweiße, Fett und Knochen enthalten schwerere Atome; nehmen wir daher im Mittel etwa 7 u an. Dann enthält die Katze
 
 <div class="formula formula--steps"><span><var>N</var> ≈ 4 kg / (7 · 1,66 · 10<sup>−27</sup> kg)</span><span>≈ <strong>3 · 10<sup>26</sup></strong> Atome</span></div>
 

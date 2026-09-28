@@ -195,6 +195,7 @@
             {%- for a in local_articles %}
             <li><a href="{{ a.url | relative_url }}">{{ a.short_title | default: a.title }}</a>:
               {% for b in a.beings %}{{ site.data.beings[b][lang] }} (<i>{{ site.data.beings[b].taxon }}</i>){% unless forloop.last %}, {% endunless %}{% endfor %}
+              {%- if a.beings.size > 0 and a.thought_experiments.size > 0 %}, {% endif %}
               {%- for x in a.thought_experiments %}{{ site.data.thought_experiments[x][lang] }} ({{ t.graph.thought_experiment }}, {{ site.data.thought_experiments[x].author }} {{ site.data.thought_experiments[x].year }}){% unless forloop.last %}, {% endunless %}{% endfor %} ·
               {% for l in a.lenses %}{% assign lens_i18n = t.lens %}{{ lens_i18n[l].tab }}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
             {%- endfor %}

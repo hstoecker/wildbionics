@@ -200,7 +200,7 @@ The **Born rule** turns amplitudes into probabilities: square their absolute val
 
 The diagonal entries are the probabilities of "alive" and "dead". The off-diagonal entry *c* measures the **coherence** – the ability to interfere. A test that asks "is the state (|alive⟩ + |dead⟩)/√2?" answers "yes" with probability ½ + *c*: always for the superposition, only half of the time for mere ignorance. Decoherence makes *c* decay, roughly as *c*(*t*) = ½ e<sup>−*t*/*τ*</sup> with a decoherence time *τ*.
 
-**How big is a cat?** A cat of 4 kg consists mostly of water, whose atoms weigh on average 18 u / 3 ≈ 6 u. Assuming an average atomic mass of about 7 u, the cat contains
+**How big is a cat?** A cat of 4 kg consists mostly of water, whose atoms weigh on average 18 u / 3 ≈ 6 u. Proteins, fat and bone contain heavier atoms, so assume an average of about 7 u. Then the cat contains
 
 <div class="formula formula--steps"><span><var>N</var> ≈ 4 kg / (7 · 1.66 · 10<sup>−27</sup> kg)</span><span>≈ <strong>3 · 10<sup>26</sup></strong> atoms</span></div>
 
@@ -271,7 +271,7 @@ ax.set_ylim(0.3, 1.05)
 ax.legend(loc="upper right", fontsize=10)
 plt.show()
 ```
-{% include code-result.html file="cat_interference.py" label="Fig. 2" caption="Output of the program above: the fraction of \"yes\" answers for two tests on 1,000 boxes each, over time in units of the decoherence time τ. Dashed line and squares: \"alive or dead?\" stays at 50 % throughout. Solid line and dots: the interference test starts at 100 % for the superposition and falls to 50 % – the value for a box that is simply alive or dead – as decoherence destroys the coherence. Lines are theory, symbols simulated measurements." alt="Line chart of the fraction of yes answers from 0.3 to 1 over time from 0 to 5 decoherence times. A dashed line stays at 0.5, with square markers of simulated measurements scattered around it between about 0.48 and 0.53. A solid curve starts at 1.0, falls to about 0.68 after one decoherence time and approaches 0.5 by time 5; round markers of simulated measurements follow it closely. A dotted horizontal line at 0.5 is labelled no superposition left." %}
+{% include code-result.html file="cat_interference.py" label="Fig. 2" caption="Output of the program above: the fraction of “yes” answers for two tests on 1,000 boxes each, over time in units of the decoherence time τ. Dashed line and squares: “alive or dead?” stays at 50 % throughout. Solid line and dots: the interference test starts at 100 % for the superposition and falls to 50 % – the value for a box that is simply alive or dead – as decoherence destroys the coherence. Lines are theory, symbols simulated measurements." alt="Line chart of the fraction of yes answers from 0.3 to 1 over time from 0 to 5 decoherence times. A dashed line stays at 0.5, with square markers of simulated measurements scattered around it between about 0.48 and 0.53. A solid curve starts at 1.0, falls to about 0.68 after one decoherence time and approaches 0.5 by time 5; round markers of simulated measurements follow it closely. A dotted horizontal line at 0.5 is labelled no superposition left." %}
 
 What the result teaches:
 

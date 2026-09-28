@@ -94,7 +94,7 @@ them on `/run-code/` (`run-code/index.md`, DE `de/code-ausfuehren/index.md`).
 {% include code-result.html file="rayleigh_plesset.py" label="Fig. 4" caption="…" alt="…" %}
 ````
 
-The include renders the action bar (Open in Colab, Download .py, How to run), the tested
+Include parameters are plain Liquid strings without escapes: never write `\"` inside `caption="…"` or `alt="…"` – use typographic quotes “…” (the gate fails otherwise, because the value would be cut off on the page and in the JSON-LD). The include renders the action bar (Open in Colab, Download .py, How to run), the tested
 **Output** box and – if the program draws one – the chart with caption. Output, chart and
 downloads come from `_data/code_examples.yml` and `examples/<ref>/<name>.<lang>.{py,ipynb,svg}`,
 which the script writes; never edit them by hand. Code inside an include (home page) passes
