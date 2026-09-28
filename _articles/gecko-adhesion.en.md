@@ -155,6 +155,13 @@ sources:
     volume: 42
     pages: "1154–1163"
     doi: "10.1093/icb/42.6.1154"
+  - authors: ["Peattie, A. M.", "Majidi, C.", "Corder, A.", "Full, R. J."]
+    year: 2007
+    title: "Ancestrally high elastic modulus of gecko setal β-keratin"
+    journal: "Journal of the Royal Society Interface"
+    volume: 4
+    pages: "1071–1076"
+    doi: "10.1098/rsif.2007.0226"
 status: published
 ---
 
@@ -242,7 +249,7 @@ How can the same foot hold on firmly and let go in 15 ms? Yu Tian and colleague
 
 <div class="formula" role="math" aria-label="F over b squared, divided by 2 E h, plus F over b times 1 minus cosine theta, equals W"><span class="frac"><span class="frac__num">(<var>F</var>/<var>b</var>)<sup>2</sup></span><span class="frac__den">2 <var>E</var> <var>h</var></span></span> + <span class="frac"><span class="frac__num"><var>F</var></span><span class="frac__den"><var>b</var></span></span> (1 − cos <var>θ</var>) = <var>W</var></div>
 
-The second term is the work done when the peeled strip is pulled away from the wall; the first is the energy stored by stretching it. The program below solves this equation for *F* at every angle. It takes *W* from the physics lens – integrating the van der Waals pressure from contact outwards gives *W* = *A* / (12π*D*<sup>2</sup>) – and a spatula width of about 200 nm [13](#ref-13){:.cite}. The thickness and stiffness of the spatula pad have not been measured precisely, so the program uses **assumed model values**: 10 nm and 2 GPa (a typical value for keratin). The question: how much stronger is the grip at a flat angle than at a steep one – and what limits it?
+The second term is the work done when the peeled strip is pulled away from the wall; the first is the energy stored by stretching it. The program below solves this equation for *F* at every angle. It takes *W* from the physics lens – integrating the van der Waals pressure from contact outwards gives *W* = *A* / (12π*D*<sup>2</sup>) – a spatula about 200 nm across [13](#ref-13){:.cite} and the stiffness measured for the setal keratin of tokay geckos, 1.6 GPa [15](#ref-15){:.cite}. The thickness of the spatula pad has not been measured precisely, so the program uses an **assumed model value** of 10 nm. The question: how much stronger is the grip at a flat angle than at a steep one – and what limits it?
 
 ```python
 import numpy as np
@@ -254,10 +261,10 @@ A_HAMAKER = 1e-19     # Hamaker constant (J), typical for solids
 D_CONTACT = 0.3e-9    # distance of surfaces in contact (m), about one atom
 W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # energy to separate 1 m² of contact (J/m²)
 
-# The spatula as a thin elastic tape – model values, not measurements
+# The spatula as a thin elastic tape
 WIDTH = 200e-9        # spatula width (m), about 200 nm
 THICKNESS = 10e-9     # thickness of the spatula pad (m), assumed
-MODULUS = 2e9         # Young's modulus of keratin (Pa), assumed
+MODULUS = 1.6e9       # Young's modulus of setal keratin (Pa), measured in tokay geckos
 
 
 def peel_force(angle_deg):
@@ -306,12 +313,12 @@ ax.set_ylim(2, 1000)
 ax.legend(loc="lower left")
 plt.show()
 ```
-{% include code-result.html file="peel_angle.py" label="Fig. 3" caption="Output of the program above: the force needed to peel one spatula, modelled as an elastic tape, over the peel angle (logarithmic axis). Solid: Kendall's equation with stretching. Dashed: a rigid tape, which would need an infinite force at 0°. Dot: the adhesion force measured for single spatulae, about 10 nN. Thickness and stiffness of the spatula are assumed model values." alt="Line chart of the peel force of one spatula in nanonewtons over the peel angle from 0 to 90 degrees, with a logarithmic force axis. The solid curve for an elastic tape starts at about 217 nanonewtons at 0 degrees and falls to 42 at 30 degrees and 5.9 at 90 degrees. A dashed curve for a rigid tape rises steeply towards small angles and merges with the solid curve above about 30 degrees. A dotted vertical line at 43 degrees marks where the grip has fallen to 10 percent. A black dot at 90 degrees marks the measured value of about 10 nanonewtons." %}
+{% include code-result.html file="peel_angle.py" label="Fig. 3" caption="Output of the program above: the force needed to peel one spatula, modelled as an elastic tape, over the peel angle (logarithmic axis). Solid: Kendall's equation with stretching. Dashed: a rigid tape, which would need an infinite force at 0°. Dot: the adhesion force measured for single spatulae, about 10 nN. The thickness of the spatula is an assumed model value." alt="Line chart of the peel force of one spatula in nanonewtons over the peel angle from 0 to 90 degrees, with a logarithmic force axis. The solid curve for an elastic tape starts at about 194 nanonewtons at 0 degrees and falls to 42 at 30 degrees and 5.9 at 90 degrees. A dashed curve for a rigid tape rises steeply towards small angles and merges with the solid curve above about 30 degrees. A dotted vertical line at 46 degrees marks where the grip has fallen to 10 percent. A black dot at 90 degrees marks the measured value of about 10 nanonewtons." %}
 
 What the result teaches:
 
-- **The angle is a switch.** Pulled almost along the wall, one spatula holds about **217 nN**; pulled at right angles, only **5.9 nN**. Between 10° and 90° the force drops by a factor of 28, and by 43° only a tenth of the grip is left. The tape model alone explains part of the gecko's trick. With friction from the part of the spatula still in contact and the lever action of the setal shaft, Tian and colleagues found that the adhesion and friction of a whole gecko foot can change by three orders of magnitude [7](#ref-7){:.cite}.
-- **Stretching sets the upper limit.** A rigid tape would need an infinite force at 0° – physically impossible. Because the real spatula stretches, the force at flat angles is capped at *b*√(2*EhW*). This value depends on the assumed thickness and stiffness and is only an estimate. At steep angles the stretching hardly matters: there the force is almost exactly *bW* and depends only on the van der Waals adhesion and the width.
+- **The angle is a switch.** Pulled almost along the wall, one spatula holds about **194 nN**; pulled at right angles, only **5.9 nN**. Between 10° and 90° the force drops by a factor of 26, and by 46° only a tenth of the grip is left. The tape model alone explains part of the gecko's trick. Including friction from the part of the spatula still in contact and the lever action of the setal shaft, Tian and colleagues calculated that the adhesion and friction forces of geckos can change by three orders of magnitude [7](#ref-7){:.cite}.
+- **Stretching sets the upper limit.** A rigid tape would need an infinite force at 0° – physically impossible. Because the real spatula stretches, the force at flat angles is capped at *b*√(2*EhW*). This value depends on the assumed thickness and is only an estimate. At steep angles the stretching hardly matters: there the force is almost exactly *bW* and depends only on the van der Waals adhesion and the width.
 - **The order of magnitude fits.** At 90° the model gives about 6 nN; atomic force microscope measurements on single spatulae found about 10 nN [13](#ref-13){:.cite}. The model ignores the real shape of the spatula and the contribution of humidity [4](#ref-4){:.cite}, so agreement within a factor of two is as good as can be expected.
 - The peel angle of a spatula is not the angle of the setal shaft: the setae let go at a shaft angle of about 30° [3](#ref-3){:.cite}, and the shaft acts as a lever that turns the spatulae to a steep peel angle [7](#ref-7){:.cite}.
 
@@ -323,12 +330,12 @@ A few programming ideas are worth noticing, too:
 
 Try it yourself – each change takes one line:
 
-- Set `THICKNESS = 40e-9`: a four times thicker pad doubles the maximum grip to 434 nN, while the force at 90° stays at 5.9 nN – the switch gets stronger (ratio 43), and the grip falls to 10 % already at 30°.
-- Set `WIDTH = 500e-9`, the upper end of the measured spatula width [1](#ref-1){:.cite}: every force grows by a factor of 2.5 (14.7 nN at 90°), but the switch ratio stays at 28 – the switch is a matter of the angle, not of size.
+- Set `THICKNESS = 40e-9`: a four times thicker pad doubles the maximum grip to 388.5 nN, while the force at 90° stays at 5.9 nN – the switch gets stronger (ratio 41), and the grip falls to 10 % already at 32°.
+- Set `WIDTH = 500e-9`, the upper end of the measured spatula width [1](#ref-1){:.cite}: every force grows by a factor of 2.5 (14.7 nN at 90°), but the switch ratio stays at 26 – the switch is a matter of the angle, not of size.
 - Set `D_CONTACT = 0.4e-9`: with a gap only 0.1 nm larger, the work of adhesion drops from 29 to 17 mJ/m², and the force at 90° to 3.3 nN – the steep distance law of the physics lens at work.
 
-{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="434.3 5.9 43 30" %}
-{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 28 43" %}
+{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="388.5 5.9 41 32" %}
+{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 26 46" %}
 {% include code-variant.html file="peel_angle.py" id="gap" replace="D_CONTACT = 0.3e-9" with="D_CONTACT = 0.4e-9" expect="17 3.3" %}
 
 {% include lens-end.html %}

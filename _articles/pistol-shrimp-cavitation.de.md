@@ -33,7 +33,7 @@ beings: ["pistol-shrimp"]
 lenses: ["biology", "physics", "math", "cs"]
 key_facts:
   - "Der laute Knall eines Knallkrebses entsteht nicht, wenn die Scherenhälften aufeinanderschlagen, sondern durch eine **kollabierende Kavitationsblase** [1](#ref-1){:.cite}."
-  - "Beim Zuschnappen schießt die Schere einen **Wasserstrahl mit rund 25 m/s** ab – geschätzt aus Hochgeschwindigkeitsaufnahmen der Kavitationsblase [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Bei dieser Geschwindigkeit sinkt der Druck im Strahl unter den Dampfdruck des Wassers, und eine Dampfblase entsteht [1](#ref-1){:.cite}."
+  - "Beim Zuschnappen schießt die Schere einen **Wasserstrahl mit rund 25 m/s** ab – geschätzt aus Hochgeschwindigkeitsaufnahmen der zuschnappenden Schere [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Bei dieser Geschwindigkeit sinkt der Druck im Strahl unter den Dampfdruck des Wassers, und eine Dampfblase entsteht [1](#ref-1){:.cite}."
   - "Die Blase kollabiert in **weniger als einer Millisekunde**. Dabei sendet sie eine Stoßwelle aus, die Beutetiere betäuben kann – und einen kurzen Lichtblitz, die sogenannte *Shrimpolumineszenz* [2](#ref-2){:.cite}."
   - "Im Inneren der kollabierenden Blase herrschen **mindestens 5.000 K** [2](#ref-2){:.cite}."
   - "Ingenieure haben eine funktionsfähige Nachbildung der Schere im 3D-Drucker hergestellt, die Lichtblitz und Stoßwelle reproduziert [3](#ref-3){:.cite}."
@@ -150,7 +150,7 @@ Die **Bernoulli-Gleichung** besagt: Entlang einer Stromlinie bleibt die Summe au
 
 <div class="formula" role="math" aria-label="p gleich p null minus ein halb rho v Quadrat"><var>p</var> = <var>p</var><sub>0</sub> − <span class="frac"><span class="frac__num">1</span><span class="frac__den">2</span></span> <var>ρ</var> <var>v</var><sup>2</sup></div>
 
-Versluis und Kollegen schätzten die Geschwindigkeit des Strahls aus Hochgeschwindigkeitsaufnahmen der Kavitationsblase: etwa 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Mit *p*<sub>0</sub> = 101 kPa (Atmosphärendruck) und *ρ* = 998 kg/m³ für Wasser beträgt der dynamische Druck bei 25 m/s ½ · 998 · 25² ≈ 312 kPa – das Dreifache des Atmosphärendrucks. Schon lange vorher, bei etwa **14 m/s**, erreicht der statische Druck den Dampfdruck von Wasser (2,3 kPa bei 20 °C). Das Wasser kann nicht mehr flüssig bleiben: Es kavitiert.
+Versluis und Kollegen schätzten die Geschwindigkeit des Strahls aus Hochgeschwindigkeitsaufnahmen der sich schließenden Schere: etwa 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. Mit *p*<sub>0</sub> = 101 kPa (Atmosphärendruck) und *ρ* = 998 kg/m³ für Wasser beträgt der dynamische Druck bei 25 m/s ½ · 998 · 25² ≈ 312 kPa – das Dreifache des Atmosphärendrucks. Schon lange vorher, bei etwa **14 m/s**, erreicht der statische Druck den Dampfdruck von Wasser (2,3 kPa bei 20 °C). Das Wasser kann nicht mehr flüssig bleiben: Es kavitiert. Simulationen zeigen, dass es im Detail komplizierter ist: Der Unterdruck entsteht im Kern eines Wirbelrings, der sich um den Strahl aufrollt – der Hohlraum ist eher ringförmig als kugelförmig [8](#ref-8){:.cite}.
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}

@@ -155,6 +155,13 @@ sources:
     volume: 42
     pages: "1154–1163"
     doi: "10.1093/icb/42.6.1154"
+  - authors: ["Peattie, A. M.", "Majidi, C.", "Corder, A.", "Full, R. J."]
+    year: 2007
+    title: "Ancestrally high elastic modulus of gecko setal β-keratin"
+    journal: "Journal of the Royal Society Interface"
+    volume: 4
+    pages: "1071–1076"
+    doi: "10.1098/rsif.2007.0226"
 status: published
 ---
 
@@ -242,7 +249,7 @@ Wie kann derselbe Fuß fest halten und in 15 ms loslassen? Yu Tian und Kollegen
 
 <div class="formula" role="math" aria-label="F durch b zum Quadrat, geteilt durch 2 E h, plus F durch b mal 1 minus Kosinus theta, gleich W"><span class="frac"><span class="frac__num">(<var>F</var>/<var>b</var>)<sup>2</sup></span><span class="frac__den">2 <var>E</var> <var>h</var></span></span> + <span class="frac"><span class="frac__num"><var>F</var></span><span class="frac__den"><var>b</var></span></span> (1 − cos <var>θ</var>) = <var>W</var></div>
 
-Der zweite Term ist die Arbeit, die beim Wegziehen des abgelösten Streifens von der Wand verrichtet wird; der erste die Energie, die im gedehnten Band steckt. Das Programm unten löst diese Gleichung für jeden Winkel nach *F* auf. *W* übernimmt es aus der Physik-Linse – integriert man den Van-der-Waals-Druck vom Kontakt nach außen, ergibt sich *W* = *A* / (12π*D*<sup>2</sup>) –, dazu eine Spatula-Breite von etwa 200 nm [13](#ref-13){:.cite}. Dicke und Steifigkeit des Spatula-Plättchens sind nicht genau gemessen; das Programm verwendet deshalb **angenommene Modellwerte**: 10 nm und 2 GPa (ein typischer Wert für Keratin). Die Frage: Wie viel stärker hält die Spatula bei flachem als bei steilem Winkel – und was begrenzt den Halt?
+Der zweite Term ist die Arbeit, die beim Wegziehen des abgelösten Streifens von der Wand verrichtet wird; der erste die Energie, die im gedehnten Band steckt. Das Programm unten löst diese Gleichung für jeden Winkel nach *F* auf. *W* übernimmt es aus der Physik-Linse – integriert man den Van-der-Waals-Druck vom Kontakt nach außen, ergibt sich *W* = *A* / (12π*D*<sup>2</sup>) –, dazu eine etwa 200 nm große Spatula [13](#ref-13){:.cite} und die für das Setae-Keratin von Tokehs gemessene Steifigkeit von 1,6 GPa [15](#ref-15){:.cite}. Die Dicke des Spatula-Plättchens ist nicht genau gemessen; das Programm verwendet deshalb einen **angenommenen Modellwert** von 10 nm. Die Frage: Wie viel stärker hält die Spatula bei flachem als bei steilem Winkel – und was begrenzt den Halt?
 
 ```python
 import numpy as np
@@ -254,10 +261,10 @@ A_HAMAKER = 1e-19     # Hamaker-Konstante (J), typisch für Festkörper
 D_CONTACT = 0.3e-9    # Abstand von Flächen in Kontakt (m), etwa ein Atom
 W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # Energie, um 1 m² Kontakt zu trennen (J/m²)
 
-# Die Spatula als dünnes elastisches Band – Modellwerte, keine Messwerte
+# Die Spatula als dünnes elastisches Band
 WIDTH = 200e-9        # Breite der Spatula (m), etwa 200 nm
 THICKNESS = 10e-9     # Dicke des Spatula-Plättchens (m), angenommen
-MODULUS = 2e9         # Elastizitätsmodul von Keratin (Pa), angenommen
+MODULUS = 1.6e9       # Elastizitätsmodul des Setae-Keratins (Pa), gemessen beim Tokeh
 
 
 def peel_force(angle_deg):
@@ -306,29 +313,29 @@ ax.set_ylim(2, 1000)
 ax.legend(loc="lower left")
 plt.show()
 ```
-{% include code-result.html file="peel_angle.py" label="Abb. 3" caption="Ausgabe des Programms oben: die Kraft, die nötig ist, um eine als elastisches Band modellierte Spatula abzuschälen, über dem Schälwinkel (logarithmische Achse). Durchgezogen: Kendalls Gleichung mit Dehnung. Gestrichelt: ein starres Band, das bei 0° eine unendliche Kraft bräuchte. Punkt: die für einzelne Spatulae gemessene Haftkraft von etwa 10 nN. Dicke und Steifigkeit der Spatula sind angenommene Modellwerte." alt="Liniendiagramm der Schälkraft einer Spatula in Nanonewton über dem Schälwinkel von 0 bis 90 Grad, mit logarithmischer Kraftachse. Die durchgezogene Kurve für ein elastisches Band beginnt bei etwa 217 Nanonewton bei 0 Grad und fällt auf 42 bei 30 Grad und 5,9 bei 90 Grad. Eine gestrichelte Kurve für ein starres Band steigt zu kleinen Winkeln steil an und geht oberhalb von etwa 30 Grad in die durchgezogene Kurve über. Eine gepunktete senkrechte Linie bei 43 Grad markiert, wo der Halt auf 10 Prozent gesunken ist. Ein schwarzer Punkt bei 90 Grad markiert den gemessenen Wert von etwa 10 Nanonewton." %}
+{% include code-result.html file="peel_angle.py" label="Abb. 3" caption="Ausgabe des Programms oben: die Kraft, die nötig ist, um eine als elastisches Band modellierte Spatula abzuschälen, über dem Schälwinkel (logarithmische Achse). Durchgezogen: Kendalls Gleichung mit Dehnung. Gestrichelt: ein starres Band, das bei 0° eine unendliche Kraft bräuchte. Punkt: die für einzelne Spatulae gemessene Haftkraft von etwa 10 nN. Die Dicke der Spatula ist ein angenommener Modellwert." alt="Liniendiagramm der Schälkraft einer Spatula in Nanonewton über dem Schälwinkel von 0 bis 90 Grad, mit logarithmischer Kraftachse. Die durchgezogene Kurve für ein elastisches Band beginnt bei etwa 194 Nanonewton bei 0 Grad und fällt auf 42 bei 30 Grad und 5,9 bei 90 Grad. Eine gestrichelte Kurve für ein starres Band steigt zu kleinen Winkeln steil an und geht oberhalb von etwa 30 Grad in die durchgezogene Kurve über. Eine gepunktete senkrechte Linie bei 46 Grad markiert, wo der Halt auf 10 Prozent gesunken ist. Ein schwarzer Punkt bei 90 Grad markiert den gemessenen Wert von etwa 10 Nanonewton." %}
 
 Was das Ergebnis zeigt:
 
-- **Der Winkel ist ein Schalter.** Fast entlang der Wand gezogen, hält eine Spatula etwa **217 nN**; im rechten Winkel gezogen nur **5,9 nN**. Zwischen 10° und 90° sinkt die Kraft um den Faktor 28, und bei 43° ist nur noch ein Zehntel des Halts übrig. Das Klebebandmodell allein erklärt einen Teil des Gecko-Tricks. Mit der Reibung des Spatula-Teils, der noch Kontakt hat, und der Hebelwirkung des Seta-Schafts fanden Tian und Kollegen, dass sich Haftung und Reibung eines ganzen Gecko-Fußes um drei Größenordnungen ändern können [7](#ref-7){:.cite}.
-- **Die Dehnung setzt die Obergrenze.** Ein starres Band bräuchte bei 0° eine unendliche Kraft – physikalisch unmöglich. Weil sich die echte Spatula dehnt, ist die Kraft bei flachen Winkeln auf *b*√(2*EhW*) begrenzt. Dieser Wert hängt von der angenommenen Dicke und Steifigkeit ab und ist nur eine Schätzung. Bei steilen Winkeln spielt die Dehnung kaum eine Rolle: Dort ist die Kraft fast genau *bW* und hängt nur von der Van-der-Waals-Haftung und der Breite ab.
+- **Der Winkel ist ein Schalter.** Fast entlang der Wand gezogen, hält eine Spatula etwa **194 nN**; im rechten Winkel gezogen nur **5,9 nN**. Zwischen 10° und 90° sinkt die Kraft um den Faktor 26, und bei 46° ist nur noch ein Zehntel des Halts übrig. Das Klebebandmodell allein erklärt einen Teil des Gecko-Tricks. Unter Einbeziehung der Reibung des Spatula-Teils, der noch Kontakt hat, und der Hebelwirkung des Seta-Schafts berechneten Tian und Kollegen, dass sich Haft- und Reibungskräfte von Geckos um drei Größenordnungen ändern können [7](#ref-7){:.cite}.
+- **Die Dehnung setzt die Obergrenze.** Ein starres Band bräuchte bei 0° eine unendliche Kraft – physikalisch unmöglich. Weil sich die echte Spatula dehnt, ist die Kraft bei flachen Winkeln auf *b*√(2*EhW*) begrenzt. Dieser Wert hängt von der angenommenen Dicke ab und ist nur eine Schätzung. Bei steilen Winkeln spielt die Dehnung kaum eine Rolle: Dort ist die Kraft fast genau *bW* und hängt nur von der Van-der-Waals-Haftung und der Breite ab.
 - **Die Größenordnung passt.** Bei 90° liefert das Modell etwa 6 nN; Messungen mit dem Rasterkraftmikroskop an einzelnen Spatulae ergaben etwa 10 nN [13](#ref-13){:.cite}. Das Modell vernachlässigt die echte Form der Spatula und den Beitrag der Luftfeuchtigkeit [4](#ref-4){:.cite}; eine Übereinstimmung bis auf einen Faktor zwei ist daher so gut, wie man erwarten kann.
 - Der Schälwinkel einer Spatula ist nicht der Winkel des Seta-Schafts: Die Setae lassen bei einem Schaftwinkel von etwa 30° los [3](#ref-3){:.cite}, und der Schaft wirkt als Hebel, der die Spatulae auf einen steilen Schälwinkel dreht [7](#ref-7){:.cite}.
 
 Auch ein paar Programmierideen lohnen einen Blick:
 
 - **Numerische Stabilität.** Wer zwei fast gleiche Zahlen subtrahiert, verschenkt gültige Stellen. Der Code vermeidet das zweimal: Er berechnet 1 − cos *θ* als 2 sin<sup>2</sup>(*θ*/2), und er schreibt die Lösung der quadratischen Gleichung in einer Form ohne Differenz. Beide Umformungen sind mathematisch exakt, verlieren in Gleitkommazahlen aber weniger Stellen – eine Gewohnheit, die vor allem bei den 32-Bit-Zahlen kleiner Robotersteuerungen zählt.
-- **Nullstellensuche.** `brentq` findet den Winkel, bei dem die Kraft auf 10 % sinkt – genau die Frage, die sich die Steuerung eines Kletterroboters stellt: Wie weit muss ein Fuß kippen, bevor er loslässt?
+- **Nullstellensuche.** `brentq` findet den Winkel, bei dem die Kraft auf 10 % sinkt – genau die Frage, die sich die Steuerung eines Kletterroboters stellt: Wie weit muss ein Fuß kippen, bevor er loslässt?
 - **Validierung.** Bei 90° müssen elastisches und starres Band übereinstimmen, und das Ergebnis muss in der Größenordnung der Messung liegen. Beide Prüfungen gelingen.
 
 Probier es selbst aus – jede Änderung ist eine Zeile:
 
-- Setze `THICKNESS = 40e-9`: Ein viermal dickeres Plättchen verdoppelt den größten Halt auf 434 nN, während die Kraft bei 90° bei 5,9 nN bleibt – der Schalter wird stärker (Verhältnis 43), und der Halt sinkt schon bei 30° auf 10 %.
-- Setze `WIDTH = 500e-9`, das obere Ende der gemessenen Spatula-Breite [1](#ref-1){:.cite}: Jede Kraft wächst um den Faktor 2,5 (14,7 nN bei 90°), das Schaltverhältnis bleibt aber bei 28 – der Schalter ist eine Frage des Winkels, nicht der Größe.
+- Setze `THICKNESS = 40e-9`: Ein viermal dickeres Plättchen verdoppelt den größten Halt auf 388,5 nN, während die Kraft bei 90° bei 5,9 nN bleibt – der Schalter wird stärker (Verhältnis 41), und der Halt sinkt schon bei 32° auf 10 %.
+- Setze `WIDTH = 500e-9`, das obere Ende der gemessenen Spatula-Breite [1](#ref-1){:.cite}: Jede Kraft wächst um den Faktor 2,5 (14,7 nN bei 90°), das Schaltverhältnis bleibt aber bei 26 – der Schalter ist eine Frage des Winkels, nicht der Größe.
 - Setze `D_CONTACT = 0.4e-9`: Bei einem nur 0,1 nm größeren Spalt sinkt die Adhäsionsarbeit von 29 auf 17 mJ/m² und die Kraft bei 90° auf 3,3 nN – das steile Abstandsgesetz der Physik-Linse bei der Arbeit.
 
-{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="434.3 5.9 43 30" %}
-{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 28 43" %}
+{% include code-variant.html file="peel_angle.py" id="thicker" replace="THICKNESS = 10e-9" with="THICKNESS = 40e-9" expect="388.5 5.9 41 32" %}
+{% include code-variant.html file="peel_angle.py" id="wider" replace="WIDTH = 200e-9" with="WIDTH = 500e-9" expect="14.7 26 46" %}
 {% include code-variant.html file="peel_angle.py" id="gap" replace="D_CONTACT = 0.3e-9" with="D_CONTACT = 0.4e-9" expect="17 3.3" %}
 
 {% include lens-end.html %}

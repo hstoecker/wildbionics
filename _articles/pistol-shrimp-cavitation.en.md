@@ -33,7 +33,7 @@ beings: ["pistol-shrimp"]
 lenses: ["biology", "physics", "math", "cs"]
 key_facts:
   - "The loud snap of a pistol shrimp does not come from the claw halves hitting each other. It comes from a **collapsing cavitation bubble** [1](#ref-1){:.cite}."
-  - "Closing the claw fires a **water jet of roughly 25 m/s** – an estimate from high-speed video of the cavitation bubble [1](#ref-1){:.cite} [8](#ref-8){:.cite}. At that speed the pressure in the jet falls below the vapour pressure of water, and a vapour bubble forms [1](#ref-1){:.cite}."
+  - "Closing the claw fires a **water jet of roughly 25 m/s** – an estimate from high-speed video of the snapping claw [1](#ref-1){:.cite} [8](#ref-8){:.cite}. At that speed the pressure in the jet falls below the vapour pressure of water, and a vapour bubble forms [1](#ref-1){:.cite}."
   - "The bubble collapses in **less than a millisecond**, sending out a shock wave that can stun prey – and a short flash of light, dubbed *shrimpoluminescence* [2](#ref-2){:.cite}."
   - "Inside the collapsing bubble, temperatures reach **at least 5,000 K** [2](#ref-2){:.cite}."
   - "Engineers have 3D-printed a working replica of the claw that reproduces the flash and the shock wave [3](#ref-3){:.cite}."
@@ -150,7 +150,7 @@ We usually make water boil by heating it. But boiling depends on *pressure* just
 
 <div class="formula" role="math" aria-label="p equals p zero minus one half rho v squared"><var>p</var> = <var>p</var><sub>0</sub> − <span class="frac"><span class="frac__num">1</span><span class="frac__den">2</span></span> <var>ρ</var> <var>v</var><sup>2</sup></div>
 
-Versluis and colleagues estimated the speed of the shrimp's jet from high-speed video of the cavitation bubble: about 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. With *p*<sub>0</sub> = 101 kPa (atmospheric pressure) and *ρ* = 998 kg/m³ for water, the dynamic pressure at 25 m/s is ½ · 998 · 25² ≈ 312 kPa – three times the atmospheric pressure. Long before that point, at about **14 m/s**, the static pressure reaches the vapour pressure of water (2.3 kPa at 20 °C). The water can no longer stay liquid: it cavitates.
+Versluis and colleagues estimated the speed of the shrimp's jet from high-speed video of the closing claw: about 25 m/s [1](#ref-1){:.cite} [8](#ref-8){:.cite}. With *p*<sub>0</sub> = 101 kPa (atmospheric pressure) and *ρ* = 998 kg/m³ for water, the dynamic pressure at 25 m/s is ½ · 998 · 25² ≈ 312 kPa – three times the atmospheric pressure. Long before that point, at about **14 m/s**, the static pressure reaches the vapour pressure of water (2.3 kPa at 20 °C). The water can no longer stay liquid: it cavitates. Simulations suggest the details are more complex: the low pressure arises in the core of a vortex ring that rolls up around the jet, so the cavity is ring-shaped rather than spherical [8](#ref-8){:.cite}.
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}

@@ -12,10 +12,10 @@ A_HAMAKER = 1e-19     # Hamaker-Konstante (J), typisch für Festkörper
 D_CONTACT = 0.3e-9    # Abstand von Flächen in Kontakt (m), etwa ein Atom
 W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # Energie, um 1 m² Kontakt zu trennen (J/m²)
 
-# Die Spatula als dünnes elastisches Band – Modellwerte, keine Messwerte
+# Die Spatula als dünnes elastisches Band
 WIDTH = 200e-9        # Breite der Spatula (m), etwa 200 nm
 THICKNESS = 10e-9     # Dicke des Spatula-Plättchens (m), angenommen
-MODULUS = 2e9         # Elastizitätsmodul von Keratin (Pa), angenommen
+MODULUS = 1.6e9       # Elastizitätsmodul des Setae-Keratins (Pa), gemessen beim Tokeh
 
 
 def peel_force(angle_deg):

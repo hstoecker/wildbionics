@@ -12,10 +12,10 @@ A_HAMAKER = 1e-19     # Hamaker constant (J), typical for solids
 D_CONTACT = 0.3e-9    # distance of surfaces in contact (m), about one atom
 W = A_HAMAKER / (12 * np.pi * D_CONTACT**2)   # energy to separate 1 m² of contact (J/m²)
 
-# The spatula as a thin elastic tape – model values, not measurements
+# The spatula as a thin elastic tape
 WIDTH = 200e-9        # spatula width (m), about 200 nm
 THICKNESS = 10e-9     # thickness of the spatula pad (m), assumed
-MODULUS = 2e9         # Young's modulus of keratin (Pa), assumed
+MODULUS = 1.6e9       # Young's modulus of setal keratin (Pa), measured in tokay geckos
 
 
 def peel_force(angle_deg):
