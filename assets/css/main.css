@@ -1162,6 +1162,55 @@ var {
 .gecko-svg .label-title { font-family: var(--font-display); font-size: 20px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
 .gecko-svg .label-taxon { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0; }
 .gecko-svg .label-strong { fill: #e7d9c2; }
+/* Three wetting states side by side (lotus effect article) */
+.wet-svg { width: 100%; height: auto; overflow: visible; }
+.wet-svg .label { font-size: 14px; }
+.wet-svg .solid { fill: #6f9a7c; stroke: #48705a; stroke-width: 1; }
+.wet-svg .water { fill: url(#wet-water); stroke: #2f7f9c; stroke-width: 1.2; }
+.wet-svg .water--fill { stroke: none; }
+.wet-svg .air { fill: #e2f0f4; stroke: none; }
+.wet-svg .angle, .wet-svg .tangent { fill: none; stroke: var(--accent-ink); stroke-width: 1.6; }
+/* Lotus leaf with droplets and zooms (lotus effect article) */
+.lotus-svg { width: 100%; height: auto; overflow: visible; }
+.lotus-svg .pond { fill: none; stroke: rgba(111, 182, 207, 0.45); stroke-width: 1.5; stroke-linecap: round; }
+.lotus-svg .pond--faint { stroke: rgba(111, 182, 207, 0.25); }
+.lotus-svg .stem { fill: none; stroke: #4c7a5f; stroke-width: 7; stroke-linecap: round; }
+.lotus-svg .leaf-under { fill: #2f5443; }
+.lotus-svg .leaf-blade { fill: url(#lotus-leaf); }
+.lotus-svg .leaf-rim { fill: none; stroke: rgba(210, 235, 215, 0.45); stroke-width: 1.4; }
+.lotus-svg .vein { fill: none; stroke: rgba(215, 238, 220, 0.35); stroke-width: 1.1; stroke-linecap: round; }
+.lotus-svg .leaf-centre { fill: #cfe4cf; opacity: 0.7; }
+.lotus-svg .dirt circle { fill: #8a6a45; opacity: 0.85; }
+.lotus-svg .ghost { fill: rgba(191, 227, 240, 0.12); stroke: rgba(235, 250, 255, 0.9); stroke-width: 1.2; stroke-dasharray: 2 2; }
+.lotus-svg .petal { fill: #f2b3c6; stroke: #c9718f; stroke-width: 1; }
+.lotus-svg .petal--back { fill: #e59ab2; }
+.lotus-svg .receptacle { fill: #f0cf62; }
+.lotus-svg .label-theta { fill: var(--accent); font-family: var(--font-display); font-style: italic; font-size: 13px; }
+.lotus-svg .tubule--small { stroke-width: 1; }
+.lotus-svg .drop { fill: url(#lotus-drop); stroke: rgba(235, 250, 255, 0.85); stroke-width: 1; }
+.lotus-svg .drop-shine { fill: #fff; opacity: 0.85; }
+.lotus-svg .drop-shadow { fill: #1e3a2f; opacity: 0.45; }
+.lotus-svg .roll { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 3 4; stroke-linecap: round; }
+.lotus-svg .roll-head { fill: var(--accent); }
+.lotus-svg .zoom circle { fill: none; stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.lotus-svg .zoom path { fill: none; stroke: var(--signal); stroke-width: 1; opacity: 0.55; stroke-dasharray: 3 4; }
+.lotus-svg .lens { fill: url(#lotus-lens); }
+.lotus-svg .lens-ring { fill: none; stroke: var(--signal); stroke-width: 1.6; }
+.lotus-svg .surface { fill: #4f8265; }
+.lotus-svg .surface-line { stroke: #9cc7a4; stroke-width: 1.5; }
+.lotus-svg .angle, .lotus-svg .tangent { fill: none; stroke: var(--accent); stroke-width: 1.6; }
+.lotus-svg .papilla { fill: #5f9272; stroke: #9cc7a4; stroke-width: 1.2; }
+.lotus-svg .air { stroke: rgba(236, 248, 238, 0.35); stroke-width: 1; stroke-dasharray: 2 3; }
+.lotus-svg .drop-bottom { fill: rgba(111, 182, 207, 0.45); stroke: rgba(235, 250, 255, 0.8); stroke-width: 1.2; }
+.lotus-svg .tubule { fill: none; stroke: #e6efe0; stroke-width: 2.2; stroke-linecap: round; }
+.lotus-svg .leader { fill: none; stroke: rgba(238, 242, 234, 0.55); stroke-width: 1; }
+.lotus-svg .dot { fill: var(--signal); }
+.lotus-svg .label-title { font-family: var(--font-display); font-size: 20px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
+.lotus-svg .label-taxon { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0; }
+.lotus-svg .label-strong { fill: #e6efe0; }
+.lotus-svg .label-air { fill: rgba(236, 248, 238, 0.8); }
+.lotus-svg .label-halo { paint-order: stroke; stroke: #0d2027; stroke-width: 5px; stroke-linejoin: round; }
+.lotus-svg .label-tick { font-size: 12px; }
 
 /* ---------- Article body ---------- */
 .article-body { padding-block: clamp(48px, 7vw, 96px) clamp(64px, 8vw, 120px); }
@@ -1510,6 +1559,9 @@ a.cite:hover { text-decoration: underline; }
   .breadcrumb a { display: inline-block; padding-block: 14px; }
   /* figure labels: at least 9 px on a 390 px phone (font-size × figure scale) */
   .claw-svg .label, .gecko-svg .label { font-size: 18px; }
+  .lotus-svg .label { font-size: 18.5px; }
+  .lotus-svg .label-title { font-size: 24px; }
+  .wet-svg .label { font-size: 20.5px; }          /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
   .fig-svg .label { font-size: 15px; }
   .fig-svg .label-tick { font-size: 15px; }
   .cav-svg .label { font-size: 15px; }

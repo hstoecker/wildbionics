@@ -36,6 +36,12 @@ terms:
   - { en: "toe pad*", de: "Haftpolster*", de_alt: ["Haftzehe*"] }
   - { en: "tokay gecko*", de: "Tokeh*", avoid: ["Tokay-Gecko*"], level: warn, why: "Deutscher Name der Art Gekko gecko: Tokeh." }
   - { en: "convergent evolution", de: "konvergente Evolution" }
+  - { en: "lotus effect", de: "Lotuseffekt*", de_alt: ["Lotoseffekt*"] }
+  - { en: "sacred lotus", de: "Indische* Lotosblume*", de_alt: ["Lotos*"], avoid: ["Heilige* Lotus*"], level: warn, why: "Deutscher Name von Nelumbo nucifera: Indische Lotosblume (kurz Lotos)." }
+  - { en: "papilla*", de: "Papille*" }
+  - { en: "wax tubule*", de: "Wachsröhrchen", de_alt: ["Wachstubuli"] }
+  - { en: "epicuticular wax*", de: "epikutikulär* Wachs*", de_alt: ["Bereifung"] }
+  - { en: "water strider*", de: "Wasserläufer*" }
   - { en: "feeding buzz", de: "Feeding Buzz", de_alt: ["Fang-Buzz", "Final Buzz"] }
   - { en: "big brown bat*", de: "Große* Braune* Fledermaus", de_alt: ["Große* Braune* Fledermäuse"] }
   - { en: "horseshoe bat*", de: "Hufeisennase*", avoid: ["Hufeisenfledermaus", "Hufeisenfledermäuse"], level: warn, why: "Deutscher Name der Rhinolophidae: Hufeisennasen." }
@@ -93,6 +99,14 @@ terms:
   - { en: "Young's modulus", de: "Elastizitätsmodul", de_alt: ["E-Modul"], avoid: ["Young-Modul*", "Youngscher Modul*"], why: "Im Deutschen heißt die Größe Elastizitätsmodul (E-Modul)." }
   - { en: "shear force*", de: "Scherkr*" }
   - { en: "microgravity", de: "Mikrogravitation", de_alt: ["Schwerelosigkeit"] }
+  - { en: "contact angle*", de: "Kontaktwinkel*", avoid: ["Benetzungswinkel*"], level: warn, why: "Einheitlich Kontaktwinkel (Wikidata Q899239)." }
+  - { en: "wetting", de: "Benetzung", de_alt: ["benetz*"] }
+  - { en: "superhydrophobic*", de: "superhydrophob*", avoid: ["super-hydrophob*", "ultrahydrophob*"], level: warn, why: "Einheitlich superhydrophob (Schreibweise der Fachliteratur)." }
+  - { en: "self-cleaning", de: "selbstreinigend*", de_alt: ["Selbstreinigung"] }
+  - { en: "roughness", de: "Rauheit", avoid: ["Rauhigkeit", "Rauhheit"], why: "Rechtschreibung seit 1996: Rauheit." }
+  - { en: "contact angle hysteresis", de: "Kontaktwinkelhysterese" }
+  - { en: "Laplace pressure", de: "Laplace-Druck" }
+
   # --- Mathematics / computer science --------------------------------------------
   - { en: "interaural time difference", de: "interaurale* Laufzeitunterschied*" }
   - { en: "matched filter", de: "Optimalfilter" }

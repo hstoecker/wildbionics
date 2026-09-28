@@ -1,0 +1,48 @@
+{%- include i18n.html -%}
+{%- assign w = t.figures.wetting -%}
+<svg class="wet-svg" viewBox="0 0 720 342" role="img" aria-labelledby="wet-title" aria-describedby="wet-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="wet-title">{{ w.title }}</title>
+  <desc id="wet-desc">{{ w.desc }}</desc>
+  <defs>
+    <linearGradient id="wet-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd3e6"/>
+      <stop offset="1" stop-color="#5aa6c2"/>
+    </linearGradient>
+  </defs>
+  <g class="panel panel--flat">
+    <rect class="solid" x="20" y="212" width="200" height="34"/>
+    <path class="water" d="M79.8,212 A46,46 0 1 1 160.2,212 Z"/>
+    <path class="angle" d="M146.2,212 A14,14 0 0 1 167.0,199.8"/><line class="tangent" x1="160.2" y1="212" x2="174.8" y2="185.8"/>
+  </g>
+  <g class="panel panel--wenzel">
+    <path class="solid" d="M260,246 L260,212 L260,212 L260,194 L272,194 L272,212 L286,212 L286,194 L298,194 L298,212 L312,212 L312,194 L324,194 L324,212 L338,212 L338,194 L350,194 L350,212 L364,212 L364,194 L376,194 L376,212 L390,212 L390,194 L402,194 L402,212 L416,212 L416,194 L428,194 L428,212 L442,212 L442,194 L454,194 L454,212 L460,212 L460,246 Z"/>
+    <path class="water" d="M327.9,194 A50,50 0 1 1 392.1,194 Z"/>
+    <rect class="water water--fill" x="350" y="194" width="14" height="18"/>
+    <rect class="water water--fill" x="376" y="194" width="14" height="18"/>
+    <path class="angle" d="M378.1,194 A14,14 0 0 1 402.9,185.0"/><line class="tangent" x1="392.1" y1="194" x2="415.1" y2="174.7"/>
+  </g>
+  <g class="panel panel--cassie">
+    <path class="solid" d="M500,246 L500,212 L500,212 L500,194 L512,194 L512,212 L526,212 L526,194 L538,194 L538,212 L552,212 L552,194 L564,194 L564,212 L578,212 L578,194 L590,194 L590,212 L604,212 L604,194 L616,194 L616,212 L630,212 L630,194 L642,194 L642,212 L656,212 L656,194 L668,194 L668,212 L682,212 L682,194 L694,194 L694,212 L700,212 L700,246 Z"/>
+    <path class="water" d="M583.9,194 A52,52 0 1 1 616.1,194 Z"/>
+    <rect class="air" x="590" y="194" width="14" height="18"/>
+    <rect class="air" x="616" y="194" width="14" height="18"/>
+    <path class="angle" d="M602.1,194 A14,14 0 0 1 629.4,189.7"/><line class="tangent" x1="616.1" y1="194" x2="644.6" y2="184.7"/>
+  </g>
+  <g class="labels">
+    <text x="120" y="30" text-anchor="middle" class="label label-strong">{{ w.flat }}</text>
+    <text x="360" y="30" text-anchor="middle" class="label label-strong">{{ w.wenzel }}</text>
+    <text x="600" y="30" text-anchor="middle" class="label label-strong">{{ w.cassie }}</text>
+    <text x="120" y="57" text-anchor="middle" class="label label-muted">{{ w.flat_model }}</text>
+    <text x="360" y="57" text-anchor="middle" class="label label-muted">{{ w.wenzel_model }}</text>
+    <text x="600" y="57" text-anchor="middle" class="label label-muted">{{ w.cassie_model }}</text>
+    <text x="120" y="277" text-anchor="middle" class="label">{{ w.flat_note }}</text>
+    <text x="360" y="277" text-anchor="middle" class="label">{{ w.wenzel_note }}</text>
+    <text x="600" y="277" text-anchor="middle" class="label">{{ w.cassie_note }}</text>
+    <text x="120" y="304" text-anchor="middle" class="label label-accent">{{ w.flat_angle }}</text>
+    <text x="360" y="304" text-anchor="middle" class="label label-accent">{{ w.wenzel_angle }}</text>
+    <text x="600" y="304" text-anchor="middle" class="label label-accent">{{ w.cassie_angle }}</text>
+    <text x="120" y="331" text-anchor="middle" class="label">{{ w.flat_drop }}</text>
+    <text x="360" y="331" text-anchor="middle" class="label">{{ w.wenzel_drop }}</text>
+    <text x="600" y="331" text-anchor="middle" class="label">{{ w.cassie_drop }}</text>
+  </g>
+</svg>

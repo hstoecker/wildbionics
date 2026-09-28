@@ -9,6 +9,8 @@
 gecko:             { id: gecko,        i18n: figures.gecko,          context: "article-header",                     bg: "var(--ocean)", page: gecko-adhesion }
 vdw:               { id: vdw,          i18n: figures.vdw,            context: "prose figure",                       bg: "var(--card)",  page: gecko-adhesion }
 cat-box:           { id: catbox,       i18n: figures.cat_box,        context: "article-header",                     bg: "var(--ocean)", page: schroedingers-cat }
+lotus:             { id: lotus,        i18n: figures.lotus,          context: "article-header",                     bg: "var(--ocean)", page: lotus-effect }
+wetting:           { id: wet,          i18n: figures.wetting,        context: "prose figure",                       bg: "var(--card)",  page: lotus-effect }
 bat-hunt:          { id: bathunt,      i18n: figures.bat_hunt,       context: "article-header",                     bg: "var(--ocean)", page: bat-echolocation }
 claw:              { id: claw,         i18n: figures.claw,           context: "article-header",                     bg: "var(--ocean)", page: pistol-shrimp-cavitation }
 bernoulli:         { id: bern,         i18n: figures.bernoulli,      context: "prose figure",                       bg: "var(--card)",  page: pistol-shrimp-cavitation }
