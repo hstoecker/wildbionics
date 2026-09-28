@@ -1584,6 +1584,7 @@ a.cite:hover { text-decoration: underline; }
 .swatch { display: inline-block; width: 10px; height: 10px; border: 1.5px solid var(--c, currentColor); border-radius: 50%; background: var(--c, currentColor); }
 .swatch--article { --c: var(--on-dark); width: 13px; height: 13px; box-shadow: 0 0 0 2px var(--night), 0 0 0 3px var(--accent); }
 .swatch--being { --c: #f2c38b; }
+.swatch--thought { --c: #c9b6f2; background: color-mix(in srgb, #c9b6f2 22%, var(--night)); border-width: 2px; }   /* lilac ring; the node itself has a dashed outline (too small to dash here) */
 .swatch--lens { width: 22px; height: 0; border: 0; border-top: 2px dashed #b9c7c0; border-radius: 0; background: none; }
 .swatch--unused { --c: var(--on-dark-2); background: transparent; border-style: dashed; }
 .graph-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--on-dark-2); font-size: 0.85rem; }
@@ -1615,6 +1616,8 @@ a.cite:hover { text-decoration: underline; }
 .node--article .node-label { fill: var(--on-dark); font-family: var(--font-display); font-size: 17px; font-weight: 450; }
 .node--being circle { --c: #f2c38b; }
 .node--being .node-label { font-family: var(--font-display); font-size: 14px; font-style: italic; fill: #f2c38b; }
+.node--thought-experiment circle { --c: #c9b6f2; fill: color-mix(in srgb, #c9b6f2 18%, var(--night)); stroke-width: 2; stroke-dasharray: 3 2.5; }
+.node--thought-experiment .node-label { font-family: var(--font-display); font-size: 14px; fill: #c9b6f2; }
 .node.is-unused circle { fill: var(--night); stroke-dasharray: 2 2.5; }
 .node.is-unused .node-label { opacity: 0.75; }   /* ≥ 4.5:1 on the night surface */
 .graph-svg .node circle.node-hit { fill: transparent; stroke: none; }   /* invisible ≥ 44 px tap area around small nodes */
@@ -1750,7 +1753,7 @@ a.cite:hover { text-decoration: underline; }
   .graph-svg { max-height: none; }
   .graph-info { position: static; width: auto; margin: 12px var(--gutter) 0; transform: none; }
   .node-label { font-size: 15px; }
-  .node--being .node-label { font-size: 16px; }
+  .node--being .node-label, .node--thought-experiment .node-label { font-size: 16px; }
   .node--dimension .node-label, .node--article .node-label { font-size: 19px; }
 }
 
@@ -2103,4 +2106,46 @@ a.cite:hover { text-decoration: underline; }
   .guide-ribbon, .guide-tag { border: 1px solid CanvasText; }
   .menu__icon, .menu__icon::before, .menu__icon::after { background: CanvasText; }
   .menu[open] .menu__icon { background: transparent; }
+}
+
+/* Schrödinger's cat, hero of the thought-experiment article (_includes/svg/cat-box.svg) */
+.catbox-svg { width: 100%; height: auto; overflow: visible; }
+.catbox-svg .grid { color: rgba(238, 242, 234, 0.07); }
+.catbox-svg .box-wall { fill: url(#catbox-steel); stroke: rgba(255, 255, 255, 0.35); stroke-width: 1; }
+.catbox-svg .box-inside { fill: url(#catbox-inside); stroke: rgba(0, 0, 0, 0.5); stroke-width: 1.5; }
+.catbox-svg .box-floor { stroke: rgba(238, 242, 234, 0.18); stroke-width: 1.5; }
+.catbox-svg .rivets circle { fill: #b9c9d0; stroke: rgba(0, 0, 0, 0.35); stroke-width: 0.8; }
+.catbox-svg .shelf { fill: none; stroke: rgba(238, 242, 234, 0.25); stroke-width: 1.5; }
+.catbox-svg .dish { fill: #9fb2ba; }
+.catbox-svg .sample { fill: var(--accent); }
+.catbox-svg .rays { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 2 3; stroke-linecap: round; }
+.catbox-svg .tube { fill: #3d5560; stroke: #9fb2ba; stroke-width: 1.4; }
+.catbox-svg .tube-wire { stroke: #cfdde2; stroke-width: 1; stroke-dasharray: 1 3; }
+.catbox-svg .wire { fill: none; stroke: #9fb2ba; stroke-width: 1.4; }
+.catbox-svg .relay { fill: #2f444d; stroke: #9fb2ba; stroke-width: 1.4; }
+.catbox-svg .pivot { fill: #cfdde2; }
+.catbox-svg .hammer-arm { stroke: #cfdde2; stroke-width: 3; stroke-linecap: round; }
+.catbox-svg .hammer-head { fill: #cfdde2; }
+.catbox-svg .swing, .catbox-svg .swing-tip { fill: none; stroke: var(--on-dark-2); stroke-width: 1.2; stroke-dasharray: 3 3; stroke-linecap: round; }
+.catbox-svg .flask { fill: url(#catbox-glass); stroke: #d9eef0; stroke-width: 1.4; }
+.catbox-svg .flask-liquid { fill: #9bd36a; opacity: 0.75; }
+.catbox-svg .flask-neck { stroke: #d9eef0; stroke-width: 2; }
+.catbox-svg .cat { opacity: 0.62; }
+.catbox-svg .cat--alive { fill: var(--signal); stroke: var(--signal); }
+.catbox-svg .cat--dead { fill: var(--accent); stroke: var(--accent); }
+.catbox-svg .cat-eye { fill: #0a1519; }
+.catbox-svg .cat-eye-closed { fill: none; stroke: #0a1519; stroke-width: 2.4; stroke-linecap: round; }
+.catbox-svg .math { font-size: 19px; }
+.catbox-svg .math-alive, .catbox-svg .label-alive { fill: var(--signal); }
+.catbox-svg .math-dead, .catbox-svg .label-dead { fill: var(--accent); }
+.catbox-svg .whisker { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+.catbox-svg .marker circle { fill: #0a1519; stroke: var(--on-dark-2); stroke-width: 1.2; }
+.catbox-svg .marker text { font-family: var(--font-mono); font-size: 13px; font-weight: 600; fill: var(--on-dark); }
+.catbox-svg .label-legend { fill: var(--on-dark-2); }
+.catbox-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .catbox-svg .label, .catbox-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .catbox-svg .math { font-size: 22px; }
+  .catbox-svg .marker circle { r: 15px; }
+  .catbox-svg .marker text { font-size: 20px; transform: translateY(2px); transform-box: fill-box; }
 }

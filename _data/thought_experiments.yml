@@ -1,0 +1,7 @@
+# Thought experiments that articles are about – front matter `thought_experiments:`.
+# Imagined setups, not real organisms or experiments: the graph shows them as their own node
+# type ("thought experiment"), separate from _data/beings.yml.
+#   en/de    – display names (every language in _config.yml `languages`)
+#   author   – who proposed it; year – when it was published
+#   wikidata – the Wikidata item of the thought experiment (verified label + description)
+schroedingers-cat: { en: "Schrödinger's cat", de: "Schrödingers Katze", author: "Erwin Schrödinger", year: 1935, wikidata: Q8588 }

@@ -52,7 +52,8 @@ keywords: [...]                # ≥ 3
 about: [{ name, wikidata: Q…, wikipedia }]   # main subjects, Wikidata IDs verified
 mentions: [{ name, wikidata: Q… }]
 dimensions: { time: [...], space: [...], physics: [...], adjacent_sciences: [...] }  # slugs from _data/taxonomy.yml
-beings: [<slug>]               # from _data/beings.yml
+beings: [<slug>]               # from _data/beings.yml (real organisms)
+thought_experiments: [<slug>]  # from _data/thought_experiments.yml – instead of beings when the subject is imagined
 lenses: [biology, physics, math, cs]          # keys from _data/lenses.yml
 key_facts: [...]               # 3–7 answer-ready facts with citations
 faq: [{ q, a }]                # ≥ 3, plain text answers (also FAQPage JSON-LD)

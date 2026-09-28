@@ -4,7 +4,7 @@ sitemap: false
 ---
 {%- comment -%}
   Knowledge graph, derived at build time from article front matter (see CLAUDE.md).
-  Node types: dimension · term · article · being. Lens edges point to the discipline
+  Node types: dimension · term · article · being · thought-experiment. Lens edges point to the discipline
   node named in _data/lenses.yml. Labels and URLs per language.
 {%- endcomment -%}
 {%- assign dims = "time,space,physics,adjacent_sciences" | split: "," -%}
@@ -22,6 +22,9 @@ sitemap: false
 {%- for b in site.data.beings %}
     {"id": "being:{{ b[0] }}", "type": "being", "taxon": {{ b[1].taxon | jsonify }}, "wikidata": {{ b[1].wikidata | jsonify }}, "label": { {% for l in site.languages %}"{{ l }}": {{ b[1][l] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
 {%- endfor %}
+{%- for x in site.data.thought_experiments %}
+    {"id": "thought-experiment:{{ x[0] }}", "type": "thought-experiment", "author": {{ x[1].author | jsonify }}, "year": {{ x[1].year }}, "wikidata": {{ x[1].wikidata | jsonify }}, "label": { {% for l in site.languages %}"{{ l }}": {{ x[1][l] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} } },
+{%- endfor %}
 
 {%- for a in canonical %}
   {%- assign versions = published | where: "ref", a.ref %}
@@ -38,6 +41,9 @@ sitemap: false
   {%- endfor %}{% endfor %}
   {%- for b in a.beings %}
     {"source": "article:{{ a.ref }}", "target": "being:{{ b }}", "type": "about"},
+  {%- endfor %}
+  {%- for x in a.thought_experiments %}
+    {"source": "article:{{ a.ref }}", "target": "thought-experiment:{{ x }}", "type": "about"},
   {%- endfor %}
   {%- for l in a.lenses %}
     {"source": "article:{{ a.ref }}", "target": "{{ site.data.lenses[l] }}", "type": "lens", "lens": "{{ l }}"},

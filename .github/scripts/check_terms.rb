@@ -195,6 +195,11 @@ beings = YAML.load_file("_data/beings.yml")
 beings.each do |slug, names|
   langs.each { |l| errors << "_data/beings.yml: #{slug} has no #{l} name" if names.to_h[l].to_s.strip.empty? }
 end
+thought_experiments = YAML.load_file("_data/thought_experiments.yml")
+thought_experiments.each do |slug, x|
+  langs.each { |l| errors << "_data/thought_experiments.yml: #{slug} has no #{l} name" if x.to_h[l].to_s.strip.empty? }
+  %w[author year wikidata].each { |k| errors << "_data/thought_experiments.yml: #{slug} lacks #{k}" if x.to_h[k].to_s.strip.empty? }
+end
 articles.each do |a|
   a[:fm].fetch("dimensions", {}).each do |dim, slugs|
     Array(slugs).each do |slug|
@@ -207,6 +212,9 @@ articles.each do |a|
   end
   Array(a[:fm]["lenses"]).each { |l| errors << "#{a[:file]}: lens „#{l}“ missing in _data/lenses.yml" unless lenses.key?(l) }
   Array(a[:fm]["beings"]).each { |b| errors << "#{a[:file]}: being „#{b}“ missing in _data/beings.yml" unless beings.key?(b) }
+  Array(a[:fm]["thought_experiments"]).each do |x|
+    errors << "#{a[:file]}: thought experiment „#{x}“ missing in _data/thought_experiments.yml" unless thought_experiments.key?(x)
+  end
 end
 
 warnings.uniq.each { |w| puts "warning: #{w}" }

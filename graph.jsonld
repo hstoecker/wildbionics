@@ -4,13 +4,15 @@ sitemap: false
 ---
 {%- comment -%}
   The knowledge graph as linked data (schema.org JSON-LD), built from the same sources as
-  graph.json: _data/taxonomy.yml, _data/beings.yml, _data/lenses.yml and article front matter.
+  graph.json: _data/taxonomy.yml, _data/beings.yml, _data/thought_experiments.yml, _data/lenses.yml
+  and article front matter.
   Stable IRIs, independent of language:
     <site>/graph/#dim-<dimension>   DefinedTermSet (time, space, physics = "Rules", adjacent_sciences)
     <site>/graph/#term-<slug>       DefinedTerm (sameAs Wikidata where the item matches exactly)
     <site>/graph/#being-<slug>      Taxon (sameAs Wikidata)
+    <site>/graph/#thought-experiment-<slug>   CreativeWork, genre "thought experiment" (sameAs Wikidata)
     <article url>#article           Article – the same @id as in the article page's own JSON-LD
-  Article → term edges are `keywords` (DefinedTerm), → organisms `about`, lenses
+  Article → term edges are `keywords` (DefinedTerm), → organisms and thought experiments `about`, lenses
   `educationalAlignment` (educationalSubject → the lens's discipline). A time term's `position` carries
   its place on the time axis (`order`); it is not a schema.org property of DefinedTerm and is ignored
   by consumers that don't know it. Rules: wildbionics-graph skill.
@@ -65,6 +67,18 @@ sitemap: false
       "sameAs": "https://www.wikidata.org/wiki/{{ b[1].wikidata }}"
     },
     {%- endfor %}
+    {%- for x in site.data.thought_experiments %}
+    {
+      "@type": "CreativeWork",
+      "@id": "{{ g }}thought-experiment-{{ x[0] }}",
+      "name": [{% for l in site.languages %}{ "@language": "{{ l }}", "@value": {{ x[1][l] | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "genre": [{% for l in site.languages %}{ "@language": "{{ l }}", "@value": {{ site.data.i18n[l].graph.thought_experiment | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "additionalType": "https://www.wikidata.org/wiki/Q147027",
+      "creator": { "@type": "Person", "name": {{ x[1].author | jsonify }} },
+      "dateCreated": "{{ x[1].year }}",
+      "sameAs": "https://www.wikidata.org/wiki/{{ x[1].wikidata }}"
+    },
+    {%- endfor %}
     {%- for a in published %}
     {%- assign tr = published | where: "ref", a.ref %}
     {
@@ -77,7 +91,7 @@ sitemap: false
       "{% if a.lang == site.lang %}workTranslation{% else %}translationOfWork{% endif %}": { "@id": "{{ v.url | absolute_url }}#article" },
       {%- endif %}{% endfor %}
       "isPartOf": { "@id": "{{ g }}dataset" },
-      "about": [{% for b in a.beings %}{ "@id": "{{ g }}being-{{ b }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "about": [{% assign first = true %}{% for b in a.beings %}{% unless first %}, {% endunless %}{ "@id": "{{ g }}being-{{ b }}" }{% assign first = false %}{% endfor %}{% for x in a.thought_experiments %}{% unless first %}, {% endunless %}{ "@id": "{{ g }}thought-experiment-{{ x }}" }{% assign first = false %}{% endfor %}],
       "keywords": [{% assign first = true %}{% for d in dims %}{% for s in a.dimensions[d] %}{% unless first %}, {% endunless %}{ "@id": "{{ g }}term-{{ s }}" }{% assign first = false %}{% endfor %}{% endfor %}],
       "educationalAlignment": [{% for l in a.lenses %}{% assign target = site.data.lenses[l] | split: ":" %}{% assign lens_i18n = site.data.i18n[a.lang].lens[l] %}{ "@type": "AlignmentObject", "alignmentType": "educationalSubject", "targetName": {{ lens_i18n.tab | jsonify }}, "targetUrl": "{{ g }}{% if target[0] == 'dim' %}dim-{% else %}term-{% endif %}{{ target[1] }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}]
     }{% unless forloop.last %},{% endunless %}
