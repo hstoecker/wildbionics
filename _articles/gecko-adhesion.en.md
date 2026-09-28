@@ -8,6 +8,7 @@ kicker: "Article · Surface forces"
 description: "Geckos run up glass without glue or suction: billions of tiny spatulae on their toes stick by van der Waals forces – and let go in milliseconds."
 dek: "No glue, no suction cups, no claws needed: a gecko's toes carry millions of microscopic hairs that split into billions of nanoscale tips. Close enough to a wall, the weakest of all molecular forces adds up to hold the animal – and switches off in a few milliseconds."
 date: 2026-09-27
+updated: 2026-09-28
 permalink: /articles/gecko-adhesion/
 image: /assets/og/gecko-adhesion-en.jpg
 image_alt: "Schematic of a tokay gecko on a wall with zooms into its toe pad, the setae and the spatulae that touch the wall."

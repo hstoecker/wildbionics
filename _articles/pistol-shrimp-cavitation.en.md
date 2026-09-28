@@ -8,7 +8,7 @@ kicker: "Flagship article · Fluid dynamics"
 description: "How a pistol shrimp boils water without heat: its claw fires a jet that forms a cavitation bubble, a flash of light and a shock wave. Physics, maths and code."
 dek: "How a shrimp a few centimetres long makes water boil without heat: one snap of its claw fires a jet, creates a cavitation bubble and ends in a flash of light and a shock wave – explained through physics, mathematics and code."
 date: 2026-09-26
-updated: 2026-09-27
+updated: 2026-09-28
 permalink: /articles/pistol-shrimp-cavitation/
 image: /assets/og/pistol-shrimp-cavitation-en.jpg
 image_alt: "Preview card: schematic of a whole pistol shrimp whose oversized snapping claw fires a water jet of about 25 m/s – a cavitation bubble forms and sends out a shock wave."
@@ -229,7 +229,8 @@ rayleigh = 0.915 * R_MAX * np.sqrt(RHO / (P_INF - P_V))
 print(f"Rayleigh's formula (empty bubble): {rayleigh * 1e6:.0f} µs\n")
 print("gas (Pa)   collapse (µs)   R_min (µm)   max. speed (km/s)   T_max (1000 K)")
 
-fig, (whole, end) = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
+plt.rcParams["font.size"] = 13      # stacked and with larger type, so the chart stays readable on a phone
+fig, (whole, end) = plt.subplots(2, 1, figsize=(6.4, 8.4), layout="constrained")
 for p_gas in [10, 100, 1000]:     # nobody has measured how much gas the shrimp's bubble holds
     sol = collapse(p_gas)
     r_min, speed = sol.y[0, -1], np.abs(sol.y[1]).max()
@@ -255,7 +256,7 @@ end.set(ylabel="bubble radius (µm, log scale)", xlim=(rayleigh * 1e6 - 4, rayle
 end.yaxis.set_major_formatter("{x:g}")
 plt.show()
 ```
-{% include code-result.html file="rayleigh_plesset.py" label="Fig. 4" caption="Output of the program above. Left: the whole collapse – the three curves lie on top of each other and end at Rayleigh's collapse time. Right: the last microseconds on a logarithmic scale – here the amount of gas decides how small the bubble gets. Dotted: the bubble wall moves faster than sound in water, so the model no longer holds." alt="Two line charts of bubble radius over time for 10, 100 and 1,000 pascals of gas. Left: all three curves fall from 3,000 micrometres to almost zero at about 276 microseconds, next to a dashed line for Rayleigh's formula. Right, zoomed in on 272 to 280 microseconds with a logarithmic axis: the 10 Pa bubble shrinks to 3 micrometres at 275 microseconds, the 100 Pa bubble to 20 micrometres at 276, the 1,000 Pa bubble only to 137 micrometres at 279. For 10 and 100 pascals the curves are dotted below about 90 micrometres, where the bubble wall moves faster than sound and the model is no longer valid." %}
+{% include code-result.html file="rayleigh_plesset.py" label="Fig. 4" caption="Output of the program above. Top: the whole collapse – the three curves lie on top of each other and end at Rayleigh's collapse time. Bottom: the last microseconds on a logarithmic scale – here the amount of gas decides how small the bubble gets. Dotted: the bubble wall moves faster than sound in water, so the model no longer holds." alt="Two line charts of bubble radius over time for 10, 100 and 1,000 pascals of gas, one above the other. Top: all three curves fall from 3,000 micrometres to almost zero at about 276 microseconds, next to a dashed line for Rayleigh's formula. Bottom, zoomed in on 272 to 280 microseconds with a logarithmic axis: the 10 Pa bubble shrinks to 3 micrometres at 275 microseconds, the 100 Pa bubble to 20 micrometres at 276, the 1,000 Pa bubble only to 137 micrometres at 279. For 10 and 100 pascals the curves are dotted below about 90 micrometres, where the bubble wall moves faster than sound and the model is no longer valid." %}
 
 What the result teaches:
 

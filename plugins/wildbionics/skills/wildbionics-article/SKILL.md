@@ -97,7 +97,8 @@ The include renders the action bar (Open in Colab, Download .py, How to run), th
 **Output** box and – if the program draws one – the chart with caption. Output, chart and
 downloads come from `_data/code_examples.yml` and `examples/<ref>/<name>.<lang>.{py,ipynb,svg}`,
 which the script writes; never edit them by hand. Code inside an include (home page) passes
-`ref="home" lang="en"` and `variant="card"`. `assets/js/code.js` adds the copy button.
+`ref="home"`, `lang="en"`/`lang="de"` and `variant="card"` – one block per language inside
+`{% if lang == "de" %}…{% else %}…{% endif %}`, so every language shows its own comments and output. `assets/js/code.js` adds the copy button.
 
 **Rules for the program** (the gate enforces: runs without error or warning in ≤ 60 s, prints something, at most one chart, output and generated files up to date – the rest is on you and the review):
 - Complete and self-contained: imports, constants with units in comments, no files, no network,
@@ -105,7 +106,9 @@ which the script writes; never edit them by hand. Code inside an include (home p
 - Runs in under 60 s, prints no warnings, prints its result; random numbers use a fixed seed
   (`np.random.default_rng(1)`) and the result must not hinge on the seed – check a few hundred
   seeds before you publish.
-- At most **one** chart (one figure, subplots allowed), ended with `plt.show()`. Axis labels with
+- At most **one** chart (one figure, subplots allowed), ended with `plt.show()`. It must stay
+  readable on a 390 px phone, where it is scaled to about 330 px: stack panels vertically
+  (`plt.subplots(2, 1, figsize=(6.4, 8.4))`, not side by side) and set `plt.rcParams["font.size"] = 13`. Axis labels with
   units, a title that states the takeaway, a legend; German labels in the DE version, short enough
   not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
   valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if

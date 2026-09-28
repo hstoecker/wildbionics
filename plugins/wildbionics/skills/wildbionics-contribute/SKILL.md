@@ -63,7 +63,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 
 | Workflow / script | When | What |
 |---|---|---|
-| `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines |
+| `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines of the changed pages |
 | `.github/workflows/claude-review.yml` | PR opened/updated (branches of this repo) | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment |
 | `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills, pushes a branch after every major step and posts a link to create the pull request; for small, focused tasks (turn limit, maintainer's tokens) – whole articles are written with Claude Code |
 | `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/lenses |
@@ -72,7 +72,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
 | `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
-| `.github/scripts/indexnow.py` | CI (after deploy) | submits the sitemap URLs to IndexNow (key in `_config.yml`) |
+| `.github/scripts/indexnow.py` | CI (`main`) | `changed` (build job, before deploy): lists the pages whose HTML differs from the live site or are new; after deploy submits only those to IndexNow (key in `_config.yml`) – CSS, script or docs-only deploys submit nothing |
 | `.github/CODEOWNERS` | every PR | the maintainer is the required reviewer |
 
 **Branch protection on `main`:** changes only via pull requests; required checks `build` and
