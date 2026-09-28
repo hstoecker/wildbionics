@@ -1,0 +1,152 @@
+{%- include i18n.html -%}
+{%- assign b = t.figures.bat_hunt -%}
+<svg class="bathunt-svg" viewBox="0 0 720 432" role="img" aria-labelledby="bathunt-title" aria-describedby="bathunt-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="bathunt-title">{{ b.title }}</title>
+  <desc id="bathunt-desc">{{ b.desc }}</desc>
+  <defs>
+    <pattern id="bathunt-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="bathunt-fade" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="bathunt-mask"><rect width="720" height="432" fill="url(#bathunt-fade)"/></mask>
+    <radialGradient id="bathunt-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="var(--signal)" stop-opacity=".22"/>
+      <stop offset="1" stop-color="var(--signal)" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect class="grid" width="720" height="432" fill="url(#bathunt-grid)" mask="url(#bathunt-mask)"/>
+
+  <!-- Phase bands (same x in the scene and on the timeline) -->
+  <g class="phase-lines">
+    <path d="M310.1,40 V358"/>
+    <path d="M452.2,40 V358"/>
+  </g>
+  <text x="190.1" y="46" text-anchor="middle" class="label label-phase">{{ b.search }}</text>
+  <text x="381.2" y="46" text-anchor="middle" class="label label-phase">{{ b.approach }}</text>
+  <text x="490.1" y="46" text-anchor="middle" class="label label-phase label-accent">{{ b.buzz }}</text>
+
+  <!-- Flight path with the calls emitted along it -->
+  <path class="flight" d="M70.0,118.0 L77.2,119.1 L84.3,120.1 L91.5,121.2 L98.7,122.4 L105.8,123.5 L113.0,124.6 L120.2,125.8 L127.3,127.0 L134.5,128.1 L141.7,129.3 L148.8,130.4 L156.0,131.6 L163.2,132.7 L170.3,133.9 L177.5,135.0 L184.7,136.1 L191.8,137.2 L199.0,138.3 L206.2,139.4 L213.3,140.4 L220.5,141.5 L227.7,142.5 L234.8,143.4 L242.0,144.4 L249.2,145.3 L256.3,146.2 L263.5,147.1 L270.7,147.9 L277.8,148.7 L285.0,149.5 L292.2,150.3 L299.3,151.0 L306.5,151.7 L313.7,152.3 L320.8,153.0 L328.0,153.6 L335.2,154.2 L342.3,154.7 L349.5,155.3 L356.7,155.8 L363.8,156.3 L371.0,156.7 L378.2,157.2 L385.3,157.6 L392.5,158.0 L399.7,158.4 L406.8,158.8 L414.0,159.2 L421.2,159.6 L428.3,159.9 L435.5,160.3 L442.7,160.7 L449.8,161.1 L457.0,161.4 L464.2,161.8 L471.3,162.2 L478.5,162.6 L485.7,163.1 L492.8,163.5 L500.0,164.0"/>
+  <g class="calls">
+    <path class="call call--search" d="M81.3,111.6 A13,13 0 0 1 79.0,127.4"/>
+    <path class="call call--search" d="M89.1,107.1 A22,22 0 0 1 85.2,133.9"/>
+    <path class="call call--search" d="M125.8,118.6 A13,13 0 0 1 123.3,134.4"/>
+    <path class="call call--search" d="M133.7,114.3 A22,22 0 0 1 129.4,141.0"/>
+    <path class="call call--search" d="M170.3,125.8 A13,13 0 0 1 167.8,141.6"/>
+    <path class="call call--search" d="M178.2,121.4 A22,22 0 0 1 173.9,148.2"/>
+    <path class="call call--search" d="M214.7,132.6 A13,13 0 0 1 212.4,148.4"/>
+    <path class="call call--search" d="M222.5,128.1 A22,22 0 0 1 218.6,154.9"/>
+    <path class="call call--search" d="M259.0,138.5 A13,13 0 0 1 257.0,154.4"/>
+    <path class="call call--search" d="M266.8,133.9 A22,22 0 0 1 263.3,160.8"/>
+    <path class="call call--search" d="M303.3,143.4 A13,13 0 0 1 301.7,159.3"/>
+    <path class="call call--search" d="M311.0,138.6 A22,22 0 0 1 308.2,165.5"/>
+    <path class="call call--approach" d="M336.3,148.1 A10,10 0 0 1 335.2,160.4"/>
+    <path class="call call--approach" d="M364.6,150.1 A10,10 0 0 1 363.8,162.4"/>
+    <path class="call call--approach" d="M387.4,151.6 A10,10 0 0 1 386.6,163.9"/>
+    <path class="call call--approach" d="M405.5,152.6 A10,10 0 0 1 404.9,164.9"/>
+    <path class="call call--approach" d="M420.1,153.4 A10,10 0 0 1 419.4,165.7"/>
+    <path class="call call--approach" d="M431.8,154.0 A10,10 0 0 1 431.1,166.3"/>
+    <path class="call call--approach" d="M441.1,154.4 A10,10 0 0 1 440.4,166.7"/>
+    <path class="call call--approach" d="M448.5,154.8 A10,10 0 0 1 447.9,167.1"/>
+    <path class="call call--approach" d="M454.5,155.1 A10,10 0 0 1 453.9,167.4"/>
+    <path class="call call--approach" d="M459.3,155.4 A10,10 0 0 1 458.6,167.7"/>
+  </g>
+  <g class="call-dots">
+    <circle cx="70.0" cy="118.0" r="2.4"/>
+    <circle cx="114.5" cy="124.9" r="2.4"/>
+    <circle cx="158.9" cy="132.1" r="2.4"/>
+    <circle cx="203.4" cy="139.0" r="2.4"/>
+    <circle cx="247.9" cy="145.1" r="2.4"/>
+    <circle cx="292.3" cy="150.3" r="2.4"/>
+    <circle cx="327.9" cy="153.6" r="2.4"/>
+    <circle cx="356.4" cy="155.7" r="2.4"/>
+    <circle cx="379.1" cy="157.2" r="2.4"/>
+    <circle cx="397.3" cy="158.3" r="2.4"/>
+    <circle cx="411.9" cy="159.1" r="2.4"/>
+    <circle cx="423.6" cy="159.7" r="2.4"/>
+    <circle cx="432.9" cy="160.2" r="2.4"/>
+    <circle cx="440.3" cy="160.6" r="2.4"/>
+    <circle cx="446.3" cy="160.9" r="2.4"/>
+    <circle cx="451.1" cy="161.1" r="2.4"/>
+  </g>
+  <path class="buzz" d="M453.3,154.2 V168.2 M455.5,154.4 V168.4 M457.8,154.5 V168.5 M460.0,154.6 V168.6 M462.2,154.7 V168.7 M464.4,154.8 V168.8 M466.7,155.0 V169.0 M468.9,155.1 V169.1 M471.1,155.2 V169.2 M473.3,155.3 V169.3 M475.5,155.5 V169.5 M477.8,155.6 V169.6 M480.0,155.7 V169.7 M482.2,155.9 V169.9 M484.4,156.0 V170.0 M486.7,156.1 V170.1 M488.9,156.3 V170.3 M491.1,156.4 V170.4 M493.3,156.6 V170.6 M495.6,156.7 V170.7 M497.8,156.9 V170.9 M500.0,157.0 V171.0"/>
+
+  <!-- Echo from the moth back to the bat -->
+  <circle cx="620" cy="164" r="80" fill="url(#bathunt-glow)"/>
+  <g class="echo">
+    <path d="M621.1,178.8 A24,24 0 0 1 621.1,149.2"/>
+    <path d="M611.6,186.2 A36,36 0 0 1 611.6,141.8"/>
+  </g>
+  <use href="#moth" class="moth" x="610" y="144.0" width="60" height="40" transform="rotate(70 640 164.0)"/>
+  <use href="#bat" class="bat" x="448.9" y="136.7" width="153.8" height="47.1" transform="rotate(93.9 525.8 164.0)"/>
+
+  <!-- Callouts -->
+  <g class="callout">
+    <path d="M158.9,128.1 V78 H172.9"/>
+    <circle cx="158.9" cy="132.1" r="3.2"/>
+    <text x="178.9" y="82" class="label">{{ b.call_search }}</text>
+  </g>
+  <g class="callout callout-accent">
+    <path d="M473.3,169.3 V250 H459.3"/>
+    <circle cx="473.3" cy="169.3" r="2.5"/>
+    <text x="453.3" y="254" text-anchor="end" class="label label-accent">{{ b.call_buzz }}</text>
+  </g>
+  <text x="644" y="210" text-anchor="middle" class="label label-muted">{{ b.moth }}</text>
+  <g class="callout callout-accent">
+    <path d="M617.7,135.9 L630.0,102.0 H648.0"/>
+    <circle cx="617.7" cy="135.9" r="2.5"/>
+    <text x="654.0" y="106.0" class="label label-accent">{{ b.echo }}</text>
+  </g>
+
+  <!-- Timeline: one tick per call -->
+  <text x="70.0" y="318" class="label label-muted">{{ b.timeline }}</text>
+  <path class="axis" d="M64.0,352 H522.0"/>
+  <path class="axis-arrow" d="M528.0,352 l-8,-4 v8 Z"/>
+  <g class="ticks">
+    <path class="tick tick--search" d="M70.0,332 V352"/>
+    <path class="tick tick--search" d="M114.5,332 V352"/>
+    <path class="tick tick--search" d="M158.9,332 V352"/>
+    <path class="tick tick--search" d="M203.4,332 V352"/>
+    <path class="tick tick--search" d="M247.9,332 V352"/>
+    <path class="tick tick--search" d="M292.3,332 V352"/>
+    <path class="tick tick--approach" d="M327.9,332 V352"/>
+    <path class="tick tick--approach" d="M356.4,332 V352"/>
+    <path class="tick tick--approach" d="M379.1,332 V352"/>
+    <path class="tick tick--approach" d="M397.3,332 V352"/>
+    <path class="tick tick--approach" d="M411.9,332 V352"/>
+    <path class="tick tick--approach" d="M423.6,332 V352"/>
+    <path class="tick tick--approach" d="M432.9,332 V352"/>
+    <path class="tick tick--approach" d="M440.3,332 V352"/>
+    <path class="tick tick--approach" d="M446.3,332 V352"/>
+    <path class="tick tick--approach" d="M451.1,332 V352"/>
+    <path class="tick tick--buzz" d="M453.3,336 V352"/>
+    <path class="tick tick--buzz" d="M455.5,336 V352"/>
+    <path class="tick tick--buzz" d="M457.8,336 V352"/>
+    <path class="tick tick--buzz" d="M460.0,336 V352"/>
+    <path class="tick tick--buzz" d="M462.2,336 V352"/>
+    <path class="tick tick--buzz" d="M464.4,336 V352"/>
+    <path class="tick tick--buzz" d="M466.7,336 V352"/>
+    <path class="tick tick--buzz" d="M468.9,336 V352"/>
+    <path class="tick tick--buzz" d="M471.1,336 V352"/>
+    <path class="tick tick--buzz" d="M473.3,336 V352"/>
+    <path class="tick tick--buzz" d="M475.5,336 V352"/>
+    <path class="tick tick--buzz" d="M477.8,336 V352"/>
+    <path class="tick tick--buzz" d="M480.0,336 V352"/>
+    <path class="tick tick--buzz" d="M482.2,336 V352"/>
+    <path class="tick tick--buzz" d="M484.4,336 V352"/>
+    <path class="tick tick--buzz" d="M486.7,336 V352"/>
+    <path class="tick tick--buzz" d="M488.9,336 V352"/>
+    <path class="tick tick--buzz" d="M491.1,336 V352"/>
+    <path class="tick tick--buzz" d="M493.3,336 V352"/>
+    <path class="tick tick--buzz" d="M495.6,336 V352"/>
+    <path class="tick tick--buzz" d="M497.8,336 V352"/>
+    <path class="tick tick--buzz" d="M500.0,336 V352"/>
+  </g>
+  <text x="70.0" y="374" class="label label-tick">0</text>
+  <text x="530.0" y="374" text-anchor="end" class="label label-tick">{{ b.time }}</text>
+  <text x="70.0" y="408" class="label label-tick">{{ b.note }}</text>
+</svg>

@@ -19,6 +19,7 @@ future-scenarios:        { dim: time, order: 90, en: "Future scenarios", de: "Zu
 coastal:                 { dim: space, en: "Coasts", de: "Küsten", wikidata: Q93352 }
 coral-reef:              { dim: space, en: "Coral reefs", de: "Korallenriffe", wikidata: Q11292 }
 seagrass:                { dim: space, en: "Seagrass meadows", de: "Seegraswiesen", wikidata: Q25411280 }
+forest:                  { dim: space, en: "Forests", de: "Wälder", wikidata: Q4421 }
 lab:                     { dim: space, en: "Laboratory", de: "Labor", wikidata: Q483242 }
 microcosm:               { dim: space, en: "Microcosm", de: "Mikrokosmos" }
 outer-space:             { dim: space, en: "Outer space", de: "Weltraum", wikidata: Q4169 }

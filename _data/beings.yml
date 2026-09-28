@@ -2,3 +2,5 @@
 # Display names per language; `taxon` in italics on the page; `wikidata` for linked data.
 pistol-shrimp: { en: "Pistol shrimp", de: "Knallkrebs", taxon: "Alpheidae", wikidata: Q311534 }
 tokay-gecko: { en: "Tokay gecko", de: "Tokeh", taxon: "Gekko gecko", wikidata: Q331213 }
+big-brown-bat: { en: "Big brown bat", de: "Große Braune Fledermaus", taxon: "Eptesicus fuscus", wikidata: Q301254 }
+tiger-moth: { en: "Tiger moth", de: "Bärenspinner", taxon: "Bertholdia trigona", wikidata: Q13403125 }
