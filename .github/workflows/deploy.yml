@@ -1,4 +1,5 @@
-# Quality gates (terms, content, plugin, code examples) → build → (PR: preview) → deploy to GitHub Pages → IndexNow.
+# Quality gates (terms, content, plugin, code examples) → build → (PR: preview) → deploy to GitHub Pages →
+# IndexNow for the pages whose HTML changed against the live site.
 # Rules behind every gate: plugins/wildbionics/skills (see wildbionics-contribute).
 name: Build, check & deploy
 
@@ -20,6 +21,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-26.04
+    outputs:
+      changed-urls: ${{ steps.changed.outputs.urls }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -59,6 +62,12 @@ jobs:
             _site
             preview
           retention-days: 14
+      - name: Pages that changed against the live site (for IndexNow)
+        id: changed
+        if: github.event_name != 'pull_request'
+        run: |
+          python3 .github/scripts/indexnow.py changed _site changed-urls.txt
+          { echo "urls<<EOF"; cat changed-urls.txt; echo "EOF"; } >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'
 
@@ -84,9 +93,13 @@ jobs:
 
   indexnow:
     if: github.event_name != 'pull_request'
-    needs: deploy
+    needs: [build, deploy]
     runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
-      - name: Submit URLs to IndexNow
-        run: python3 .github/scripts/indexnow.py
+      - name: Submit the new or changed pages to IndexNow
+        env:
+          CHANGED_URLS: ${{ needs.build.outputs.changed-urls }}
+        run: |
+          printf '%s\n' "$CHANGED_URLS" > changed-urls.txt
+          python3 .github/scripts/indexnow.py --urls changed-urls.txt
