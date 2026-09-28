@@ -1293,14 +1293,14 @@ a.cite:hover { text-decoration: underline; }
   margin: 0;
   padding: 22px 24px;
   overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 /* shell commands wrap (copy still gets one line each); Python keeps its indentation and scrolls */
 .prose .language-bash .highlight pre, .prose .language-shell .highlight pre, .prose .language-text .highlight pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  line-height: 1.7;
 }
 
 /* Code examples: copy button, actions, tested output, chart (_includes/code-result.html, assets/js/code.js) */
