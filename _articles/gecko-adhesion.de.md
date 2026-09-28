@@ -310,6 +310,7 @@ ax.set_ylabel("Kraft zum Abschälen einer Spatula (nN)")
 ax.set_title("Flach hält, steil löst")
 ax.set_xlim(0, 93)
 ax.set_ylim(2, 1000)
+ax.yaxis.set_major_formatter("{x:g}")   # einfache Zahlen: 10, 100, 1000
 ax.legend(loc="lower left")
 plt.show()
 ```

@@ -61,5 +61,6 @@ ax.set_ylabel("force to peel one spatula (nN)")
 ax.set_title("Flat angle holds, steep angle lets go")
 ax.set_xlim(0, 93)
 ax.set_ylim(2, 1000)
+ax.yaxis.set_major_formatter("{x:g}")   # plain numbers: 10, 100, 1000
 ax.legend(loc="lower left")
 plt.show()
