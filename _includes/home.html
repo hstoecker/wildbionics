@@ -148,6 +148,10 @@ print(f"moth at {echo_distance(chirp, recording, rate):.2f} m")
         </div>
       </article>
     </div>
+    {%- assign bat_article = site.articles | where: "ref", "bat-echolocation" | where: "lang", lang | first %}
+    {%- if bat_article %}
+    <p class="dimensions-cta"><a class="link-arrow" href="{{ bat_article.url | relative_url }}">{{ t.lens.article_cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+    {%- endif %}
   </div>
 </section>
 

@@ -8,6 +8,7 @@
 #   page     – ref of the page the standalone file is cut from (EN and DE version)
 gecko:             { id: gecko,        i18n: figures.gecko,          context: "article-header",                     bg: "var(--ocean)", page: gecko-adhesion }
 vdw:               { id: vdw,          i18n: figures.vdw,            context: "prose figure",                       bg: "var(--card)",  page: gecko-adhesion }
+bat-hunt:          { id: bathunt,      i18n: figures.bat_hunt,       context: "article-header",                     bg: "var(--ocean)", page: bat-echolocation }
 claw:              { id: claw,         i18n: figures.claw,           context: "article-header",                     bg: "var(--ocean)", page: pistol-shrimp-cavitation }
 bernoulli:         { id: bern,         i18n: figures.bernoulli,      context: "prose figure",                       bg: "var(--card)",  page: pistol-shrimp-cavitation }
 cavitation:        { id: cav,          i18n: flagship,               context: "prose figure figure--dark",          bg: "var(--ocean)", page: pistol-shrimp-cavitation }
