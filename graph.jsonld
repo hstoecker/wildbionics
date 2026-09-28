@@ -11,7 +11,9 @@ sitemap: false
     <site>/graph/#being-<slug>      Taxon (sameAs Wikidata)
     <article url>#article           Article – the same @id as in the article page's own JSON-LD
   Article → term edges are `keywords` (DefinedTerm), → organisms `about`, lenses
-  `educationalAlignment` (educationalSubject → the lens's discipline). Rules: wildbionics-graph skill.
+  `educationalAlignment` (educationalSubject → the lens's discipline). A time term's `position` carries
+  its place on the time axis (`order`); it is not a schema.org property of DefinedTerm and is ignored
+  by consumers that don't know it. Rules: wildbionics-graph skill.
 {%- endcomment -%}
 {%- assign g = site.url | append: "/graph/#" -%}
 {%- assign dims = "time,space,physics,adjacent_sciences" | split: "," -%}

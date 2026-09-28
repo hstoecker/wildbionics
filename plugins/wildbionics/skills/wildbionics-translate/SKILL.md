@@ -23,7 +23,7 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
 4. **Run the gate** and fix everything it reports:
    ```bash
    ruby .github/scripts/check_terms.rb
-   bundle exec jekyll build && python3 .github/scripts/check_site.py _site
+   bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
    ```
    Both also run in CI (`.github/workflows/deploy.yml`); errors block the deploy.
 5. **Review pass** – read the German text once as a subject expert would:

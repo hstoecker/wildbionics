@@ -20,7 +20,7 @@ automatically via `.claude/skills/`.
 7. No new dependencies; WCAG 2.2 AA; pages work without JavaScript.
 8. Run all gates before opening a PR:
    `ruby .github/scripts/check_terms.rb`, `ruby .github/scripts/check_content.rb`,
-   `ruby .github/scripts/check_plugin.rb`, `python3 .github/scripts/code_examples.py --check`, `bundle exec jekyll build && python3 .github/scripts/check_site.py _site`.
+   `ruby .github/scripts/check_plugin.rb`, `python3 .github/scripts/code_examples.py --check`, `bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site`.
 9. If you change a convention, update the matching skill in the same PR and bump
    `plugins/wildbionics/.claude-plugin/plugin.json` `version`.
 10. Never weaken a check to make it pass; never commit secrets.

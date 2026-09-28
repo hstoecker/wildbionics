@@ -208,7 +208,7 @@ Der Haken ist das *D*<sup>3</sup> im Nenner. Verdoppelt sich der Abstand, sinkt 
 
 <figure class="figure">
 {% include svg/vdw.svg %}
-<figcaption class="caption"><span class="caption__label">Abb. 2</span> Van-der-Waals-Anziehung zwischen zwei ebenen Flächen, berechnet mit einer typischen Hamaker-Konstante von 10<sup>−19</sup> J. Stark ist die Anziehung nur innerhalb von etwa einem Nanometer – die Flächen müssen in direktem Kontakt sein.</figcaption>
+<figcaption class="caption"><span class="caption__label">Abb. 2</span> Van-der-Waals-Anziehung zwischen zwei ebenen Flächen, berechnet mit einer typischen Hamaker-Konstante von 10<sup>−19</sup> J. Stark ist die Anziehung nur innerhalb von etwa einem Nanometer – die Flächen müssen in direktem Kontakt sein. {% include figure-link.html name="vdw" %}</figcaption>
 </figure>
 
 Genau dieses Problem hat der Gecko gelöst. Seine Setae bestehen aus Keratin, sind aber so dünn und so fein verzweigt, dass die Spatulae den Unebenheiten einer Oberfläche folgen und ihr auf molekularen Abstand nahekommen [3](#ref-3){:.cite}. Die Hafteigenschaften der Setae ergeben sich vor allem aus **Größe und Form** ihrer Enden, nicht aus ihrer Chemie [2](#ref-2){:.cite}. In den Versuchen von 2002 bestätigten Autumn und Kollegen das mit künstlichen Setae-Spitzen aus zwei verschiedenen Materialien: Beide hafteten so, wie es ihre Größe vorhersagte [2](#ref-2){:.cite}.

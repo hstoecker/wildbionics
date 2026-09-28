@@ -1,0 +1,25 @@
+---
+layout: null
+sitemap: false
+permalink: /figures/manifest.json
+---
+{%- comment -%}
+  Read by .github/scripts/figures.py (after the Jekyll build) and check_site.py: which figure to
+  cut from which built page, and how to reproduce its surroundings. Source: _data/figures.yml.
+{%- endcomment -%}
+{%- assign all_pages = site.pages | concat: site.articles -%}
+{
+  "languages": {{ site.languages | jsonify }},
+  "figures": [
+    {%- for f in site.data.figures %}
+    {%- assign versions = all_pages | where: "ref", f[1].page %}
+    {
+      "name": {{ f[0] | jsonify }},
+      "id": {{ f[1].id | jsonify }},
+      "context": {{ f[1].context | jsonify }},
+      "bg": {{ f[1].bg | jsonify }},
+      "pages": { {% for v in versions %}{{ v.lang | jsonify }}: {{ v.url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

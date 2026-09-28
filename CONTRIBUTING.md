@@ -50,7 +50,7 @@ same rules in [AGENTS.md](AGENTS.md) and in the skills under `plugins/wildbionic
      set -e
      gem install github-pages -v 232 --no-document
      ln -sf "$(ruby -e 'print Gem.bindir')/jekyll" /usr/local/bin/jekyll
-     python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4
+     python3 -m pip install numpy==2.0.2 scipy==1.13.1 matplotlib==3.9.4 fonttools==4.54.1 brotli==1.1.0
      ```
 4. Start a **new** session on `hstoecker/wildbionics` with this environment (settings only apply to new sessions). First message: *"Run all local checks from CLAUDE.md and check that api.crossref.org is reachable."* – all five gates must report 0 errors.
 5. Describe your task, e.g. *"Write a new article about how bats find their prey with echolocation, following the WildBionics skills."* Review the diff and create the pull request from the session.
@@ -66,8 +66,8 @@ Repository not in the list or push refused? Accept the collaborator invitation f
    ruby .github/scripts/check_terms.rb
    ruby .github/scripts/check_content.rb
    ruby .github/scripts/check_plugin.rb
-   python3 .github/scripts/code_examples.py --check   # after: python3 -m pip install -r examples/requirements.txt
-   bundle exec jekyll build && python3 .github/scripts/check_site.py _site
+   python3 .github/scripts/code_examples.py --check   # after: python3 -m pip install -r examples/requirements.txt -r .github/scripts/requirements.txt
+   bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
    ```
 4. Pull request (fill in the template)
 5. Automatic checks, a downloadable **preview** (built site + screenshots) and – for branches in

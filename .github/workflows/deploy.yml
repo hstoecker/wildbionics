@@ -1,4 +1,4 @@
-# Quality gates (terms, content, plugin, code examples) → build → (PR: preview) → deploy to GitHub Pages →
+# Quality gates (terms, content, plugin, code examples) → build → figure files → site gate → (PR: preview) → deploy to GitHub Pages →
 # IndexNow for the pages whose HTML changed against the live site.
 # Rules behind every gate: plugins/wildbionics/skills (see wildbionics-contribute).
 name: Build, check & deploy
@@ -37,7 +37,9 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: examples/requirements.txt
+          cache-dependency-path: |
+            examples/requirements.txt
+            .github/scripts/requirements.txt
       - name: Code gate (run every code example; output, charts, notebooks up to date)
         run: |
           python -m pip install -r examples/requirements.txt
@@ -48,7 +50,12 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Site gate (SEO metadata, JSON-LD, links, sitemap, graph.json)
+      - name: Figure files (standalone SVGs with embedded font subsets, /figures/<name>.<lang>.svg)
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" _site      # jekyll-build-pages writes _site as root
+          python -m pip install -r .github/scripts/requirements.txt
+          python .github/scripts/figures.py _site
+      - name: Site gate (SEO metadata, JSON-LD, links, sitemap, graph.json, figure files)
         run: python3 .github/scripts/check_site.py _site
       - name: Preview screenshots (pull requests)
         if: github.event_name == 'pull_request'

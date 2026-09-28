@@ -154,7 +154,7 @@ Versluis and colleagues estimated the speed of the shrimp's jet from high-speed 
 
 <figure class="figure">
 {% include svg/bernoulli.svg %}
-<figcaption class="caption"><span class="caption__label">Fig. 2</span> Static pressure in a water jet according to Bernoulli. Above about 14 m/s it falls below the vapour pressure of water. The shrimp's jet, at roughly 25 m/s, is deep in the cavitation zone.</figcaption>
+<figcaption class="caption"><span class="caption__label">Fig. 2</span> Static pressure in a water jet according to Bernoulli. Above about 14 m/s it falls below the vapour pressure of water. The shrimp's jet, at roughly 25 m/s, is deep in the cavitation zone. {% include figure-link.html name="bernoulli" %}</figcaption>
 </figure>
 
 Engineers capture this with the **cavitation number** σ = (*p*<sub>∞</sub> − *p*<sub>v</sub>) / (½*ρv*²). The smaller σ, the more likely cavitation. For a jet of 25 m/s, σ ≈ 0.3. The mechanical replica of the claw built by Tang and Staack produced jets of about 26 to 37 m/s, with σ = 0.14 to 0.30 – comparable to the real shrimp [3](#ref-3){:.cite}.
@@ -181,7 +181,7 @@ Two things follow directly from the formula. The collapse time grows in **propor
 
 <figure class="figure figure--dark">
 {% include svg/cavitation.svg %}
-<figcaption class="caption caption--dark"><span class="caption__label">Fig. 3</span> Life of a cavitation bubble: rapid growth, violent collapse, weak rebounds. The whole cycle takes less than a millisecond.</figcaption>
+<figcaption class="caption caption--dark"><span class="caption__label">Fig. 3</span> Life of a cavitation bubble: rapid growth, violent collapse, weak rebounds. The whole cycle takes less than a millisecond. {% include figure-link.html name="cavitation" %}</figcaption>
 </figure>
 
 Why does the collapse get so hot? If the gas inside is compressed quickly, it has no time to give off heat – the compression is *adiabatic*. For an ideal gas, the temperature then rises as

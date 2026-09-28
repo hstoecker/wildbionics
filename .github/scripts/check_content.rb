@@ -103,9 +103,17 @@ articles.group_by { |a| a[:fm]["ref"] }.each do |ref, versions|
   warnings << "article #{ref}: languages have different status (#{statuses.join(', ')})" if statuses.size > 1
 end
 
-# figures: accessible SVG with i18n labels
+# figures: accessible SVG with i18n labels, registered for a standalone file (_data/figures.yml)
+figures = YAML.load_file("_data/figures.yml")
 Dir["_includes/svg/*.svg"].sort.each do |f|
   s = File.read(f)
+  name = File.basename(f, ".svg")
+  id = s[/<title id="([\w-]+)-title"/, 1]
+  if !figures.key?(name)
+    errors << "#{f}: not in _data/figures.yml (id, i18n, context, bg, page) – every figure gets a standalone file"
+  elsif figures[name]["id"] != id
+    errors << "_data/figures.yml: #{name} id is \"#{figures[name]['id']}\", but the SVG's title id is \"#{id}-title\""
+  end
   errors << "#{f}: must start with {%- include i18n.html -%}" unless s.start_with?("{%- include i18n.html -%}")
   errors << "#{f}: <svg> needs role=\"img\" and aria-labelledby" unless s.match?(/<svg[^>]*role="img"[^>]*aria-labelledby=/m)
   # the title is the accessible name, the description is read as description – not both as the name

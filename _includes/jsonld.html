@@ -7,12 +7,18 @@
   ImageObject (#primaryimage) with licence and credit, referenced by the page and the article.
   Every chart of a code example on an article is an ImageObject (#chart-<name>) with the same
   licence fields, linked from the article as associatedMedia (data: _data/code_examples.yml).
+  Every figure on a page (inline SVG listed in _data/figures.yml) is an ImageObject (#figure-<name>) of
+  its standalone file /figures/<name>.<lang>.svg (written by .github/scripts/figures.py), linked as
+  associatedMedia from the article or, on other pages, from the WebPage.
   An article lists its ontology terms as DefinedTerms (keywords) and its lenses as
   educationalAlignment, with the stable IRIs of /graph.jsonld.
   A CollectionPage lists its articles as an ItemList. Rules: wildbionics-design skill.
 {%- endcomment -%}
 {%- assign site_url = site.url | append: "/" -%}
 {%- assign page_url = page.url | absolute_url -%}
+{%- comment -%} Figures on this page (inline SVG, found by their title id) → ImageObjects of their standalone files {%- endcomment -%}
+{%- assign figs = "" | split: "" -%}
+{%- for f in site.data.figures -%}{%- capture needle -%}aria-labelledby="{{ f[1].id }}-title"{%- endcapture -%}{%- if content contains needle -%}{%- assign figs = figs | push: f -%}{%- endif -%}{%- endfor -%}
 {%- assign is_home = false -%}{%- if page.ref == "home" -%}{%- assign is_home = true -%}{%- endif -%}
 {%- assign is_article = false -%}{%- if page.collection == "articles" -%}{%- assign is_article = true -%}{%- endif -%}
 {%- assign has_breadcrumb = true -%}
@@ -56,6 +62,9 @@
       "inLanguage": {{ lang | jsonify }},
       "isPartOf": { "@id": "{{ site_url }}#website" },
       "primaryImageOfPage": { "@id": "{{ page_url }}#primaryimage" }
+      {%- if figs.size > 0 and is_article == false %},
+      "associatedMedia": [{% for f in figs %}{ "@id": "{{ page_url }}#figure-{{ f[0] }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}]
+      {%- endif %}
       {%- if has_breadcrumb %},
       "breadcrumb": { "@id": "{{ page_url }}#breadcrumb" }{% endif %}
       {%- if is_article %},
@@ -80,6 +89,26 @@
       "creator": { "@id": "{{ site_url }}#organization" },
       "copyrightNotice": {{ t.footer.copyright | prepend: "© " | append: " – CC BY-SA 4.0" | jsonify }}
     }
+    {%- for f in figs %}
+    {%- assign node = t -%}{%- assign path = f[1].i18n | split: "." -%}{%- for key in path -%}{%- assign node = node[key] -%}{%- endfor %},
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_url }}#figure-{{ f[0] }}",
+      "url": {{ '/figures/' | append: f[0] | append: '.' | append: lang | append: '.svg' | absolute_url | jsonify }},
+      "contentUrl": {{ '/figures/' | append: f[0] | append: '.' | append: lang | append: '.svg' | absolute_url | jsonify }},
+      "encodingFormat": "image/svg+xml",
+      "name": {{ node.title | default: node.svg_title | jsonify }},
+      "caption": {{ node.title | default: node.svg_title | jsonify }},
+      "description": {{ node.desc | default: node.svg_desc | jsonify }},
+      "inLanguage": {{ lang | jsonify }},
+      "isPartOf": { "@id": "{{ page_url }}#{% if is_article %}article{% else %}webpage{% endif %}" },
+      "license": "{{ content_license }}",
+      "acquireLicensePage": {{ site.repository_url | append: "/blob/main/LICENSE-CONTENT.txt" | jsonify }},
+      "creditText": {{ site.title | jsonify }},
+      "creator": { "@id": "{{ site_url }}#organization" },
+      "copyrightNotice": {{ t.footer.copyright | prepend: "© " | append: " – CC BY-SA 4.0" | jsonify }}
+    }
+    {%- endfor %}
     {%- if has_breadcrumb %},
     {
       "@type": "BreadcrumbList",
@@ -147,8 +176,8 @@
       {%- for tr in translations %}{% if tr.lang != lang %}
       "{% if lang == site.lang %}workTranslation{% else %}translationOfWork{% endif %}": { "@id": "{{ tr.url | absolute_url }}#article" },
       {%- endif %}{% endfor %}
-      {%- if charts.size > 0 %}
-      "associatedMedia": [{% for c in charts %}{ "@id": "{{ page_url }}#chart-{{ c[0] | remove: '.py' }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      {%- if charts.size > 0 or figs.size > 0 %}
+      "associatedMedia": [{% for f in figs %}{ "@id": "{{ page_url }}#figure-{{ f[0] }}" }{% unless forloop.last and charts.size == 0 %}, {% endunless %}{% endfor %}{% for c in charts %}{ "@id": "{{ page_url }}#chart-{{ c[0] | remove: '.py' }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}],
       {%- endif %}
       "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".key-facts", ".article-header__dek"] },
       "citation": [
