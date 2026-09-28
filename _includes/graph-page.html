@@ -40,6 +40,21 @@
     <p class="container graph-hint" id="graph-hint">{{ t.graph.hint }}</p>
   </div>
 
+  <section class="container graph-explain" aria-labelledby="graph-explain-title">
+    <p class="eyebrow">{{ t.graph.explain.eyebrow }}</p>
+    <h2 id="graph-explain-title" class="graph-explain__title">{{ t.graph.explain.title }}</h2>
+    <p class="graph-explain__intro">{{ t.graph.explain.intro }}</p>
+    <ol class="graph-explain__grid">
+      {%- for item in t.graph.explain.items %}
+      <li class="graph-explain__item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+    <p class="graph-explain__cta"><a class="link-arrow" href="{{ t.guide.url | relative_url }}">{{ t.graph.explain.cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a></p>
+  </section>
+
   <div class="container graph-list">
     <details open data-graph-list>{%- comment -%} open without JS; graph.js closes it once the graph is drawn {%- endcomment -%}
       <summary><h2>{{ t.graph.list_title }}</h2></summary>

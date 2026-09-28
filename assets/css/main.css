@@ -1648,6 +1648,17 @@ a.cite:hover { text-decoration: underline; }
 .graph-info a { color: var(--signal); text-underline-offset: 3px; }
 .graph-hint { margin-top: 12px; color: var(--on-dark-2); font-size: 0.85rem; }
 
+.graph-explain { margin-top: clamp(48px, 6vw, 80px); }
+.graph-explain__title { margin-bottom: 14px; font-family: var(--font-display); font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); font-weight: 420; line-height: 1.15; }
+.graph-explain__intro { max-width: 62ch; color: var(--on-dark-2); font-size: 1.05rem; }
+.graph-explain__intro strong, .graph-explain__item strong { color: var(--on-dark); font-weight: 600; }
+.graph-explain__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 28px; counter-reset: explain; }
+.graph-explain__item { padding: 20px 22px 22px; border: 1px solid var(--line-dark); border-top: 2px solid var(--accent); border-radius: 12px; background: rgba(255, 255, 255, 0.02); counter-increment: explain; }
+.graph-explain__item h3 { margin-bottom: 8px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 450; line-height: 1.25; }
+.graph-explain__item h3::before { content: counter(explain, decimal-leading-zero) "  "; color: var(--accent); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; vertical-align: 0.15em; }
+.graph-explain__item p { color: var(--on-dark-2); font-size: 0.95rem; line-height: 1.6; }
+.graph-explain__item em { color: var(--on-dark); font-style: italic; }
+.graph-explain__cta { margin-top: 24px; }
 .graph-list { margin-top: clamp(40px, 5vw, 64px); }
 .graph-list details { border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
 .graph-list summary { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; cursor: pointer; list-style: none; }
