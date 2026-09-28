@@ -8,6 +8,7 @@ kicker: "Artikel · Oberflächenkräfte"
 description: "Geckos laufen ohne Kleber Glaswände hoch: Milliarden winziger Spatulae an ihren Zehen haften über Van-der-Waals-Kräfte – und lösen sich in Millisekunden."
 dek: "Kein Kleber, keine Saugnäpfe, keine Krallen nötig: Die Zehen eines Geckos tragen Millionen mikroskopischer Härchen, die sich in Milliarden nanometerkleiner Enden aufspalten. Nah genug an einer Wand summiert sich die schwächste aller Molekülkräfte zu einem Halt für das ganze Tier – und schaltet sich in wenigen Millisekunden wieder ab."
 date: 2026-09-27
+updated: 2026-09-28
 permalink: /de/artikel/gecko-haftung/
 image: /assets/og/gecko-adhesion-de.jpg
 image_alt: "Schema eines Tokehs an einer Wand mit Vergrößerungen seines Haftpolsters, der Setae und der Spatulae, die die Wand berühren."
