@@ -31,11 +31,15 @@ jobs:
       - name: No Claude credentials configured
         if: env.HAS_CLAUDE != 'true'
         run: echo "::notice::Claude review skipped – add CLAUDE_CODE_OAUTH_TOKEN (claude setup-token) or ANTHROPIC_API_KEY as a repository secret."
+      - name: Remember the start time (to find this run's review comment)
+        if: env.HAS_CLAUDE == 'true'
+        run: echo "REVIEW_START=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
       - uses: actions/checkout@v7
         if: env.HAS_CLAUDE == 'true'
         with:
           fetch-depth: 0
       - uses: anthropics/claude-code-action@v1
+        id: claude
         if: env.HAS_CLAUDE == 'true'
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -45,5 +49,41 @@ jobs:
           prompt: "/wildbionics:wildbionics-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
           claude_args: |
             --max-turns 100
-            --allowedTools "Read,Grep,Glob,Write,WebFetch,WebSearch,Task,Bash(gh pr view:*),Bash(gh pr checks:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git diff:*),Bash(git log:*),Bash(ruby .github/scripts/*),Bash(python3 *),Bash(curl -s *)"
-            --append-system-prompt "This is the CI review job. The gates already ran in the build check of this PR: read their result with gh pr checks and gh pr view --json statusCheckRollup instead of re-running them. Do not install packages or run bundle, jekyll or pip – they are not available here and every denied call wastes a turn. Post the review comment as soon as the verdict is clear."
+            --allowedTools "Read,Grep,Glob,Write,WebFetch,WebSearch,Task,Bash(gh pr view:*),Bash(gh pr checks:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git diff:*),Bash(git log:*),Bash(git show:*),Bash(git status:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(jq:*),Bash(ruby .github/scripts/*),Bash(python3 *),Bash(curl -s *),Bash(curl -sL *),Bash(curl -sS *),Bash(curl -sSL *)"
+            --append-system-prompt "This is the CI review job. The gates already ran in the build check of this PR: read their result with gh pr checks and gh pr view --json statusCheckRollup instead of re-running them. Do not install packages or run bundle, jekyll or pip – they are not available here and every denied call wastes a turn. Post the review comment as soon as the verdict is clear. End with the complete report as your final message – if your comment could not be posted, the workflow posts that message."
+      # The report must never get lost silently: keep the full transcript, list the tool calls the
+      # allowlist blocked, and tell the PR when no review comment was posted.
+      - name: List blocked tool calls
+        if: always() && env.HAS_CLAUDE == 'true'
+        run: |
+          f="${{ runner.temp }}/claude-execution-output.json"   # written by claude-code-action
+          [ -f "$f" ] || { echo "no transcript at $f"; exit 0; }
+          jq -r '.[] | select(.type == "result") | .permission_denials[]? | "::warning title=Blocked tool call::\(.tool_name) \(.tool_input | tostring | .[0:300])"' \
+            "$f" || true
+      - name: Keep the review transcript
+        if: always() && env.HAS_CLAUDE == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: claude-review-pr-${{ github.event.pull_request.number }}
+          path: ${{ runner.temp }}/claude-execution-output.json
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Post the report if the review did not post it itself
+        if: always() && env.HAS_CLAUDE == 'true'
+        run: |
+          pr=${{ github.event.pull_request.number }}
+          posted=$(gh api "repos/${{ github.repository }}/issues/$pr/comments" --paginate \
+            --jq ".[] | select(.user.login == \"claude[bot]\" and .created_at >= \"$REVIEW_START\") | .id" | wc -l)
+          [ "$posted" -eq 0 ] || exit 0
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          f="${{ runner.temp }}/claude-execution-output.json"
+          report=""
+          [ -f "$f" ] && report=$(jq -r '[.[] | select(.type == "result")] | last | .result // ""' "$f")
+          if printf '%s' "$report" | grep -q "WildBionics review"; then
+            { printf '%s\n\n' "$report"; echo "<sub>Posted by the workflow: the review finished without posting its report ([run ${{ github.run_id }}]($run_url)).</sub>"; } > "$RUNNER_TEMP/report.md"
+            gh pr comment "$pr" --body-file "$RUNNER_TEMP/report.md"
+            echo "::warning::The review did not post its report – the workflow posted it."
+          else
+            gh pr comment "$pr" --body "⚠️ The Claude review finished without a report. Transcript and blocked tool calls: [run ${{ github.run_id }}]($run_url) (artifact \`claude-review-pr-$pr\`). Re-run the job or run \`wildbionics-review\` locally."
+            echo "::warning::No review report – see the artifact."
+          fi
