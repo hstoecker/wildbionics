@@ -64,6 +64,9 @@ terms:
   - { en: "work of adhesion", de: "Adhäsionsarbeit" }
   - { en: "contact splitting", de: "Kontaktaufspaltung" }
   - { en: "frictional adhesion", de: "Reibungsadhäsion" }
+  - { en: "peel angle*", de: "Schälwinkel*", avoid: ["Peelwinkel*", "Abziehwinkel*"], why: "Fachbegriff der Klebtechnik (Schälversuch, Schälfestigkeit); Peel- ist Denglisch." }
+  - { en: "peel force*", de: "Schälkr*" }
+  - { en: "Young's modulus", de: "Elastizitätsmodul", de_alt: ["E-Modul"], avoid: ["Young-Modul*", "Youngscher Modul*"], why: "Im Deutschen heißt die Größe Elastizitätsmodul (E-Modul)." }
   - { en: "shear force*", de: "Scherkr*" }
   - { en: "microgravity", de: "Mikrogravitation", de_alt: ["Schwerelosigkeit"] }
   # --- Mathematics / computer science --------------------------------------------
@@ -71,6 +74,9 @@ terms:
   - { en: "matched filter", de: "Optimalfilter" }
   - { en: "cross-correlation", de: "Kreuzkorrelation" }
   - { en: "spectrogram", de: "Spektrogramm" }
+  - { en: "numerical stability", de: "numerische* Stabilität" }
+  - { en: "root finding", de: "Nullstellensuche" }
+  - { en: "floating point", de: "Gleitkomma*", avoid: ["Fließkomma*"], level: warn, why: "DIN/Informatik: Gleitkommazahl (Fließkommazahl ist umgangssprachlich)." }
   - { en: "micro-computed tomography", de: "Mikro-Computertomografie", de_alt: ["µCT", "Mikro-CT"] }
 
   # --- Artificial intelligence / robotics -----------------------------------------

@@ -108,7 +108,9 @@ which the script writes; never edit them by hand. Code inside an include (home p
   seeds before you publish.
 - At most **one** chart (one figure, subplots allowed), ended with `plt.show()`. It must stay
   readable on a 390 px phone, where it is scaled to about 330 px: stack panels vertically
-  (`plt.subplots(2, 1, figsize=(6.4, 8.4))`, not side by side) and set `plt.rcParams["font.size"] = 13`. Axis labels with
+  (`plt.subplots(2, 1, figsize=(6.4, 8.4))`, not side by side) and set `plt.rcParams["font.size"] = 13`. Log axes get plain tick labels
+  (`ax.yaxis.set_major_formatter("{x:g}")`): the default 10ⁿ labels go through matplotlib's
+  mathtext, which prints pyparsing deprecation warnings in CI and fails the gate. Axis labels with
   units, a title that states the takeaway, a legend; German labels in the DE version, short enough
   not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
   valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if
