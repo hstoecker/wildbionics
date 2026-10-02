@@ -2254,3 +2254,31 @@ a.cite:hover { text-decoration: underline; }
   .fallcat-svg .marker circle { r: 14px; }
   .fallcat-svg .marker text { font-size: 18px; }
 }
+
+/* Cat lapping, hero of the drinking article (_includes/svg/cat-lapping.svg) */
+.lapping-svg { width: 100%; height: auto; overflow: visible; }
+.lapping-svg .grid { color: rgba(238, 242, 234, 0.07); }
+.lapping-svg .surface { stroke: #9fd3ea; stroke-width: 2; }
+.lapping-svg .head { fill: #cfd6d8; stroke: rgba(10, 21, 25, 0.35); stroke-width: 1; }
+.lapping-svg .head .neck { stroke: none; }
+.lapping-svg .head .ear-inner { fill: #e8b3bd; stroke: none; }
+.lapping-svg .head .jaw { fill: #b9c2c5; }
+.lapping-svg .head .nose { fill: #d9848f; stroke: none; }
+.lapping-svg .head .eye { fill: #d9c25c; stroke: rgba(10, 21, 25, 0.5); }
+.lapping-svg .head .pupil { fill: #0a1519; stroke: none; }
+.lapping-svg .head .whisker { fill: none; stroke: #eef2ea; stroke-width: 1; opacity: 0.8; }
+.lapping-svg .tongue { fill: none; stroke: #e88fa0; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.lapping-svg .column { fill: #6fb6d8; opacity: 0.85; }
+.lapping-svg .force path { fill: none; stroke-width: 2; }
+.lapping-svg .force--up path { stroke: var(--accent); }
+.lapping-svg .force--down path { stroke: var(--signal); }
+.lapping-svg .force--up .force-head { fill: var(--accent); stroke: none; }
+.lapping-svg .force--down .force-head { fill: var(--signal); stroke: none; }
+.lapping-svg .marker circle { fill: #0a1519; stroke: var(--on-dark-2); stroke-width: 1.2; }
+.lapping-svg .marker text { font-family: var(--font-mono); font-size: 12px; font-weight: 600; fill: var(--on-dark); }
+.lapping-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .lapping-svg .label, .lapping-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .lapping-svg .marker circle { r: 14px; }
+  .lapping-svg .marker text { font-size: 18px; }
+}
