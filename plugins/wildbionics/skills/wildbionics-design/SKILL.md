@@ -145,12 +145,15 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   (Search Console → URL inspection → request indexing speeds it up).
 - **When the mark changes:** update the symbol, `favicon.svg`, all raster files and the OG images in
   `assets/og/` (their logo; recipe in `wildbionics-figures`, step 6), and show the user the renders.
+  The bee logo was swapped into the existing OG images in place (same 40 px size and position);
+  a card re-rendered from `og-card.html` uses `#logo-mark` and matches them – compare the logo
+  crop when you regenerate one.
 
 ## Policy
 
 - No new dependencies, frameworks, CDNs or tracking; fonts and scripts are self-hosted and small.
   `_config.yml` sets `theme: null` – the github-pages default theme would ship an unused 136 KB
-  stylesheet. Icons: see "Logo and icons" below.
+  stylesheet. Icons: see "Logo and icons" above.
 - Plain CSS in `main.css`, vanilla JS in `assets/js/` loaded with `defer`, only on pages that need it.
 - Link CSS and JS from `_layouts/default.html` with `?v={{ asset_version }}` (the build time): GitHub Pages
   lets browsers cache assets for 10 minutes, and a page with a new figure but an old `main.css` shows
