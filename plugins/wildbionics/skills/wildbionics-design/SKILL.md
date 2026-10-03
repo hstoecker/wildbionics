@@ -129,5 +129,8 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   stylesheet. Icons: `/favicon.ico` (16/32/48 px, for browsers and crawlers that ask for it),
   `assets/favicon.svg`, `assets/apple-touch-icon.png` (180 px).
 - Plain CSS in `main.css`, vanilla JS in `assets/js/` loaded with `defer`, only on pages that need it.
+- Link CSS and JS from `_layouts/default.html` with `?v={{ asset_version }}` (the build time): GitHub Pages
+  lets browsers cache assets for 10 minutes, and a page with a new figure but an old `main.css` shows
+  unstyled SVG (black fills). New asset links get the same suffix.
 - Visual changes are checked with screenshots on desktop (1440 px) and phone (390 px) in EN and
   DE – renderer: `plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh`.
