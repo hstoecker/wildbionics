@@ -11,6 +11,7 @@
       <nav aria-labelledby="footer-project">
         <h2 id="footer-project" class="site-footer__heading">{{ t.footer.project }}</h2>
         <ul>
+          <li><a href="{{ t.about.url | relative_url }}">{{ t.about.title }}</a></li>
           <li><a href="{{ t.guide.url | relative_url }}">{{ t.guide.title }}</a></li>
           <li><a href="{{ site.repository_url }}">{{ t.footer.repository }}</a></li>
           <li><a href="{{ site.repository_url }}/discussions">{{ t.footer.discussions }}</a></li>

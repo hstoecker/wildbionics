@@ -24,7 +24,8 @@ Concept: **field notebook meets lab journal** – editorial serif, precise mono 
 `formula` (+ `.frac`, `.sqrt`, `formula--steps`), `figure`/`figure--dark`, `code-card`/`.highlight`,
 code examples (`_includes/code-result.html`: `code-actions`, `code-output`, `code-chart`,
 `code-card__foot`, `code-variant` (`_includes/code-variant.html`); copy buttons from `assets/js/code.js` with a clipboard fallback and a
-`role="status"` announcement), plain text pages (`_layouts/page.html`, e.g. `run-code/index.md`),
+`role="status"` announcement), plain text pages (`_layouts/page.html`, e.g. `run-code/index.md`, `about/index.md` with
+`schema_type: AboutPage`),
 `key-facts`, `faq__item`, `references`, `graph-tags`, `article-card`, `dimension` cards, graph page,
 header `menu` (mobile navigation, below).
 New UI strings go into `_data/i18n.yml` for **every** language; templates never contain hard-coded
@@ -128,12 +129,32 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   = desc, licence fields) – from the article's `associatedMedia` or, on other pages, the WebPage's.
   The gate fails on a figure without its ImageObject or file, and on a file whose fonts are not embedded.
 
+## Logo and icons
+
+- **Mark:** a bee flying to the right inside a honeycomb cell – nature (bee) and bionics (the
+  hexagon). Three colours only: night `#0d1a16`, cream `#eef2ea`, amber `#e3a93a`. The geometry
+  lives once in `_includes/sprite.svg` (`#logo-mark`: hexagon and wings in `currentColor`,
+  `--accent`, `--night`; stripes are arc paths, no `clipPath`, so it renders inside `<use>`), used
+  by header, footer and `og-card.html`. `assets/favicon.svg` is the same mark on a night tile (rx 7).
+- **Raster files** (render `favicon.svg` at 512 px with `shots.sh`, downscale with PIL – no new tools):
+  `/favicon.ico` (16/32/48 px, rounded tile), `assets/favicon-192.png` and
+  `assets/apple-touch-icon.png` (180 px) full-bleed square (Google crops favicons round, iOS rounds
+  the corners itself), `assets/logo-512.png` (rounded tile, transparent corners; JSON-LD publisher logo).
+- **Google Search favicon:** the home pages link an icon that is square and a multiple of 48 px
+  (`favicon.ico` 48 px, `favicon-192.png`), crawlable (robots.txt allows `/`), at a stable URL.
+  `check_site.py` fails otherwise. Google picks up a change when it recrawls the home page
+  (Search Console → URL inspection → request indexing speeds it up).
+- **When the mark changes:** update the symbol, `favicon.svg`, all raster files and the OG images in
+  `assets/og/` (their logo; recipe in `wildbionics-figures`, step 6), and show the user the renders.
+  The bee logo was swapped into the existing OG images in place (same 40 px size and position);
+  a card re-rendered from `og-card.html` uses `#logo-mark` and matches them – compare the logo
+  crop when you regenerate one.
+
 ## Policy
 
 - No new dependencies, frameworks, CDNs or tracking; fonts and scripts are self-hosted and small.
   `_config.yml` sets `theme: null` – the github-pages default theme would ship an unused 136 KB
-  stylesheet. Icons: `/favicon.ico` (16/32/48 px, for browsers and crawlers that ask for it),
-  `assets/favicon.svg`, `assets/apple-touch-icon.png` (180 px).
+  stylesheet. Icons: see "Logo and icons" above.
 - Plain CSS in `main.css`, vanilla JS in `assets/js/` loaded with `defer`, only on pages that need it.
 - Link CSS and JS from `_layouts/default.html` with `?v={{ asset_version }}` (the build time): GitHub Pages
   lets browsers cache assets for 10 minutes, and a page with a new figure but an old `main.css` shows
