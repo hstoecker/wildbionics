@@ -6,7 +6,7 @@ title: "Schwimmen in Honig: die Physik der Bakterien"
 short_title: "Schwimmen in Honig"
 kicker: "Artikel · Strömungsmechanik"
 description: "Für ein Bakterium ist Wasser zäh wie Honig: Trägheit spielt keine Rolle. Wie E. coli trotzdem schwimmt – mit Korkenzieher, Laufen und Taumeln."
-dek: "Wärst du so klein wie ein Bakterium, fühlte sich Wasser zäher an als Honig. Sobald du aufhörst, dich zu bewegen, stehst du still – in einem Bruchteil einer Mikrosekunde. E. coli schwimmt trotzdem: mit einem rotierenden Korkenzieher und einer einfachen Regel, die es zur Nahrung lenkt."
+dek: "Wärst du so klein wie ein Bakterium, fühlte sich Wasser an wie Honig. Sobald du aufhörst, dich zu bewegen, stehst du still – in einem Bruchteil einer Mikrosekunde. E. coli schwimmt trotzdem: mit einem rotierenden Korkenzieher und einer einfachen Regel, die es zur Nahrung lenkt."
 date: 2026-10-03
 permalink: /de/artikel/schwimmen-in-honig/
 image: /assets/og/bacteria-low-reynolds-de.jpg
@@ -34,14 +34,14 @@ dimensions:
 beings: ["e-coli"]
 lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
-  - "Für ein Bakterium dominiert die Viskosität, Trägheit spielt keine Rolle: E. coli schwimmt bei einer Reynolds-Zahl von etwa **0,00003**. Stoppt sein Motor, gleitet es noch etwa 0,1 Ångström – weniger als ein Atom breit ist [1](#ref-1){:.cite}."
+  - "Für ein Bakterium dominiert die Viskosität, Trägheit spielt keine Rolle: E. coli schwimmt bei einer Reynolds-Zahl von nur wenigen Hunderttausendsteln – Purcell schätzte **0,00003**. Stoppt sein Motor, gleitet es noch etwa 0,1 Ångström – weniger als ein Atom breit ist [1](#ref-1){:.cite}."
   - "Um wie ein Bakterium zu schwimmen, müsste ein Mensch in einem Becken voller Melasse liegen und dürfte keinen Körperteil schneller als 1 cm pro Minute bewegen [1](#ref-1){:.cite}. Honig allein reicht nicht: Darin kommt ein Schwimmer noch auf eine Reynolds-Zahl von mehreren Hundert."
-  - "E. coli schwimmt, indem es seine schraubenförmigen Flagellen **dreht** – angetrieben von Rotationsmotoren mit etwa 100 Umdrehungen pro Sekunde [5](#ref-5){:.cite} [4](#ref-4){:.cite}."
+  - "E. coli schwimmt, indem es seine schraubenförmigen Flagellen **dreht** – angetrieben von Rotationsmotoren mit etwa 100 Umdrehungen pro Sekunde [4](#ref-4){:.cite} [5](#ref-5){:.cite}."
   - "Seine Bahn wechselt zwischen geraden **Läufen** und kurzem **Taumeln**. Läufe zu mehr Nahrung dauern länger – eine einfache Regel, die die Zelle das Gefälle hinauf lenkt [1](#ref-1){:.cite}."
   - "Magnetische Mikroroboter kopieren den Korkenzieher der Bakteriengeißel und werden von äußeren Magnetfeldern gesteuert; sie werden für die Medizin entwickelt [9](#ref-9){:.cite} [10](#ref-10){:.cite} [12](#ref-12){:.cite}."
 faq:
   - q: "Warum ist Wasser für ein Bakterium wie Honig?"
-    a: "Entscheidend ist nicht die Flüssigkeit allein, sondern das Verhältnis von Trägheit zu zäher Reibung, die Reynolds-Zahl. Sie hängt von Größe und Geschwindigkeit des Schwimmers ab. Ein Bakterium ist wenige Mikrometer lang und schwimmt einige zehn Mikrometer pro Sekunde, seine Reynolds-Zahl liegt bei etwa 0,00003. Ein Mensch käme auf einen so kleinen Wert nur in einer Flüssigkeit, die zäher ist als Honig, und wenn er sich extrem langsam bewegt."
+    a: "Entscheidend ist nicht die Flüssigkeit allein, sondern das Verhältnis von Trägheit zu zäher Reibung, die Reynolds-Zahl. Sie hängt von Größe und Geschwindigkeit des Schwimmers ab. Ein Bakterium ist wenige Mikrometer lang und schwimmt einige zehn Mikrometer pro Sekunde, seine Reynolds-Zahl liegt deshalb nur bei etwa 0,00003 bis 0,00006 – je nachdem, ob man seine Breite oder seine Länge als Größe nimmt. Ein Mensch käme auf einen so kleinen Wert nur in einer Flüssigkeit, die zäher ist als Honig, und wenn er sich extrem langsam bewegt."
   - q: "Wie schwimmt E. coli?"
     a: "E. coli hat mehrere dünne, schraubenförmige Flagellen. An der Basis jeder Flagelle sitzt ein Rotationsmotor, der sie etwa hundertmal pro Sekunde dreht. Während eines Laufs bündeln sich die Flagellen und wirken wie ein Korkenzieher, der die Zelle voranschiebt. Dreht ein Motor um, drehen sich die Flagellen nicht mehr gemeinsam, die Zelle taumelt und schwimmt dann in eine neue Richtung."
   - q: "Was ist das Muschel-Theorem?"
@@ -74,6 +74,13 @@ sources:
     pages: "096601"
     doi: "10.1088/0034-4885/72/9/096601"
     open_access: true
+  - authors: ["Berg, H. C.", "Anderson, R. A."]
+    year: 1973
+    title: "Bacteria swim by rotating their flagellar filaments"
+    journal: "Nature"
+    volume: 245
+    pages: "380–382"
+    doi: "10.1038/245380a0"
   - authors: ["Turner, L.", "Ryu, W. S.", "Berg, H. C."]
     year: 2000
     title: "Real-time imaging of fluorescent flagellar filaments"
@@ -82,13 +89,6 @@ sources:
     pages: "2793–2801"
     doi: "10.1128/JB.182.10.2793-2801.2000"
     open_access: true
-  - authors: ["Berg, H. C.", "Anderson, R. A."]
-    year: 1973
-    title: "Bacteria swim by rotating their flagellar filaments"
-    journal: "Nature"
-    volume: 245
-    pages: "380–382"
-    doi: "10.1038/245380a0"
   - authors: ["Berg, H. C.", "Purcell, E. M."]
     year: 1977
     title: "Physics of chemoreception"
@@ -160,8 +160,8 @@ In dieser Welt lebt die überwältigende Mehrheit der Organismen [1](#ref-1){:.c
 
 ## Laufen und Taumeln in drei Schritten
 
-1. **Laufen.** Mehrere dünne, schraubenförmige Flagellen drehen sich mit etwa 100 Umdrehungen pro Sekunde [4](#ref-4){:.cite}. Sie bündeln sich und schieben die Zelle wie ein Korkenzieher voran, mit typischerweise 20–40 µm pro Sekunde, ein bis zwei Sekunden lang [1](#ref-1){:.cite} [5](#ref-5){:.cite}.
-2. **Taumeln.** Ein oder mehrere Motoren drehen um, die Flagellen drehen sich nicht mehr gemeinsam, und die Zelle taumelt auf der Stelle. Schon eine einzige umkehrende Flagelle kann ein Taumeln auslösen [4](#ref-4){:.cite}.
+1. **Laufen.** Mehrere dünne, schraubenförmige Flagellen drehen sich mit etwa 100 Umdrehungen pro Sekunde [4](#ref-4){:.cite} [5](#ref-5){:.cite}. Sie bündeln sich und schieben die Zelle wie ein Korkenzieher voran, mit typischerweise 20–40 µm pro Sekunde, ein bis zwei Sekunden lang [1](#ref-1){:.cite}.
+2. **Taumeln.** Ein oder mehrere Motoren drehen um, die Flagellen drehen sich nicht mehr gemeinsam, und die Zelle taumelt auf der Stelle. Schon eine einzige umkehrende Flagelle kann ein Taumeln auslösen [5](#ref-5){:.cite}.
 3. **Neue Richtung.** Die Zelle startet einen neuen Lauf in eine neue Richtung. Wird es besser – mehr Nahrung –, läuft sie länger, bevor sie wieder taumelt [1](#ref-1){:.cite}.
 
 {% include lens-tabs.html lenses="biology,physics,math,cs,physical-ai" %}
@@ -170,9 +170,9 @@ In dieser Welt lebt die überwältigende Mehrheit der Organismen [1](#ref-1){:.c
 
 ## Biologie-Linse: ein Rotationsmotor und ein Geruchssinn
 
-*E. coli* ist ein stäbchenförmiges Bakterium, etwa 2 µm lang [1](#ref-1){:.cite}. Es trägt mehrere Flagellen; jede ist einige Mikrometer lang, aber nur etwa 20 Nanometer dick [4](#ref-4){:.cite}. Lange glaubte man, solche Flagellen schlügen wie ein Schwanz. 1973 argumentierten Howard Berg und Robert Anderson, dass Bakterien schwimmen, indem sie ihre Flagellen **drehen** [5](#ref-5){:.cite}, und Experimente bestätigten das bald: Klebte der Haken an der Basis einer Flagelle auf einem Objektträger fest, drehte sich der ganze Zellkörper mit konstanter Geschwindigkeit [1](#ref-1){:.cite}. An der Basis jeder Flagelle sitzt ein echter Rotationsmotor, und er kann sich in beide Richtungen drehen [1](#ref-1){:.cite}.
+*E. coli* ist ein stäbchenförmiges Bakterium, etwa 2 µm lang [1](#ref-1){:.cite}. Es trägt mehrere Flagellen; jede ist einige Mikrometer lang, aber nur etwa 20 Nanometer dick [5](#ref-5){:.cite}. Lange glaubte man, solche Flagellen schlügen wie ein Schwanz. 1973 argumentierten Howard Berg und Robert Anderson, dass Bakterien schwimmen, indem sie ihre Flagellen **drehen** [4](#ref-4){:.cite}, und Experimente bestätigten das bald: Klebte der Haken an der Basis einer Flagelle auf einem Objektträger fest, drehte sich der ganze Zellkörper mit konstanter Geschwindigkeit [1](#ref-1){:.cite}. An der Basis jeder Flagelle sitzt ein echter Rotationsmotor, und er kann sich in beide Richtungen drehen [1](#ref-1){:.cite}.
 
-Die Drehrichtung der Motoren entscheidet zwischen Laufen und Taumeln. Filmt man die Flagellen in Echtzeit, zeigt sich, wie vielfältig das Taumeln ist: Nicht jede Flagelle muss umkehren, und ein Taumeln kann schon von einer einzigen ausgelöst werden [4](#ref-4){:.cite}. Beim Taumeln ändern die Flagellen außerdem ihre Form – sie wechseln zwischen verschiedenen Schraubenformen [4](#ref-4){:.cite}.
+Die Drehrichtung der Motoren entscheidet zwischen Laufen und Taumeln. Filmt man die Flagellen in Echtzeit, zeigt sich, wie vielfältig das Taumeln ist: Nicht jede Flagelle muss umkehren, und ein Taumeln kann schon von einer einzigen ausgelöst werden [5](#ref-5){:.cite}. Beim Taumeln ändern die Flagellen außerdem ihre Form – sie wechseln zwischen verschiedenen Schraubenformen [5](#ref-5){:.cite}.
 
 Warum überhaupt schwimmen? Nicht, um das Wasser umzurühren: Zu einem Bakterium gelangt Nahrung durch Diffusion, und Rühren rund um die Zelle bringt nichts [1](#ref-1){:.cite}. Schwimmen lohnt sich anders – es trägt die Zelle an Orte, an denen es mehr Nahrung gibt. Berg verfolgte einzelne Bakterien in drei Dimensionen und fand, dass sie sich allmählich ein Gefälle eines Lockstoffs hinaufarbeiten. Die Regel, der sie folgen, ist einfach: **Wenn es besser wird, hör nicht so früh auf** [1](#ref-1){:.cite}. Läufe das Gefälle hinauf werden länger; Läufe hinab werden nicht kürzer [1](#ref-1){:.cite}.
 
@@ -276,7 +276,7 @@ Probier es selbst:
 
 **Das Muschel-Theorem.** Weil die Zeit aus der Stokes-Strömung herausfällt, kommt ein Schwimmer, der seine Bewegung einfach umkehrt, nicht vom Fleck. Purcells Beispiel ist eine Kammmuschel: Sie öffnet ihre Schale langsam und schließt sie schnell, doch mit nur einem Gelenk kann sie sich nur hin und her bewegen – und bei kleiner Reynolds-Zahl landete sie genau dort, wo sie angefangen hat, egal wie schnell oder langsam sie sich bewegt [1](#ref-1){:.cite}. Ein Mikroschwimmer braucht eine Bewegung, die nicht umkehrbar ist: ein **biegsames Ruder**, das sich beim Schlag in die eine und auf dem Rückweg in die andere Richtung biegt, oder einen **Korkenzieher**, der sich immer weiterdreht [1](#ref-1){:.cite}.
 
-**Wie ein Korkenzieher schiebt.** Eine zähe Flüssigkeit bremst einen dünnen Faden stärker, wenn er sich quer bewegt, als wenn er sich längs bewegt [1](#ref-1){:.cite} [3](#ref-3){:.cite}. Dieser Unterschied macht aus Drehung Vortrieb: Eine Schraube, die man dreht, bewegt sich zwangsläufig vorwärts, und eine Schraube, die man zieht, dreht sich zwangsläufig [7](#ref-7){:.cite}. Purcell schätzte, dass eine Kugel mit einem solchen Schraubenantrieb nur etwa **1 %** der Arbeit des Motors in nützlichen Vortrieb umsetzt. Dem Bakterium ist das fast egal: Mit 30 µm/s zu schwimmen kostet es etwa 0,5 W pro Kilogramm, einen kleinen Teil seines Energiebudgets [1](#ref-1){:.cite}.
+**Wie ein Korkenzieher schiebt.** Eine zähe Flüssigkeit bremst einen dünnen Faden stärker, wenn er sich quer bewegt, als wenn er sich längs bewegt [1](#ref-1){:.cite} [3](#ref-3){:.cite}. Dieser Unterschied macht aus Drehung Vortrieb: Eine Schraube, die man dreht, bewegt sich zwangsläufig vorwärts, und eine Schraube, die man zieht, dreht sich zwangsläufig [7](#ref-7){:.cite}. Purcell schätzte, dass eine Kugel mit einem solchen Schraubenantrieb nur etwa **1 %** der Arbeit des Motors in nützlichen Vortrieb umsetzt [1](#ref-1){:.cite}. Dem Bakterium ist das fast egal: Mit 30 µm/s zu schwimmen kostet es etwa 0,5 W pro Kilogramm, einen kleinen Teil seines Energiebudgets [1](#ref-1){:.cite}.
 
 {% include lens-end.html %}
 
@@ -288,7 +288,7 @@ Probier es selbst:
 
 <div class="formula" role="math" aria-label="l ist mindestens D geteilt durch v"><var>ℓ</var> ≥ <span class="frac"><span class="frac__num"><var>D</var></span><span class="frac__den"><var>v</var></span></span></div>
 
-Mit *v* = 30 µm/s ergibt das etwa **30 µm** – ungefähr die Länge eines Bakterienlaufs. Wer nicht so weit schwimmt, ist nirgends hingekommen, wie Purcell es ausdrückte [1](#ref-1){:.cite}.
+Mit *v* = 30 µm/s ergibt das etwa **30 µm** – ungefähr die Länge eines Bakterienlaufs. „Wenn du nicht so weit schwimmst, bist du nirgends hingekommen“, wie Purcell es sinngemäß ausdrückte [1](#ref-1){:.cite}.
 
 **Laufen und Taumeln breitet sich aus wie Diffusion.** Modellieren wir das Bakterium in zwei Dimensionen: Es läuft mit der Geschwindigkeit *v*, jeder Lauf dauert eine zufällige Zeit mit dem Mittelwert *τ*, und jedes Taumeln wählt eine völlig neue Richtung. Laufzeiten dieser Art folgen einer Exponentialverteilung, bei der das mittlere Quadrat der Dauer 2*τ*<sup>2</sup> beträgt. Ein Lauf legt also im Mittel die quadrierte Strecke 2*v*<sup>2</sup>*τ*<sup>2</sup> zurück, und in einer Zeit *t* gibt es etwa *t*/*τ* unabhängige Läufe:
 
@@ -398,7 +398,7 @@ Probier es selbst:
 {% include code-variant.html file="run_and_tumble.py" id="off" replace="BOOST = 2.0 " with="BOOST = 1.0 " expect="0.0" %}
 {% include code-variant.html file="run_and_tumble.py" id="strong" replace="BOOST = 2.0 " with="BOOST = 4.0 " expect="7.6" %}
 
-**Von Bakterien zu Robotern.** Derselbe Algorithmus funktioniert für Maschinen, die die Quelle eines Signals suchen. Amit Dhariwal und Kollegen entwickelten Roboter, die mit einer gerichteten Zufallsbewegung nach dem Vorbild der Chemotaxis zur Quelle eines Signals finden, testeten das in umfangreichen Simulationen und an einem kleinen Roboter, der Licht folgte. In ihrem Vergleich war der Gradientenabstieg – immer in Richtung des steilsten Anstiegs – schneller, doch die Bakterienstrategie kam besser mit mehreren Quellen und mit Quellen zurecht, die mit der Zeit schwächer werden, und sie eignete sich, um den Rand eines Gebiets zu finden [8](#ref-8){:.cite}.
+**Von Bakterien zu Robotern.** Derselbe Algorithmus funktioniert für Maschinen, die die Quelle eines Signals suchen. Amit Dhariwal und Kollegen entwickelten Roboter, die mit einer gerichteten Zufallsbewegung nach dem Vorbild der Chemotaxis zur Quelle eines Signals finden, testeten das in umfangreichen Simulationen und an einem kleinen Roboter, der Licht folgte. In ihrem Vergleich war der Gradientenabstieg – immer in Richtung des steilsten Anstiegs – schneller, doch die Bakterienstrategie schnitt bei mehreren Quellen und bei Quellen, die sich verflüchtigen, besser ab, und sie eignete sich besser, um den Rand eines Gebiets abzudecken [8](#ref-8){:.cite}.
 
 {% include lens-end.html %}
 

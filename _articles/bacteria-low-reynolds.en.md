@@ -6,7 +6,7 @@ title: "Swimming in Honey: the Physics of Bacteria"
 short_title: "Swimming in honey"
 kicker: "Article · Fluid dynamics"
 description: "For a bacterium, water is as thick as honey: inertia plays no role. How E. coli still swims – with a rotating corkscrew, runs and tumbles."
-dek: "If you were the size of a bacterium, water would feel thicker than honey. The moment you stopped moving, you would stop – within a fraction of a microsecond. E. coli swims anyway: with a rotating corkscrew, and with a simple rule that steers it towards food."
+dek: "If you were the size of a bacterium, water would feel like honey. The moment you stopped moving, you would stop – within a fraction of a microsecond. E. coli swims anyway: with a rotating corkscrew, and with a simple rule that steers it towards food."
 date: 2026-10-03
 permalink: /articles/bacteria-low-reynolds/
 image: /assets/og/bacteria-low-reynolds-en.jpg
@@ -34,14 +34,14 @@ dimensions:
 beings: ["e-coli"]
 lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
-  - "For a bacterium, viscosity dominates and inertia plays no role: E. coli swims at a Reynolds number of about **0.00003**. If its motor stops, it coasts about 0.1 ångström – less than the width of an atom [1](#ref-1){:.cite}."
+  - "For a bacterium, viscosity dominates and inertia plays no role: E. coli swims at a Reynolds number of only a few hundred-thousandths – Purcell estimated **0.00003**. If its motor stops, it coasts about 0.1 ångström – less than the width of an atom [1](#ref-1){:.cite}."
   - "To swim like a bacterium, a human would have to be in a pool of molasses and move no part of the body faster than 1 cm per minute [1](#ref-1){:.cite}. Honey alone is not enough: in honey a swimmer still reaches a Reynolds number of several hundred."
-  - "E. coli swims by **rotating** its helical flagella, driven by rotary motors at about 100 revolutions per second [5](#ref-5){:.cite} [4](#ref-4){:.cite}."
+  - "E. coli swims by **rotating** its helical flagella, driven by rotary motors at about 100 revolutions per second [4](#ref-4){:.cite} [5](#ref-5){:.cite}."
   - "Its path alternates between straight **runs** and short **tumbles**. Runs that lead to more food last longer – a simple rule that steers the cell up the gradient [1](#ref-1){:.cite}."
   - "Magnetic microrobots copy the corkscrew of the bacterial flagellum and are steered by external magnetic fields; they are being developed for medicine [9](#ref-9){:.cite} [10](#ref-10){:.cite} [12](#ref-12){:.cite}."
 faq:
   - q: "Why is water like honey for a bacterium?"
-    a: "What matters is not the liquid alone but the ratio of inertia to viscous friction, the Reynolds number. It depends on the size and speed of the swimmer. A bacterium is a few micrometres long and swims a few tens of micrometres per second, so its Reynolds number is about 0.00003. A human would reach such a low value only in a liquid thicker than honey while moving extremely slowly."
+    a: "What matters is not the liquid alone but the ratio of inertia to viscous friction, the Reynolds number. It depends on the size and speed of the swimmer. A bacterium is a few micrometres long and swims a few tens of micrometres per second, so its Reynolds number is only about 0.00003 to 0.00006, depending on whether its width or its length is taken as its size. A human would reach such a low value only in a liquid thicker than honey while moving extremely slowly."
   - q: "How does E. coli swim?"
     a: "E. coli has several thin, helical flagella. At the base of each sits a rotary motor that turns it about a hundred times per second. During a run the flagella bundle together and work like a corkscrew that pushes the cell forward. When a motor reverses, the flagella no longer turn together, the cell tumbles and then swims off in a new direction."
   - q: "What is the scallop theorem?"
@@ -74,6 +74,13 @@ sources:
     pages: "096601"
     doi: "10.1088/0034-4885/72/9/096601"
     open_access: true
+  - authors: ["Berg, H. C.", "Anderson, R. A."]
+    year: 1973
+    title: "Bacteria swim by rotating their flagellar filaments"
+    journal: "Nature"
+    volume: 245
+    pages: "380–382"
+    doi: "10.1038/245380a0"
   - authors: ["Turner, L.", "Ryu, W. S.", "Berg, H. C."]
     year: 2000
     title: "Real-time imaging of fluorescent flagellar filaments"
@@ -82,13 +89,6 @@ sources:
     pages: "2793–2801"
     doi: "10.1128/JB.182.10.2793-2801.2000"
     open_access: true
-  - authors: ["Berg, H. C.", "Anderson, R. A."]
-    year: 1973
-    title: "Bacteria swim by rotating their flagellar filaments"
-    journal: "Nature"
-    volume: 245
-    pages: "380–382"
-    doi: "10.1038/245380a0"
   - authors: ["Berg, H. C.", "Purcell, E. M."]
     year: 1977
     title: "Physics of chemoreception"
@@ -160,8 +160,8 @@ This is the world of the overwhelming majority of organisms [1](#ref-1){:.cite}.
 
 ## A run and a tumble in three steps
 
-1. **Run.** Several thin, helical flagella rotate at about 100 revolutions per second [4](#ref-4){:.cite}. They bundle together and push the cell forward like a corkscrew, at typically 20–40 µm per second, for a second or two [1](#ref-1){:.cite} [5](#ref-5){:.cite}.
-2. **Tumble.** One or more motors reverse, the flagella no longer turn together, and the cell tumbles in place. A single reversing flagellum can be enough to trigger a tumble [4](#ref-4){:.cite}.
+1. **Run.** Several thin, helical flagella rotate at about 100 revolutions per second [4](#ref-4){:.cite} [5](#ref-5){:.cite}. They bundle together and push the cell forward like a corkscrew, at typically 20–40 µm per second, for a second or two [1](#ref-1){:.cite}.
+2. **Tumble.** One or more motors reverse, the flagella no longer turn together, and the cell tumbles in place. A single reversing flagellum can be enough to trigger a tumble [5](#ref-5){:.cite}.
 3. **New direction.** The cell sets off on a new run in a new direction. If things are getting better – more food – it runs longer before it tumbles again [1](#ref-1){:.cite}.
 
 {% include lens-tabs.html lenses="biology,physics,math,cs,physical-ai" %}
@@ -170,13 +170,13 @@ This is the world of the overwhelming majority of organisms [1](#ref-1){:.cite}.
 
 ## Biology lens: a rotary motor and a sense of smell
 
-*E. coli* is a rod-shaped bacterium about 2 µm long [1](#ref-1){:.cite}. It carries several flagella; each is several micrometres long but only about 20 nanometres thick [4](#ref-4){:.cite}. For a long time it was thought that such flagella wave like a tail. In 1973, Howard Berg and Robert Anderson argued that bacteria swim by **rotating** their flagellar filaments [5](#ref-5){:.cite}, and experiments soon confirmed it: when the hook at the base of a flagellum was glued to a microscope slide, the whole cell body rotated at constant speed [1](#ref-1){:.cite}. At the base of each flagellum sits a true rotary motor, and it can turn in both directions [1](#ref-1){:.cite}.
+*E. coli* is a rod-shaped bacterium about 2 µm long [1](#ref-1){:.cite}. It carries several flagella; each is several micrometres long but only about 20 nanometres thick [5](#ref-5){:.cite}. For a long time it was thought that such flagella wave like a tail. In 1973, Howard Berg and Robert Anderson argued that bacteria swim by **rotating** their flagellar filaments [4](#ref-4){:.cite}, and experiments soon confirmed it: when the hook at the base of a flagellum was glued to a microscope slide, the whole cell body rotated at constant speed [1](#ref-1){:.cite}. At the base of each flagellum sits a true rotary motor, and it can turn in both directions [1](#ref-1){:.cite}.
 
-The direction of the motors decides between running and tumbling. When the filaments are filmed in real time, tumbles turn out to be remarkably varied: not every flagellum has to reverse, and a tumble can result from the reversal of just one [4](#ref-4){:.cite}. During a tumble the filaments change their shape as well – they switch between different helical forms [4](#ref-4){:.cite}.
+The direction of the motors decides between running and tumbling. When the filaments are filmed in real time, tumbles turn out to be remarkably varied: not every flagellum has to reverse, and a tumble can result from the reversal of just one [5](#ref-5){:.cite}. During a tumble the filaments change their shape as well – they switch between different helical forms [5](#ref-5){:.cite}.
 
 Why swim at all? Not to stir the water: for a bacterium, food arrives by diffusion, and stirring around the cell accomplishes nothing [1](#ref-1){:.cite}. Swimming pays off in a different way – it carries the cell to places where food is more abundant. Berg tracked single bacteria in three dimensions and found that they gradually work their way up a gradient of attractant. The rule they follow is simple: **if things are getting better, don't stop so soon** [1](#ref-1){:.cite}. Runs up the gradient get longer; runs down the gradient do not get shorter [1](#ref-1){:.cite}.
 
-To follow a gradient, a cell must measure concentrations. Berg and Purcell calculated the precision that is physically possible for a cell that counts molecules with receptors on its surface – and found that the chemotactic sensitivity of *E. coli* approaches that of a cell of optimum design [6](#ref-6){:.cite}.
+To follow a gradient, a cell must measure concentrations. Berg and Purcell calculated the precision that is physically possible for a cell that counts molecules with receptors on its surface – and found that the chemotactic sensitivity of *E. coli* approaches that of a cell of optimum design [6](#ref-6){:.cite}. This ability to move according to chemical signals is called **chemotaxis**.
 
 {% include lens-end.html %}
 
@@ -276,7 +276,7 @@ Try it yourself:
 
 **The scallop theorem.** Because time drops out of Stokes flow, a swimmer that simply reverses its stroke goes nowhere. Purcell's example is a scallop: it opens its shell slowly and closes it fast, but with only one hinge it can only move back and forth – and at low Reynolds number it would end exactly where it started, however fast or slowly it moves [1](#ref-1){:.cite}. A microswimmer needs a motion that is not reversible: a **flexible oar** that bends one way on the stroke and the other way on the way back, or a **corkscrew** that keeps turning [1](#ref-1){:.cite}.
 
-**How a corkscrew pushes.** A viscous liquid resists a thin filament more strongly when it moves sideways than when it moves along its length [1](#ref-1){:.cite} [3](#ref-3){:.cite}. This difference turns rotation into thrust: a helix that is made to rotate necessarily translates, and a helix that is pulled along necessarily rotates [7](#ref-7){:.cite}. Purcell estimated that a sphere driven by such a helical propeller converts only about **1 %** of the motor's work into useful propulsion. For the bacterium it hardly matters: swimming at 30 µm/s costs it about 0.5 W per kilogram, a small fraction of its energy budget [1](#ref-1){:.cite}.
+**How a corkscrew pushes.** A viscous liquid resists a thin filament more strongly when it moves sideways than when it moves along its length [1](#ref-1){:.cite} [3](#ref-3){:.cite}. This difference turns rotation into thrust: a helix that is made to rotate necessarily translates, and a helix that is pulled along necessarily rotates [7](#ref-7){:.cite}. Purcell estimated that a sphere driven by such a helical propeller converts only about **1 %** of the motor's work into useful propulsion [1](#ref-1){:.cite}. For the bacterium it hardly matters: swimming at 30 µm/s costs it about 0.5 W per kilogram, a small fraction of its energy budget [1](#ref-1){:.cite}.
 
 {% include lens-end.html %}
 
@@ -398,7 +398,7 @@ Try it yourself:
 {% include code-variant.html file="run_and_tumble.py" id="off" replace="BOOST = 2.0 " with="BOOST = 1.0 " expect="0.0" %}
 {% include code-variant.html file="run_and_tumble.py" id="strong" replace="BOOST = 2.0 " with="BOOST = 4.0 " expect="7.6" %}
 
-**From bacteria to robots.** The same algorithm works for machines that look for the source of a signal. Amit Dhariwal and colleagues developed robots that navigate to the source of a signal with a biased random walk inspired by chemotaxis, tested it in extensive simulations and on a small robot that followed light. In their comparison, gradient descent – always moving in the direction of the steepest increase – was faster, but the bacterial strategy coped better with several sources and with sources that fade over time, and it was suited to finding the boundary of a region [8](#ref-8){:.cite}.
+**From bacteria to robots.** The same algorithm works for machines that look for the source of a signal. Amit Dhariwal and colleagues developed robots that navigate to the source of a signal with a biased random walk inspired by chemotaxis, tested it in extensive simulations and on a small robot that followed light. In their comparison, gradient descent – always moving in the direction of the steepest increase – was faster, but the bacterial strategy performed better with multiple sources and with sources that dissipate, and it was better suited to covering the boundary of a region [8](#ref-8){:.cite}.
 
 {% include lens-end.html %}
 
@@ -406,7 +406,7 @@ Try it yourself:
 
 ## Physical AI lens: microrobots after the bacterial flagellum
 
-A robot the size of a bacterium faces the bacterium's physics: no inertia, no gliding, and the scallop theorem forbids every simple back-and-forth stroke [1](#ref-1){:.cite} [3](#ref-3){:.cite}. Engineers have therefore copied nature's two solutions.
+For Physical AI – robots that sense and act in the real world – the bacterium is a special role model. A robot the size of a bacterium faces the bacterium's physics: no inertia, no gliding, and the scallop theorem forbids every simple back-and-forth stroke [1](#ref-1){:.cite} [3](#ref-3){:.cite}. Engineers have therefore copied nature's two solutions.
 
 **The corkscrew.** In 2009, Li Zhang, Bradley Nelson and colleagues built **artificial bacterial flagella**: a helical tail with the shape and size of a natural flagellum and a thin soft-magnetic "head" at one end. Weak magnetic fields from three pairs of electromagnetic coils drive and steer the swimmer – the first microscopic artificial swimmers with helical propulsion. They could push microspheres around [9](#ref-9){:.cite}. In the same year, Ambarish Ghosh and Peer Fischer showed chiral propellers made of nanostructured surfaces that can be produced in large numbers and steered through water with micrometre precision by homogeneous magnetic fields; they can carry chemicals and push loads [10](#ref-10){:.cite}.
 
