@@ -46,6 +46,7 @@ body:
         - "Pupil · Schüler*in"
         - "Student · Studierende*r"
         - "Parent · Elternteil"
+        - "Science fan or just curious · Wissenschaftsbegeistert oder einfach neugierig"
         - "Other · Sonstiges"
   - type: input
     id: context

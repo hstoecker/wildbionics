@@ -250,6 +250,7 @@ en:
       - { title: "Pupils", text: "Wondering how something in nature works? Ask – your question can become the next page." }
       - { title: "Students", text: "Turn what you are learning into an explanation others understand – write, translate or build a code example." }
       - { title: "Parents", text: "Your child asked a “why” question you couldn’t answer? Suggest it, and explore the answer together." }
+      - { title: "Science fans and the curious", text: "You love finding out how the world works? Suggest what amazes you, discuss the science behind it – or help us explain it." }
     contact_title: "Talk to us"
     contact_intro: "Write in English or German – whichever you prefer."
     contact_discussions_title: "Discussions"
@@ -839,6 +840,7 @@ de:
       - { title: "Schülerinnen und Schüler", text: "Du fragst dich, wie etwas in der Natur funktioniert? Frag – deine Frage kann die nächste Seite werden." }
       - { title: "Studierende", text: "Macht aus dem, was ihr gerade lernt, eine Erklärung, die andere verstehen – schreibt, übersetzt oder baut ein Code-Beispiel." }
       - { title: "Eltern", text: "Euer Kind hat eine Warum-Frage gestellt, auf die ihr keine Antwort wusstet? Schlagt sie vor und entdeckt die Antwort gemeinsam." }
+      - { title: "Wissenschaftsbegeisterte und Neugierige", text: "Du willst wissen, wie die Welt funktioniert? Schlag vor, was dich staunen lässt, diskutiere die Wissenschaft dahinter – oder hilf uns, es zu erklären." }
     contact_title: "Sprich mit uns"
     contact_intro: "Schreib auf Deutsch oder Englisch – ganz wie du magst."
     contact_discussions_title: "Diskussionen"

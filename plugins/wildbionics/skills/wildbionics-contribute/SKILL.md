@@ -41,7 +41,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 
 ## Where topics come from
 
-The goal is **a new page every day**. Teachers, scientists, pupils, students and parents suggest
+The goal is **a new page every day**. Teachers, scientists, pupils, students, parents, science fans and the curious suggest
 what they are working on in the Discussions category *Suggest a topic · Thema vorschlagen* (form:
 kind, topic, why it fascinates, physics behind it, who suggests it, context, needed-by date,
 sources). When choosing the next article, prefer topics with a near *needed by* date (a lesson or

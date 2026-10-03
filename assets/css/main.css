@@ -2308,3 +2308,4 @@ a.cite:hover { text-decoration: underline; }
 .guide-audiences h3, .guide-contact h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; }
 .guide-audiences p, .guide-contact p { margin: 0 0 12px; color: var(--ink-2); line-height: 1.55; }
 .guide-contact .link-arrow { color: var(--accent-ink); border-bottom-color: rgba(138, 90, 0, 0.35); overflow-wrap: anywhere; }
+@media (min-width: 1000px) { .guide-audiences { grid-template-columns: repeat(3, minmax(0, 1fr)); } }   /* six audiences: 3 + 3 */
