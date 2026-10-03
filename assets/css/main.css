@@ -326,6 +326,14 @@ var {
   font-weight: 380;
   color: var(--accent);
 }
+/* Header brand: larger than in the footer – the bee mark needs the size to read as a bee. */
+.site-header .brand { gap: 12px; }
+.site-header .brand__mark { width: 44px; height: 44px; }
+.site-header .brand__name { font-size: 1.9rem; }
+@media (max-width: 600px) {             /* phones: a bigger mark, the wordmark keeps its size */
+  .site-header .brand__mark { width: 38px; height: 38px; }
+  .site-header .brand__name { font-size: 1.35rem; }
+}
 
 .site-nav { margin-left: auto; }
 .site-nav ul { display: flex; gap: 28px; }
@@ -1735,7 +1743,7 @@ a.cite:hover { text-decoration: underline; }
 .gx-kind { fill: var(--on-dark-2); font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
 /* Four dimensions */
 .gx-dims { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.gx-dim { display: grid; gap: 2px; padding: 12px 14px; border-left: 3px solid var(--c); border-radius: 8px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.gx-dim { display: grid; gap: 2px; min-width: 0; overflow-wrap: break-word; hyphens: auto; padding: 12px 14px; border-left: 3px solid var(--c); border-radius: 8px; background: color-mix(in srgb, var(--c) 9%, transparent); }
 .gx-dim__q { color: var(--c); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .gx-dim__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 450; }
 .gx-dim__ex { color: var(--on-dark-2); font-size: 0.85rem; }
@@ -1785,7 +1793,7 @@ a.cite:hover { text-decoration: underline; }
   .gx-kind { font-size: 15px; }
   .gx-name { font-size: 19px; }
 }
-@media (max-width: 420px) { .gx-dims { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .gx-dims { grid-template-columns: minmax(0, 1fr); } }   /* long German words need the full width */
 .graph-list { margin-top: clamp(40px, 5vw, 64px); }
 .graph-list details { border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
 .graph-list summary { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; cursor: pointer; list-style: none; }
@@ -2112,8 +2120,9 @@ a.cite:hover { text-decoration: underline; }
 }
 
 /* Header: below this width the inline nav no longer fits beside logo and tools (German needs
-   about 1012 px) – it moves into the menu disclosure. Re-measure when adding nav items. */
-@media (max-width: 1060px) {
+   about 1110 px with the larger header brand) – it moves into the menu disclosure. Re-measure when
+   adding nav items or resizing the brand. */
+@media (max-width: 1120px) {
   .site-nav { display: none; }
   .site-header__tools { margin-left: auto; }
   .menu { display: block; }
@@ -2150,15 +2159,17 @@ a.cite:hover { text-decoration: underline; }
   .lens__tabs { flex-wrap: wrap; column-gap: 4px; overflow: visible; }
 }
 
-@media (max-width: 420px) {             /* phones: tighter header so brand, languages and menu fit */
-  .site-header__inner { gap: 12px; }
-  .site-header__tools { gap: 8px; }
-  .brand { gap: 8px; }
+@media (max-width: 460px) {             /* phones: tighter header so brand, languages and menu fit */
+  .site-header__inner { gap: 8px; }
+  .site-header__tools { gap: 6px; }
+  .brand, .site-header .brand { gap: 7px; }
 }
 @media (max-width: 389px) {             /* narrow phones: icon-only menu button, label stays for screen readers */
   .menu__button { width: 44px; padding: 0; justify-content: center; }
   .menu__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .brand__name { font-size: 1.15rem; }   /* keeps 44 px language targets in the row at 320 px */
+  .site-header .brand__mark { width: 36px; height: 36px; }
+  .brand, .site-header .brand { gap: 6px; }
+  .site-header .brand__name { font-size: 1.1rem; }   /* keeps 44 px language targets in the row at 320 px */
 }
 
 @media (forced-colors: active) {
