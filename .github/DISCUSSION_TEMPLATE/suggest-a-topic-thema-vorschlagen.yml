@@ -58,7 +58,8 @@ body:
     id: needed_by
     attributes:
       label: "Needed by (optional) · Gebraucht bis (optional)"
-      placeholder: "e.g. 2026-11-15"
+      description: "Date as YYYY-MM-DD, e.g. for a lesson or project · Datum als JJJJ-MM-TT, z. B. für eine Unterrichtsstunde oder ein Projekt"
+      placeholder: "2026-11-15"
   - type: textarea
     id: sources
     attributes:

@@ -13,3 +13,13 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(menu.contains(document.activeElement)); });
   document.addEventListener("click", (e) => { if (!menu.contains(e.target)) close(false); });
 })();
+
+// Contact addresses (_includes/email.html): built here so harvesters reading the HTML find none.
+document.querySelectorAll("[data-email]").forEach((el) => {
+  const address = `${el.dataset.email}@${el.dataset.domain}`;
+  const link = document.createElement("a");
+  link.href = `mailto:${address}`;
+  link.textContent = address;
+  if (el.dataset.class) link.className = el.dataset.class;
+  el.replaceWith(link);
+});

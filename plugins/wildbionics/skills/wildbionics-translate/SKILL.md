@@ -48,7 +48,9 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
   parneomeris*), also in UI strings (`<em>Bertholdia trigona</em>`); German common name first,
   scientific name on first mention.
 - **Quotation marks:** „…“ (inner: ‚…‘). Dash with spaces: „ – “.
-- **Address:** informal *du* (as on the rest of the site), consistent within a text.
+- **Address:** informal *du* (as on the rest of the site), consistent within a text. Exception: a
+  text that speaks to a group (teachers, parents, a class) uses plural *ihr/euch*, e.g. the audience
+  cards on `/de/mitmachen/` – singular groups (pupils, the curious) keep *du*.
 - **Keep unchanged:** DOIs, English titles of cited papers, author names, formulas and
   variable names, Liquid tags (`{% include … %}`), HTML/ids/anchors (`#ref-3`, `#lens-math`),
   code identifiers. In code examples, translate comments, docstrings, printed strings and chart

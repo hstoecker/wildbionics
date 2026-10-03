@@ -154,7 +154,7 @@ en:
     repository: "Repository"
     issues: "Issues & ideas"
     discussions: "Discussions"
-    email: "contribute@wildbionics.com"
+    email_user: "contribute"
     licenses: "Licences"
     code_license: "Code: MIT"
     content_license: "Content: CC BY-SA 4.0"
@@ -237,7 +237,7 @@ en:
     together_text: "Families, classes and teams can work on WildBionics together: everyone uses their own GitHub account and Claude access, the maintainer adds them as collaborators, and all contributions arrive as pull requests. The review keeps the quality the same, no matter who – or which agent – wrote a change."
     cta_repo: "Open the repository"
     cta_issue: "Propose a phenomenon"
-    hero_contact_html: "Questions first? Ask in <a href=\"https://github.com/hstoecker/wildbionics/discussions\">Discussions</a> or write to <a href=\"mailto:contribute@wildbionics.com\">contribute@wildbionics.com</a>."
+    hero_contact_html: "Questions first? Ask in <a href=\"https://github.com/hstoecker/wildbionics/discussions\">Discussions</a> or write to [email]."
     jump_topics: "Suggest a topic"
     jump_contact: "Contact"
     topics_title: "Bring your topic – from class, lab or kitchen table"
@@ -258,7 +258,6 @@ en:
     contact_discussions_cta: "Open Discussions"
     contact_email_title: "E-mail"
     contact_email_text: "No GitHub account? Write to us."
-    contact_email: "contribute@wildbionics.com"
     contact_issue_title: "Found a mistake?"
     contact_issue_text: "Report a clear error or a broken page as an issue – that gets it fixed fastest."
     contact_issue_cta: "Report a correction"
@@ -745,7 +744,7 @@ de:
     repository: "Repository"
     issues: "Issues & Ideen"
     discussions: "Diskussionen"
-    email: "mitmachen@wildbionics.com"
+    email_user: "mitmachen"
     licenses: "Lizenzen"
     code_license: "Code: MIT"
     content_license: "Inhalte: CC BY-SA 4.0"
@@ -827,16 +826,16 @@ de:
     together_text: "Familien, Schulklassen und Teams können gemeinsam an WildBionics arbeiten: Jede Person nutzt ihr eigenes GitHub-Konto und ihren eigenen Claude-Zugang, der Maintainer fügt sie als Mitwirkende hinzu, und alle Beiträge kommen als Pull Requests. Der Prüfprozess hält die Qualität gleich – egal, wer oder welcher Agent eine Änderung geschrieben hat."
     cta_repo: "Zum Repository"
     cta_issue: "Ein Phänomen vorschlagen"
-    hero_contact_html: "Erst eine Frage? Stell sie in den <a href=\"https://github.com/hstoecker/wildbionics/discussions\">Diskussionen</a> oder schreib an <a href=\"mailto:mitmachen@wildbionics.com\">mitmachen@wildbionics.com</a>."
+    hero_contact_html: "Erst eine Frage? Stell sie in den <a href=\"https://github.com/hstoecker/wildbionics/discussions\">Diskussionen</a> oder schreib an [email]."
     jump_topics: "Thema vorschlagen"
     jump_contact: "Kontakt"
     topics_title: "Bring dein Thema mit – aus Unterricht, Labor oder vom Küchentisch"
-    topics_intro: "Woran du gerade arbeitest, kann eine WildBionics-Seite werden. Schlag es vor – unser Ziel ist jeden Tag eine neue Seite."
+    topics_intro: "Woran du gerade arbeitest, kann eine WildBionics-Seite werden. Schlag es vor – unser Ziel ist eine neue Seite pro Tag."
     topics_note: "Themen mit einer Begründung, warum sie spannend sind, und am besten einer Quelle kommen zuerst dran. Brauchst du die Seite zu einem bestimmten Termin, für eine Unterrichtsstunde oder ein Projekt? Schreib es ins Formular."
     topics_cta: "Thema vorschlagen"
     audiences:
       - { title: "Lehrkräfte", text: "Schlagt das Thema eurer nächsten Unterrichtsstunde vor – mit Termin, damit die Seite rechtzeitig fertig ist. Jede Seite hat Linsen für mehrere Fächer und Code, den eure Klasse ausführen kann." }
-      - { title: "Forschende", text: "Zeigt uns euer Fachgebiet oder euren neuesten Artikel und helft beim Prüfen der Fakten – jede Aussage auf WildBionics ist mit einer Quelle belegt." }
+      - { title: "Forschende", text: "Zeigt uns euer Fachgebiet oder eure neueste Veröffentlichung und helft beim Prüfen der Fakten – jede Aussage auf WildBionics ist mit einer Quelle belegt." }
       - { title: "Schülerinnen und Schüler", text: "Du fragst dich, wie etwas in der Natur funktioniert? Frag – deine Frage kann die nächste Seite werden." }
       - { title: "Studierende", text: "Macht aus dem, was ihr gerade lernt, eine Erklärung, die andere verstehen – schreibt, übersetzt oder baut ein Code-Beispiel." }
       - { title: "Eltern", text: "Euer Kind hat eine Warum-Frage gestellt, auf die ihr keine Antwort wusstet? Schlagt sie vor und entdeckt die Antwort gemeinsam." }
@@ -848,7 +847,6 @@ de:
     contact_discussions_cta: "Zu den Diskussionen"
     contact_email_title: "E-Mail"
     contact_email_text: "Kein GitHub-Konto? Schreib uns."
-    contact_email: "mitmachen@wildbionics.com"
     contact_issue_title: "Einen Fehler gefunden?"
     contact_issue_text: "Melde einen klaren Fehler oder eine kaputte Seite als Issue – so wird er am schnellsten behoben."
     contact_issue_cta: "Korrektur melden"

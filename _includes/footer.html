@@ -15,7 +15,7 @@
           <li><a href="{{ site.repository_url }}">{{ t.footer.repository }}</a></li>
           <li><a href="{{ site.repository_url }}/discussions">{{ t.footer.discussions }}</a></li>
           <li><a href="{{ site.repository_url }}/issues">{{ t.footer.issues }}</a></li>
-          <li><a href="mailto:{{ t.footer.email }}">{{ t.footer.email }}</a></li>
+          <li>{% include email.html user=t.footer.email_user %}</li>
         </ul>
       </nav>
       <nav aria-labelledby="footer-licenses">
