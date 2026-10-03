@@ -187,7 +187,6 @@ en:
     license_html: "Text and figures: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"license\">CC BY-SA 4.0</a>. Found a mistake? <a href=\"%REPO%/issues/new\">Open an issue</a> or edit this article on <a href=\"%EDIT%\">GitHub</a>."
     breadcrumb: "Breadcrumb"
   about:
-    nav: "About"
     title: "About WildBionics"
     url: "/about/"
   articles:
@@ -782,7 +781,6 @@ de:
     license_html: "Text und Abbildungen: <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.de\" rel=\"license\">CC BY-SA 4.0</a>. Fehler gefunden? <a href=\"%REPO%/issues/new\">Issue eröffnen</a> oder den Artikel auf <a href=\"%EDIT%\">GitHub</a> bearbeiten."
     breadcrumb: "Brotkrumennavigation"
   about:
-    nav: "Über uns"
     title: "Über WildBionics"
     url: "/de/ueber-uns/"
   articles:
