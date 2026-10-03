@@ -13,4 +13,3 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(menu.contains(document.activeElement)); });
   document.addEventListener("click", (e) => { if (!menu.contains(e.target)) close(false); });
 })();
-
