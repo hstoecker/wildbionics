@@ -1,0 +1,57 @@
+{%- include i18n.html -%}
+{%- assign a = t.figures.early_atmosphere -%}
+<svg class="atmo-svg" viewBox="0 0 720 470" role="img" aria-labelledby="atmo-title" aria-describedby="atmo-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="atmo-title">{{ a.title }}</title>
+  <desc id="atmo-desc">{{ a.desc }}</desc>
+  <defs>
+    <pattern id="atmo-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="atmo-fade" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="atmo-mask"><rect width="720" height="470" fill="url(#atmo-fade)"/></mask>
+    <linearGradient id="atmo-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".55"/>
+      <stop offset="1" stop-color="var(--accent)" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="atmo-oxy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--signal)" stop-opacity=".6"/>
+      <stop offset="1" stop-color="var(--signal)" stop-opacity=".05"/>
+    </linearGradient>
+    <radialGradient id="atmo-sunball" cx="40%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#ffe9a8"/>
+      <stop offset="1" stop-color="var(--accent)"/>
+    </radialGradient>
+  </defs>
+
+  <rect class="grid" width="720" height="470" fill="url(#atmo-grid)" mask="url(#atmo-mask)"/>
+
+  <!-- Great Oxidation Event band through both panels -->
+  <rect class="goe-band" x="360.0" y="60" width="13.3" height="270"/>
+
+  <!-- Sun -->
+  <text x="80" y="52" class="label label-accent">{{ a.sun }}</text>
+  <path class="sun-area" d="M100.0,143.5 L109.7,142.6 L119.3,141.7 L129.0,140.8 L138.7,139.9 L148.3,139.0 L158.0,138.1 L167.7,137.1 L177.3,136.2 L187.0,135.2 L196.7,134.2 L206.3,133.3 L216.0,132.3 L225.7,131.3 L235.3,130.3 L245.0,129.2 L254.7,128.2 L264.3,127.2 L274.0,126.1 L283.7,125.1 L293.3,124.0 L303.0,122.9 L312.7,121.8 L322.3,120.7 L332.0,119.6 L341.7,118.5 L351.3,117.3 L361.0,116.2 L370.7,115.0 L380.3,113.8 L390.0,112.6 L399.7,111.4 L409.3,110.2 L419.0,109.0 L428.7,107.8 L438.3,106.5 L448.0,105.2 L457.7,104.0 L467.3,102.7 L477.0,101.4 L486.7,100.0 L496.3,98.7 L506.0,97.3 L515.7,96.0 L525.3,94.6 L535.0,93.2 L544.7,91.8 L554.3,90.3 L564.0,88.9 L573.7,87.4 L583.3,85.9 L593.0,84.4 L602.7,82.9 L612.3,81.3 L622.0,79.8 L631.7,78.2 L641.3,76.6 L651.0,75.0 L660.7,73.3 L670.3,71.7 L680.0,70.0 L680.0,150 L100.0,150 Z" fill="url(#atmo-sun)"/>
+  <path class="sun-line" d="M100.0,143.5 L109.7,142.6 L119.3,141.7 L129.0,140.8 L138.7,139.9 L148.3,139.0 L158.0,138.1 L167.7,137.1 L177.3,136.2 L187.0,135.2 L196.7,134.2 L206.3,133.3 L216.0,132.3 L225.7,131.3 L235.3,130.3 L245.0,129.2 L254.7,128.2 L264.3,127.2 L274.0,126.1 L283.7,125.1 L293.3,124.0 L303.0,122.9 L312.7,121.8 L322.3,120.7 L332.0,119.6 L341.7,118.5 L351.3,117.3 L361.0,116.2 L370.7,115.0 L380.3,113.8 L390.0,112.6 L399.7,111.4 L409.3,110.2 L419.0,109.0 L428.7,107.8 L438.3,106.5 L448.0,105.2 L457.7,104.0 L467.3,102.7 L477.0,101.4 L486.7,100.0 L496.3,98.7 L506.0,97.3 L515.7,96.0 L525.3,94.6 L535.0,93.2 L544.7,91.8 L554.3,90.3 L564.0,88.9 L573.7,87.4 L583.3,85.9 L593.0,84.4 L602.7,82.9 L612.3,81.3 L622.0,79.8 L631.7,78.2 L641.3,76.6 L651.0,75.0 L660.7,73.3 L670.3,71.7 L680.0,70.0"/>
+  <circle cx="146.7" cy="117.2" r="8.9" fill="url(#atmo-sunball)"/>
+  <circle cx="666.0" cy="48.0" r="12" fill="url(#atmo-sunball)"/>
+  <text x="164.7" y="121.2" class="label">74 %</text>
+  <text x="648.0" y="52.0" text-anchor="end" class="label">100 %</text>
+
+  <!-- Oxygen -->
+  <text x="80" y="191" class="label label-signal">{{ a.oxygen }}</text>
+  <path class="oxy-area" d="M80.0,300.0 C220.0,300.0 220.0,300.0 360.0,300.0 C366.7,300.0 366.7,255.0 373.3,255.0 C393.3,255.0 393.3,248.0 413.3,248.0 C493.3,248.0 493.3,248.0 573.3,248.0 C590.0,248.0 590.0,213.0 606.7,213.0 C643.3,213.0 643.3,207.0 680.0,207.0 L680.0,300 L80.0,300 Z" fill="url(#atmo-oxy)"/>
+  <path class="oxy-line" d="M80.0,300.0 C220.0,300.0 220.0,300.0 360.0,300.0 C366.7,300.0 366.7,255.0 373.3,255.0 C393.3,255.0 393.3,248.0 413.3,248.0 C493.3,248.0 493.3,248.0 573.3,248.0 C590.0,248.0 590.0,213.0 606.7,213.0 C643.3,213.0 643.3,207.0 680.0,207.0"/>
+  <text x="226.7" y="288" text-anchor="middle" class="label label-muted">{{ a.archean_air }}</text>
+  <text x="674.0" y="271" text-anchor="end" class="label">{{ a.today_air }}</text>
+
+  <!-- Time axis and events -->
+  <path class="axis" d="M80,330 H680"/>
+  <path class="axis-tick" d="M146.7,326 V334"/><text x="146.7" y="320" text-anchor="middle" class="label-tick">4</text><path class="axis-tick" d="M280.0,326 V334"/><text x="280.0" y="320" text-anchor="middle" class="label-tick">3</text><path class="axis-tick" d="M413.3,326 V334"/><text x="413.3" y="320" text-anchor="middle" class="label-tick">2</text><path class="axis-tick" d="M546.7,326 V334"/><text x="546.7" y="320" text-anchor="middle" class="label-tick">1</text><path class="axis-tick" d="M680.0,326 V334"/><text x="680.0" y="320" text-anchor="middle" class="label-tick">0</text>
+  <text x="680" y="414" text-anchor="end" class="label label-tick">{{ a.axis }}</text>
+  <path class="event-bar" d="M173.3,330 H213.3"/><path class="event-tick" d="M193.3,334 V346"/><text x="193.3" y="360" text-anchor="middle" class="label">{{ a.life }}</text><path class="event-bar" d="M253.3,330 H320.0"/><path class="event-tick" d="M286.7,334 V370"/><text x="286.7" y="384" text-anchor="middle" class="label">{{ a.cyano }}</text><path class="event-bar" d="M360.0,330 H373.3"/><path class="event-tick" d="M366.7,334 V346"/><text x="366.7" y="360" text-anchor="middle" class="label">{{ a.goe }}</text><path class="event-bar" d="M608.0,330 H611.0"/><path class="event-tick" d="M608.0,334 V370"/><text x="608.0" y="384" text-anchor="middle" class="label">{{ a.animals }}</text>
+
+  <text x="80" y="458" class="label label-tick">{{ a.note }}</text>
+</svg>
