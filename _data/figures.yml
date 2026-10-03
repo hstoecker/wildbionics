@@ -14,6 +14,7 @@ wetting:           { id: wet,          i18n: figures.wetting,        context: "p
 bat-hunt:          { id: bathunt,      i18n: figures.bat_hunt,       context: "article-header",                     bg: "var(--ocean)", page: bat-echolocation }
 falling-cat:       { id: fallcat,      i18n: figures.falling_cat,    context: "article-header",                     bg: "var(--ocean)", page: cat-righting }
 cat-lapping:       { id: lapping,      i18n: figures.cat_lapping,    context: "article-header",                     bg: "var(--ocean)", page: cat-lapping }
+bacteria-run-tumble: { id: rt,         i18n: figures.run_tumble,     context: "article-header",                     bg: "var(--ocean)", page: bacteria-low-reynolds }
 early-atmosphere:  { id: atmo,         i18n: figures.early_atmosphere, context: "article-header",                   bg: "var(--ocean)", page: early-atmosphere }
 claw:              { id: claw,         i18n: figures.claw,           context: "article-header",                     bg: "var(--ocean)", page: pistol-shrimp-cavitation }
 bernoulli:         { id: bern,         i18n: figures.bernoulli,      context: "prose figure",                       bg: "var(--card)",  page: pistol-shrimp-cavitation }

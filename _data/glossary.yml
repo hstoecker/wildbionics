@@ -13,6 +13,10 @@
 
 terms:
   # --- Zoology / biology ---------------------------------------------------------
+  - { en: "flagell*", de: "Flagell*", de_alt: ["Geißel*"], why: "Bakteriengeißel; Fachsprache Flagellum, Plural Flagellen." }
+  - { en: "chemotaxis", de: "Chemotaxis" }
+  - { en: "tumble*", de: "Taumel*", de_alt: ["taumel*"], avoid: ["Purzel*"], level: warn, why: "run and tumble = Laufen und Taumeln." }
+  - { en: "microorganism*", de: "Mikroorganism*" }
   - { en: "claw*", de: "Schere*", de_alt: ["*schere*", "Kralle*"], avoid: ["Klaue*"], why: "Krebse haben Scheren, keine Klauen (Klauen: Huftiere). Echsen und andere Wirbeltiere haben Krallen." }
   - { en: "snapping claw*", de: "Knallschere*" }
   - { en: "pincer claw*", de: "Greifschere*" }
@@ -48,6 +52,12 @@ terms:
   - { en: "moustached bat", de: "Schnurrbartfledermaus" }
   - { en: "bulldog bat*", de: "Hasenmaul", de_alt: ["Hasenmäuler*"] }
   # --- Physics -------------------------------------------------------------------
+  - { en: "viscosity", de: "Viskosität", de_alt: ["Zähigkeit"] }
+  - { en: "viscous", de: "zäh*", de_alt: ["viskos*"] }
+  - { en: "scallop theorem", de: "Muschel-Theorem", avoid: ["Jakobsmuschel-Theorem", "Muscheltheorem"], level: warn, why: "Einheitliche Schreibweise; englisch scallop theorem." }
+  - { en: "Stokes flow", de: "Stokes-Strömung" }
+  - { en: "diffusion constant", de: "Diffusionskonstante" }
+  - { en: "drift", de: "Drift*" }
   - { en: "hydrophone*", de: "Hydrophon*", avoid: ["Hydrofon*"], why: "In der Akustik ist die Schreibung Hydrophon üblich." }
   - { en: "shock wave*", de: "Stoßwelle*", avoid: ["Schockwelle*"], why: "Physikalischer Fachbegriff: Stoßwelle." }
   - { en: "cavitation erosion", de: "Kavitationserosion" }
@@ -136,6 +146,8 @@ terms:
   - { en: "Laplace pressure", de: "Laplace-Druck" }
 
   # --- Mathematics / computer science --------------------------------------------
+  - { en: "random walk", de: "Zufallsbewegung", de_alt: ["Irrfahrt"] }
+  - { en: "gradient descent", de: "Gradientenabstieg*", de_alt: ["Gradientenverfahren"] }
   - { en: "interaural time difference", de: "interaurale* Laufzeitunterschied*" }
   - { en: "matched filter", de: "Optimalfilter" }
   - { en: "cross-correlation", de: "Kreuzkorrelation" }
@@ -151,6 +163,7 @@ terms:
   - { en: "micro-computed tomography", de: "Mikro-Computertomografie", de_alt: ["µCT", "Mikro-CT"] }
 
   # --- Artificial intelligence / robotics -----------------------------------------
+  - { en: "microrobot*", de: "Mikroroboter*" }
   - { en: "Physical AI", de: "Physical AI", de_alt: ["verkörperte* KI", "verkörperte* künstliche* Intelligenz"], avoid: ["physikalische* KI", "physikalische* künstliche* Intelligenz"], why: "Falscher Freund: physikalisch = die Physik betreffend. Gemeint ist verkörperte KI; im Deutschen ist der Begriff Physical AI etabliert." }
   - { en: "embodied AI", de: "verkörperte* KI", de_alt: ["verkörperte* künstliche* Intelligenz", "Embodied AI"] }
   - { en: "artificial intelligence", de: "künstliche* Intelligenz", de_alt: ["KI"], avoid: ["artifizielle* Intelligenz"], why: "Fachbegriff: künstliche Intelligenz (KI)." }
