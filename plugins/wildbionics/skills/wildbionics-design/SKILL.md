@@ -80,6 +80,11 @@ text.
 `x-default`, Open Graph/Twitter image, JSON-LD @graph. New page types need a `ref` (translations),
 `lang`, `title`, `description` (50–160 chars), a `short_title` if the title is long (breadcrumb
 name) and, if special, `schema_type` (`CollectionPage` lists its articles as an `ItemList`).
+- **Image sitemap:** `sitemap.xml` lists every image of a page for image search – its preview card
+  (`image`, the default card only on `home`), its figures (`/figures/<name>.<lang>.svg`, from the `page` in
+  `_data/figures.yml`) and its code-example charts. `check_site.py` fails on a listed image without a
+  file and on a figure or chart that no page lists. Figures and charts are found by image search only
+  through this list and their `ImageObject`s: inline SVGs are not indexed as images.
 
 Rules for the JSON-LD graph (enforced by `check_site.py`):
 - **Every page:** Organization, Person, WebSite, WebPage (`#webpage`) and one preview
