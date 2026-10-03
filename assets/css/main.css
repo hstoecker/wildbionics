@@ -2282,3 +2282,18 @@ a.cite:hover { text-decoration: underline; }
   .lapping-svg .marker circle { r: 14px; }
   .lapping-svg .marker text { font-size: 18px; }
 }
+
+/* Early atmosphere, hero of the oxygen article (_includes/svg/early-atmosphere.svg) */
+.atmo-svg { width: 100%; height: auto; overflow: visible; }
+.atmo-svg .grid { color: rgba(238, 242, 234, 0.07); }
+.atmo-svg .goe-band { fill: rgba(238, 242, 234, 0.08); }
+.atmo-svg .sun-line { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.atmo-svg .oxy-line { fill: none; stroke: var(--signal); stroke-width: 2.5; }
+.atmo-svg .axis { stroke: var(--on-dark-2); stroke-width: 1.2; }
+.atmo-svg .axis-tick { stroke: var(--on-dark-2); stroke-width: 1.2; }
+.atmo-svg .event-bar { stroke: var(--on-dark); stroke-width: 6; stroke-linecap: round; }
+.atmo-svg .event-tick { stroke: var(--on-dark-2); stroke-width: 1; stroke-dasharray: 2 3; }
+.atmo-svg .label-tick { font-family: var(--font-mono); font-size: 12px; fill: var(--text-2); }
+@media (max-width: 600px) {
+  .atmo-svg .label, .atmo-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+}

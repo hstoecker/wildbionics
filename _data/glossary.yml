@@ -68,6 +68,19 @@ terms:
   - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
   - { en: "Doppler shift", de: "Doppler-Verschiebung", de_alt: ["Dopplerverschiebung"] }
   - { en: "source level*", de: "Quellpegel" }
+  - { en: "greenhouse effect", de: "Treibhauseffekt*" }
+  - { en: "greenhouse gas*", de: "Treibhausgas*" }
+  - { en: "Great Oxidation Event", de: "Große* Sauerstoffkatastrophe", de_alt: ["Große* Sauerstoffereignis"] }
+  - { en: "oxygenic photosynthesis", de: "oxygene* Photosynthese" }
+  - { en: "faint young Sun", de: "schwachen jungen Sonne", de_alt: ["schwache junge Sonne"] }
+  - { en: "ozone layer", de: "Ozonschicht" }
+  - { en: "albedo", de: "Albedo" }
+  - { en: "escape velocity", de: "Fluchtgeschwindigkeit" }
+  - { en: "emissivity", de: "Emissivität" }
+  - { en: "stromatolite*", de: "Stromatolith*" }
+  - { en: "mass-independent fractionation", de: "massenunabhängige* Fraktionierung" }
+  - { en: "aerobic respiration", de: "Zellatmung", de_alt: ["aerobe* Atmung"] }
+  - { en: "luminosity", de: "Leuchtkraft", de_alt: ["Helligkeit"] }
   - { en: "inertia", de: "Trägheit*" }
   - { en: "Froude number", de: "Froude-Zahl", avoid: ["Froudezahl", "Froude Zahl"], level: warn, why: "Schreibweise wie Reynolds-Zahl: mit Bindestrich." }
   - { en: "Weber number*", de: "Weber-Zahl*" }
