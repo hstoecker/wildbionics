@@ -2108,6 +2108,15 @@ a.cite:hover { text-decoration: underline; }
   .site-nav ul { gap: 20px; }
 }
 
+/* Header: below this width the inline nav no longer fits beside logo and tools (German needs
+   about 1012 px) – it moves into the menu disclosure. Re-measure when adding nav items. */
+@media (max-width: 1060px) {
+  .site-nav { display: none; }
+  .site-header__tools { margin-left: auto; }
+  .menu { display: block; }
+  .site-header__tools > .icon-link { display: none; }   /* GitHub moves into the menu */
+}
+
 @media (max-width: 920px) {
   .hero__grid,
   .lens__panel,
@@ -2116,10 +2125,6 @@ a.cite:hover { text-decoration: underline; }
   .section-head--split { grid-template-columns: minmax(0, 1fr); }
   .hero__figure .caption { text-align: left; margin-left: 0; }
   .flagship__figure { order: 2; position: static; }
-  .site-nav { display: none; }
-  .site-header__tools { margin-left: auto; }
-  .menu { display: block; }
-  .site-header__tools > .icon-link { display: none; }   /* GitHub moves into the menu */
   .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-footer__brand { grid-column: 1 / -1; }
 }
@@ -2311,3 +2316,4 @@ a.cite:hover { text-decoration: underline; }
 @media (min-width: 1000px) { .guide-audiences { grid-template-columns: repeat(3, minmax(0, 1fr)); } }   /* six audiences: 3 + 3 */
 .email-fallback { -webkit-user-select: all; user-select: all; }   /* no-JS address: one click selects it */
 .email-hint { color: inherit; font-size: 0.85em; opacity: 0.8; }
+.nav-external { margin-left: 3px; font-size: 0.8em; opacity: 0.7; }   /* the link leaves the site (GitHub) */

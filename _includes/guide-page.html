@@ -13,7 +13,7 @@
     <p class="eyebrow">{{ g.eyebrow }}</p>
     <h1 id="guide-title" class="section-title">{{ g.title }}</h1>
     <p class="section-intro">{{ g.intro }}</p>
-    {%- capture email_html %}{% include email.html user=t.footer.email_user %}{% endcapture %}
+    {%- capture email_html %}{% include email.html user=t.footer.email_user %}{% endcapture %}{% assign email_html = email_html | strip %}
     <p class="guide-hero__contact">{{ g.hero_contact_html | replace: "[email]", email_html }}</p>
 
     <h2 class="guide-chooser__title">{{ g.chooser_title }}</h2>

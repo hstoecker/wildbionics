@@ -44,10 +44,11 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 The goal is **a new page every day**. Teachers, scientists, pupils, students, parents, science fans and the curious suggest
 what they are working on in the Discussions category *Suggest a topic · Thema vorschlagen* (form:
 kind, topic, why it fascinates, physics behind it, who suggests it, context, needed-by date,
-sources). When choosing the next article, prefer topics with a near *needed by* date (free text – GitHub forms have no date field, so
-read it leniently and ask back in the discussion if it is unclear) (a lesson or
+sources). When choosing the next article, prefer topics with a near *needed by* date (a lesson or
 project depends on it), many upvotes, a source, and a gap in the knowledge graph; link the
-discussion in the pull request and post the live page there once it is merged.
+discussion in the pull request and post the live page there once it is merged. The *needed by*
+field is free text, because GitHub forms have no date field: read it leniently and ask back in
+the discussion if it is unclear.
 Contact for people without GitHub: *contribute (at) wildbionics.com* (EN) and *mitmachen (at)
 wildbionics.com* (DE), shown on `/contribute/`, `/de/mitmachen/` and in the footer. Against spam,
 never write an address in one piece – not in HTML, `_data/i18n.yml` or docs: store only the local
