@@ -24,7 +24,8 @@ Concept: **field notebook meets lab journal** – editorial serif, precise mono 
 `formula` (+ `.frac`, `.sqrt`, `formula--steps`), `figure`/`figure--dark`, `code-card`/`.highlight`,
 code examples (`_includes/code-result.html`: `code-actions`, `code-output`, `code-chart`,
 `code-card__foot`, `code-variant` (`_includes/code-variant.html`); copy buttons from `assets/js/code.js` with a clipboard fallback and a
-`role="status"` announcement), plain text pages (`_layouts/page.html`, e.g. `run-code/index.md`),
+`role="status"` announcement), plain text pages (`_layouts/page.html`, e.g. `run-code/index.md`, `about/index.md` with
+`schema_type: AboutPage`),
 `key-facts`, `faq__item`, `references`, `graph-tags`, `article-card`, `dimension` cards, graph page,
 header `menu` (mobile navigation, below).
 New UI strings go into `_data/i18n.yml` for **every** language; templates never contain hard-coded
