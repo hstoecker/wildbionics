@@ -25,6 +25,7 @@ class Page(HTMLParser):
         self.title = ""
         self.meta = {}
         self.links = []          # (rel, href, hreflang)
+        self.icons = []          # (rel, href, sizes) of <link rel="icon"/"apple-touch-icon">
         self.hrefs = []
         self.ids = set()
         self.h1 = 0
@@ -53,6 +54,8 @@ class Page(HTMLParser):
                 self.meta[key] = a.get("content", "")
         elif tag == "link":
             self.links.append((a.get("rel", ""), a.get("href", ""), a.get("hreflang")))
+            if "icon" in a.get("rel", "").split() or a.get("rel") == "apple-touch-icon":
+                self.icons.append((a.get("rel"), a.get("href", ""), a.get("sizes", "")))
         elif tag == "a" and "href" in a:
             self.hrefs.append(a["href"])
         elif tag == "h1":
@@ -422,6 +425,37 @@ else:
                         errors.append(f"graph.jsonld: {url} about differs from graph.json's organism and thought-experiment edges")
     except (json.JSONDecodeError, KeyError, ValueError) as e:
         errors.append(f"graph.jsonld invalid: {e}")
+
+# Favicons. Google Search shows a site's favicon only if the home page links one that is square,
+# a multiple of 48 px and crawlable (https://developers.google.com/search/docs/appearance/favicon-in-search).
+def image_sizes(path):
+    data = path.read_bytes()
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return [(int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big"))]
+    if data[:4] == b"\x00\x00\x01\x00":       # ICO: one 16-byte entry per image, 0 means 256
+        n = int.from_bytes(data[4:6], "little")
+        return [(data[6 + 16 * i] or 256, data[7 + 16 * i] or 256) for i in range(n)]
+    return [("svg", "svg")] if path.suffix == ".svg" else []
+
+if not (root / "favicon.ico").exists():
+    errors.append("/favicon.ico missing")
+for home in ("index.html", "de/index.html"):
+    p = pages.get(root / home)
+    if not p:
+        continue
+    google_ok = False
+    for rel, href, sizes in p.icons:
+        f = root / urlparse(href).path.lstrip("/")
+        if not f.is_file():
+            errors.append(f"{home}: icon {href} missing")
+            continue
+        found = image_sizes(f)
+        if sizes and sizes != "any" and sizes not in {f"{w}x{h}" for w, h in found}:
+            errors.append(f"{home}: icon {href} declares sizes=\"{sizes}\", file has {found}")
+        if "icon" in rel.split() and any(w == h and isinstance(w, int) and w % 48 == 0 for w, h in found):
+            google_ok = True
+    if not google_ok:
+        errors.append(f"{home}: no <link rel=\"icon\"> with a square image whose size is a multiple of 48 px (Google Search favicon)")
 
 # robots.txt, llms.txt, IndexNow key
 for name in ("robots.txt", "llms.txt"):
