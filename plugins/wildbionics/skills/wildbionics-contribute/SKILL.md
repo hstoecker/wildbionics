@@ -52,7 +52,7 @@ the discussion if it is unclear.
 Contact for people without GitHub: *contribute (at) wildbionics.com* (EN) and *mitmachen (at)
 wildbionics.com* (DE), shown on `/contribute/`, `/de/mitmachen/` and in the footer. Against spam,
 never write an address in one piece – not in HTML, `_data/i18n.yml` or docs: store only the local
-part (`footer.email_user`) and render it with `{% include email.html user=… %}`; `assets/js/email.js`
+part (`footer.email_user`; the domain is `contact_domain` in `_config.yml`) and render it with `{% include email.html user=… %}`; `assets/js/email.js`
 builds the mailto link in the browser; without JavaScript readers see "… (at) wildbionics.com",
 selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to replace (at) with @.
 

@@ -51,6 +51,9 @@ computer science, Physical AI/robotics, medicine) – not literal translations.
 - **Address:** informal *du* (as on the rest of the site), consistent within a text. Exception: a
   text that speaks to a group (teachers, parents, a class) uses plural *ihr/euch*, e.g. the audience
   cards on `/de/mitmachen/` – singular groups (pupils, the curious) keep *du*.
+- **Gender-fair German without special characters:** no gender star, colon or Binnen-I
+  (*Forschende\*r*, *Schüler:in*). Use neutral forms (*Lehrkräfte*, *Forschende*, *Studierende*)
+  or pair forms (*Schülerinnen und Schüler*) – the same wording on the site, in forms and templates.
 - **Keep unchanged:** DOIs, English titles of cited papers, author names, formulas and
   variable names, Liquid tags (`{% include … %}`), HTML/ids/anchors (`#ref-3`, `#lens-math`),
   code identifiers. In code examples, translate comments, docstrings, printed strings and chart

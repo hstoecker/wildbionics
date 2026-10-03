@@ -42,9 +42,9 @@ body:
       label: "Who are you? (optional) · Wer bist du? (optional)"
       options:
         - "Teacher · Lehrkraft"
-        - "Scientist · Forschende*r"
-        - "Pupil · Schüler*in"
-        - "Student · Studierende*r"
+        - "Scientist · Forschende"
+        - "Pupil · Schülerinnen und Schüler"
+        - "Student · Studierende"
         - "Parent · Elternteil"
         - "Science fan or just curious · Wissenschaftsbegeistert oder einfach neugierig"
         - "Other · Sonstiges"
@@ -59,7 +59,7 @@ body:
     attributes:
       label: "Needed by (optional) · Gebraucht bis (optional)"
       description: "Date as YYYY-MM-DD, e.g. for a lesson or project · Datum als JJJJ-MM-TT, z. B. für eine Unterrichtsstunde oder ein Projekt"
-      placeholder: "2026-11-15"
+      placeholder: "YYYY-MM-DD · JJJJ-MM-TT"
   - type: textarea
     id: sources
     attributes:
