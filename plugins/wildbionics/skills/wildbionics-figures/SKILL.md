@@ -135,6 +135,6 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
 - [ ] `<title>`/`<desc>` describe the concept in both languages; contrast OK; not colour-only.
 - [ ] OG images regenerated if they contain the figure; captions and `image_alt` (describes the
       OG image; also its JSON-LD caption) updated; gates pass.
-- [ ] Registered in `_data/figures.yml`; `/figures/<name>.<lang>.svg` (EN + DE) opened and identical
+- [ ] Registered in `_data/figures.yml` (this also lists it in the image sitemap for image search); `/figures/<name>.<lang>.svg` (EN + DE) opened and identical
       to the page; caption links to it.
 - [ ] Final large render shown to the user.

@@ -71,7 +71,7 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
 | `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
 | `.github/scripts/figures.py` | CI + local (after `jekyll build`) | writes `/figures/<name>.<lang>.svg` for every figure in `_data/figures.yml`: cut from the built page, CSS from `main.css`, font subsets embedded (needs `.github/scripts/requirements.txt`: fonttools, brotli) |
-| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json |
+| `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json ; image sitemap complete (every figure and chart listed, every listed image exists) |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |
 | `.github/scripts/indexnow.py` | CI (`main`) | `changed` (build job, before deploy): lists the pages whose HTML differs from the live site or are new; after deploy submits only those to IndexNow (key in `_config.yml`) – CSS, script or docs-only deploys submit nothing |
 | `.github/CODEOWNERS` | every PR | the maintainer is the required reviewer |
