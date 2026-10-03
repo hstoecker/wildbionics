@@ -1685,9 +1685,9 @@ a.cite:hover { text-decoration: underline; }
 .graph-info {
   position: absolute;
   top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 8px;   /* graph.js places it beside the active node */
   width: min(320px, 80vw);
+  pointer-events: none;   /* hovering: let the pointer through, so the hover never flickers */
   padding: 16px 18px;
   border: 1px solid var(--line-dark);
   border-radius: 14px;
@@ -1697,6 +1697,7 @@ a.cite:hover { text-decoration: underline; }
   box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.8);
   font-size: 0.9rem;
 }
+.graph-info.is-pinned { pointer-events: auto; }   /* pinned: its article links are clickable */
 .graph-info__type { color: var(--accent); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .graph-info__title { margin: 4px 0 8px; font-family: var(--font-display); font-size: 1.3rem; line-height: 1.2; }
 .graph-info__taxon { margin: -4px 0 8px; color: var(--on-dark-2); }
@@ -1803,7 +1804,7 @@ a.cite:hover { text-decoration: underline; }
 
 @media (max-width: 640px) {
   .graph-svg { max-height: none; }
-  .graph-info { position: static; width: auto; margin: 12px var(--gutter) 0; transform: none; }
+  .graph-info { position: static; width: auto; margin: 12px var(--gutter) 0; pointer-events: auto; }
   .node-label { font-size: 15px; }
   .node--being .node-label, .node--thought-experiment .node-label { font-size: 16px; }
   .node--dimension .node-label, .node--article .node-label { font-size: 19px; }
