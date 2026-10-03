@@ -1447,6 +1447,12 @@ a.cite:hover { text-decoration: underline; }
 /* Plain pages (_layouts/page.html) */
 .article-header--page .container { padding-block: clamp(40px, 6vw, 80px) clamp(44px, 6vw, 72px); }
 .article-header--page .article-header__dek { max-width: 62ch; }
+.page-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(24px, 5vw, 80px); }
+.page-hero__mark { width: clamp(180px, 22vw, 300px); height: auto; aspect-ratio: 1; color: var(--on-dark); filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35)); }
+@media (max-width: 760px) {             /* phones: the header already shows the bee */
+  .page-hero { grid-template-columns: minmax(0, 1fr); }
+  .page-hero__mark { display: none; }
+}
 
 /* Lens bar inside articles */
 .lens-bar {
