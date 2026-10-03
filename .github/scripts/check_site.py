@@ -338,6 +338,19 @@ else:
         t = url_to_file(loc)
         if not t or not t.exists():
             errors.append(f"sitemap.xml: URL without page: {loc}")
+    # image sitemap: every listed image exists, and every figure and chart of a page is listed
+    img_ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "i": "http://www.google.com/schemas/sitemap-image/1.1"}
+    listed_images = set()
+    for url in ET.parse(sitemap).getroot().findall("s:url", img_ns):
+        for img in url.findall("i:image/i:loc", img_ns):
+            t = url_to_file(img.text)
+            listed_images.add(img.text)
+            if not t or not t.exists():
+                errors.append(f"sitemap.xml: image without file: {img.text}")
+    for f in sorted((root / "figures").glob("*.svg")) + sorted((root / "examples").glob("*/*.svg")):
+        u = SITE_URL + "/" + str(f.relative_to(root))
+        if u not in listed_images:
+            errors.append(f"sitemap.xml: image not listed for image search: {u}")
     indexable = {f for f, p in pages.items() if "noindex" not in p.meta.get("robots", "")}
     listed = {url_to_file(l) for l in locs}
     for f in indexable - listed:
