@@ -13,6 +13,7 @@
     <p class="eyebrow">{{ g.eyebrow }}</p>
     <h1 id="guide-title" class="section-title">{{ g.title }}</h1>
     <p class="section-intro">{{ g.intro }}</p>
+    <p class="guide-hero__contact">{{ g.hero_contact_html }}</p>
 
     <h2 class="guide-chooser__title">{{ g.chooser_title }}</h2>
     <ol class="guide-chooser">
@@ -39,18 +40,32 @@
 <nav class="guide-subnav" aria-label="{{ g.jump_label }}">
   <div class="container">
     <ul>
+      <li><a href="#topics">{{ g.jump_topics }}</a></li>
       {%- for w in g.ways %}
       <li><a href="#{{ w.id }}"><span aria-hidden="true">{{ forloop.index }}</span> {{ w.title }}</a></li>
       {%- endfor %}
       <li><a href="#flow">{{ g.jump_flow }}</a></li>
       <li><a href="#rules">{{ g.jump_rules }}</a></li>
       <li><a href="#terms">{{ g.jump_terms }}</a></li>
+      <li><a href="#contact">{{ g.jump_contact }}</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="guide-body" data-guide data-copy-label="{{ g.copy_label }}" data-copied-label="{{ g.copied_label }}">
   <div class="container">
+    <section class="guide-block" id="topics" aria-labelledby="topics-title">
+      <h2 id="topics-title" class="guide__h2">{{ g.topics_title }}</h2>
+      <p class="guide-muted">{{ g.topics_intro }}</p>
+      <ul class="guide-audiences">
+        {%- for a in g.audiences %}
+        <li><h3>{{ a.title }}</h3><p>{{ a.text }}</p></li>
+        {%- endfor %}
+      </ul>
+      <p class="guide-muted">{{ g.topics_note }}</p>
+      <a class="button button--primary" href="{{ site.repository_url }}/discussions/new?category=suggest-a-topic-thema-vorschlagen">{{ g.topics_cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+    </section>
+
     {%- for w in g.ways %}
     {%- assign way_index = forloop.index %}
     <section class="guide-howto" id="{{ w.id }}" aria-labelledby="{{ w.id }}-title">
@@ -126,12 +141,34 @@
       </dl>
     </section>
 
+    <section class="guide-block" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="guide__h2">{{ g.contact_title }}</h2>
+      <p class="guide-muted">{{ g.contact_intro }}</p>
+      <ul class="guide-contact">
+        <li>
+          <h3>{{ g.contact_discussions_title }}</h3>
+          <p>{{ g.contact_discussions_text }}</p>
+          <a class="link-arrow" href="{{ site.repository_url }}/discussions">{{ g.contact_discussions_cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+        </li>
+        <li>
+          <h3>{{ g.contact_email_title }}</h3>
+          <p>{{ g.contact_email_text }}</p>
+          <a class="link-arrow" href="mailto:{{ g.contact_email }}">{{ g.contact_email }}</a>
+        </li>
+        <li>
+          <h3>{{ g.contact_issue_title }}</h3>
+          <p>{{ g.contact_issue_text }}</p>
+          <a class="link-arrow" href="{{ site.repository_url }}/issues/new?template=correction.yml">{{ g.contact_issue_cta }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
+        </li>
+      </ul>
+    </section>
+
     <aside class="guide-together" aria-labelledby="together-title">
       <h2 id="together-title" class="guide__h2">{{ g.together_title }}</h2>
       <p>{{ g.together_text }}</p>
       <div class="actions">
         <a class="button button--dark" href="{{ site.repository_url }}"><svg aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>{{ g.cta_repo }}</a>
-        <a class="button button--outline" href="{{ site.repository_url }}/issues/new/choose">{{ g.cta_issue }}</a>
+        <a class="button button--outline" href="{{ site.repository_url }}/discussions/new?category=suggest-a-topic-thema-vorschlagen">{{ g.cta_issue }}</a>
         <a class="link-arrow" href="{{ site.repository_url }}/blob/main/CONTRIBUTING.md">{{ g.cta_guide }}<svg aria-hidden="true" focusable="false"><use href="#icon-arrow"/></svg></a>
       </div>
     </aside>

@@ -2297,3 +2297,14 @@ a.cite:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   .atmo-svg .label, .atmo-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
 }
+
+/* Contribute page: who can suggest topics, and how to reach us */
+.guide-hero__contact { margin-top: 12px; color: var(--on-dark-2); }
+.guide-hero__contact a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+.guide-audiences, .guide-contact { display: grid; gap: 16px; margin: 24px 0; padding: 0; list-style: none; }
+.guide-audiences { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.guide-contact { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.guide-audiences li, .guide-contact li { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+.guide-audiences h3, .guide-contact h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; }
+.guide-audiences p, .guide-contact p { margin: 0 0 12px; color: var(--ink-2); line-height: 1.55; }
+.guide-contact .link-arrow { color: var(--accent-ink); border-bottom-color: rgba(138, 90, 0, 0.35); overflow-wrap: anywhere; }

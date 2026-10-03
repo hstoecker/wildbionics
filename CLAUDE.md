@@ -40,7 +40,7 @@ The complete, current field list (incl. `short_title`, `description`, `image`/`i
 - [x] **Phase 3** – First flagship article with lens feature, JSON-LD, DOI sources; `llms.txt`.
 - [x] **Phase 4** – `graph.json` from front matter + interactive graph view (`/graph/`, `/de/wissensgraph/`).
 - [x] **Phase 5** – Contribution system & quality: plugin marketplace with skills and fact-checker agent, Claude review workflow, branch protection, contribute guides; tested code examples (Colab, downloads, run guide); mobile + accessibility pass; knowledge graph as JSON-LD with Wikidata links; figures as standalone SVG files; second article (gecko adhesion, EN + DE).
-- [ ] **Phase 6** – Content: from 2 to ~8 articles, each with ≥3 lenses and a passing fact check.
+- [ ] **Phase 6** – Content: from 2 to ~8 articles, each with ≥3 lenses and a passing fact check. Long-term goal: **a new page every day**, with topics suggested in GitHub Discussions by teachers, scientists, pupils, students and parents (see `wildbionics-contribute`).
   1. Bat echolocation – the home-page lens demo still has no article; include the first real Physical AI lens (sonar-guided robots/drones).
   2. Schrödinger's cat (quantum physics: superposition, measurement, decoherence) – the first **thought experiment**. It is presented as what it is: an imagined setup, not a real animal and not a biological finding.
   3. Then topics that spread across physics branches and habitats, e.g. lotus effect, kingfisher & Shinkansen, owl silent flight, termite mound, mantis shrimp eyes, spider silk. Add a Physical AI lens to the gecko (climbing robots).

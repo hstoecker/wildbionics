@@ -39,6 +39,17 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 - `.github/scripts/` – quality gates · `.github/workflows/` – CI, deploy, review
 - `plugins/wildbionics/` – this plugin (skills, agent) · `.claude-plugin/marketplace.json` – marketplace
 
+## Where topics come from
+
+The goal is **a new page every day**. Teachers, scientists, pupils, students and parents suggest
+what they are working on in the Discussions category *Suggest a topic · Thema vorschlagen* (form:
+kind, topic, why it fascinates, physics behind it, who suggests it, context, needed-by date,
+sources). When choosing the next article, prefer topics with a near *needed by* date (a lesson or
+project depends on it), many upvotes, a source, and a gap in the knowledge graph; link the
+discussion in the pull request and post the live page there once it is merged.
+Contact for people without GitHub: `contribute@wildbionics.com` (EN) and `mitmachen@wildbionics.com`
+(DE), both shown on `/contribute/`, `/de/mitmachen/` and in the footer.
+
 ## Workflow (humans and agents)
 
 1. **Pick or open an issue** (article idea, correction, translation, feature) so work is visible.

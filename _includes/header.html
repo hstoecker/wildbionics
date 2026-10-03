@@ -10,6 +10,7 @@
         <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
         <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
         <li><a href="{{ t.guide.url | relative_url }}"{% if page.ref == "guide" %} aria-current="page"{% endif %}>{{ t.nav.contribute }}</a></li>
+        <li><a href="{{ site.repository_url }}/discussions">{{ t.nav.discussions }}</a></li>
 {%- endcapture -%}
 <header class="site-header">
   <div class="container site-header__inner">
