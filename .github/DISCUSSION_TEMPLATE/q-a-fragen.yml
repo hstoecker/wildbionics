@@ -1,0 +1,17 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask anything about WildBionics, its science or how to contribute. Mark the answer that helped you most.
+        Frag, was du zu WildBionics, der Wissenschaft dahinter oder zum Mitmachen wissen willst. Markiere die Antwort, die dir am meisten geholfen hat.
+  - type: textarea
+    id: question
+    attributes:
+      label: "Your question · Deine Frage"
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: "Related page (optional) · Zugehörige Seite (optional)"
+      placeholder: "https://wildbionics.com/…"

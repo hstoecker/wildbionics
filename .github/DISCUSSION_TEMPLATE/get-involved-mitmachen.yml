@@ -1,0 +1,36 @@
+title: "Hello from "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Tell us a little about yourself and how you'd like to help – no experience with GitHub or coding needed.
+        Willkommen! Erzähl uns kurz von dir und wobei du helfen möchtest – Erfahrung mit GitHub oder Programmieren ist nicht nötig.
+  - type: textarea
+    id: about
+    attributes:
+      label: "About you · Über dich"
+      description: "Your background, interests, what you enjoy · Hintergrund, Interessen, was dir Spaß macht"
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: "How would you like to help? · Wobei möchtest du helfen?"
+      options:
+        - label: "Write or research articles · Artikel schreiben oder recherchieren"
+        - label: "Check facts and sources · Fakten und Quellen prüfen"
+        - label: "Translate (EN ⇄ DE or other languages) · Übersetzen (EN ⇄ DE oder andere Sprachen)"
+        - label: "Figures and illustrations · Abbildungen und Illustrationen"
+        - label: "Code examples · Code-Beispiele"
+        - label: "Website, design or accessibility · Website, Design oder Barrierefreiheit"
+        - label: "Tell others about WildBionics · Anderen von WildBionics erzählen"
+  - type: input
+    id: expertise
+    attributes:
+      label: "Field of expertise (optional) · Fachgebiet (optional)"
+      placeholder: "e.g. marine biology, physics teacher · z. B. Meeresbiologie, Physiklehrerin"
+  - type: input
+    id: languages
+    attributes:
+      label: "Languages you write in · Sprachen, in denen du schreibst"
+      placeholder: "e.g. English, Deutsch, Français"

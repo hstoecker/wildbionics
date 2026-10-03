@@ -1,0 +1,22 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Discuss the science behind an article or a phenomenon – questions, new findings, different interpretations. Please add sources where you can.
+        Diskutiere die Wissenschaft hinter einem Artikel oder Phänomen – Fragen, neue Erkenntnisse, andere Deutungen. Bitte nenne Quellen, wo es geht.
+  - type: input
+    id: topic
+    attributes:
+      label: "Article or topic · Artikel oder Thema"
+      placeholder: "e.g. https://wildbionics.com/articles/bat-echolocation/"
+  - type: textarea
+    id: thoughts
+    attributes:
+      label: "Your thoughts · Deine Gedanken"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: "Sources (optional) · Quellen (optional)"
+      description: "DOI or link · DOI oder Link"

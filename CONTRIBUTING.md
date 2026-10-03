@@ -6,6 +6,7 @@ same rules in [AGENTS.md](AGENTS.md) and in the skills under `plugins/wildbionic
 
 ## Ways to contribute
 
+- **Talk to us** – ask a question, suggest a topic or say hello in [Discussions](https://github.com/hstoecker/wildbionics/discussions) (English or German).
 - **Report** a mistake or propose a phenomenon – open an issue (templates provided).
 - **Write** an article or a new lens for an existing one.
 - **Translate** (German today, more languages welcome).
@@ -89,7 +90,7 @@ By contributing you agree that code is licensed MIT and content CC BY-SA 4.0.
 
 ## Deutsch – Kurzfassung
 
-Fehler melden oder Themen vorschlagen: Issue öffnen. Empfohlen: das Repository in Claude Code bzw.
+Fragen stellen, Themen vorschlagen oder Hallo sagen: in den [Discussions](https://github.com/hstoecker/wildbionics/discussions) (auf Deutsch oder Englisch). Fehler melden oder konkrete Arbeit festhalten: Issue öffnen. Empfohlen: das Repository in Claude Code bzw.
 auf [claude.ai/code](https://claude.ai/code) öffnen – die WildBionics-Skills laden automatisch; die
 Cloud-Umgebung braucht Network access *Custom* mit den Domains oben, die Umgebungsvariable
 `LANG=C.UTF-8` und das Setup-Skript oben. Nur für Friends & Family: im Issue oder Kommentar `@claude`

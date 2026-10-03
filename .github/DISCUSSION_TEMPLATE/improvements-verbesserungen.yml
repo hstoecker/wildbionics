@@ -1,0 +1,31 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas to make an article, figure or the website better. Found a clear factual error or a broken page? Please [open a correction issue](https://github.com/hstoecker/wildbionics/issues/new?template=correction.yml) instead – it gets fixed faster.
+        Ideen, wie ein Artikel, eine Abbildung oder die Website besser wird. Einen klaren Fehler oder eine kaputte Seite gefunden? Dann bitte [ein Korrektur-Issue öffnen](https://github.com/hstoecker/wildbionics/issues/new?template=correction.yml) – das wird schneller behoben.
+  - type: input
+    id: page
+    attributes:
+      label: "Page (URL) · Seite (URL)"
+      placeholder: "https://wildbionics.com/…"
+  - type: dropdown
+    id: area
+    attributes:
+      label: "What is it about? · Worum geht es?"
+      options:
+        - "Text or explanation · Text oder Erklärung"
+        - "Figure · Abbildung"
+        - "Code example · Code-Beispiel"
+        - "Translation · Übersetzung"
+        - "Knowledge graph · Wissensgraph"
+        - "Website, design or accessibility · Website, Design oder Barrierefreiheit"
+        - "Other · Sonstiges"
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: "Your idea · Deine Idee"
+    validations:
+      required: true
