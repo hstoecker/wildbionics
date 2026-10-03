@@ -3,7 +3,7 @@ layout: null
 sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- assign all = site.pages | concat: site.articles -%}
 {%- for p in all -%}
   {%- if p.lang == nil or p.sitemap == false -%}{%- continue -%}{%- endif -%}
@@ -20,6 +20,20 @@ sitemap: false
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ tr.url | absolute_url }}"/>
     {%- endif %}
     {%- endfor %}
+    {%- comment -%} Images on this page, so that image search finds them: preview card,
+      figures as standalone files (/figures/, _data/figures.yml) and code-example charts. {%- endcomment -%}
+    {%- if p.image %}
+    <image:image><image:loc>{{ p.image | absolute_url }}</image:loc></image:image>
+    {%- elsif p.ref == "home" %}
+    <image:image><image:loc>{{ '/assets/og/home-' | append: p.lang | append: '.jpg' | absolute_url }}</image:loc></image:image>
+    {%- endif %}
+    {%- for f in site.data.figures %}{% if f[1].page == p.ref %}
+    <image:image><image:loc>{{ '/figures/' | append: f[0] | append: '.' | append: p.lang | append: '.svg' | absolute_url }}</image:loc></image:image>
+    {%- endif %}{% endfor %}
+    {%- assign examples = site.data.code_examples[p.ref][p.lang] %}
+    {%- for e in examples %}{% if e[1].chart %}
+    <image:image><image:loc>{{ e[1].chart | absolute_url }}</image:loc></image:image>
+    {%- endif %}{% endfor %}
   </url>
 {%- endfor %}
 </urlset>
