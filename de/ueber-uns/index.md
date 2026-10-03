@@ -3,6 +3,7 @@ layout: page
 lang: de
 ref: about
 schema_type: AboutPage
+hero_mark: true
 title: "Über WildBionics"
 short_title: "Über uns"
 kicker: "Open Source · Über das Projekt"
