@@ -1079,8 +1079,10 @@ var {
 .claw-svg, .fig-svg { width: 100%; height: auto; overflow: visible; }
 
 .breadcrumb { margin-bottom: 28px; }
-.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 4px 0; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; }
 .breadcrumb li {
+  display: flex;
+  align-items: center;   /* phones: the link's 44 px tap padding must not push its text below the rest */
   color: var(--on-dark-2);
   font-family: var(--font-mono);
   font-size: 0.75rem;
