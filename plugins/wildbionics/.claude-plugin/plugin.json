@@ -1,6 +1,6 @@
 {
   "name": "wildbionics",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "description": "Contribute to wildbionics.com with Claude: write and fact-check articles, translate EN⇄DE with the project glossary, create figures that pass the quality bar, extend the knowledge graph, follow the UI/UX rules and review pull requests.",
   "author": {
     "name": "Hendrik Stöcker",

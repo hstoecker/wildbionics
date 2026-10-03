@@ -72,8 +72,11 @@ text.
   region and fall back to selecting the text; code that scrolls sideways gets `tabindex="0"`.
 - **Graph:** node names from the i18n templates `graph.node_name`/`node_name_dim` (no plural
   trouble: "connections: 3"), `aria-pressed` on pinnable nodes, an invisible tap circle of ≥ 44 px
-  on screen (`.node-hit`, excluded from the label-collision boxes), the info panel scrolls into
-  view on phones, and the no-JS list renders open.
+  on screen (`.node-hit`, excluded from the label-collision boxes), the info panel floats beside
+  the active node (towards the middle, never over the node or its label) and lets the pointer
+  through while hovering (`pointer-events: none`, `auto` once pinned) – otherwise it covers the
+  pointer, ends the hover and flickers; on phones it sits below the drawing and scrolls into view;
+  the no-JS list renders open.
 - SVG figures: `role="img"`, `aria-labelledby` → `<title>` and `aria-describedby` → `<desc>`, both in
   the page language.
 

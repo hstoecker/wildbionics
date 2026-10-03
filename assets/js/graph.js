@@ -24,7 +24,7 @@
   const LENGTH = { contains: 78, about: 120 };
   const ARTICLE_TERM = 210;
 
-  let data, nodes, edges, byId, layoutKind, pinned = null;
+  let data, nodes, edges, byId, layoutKind, pinned = null, shown = null;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const nameTpl = stage.dataset.nodeName || "%NAME% (%TYPE%), %N%";
   const nameDimTpl = stage.dataset.nodeNameDim || "%NAME%, %N%";
@@ -245,6 +245,7 @@
       e.line.setAttribute("x2", e.t.x.toFixed(1)); e.line.setAttribute("y2", e.t.y.toFixed(1));
     });
     nodes.forEach((n) => n.g.setAttribute("transform", `translate(${n.x.toFixed(1)} ${n.y.toFixed(1)})`));
+    placeInfo();   // follow a dragged node
   }
 
   function highlight(n) {
@@ -252,7 +253,7 @@
     const near = new Set(n ? [n, ...n.links] : []);
     nodes.forEach((m) => m.g.classList.toggle("is-active", near.has(m)));
     edges.forEach((e) => e.line.classList.toggle("is-active", !!n && (e.s === n || e.t === n)));
-    if (!n) { info.hidden = true; return; }
+    if (!n) { info.hidden = true; shown = null; return; }
     const label = n.label[lang] || n.label.en;
     const items = n.links.map((m) => {
       const l = m.label[lang] || m.label.en;
@@ -263,6 +264,32 @@
       (n.type === "article" ? `<p><a href="${esc(n.url[lang] || n.url.en)}">${esc(n.title[lang] || n.title.en)} →</a></p>` : "") +
       (items ? `<ul>${items}</ul>` : "");
     info.hidden = false;
+    info.classList.toggle("is-pinned", pinned === n);
+    shown = n;
+    placeInfo();
+  }
+
+  // The info panel floats beside the node, on the side towards the middle of the drawing, so it
+  // never covers the node or its label. While only hovering it lets the pointer through
+  // (CSS: pointer-events), otherwise covering the pointer would end the hover and make it flicker.
+  // On phones the panel sits below the drawing (static in CSS) and needs no position.
+  function placeInfo() {
+    if (!shown || info.hidden || !shown.g.isConnected) return;
+    if (getComputedStyle(info).position !== "absolute") return;
+    const canvas = info.offsetParent.getBoundingClientRect();
+    const node = visibleBox(shown.g);
+    const ctm = shown.g.getScreenCTM();
+    if (!ctm) return;
+    // node box in canvas pixels (circle + label)
+    const x0 = ctm.e + node.x * ctm.a - canvas.left, x1 = ctm.e + (node.x + node.width) * ctm.a - canvas.left;
+    const cy = ctm.f - canvas.top;
+    const w = info.offsetWidth, h = info.offsetHeight, gap = 16, edge = 8;
+    const right = (x0 + x1) / 2 < canvas.width / 2;
+    let left = right ? x1 + gap : x0 - gap - w;
+    left = Math.max(edge, Math.min(canvas.width - w - edge, left));
+    const top = Math.max(edge, Math.min(canvas.height - h - edge, cy - 28));
+    info.style.left = `${left.toFixed(0)}px`;
+    info.style.top = `${top.toFixed(0)}px`;
   }
 
   function enableDrag(n) {
