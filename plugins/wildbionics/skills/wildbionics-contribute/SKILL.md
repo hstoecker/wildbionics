@@ -42,6 +42,9 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 ## Workflow (humans and agents)
 
 1. **Pick or open an issue** (article idea, correction, translation, feature) so work is visible.
+   Open questions, topic suggestions and introductions belong in GitHub Discussions (bilingual
+   categories with forms in `.github/DISCUSSION_TEMPLATE/`); a discussion that turns into concrete
+   work becomes an issue.
 2. **Create a branch** (`article/<slug>`, `fix/<topic>`, …) – never commit to `main` directly.
 3. **Work with the matching skill.** Content changes follow the order research → English text →
    figures → German translation → knowledge-graph data.

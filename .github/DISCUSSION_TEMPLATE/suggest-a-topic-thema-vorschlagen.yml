@@ -1,0 +1,49 @@
+title: "[Topic] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest something nature does that physics can explain. Others can upvote your idea; popular, well-sourced ideas become articles.
+        Schlag etwas aus der Natur vor, das sich mit Physik erklären lässt. Andere können deine Idee unterstützen; beliebte, gut belegte Ideen werden zu Artikeln.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "What kind of topic? · Welche Art von Thema?"
+      options:
+        - "Animal · Tier"
+        - "Plant or fungus · Pflanze oder Pilz"
+        - "Microorganism · Mikroorganismus"
+        - "Phenomenon of the living or non-living planet · Phänomen der belebten oder unbelebten Erde"
+        - "Bionics, robots or Physical AI · Bionik, Roboter oder Physical AI"
+        - "Thought experiment · Gedankenexperiment"
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: "Topic · Thema"
+      placeholder: "e.g. How owls fly silently · z. B. Wie Eulen lautlos fliegen"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why is it fascinating? · Warum ist es spannend?"
+    validations:
+      required: true
+  - type: textarea
+    id: physics
+    attributes:
+      label: "Which physics or science is behind it? · Welche Physik oder Wissenschaft steckt dahinter?"
+      description: "e.g. acoustics, fluid dynamics, optics … – a guess is fine · z. B. Akustik, Strömungsmechanik, Optik … – eine Vermutung genügt"
+  - type: textarea
+    id: sources
+    attributes:
+      label: "Sources (optional) · Quellen (optional)"
+      description: "Scientific papers with DOI are best · Am besten Fachartikel mit DOI"
+  - type: checkboxes
+    id: help
+    attributes:
+      label: "Would you like to help? · Möchtest du mithelfen?"
+      options:
+        - label: "I'd like to help write or check this article · Ich helfe gern beim Schreiben oder Prüfen"
