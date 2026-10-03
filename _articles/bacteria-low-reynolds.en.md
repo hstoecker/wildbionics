@@ -160,7 +160,7 @@ This is the world of the overwhelming majority of organisms [1](#ref-1){:.cite}.
 
 ## A run and a tumble in three steps
 
-1. **Run.** Several thin, helical flagella rotate at about 100 revolutions per second [4](#ref-4){:.cite}. They bundle together and push the cell forward like a corkscrew, at typically 20–40 µm per second, for a second or two [1](#ref-1){:.cite} [5](#ref-5){:.cite}.
+1. **Run.** Several thin, helical flagella rotate at about 100 revolutions per second [4](#ref-4){:.cite}. They bundle together and push the cell forward like a corkscrew, at typically 20–40 µm per second, for a second or two [1](#ref-1){:.cite} [5](#ref-5){:.cite}.
 2. **Tumble.** One or more motors reverse, the flagella no longer turn together, and the cell tumbles in place. A single reversing flagellum can be enough to trigger a tumble [4](#ref-4){:.cite}.
 3. **New direction.** The cell sets off on a new run in a new direction. If things are getting better – more food – it runs longer before it tumbles again [1](#ref-1){:.cite}.
 
@@ -170,7 +170,7 @@ This is the world of the overwhelming majority of organisms [1](#ref-1){:.cite}.
 
 ## Biology lens: a rotary motor and a sense of smell
 
-*E. coli* is a rod-shaped bacterium about 2 µm long [1](#ref-1){:.cite}. It carries several flagella; each is several micrometres long but only about 20 nanometres thick [4](#ref-4){:.cite}. For a long time it was thought that such flagella wave like a tail. In 1973, Howard Berg and Robert Anderson argued that bacteria swim by **rotating** their flagellar filaments [5](#ref-5){:.cite}, and experiments soon confirmed it: when the hook at the base of a flagellum was glued to a microscope slide, the whole cell body rotated at constant speed [1](#ref-1){:.cite}. At the base of each flagellum sits a true rotary motor, and it can turn in both directions [1](#ref-1){:.cite}.
+*E. coli* is a rod-shaped bacterium about 2 µm long [1](#ref-1){:.cite}. It carries several flagella; each is several micrometres long but only about 20 nanometres thick [4](#ref-4){:.cite}. For a long time it was thought that such flagella wave like a tail. In 1973, Howard Berg and Robert Anderson argued that bacteria swim by **rotating** their flagellar filaments [5](#ref-5){:.cite}, and experiments soon confirmed it: when the hook at the base of a flagellum was glued to a microscope slide, the whole cell body rotated at constant speed [1](#ref-1){:.cite}. At the base of each flagellum sits a true rotary motor, and it can turn in both directions [1](#ref-1){:.cite}.
 
 The direction of the motors decides between running and tumbling. When the filaments are filmed in real time, tumbles turn out to be remarkably varied: not every flagellum has to reverse, and a tumble can result from the reversal of just one [4](#ref-4){:.cite}. During a tumble the filaments change their shape as well – they switch between different helical forms [4](#ref-4){:.cite}.
 
@@ -188,9 +188,9 @@ Whether a swimmer glides or stops at once is decided by a single dimensionless n
 
 <div class="formula" role="math" aria-label="Re equals rho times v times L divided by eta"><var>Re</var> = <span class="frac"><span class="frac__num"><var>ρ</var> · <var>v</var> · <var>L</var></span><span class="frac__den"><var>η</var></span></span></div>
 
-Here *ρ* is the density of the liquid, *η* its viscosity, *v* the speed of the swimmer and *L* its size. For *E. coli* – of the order of 1 µm in size, swimming at 30 µm/s in water – Purcell estimated **Re ≈ 3 × 10<sup>−5</sup>** [1](#ref-1){:.cite}. At such values the inertia terms of the Navier–Stokes equation can be dropped; what remains describes **Stokes flow**, and it has no memory [1](#ref-1){:.cite} [3](#ref-3){:.cite}.
+Here *ρ* is the density of the liquid, *η* its viscosity, *v* the speed of the swimmer and *L* its size. For *E. coli* – of the order of 1 µm in size, swimming at 30 µm/s in water – Purcell estimated **Re ≈ 3 × 10<sup>−5</sup>** [1](#ref-1){:.cite}. At such values the inertia terms of the Navier–Stokes equation can be dropped; what remains describes **Stokes flow**, and it has no memory [1](#ref-1){:.cite} [3](#ref-3){:.cite}.
 
-The program below calculates the Reynolds number for a few swimmers and asks the honey question: how close does a human in honey come to the world of a bacterium? Size, speed and the density of honey are **rough typical values** chosen for illustration; the viscosity of honey is the measured value for a runny rosemary honey at 30 °C [2](#ref-2){:.cite}, the viscosity of water 1 mPa·s [1](#ref-1){:.cite}.
+The program below calculates the Reynolds number for a few swimmers and asks the honey question: how close does a human in honey come to the world of a bacterium? Size, speed and the density of honey are **rough typical values** chosen for illustration; the viscosity of honey is the measured value for a runny rosemary honey at 30 °C [2](#ref-2){:.cite}, the viscosity of water 1 mPa·s [1](#ref-1){:.cite}.
 
 ```python
 import numpy as np
@@ -263,8 +263,8 @@ plt.show()
 What the result teaches:
 
 - **Honey alone is not enough.** A human swimming normally in honey still reaches Re ≈ 400 – inertia still matters. Only when the swimmer also slows down to 1 cm per minute, as in Purcell's rule, does the Reynolds number fall below 1 (0.07).
-- **The bacterium is in a world of its own.** At Re ≈ 6 × 10<sup>−5</sup> – twice Purcell's value, because the program uses the cell's length of 2 µm – *E. coli* lies more than a thousand times below even the slow human in honey. Our estimate for a swimming human, 2 × 10<sup>6</sup>, is higher than Purcell's rough value of 10<sup>4</sup> [1](#ref-1){:.cite}; what counts is the order of magnitude, and with a body length of 1.8 m and 1 m/s the formula gives millions.
-- **No coasting.** When its motor stops, the bacterium comes to rest within 0.2 µs and coasts 0.07 Å – a fraction of the width of an atom. Purcell gave the same order of magnitude: about 0.1 Å in well under a microsecond [1](#ref-1){:.cite}.
+- **The bacterium is in a world of its own.** At Re ≈ 6 × 10<sup>−5</sup> – twice Purcell's value, because the program uses the cell's length of 2 µm – *E. coli* lies more than a thousand times below even the slow human in honey. Our estimate for a swimming human, 2 × 10<sup>6</sup>, is higher than Purcell's rough value of 10<sup>4</sup> [1](#ref-1){:.cite}; what counts is the order of magnitude, and with a body length of 1.8 m and 1 m/s the formula gives millions.
+- **No coasting.** When its motor stops, the bacterium comes to rest within 0.2 µs and coasts 0.07 Å – a fraction of the width of an atom. Purcell gave the same order of magnitude: about 0.1 Å in well under a microsecond [1](#ref-1){:.cite}.
 
 Try it yourself:
 
@@ -276,7 +276,7 @@ Try it yourself:
 
 **The scallop theorem.** Because time drops out of Stokes flow, a swimmer that simply reverses its stroke goes nowhere. Purcell's example is a scallop: it opens its shell slowly and closes it fast, but with only one hinge it can only move back and forth – and at low Reynolds number it would end exactly where it started, however fast or slowly it moves [1](#ref-1){:.cite}. A microswimmer needs a motion that is not reversible: a **flexible oar** that bends one way on the stroke and the other way on the way back, or a **corkscrew** that keeps turning [1](#ref-1){:.cite}.
 
-**How a corkscrew pushes.** A viscous liquid resists a thin filament more strongly when it moves sideways than when it moves along its length [1](#ref-1){:.cite} [3](#ref-3){:.cite}. This difference turns rotation into thrust: a helix that is made to rotate necessarily translates, and a helix that is pulled along necessarily rotates [7](#ref-7){:.cite}. Purcell estimated that a sphere driven by such a helical propeller converts only about **1 %** of the motor's work into useful propulsion. For the bacterium it hardly matters: swimming at 30 µm/s costs it about 0.5 W per kilogram, a small fraction of its energy budget [1](#ref-1){:.cite}.
+**How a corkscrew pushes.** A viscous liquid resists a thin filament more strongly when it moves sideways than when it moves along its length [1](#ref-1){:.cite} [3](#ref-3){:.cite}. This difference turns rotation into thrust: a helix that is made to rotate necessarily translates, and a helix that is pulled along necessarily rotates [7](#ref-7){:.cite}. Purcell estimated that a sphere driven by such a helical propeller converts only about **1 %** of the motor's work into useful propulsion. For the bacterium it hardly matters: swimming at 30 µm/s costs it about 0.5 W per kilogram, a small fraction of its energy budget [1](#ref-1){:.cite}.
 
 {% include lens-end.html %}
 
@@ -284,17 +284,17 @@ Try it yourself:
 
 ## Mathematics lens: a random walk with a bias
 
-**Outrunning diffusion.** Food molecules spread by diffusion. In a time *t* they get about √(*D t*) far, where *D* is their diffusion constant – for typical small molecules in water about 10<sup>−5</sup> cm<sup>2</sup>/s, or 1,000 µm<sup>2</sup>/s [1](#ref-1){:.cite}. Swimming carries the cell a distance *ℓ* in a time *ℓ*/*v*; diffusion needs about *ℓ*<sup>2</sup>/*D*. Swimming wins only when
+**Outrunning diffusion.** Food molecules spread by diffusion. In a time *t* they get about √(*D t*) far, where *D* is their diffusion constant – for typical small molecules in water about 10<sup>−5</sup> cm<sup>2</sup>/s, or 1,000 µm<sup>2</sup>/s [1](#ref-1){:.cite}. Swimming carries the cell a distance *ℓ* in a time *ℓ*/*v*; diffusion needs about *ℓ*<sup>2</sup>/*D*. Swimming wins only when
 
 <div class="formula" role="math" aria-label="l is at least D divided by v"><var>ℓ</var> ≥ <span class="frac"><span class="frac__num"><var>D</var></span><span class="frac__den"><var>v</var></span></span></div>
 
-With *v* = 30 µm/s this gives about **30 µm** – roughly the length of a bacterial run. "If you don't swim that far, you haven't gone anywhere," as Purcell put it [1](#ref-1){:.cite}.
+With *v* = 30 µm/s this gives about **30 µm** – roughly the length of a bacterial run. "If you don't swim that far, you haven't gone anywhere," as Purcell put it [1](#ref-1){:.cite}.
 
 **A run-and-tumble walk spreads like diffusion.** Model the bacterium in two dimensions: it runs at speed *v*, each run lasts a random time with mean *τ*, and each tumble chooses a completely new direction. Run durations of this kind follow an exponential distribution, for which the mean square of the duration is 2*τ*<sup>2</sup>. One run therefore covers a mean square distance of 2*v*<sup>2</sup>*τ*<sup>2</sup>, and in a time *t* there are about *t*/*τ* independent runs:
 
 <div class="formula formula--steps"><span>⟨<var>r</var><sup>2</sup>⟩ ≈ (<var>t</var>/<var>τ</var>) · 2<var>v</var><sup>2</sup><var>τ</var><sup>2</sup> = 2<var>v</var><sup>2</sup><var>τ</var> <var>t</var></span><span>⟨<var>r</var><sup>2</sup>⟩ = 4<var>D</var><var>t</var> in 2D ⇒ <var>D</var> = <var>v</var><sup>2</sup><var>τ</var> / 2</span></div>
 
-With *v* = 20 µm/s and *τ* = 1 s, *D* = 200 µm<sup>2</sup>/s – a population of swimming bacteria spreads about five times more slowly than a small molecule diffuses.
+With *v* = 20 µm/s and *τ* = 1 s, *D* = 200 µm<sup>2</sup>/s – a population of swimming bacteria spreads about five times more slowly than a small molecule diffuses.
 
 **The bias.** Now let runs that point up the gradient (towards +*x*) last *b* times longer on average. After a tumble, the new direction points up the gradient with probability ½. Weighted by their duration, runs up the gradient take a fraction *b*/(1 + *b*) of the time, runs down the gradient 1/(1 + *b*). Averaged over all directions of one half, the component of the velocity along *x* is (2/π) *v*. The drift speed is therefore
 
@@ -308,7 +308,7 @@ For *b* = 2 – runs up the gradient last twice as long – the drift is (2/π) 
 
 ## Computer science lens: run and tumble as an algorithm
 
-The bacterium has no map and no brain. It cannot even sense in which direction the food lies – it only notices whether things are getting better over time. Its search algorithm fits in one line: **if things are getting better, don't stop so soon** [1](#ref-1){:.cite}. The program below simulates 2,000 bacteria with and without this rule. The speed of 20 µm/s lies in the range Berg measured [1](#ref-1){:.cite}; the mean run time of 1 s, the factor 2 for runs up the gradient and the completely random new direction after each tumble are **model assumptions**.
+The bacterium has no map and no brain. It cannot even sense in which direction the food lies – it only notices whether things are getting better over time. Its search algorithm fits in one line: **if things are getting better, don't stop so soon** [1](#ref-1){:.cite}. The program below simulates 2,000 bacteria with and without this rule. The speed of 20 µm/s lies in the range Berg measured [1](#ref-1){:.cite}; the mean run time of 1 s, the factor 2 for runs up the gradient and the completely random new direction after each tumble are **model assumptions**.
 
 ```python
 import numpy as np
@@ -386,14 +386,14 @@ plt.show()
 
 What the result teaches:
 
-- **The simulation agrees with the mathematics.** Without the rule, the bacteria spread with *D* ≈ 195 µm<sup>2</sup>/s; the formula *v*<sup>2</sup>*τ*/2 gives 200 µm<sup>2</sup>/s. With the rule, the population drifts at 4.3 µm/s; the formula of the mathematics lens gives 4.2 µm/s. The small differences are random and change with the seed.
-- **A weak bias is enough.** No single cell swims straight to the food; each path looks like a random zigzag. Yet the population drifts at about a fifth of the swimming speed and after 100 s is on average 416 µm further up the gradient.
-- **Only time is compared, not space.** The program never uses the direction of the gradient to steer – only to decide whether things are getting better. That is all a cell of 2 µm can measure.
+- **The simulation agrees with the mathematics.** Without the rule, the bacteria spread with *D* ≈ 195 µm<sup>2</sup>/s; the formula *v*<sup>2</sup>*τ*/2 gives 200 µm<sup>2</sup>/s. With the rule, the population drifts at 4.3 µm/s; the formula of the mathematics lens gives 4.2 µm/s. The small differences are random and change with the seed.
+- **A weak bias is enough.** No single cell swims straight to the food; each path looks like a random zigzag. Yet the population drifts at about a fifth of the swimming speed and after 100 s is on average 416 µm further up the gradient.
+- **Only time is compared, not space.** The program never uses the direction of the gradient to steer – only to decide whether things are getting better. That is all a cell of 2 µm can measure.
 
 Try it yourself:
 
-- Set `BOOST = 1.0`: the rule is switched off, the drift falls to 0.0 µm/s.
-- Set `BOOST = 4.0`: runs up the gradient last four times as long, and the drift rises to about 7.6 µm/s – the formula predicts 7.6 µm/s.
+- Set `BOOST = 1.0`: the rule is switched off, the drift falls to 0.0 µm/s.
+- Set `BOOST = 4.0`: runs up the gradient last four times as long, and the drift rises to about 7.6 µm/s – the formula predicts 7.6 µm/s.
 
 {% include code-variant.html file="run_and_tumble.py" id="off" replace="BOOST = 2.0 " with="BOOST = 1.0 " expect="0.0" %}
 {% include code-variant.html file="run_and_tumble.py" id="strong" replace="BOOST = 2.0 " with="BOOST = 4.0 " expect="7.6" %}
