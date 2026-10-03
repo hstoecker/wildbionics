@@ -68,6 +68,12 @@ terms:
   - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
   - { en: "Doppler shift", de: "Doppler-Verschiebung", de_alt: ["Dopplerverschiebung"] }
   - { en: "source level*", de: "Quellpegel" }
+  - { en: "inertia", de: "Trägheit*" }
+  - { en: "Froude number", de: "Froude-Zahl", avoid: ["Froudezahl", "Froude Zahl"], level: warn, why: "Schreibweise wie Reynolds-Zahl: mit Bindestrich." }
+  - { en: "Weber number*", de: "Weber-Zahl*" }
+  - { en: "scaling law*", de: "Skalierungsgesetz*" }
+  - { en: "capillary force*", de: "Kapillarkr*" }
+  - { en: "papilla*", de: "Papille*" }
   - { en: "angular momentum", de: "*drehimpuls*" }
   - { en: "moment* of inertia", de: "Trägheitsmoment*", avoid: ["Massenträgheitsmoment*"], level: warn, why: "Einheitlich Trägheitsmoment verwenden." }
   - { en: "torque", de: "Drehmoment*" }
