@@ -1,7 +1,8 @@
 {%- comment -%}
   Contact address without spam bait: the HTML (and the repository) never holds the address in one
-  piece. Without JavaScript readers see "contribute (at) wildbionics.com"; assets/js/nav.js turns
-  every [data-email] into a mailto link. Params: user (local part), class (optional, for the link).
+  piece. Without JavaScript readers see "contribute (at) wildbionics.com" (one click selects it all,
+  CSS user-select) plus a <noscript> hint how to write it; assets/js/email.js turns every
+  [data-email] into a mailto link. Params: user (local part), class (optional, for the link).
 {%- endcomment -%}
 {%- assign email_domain = site.url | remove: "https://" | remove: "http://" -%}
-<span data-email="{{ include.user }}" data-domain="{{ email_domain }}"{% if include.class %} data-class="{{ include.class }}"{% endif %}>{{ include.user }} (at) {{ email_domain }}</span>
+<span class="email-fallback" data-email="{{ include.user }}" data-domain="{{ email_domain }}"{% if include.class %} data-class="{{ include.class }}"{% endif %}>{{ include.user }} (at) {{ email_domain }}</span><noscript> <small class="email-hint">{{ t.footer.email_hint }}</small></noscript>

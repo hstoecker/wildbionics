@@ -2309,3 +2309,5 @@ a.cite:hover { text-decoration: underline; }
 .guide-audiences p, .guide-contact p { margin: 0 0 12px; color: var(--ink-2); line-height: 1.55; }
 .guide-contact .link-arrow { color: var(--accent-ink); border-bottom-color: rgba(138, 90, 0, 0.35); overflow-wrap: anywhere; }
 @media (min-width: 1000px) { .guide-audiences { grid-template-columns: repeat(3, minmax(0, 1fr)); } }   /* six audiences: 3 + 3 */
+.email-fallback { -webkit-user-select: all; user-select: all; }   /* no-JS address: one click selects it */
+.email-hint { color: inherit; font-size: 0.85em; opacity: 0.8; }
