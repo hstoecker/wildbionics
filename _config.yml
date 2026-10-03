@@ -4,6 +4,7 @@ url: "https://wildbionics.com"
 lang: en
 languages: [en, de]   # first entry lives at the site root
 repository_url: "https://github.com/hstoecker/wildbionics"
+contact_domain: "wildbionics.com"   # e-mail domain (_includes/email.html), independent of url
 
 # IndexNow (https://www.indexnow.org): the key is public by design and must be
 # served at /<key>.txt. The deploy workflow reads it from here.

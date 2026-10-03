@@ -13,7 +13,9 @@
         <ul>
           <li><a href="{{ t.guide.url | relative_url }}">{{ t.guide.title }}</a></li>
           <li><a href="{{ site.repository_url }}">{{ t.footer.repository }}</a></li>
+          <li><a href="{{ site.repository_url }}/discussions">{{ t.footer.discussions }}</a></li>
           <li><a href="{{ site.repository_url }}/issues">{{ t.footer.issues }}</a></li>
+          <li>{% include email.html user=t.footer.email_user %}</li>
         </ul>
       </nav>
       <nav aria-labelledby="footer-licenses">
