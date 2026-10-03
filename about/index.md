@@ -3,6 +3,7 @@ layout: page
 lang: en
 ref: about
 schema_type: AboutPage
+hero_mark: true
 title: "About WildBionics"
 short_title: "About"
 kicker: "Open source · About the project"
