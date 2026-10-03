@@ -33,15 +33,18 @@ text.
 ## Layout and responsiveness
 
 - Container `min(1200px, 100% − 2 × gutter)`, gutter 16–40 px; article text column 760 px.
-- Breakpoints: 1080 px (2-column cards), 920 px (single column; the main nav moves into the menu),
+- Breakpoints: 1080 px (2-column cards), 1060 px (the main nav moves into the menu – German needs
+  about 1012 px; re-measure in EN and DE when adding a nav item), 920 px (single column),
   640 px (graph page), 600 px (phone), 420 px (tighter header gaps), 389 px (menu button shows only
   its icon).
 - **Navigation on phones:** `_includes/header.html` writes the nav items once and renders them
-  twice – inline `site-nav` (desktop) and the `menu` disclosure (≤ 920 px, a `<details>` element,
+  twice – inline `site-nav` (desktop) and the `menu` disclosure (≤ 1060 px, a `<details>` element,
   so it works without JavaScript; `assets/js/nav.js` closes it on link click, Escape and outside
   tap). The GitHub link moves into the menu on phones. Never hide navigation without a
-  replacement; new top-level pages are added to `nav_items` only.
-- No horizontal scrolling from 320 px (WCAG reflow) – check 320, 390 and 920 px; tap targets ≥ 44 px
+  replacement; new top-level pages are added to `nav_items` only. A nav item that leaves the site (Discussions
+  on GitHub) shows `↗` (`.nav-external`, `aria-hidden`) plus the visually hidden `nav.external`
+  ("(on GitHub)"), so sighted and screen-reader users both know before they click.
+- No horizontal scrolling from 320 px (WCAG reflow) – check 320, 390, 920 and 1061 px; tap targets ≥ 44 px
   on phones (language switch, copy buttons, pills, chips, footer and breadcrumb links – see the
   600 px block);
   labels in SVGs enlarged on phones; long German compounds need `hyphens: auto` plus

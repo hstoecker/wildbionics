@@ -1,6 +1,6 @@
 {%- comment -%}
   Site header. The nav items are written once and used twice: as the inline main nav (desktop)
-  and inside the menu disclosure (≤ 920 px). The menu is a <details> element, so it opens and
+  and inside the menu disclosure (≤ 1060 px). The menu is a <details> element, so it opens and
   closes without JavaScript; assets/js/nav.js only adds closing on link click, Escape and
   outside click.
 {%- endcomment -%}
@@ -10,6 +10,7 @@
         <li><a href="{{ home_url | relative_url }}#lens">{{ t.nav.lens }}</a></li>
         <li><a href="{{ home_url | relative_url }}#dimensions">{{ t.nav.dimensions }}</a></li>
         <li><a href="{{ t.guide.url | relative_url }}"{% if page.ref == "guide" %} aria-current="page"{% endif %}>{{ t.nav.contribute }}</a></li>
+        <li><a href="{{ site.repository_url }}/discussions">{{ t.nav.discussions }}<span class="nav-external" aria-hidden="true">↗</span><span class="visually-hidden"> {{ t.nav.external }}</span></a></li>
 {%- endcapture -%}
 <header class="site-header">
   <div class="container site-header__inner">

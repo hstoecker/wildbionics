@@ -36,6 +36,30 @@ body:
     attributes:
       label: "Which physics or science is behind it? · Welche Physik oder Wissenschaft steckt dahinter?"
       description: "e.g. acoustics, fluid dynamics, optics … – a guess is fine · z. B. Akustik, Strömungsmechanik, Optik … – eine Vermutung genügt"
+  - type: dropdown
+    id: who
+    attributes:
+      label: "Who are you? (optional) · Wer bist du? (optional)"
+      options:
+        - "Teacher · Lehrkraft"
+        - "Scientist · Forschende"
+        - "Pupil · Schülerinnen und Schüler"
+        - "Student · Studierende"
+        - "Parent · Elternteil"
+        - "Science fan or just curious · Wissenschaftsbegeistert oder einfach neugierig"
+        - "Other · Sonstiges"
+  - type: input
+    id: context
+    attributes:
+      label: "Context (optional) · Zusammenhang (optional)"
+      description: "Lesson, course, project or research? · Unterricht, Kurs, Projekt oder Forschung?"
+      placeholder: "e.g. physics class 9, topic sound · z. B. Physik Klasse 9, Thema Schall"
+  - type: input
+    id: needed_by
+    attributes:
+      label: "Needed by (optional) · Gebraucht bis (optional)"
+      description: "Date as YYYY-MM-DD, e.g. for a lesson or project · Datum als JJJJ-MM-TT, z. B. für eine Unterrichtsstunde oder ein Projekt"
+      placeholder: "YYYY-MM-DD · JJJJ-MM-TT"
   - type: textarea
     id: sources
     attributes:

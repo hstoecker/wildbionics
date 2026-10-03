@@ -39,6 +39,23 @@ short version for other AI agents; `CONTRIBUTING.md` is the human guide.
 - `.github/scripts/` – quality gates · `.github/workflows/` – CI, deploy, review
 - `plugins/wildbionics/` – this plugin (skills, agent) · `.claude-plugin/marketplace.json` – marketplace
 
+## Where topics come from
+
+The goal is **a new page every day**. Teachers, scientists, pupils, students, parents, science fans and the curious suggest
+what they are working on in the Discussions category *Suggest a topic · Thema vorschlagen* (form:
+kind, topic, why it fascinates, physics behind it, who suggests it, context, needed-by date,
+sources). When choosing the next article, prefer topics with a near *needed by* date (a lesson or
+project depends on it), many upvotes, a source, and a gap in the knowledge graph; link the
+discussion in the pull request and post the live page there once it is merged. The *needed by*
+field is free text, because GitHub forms have no date field: read it leniently and ask back in
+the discussion if it is unclear.
+Contact for people without GitHub: *contribute (at) wildbionics.com* (EN) and *mitmachen (at)
+wildbionics.com* (DE), shown on `/contribute/`, `/de/mitmachen/` and in the footer. Against spam,
+never write an address in one piece – not in HTML, `_data/i18n.yml` or docs: store only the local
+part (`footer.email_user`; the domain is `contact_domain` in `_config.yml`) and render it with `{% include email.html user=… %}`; `assets/js/email.js`
+builds the mailto link in the browser; without JavaScript readers see "… (at) wildbionics.com",
+selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to replace (at) with @.
+
 ## Workflow (humans and agents)
 
 1. **Pick or open an issue** (article idea, correction, translation, feature) so work is visible.
