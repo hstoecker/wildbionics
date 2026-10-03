@@ -3,12 +3,14 @@ layout: default
 ---
 {%- comment -%}
   Plain text page (e.g. /run-code/): article header and prose column without lenses, key facts or
-  sources. Front matter: title, kicker, dek (optional, default: description), lang, ref, permalink.
+  sources. Front matter: title, kicker, dek (optional, default: description), lang, ref, permalink,
+  hero_mark (optional, true: the bee mark large on the right of the header, e.g. /about/).
 {%- endcomment -%}
 {%- include i18n.html -%}
 <article class="article">
   <header class="article-header article-header--page">
-    <div class="container">
+    <div class="container{% if page.hero_mark %} page-hero{% endif %}">
+      <div class="page-hero__copy">
       <nav class="breadcrumb" aria-label="{{ t.article.breadcrumb }}">
         <ol>
           <li><a href="{{ home_url | relative_url }}">{{ site.title }}</a></li>
@@ -18,6 +20,10 @@ layout: default
       {%- if page.kicker %}<p class="eyebrow">{{ page.kicker }}</p>{% endif %}
       <h1 class="article-header__title">{{ page.title }}</h1>
       <p class="article-header__dek">{{ page.dek | default: page.description }}</p>
+      </div>
+      {%- if page.hero_mark %}
+      <svg class="page-hero__mark" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+      {%- endif %}
     </div>
   </header>
   <div class="article-body">
