@@ -33,9 +33,9 @@ beings: ["european-robin"]
 lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "Rotkehlchen haben einen **Magnetkompass, der die Inklination liest** – den Winkel, unter dem die Feldlinien in den Boden tauchen –, nicht die Polarität des Feldes [2](#ref-2){:.cite}."
-  - "Der Kompass arbeitet offenbar über die Augen: Rotkehlchen mit einer Läsion in Cluster N, einer lichtverarbeitenden Hirnregion, verlieren die magnetische Orientierung, behalten aber Sonnen- und Sternenkompass [7](#ref-7){:.cite}."
+  - "Der Kompass arbeitet offenbar über die Augen: Rotkehlchen mit beidseitigen Läsionen in Cluster N, einer lichtverarbeitenden Hirnregion, verlieren die magnetische Orientierung, behalten aber Sonnen- und Sternenkompass [7](#ref-7){:.cite}."
   - "Die führende Hypothese ist ein **Quanteneffekt**: Licht erzeugt Radikalpaare in Cryptochrom-Proteinen der Netzhaut, und das Erdmagnetfeld (etwa 50 µT) verändert, wie sich ihre Elektronenspins entwickeln [4](#ref-4){:.cite} [3](#ref-3){:.cite}."
-  - "Schwache Hochfrequenzfelder bringen Rotkehlchen aus der Richtung – auch das elektromagnetische Rauschen einer Stadt [6](#ref-6){:.cite} [9](#ref-9){:.cite}."
+  - "Hochfrequenzfelder bringen Rotkehlchen aus der Richtung – auch das elektromagnetische Rauschen einer Stadt [6](#ref-6){:.cite} [9](#ref-9){:.cite}."
   - "Cryptochrom 4 des Rotkehlchens ist im Reagenzglas magnetisch empfindlich, stärker als dasselbe Protein von Huhn oder Taube [1](#ref-1){:.cite}."
 faq:
   - q: "Wie finden Rotkehlchen ihren Weg beim Vogelzug?"
@@ -146,7 +146,7 @@ Wie spürt ein Vogel ein Feld, das so schwach ist wie das der Erde, etwa 50 Mikr
 
 ## Biologie-Linse: ein Kompass, der über die Augen arbeitet
 
-Lange konkurrierten zwei Mechanismen: winzige eisenhaltige Teilchen (Magnetit) im Schnabel oder eine magnetisch empfindliche chemische Reaktion im Auge [6](#ref-6){:.cite} [7](#ref-7){:.cite}. Versuche mit Rotkehlchen wiesen auf das Auge. Manuela Zapka und Kollegen fanden, dass Rotkehlchen mit Läsionen in **Cluster N**, einer nachtaktiven, lichtverarbeitenden Region des Vorderhirns, sich nicht mehr mit ihrem Magnetkompass orientieren konnten – Sonnen- und Sternenkompass funktionierten aber weiter. Den Augenast des Trigeminusnervs zu durchtrennen, der den Schnabel mit dem Gehirn verbindet, beeinflusste den Magnetkompass dagegen nicht [7](#ref-7){:.cite}. Laut den Autoren deuten die Daten stark darauf hin, dass der Magnetkompass des Rotkehlchens über das Sehen vermittelt wird [7](#ref-7){:.cite}.
+Lange konkurrierten zwei Mechanismen: winzige eisenhaltige Teilchen (Magnetit) im Schnabel oder eine magnetisch empfindliche chemische Reaktion im Auge [6](#ref-6){:.cite} [7](#ref-7){:.cite}. Versuche mit Rotkehlchen wiesen auf das Auge. Manuela Zapka und Kollegen fanden, dass Rotkehlchen mit beidseitigen Läsionen in **Cluster N**, einer nachtaktiven, lichtverarbeitenden Region des Vorderhirns, sich nicht mehr mit ihrem Magnetkompass orientieren konnten – Sonnen- und Sternenkompass funktionierten aber weiter. Den Augenast des Trigeminusnervs zu durchtrennen, der den Schnabel mit dem Gehirn verbindet, beeinflusste den Magnetkompass dagegen nicht [7](#ref-7){:.cite}. Laut den Autoren deuten die Daten stark darauf hin, dass der Magnetkompass des Rotkehlchens über das Sehen vermittelt wird [7](#ref-7){:.cite}.
 
 Nach der führenden Hypothese ist das Sensormolekül Cryptochrom. Jingjing Xu und Kollegen stellten **Cryptochrom 4** des Rotkehlchens her und zeigten, dass seine Photochemie im Reagenzglas magnetisch empfindlich ist – stärker als bei Cryptochrom 4 zweier Vögel, die nicht ziehen, Huhn und Taube. Mutationen zeigten, dass vier aufeinanderfolgende Radikalpaare im Protein beteiligt sind, jeweils aus einem Flavin und einem Tryptophan [1](#ref-1){:.cite}.
 
@@ -158,11 +158,11 @@ Die Welt des Rotkehlchens ist nicht nur magnetisch, sondern auch akustisch. In S
 
 ## Physik-Linse: Spins, die ein schwaches Feld spüren
 
-Ein Elektron verhält sich wie ein winziger Magnet; seine magnetische Eigenschaft heißt **Spin**. Im Erdmagnetfeld von etwa 50 µT [3](#ref-3){:.cite} ist die magnetische Energie eines Elektronenspins extrem klein – etwa das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie eines Moleküls bei Körpertemperatur, wie die Informatik-Linse berechnet. Ein Sensor, der darauf beruhte, dass sich Spins im thermischen Gleichgewicht ausrichten, gäbe nur ein extrem schwaches Signal.
+Ein Elektron verhält sich wie ein winziger Magnet; seine magnetische Eigenschaft heißt **Spin**. Im Erdmagnetfeld von etwa 50 µT [3](#ref-3){:.cite} ist der Abstand zwischen den beiden magnetischen Energieniveaus eines Elektronenspins – die Zeeman-Aufspaltung – extrem klein: etwa das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie eines Moleküls bei Körpertemperatur, wie die Informatik-Linse berechnet. Ein Sensor, der darauf beruhte, dass sich Spins im thermischen Gleichgewicht ausrichten, gäbe nur ein extrem schwaches Signal.
 
 Das Radikalpaar-Modell braucht kein thermisches Gleichgewicht. Licht erzeugt das Paar, und entscheidend ist, wie das Feld die **Spindynamik** während des kurzen Lebens des Paares verändert – die Simulation in der Informatik-Linse enthält überhaupt keine Temperatur, und trotzdem verändert das Feld das Ergebnis. Theoretische Arbeiten zeigten, dass Felder von der Stärke des Erdfelds die Reaktionsausbeute verändern können und dass diese Änderung davon abhängt, wie das Radikalpaar zum Feld ausgerichtet ist – wenn die Kopplung eines Elektrons an benachbarte Kernspins, die Hyperfeinkopplung, anisotrop ist [5](#ref-5){:.cite}. Im Labor zeigte ein künstliches Molekül aus einem Carotinoid, einem Porphyrin und einem Fulleren genau das: Die Lebensdauer seines Radikalpaars änderte sich in Feldern von 50 µT oder weniger, und die Antwort hing von der Richtung des Feldes ab [3](#ref-3){:.cite}.
 
-**Ein Test mit Radiowellen.** Beruht der Kompass auf Spins, sollten schwingende Magnetfelder bei den passenden Frequenzen ihn stören. Thorsten Ritz und Kollegen setzten Rotkehlchen schwachen Hochfrequenzfeldern aus: Ein Breitbandfeld (0,1–10 MHz) oder ein 7-MHz-Feld brachten die Vögel aus der Richtung. Beim 7-MHz-Feld hing der Effekt vom Winkel ab: parallel zum Erdfeld orientierten sich die Vögel normal, unter 24° oder 48° waren sie desorientiert – passend zu einer Resonanz auf den Übergängen zwischen Singulett- und Triplett-Zuständen [6](#ref-6){:.cite}. Im Erdfeld präzediert ein Elektronenspin mit etwa 1,4 MHz – innerhalb des breitbandigen Bereichs, der die Vögel störte, aber unterhalb der getesteten Einzelfrequenz von 7 MHz; dass beides zusammenhängt, ist unsere Schlussfolgerung, kein Ergebnis der Studie.
+**Ein Test mit Radiowellen.** Beruht der Kompass auf Spins, sollten schwingende Magnetfelder bei den passenden Frequenzen ihn stören. Thorsten Ritz und Kollegen setzten Rotkehlchen Hochfrequenzfeldern aus: Ein senkrecht ausgerichtetes Breitbandfeld (0,1–10 MHz) oder ein 7-MHz-Feld brachten die Vögel aus der Richtung. Beim 7-MHz-Feld hing der Effekt vom Winkel ab: parallel zum Erdfeld orientierten sich die Vögel normal, unter 24° oder 48° waren sie desorientiert – passend zu einer Resonanz auf den Übergängen zwischen Singulett- und Triplett-Zuständen [6](#ref-6){:.cite}. Im Erdfeld präzediert ein Elektronenspin mit etwa 1,4 MHz – innerhalb des breitbandigen Bereichs, der die Vögel störte, aber unterhalb der getesteten Einzelfrequenz von 7 MHz; dass beides zusammenhängt, ist unsere Schlussfolgerung, kein Ergebnis der Studie.
 
 **Stadtrauschen.** Svenja Engels und Kollegen fanden, dass Rotkehlchen ihren Magnetkompass in nicht abgeschirmten Holzhütten auf dem Gelände der Universität Oldenburg nicht nutzen konnten. In Hütten mit geerdeter Aluminium-Abschirmung, die das elektromagnetische Rauschen zwischen 50 kHz und 5 MHz um etwa zwei Größenordnungen schwächte, orientierten sich die Vögel wieder – und verloren die Orientierung, sobald die Erdung entfernt oder Rauschen erzeugt wurde. Die Versuche waren vollständig doppelt verblindet [9](#ref-9){:.cite}.
 
@@ -208,9 +208,9 @@ HYPERFINE = 1.0e-3        # axiale Hyperfeinkopplung von Elektron 1 an einen Ker
 ANISOTROPY = (0.0, 0.0, 1.0)   # Hyperfeintensor diag(x, y, z) in Einheiten von HYPERFINE: rein axial
 LIFETIME = 1e-6           # Lebensdauer des Radikalpaars (s); Reaktionsrate k = 1/LIFETIME
 
-# Warum das erstaunt: magnetische Energie eines Elektronenspins im Erdfeld gegen Wärme
+# Warum das erstaunt: Zeeman-Aufspaltung eines Elektronenspins im Erdfeld gegen Wärme
 zeeman = 2 * MU_B * B_EARTH
-print(f"magnetische Energie / Wärmeenergie bei 37 °C: {zeeman / (K_B * 310):.0e}")
+print(f"Zeeman-Aufspaltung / Wärmeenergie bei 37 °C: {zeeman / (K_B * 310):.0e}")
 print(f"Elektronenspins präzedieren im Erdfeld mit {GAMMA_E * B_EARTH / (2 * np.pi) / 1e6:.1f} MHz")
 
 # Spinoperatoren für Spin 1/2, kombiniert für Elektron 1, Elektron 2 und den Kern (8 Zustände)
@@ -242,7 +242,7 @@ angles = np.radians(np.linspace(0, 180, 181))
 yields = np.array([singlet_yield(a) for a in angles])
 print(f"Singulett-Ausbeute: {yields[0]:.4f} längs der Feldachse, {yields[90]:.4f} quer dazu")
 print(f"Kompass-Signal (max − min): {100 * (yields.max() - yields.min()):.2f} % aller Paare")
-print(f"Nord und Süd sehen gleich aus – Ausbeute bei θ gleich der bei 180° − θ auf 12 Stellen: "
+print(f"Nord und Süd sehen gleich aus – Ausbeute bei θ gleich der bei 180° − θ bis auf 1e-12: "
       f"{np.allclose(yields, yields[::-1], rtol=0, atol=1e-12)}")
 
 plt.rcParams["font.size"] = 13      # große Schrift: das Diagramm bleibt auf dem Handy lesbar
@@ -259,9 +259,9 @@ plt.show()
 
 Was das Ergebnis zeigt:
 
-- **Winzige Energie, deutliches Signal.** Die magnetische Energie beträgt nur das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie, und doch ändert sich die Singulett-Ausbeute von 50 % (Feld längs der Molekülachse) auf 25,6 % (quer dazu): Das Kompass-Signal beträgt in diesem idealisierten Modell 24 % aller Paare. Spindynamik, nicht Gleichgewicht, macht das möglich.
-- **Nord und Süd sehen gleich aus.** Die Ausbeute bei θ ist auf zwölf Stellen gleich der bei 180° − θ – der simulierte Sensor liest die Achse des Feldes, genau wie der Inklinationskompass des Rotkehlchens [2](#ref-2){:.cite}.
-- **Die richtige Zeitskala.** Die Spins präzedieren mit 1,4 MHz; ein Paar, das 1 µs lebt, hat Zeit für etwa eine Umdrehung. Das passt zu dem Befund, dass Hochfrequenzfelder im Megahertzbereich Rotkehlchen aus der Richtung bringen [6](#ref-6){:.cite}.
+- **Winzige Energie, deutliches Signal.** Die Zeeman-Aufspaltung beträgt nur das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie, und doch ändert sich die Singulett-Ausbeute von 50 % (Feld längs der Molekülachse) auf 25,6 % (quer dazu): Das Kompass-Signal beträgt in diesem idealisierten Modell 24 % aller Paare. Spindynamik, nicht Gleichgewicht, macht das möglich.
+- **Nord und Süd sehen gleich aus.** Die Ausbeute bei θ ist bis auf 10<sup>−12</sup> gleich der bei 180° − θ – der simulierte Sensor liest die Achse des Feldes, genau wie der Inklinationskompass des Rotkehlchens [2](#ref-2){:.cite}.
+- **Die richtige Zeitskala.** Die Spins präzedieren mit 1,4 MHz; ein Paar, das 1 µs lebt, hat Zeit für etwa eine Umdrehung. Nach unserer Lesart passt das zu dem Befund, dass Hochfrequenzfelder im Megahertzbereich Rotkehlchen aus der Richtung bringen [6](#ref-6){:.cite}.
 
 Probier es selbst:
 
@@ -277,7 +277,7 @@ Probier es selbst:
 
 ## Physical-AI-Linse: Quantensensoren und ein Kompass aus Molekülen
 
-In der Physical AI geht es um Maschinen, die in der echten Welt wahrnehmen und handeln. Stimmt die führende Hypothese, wäre der Kompass des Rotkehlchens ein **Quantensensor**, gewachsen durch die Evolution: ein System, dessen Quantenzustände auf die gemessene Größe reagieren. In der Quantensensorik, einem wachsenden Feld der Präzisionsmessung, besteht der arbeitende Teil des Sensors aus einem oder wenigen Qubits – Quantensystemen, die auf Empfindlichkeit zugeschnitten sind [10](#ref-10){:.cite}.
+In der Physical AI geht es um Maschinen, die in der echten Welt wahrnehmen und handeln. Stimmt die führende Hypothese, wäre der Kompass des Rotkehlchens ein **Quantensensor**, gewachsen durch die Evolution: ein System, dessen Quantenzustände auf die gemessene Größe reagieren. In der Quantensensorik, einem wachsenden Feld der Präzisionsmessung, besteht der arbeitende Teil des Sensors aus einem oder wenigen Qubits, und Ressourcen wie Verschränkung werden auf maximale Empfindlichkeit zugeschnitten [10](#ref-10){:.cite}.
 
 Die chemische Seite ist bereits im Labor. Das Carotinoid-Porphyrin-Fulleren-Molekül von Kiminori Maeda und Kollegen zeigte, dass ein künstliches Radikalpaar auf Felder so schwach wie das der Erde und auf deren Richtung reagieren kann – die Machbarkeit eines chemischen Kompasses und ein Hinweis darauf, welche Konstruktionsmerkmale ein solcher Sensor braucht [3](#ref-3){:.cite}.
 
@@ -287,4 +287,4 @@ Das Rotkehlchen zeigt auch eine Lehre für die Konstruktion. Sein Kompass ist ke
 
 ## Offene Fragen
 
-Der Radikalpaar-Kompass ist die führende Hypothese; laut der Übersicht von Hore und Mouritsen aus dem Jahr 2016 war der grundlegende Sinnesmechanismus noch ungeklärt [4](#ref-4){:.cite}. Zu den offenen Fragen gehört, welches Radikalpaar in welchem Cryptochrom im lebenden Vogel das Signal trägt [1](#ref-1){:.cite}, und wie aus einer chemischen Ausbeute eine Richtung wird, die der Vogel nutzen kann. Das Rotkehlchen, ein vertrauter Gartenvogel, hütet ein offenes Rätsel der Sinnesbiologie – und eine mögliche Verbindung zwischen Quantenphysik und dem Verhalten eines ganzen Tieres.
+Der Radikalpaar-Kompass ist die führende Hypothese; laut der Übersicht von Hore und Mouritsen aus dem Jahr 2016 war der grundlegende Sinnesmechanismus noch ungeklärt [4](#ref-4){:.cite}. Aus unserer Sicht stechen zwei Fragen hervor: welches Radikalpaar in welchem Cryptochrom im lebenden Vogel das Signal tragen würde – Xu und Kollegen beschreiben mögliche Signalzustände im Protein [1](#ref-1){:.cite} – und wie aus einer chemischen Ausbeute eine Richtung würde, die der Vogel nutzen kann. Das Rotkehlchen, ein vertrauter Gartenvogel, hütet ein offenes Rätsel der Sinnesbiologie – und eine mögliche Verbindung zwischen Quantenphysik und dem Verhalten eines ganzen Tieres.
