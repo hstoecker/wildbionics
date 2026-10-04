@@ -136,9 +136,10 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   lives once in `_includes/sprite.svg` (`#logo-mark`: hexagon and wings in `currentColor`,
   `--accent`, `--night`; stripes are arc paths, no `clipPath`, so it renders inside `<use>`), used
   by header, footer, `og-card.html` and – large, on the right of the page header – pages with
-  `hero_mark: true` (`_layouts/page.html`, e.g. `/about/`; hidden ≤ 760 px). Sizes: header 44 px with a 1.9 rem wordmark (phones ≤ 600 px:
-  38 px, wordmark 1.35 rem; ≤ 389 px 36 px, 1.1 rem), footer 30 px, OG card 40 px. Header gaps
-  tighten at ≤ 460 px so brand, language switch and menu fit down to 320 px. `assets/favicon.svg` is the same mark on a night tile (rx 7).
+  `hero_mark: true` (`_layouts/page.html`, e.g. `/about/`; hidden ≤ 760 px). Sizes: header 44 px
+  with a 1.9 rem wordmark (phones ≤ 600 px: 38 px, wordmark 1.35 rem; ≤ 389 px 36 px, 1.1 rem),
+  footer 30 px, OG card 40 px. Header gaps tighten at ≤ 460 px so brand, language switch and menu
+  fit down to 320 px. `assets/favicon.svg` is the same mark on a night tile (rx 7).
 - **Raster files** (render `favicon.svg` at 512 px with `shots.sh`, downscale with PIL – no new tools):
   `/favicon.ico` (16/32/48 px, rounded tile), `assets/favicon-192.png` and
   `assets/apple-touch-icon.png` (180 px) full-bleed square (Google crops favicons round, iOS rounds

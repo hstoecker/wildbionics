@@ -25,9 +25,15 @@ langs = YAML.load_file("_config.yml").fetch("languages")
 
 # "Stoßwelle*" → /(?<![\p{L}\p{N}])Stoßwelle\p{L}*(?![\p{L}\p{N}])/i
 # A leading * allows German compounds: "*schere*" matches "Knallschere", "Greifscheren".
-def term_regex(term)
+# Compiled once per term: building a case-insensitive Unicode regex is expensive (the case-fold
+# tables are rebuilt each time), and the checks below ask for the same terms thousands of times.
+TERM_REGEX = Hash.new do |cache, term|
   body = term.split("*", -1).map { |part| Regexp.escape(part).gsub("\\ ", "\\s+") }.join("\\p{L}*")
-  Regexp.new("(?<![\\p{L}\\p{N}])#{body}(?![\\p{L}\\p{N}])", Regexp::IGNORECASE)
+  cache[term] = Regexp.new("(?<![\\p{L}\\p{N}])#{body}(?![\\p{L}\\p{N}])", Regexp::IGNORECASE)
+end
+
+def term_regex(term)
+  TERM_REGEX[term]
 end
 
 # Front matter + body of a Markdown file.
