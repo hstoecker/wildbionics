@@ -64,9 +64,12 @@ def main(ref):
                 f"---\nlayout: null\npermalink: /og-tmp/{lang}.html\nlang: {lang}\nsitemap: false\n---\n"
                 f"{{% include og-card.html {args} %}}\n", encoding="utf-8")
             cards.append((lang, ROOT / fm["image"].lstrip("/")))
-        subprocess.run(["bundle", "exec", "jekyll", "build", "-q"], cwd=ROOT, check=True)
-        handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT / "_site"))
-        handler.log_message = lambda *a: None
+        subprocess.run(["bundle", "exec", "jekyll", "build", "-q"], cwd=ROOT, check=True,
+                       stderr=subprocess.DEVNULL)          # drops the harmless faraday notice
+        class Quiet(http.server.SimpleHTTPRequestHandler):
+            def log_message(self, *args):      # no request log on the terminal
+                pass
+        handler = functools.partial(Quiet, directory=str(ROOT / "_site"))
         with socket.socket() as s:
             s.bind(("127.0.0.1", 0))
             port = s.getsockname()[1]
