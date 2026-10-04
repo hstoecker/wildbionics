@@ -18,9 +18,9 @@ HYPERFINE = 1.0e-3        # axiale Hyperfeinkopplung von Elektron 1 an einen Ker
 ANISOTROPY = (0.0, 0.0, 1.0)   # Hyperfeintensor diag(x, y, z) in Einheiten von HYPERFINE: rein axial
 LIFETIME = 1e-6           # Lebensdauer des Radikalpaars (s); Reaktionsrate k = 1/LIFETIME
 
-# Warum das erstaunt: magnetische Energie eines Elektronenspins im Erdfeld gegen Wärme
+# Warum das erstaunt: Zeeman-Aufspaltung eines Elektronenspins im Erdfeld gegen Wärme
 zeeman = 2 * MU_B * B_EARTH
-print(f"magnetische Energie / Wärmeenergie bei 37 °C: {zeeman / (K_B * 310):.0e}")
+print(f"Zeeman-Aufspaltung / Wärmeenergie bei 37 °C: {zeeman / (K_B * 310):.0e}")
 print(f"Elektronenspins präzedieren im Erdfeld mit {GAMMA_E * B_EARTH / (2 * np.pi) / 1e6:.1f} MHz")
 
 # Spinoperatoren für Spin 1/2, kombiniert für Elektron 1, Elektron 2 und den Kern (8 Zustände)
@@ -52,7 +52,7 @@ angles = np.radians(np.linspace(0, 180, 181))
 yields = np.array([singlet_yield(a) for a in angles])
 print(f"Singulett-Ausbeute: {yields[0]:.4f} längs der Feldachse, {yields[90]:.4f} quer dazu")
 print(f"Kompass-Signal (max − min): {100 * (yields.max() - yields.min()):.2f} % aller Paare")
-print(f"Nord und Süd sehen gleich aus – Ausbeute bei θ gleich der bei 180° − θ auf 12 Stellen: "
+print(f"Nord und Süd sehen gleich aus – Ausbeute bei θ gleich der bei 180° − θ bis auf 1e-12: "
       f"{np.allclose(yields, yields[::-1], rtol=0, atol=1e-12)}")
 
 plt.rcParams["font.size"] = 13      # große Schrift: das Diagramm bleibt auf dem Handy lesbar

@@ -18,9 +18,9 @@ HYPERFINE = 1.0e-3        # axial hyperfine coupling of electron 1 to one nucleu
 ANISOTROPY = (0.0, 0.0, 1.0)   # hyperfine tensor diag(x, y, z) in units of HYPERFINE: purely axial
 LIFETIME = 1e-6           # radical-pair lifetime (s); recombination rate k = 1/LIFETIME
 
-# Why this is surprising: the magnetic energy of an electron spin in Earth's field vs. heat
+# Why this is surprising: the Zeeman splitting of an electron spin in Earth's field vs. heat
 zeeman = 2 * MU_B * B_EARTH
-print(f"magnetic energy / thermal energy at 37 °C: {zeeman / (K_B * 310):.0e}")
+print(f"Zeeman splitting / thermal energy at 37 °C: {zeeman / (K_B * 310):.0e}")
 print(f"electron spins precess at {GAMMA_E * B_EARTH / (2 * np.pi) / 1e6:.1f} MHz in Earth's field")
 
 # Spin operators for spin 1/2, combined for electron 1, electron 2 and the nucleus (8 states)
@@ -52,7 +52,7 @@ angles = np.radians(np.linspace(0, 180, 181))
 yields = np.array([singlet_yield(a) for a in angles])
 print(f"singlet yield: {yields[0]:.4f} along the field axis, {yields[90]:.4f} across it")
 print(f"compass signal (max − min): {100 * (yields.max() - yields.min()):.2f} % of all pairs")
-print(f"north and south look alike – yield at θ equals yield at 180° − θ to 12 digits: "
+print(f"north and south look alike – yield at θ equals yield at 180° − θ to within 1e-12: "
       f"{np.allclose(yields, yields[::-1], rtol=0, atol=1e-12)}")
 
 plt.rcParams["font.size"] = 13      # large type: the chart stays readable on a phone

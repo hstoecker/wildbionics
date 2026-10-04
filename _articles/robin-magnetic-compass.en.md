@@ -33,9 +33,9 @@ beings: ["european-robin"]
 lenses: ["biology", "physics", "math", "cs", "physical-ai"]
 key_facts:
   - "European robins have a **magnetic compass that reads the inclination** of Earth's field lines – the angle at which they dip into the ground – not the polarity of the field [2](#ref-2){:.cite}."
-  - "The compass appears to work through the eyes: robins with a lesion in Cluster N, a light-processing brain region, lose their magnetic orientation but keep their sun and star compasses [7](#ref-7){:.cite}."
+  - "The compass appears to work through the eyes: robins with bilateral lesions in Cluster N, a light-processing brain region, lose their magnetic orientation but keep their sun and star compasses [7](#ref-7){:.cite}."
   - "The leading hypothesis is a **quantum effect**: light creates radical pairs in cryptochrome proteins in the retina, and Earth's field (about 50 µT) changes how their electron spins evolve [4](#ref-4){:.cite} [3](#ref-3){:.cite}."
-  - "Weak radio-frequency fields disorient robins – including the electromagnetic noise of a city [6](#ref-6){:.cite} [9](#ref-9){:.cite}."
+  - "Radio-frequency fields disorient robins – including the electromagnetic noise of a city [6](#ref-6){:.cite} [9](#ref-9){:.cite}."
   - "Cryptochrome 4 from the robin is magnetically sensitive in the test tube, more so than the same protein from chicken or pigeon [1](#ref-1){:.cite}."
 faq:
   - q: "How do robins find their way when they migrate?"
@@ -146,7 +146,7 @@ How does a bird sense a field as weak as Earth's, about 50 microtesla [3](#ref-3
 
 ## Biology lens: a compass that works through the eyes
 
-For a long time, two mechanisms competed: tiny iron-mineral particles (magnetite) in the beak, or a magnetically sensitive chemical reaction in the eye [6](#ref-6){:.cite} [7](#ref-7){:.cite}. Experiments with robins pointed to the eye. Manuela Zapka and colleagues found that robins with lesions of **Cluster N**, a night-active, light-processing region of the forebrain, could no longer orient with their magnetic compass – but they could still use their sun and star compasses. Cutting the ophthalmic branch of the trigeminal nerve, which connects the beak to the brain, had no effect on the magnetic compass [7](#ref-7){:.cite}. According to the authors, the data strongly suggest that the robin's magnetic compass is mediated by vision [7](#ref-7){:.cite}.
+For a long time, two mechanisms competed: tiny iron-mineral particles (magnetite) in the beak, or a magnetically sensitive chemical reaction in the eye [6](#ref-6){:.cite} [7](#ref-7){:.cite}. Experiments with robins pointed to the eye. Manuela Zapka and colleagues found that robins with bilateral lesions of **Cluster N**, a night-active, light-processing region of the forebrain, could no longer orient with their magnetic compass – but they could still use their sun and star compasses. Cutting the ophthalmic branch of the trigeminal nerve, which connects the beak to the brain, had no effect on the magnetic compass [7](#ref-7){:.cite}. According to the authors, the data strongly suggest that the robin's magnetic compass is mediated by vision [7](#ref-7){:.cite}.
 
 According to the leading hypothesis, the sensor molecule is cryptochrome. Jingjing Xu and colleagues produced **cryptochrome 4** of the European robin and showed that its photochemistry is magnetically sensitive in the test tube – more so than cryptochrome 4 from two birds that do not migrate, the chicken and the pigeon. Mutations revealed that four successive radical pairs inside the protein (each made of a flavin and a tryptophan) take part [1](#ref-1){:.cite}.
 
@@ -158,11 +158,11 @@ The robin's world is not only magnetic but also acoustic. In cities, robins sing
 
 ## Physics lens: spins that feel a weak field
 
-An electron behaves like a tiny magnet; its magnetic property is called **spin**. In Earth's field of about 50 µT [3](#ref-3){:.cite}, the magnetic energy of an electron spin is extremely small – about 2 × 10<sup>−7</sup> of the thermal energy of a molecule at body temperature, as the computer science lens calculates. A sensor that relied on aligning spins in thermal equilibrium would give an extremely weak signal.
+An electron behaves like a tiny magnet; its magnetic property is called **spin**. In Earth's field of about 50 µT [3](#ref-3){:.cite}, the splitting between the two magnetic energy levels of an electron spin – the Zeeman splitting – is extremely small: about 2 × 10<sup>−7</sup> of the thermal energy of a molecule at body temperature, as the computer science lens calculates. A sensor that relied on aligning spins in thermal equilibrium would give an extremely weak signal.
 
 The radical-pair model does not need thermal equilibrium. Light creates the pair, and what matters is how the field changes the **spin dynamics** during the short life of the pair – the simulation in the computer science lens contains no temperature at all, and still the field changes the outcome. Theoretical work showed that fields of Earth's strength can change the reaction yield, and that the change depends on how the radical pair is aligned with the field, if the coupling of an electron to nearby nuclear spins – the hyperfine coupling – is anisotropic [5](#ref-5){:.cite}. In the laboratory, a synthetic molecule built of a carotenoid, a porphyrin and a fullerene showed exactly this: the lifetime of its radical pair changed in fields of 50 µT or less, and the response depended on the field's direction [3](#ref-3){:.cite}.
 
-**A test with radio waves.** If the compass relies on spins, oscillating magnetic fields at the right frequencies should disturb it. Thorsten Ritz and colleagues exposed robins to weak radio-frequency fields: a broadband field (0.1–10 MHz) or a 7-MHz field disoriented the birds. With the 7-MHz field the effect depended on the angle: parallel to Earth's field the birds oriented normally, at 24° or 48° they were disoriented – consistent with a resonance on the transitions between singlet and triplet states [6](#ref-6){:.cite}. In Earth's field an electron spin precesses at about 1.4 MHz – inside the broadband range that disturbed the birds, though below the single frequency of 7 MHz that was tested; that the two are connected is our inference, not a result of the study.
+**A test with radio waves.** If the compass relies on spins, oscillating magnetic fields at the right frequencies should disturb it. Thorsten Ritz and colleagues exposed robins to radio-frequency fields: a vertically aligned broadband field (0.1–10 MHz) or a 7-MHz field disoriented the birds. With the 7-MHz field the effect depended on the angle: parallel to Earth's field the birds oriented normally, at 24° or 48° they were disoriented – consistent with a resonance on the transitions between singlet and triplet states [6](#ref-6){:.cite}. In Earth's field an electron spin precesses at about 1.4 MHz – inside the broadband range that disturbed the birds, though below the single frequency of 7 MHz that was tested; that the two are connected is our inference, not a result of the study.
 
 **City noise.** Svenja Engels and colleagues found that robins could not use their magnetic compass in unscreened wooden huts on the campus of the University of Oldenburg. In huts screened with grounded aluminium, which weakened the electromagnetic noise between 50 kHz and 5 MHz by about two orders of magnitude, the birds oriented again – and lost it as soon as the grounding was removed or noise was added. The tests were fully double-blinded [9](#ref-9){:.cite}.
 
@@ -208,9 +208,9 @@ HYPERFINE = 1.0e-3        # axial hyperfine coupling of electron 1 to one nucleu
 ANISOTROPY = (0.0, 0.0, 1.0)   # hyperfine tensor diag(x, y, z) in units of HYPERFINE: purely axial
 LIFETIME = 1e-6           # radical-pair lifetime (s); recombination rate k = 1/LIFETIME
 
-# Why this is surprising: the magnetic energy of an electron spin in Earth's field vs. heat
+# Why this is surprising: the Zeeman splitting of an electron spin in Earth's field vs. heat
 zeeman = 2 * MU_B * B_EARTH
-print(f"magnetic energy / thermal energy at 37 °C: {zeeman / (K_B * 310):.0e}")
+print(f"Zeeman splitting / thermal energy at 37 °C: {zeeman / (K_B * 310):.0e}")
 print(f"electron spins precess at {GAMMA_E * B_EARTH / (2 * np.pi) / 1e6:.1f} MHz in Earth's field")
 
 # Spin operators for spin 1/2, combined for electron 1, electron 2 and the nucleus (8 states)
@@ -242,7 +242,7 @@ angles = np.radians(np.linspace(0, 180, 181))
 yields = np.array([singlet_yield(a) for a in angles])
 print(f"singlet yield: {yields[0]:.4f} along the field axis, {yields[90]:.4f} across it")
 print(f"compass signal (max − min): {100 * (yields.max() - yields.min()):.2f} % of all pairs")
-print(f"north and south look alike – yield at θ equals yield at 180° − θ to 12 digits: "
+print(f"north and south look alike – yield at θ equals yield at 180° − θ to within 1e-12: "
       f"{np.allclose(yields, yields[::-1], rtol=0, atol=1e-12)}")
 
 plt.rcParams["font.size"] = 13      # large type: the chart stays readable on a phone
@@ -259,9 +259,9 @@ plt.show()
 
 What the result teaches:
 
-- **Tiny energy, clear signal.** The magnetic energy is only 2 × 10<sup>−7</sup> of the thermal energy, yet the singlet yield changes from 50 % (field along the molecule's axis) to 25.6 % (across it): the compass signal is 24 % of all pairs in this idealised model. Spin dynamics, not equilibrium, makes this possible.
-- **North and south look alike.** The yield at θ equals the yield at 180° − θ to twelve digits – the simulated sensor reads the axis of the field, just like the robin's inclination compass [2](#ref-2){:.cite}.
-- **The right timescale.** The spins precess at 1.4 MHz; a pair that lives 1 µs has time for about one turn. This is consistent with the finding that radio-frequency fields in the megahertz range disorient robins [6](#ref-6){:.cite}.
+- **Tiny energy, clear signal.** The Zeeman splitting is only 2 × 10<sup>−7</sup> of the thermal energy, yet the singlet yield changes from 50 % (field along the molecule's axis) to 25.6 % (across it): the compass signal is 24 % of all pairs in this idealised model. Spin dynamics, not equilibrium, makes this possible.
+- **North and south look alike.** The yield at θ equals the yield at 180° − θ to within 10<sup>−12</sup> – the simulated sensor reads the axis of the field, just like the robin's inclination compass [2](#ref-2){:.cite}.
+- **The right timescale.** The spins precess at 1.4 MHz; a pair that lives 1 µs has time for about one turn. In our reading, this is consistent with the finding that radio-frequency fields in the megahertz range disorient robins [6](#ref-6){:.cite}.
 
 Try it yourself:
 
@@ -277,7 +277,7 @@ Try it yourself:
 
 ## Physical AI lens: quantum sensors and a compass made of molecules
 
-Physical AI is about machines that sense and act in the real world. If the leading hypothesis is right, the robin's compass would be a **quantum sensor** grown by evolution: a system whose quantum states respond to the quantity to be measured. In quantum sensing, a growing field of precision measurement, the working part of the sensor contains one or a few qubits – quantum systems chosen and tailored for sensitivity [10](#ref-10){:.cite}.
+Physical AI is about machines that sense and act in the real world. If the leading hypothesis is right, the robin's compass would be a **quantum sensor** grown by evolution: a system whose quantum states respond to the quantity to be measured. In quantum sensing, a growing field of precision measurement, the working part of the sensor contains one or a few qubits, and resources such as entanglement are tailored to maximise sensitivity [10](#ref-10){:.cite}.
 
 The chemical side is already in the laboratory. The carotenoid–porphyrin–fullerene molecule of Kiminori Maeda and colleagues showed that a synthetic radical pair can respond to fields as weak as Earth's and to their direction – the feasibility of a chemical compass, and a guide to the design features such a sensor needs [3](#ref-3){:.cite}.
 
@@ -287,4 +287,4 @@ The robin also shows a lesson in design. Its compass is not a separate instrumen
 
 ## Open questions
 
-The radical-pair compass is the leading hypothesis; as of the 2016 review by Hore and Mouritsen, the primary sensory mechanism was still unclear [4](#ref-4){:.cite}. Among the open questions: which radical pair in which cryptochrome carries the signal in the living bird [1](#ref-1){:.cite}, and how a chemical yield becomes a direction the bird can use. The robin, a familiar garden bird, keeps an open puzzle of sensory biology – and a possible link between quantum physics and the behaviour of a whole animal.
+The radical-pair compass is the leading hypothesis; as of the 2016 review by Hore and Mouritsen, the primary sensory mechanism was still unclear [4](#ref-4){:.cite}. In our view, two questions stand out: which radical pair in which cryptochrome would carry the signal in the living bird – Xu and colleagues describe potential signalling states inside the protein [1](#ref-1){:.cite} – and how a chemical yield would become a direction the bird can use. The robin, a familiar garden bird, keeps an open puzzle of sensory biology – and a possible link between quantum physics and the behaviour of a whole animal.

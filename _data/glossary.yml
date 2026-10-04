@@ -55,6 +55,7 @@ terms:
   - { en: "moustached bat", de: "Schnurrbartfledermaus" }
   - { en: "bulldog bat*", de: "Hasenmaul", de_alt: ["Hasenmäuler*"] }
   # --- Physics -------------------------------------------------------------------
+  - { en: "Zeeman splitting", de: "Zeeman-Aufspaltung" }
   - { en: "radical pair*", de: "Radikalpaar*" }
   - { en: "inclination", de: "Inklination", de_alt: ["Neigung*"] }
   - { en: "singlet", de: "Singulett*" }
