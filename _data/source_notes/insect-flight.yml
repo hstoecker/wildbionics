@@ -12,6 +12,8 @@
     - "Wings tested under steady conditions in wind tunnels produce too little force to sustain flight – Introduction"
     - "Aerodynamic forces ∝ (wing-tip velocity)², tip velocity = product of stroke amplitude, frequency and wing length – Introduction"
     - "Honeybee wing length 9.7 mm, 240 beats/s (ref. 17); Drosophila 2.5 mm wings, 200 beats/s; Drosophila stroke amplitude ≈145–165° – Introduction (article text uses the 230 Hz measured in this study)"
+    - "Measured Re of hovering honeybees in air 1,123 ± 81 (mean 229.8 Hz, 90.8°) – Table 1"
+    - "Force transients at stroke onset and end: rotational, acceleration-reaction and wing-wake interaction forces – Results/Discussion"
 "10.1242/jeb.202.23.3439":
   read: "Abstract"
   claims:
@@ -72,7 +74,8 @@
     - "Robot unstable, tumbles without feedback; CM below wings, pendulum-like dynamics – Introduction, §2"
     - "Ocelli-inspired sensor 25 mg; torque ∝ angular velocity of the light source; first onboard sensors at this scale; previously external cameras – abstract, §1, Fig. 2"
     - "Ocelli: three light sensors pointing roughly upward; hawkmoths sense rotations with vibrating antennae; unknown how honeybees stabilise without halteres – Introduction"
-    - "Honeybee mass estimate 102 mg (Table 2); bee flapping frequency 197 Hz vs robot 120 Hz – §3"
+    - "Honeybee mass estimate 102 mg (Table 2, derived from refs 32, 51); typical bee flapping frequency 197 Hz quoted from the literature vs robot 120 Hz – §3"
+    - "'first known use of onboard sensors at this scale' – abstract"
 "10.1242/jeb.01744":
   read: "Abstract"
   claims:
@@ -106,7 +109,7 @@
     - "Flight at small scales energetically expensive, exacerbated at small scales"
     - "90 mg vehicle, four wings, two alumina-reinforced piezoelectric actuators; peak lift-to-weight 4.1"
     - "With photovoltaic array and signal generator 259 mg; payload capacity for additional onboard devices"
-    - "110–120 mW; matches thrust efficiency of similarly sized insects such as bees; lightest to achieve sustained untethered flight"
+    - "110–120 mW; matches thrust efficiency of similarly sized insects such as bees; 'the lightest thus far' (2019) to achieve sustained untethered flight"
 "10.1038/s41586-019-1737-7":
   read: "Abstract (PubMed)"
   claims:

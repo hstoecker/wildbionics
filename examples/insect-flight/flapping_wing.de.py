@@ -21,7 +21,7 @@ VISCOSITY = 1.8e-5         # dynamische Viskosität der Luft (Pa·s)
 
 mass, length, chord = MASS * SCALE**3, WING_LENGTH * SCALE, CHORD * SCALE
 weight = mass * G
-t = np.linspace(0, 2 / FREQUENCY, 801)           # zwei Flügelschläge
+t = np.linspace(0, 2 / FREQUENCY, 800, endpoint=False)          # zwei Flügelschläge
 
 
 def stroke(amplitude_deg):
@@ -49,7 +49,7 @@ cl = needed_cl(AMPLITUDE, AIR)
 angle, omega = stroke(AMPLITUDE)
 force = lift(cl, omega, AIR)
 print(f"Gewicht {weight * 1e3:.2f} mN, mittlere Geschwindigkeit der Flügelspitze {tip_speed:.1f} m/s, "
-      f"Reynolds-Zahl etwa {round(reynolds, -2):.0f}")
+      f"Reynolds-Zahl etwa {round(reynolds, -1):.0f}")
 print(f"zum Schweben nötiger Auftriebsbeiwert: C_L = {cl:.1f}")
 print(f"Auftrieb in der Schlagmitte bis zum {force.max() / weight:.1f}-Fachen des Gewichts, 0 an jeder Umkehr")
 print(f"in Heliox mit gleichem Schlag: C_L = {needed_cl(AMPLITUDE, HELIOX):.1f}; "

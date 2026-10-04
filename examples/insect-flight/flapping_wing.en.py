@@ -21,7 +21,7 @@ VISCOSITY = 1.8e-5         # dynamic viscosity of air (Pa·s)
 
 mass, length, chord = MASS * SCALE**3, WING_LENGTH * SCALE, CHORD * SCALE
 weight = mass * G
-t = np.linspace(0, 2 / FREQUENCY, 801)           # two wingbeats
+t = np.linspace(0, 2 / FREQUENCY, 800, endpoint=False)          # two wingbeats
 
 
 def stroke(amplitude_deg):
@@ -49,7 +49,7 @@ cl = needed_cl(AMPLITUDE, AIR)
 angle, omega = stroke(AMPLITUDE)
 force = lift(cl, omega, AIR)
 print(f"weight {weight * 1e3:.2f} mN, mean wing-tip speed {tip_speed:.1f} m/s, "
-      f"Reynolds number about {round(reynolds, -2):.0f}")
+      f"Reynolds number about {round(reynolds, -1):.0f}")
 print(f"lift coefficient needed to hover: C_L = {cl:.1f}")
 print(f"lift peaks at {force.max() / weight:.1f} × body weight in mid-stroke, 0 at each turn")
 print(f"in heliox with the same stroke: C_L = {needed_cl(AMPLITUDE, HELIOX):.1f}; "
