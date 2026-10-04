@@ -6,7 +6,7 @@ title: "How Insects Fly: Vortices, Halteres and RoboBees"
 short_title: "Insect flight"
 kicker: "Article · Aerodynamics"
 description: "Insect wings make more lift than classical aerodynamics allows – thanks to a vortex on the leading edge. How bees and flies fly, and how robots copy them."
-dek: "A honeybee beats its wings about 230 times per second, and its wings produce more lift than a wing in steady flow could. The secret is a whirlwind that sits on top of each wing. Engineers now build flapping robots the size of an insect – and have found out why flying gets so hard when you are small."
+dek: "A honeybee beats its wings about 230 times per second, and its wings produce more lift than a wing in steady flow could. The secret is a whirlwind that sits on top of each wing. Engineers now build flapping robots the size of an insect – and the physics explains why flying gets so hard when you are small."
 date: 2026-10-04
 permalink: /articles/insect-flight/
 image: /assets/og/insect-flight-en.jpg

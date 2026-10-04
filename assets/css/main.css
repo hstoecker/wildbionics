@@ -2385,6 +2385,7 @@ a.cite:hover { text-decoration: underline; }
 .ifl-svg .lev-head { fill: var(--signal); }
 .ifl-svg .lift { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
 .ifl-svg .lift-head { fill: var(--accent); }
+.ifl-svg .lift-leader { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.8; }
 .ifl-svg .motion { stroke: var(--on-dark); stroke-width: 2; }
 .ifl-svg .motion-head { fill: var(--on-dark); }
 .ifl-svg .connector { fill: none; stroke: var(--signal); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.7; }

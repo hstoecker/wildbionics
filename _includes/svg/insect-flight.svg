@@ -141,15 +141,16 @@
   <circle class="inset-ring" cx="588" cy="150" r="100"/>
   <path class="lift" d="M580.0,152.5 L580.0,78.5"/>
   <path class="lift-head" d="M580.0,68.5 L585.7,80.2 L574.3,80.2 Z"/>
-  <path class="motion" d="M566,226 L646,226"/>
-  <path class="motion-head" d="M652.0,226.0 L643.0,230.3 L643.0,221.7 Z"/>
+  <path class="motion" d="M550,226 L630,226"/>
+  <path class="motion-head" d="M636.0,226.0 L627.0,230.3 L627.0,221.7 Z"/>
   <path class="connector" d="M616.7,46.0 L616.7,96.1"/>
   <circle class="dot" cx="616.7" cy="96.1" r="3"/>
+  <path class="lift-leader" d="M482,96.5 L576.0,96.5"/>
 
   <text x="588" y="274" text-anchor="middle" class="label label-muted">{{ r.section }}</text>
-  <text x="570.0" y="116.5" text-anchor="end" class="label label-accent label-strong">{{ r.lift }}</text>
+  <text x="476" y="100.5" text-anchor="end" class="label label-accent label-strong">{{ r.lift }}</text>
   <text x="712" y="40.0" text-anchor="end" class="label label-strong">{{ r.lev }}</text>
-  <text x="606" y="216" text-anchor="middle" class="label label-muted">{{ r.motion }}</text>
+  <text x="590" y="208" text-anchor="middle" class="label label-muted">{{ r.motion }}</text>
   <text x="248.5" y="148.6" text-anchor="middle" class="label label-strong">{{ r.stroke }}</text>
   <text x="248.5" y="172.6" text-anchor="middle" class="label label-muted">{{ r.rate }}</text>
   <text x="72" y="250.6" text-anchor="start" class="label label-muted">{{ r.flip }}</text>

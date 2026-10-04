@@ -6,7 +6,7 @@ title: "Wie Insekten fliegen: Wirbel, Halteren und RoboBees"
 short_title: "Insektenflug"
 kicker: "Artikel · Aerodynamik"
 description: "Insektenflügel erzeugen mehr Auftrieb, als die klassische Aerodynamik erlaubt – dank eines Wirbels an der Vorderkante. Wie Bienen und Fliegen fliegen."
-dek: "Eine Honigbiene schlägt etwa 230-mal pro Sekunde mit den Flügeln, und ihre Flügel erzeugen mehr Auftrieb, als ein Flügel in gleichmäßiger Strömung könnte. Das Geheimnis ist ein Wirbel, der auf jedem Flügel sitzt. Ingenieurinnen und Ingenieure bauen heute Schlagflügelroboter in Insektengröße – und haben herausgefunden, warum Fliegen so schwer wird, wenn man klein ist."
+dek: "Eine Honigbiene schlägt etwa 230-mal pro Sekunde mit den Flügeln, und ihre Flügel erzeugen mehr Auftrieb, als ein Flügel in gleichmäßiger Strömung könnte. Das Geheimnis ist ein Wirbel, der auf jedem Flügel sitzt. Ingenieurinnen und Ingenieure bauen heute Schlagflügelroboter in Insektengröße – und die Physik erklärt, warum Fliegen so schwer wird, wenn man klein ist."
 date: 2026-10-04
 permalink: /de/artikel/insektenflug/
 image: /assets/og/insect-flight-de.jpg
