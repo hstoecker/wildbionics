@@ -9,3 +9,5 @@ water-strider: { en: "Water strider", de: "Wasserläufer", taxon: "Gerridae", wi
 domestic-cat: { en: "Domestic cat", de: "Hauskatze", taxon: "Felis catus", wikidata: Q146 }
 cyanobacteria: { en: "Cyanobacteria", de: "Cyanobakterien", taxon: "Cyanobacteriota", wikidata: Q25577567 }
 e-coli: { en: "E. coli", de: "Kolibakterium", taxon: "Escherichia coli", wikidata: Q25419 }
+honey-bee: { en: "Honeybee", de: "Honigbiene", taxon: "Apis mellifera", wikidata: Q30034 }
+fruit-fly: { en: "Fruit fly", de: "Taufliege", taxon: "Drosophila melanogaster", wikidata: Q130888 }

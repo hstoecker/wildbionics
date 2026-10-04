@@ -25,3 +25,4 @@ lens-physics:      { id: lens-physics, i18n: lens.physics,           context: "l
 lens-math:         { id: lens-math,    i18n: lens.math,              context: "lens__panel",                        bg: "var(--card)",  page: home }
 graph-anatomy:     { id: gx-anatomy,   i18n: graph.explain.anatomy,  context: "graph-page graph-explain gx-figure", bg: "var(--night)", page: graph }
 graph-shared:      { id: gx-shared,    i18n: graph.explain.shared,   context: "graph-page graph-explain gx-figure", bg: "var(--night)", page: graph }
+insect-flight:     { id: ifl,          i18n: figures.insect_flight,  context: "article-header",                     bg: "var(--ocean)", page: insect-flight }
