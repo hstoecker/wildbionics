@@ -38,4 +38,4 @@ of must-fix items, then what you could not verify and why (paywall, no abstract,
 and brief; do not pad with praise.
 
 
-Research notes: if `_data/source_notes/<ref>.yml` exists, read it first – it says what the author read and where each claim comes from. Verify what you can reach; mark claims that rest on sources you cannot open as "per research notes" instead of "unverified".
+Research notes: if `_data/source_notes/<ref>.yml` exists, read it first – it says what the author read and where each claim comes from. The notes guide you, they do not replace your check: resolve every DOI and compare each claim with the abstract or open full text yourself. Only claims that rest on sources you cannot open are marked "per research notes" instead of "unverified".
