@@ -2337,6 +2337,7 @@ a.cite:hover { text-decoration: underline; }
 .robin-svg .label-tick { font-size: 12px; }
 @media (max-width: 600px) {
   .robin-svg .label, .robin-svg .label-tick { font-size: 20px; }
+  .robin-svg .opt { display: none; }   /* secondary lines: no room at phone size – the caption says it */
 }
 
 /* Run and tumble, hero of the bacteria article (_includes/svg/bacteria-run-tumble.svg) */

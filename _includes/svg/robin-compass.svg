@@ -29,7 +29,7 @@
   <path class="angle" d="M465.3,352 A54 54 0 0 0 497.4,302.7"/>
   <text x="457.3" y="340" text-anchor="end" class="label label-accent">{{ r.inclination }}</text>
   <text x="704" y="40" text-anchor="end" class="label label-strong">{{ r.field }}</text>
-  <text x="704" y="58" text-anchor="end" class="label label-muted">{{ r.field_note }}</text>
+  <text x="704" y="58" text-anchor="end" class="label label-muted opt">{{ r.field_note }}</text>
   
   <g class="robin">
     <path class="twig" d="M60,336 C150,328 260,332 360,324"/>
@@ -57,8 +57,8 @@
     <path class="spin" d="M-26,-14 V-40 M-32,-33 L-26,-41 L-20,-33"/>
     <path class="spin" d="M26,-40 V-14 M20,-21 L26,-13 L32,-21"/>
     <text y="10" text-anchor="middle" class="label label-strong">{{ r.pair }}</text>
-    <text y="28" text-anchor="middle" class="label label-muted">{{ r.pair_note }}</text>
-    <text y="46" text-anchor="middle" class="label label-muted">{{ r.eye }}</text>
+    <text y="28" text-anchor="middle" class="label label-muted opt">{{ r.pair_note }}</text>
+    <text y="46" text-anchor="middle" class="label label-muted opt">{{ r.eye }}</text>
   </g>
 
   <text x="20" y="398" class="label label-tick">{{ r.note }}</text>
