@@ -40,7 +40,9 @@ Go through every area the change touches; skip areas it doesn't touch and say so
    "per research notes", without a must-fix. Raise a must-fix only for a contradiction you can
    show, a claim with no note behind it, or a note that does not match the source you can read.
    On a re-review (label `ready-for-review`), check the fixes and new changes – don't repeat
-   points that were already answered in the PR conversation.
+   points that were already answered in the PR conversation. After you push fixes for review
+   findings yourself, add the label `ready-for-review` so the final state is reviewed too
+   (rule in `wildbionics-contribute`).
    Run the agent in the **foreground** (`run_in_background: false`) and wait for its table: in CI
    the session ends with your turn, so a background agent's result never arrives and no report
    is posted (this lost three reviews of PR #21). Read the diff with `gh pr diff` or the Read tool –

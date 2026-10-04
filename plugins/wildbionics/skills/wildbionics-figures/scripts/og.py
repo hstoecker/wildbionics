@@ -64,8 +64,10 @@ def main(ref):
                 f"---\nlayout: null\npermalink: /og-tmp/{lang}.html\nlang: {lang}\nsitemap: false\n---\n"
                 f"{{% include og-card.html {args} %}}\n", encoding="utf-8")
             cards.append((lang, ROOT / fm["image"].lstrip("/")))
-        subprocess.run(["bundle", "exec", "jekyll", "build", "-q"], cwd=ROOT, check=True,
-                       stderr=subprocess.DEVNULL)          # drops the harmless faraday notice
+        build = subprocess.run(["bundle", "exec", "jekyll", "build", "-q"], cwd=ROOT,
+                               capture_output=True, text=True)   # quiet unless it fails
+        if build.returncode:
+            sys.exit(f"jekyll build failed:\n{build.stdout}{build.stderr}")
         class Quiet(http.server.SimpleHTTPRequestHandler):
             def log_message(self, *args):      # no request log on the terminal
                 pass
