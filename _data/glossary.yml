@@ -54,6 +54,12 @@ terms:
   - { en: "horseshoe bat*", de: "Hufeisennase*", avoid: ["Hufeisenfledermaus", "Hufeisenfledermäuse"], level: warn, why: "Deutscher Name der Rhinolophidae: Hufeisennasen." }
   - { en: "moustached bat", de: "Schnurrbartfledermaus" }
   - { en: "bulldog bat*", de: "Hasenmaul", de_alt: ["Hasenmäuler*"] }
+  - { en: "halteres", de: "Halteren", de_alt: ["Schwingkölbchen"], why: "Zoologischer Fachbegriff; Schwingkölbchen ist der deutsche Trivialname." }
+  - { en: "haltere", de: "Haltere", de_alt: ["Schwingkölbchen"] }
+  - { en: "wingbeat frequenc*", de: "Flügelschlagfrequenz*" }
+  - { en: "stroke amplitude", de: "Schlagamplitude*" }
+  - { en: "asynchronous muscle*", de: "asynchrone* Muskel*", de_alt: ["asynchrone* Flugmuskel*", "asynchrone* Muskulatur"] }
+  - { en: "ocelli", de: "Ocellen", de_alt: ["Punktaugen", "Stirnaugen"], why: "Ocellen (Punktaugen) der Insekten, nicht die Komplexaugen." }
   # --- Physics -------------------------------------------------------------------
   - { en: "Zeeman splitting", de: "Zeeman-Aufspaltung" }
   - { en: "radical pair*", de: "Radikalpaar*" }
@@ -85,6 +91,15 @@ terms:
   - { en: "polytropic exponent", de: "Polytropenexponent*" }
   - { en: "surface tension", de: "Oberflächenspannung" }
   - { en: "speed of sound", de: "Schallgeschwindigkeit" }
+  - { en: "leading-edge vortex", de: "Vorderkantenwirbel*", avoid: ["Führungskantenwirbel*", "Vorderkantenvortex*"], why: "Etablierter Begriff der Strömungsmechanik (auch LEV); Führungskante ist eine Lehnübersetzung." }
+  - { en: "lift coefficient", de: "Auftriebsbeiwert*", de_alt: ["Auftriebskoeffizient*"] }
+  - { en: "angle of attack", de: "Anstellwinkel*" }
+  - { en: "delayed stall", de: "verzögerte* Strömungsabriss*" }
+  - { en: "dynamic stall", de: "dynamische* Strömungsabriss*" }
+  - { en: "clap and fling", de: "Clap-and-Fling", why: "In der deutschen Fachliteratur wird der englische Name verwendet." }
+  - { en: "wake capture", de: "Wake Capture", de_alt: ["Nachlauf*"] }
+  - { en: "quasi-steady", de: "quasistationär*" }
+  - { en: "Coriolis force*", de: "Corioliskr*", de_alt: ["Coriolis-Kr*"] }
   - { en: "Reynolds number*", de: "Reynolds-Zahl*", de_alt: ["Reynoldszahl*"] }
   - { en: "sonoluminescence", de: "Sonolumineszenz", avoid: ["Sonoluminiszenz", "Sonoluminescenz"], why: "Rechtschreibung: Lumineszenz." }
   - { en: "shrimpoluminescence", de: "Shrimpolumineszenz" }
@@ -183,6 +198,8 @@ terms:
   - { en: "humanoid robot*", de: "humanoide* Roboter*", avoid: ["menschenähnliche* Roboter*"], level: warn, why: "Fachbegriff: humanoider Roboter (menschenähnlich gestaltet); Androide nur bei täuschend echtem Aussehen." }
   - { en: "superintelligence", de: "Superintelligenz", avoid: ["Super-Intelligenz", "Überintelligenz"], level: warn, why: "Etablierter Begriff: Superintelligenz (hypothetisch – als Szenario kennzeichnen)." }
   - { en: "robotics", de: "Robotik" }
+  - { en: "piezoelectric actuator*", de: "piezoelektrische* Aktor*", de_alt: ["Piezoaktor*"], avoid: ["*aktuator*"], level: warn, why: "In der deutschen Ingenieursprache (DIN, VDI) heißt es Aktor; Aktuator ist eine Lehnübersetzung." }
+  - { en: "dielectric elastomer actuator*", de: "dielektrische* Elastomeraktor*" }
   - { en: "Age of AI", de: "KI-Zeitalter" }
 
   - { en: "dry adhesive*", de: "Trockenklebstoff*", de_alt: ["trockene Klebstoffe", "Trockenhaft*"] }

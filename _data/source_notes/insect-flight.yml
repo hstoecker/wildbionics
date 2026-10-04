@@ -1,0 +1,124 @@
+# Where the claims of "Insect flight" come from – written while researching, read by the review
+# (wildbionics-review). One entry per source, keyed by DOI: what was read, and which claims rest on it.
+# Full texts came from PubMed Central (PMC); JEB, Science and Nature pages were behind a bot check,
+# so for those only the abstract was read.
+"10.1073/pnas.0506590102":
+  read: "Full text (PMC1312389)"
+  claims:
+    - "Honeybees hover with stroke amplitude ≈90° and wingbeat frequency ≈230 Hz – abstract"
+    - "Force peaks at the beginning, middle and end of each stroke on a dynamically scaled robot; unsteady forces at stroke reversal make a large contribution to upward force – abstract"
+    - "In heliox (0.41 vs 1.21 kg/m³) bees keep frequency nearly constant and increase amplitude by nearly 50 % – abstract; densities in Methods"
+    - "Magnan and Sainte-Lague 1934 concluded from a simple mathematical analysis that bee flight was 'impossible'; bees symbolise the inadequacy of aerodynamic theory; assumptions since proven erroneous – Introduction, 1st paragraph"
+    - "First names: the paper writes 'August Magnan', its reference list 'Magnan, A.'; elsewhere he is usually called Antoine Magnan – the article uses initials only"
+    - "Wings tested under steady conditions in wind tunnels produce too little force to sustain flight – Introduction"
+    - "Aerodynamic forces ∝ (wing-tip velocity)², tip velocity = product of stroke amplitude, frequency and wing length – Introduction"
+    - "Honeybee wing length 9.7 mm, 240 beats/s (ref. 17); Drosophila 2.5 mm wings, 200 beats/s; Drosophila stroke amplitude ≈145–165° – Introduction (article text uses the 230 Hz measured in this study)"
+    - "Measured Re of hovering honeybees in air 1,123 ± 81 (mean 229.8 Hz, 90.8°) – Table 1"
+    - "Force transients at stroke onset and end: rotational, acceleration-reaction and wing-wake interaction forces – Results/Discussion"
+"10.1242/jeb.202.23.3439":
+  read: "Abstract"
+  claims:
+    - "Wings typically produce 2–3 times more lift than conventional aerodynamics can account for"
+    - "Some insects use the fling; most rely on a leading-edge vortex created by dynamic stall, spiralling out to the wingtip"
+    - "(Technical use of the fling is limited by mechanical damage – background, not quoted)"
+"10.1038/384626a0":
+  read: "Abstract (Semantic Scholar; Crossref has none)"
+  claims:
+    - "Flow visualised on the hawkmoth Manduca sexta and a large mechanical model, the 'flapper'; intense LEV on the downstroke, strong enough to explain high lift"
+    - "LEV created by dynamic stall, spirals out to the wingtip with spanwise velocity comparable to flapping velocity; similar to conical LEV on delta wings; spanwise flow stabilises the vortex"
+    - "Insects 'cannot fly' according to conventional aerodynamics; flapping wings make more lift than steady motion at the same speeds and angles of attack"
+"10.1673/031.010.9601":
+  read: "Full text (PMC3383431, open access)"
+  claims:
+    - "Dataset (Byrne et al. 1988) of over 150 species; n from 6 Hz (Pieris napi) to 480 Hz (Aedes aegypti) – Introduction"
+    - "Lowest Reynolds number 8.47 (aphid Aphis gossypii); apart from a few aphids and whiteflies values above 100, typically ~1000 – Dimensional analysis"
+    - "n = K·m^½/A; r = 0.866, explains 75 % of the variance – 'Test of Equation (3)'"
+    - "Butterflies: correlation between ln n and −ln m is −0.053, not significant – 'Further analysis', Fig. 1"
+    - "Comparing Pieridae with Apidae, the frequencies needed lead to the need for asynchronous flight muscle – Discussion"
+    - "Author at the School of Mathematical Sciences, Monash University (→ 'the mathematician')"
+    - "Isometric scaling k^(−1/2) is derived in the article from the formula (m ∝ k³, A ∝ k²)"
+"10.1242/jeb.59.1.169":
+  read: "Abstract"
+  claims:
+    - "Analysis of 'normal hovering with horizontally beating wings'"
+    - "Specific aerodynamic power 1.3–4.7 W/N; does not vary systematically with size, inter alia because L/D deteriorates at low Re"
+    - "Most insects require an effective elastic system in the thorax counteracting wing inertia"
+    - "Encarsia formosa at Re 10–20; lift coefficient of 2 or 3 not possible with steady-state aerodynamics; clap, fling, flip; fling sets up circulation before the downstroke; lift almost instantaneously"
+"10.1126/science.284.5422.1954":
+  read: "Abstract"
+  claims:
+    - "Three interacting mechanisms: delayed stall during translation, rotational circulation and wake capture at stroke reversal"
+    - "Rotational mechanisms let the insect modulate direction and magnitude of forces when steering"
+    - "A comprehensive theory incorporating translational and rotational mechanisms may explain the diverse wing motions (outlook)"
+"10.1242/jeb.203.18.2713":
+  read: "Abstract"
+  claims:
+    - "Asynchronous muscle: asynchrony between electrical and mechanical activity; delayed stretch activation and shortening deactivation; tetanically stimulated, it does work under repetitive lengthening and shortening"
+"10.1098/rstb.1999.0442":
+  read: "Abstract (PubMed / PMC1692594 – full text only as PDF scan, not read)"
+  claims:
+    - "Halteres: small dumb-bell-shaped organs derived from the hind wings, mechanoreceptors at the base"
+    - "Mechanically oscillating flight arena swung back and forth; flies respond with compensatory changes in wing stroke amplitude and frequency"
+    - "Ablation shows halteres are required for these reflexes; halteres encode angular velocity by detecting Coriolis forces"
+"10.1098/rstb.1948.0007":
+  read: "Abstract"
+  claims:
+    - "Haltere oscillates through ≈150° about a hinge; frequency set by mechanical resonance; single muscle"
+    - "Rotation of the fly sets up gyroscopic torques at the haltere base, detected by sensilla"
+    - "Flash photographs of a haltere-less fly in free flight show spiral instability (inadequate stabilisation in yaw)"
+"10.1098/rsif.2014.0281":
+  read: "Full text (PMC4208359, HTML)"
+  claims:
+    - "Flies: millisecond turns during pursuit, landing inverted on a ceiling, 10⁵–10⁷ neurons – Introduction"
+    - "Heat dissipation per unit mass in motor coils ∝ l⁻²; friction losses from surface-to-volume ratio; L/D of aerofoils decreases at small scale; rotational acceleration ∝ l⁻¹ – Introduction"
+    - "Piezoelectric actuators, muscle-like reciprocating action, scale down more favourably than electromagnetic motors – Introduction"
+    - "Robot unstable, tumbles without feedback; CM below wings, pendulum-like dynamics – Introduction, §2"
+    - "Ocelli-inspired sensor 25 mg; torque ∝ angular velocity of the light source; first onboard sensors at this scale; previously external cameras – abstract, §1, Fig. 2"
+    - "Ocelli: three light sensors pointing roughly upward; hawkmoths sense rotations with vibrating antennae; unknown how honeybees stabilise without halteres – Introduction"
+    - "Honeybee mass estimate 102 mg (Table 2, derived from refs 32, 51); typical bee flapping frequency 197 Hz quoted from the literature vs robot 120 Hz – §3"
+    - "'first known use of onboard sensors at this scale' – abstract"
+"10.1242/jeb.01744":
+  read: "Abstract"
+  claims:
+    - "Dynamically scaled model of Drosophila, Re 100–200; clap-and-fling augments lift by up to 17 % if wings within 10–12°"
+"10.1126/science.1081944":
+  read: "Abstract"
+  claims:
+    - "Inertia, not friction, dominates the flight dynamics of insects during rapid turns (fruit flies)"
+"10.1242/jeb.00663":
+  read: "Abstract"
+  claims:
+    - "LEV remains stably attached on the insect wing at high angles of attack instead of shedding, greatly enhancing forces"
+    - "Progress came from high-speed videography, computational and mechanical models and flow visualisation"
+"10.1242/jeb.205.11.1547":
+  read: "Abstract"
+  claims:
+    - "Steadily revolving model hawkmoth wings produce high force coefficients because of a leading-edge vortex"
+"10.1242/jeb.200.7.1133":
+  read: "Abstract"
+  claims:
+    - "Drosophila: profile power approximately twice the induced power at all levels of force; cost of overcoming drag, not lift production, is the primary requirement"
+"10.1126/science.1231806":
+  read: "Abstract"
+  claims:
+    - "80 mg insect-scale flapping-wing robot modelled loosely on flies; piezoelectric flight muscles; flexure-based sub-millimetre mechanisms, rapid prototyping"
+    - "Tethered but unconstrained stable hovering and basic controlled flight manoeuvres"
+    - "(The name 'RoboBee' is not in the abstract; it comes from the Wikidata/Wikipedia item Q12779901 linked in 'about')"
+"10.1038/s41586-019-1322-0":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Flight at small scales energetically expensive, exacerbated at small scales"
+    - "90 mg vehicle, four wings, two alumina-reinforced piezoelectric actuators; peak lift-to-weight 4.1"
+    - "With photovoltaic array and signal generator 259 mg; payload capacity for additional onboard devices"
+    - "110–120 mW; matches thrust efficiency of similarly sized insects such as bees; 'the lightest thus far' (2019) to achieve sustained untethered flight"
+"10.1038/s41586-019-1737-7":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Rigid microscale actuators fragile under impact; multilayer dielectric elastomer actuators 100 mg each, 500 Hz resonance, 600 W/kg"
+    - "Robots withstand collisions with walls and each other; rely on offboard amplifiers and external motion capture"
+"10.1126/science.aat0350":
+  read: "Abstract"
+  claims:
+    - "Programmable autonomous free-flying tailless flapping robot, 55 times the size of a fruit fly, mimics rapid escape manoeuvres incl. correcting yaw rotation"
+    - "Yaw control turned off: yaw rotations result from passive aerodynamic coupling"
+    - "Robot enables new methods for studying animal flight; suitable for real-world flight missions"

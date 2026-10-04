@@ -2357,6 +2357,50 @@ a.cite:hover { text-decoration: underline; }
   .rt-svg .label, .rt-svg .label-tick { font-size: 20px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
 }
 
+/* Hovering honeybee with stroke and leading-edge vortex, hero of the insect flight article (_includes/svg/insect-flight.svg) */
+.ifl-svg { width: 100%; height: auto; overflow: visible; }
+.ifl-svg .grid { color: rgba(238, 242, 234, 0.045); }
+.ifl-svg .wing { fill: url(#ifl-wing); stroke: rgba(223, 243, 246, 0.75); stroke-width: 1.2; stroke-linejoin: round; }
+.ifl-svg .wing--ghost { opacity: 0.45; stroke-dasharray: 3 3; }
+.ifl-svg .vein { fill: none; stroke: rgba(60, 50, 30, 0.55); stroke-width: 0.9; stroke-linecap: round; }
+.ifl-svg .vein--ghost { opacity: 0.4; }
+.ifl-svg .abdomen { fill: url(#ifl-abdomen); stroke: rgba(40, 25, 5, 0.6); stroke-width: 1.2; }
+.ifl-svg .stripe { fill: #2a1d0e; }
+.ifl-svg .shine { fill: none; stroke: rgba(255, 245, 210, 0.55); stroke-width: 3; stroke-linecap: round; }
+.ifl-svg .thorax { fill: url(#ifl-thorax); stroke: rgba(40, 25, 5, 0.5); stroke-width: 1; }
+.ifl-svg .hair { stroke: #d8b373; stroke-width: 1.4; stroke-linecap: round; opacity: 0.85; }
+.ifl-svg .head { fill: #3a2a16; stroke: rgba(0, 0, 0, 0.4); stroke-width: 1; }
+.ifl-svg .eye { fill: #1c1610; stroke: #6b5536; stroke-width: 1; }
+.ifl-svg .eye-shine { fill: rgba(220, 235, 240, 0.35); }
+.ifl-svg .limb, .ifl-svg .antenna { fill: none; stroke: #7a5a30; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
+.ifl-svg .antenna { stroke-width: 2.4; }
+.ifl-svg .pollen { fill: #e8b33b; stroke: #9b6d14; stroke-width: 1; }
+.ifl-svg .tip-path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 2 6; stroke-linecap: round; }
+.ifl-svg .tip-head { fill: var(--accent); }
+.ifl-svg .inset-bg { fill: url(#ifl-inset-bg); }
+.ifl-svg .inset-ring { fill: none; stroke: var(--signal); stroke-width: 1.6; }
+.ifl-svg .flow { fill: none; stroke: var(--on-dark-2); stroke-width: 1.1; stroke-dasharray: 6 6; opacity: 0.6; }
+.ifl-svg .section { fill: #dff3f6; stroke: rgba(223, 243, 246, 0.9); stroke-width: 0.8; }
+.ifl-svg .lev { fill: none; stroke: var(--signal); stroke-width: 2.2; stroke-linecap: round; }
+.ifl-svg .lev-head { fill: var(--signal); }
+.ifl-svg .lift { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+.ifl-svg .lift-head { fill: var(--accent); }
+.ifl-svg .lift-leader { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.8; }
+.ifl-svg .motion { stroke: var(--on-dark); stroke-width: 2; }
+.ifl-svg .motion-head { fill: var(--on-dark); }
+.ifl-svg .connector { fill: none; stroke: var(--signal); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.7; }
+.ifl-svg .dot { fill: var(--signal); }
+.ifl-svg .label-strong { fill: var(--on-dark); font-weight: 600; }
+.ifl-svg .label-accent.label-strong { fill: var(--accent); }
+.ifl-svg .label-title { font-family: var(--font-display); font-size: 20px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
+.ifl-svg .label-taxon { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0; }
+.ifl-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .ifl-svg .label, .ifl-svg .label-tick { font-size: 19px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .ifl-svg .label-title { font-size: 24px; }
+  .ifl-svg .label-taxon { font-size: 19px; }
+}
+
 /* Early atmosphere, hero of the oxygen article (_includes/svg/early-atmosphere.svg) */
 .atmo-svg { width: 100%; height: auto; overflow: visible; }
 .atmo-svg .grid { color: rgba(238, 242, 234, 0.07); }
