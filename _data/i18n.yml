@@ -571,6 +571,16 @@ en:
       inertia: "inertia"
       gravity: "gravity"
       note: "Schematic · not to scale"
+    robin_compass:
+      title: "The robin's magnetic compass: it reads the tilt of Earth's field lines, probably with a light-driven radical pair in its eyes"
+      desc: "Schematic. A European robin with orange-red face and breast perches on a twig. Earth's magnetic field lines run steeply downwards into the ground, at an angle to the horizon. A callout from the bird's eye shows a radical pair: two molecules, each with one unpaired electron whose spin is drawn as an arrow. Whether the two spins stay paired or not depends on the angle between the molecule and the field – this is thought to give the bird a visual signal of the field's direction."
+      field: "Earth's magnetic field"
+      field_note: "≈ 50 µT, tilted"
+      inclination: "inclination"
+      pair: "radical pair"
+      pair_note: "two electron spins"
+      eye: "in the eye"
+      note: "Schematic · not to scale · leading hypothesis"
     run_tumble:
       title: "Run and tumble: E. coli swims in straight runs, tumbles and sets off in a new direction – runs towards more food last longer"
       desc: "Schematic of an E. coli bacterium in a food gradient; food increases to the right. The rod-shaped cell swims a straight run with its helical flagella together in a bundle behind it. At the end of the run it tumbles: a motor reverses and the flagella point in different directions. Then it swims off in a new direction. Runs to the left, towards less food, are short; runs to the right, towards more food, are long – so the path zigzags but drifts to the right."
@@ -1176,6 +1186,16 @@ de:
       inertia: "Trägheit"
       gravity: "Schwerkraft"
       note: "Schema · nicht maßstäblich"
+    robin_compass:
+      title: "Der Magnetkompass des Rotkehlchens: Es liest die Neigung der Feldlinien – vermutlich mit einem lichtgetriebenen Radikalpaar im Auge"
+      desc: "Schema. Ein Rotkehlchen mit orangerotem Gesicht und orangeroter Brust sitzt auf einem Zweig. Die Feldlinien des Erdmagnetfelds laufen steil schräg nach unten in den Boden, unter einem Winkel zum Horizont. Ein Ausschnitt aus dem Auge des Vogels zeigt ein Radikalpaar: zwei Moleküle mit je einem ungepaarten Elektron, dessen Spin als Pfeil gezeichnet ist. Ob die beiden Spins gepaart bleiben, hängt vom Winkel zwischen Molekül und Feld ab – das gibt dem Vogel vermutlich ein Sehsignal für die Richtung des Feldes."
+      field: "Erdmagnetfeld"
+      field_note: "≈ 50 µT, geneigt"
+      inclination: "Inklination"
+      pair: "Radikalpaar"
+      pair_note: "zwei Elektronenspins"
+      eye: "im Auge"
+      note: "Schema · nicht maßstabsgetreu · führende Hypothese"
     run_tumble:
       title: "Laufen und Taumeln: E. coli schwimmt gerade Strecken, taumelt und startet in eine neue Richtung – Läufe hin zu mehr Nahrung dauern länger"
       desc: "Schema eines Bakteriums E. coli in einem Nahrungsgefälle; nach rechts gibt es mehr Nahrung. Die stäbchenförmige Zelle schwimmt einen geraden Lauf, ihre schraubenförmigen Flagellen drehen sich dahinter gemeinsam als Bündel. Am Ende des Laufs taumelt sie: Ein Motor dreht um, und die Flagellen zeigen in verschiedene Richtungen. Dann schwimmt sie in eine neue Richtung. Läufe nach links, zu weniger Nahrung, sind kurz; Läufe nach rechts, zu mehr Nahrung, sind lang – die Bahn ist ein Zickzack, wandert aber nach rechts."
