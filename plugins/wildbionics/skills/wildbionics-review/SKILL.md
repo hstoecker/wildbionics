@@ -30,9 +30,13 @@ bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 
 
 Go through every area the change touches; skip areas it doesn't touch and say so.
 
-1. **Facts** – delegate to the `wildbionics-fact-checker` agent for every changed article or
-   factual UI text. Must-fix: unsupported, contradicted or over-precise claims; unresolved or
-   mismatching DOIs; calculations that don't reproduce; hypotheses stated as facts.
+1. **Facts** – **always** run the `wildbionics-fact-checker` agent for every new or changed
+   article and every changed factual UI text – also when research notes exist and also on a
+   re-review (then on the changed passages). Never replace it by reading the notes yourself: the
+   notes say what the author read; the fact-checker checks independently that the sources say it.
+   If you could not run it, say so in the report and give no ✅ for Facts. Must-fix: unsupported,
+   contradicted or over-precise claims; unresolved or mismatching DOIs; calculations that don't
+   reproduce; hypotheses stated as facts.
    **Read the research notes first:** `_data/source_notes/<ref>.yml` records, per source, what the
    author read (abstract, full text, scanned PDF) and where each claim comes from. Pass them to the
    fact-checker. A claim backed by a note on a source you cannot open (paywall, scan, bot check) is
