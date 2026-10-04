@@ -1,0 +1,64 @@
+# Where the claims of "Swimming in honey" come from – written while researching, read by the review
+# (wildbionics-review). One entry per source, keyed by DOI: what was read, and which claims rest on it.
+"10.1119/1.10903":
+  read: "Full text (scanned PDF of the AJP reprint, all pages read as images)"
+  claims:
+    - "Re = 3×10⁻⁵ for E. coli of 1 µm at 30 µm/s; coasting 0.1 Å, coasting time 0.6 µs in the text and 0.3 µs in Fig. 4 – p. 4, Fig. 4"
+    - "Human swimming Re ≈ 10⁴, goldfish 10², microorganisms 10⁻⁴–10⁻⁵ – p. 3–4, Fig. 3"
+    - "Molasses pool, no part of the body faster than 1 cm/min, a few metres in a couple of weeks – p. 4"
+    - "Scallop theorem; flexible oar and corkscrew as solutions – p. 5–6, Fig. 6, 9"
+    - "E. coli about 2 µm long; several flagella bundle together – p. 6"
+    - "Berg's tracks: speed typically 20–40 µm/s, runs of a second or two; rotation shown with tethered cells (hooks glued with antibodies) – p. 7"
+    - "Drag sideways vs. lengthwise (ratio ~2 in theory, ~1.5 in models); efficiency ~1 %; 2×10⁻⁸ erg/s ≈ 0.5 W/kg – p. 8–9, Fig. 15–17"
+    - "Corn syrup demonstration, ~50 P = 5000× water; water η = 1 cP – p. 4 (Fig. 4), p. 8"
+    - "Stirring accomplishes nothing; D ≈ 10⁻⁵ cm²/s; outrun diffusion ℓ ≥ D/v ≈ 30 µm; 'If you don't swim that far, you haven't gone anywhere' – p. 9–10, Fig. 18–20"
+    - "Chemotaxis rule: if things are getting better, don't stop so soon; runs up the gradient longer, down not shorter – p. 10"
+    - "Lecture 1976, reprinted (slightly edited) in AJP 1977 – editor's note, p. 3"
+"10.1515/pjfns-2017-0030":
+  read: "Abstract"
+  claims:
+    - "Rosemary honey 6120 mPa·s at 30 °C (603 at 50 °C), Newtonian"
+"10.1088/0034-4885/72/9/096601":
+  read: "Abstract"
+  claims:
+    - "At tens of micrometres and below inertia is unimportant, Re small; resistive-force theory; artificial swimmers and complex fluids are active research"
+"10.1038/245380a0":
+  read: "Title and bibliographic data only (no abstract); the rotation result is also described in Purcell 1977, p. 7"
+  claims:
+    - "Bacteria swim by rotating their flagellar filaments (title)"
+"10.1128/JB.182.10.2793-2801.2000":
+  read: "Abstract"
+  claims:
+    - "Filaments several µm long, ~20 nm thick; rotation ~100 Hz; tumbles varied, a tumble can result from one filament reversing; polymorphic forms normal → semicoiled → curly 1"
+"10.1016/S0006-3495(77)85544-6":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Chemotactic sensitivity of E. coli approaches that of a cell of optimum design"
+"10.1073/pnas.94.21.11307":
+  read: "Abstract"
+  claims:
+    - "A helix rotated by a torque necessarily translates; one translating without torque necessarily rotates (linear Stokes equations)"
+"10.1109/ROBOT.2004.1308026":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Robots navigate to sources by biasing a random walk (chemotaxis-inspired); simulations and a robomote phototaxis test; gradient descent faster, bacterial approach better for boundary coverage and with multiple and dissipative sources"
+"10.1063/1.3079655":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Helical tail and soft-magnetic head, size like natural flagella; weak fields from three orthogonal electromagnetic coil pairs; microsphere manipulation; 'first demonstration of microscopic artificial swimmers that use helical propulsion' (authors' wording)"
+"10.1021/nl900186w":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Chiral colloidal propellers from nanostructured surfaces, made in large numbers; homogeneous magnetic fields, micrometre precision; carry chemicals, push loads"
+"10.1038/nature04090":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Chain of magnetic colloids linked by DNA on a red blood cell; oscillating transverse field gives a beating, propelling motion; speed and direction controllable"
+"10.1146/annurev-bioeng-010510-103409":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Untethered, wirelessly controlled and powered microrobots could make procedures less invasive"
+"10.1109/JPROC.2014.2385105":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Robots down to single-cell size could reach inaccessible body sites; review of challenges for operation inside the body"

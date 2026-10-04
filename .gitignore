@@ -14,3 +14,6 @@ Gemfile.lock
 # Python environment for the code examples
 .venv/
 __pycache__/
+
+# Article drafts with citation keys (wildbionics-article/scripts/assemble.py) – local only
+drafts/

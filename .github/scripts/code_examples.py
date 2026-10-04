@@ -29,9 +29,15 @@ one chart or a program that prints nothing fails the gate.
     python3 -m pip install -r examples/requirements.txt
     python3 .github/scripts/code_examples.py           # run all, (re)write generated files
     python3 .github/scripts/code_examples.py --check   # CI: also fail if committed files are stale
+    python3 .github/scripts/code_examples.py --only bacteria-low-reynolds   # one article (refs, comma-separated)
 
-Charts are always rewritten and never compared (fonts and library versions change the SVG
-bytes); CI regenerates them before the Jekyll build, so the site always shows the current run.
+--only runs and rewrites just the examples of the given page refs and leaves every other
+generated file alone – fast while you work on one article, and it keeps platform noise in
+other articles' charts out of your pull request. CI always runs everything.
+
+Charts are never compared (fonts, library and Python versions change the SVG bytes). CI rewrites
+them before the Jekyll build, so the site always shows the current run; a local --check keeps the
+committed charts, and --only rewrites just one page's.
 """
 
 import difflib
@@ -222,6 +228,9 @@ def notebook(ex, chart):
     return json.dumps(nb, indent=1, ensure_ascii=False) + "\n"
 
 
+KEEP_CHARTS = False      # set in main(): local --check leaves committed charts alone
+
+
 def run(ex, svg_path, errors):
     with tempfile.TemporaryDirectory() as tmp:
         script = Path(tmp) / ex["file"]
@@ -248,7 +257,10 @@ def run(ex, svg_path, errors):
             return output, None
         if chart.exists():
             svg = chart.read_text(encoding="utf-8")
-            svg_path.write_text(svg, encoding="utf-8")
+            # A local --check keeps committed charts: outside CI's Python they differ only by
+            # rounding noise, which must not end up in a pull request. CI always rewrites them.
+            if not (KEEP_CHARTS and svg_path.exists()):
+                svg_path.write_text(svg, encoding="utf-8")
             w, h = (float(re.search(rf'{k}="([\d.]+)pt"', svg).group(1)) for k in ("width", "height"))
             size = (round(w * 4 / 3), round(h * 4 / 3))
         elif svg_path.exists():
@@ -270,10 +282,48 @@ def yaml_data(entries):
     return "\n".join(out) + "\n"
 
 
+def read_yaml_data(text):
+    """Parse the file yaml_data() writes (fixed indentation, JSON values) back into entries."""
+    entries, ref, lang, file = {}, None, None, None
+    for line in text.splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        key, _, value = line.strip().partition(": ") if indent == 6 else (line.strip().rstrip(":"), "", "")
+        if indent == 0:
+            ref = key; entries[ref] = {}
+        elif indent == 2:
+            lang = key; entries[ref][lang] = {}
+        elif indent == 4:
+            file = json.loads(key); entries[ref][lang][file] = {}
+        else:
+            entries[ref][lang][file][key] = json.loads(value)
+    return entries
+
+
+def only_refs():
+    """Page refs from --only a,b or --only=a,b (None: all examples)."""
+    for i, arg in enumerate(sys.argv):
+        if arg == "--only" and i + 1 < len(sys.argv):
+            return set(sys.argv[i + 1].split(","))
+        if arg.startswith("--only="):
+            return set(arg.split("=", 1)[1].split(","))
+    return None
+
+
 def main():
+    global KEEP_CHARTS
     check = "--check" in sys.argv
+    KEEP_CHARTS = check and not os.environ.get("CI")
+    only = only_refs()
     errors, stale = [], []
     examples = find_examples(errors)
+    if only is not None:
+        unknown = only - {ex["ref"] for ex in examples}
+        if unknown:
+            print(f"ERROR: --only: no code examples for {', '.join(sorted(unknown))}")
+            return 1
+        examples = [ex for ex in examples if ex["ref"] in only]
     expected, entries = {}, {}
     for ex in examples:
         stem = ex["file"].removesuffix(".py")
@@ -315,10 +365,16 @@ def main():
             print(f"ERROR: {e}")
         print(f"\nCode examples: {len(examples)} found, {len(errors)} errors.")
         return 1
+    if only is not None:                    # keep every other page's entries as committed
+        merged = read_yaml_data(DATA.read_text(encoding="utf-8")) if DATA.exists() else {}
+        merged.update(entries)
+        entries = merged
     expected[DATA] = yaml_data(entries)
 
     keep = set(expected) | {p.with_suffix(".svg") for p in expected if p.suffix == ".py"} | {OUT / "requirements.txt"}
     for path in sorted(OUT.rglob("*")):
+        if only is not None and path.relative_to(OUT).parts[0] not in only:
+            continue                        # other pages' files are not ours to touch
         if path.is_file() and path not in keep:
             stale.append(f"{path.relative_to(ROOT)} belongs to no example")
             path.unlink()

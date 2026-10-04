@@ -8,6 +8,25 @@ description: "Write or extend a WildBionics article – research protocol with v
 An article explains **one natural phenomenon** so that a curious reader understands it and can
 check every claim. Reference article: `_articles/pistol-shrimp-cavitation.en.md` (and `.de.md`).
 
+## 0. Fast path – one article, one session
+
+Start a fresh session per article (a long session drags its whole history into every step) and
+use the tools instead of hand work:
+
+```bash
+python3 plugins/wildbionics/skills/wildbionics-article/scripts/new_article.py <ref> <german-slug> biology,physics,math,cs   # drafts + notes file
+python3 plugins/wildbionics/skills/wildbionics-article/scripts/sources.py <ref> <doi> <doi> …        # verify DOIs → drafts/<ref>.sources.yml + .reading.md
+# write drafts/<ref>.en.md, cite with {{c:key}}; translate to drafts/<ref>.de.md (same keys)
+python3 plugins/wildbionics/skills/wildbionics-article/scripts/assemble.py drafts/<ref>.en.md drafts/<ref>.de.md   # → _articles/, numbered citations
+python3 .github/scripts/code_examples.py --only <ref>             # only this article's examples
+python3 plugins/wildbionics/skills/wildbionics-figures/scripts/og.py <ref>   # OG images EN + DE
+.github/scripts/check_all.sh --only <ref>                         # all gates, one line each
+```
+
+`drafts/` is git-ignored: drafts survive between sessions on your machine but are never committed.
+Before the pull request, run `wildbionics-review` locally once – the CI review runs only when the
+PR is opened and when the label `ready-for-review` is added (see `wildbionics-contribute`).
+
 ## 1. Research protocol (before writing)
 
 1. Collect **primary sources**: peer-reviewed papers, ideally with DOI; prefer open access.
@@ -17,12 +36,17 @@ check every claim. Reference article: `_articles/pistol-shrimp-cavitation.en.md`
    in the environment (see `wildbionics-contribute`); if a lookup fails, say so – never guess.
 3. Read at least the abstract (PubMed `efetch`, Semantic Scholar, open-access full text).
    Note for each number *where exactly* it comes from. If a source says "at least 5,000 K",
-   write "at least 5,000 K", not "5,000 K".
-4. Derived numbers (e.g. a collapse time from Rayleigh's formula) are **calculated in a script**,
+   write "at least 5,000 K", not "5,000 K". A source you could not read (no abstract, paywall,
+   bot check) is not cited – cite a readable source that reports it, or derive the result.
+4. **Write the research notes** `_data/source_notes/<ref>.yml` (required since 2026-10-04,
+   checked by `check_content.rb`): per source, keyed by DOI, what you read (`read:` "Abstract
+   (PubMed)", "Full text, scanned PDF") and which claims rest on it with the place (`claims:`).
+   The review reads them instead of re-searching papers it cannot open – this saves review rounds.
+5. Derived numbers (e.g. a collapse time from Rayleigh's formula) are **calculated in a script**,
    and the worked calculation is shown in the article with its assumptions labelled.
-5. Code in an article is a **complete, tested program** (section 4) – its output and chart on the
+6. Code in an article is a **complete, tested program** (section 4) – its output and chart on the
    page come from an actual run, never from typing.
-6. Anything speculative or hypothetical (e.g. superintelligence, future robots) is written as a
+7. Anything speculative or hypothetical (e.g. superintelligence, future robots) is written as a
    scenario with sources for the positions described – never as fact.
 
 ## 2. File and front matter
@@ -44,6 +68,7 @@ updated: 2026-09-27           # set on every later change of facts, text or figu
                                # JSON-LD dateModified, sitemap lastmod (never fake it with the build time)
 permalink: /articles/<slug>/   # DE: /de/artikel/<german-slug>/
 image: /assets/og/<slug>-en.jpg
+og: { eyebrow: "…", title: "… <em>…</em>", sub: "…" }   # OG card text, rendered by og.py
 image_alt: "…"                 # describes what the OG image shows: og:image:alt + ImageObject caption
 hero_figure: svg/<figure>.svg  # see wildbionics-figures
 hero_caption: "<span class=\"caption__label\">Fig. 1</span> …"
@@ -142,6 +167,7 @@ Numbers quoted in the text must match the Output box; rerun the script after eve
 **Run the gate** (needs Python ≥ 3.9 with the pinned libraries):
 ```bash
 python3 -m venv .venv && source .venv/bin/activate && python3 -m pip install -r examples/requirements.txt
+python3 .github/scripts/code_examples.py --only <ref>   # while writing: just this article's examples
 python3 .github/scripts/code_examples.py          # run all examples, write generated files – commit them
 python3 .github/scripts/code_examples.py --check  # what CI runs: fails on errors or stale files (also rewrites them – check git status)
 ```
@@ -158,12 +184,14 @@ No marketing language, no unverifiable superlatives ("loudest animal" needs a so
   answer engines; JSON-LD (Article, FAQPage, BreadcrumbList named by `short_title`, citations
   with DOI, Wikidata `about`, licensed preview `ImageObject` with `image_alt` as caption) is
   generated by `_includes/jsonld.html` from front matter – rules in `wildbionics-design`.
-- Create the OG images (1200×630, EN and DE) with `_includes/og-card.html` – recipe in
-  `wildbionics-figures`, step 6.
+- Create the OG images (1200×630, EN and DE): put the card text into the front matter
+  (`og: { eyebrow, title, sub, title_px }`, title with one `<em>` word) and run
+  `wildbionics-figures/scripts/og.py <ref>` – details in `wildbionics-figures`, step 7.
 - `llms.txt`, `sitemap.xml` (including the image sitemap: OG image, figures and charts of every page), `graph.json` and `graph.jsonld` update automatically on build; the article's
   JSON-LD lists its ontology terms as DefinedTerms with the graph's stable IRIs.
 
 ## 7. Finish
 
 Add new ontology terms/organisms via `wildbionics-graph`, translate via `wildbionics-translate`,
-then run all gates (see `wildbionics-contribute`) and review with `wildbionics-review`.
+then run all gates (`.github/scripts/check_all.sh`, see `wildbionics-contribute`) and review
+with `wildbionics-review` before you open the pull request.

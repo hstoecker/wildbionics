@@ -10,6 +10,7 @@ dek: "Wärst du so klein wie ein Bakterium, fühlte sich Wasser an wie Honig. So
 date: 2026-10-03
 permalink: /de/artikel/schwimmen-in-honig/
 image: /assets/og/bacteria-low-reynolds-de.jpg
+og: { eyebrow: "Biologie · Strömungsmechanik", title: "Schwimmen in <em>Honig</em>: die Physik der Bakterien", sub: "Warum Wasser für ein Bakterium wie Sirup ist – und wie E. coli trotzdem schwimmt.", title_px: 58 }
 image_alt: "Schema eines Bakteriums E. coli in einem Nahrungsgefälle: Es schwimmt gerade Läufe mit gebündelten Flagellen, taumelt und startet in eine neue Richtung – Läufe zu mehr Nahrung dauern länger."
 hero_figure: svg/bacteria-run-tumble.svg
 hero_caption: "<span class=\"caption__label\">Abb. 1</span> Laufen und Taumeln. Während eines Laufs bündeln sich die rotierenden Flagellen von E. coli und schieben die Zelle wie ein Korkenzieher voran. Dreht ein Motor um, drehen sich die Flagellen nicht mehr gemeinsam, und die Zelle taumelt; der nächste Lauf beginnt in einer neuen Richtung. Läufe, die zu mehr Nahrung führen, dauern länger – so driftet die Zelle das Gefälle hinauf."

@@ -39,6 +39,7 @@ exclude:
   - CONTRIBUTING.md
   - AGENTS.md
   - plugins/
+  - drafts/
   - Gemfile
   - Gemfile.lock
   - vendor/
