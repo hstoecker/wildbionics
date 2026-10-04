@@ -1,0 +1,43 @@
+# Research notes for "The Robin's Quantum Compass" – what was read and which claims rest on each
+# source, keyed by DOI (wildbionics-article, research protocol). Read by the review.
+"10.1126/science.176.4030.62":
+  read: "Abstract (Crossref/OpenAlex); author names from Crossref"
+  claims:
+    - "Robins' compass does not use the polarity of the field; north = direction on the north–south axis where field lines and gravity vector form the smaller angle (inclination compass)"
+"10.1038/nature02534":
+  read: "Abstract (PubMed); author names from Crossref"
+  claims:
+    - "Broadband 0.1–10 MHz or 7 MHz oscillating fields disorient robins; parallel to the geomagnetic field oriented, at 24° or 48° disoriented; consistent with a resonance on singlet–triplet transitions; two competing hypotheses (magnetite vs. chemical)"
+"10.1038/nature13290":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Robins cannot use their magnetic compass in unscreened wooden huts on the Oldenburg campus; grounded aluminium screening attenuating 50 kHz–5 MHz by ~2 orders restores it; removing grounding or adding broadband noise disrupts again; fully double-blinded"
+"10.1038/s41586-021-03618-9":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Night-migratory songbirds fly alone, often over great distances; a light-dependent magnetic compass is crucial; proposed mechanism: photoinduced radical pairs in cryptochromes in the retina"
+    - "Robin CRY4 is magnetically sensitive in vitro, more than CRY4 of chicken and pigeon; four successive flavin–tryptophan radical pairs"
+"10.1016/S0006-3495(00)76629-X":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Radical pairs with anisotropic hyperfine coupling: fields of geomagnetic strength give different reaction yields for different alignments; ordered radical pairs could modulate vision (visual patterns); cryptochrome proposed"
+"10.1146/annurev-biophys-032116-094545":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Primary sensory mechanism still unclear; leading hypothesis: radical pairs formed by photoexcitation of cryptochrome in the retina"
+"10.1098/rsbl.2007.0134":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Urban robins sing at night where daytime noise is high; light pollution has a much weaker effect; the authors interpret it as reducing acoustic interference"
+"10.1038/nature08528":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Robins with bilateral Cluster N lesions lose magnetic-compass orientation but keep sun and star compass; cutting the ophthalmic branch of the trigeminal nerve has no effect; the data 'strongly suggest' a vision-mediated compass; Cluster N is night-active and light-processing"
+"10.1103/RevModPhys.89.035002":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "'The working part of the sensor contains one or a few qubits' (abstract wording); quantum technologies increasingly drive precision metrology"
+"10.1038/nature06834":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Earth's field approximately 50 µT; carotenoid–porphyrin–fullerene radical pair lifetime changed by ≤ 50 µT with anisotropic response – feasibility of a chemical compass, insight into design features"

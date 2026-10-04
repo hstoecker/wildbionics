@@ -13,6 +13,9 @@
 
 terms:
   # --- Zoology / biology ---------------------------------------------------------
+  - { en: "magnetoreception", de: "Magnetorezeption" }
+  - { en: "cryptochrome*", de: "Cryptochrom*", avoid: ["Kryptochrom*"], level: warn, why: "Fachschreibweise: Cryptochrom." }
+  - { en: "migratory bird*", de: "Zugv*" }
   - { en: "flagell*", de: "Flagell*", de_alt: ["Geißel*"], why: "Bakteriengeißel; Fachsprache Flagellum, Plural Flagellen." }
   - { en: "chemotaxis", de: "Chemotaxis" }
   - { en: "tumble*", de: "Taumel*", de_alt: ["taumel*"], avoid: ["Purzel*"], level: warn, why: "run and tumble = Laufen und Taumeln." }
@@ -58,6 +61,14 @@ terms:
   - { en: "asynchronous muscle*", de: "asynchrone* Muskel*", de_alt: ["asynchrone* Flugmuskel*", "asynchrone* Muskulatur"] }
   - { en: "ocelli", de: "Ocellen", de_alt: ["Punktaugen", "Stirnaugen"], why: "Ocellen (Punktaugen) der Insekten, nicht die Komplexaugen." }
   # --- Physics -------------------------------------------------------------------
+  - { en: "radical pair*", de: "Radikalpaar*" }
+  - { en: "inclination", de: "Inklination", de_alt: ["Neigung*"] }
+  - { en: "singlet", de: "Singulett*" }
+  - { en: "triplet", de: "Triplett*" }
+  - { en: "hyperfine coupling", de: "Hyperfeinkopplung", de_alt: ["Hyperfeinwechselwirkung"] }
+  - { en: "electron spin*", de: "Elektronenspin*" }
+  - { en: "Earth's magnetic field", de: "Erdmagnetfeld*", de_alt: ["Erdfeld*"] }
+  - { en: "polarity", de: "Polarität" }
   - { en: "viscosity", de: "Viskosität", de_alt: ["Zähigkeit"] }
   - { en: "viscous", de: "zäh*", de_alt: ["viskos*"] }
   - { en: "scallop theorem", de: "Muschel-Theorem", avoid: ["Jakobsmuschel-Theorem", "Muscheltheorem"], level: warn, why: "Einheitliche Schreibweise; englisch scallop theorem." }
@@ -178,6 +189,7 @@ terms:
   - { en: "micro-computed tomography", de: "Mikro-Computertomografie", de_alt: ["µCT", "Mikro-CT"] }
 
   # --- Artificial intelligence / robotics -----------------------------------------
+  - { en: "quantum sensor*", de: "Quantensensor*" }
   - { en: "microrobot*", de: "Mikroroboter*" }
   - { en: "Physical AI", de: "Physical AI", de_alt: ["verkörperte* KI", "verkörperte* künstliche* Intelligenz"], avoid: ["physikalische* KI", "physikalische* künstliche* Intelligenz"], why: "Falscher Freund: physikalisch = die Physik betreffend. Gemeint ist verkörperte KI; im Deutschen ist der Begriff Physical AI etabliert." }
   - { en: "embodied AI", de: "verkörperte* KI", de_alt: ["verkörperte* künstliche* Intelligenz", "Embodied AI"] }
