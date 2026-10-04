@@ -41,7 +41,7 @@ key_facts:
   - "Magnetic microrobots copy the corkscrew of the bacterial flagellum and are steered by external magnetic fields; they are being developed for medicine [9](#ref-9){:.cite} [10](#ref-10){:.cite} [12](#ref-12){:.cite}."
 faq:
   - q: "Why is water like honey for a bacterium?"
-    a: "What matters is not the liquid alone but the ratio of inertia to viscous friction, the Reynolds number. It depends on the size and speed of the swimmer. A bacterium is a few micrometres long and swims a few tens of micrometres per second, so its Reynolds number is only about 0.00003 to 0.00006, depending on whether its width or its length is taken as its size. A human would reach such a low value only in a liquid thicker than honey while moving extremely slowly."
+    a: "What matters is not the liquid alone but the ratio of inertia to viscous friction, the Reynolds number. It depends on the size and speed of the swimmer. A bacterium is a few micrometres long and swims a few tens of micrometres per second, so its Reynolds number is only about 0.00003 to 0.00006, depending on whether its width or its length is taken as its size. Even in honey and moving no faster than 1 cm per minute, a human would still be about a thousand times above it; it would take an even thicker liquid and far slower movements."
   - q: "How does E. coli swim?"
     a: "E. coli has several thin, helical flagella. At the base of each sits a rotary motor that turns it about a hundred times per second. During a run the flagella bundle together and work like a corkscrew that pushes the cell forward. When a motor reverses, the flagella no longer turn together, the cell tumbles and then swims off in a new direction."
   - q: "What is the scallop theorem?"
@@ -152,9 +152,9 @@ status: published
 
 ## Life where water feels like honey
 
-Imagine you are as small as a bacterium. Water, which carries a swimmer and lets a boat glide, suddenly behaves like a thick syrup. If you stop paddling, you do not glide on – you stop at once. The physicist Edward Purcell described this world in a famous lecture in 1976, published in 1977: for a bacterium, **inertia plays no role whatsoever**; what it does at any moment is set only by the forces acting on it at that moment [1](#ref-1){:.cite}.
+Imagine you are as small as a bacterium. Water, which carries a swimmer and lets a boat glide, suddenly behaves like a thick syrup. If you stop paddling, you do not glide on – you stop at once. The physicist Edward Purcell described this world in a famous lecture in 1976, reprinted in 1977: for a bacterium, **inertia plays no role whatsoever**; what it does at any moment is set only by the forces acting on it at that moment [1](#ref-1){:.cite}.
 
-Purcell's picture was vivid. To swim the way a microorganism does, you would have to be in a swimming pool full of molasses – and you would not be allowed to move any part of your body faster than 1 cm per minute. If under these rules you managed to move a few metres in a couple of weeks, you would qualify as a low-Reynolds-number swimmer [1](#ref-1){:.cite}. Honey would serve almost as well as molasses: even a runny rosemary honey is more than 6,000 times as viscous as water at 30 °C [2](#ref-2){:.cite} [1](#ref-1){:.cite}. But, as the physics lens shows, a thick liquid alone is not enough – the slowness matters just as much.
+Purcell's picture was vivid. To swim the way a microorganism does, you would have to be in a swimming pool full of molasses – and you would not be allowed to move any part of your body faster than 1 cm per minute. If under these rules you managed to move a few metres in a couple of weeks, you would qualify as a low-Reynolds-number swimmer [1](#ref-1){:.cite}. Honey would serve almost as well as molasses: even a runny rosemary honey, measured at 30 °C, is about 6,000 times as viscous as water with its 1 mPa·s [2](#ref-2){:.cite} [1](#ref-1){:.cite}. But, as the physics lens shows, a thick liquid alone is not enough – the slowness matters just as much.
 
 This is the world of the overwhelming majority of organisms [1](#ref-1){:.cite}. Microorganisms such as the gut bacterium *Escherichia coli* swim in it every second [1](#ref-1){:.cite} [3](#ref-3){:.cite}. This article explains how they do it – and why tiny robots are now being built after their example.
 
@@ -288,7 +288,7 @@ Try it yourself:
 
 <div class="formula" role="math" aria-label="l is at least D divided by v"><var>ℓ</var> ≥ <span class="frac"><span class="frac__num"><var>D</var></span><span class="frac__den"><var>v</var></span></span></div>
 
-With *v* = 30 µm/s this gives about **30 µm** – roughly the length of a bacterial run. "If you don't swim that far, you haven't gone anywhere," as Purcell put it [1](#ref-1){:.cite}.
+With *v* = 30 µm/s this gives about **30 µm** – roughly the length of a bacterial run. As Purcell put it: a bacterium that does not swim that far has not gone anywhere [1](#ref-1){:.cite}.
 
 **A run-and-tumble walk spreads like diffusion.** Model the bacterium in two dimensions: it runs at speed *v*, each run lasts a random time with mean *τ*, and each tumble chooses a completely new direction. Run durations of this kind follow an exponential distribution, for which the mean square of the duration is 2*τ*<sup>2</sup>. One run therefore covers a mean square distance of 2*v*<sup>2</sup>*τ*<sup>2</sup>, and in a time *t* there are about *t*/*τ* independent runs:
 
@@ -408,7 +408,7 @@ Try it yourself:
 
 For Physical AI – robots that sense and act in the real world – the bacterium is a special role model. A robot the size of a bacterium faces the bacterium's physics: no inertia, no gliding, and the scallop theorem forbids every simple back-and-forth stroke [1](#ref-1){:.cite} [3](#ref-3){:.cite}. Engineers have therefore copied nature's two solutions.
 
-**The corkscrew.** In 2009, Li Zhang, Bradley Nelson and colleagues built **artificial bacterial flagella**: a helical tail with the shape and size of a natural flagellum and a thin soft-magnetic "head" at one end. Weak magnetic fields from three pairs of electromagnetic coils drive and steer the swimmer – the first microscopic artificial swimmers with helical propulsion. They could push microspheres around [9](#ref-9){:.cite}. In the same year, Ambarish Ghosh and Peer Fischer showed chiral propellers made of nanostructured surfaces that can be produced in large numbers and steered through water with micrometre precision by homogeneous magnetic fields; they can carry chemicals and push loads [10](#ref-10){:.cite}.
+**The corkscrew.** In 2009, Li Zhang, Bradley Nelson and colleagues built **artificial bacterial flagella**: a helical tail with the shape and size of a natural flagellum and a thin soft-magnetic "head" at one end. Weak magnetic fields from three pairs of electromagnetic coils drive and steer the swimmer; the authors describe it as the first demonstration of microscopic artificial swimmers with helical propulsion. They could push microspheres around [9](#ref-9){:.cite}. In the same year, Ambarish Ghosh and Peer Fischer showed chiral propellers made of nanostructured surfaces that can be produced in large numbers and steered through water with micrometre precision by homogeneous magnetic fields; they can carry chemicals and push loads [10](#ref-10){:.cite}.
 
 **The flexible oar.** Rémi Dreyfus and colleagues linked magnetic particles with DNA into a flexible chain and attached it to a red blood cell. An oscillating magnetic field made the chain beat like a tail and propelled the structure; the fields controlled speed and direction [11](#ref-11){:.cite}.
 
