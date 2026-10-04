@@ -2308,6 +2308,38 @@ a.cite:hover { text-decoration: underline; }
   .lapping-svg .marker text { font-size: 18px; }
 }
 
+/* European robin and Earth's field, hero of the robin article (_includes/svg/robin-compass.svg) */
+.robin-svg { width: 100%; height: auto; overflow: visible; }
+.robin-svg .grid { color: rgba(238, 242, 234, 0.045); }
+.robin-svg .fl { stroke: var(--signal); stroke-width: 2; stroke-dasharray: 7 6; opacity: 0.8; }
+.robin-svg .fl-head { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linecap: round; }
+.robin-svg .ground { stroke: var(--on-dark-2); stroke-width: 1.5; opacity: 0.6; }
+.robin-svg .angle { fill: none; stroke: var(--accent); stroke-width: 1.8; }
+.robin-svg .twig { fill: none; stroke: #6b5440; stroke-width: 7; stroke-linecap: round; }
+.robin-svg .twig--thin { stroke-width: 4; }
+.robin-svg .tail { fill: #6f6248; }
+.robin-svg .body { fill: url(#robin-back); }
+.robin-svg .belly { fill: #ece6d8; }
+.robin-svg .wing { fill: #6f6248; }
+.robin-svg .wing-bar { fill: none; stroke: #a89870; stroke-width: 1.5; opacity: 0.7; }
+.robin-svg .head { fill: url(#robin-back); }
+.robin-svg .breast-rim { fill: #a7b3b6; }
+.robin-svg .breast { fill: url(#robin-breast); }
+.robin-svg .eye { fill: #121212; }
+.robin-svg .eye-shine { fill: #fff; }
+.robin-svg .beak { fill: #3b352d; }
+.robin-svg .robin-leg { fill: none; stroke: #9b7d62; stroke-dasharray: none; stroke-width: 2.5; stroke-linecap: round; }
+.robin-svg .callout { fill: none; stroke: var(--on-dark-2); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.robin-svg .inset { fill: rgba(10, 21, 25, 0.75); stroke: var(--on-dark-2); stroke-width: 1.2; }
+.robin-svg .radical { fill: color-mix(in srgb, var(--accent) 25%, #0a1519); stroke: var(--accent); stroke-width: 1.5; }
+.robin-svg .spin { fill: none; stroke: var(--on-dark); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.robin-svg .label-strong { fill: var(--on-dark); font-weight: 600; }
+.robin-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .robin-svg .label, .robin-svg .label-tick { font-size: 20px; }
+  .robin-svg .opt { display: none; }   /* secondary lines: no room at phone size – the caption says it */
+}
+
 /* Run and tumble, hero of the bacteria article (_includes/svg/bacteria-run-tumble.svg) */
 .rt-svg { width: 100%; height: auto; overflow: visible; }
 .rt-svg .grid { color: rgba(238, 242, 234, 0.045); }

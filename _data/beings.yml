@@ -9,3 +9,4 @@ water-strider: { en: "Water strider", de: "Wasserläufer", taxon: "Gerridae", wi
 domestic-cat: { en: "Domestic cat", de: "Hauskatze", taxon: "Felis catus", wikidata: Q146 }
 cyanobacteria: { en: "Cyanobacteria", de: "Cyanobakterien", taxon: "Cyanobacteriota", wikidata: Q25577567 }
 e-coli: { en: "E. coli", de: "Kolibakterium", taxon: "Escherichia coli", wikidata: Q25419 }
+european-robin: { en: "European robin", de: "Rotkehlchen", taxon: "Erithacus rubecula", wikidata: Q25334 }

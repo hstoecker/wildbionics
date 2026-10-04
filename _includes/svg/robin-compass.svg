@@ -1,0 +1,65 @@
+{%- include i18n.html -%}
+{%- assign r = t.figures.robin_compass -%}
+<svg class="robin-svg" viewBox="0 0 720 410" role="img" aria-labelledby="robin-title" aria-describedby="robin-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="robin-title">{{ r.title }}</title>
+  <desc id="robin-desc">{{ r.desc }}</desc>
+  <defs>
+    <pattern id="robin-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="currentColor" stroke-width=".6"/>
+    </pattern>
+    <radialGradient id="robin-fade" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="robin-mask"><rect width="720" height="410" fill="url(#robin-fade)"/></mask>
+    <radialGradient id="robin-breast" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#f29a52"/>
+      <stop offset="1" stop-color="#d4632a"/>
+    </radialGradient>
+    <linearGradient id="robin-back" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a8a66"/>
+      <stop offset="1" stop-color="#7a6c50"/>
+    </linearGradient>
+  </defs>
+  <rect class="grid" width="720" height="410" fill="url(#robin-grid)" mask="url(#robin-mask)"/>
+
+  <!-- Earth's field lines, dipping into the ground towards the pole -->
+  <path class="fl" d="M400.0,84.0 L518.5,350.2"/><path class="fl-head" d="M518.5,350.2 l-6.6,-6.1 M518.5,350.2 l-0.2,-9.0"/><path class="fl" d="M470.0,84.0 L588.5,350.2"/><path class="fl-head" d="M588.5,350.2 l-6.6,-6.1 M588.5,350.2 l-0.2,-9.0"/><path class="fl" d="M540.0,84.0 L658.5,350.2"/><path class="fl-head" d="M658.5,350.2 l-6.6,-6.1 M658.5,350.2 l-0.2,-9.0"/>
+  <path class="ground" d="M370,352 H704"/>
+  <path class="angle" d="M465.3,352 A54 54 0 0 0 497.4,302.7"/>
+  <text x="457.3" y="340" text-anchor="end" class="label label-accent">{{ r.inclination }}</text>
+  <text x="704" y="40" text-anchor="end" class="label label-strong">{{ r.field }}</text>
+  <text x="704" y="58" text-anchor="end" class="label label-muted opt">{{ r.field_note }}</text>
+  
+  <g class="robin">
+    <path class="twig" d="M60,336 C150,328 260,332 360,324"/>
+    <path class="twig twig--thin" d="M290,328 C308,318 324,312 340,310"/>
+    <path class="tail" d="M146,272 L80,306 L92,320 L160,294 Z"/>
+    <ellipse class="body" cx="212" cy="252" rx="66" ry="54" transform="rotate(-12 212 252)"/>
+    <path class="wing" d="M228,216 C200,208 162,228 146,266 C174,274 212,266 236,242 Z"/>
+    <path class="wing-bar" d="M222,226 C200,224 176,238 162,256"/>
+    <path class="belly" d="M188,300 C222,312 266,300 286,268 C264,262 230,274 188,300 Z"/>
+    <circle class="head" cx="272" cy="192" r="41"/>
+    <path class="breast-rim" d="M277,151 C267,166 263,182 265,198 C259,214 249,234 247,258 C249,272 255,282 263,288 L268,286 C262,276 258,266 257,256 C259,234 268,214 274,198 C272,182 276,166 286,153 Z"/>
+    <path class="breast" d="M286,152 C276,166 272,182 274,198 C268,214 259,234 257,256 C258,268 262,278 268,286 C298,272 316,240 313,202 C312,176 302,158 286,152 Z"/>
+    <circle class="eye" cx="291" cy="183" r="6"/>
+    <circle class="eye-shine" cx="293" cy="181" r="1.8"/>
+    <path class="beak" d="M310,187 L329,192 L310,197 Z"/>
+    <path class="robin-leg" d="M212,302 L206,330 M238,298 L238,326"/>
+  </g>
+
+  <!-- In the eye: a radical pair whose spins feel the field -->
+  <path class="callout" d="M287,176 C270,140 244,116 222,106"/>
+  <g transform="translate(130 104)">
+    <circle class="inset" r="86"/>
+    <circle class="radical" cx="-26" cy="-26" r="14"/>
+    <circle class="radical" cx="26" cy="-26" r="14"/>
+    <path class="spin" d="M-26,-14 V-40 M-32,-33 L-26,-41 L-20,-33"/>
+    <path class="spin" d="M26,-40 V-14 M20,-21 L26,-13 L32,-21"/>
+    <text y="10" text-anchor="middle" class="label label-strong">{{ r.pair }}</text>
+    <text y="28" text-anchor="middle" class="label label-muted opt">{{ r.pair_note }}</text>
+    <text y="46" text-anchor="middle" class="label label-muted opt">{{ r.eye }}</text>
+  </g>
+
+  <text x="20" y="398" class="label label-tick">{{ r.note }}</text>
+</svg>
