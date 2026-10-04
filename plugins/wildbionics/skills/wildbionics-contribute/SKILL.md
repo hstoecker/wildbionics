@@ -76,6 +76,10 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
 6. **Open a pull request** using the template. CI runs all gates, builds a preview (downloadable
    artifact with screenshots) and – for branches in this repository – posts a Claude review once.
    For another review after fixes, add the label `ready-for-review` (the job removes it again).
+   **Rule – the last review covers the final state:** whoever pushes fixes after a review (human
+   or agent) adds the label `ready-for-review` right after the push (`gh pr edit <n> --add-label
+   ready-for-review`). The maintainer merges only when the most recent review was posted after
+   the last content change and has no must-fix findings.
    Work on one article per session: a fresh session with the skills is faster and cheaper than a
    long one that carries every earlier step along.
 7. **Maintainer approval:** Hendrik Stöcker reviews and merges. Only merged changes deploy
