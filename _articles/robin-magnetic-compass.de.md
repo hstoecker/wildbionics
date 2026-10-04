@@ -41,9 +41,9 @@ faq:
   - q: "Wie finden Rotkehlchen ihren Weg beim Vogelzug?"
     a: "Rotkehlchen ziehen nachts und nutzen mehrere Kompasse: die Sonne, die Sterne und das Erdmagnetfeld. Ihr Magnetkompass unterscheidet Nord und Süd nicht direkt. Er liest die Neigung der Feldlinien und nimmt als „polwärts“ die Richtung, in der Feldlinien und Schwerkraft den kleineren Winkel bilden."
   - q: "Ist der Kompass des Rotkehlchens wirklich ein Quanteneffekt?"
-    a: "Das ist die führende Hypothese, keine bewiesene Tatsache. Licht soll in Cryptochrom-Proteinen der Netzhaut Radikalpaare erzeugen; die Spins ihrer ungepaarten Elektronen reagieren auf die Richtung des Erdmagnetfelds und verändern das Ergebnis einer chemischen Reaktion. Versuche mit Hochfrequenzfeldern und mit isoliertem Cryptochrom des Rotkehlchens stützen die Idee, doch die ganze Kette vom Molekül bis zum Verhalten ist nicht nachgewiesen."
+    a: "Das ist die führende Hypothese, keine bewiesene Tatsache. Licht soll in Cryptochrom-Proteinen der Netzhaut Radikalpaare erzeugen; die Spins ihrer ungepaarten Elektronen reagieren auf die Richtung des Erdmagnetfelds und verändern das Ergebnis einer chemischen Reaktion. Versuche mit Hochfrequenzfeldern und mit isoliertem Cryptochrom des Rotkehlchens stützen die Idee, doch soweit die zitierten Studien zeigen, ist die ganze Kette vom Molekül bis zum Verhalten nicht nachgewiesen."
   - q: "Warum stört elektromagnetisches Rauschen Rotkehlchen?"
-    a: "In Versuchen konnten Rotkehlchen ihren Magnetkompass in Holzhütten nicht nutzen, die dem elektromagnetischen Hintergrundrauschen eines Universitätsgeländes ausgesetzt waren. Wurden die Hütten mit geerdetem Aluminium abgeschirmt, das das Rauschen zwischen 50 kHz und 5 MHz etwa hundertfach schwächte, orientierten sich die Vögel wieder. Das passt zu einem Radikalpaar-Kompass, den Hochfrequenzfelder stören können."
+    a: "In Versuchen konnten Rotkehlchen ihren Magnetkompass in Holzhütten nicht nutzen, die dem elektromagnetischen Hintergrundrauschen eines Universitätsgeländes ausgesetzt waren. Wurden die Hütten mit geerdetem Aluminium abgeschirmt, das das Rauschen zwischen 50 kHz und 5 MHz etwa hundertfach schwächte, orientierten sich die Vögel wieder. Das passt zu einem Radikalpaar-Kompass: Frühere Versuche hatten gezeigt, dass Hochfrequenzfelder Rotkehlchen aus der Richtung bringen."
   - q: "Warum singen Rotkehlchen in Städten nachts?"
     a: "Eine Studie an Rotkehlchen in der Stadt fand, dass sie nachts an Orten singen, an denen es tagsüber laut ist. Der Lärm am Tag sagte den Nachtgesang viel besser voraus als künstliches Licht. Laut den Autoren verringern die Rotkehlchen so akustische Störungen."
   - q: "Können Ingenieure einen Kompass wie den des Rotkehlchens bauen?"
@@ -132,7 +132,7 @@ Das Rotkehlchen ist ein Singvogel, der nachts zieht. Vögel wie es fliegen allei
 
 Die Nadel eines Wanderkompasses zeigt nach magnetisch Nord, weil sie der **Polarität** des Feldes folgt. Das Rotkehlchen ignoriert die Polarität. Es liest die **Inklination** – den Winkel, unter dem die Feldlinien in den Boden tauchen – und nimmt als „Norden“ die Richtung auf der Nord-Süd-Achse, in der Feldlinien und Schwerkraftvektor den kleineren Winkel bilden [2](#ref-2){:.cite}. Mit anderen Worten: Das Rotkehlchen unterscheidet „zum Pol hin“ von „zum Äquator hin“, aber nicht Nord von Süd.
 
-Wie spürt ein Vogel ein Feld, das so schwach ist wie das der Erde, etwa 50 Mikrotesla [3](#ref-3){:.cite}? Die Antwort wird noch erforscht. Die führende Hypothese ist eine der erstaunlichsten Ideen der Biologie: ein Quanteneffekt im Auge des Vogels [4](#ref-4){:.cite}.
+Wie spürt ein Vogel ein Feld, das so schwach ist wie das der Erde, etwa 50 Mikrotesla [3](#ref-3){:.cite}? Die Antwort wird noch erforscht. Die führende Hypothese ist eine ungewöhnliche Idee für die Biologie: ein Quanteneffekt im Auge des Vogels [4](#ref-4){:.cite}.
 
 ## Der Kompass in drei Schritten (führende Hypothese)
 
@@ -158,7 +158,7 @@ Die Welt des Rotkehlchens ist nicht nur magnetisch, sondern auch akustisch. In S
 
 ## Physik-Linse: Spins, die ein schwaches Feld spüren
 
-Ein Elektron verhält sich wie ein winziger Magnet; seine magnetische Eigenschaft heißt **Spin**. Im Erdmagnetfeld von etwa 50 µT [3](#ref-3){:.cite} ist die magnetische Energie eines Elektronenspins extrem klein – etwa das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie eines Moleküls bei Körpertemperatur, wie die Informatik-Linse berechnet. Ein Sensor, der darauf beruhte, dass sich Spins im thermischen Gleichgewicht ausrichten, wäre aussichtslos.
+Ein Elektron verhält sich wie ein winziger Magnet; seine magnetische Eigenschaft heißt **Spin**. Im Erdmagnetfeld von etwa 50 µT [3](#ref-3){:.cite} ist die magnetische Energie eines Elektronenspins extrem klein – etwa das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie eines Moleküls bei Körpertemperatur, wie die Informatik-Linse berechnet. Ein Sensor, der darauf beruhte, dass sich Spins im thermischen Gleichgewicht ausrichten, gäbe nur ein extrem schwaches Signal.
 
 Das Radikalpaar-Modell braucht kein thermisches Gleichgewicht. Licht erzeugt das Paar, und entscheidend ist, wie das Feld die **Spindynamik** während des kurzen Lebens des Paares verändert – die Simulation in der Informatik-Linse enthält überhaupt keine Temperatur, und trotzdem verändert das Feld das Ergebnis. Theoretische Arbeiten zeigten, dass Felder von der Stärke des Erdfelds die Reaktionsausbeute verändern können und dass diese Änderung davon abhängt, wie das Radikalpaar zum Feld ausgerichtet ist – wenn die Kopplung eines Elektrons an benachbarte Kernspins, die Hyperfeinkopplung, anisotrop ist [5](#ref-5){:.cite}. Im Labor zeigte ein künstliches Molekül aus einem Carotinoid, einem Porphyrin und einem Fulleren genau das: Die Lebensdauer seines Radikalpaars änderte sich in Feldern von 50 µT oder weniger, und die Antwort hing von der Richtung des Feldes ab [3](#ref-3){:.cite}.
 
@@ -261,7 +261,7 @@ Was das Ergebnis zeigt:
 
 - **Winzige Energie, deutliches Signal.** Die magnetische Energie beträgt nur das 2 · 10<sup>−7</sup>-Fache der Wärmeenergie, und doch ändert sich die Singulett-Ausbeute von 50 % (Feld längs der Molekülachse) auf 25,6 % (quer dazu): Das Kompass-Signal beträgt in diesem idealisierten Modell 24 % aller Paare. Spindynamik, nicht Gleichgewicht, macht das möglich.
 - **Nord und Süd sehen gleich aus.** Die Ausbeute bei θ ist auf zwölf Stellen gleich der bei 180° − θ – der simulierte Sensor liest die Achse des Feldes, genau wie der Inklinationskompass des Rotkehlchens [2](#ref-2){:.cite}.
-- **Die richtige Zeitskala.** Die Spins präzedieren mit 1,4 MHz; ein Paar, das 1 µs lebt, hat Zeit für etwa eine Umdrehung. Deshalb können Hochfrequenzfelder im Megahertzbereich stören [6](#ref-6){:.cite}.
+- **Die richtige Zeitskala.** Die Spins präzedieren mit 1,4 MHz; ein Paar, das 1 µs lebt, hat Zeit für etwa eine Umdrehung. Das passt zu dem Befund, dass Hochfrequenzfelder im Megahertzbereich Rotkehlchen aus der Richtung bringen [6](#ref-6){:.cite}.
 
 Probier es selbst:
 
@@ -277,7 +277,7 @@ Probier es selbst:
 
 ## Physical-AI-Linse: Quantensensoren und ein Kompass aus Molekülen
 
-In der Physical AI geht es um Maschinen, die in der echten Welt wahrnehmen und handeln – und beim Wahrnehmen ist das Rotkehlchen voraus. Sein Kompass wäre ein **Quantensensor**, gewachsen durch die Evolution: ein System, dessen Quantenzustände auf die gemessene Größe reagieren. Quantensensorik ist ein schnell wachsendes Technikfeld, in dem wenige Quantensysteme, oft Qubits genannt, den arbeitenden Teil eines Sensors bilden [10](#ref-10){:.cite}.
+In der Physical AI geht es um Maschinen, die in der echten Welt wahrnehmen und handeln. Stimmt die führende Hypothese, wäre der Kompass des Rotkehlchens ein **Quantensensor**, gewachsen durch die Evolution: ein System, dessen Quantenzustände auf die gemessene Größe reagieren. In der Quantensensorik, einem wachsenden Feld der Präzisionsmessung, besteht der arbeitende Teil des Sensors aus einem oder wenigen Qubits – Quantensystemen, die auf Empfindlichkeit zugeschnitten sind [10](#ref-10){:.cite}.
 
 Die chemische Seite ist bereits im Labor. Das Carotinoid-Porphyrin-Fulleren-Molekül von Kiminori Maeda und Kollegen zeigte, dass ein künstliches Radikalpaar auf Felder so schwach wie das der Erde und auf deren Richtung reagieren kann – die Machbarkeit eines chemischen Kompasses und ein Hinweis darauf, welche Konstruktionsmerkmale ein solcher Sensor braucht [3](#ref-3){:.cite}.
 
@@ -287,4 +287,4 @@ Das Rotkehlchen zeigt auch eine Lehre für die Konstruktion. Sein Kompass ist ke
 
 ## Offene Fragen
 
-Der Radikalpaar-Kompass ist die führende Hypothese; der grundlegende Sinnesmechanismus ist noch ungeklärt [4](#ref-4){:.cite}. Zu den offenen Fragen gehört, welches Radikalpaar in welchem Cryptochrom im lebenden Vogel das Signal trägt [1](#ref-1){:.cite}, und wie aus einer chemischen Ausbeute eine Richtung wird, die der Vogel nutzen kann. Das Rotkehlchen, ein vertrauter Gartenvogel, hütet eines der tiefsten Rätsel der Sinnesbiologie – und eine Verbindung zwischen Quantenphysik und dem Verhalten eines ganzen Tieres.
+Der Radikalpaar-Kompass ist die führende Hypothese; laut der Übersicht von Hore und Mouritsen aus dem Jahr 2016 war der grundlegende Sinnesmechanismus noch ungeklärt [4](#ref-4){:.cite}. Zu den offenen Fragen gehört, welches Radikalpaar in welchem Cryptochrom im lebenden Vogel das Signal trägt [1](#ref-1){:.cite}, und wie aus einer chemischen Ausbeute eine Richtung wird, die der Vogel nutzen kann. Das Rotkehlchen, ein vertrauter Gartenvogel, hütet ein offenes Rätsel der Sinnesbiologie – und eine mögliche Verbindung zwischen Quantenphysik und dem Verhalten eines ganzen Tieres.

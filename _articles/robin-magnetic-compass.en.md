@@ -41,9 +41,9 @@ faq:
   - q: "How do robins find their way when they migrate?"
     a: "European robins migrate at night and use several compasses: the sun, the stars and Earth's magnetic field. Their magnetic compass does not tell north from south directly. It reads the tilt of the field lines and takes as 'poleward' the direction in which the field lines and gravity form the smaller angle."
   - q: "Is the robin's compass really a quantum effect?"
-    a: "It is the leading hypothesis, not a proven fact. Light is thought to create pairs of radicals in cryptochrome proteins in the retina; the spins of their unpaired electrons respond to the direction of Earth's field and change the outcome of a chemical reaction. Experiments with radio-frequency fields and with isolated robin cryptochrome support the idea, but the full chain from molecule to behaviour has not been shown."
+    a: "It is the leading hypothesis, not a proven fact. Light is thought to create pairs of radicals in cryptochrome proteins in the retina; the spins of their unpaired electrons respond to the direction of Earth's field and change the outcome of a chemical reaction. Experiments with radio-frequency fields and with isolated robin cryptochrome support the idea, but as far as the cited studies show, the full chain from molecule to behaviour has not been demonstrated."
   - q: "Why does electromagnetic noise disturb robins?"
-    a: "In experiments, robins could not use their magnetic compass in wooden huts exposed to the background electromagnetic noise of a university campus. When the huts were screened with grounded aluminium, which weakened the noise between 50 kHz and 5 MHz about a hundredfold, the birds oriented again. This fits a radical-pair compass, which radio-frequency fields can disturb."
+    a: "In experiments, robins could not use their magnetic compass in wooden huts exposed to the background electromagnetic noise of a university campus. When the huts were screened with grounded aluminium, which weakened the noise between 50 kHz and 5 MHz about a hundredfold, the birds oriented again. This is consistent with a radical-pair compass: earlier experiments had shown that radio-frequency fields disorient robins."
   - q: "Why do robins sing at night in cities?"
     a: "A study of urban European robins found that they sing at night in places that are noisy during the day. Daytime noise predicted night singing much better than artificial light. According to the authors, the robins reduce acoustic interference this way."
   - q: "Can engineers build a compass like the robin's?"
@@ -132,7 +132,7 @@ The European robin is a night-migratory songbird. Birds like it fly alone and of
 
 A hiking compass needle points to magnetic north because it follows the **polarity** of the field. The robin ignores the polarity. It reads the **inclination** – the angle at which the field lines dip into the ground – and takes as "north" the direction along the north–south axis in which the field lines and the gravity vector form the smaller angle [2](#ref-2){:.cite}. In other words, the robin can tell "towards the pole" from "towards the equator", but not north from south.
 
-How does a bird sense a field as weak as Earth's, about 50 microtesla [3](#ref-3){:.cite}? The answer is still being researched. The leading hypothesis is one of the most surprising ideas in biology: a quantum effect in the bird's eyes [4](#ref-4){:.cite}.
+How does a bird sense a field as weak as Earth's, about 50 microtesla [3](#ref-3){:.cite}? The answer is still being researched. The leading hypothesis is an unusual idea for biology: a quantum effect in the bird's eyes [4](#ref-4){:.cite}.
 
 ## The compass in three steps (leading hypothesis)
 
@@ -158,7 +158,7 @@ The robin's world is not only magnetic but also acoustic. In cities, robins sing
 
 ## Physics lens: spins that feel a weak field
 
-An electron behaves like a tiny magnet; its magnetic property is called **spin**. In Earth's field of about 50 µT [3](#ref-3){:.cite}, the magnetic energy of an electron spin is extremely small – about 2 × 10<sup>−7</sup> of the thermal energy of a molecule at body temperature, as the computer science lens calculates. A sensor that relied on aligning spins in thermal equilibrium would be hopeless.
+An electron behaves like a tiny magnet; its magnetic property is called **spin**. In Earth's field of about 50 µT [3](#ref-3){:.cite}, the magnetic energy of an electron spin is extremely small – about 2 × 10<sup>−7</sup> of the thermal energy of a molecule at body temperature, as the computer science lens calculates. A sensor that relied on aligning spins in thermal equilibrium would give an extremely weak signal.
 
 The radical-pair model does not need thermal equilibrium. Light creates the pair, and what matters is how the field changes the **spin dynamics** during the short life of the pair – the simulation in the computer science lens contains no temperature at all, and still the field changes the outcome. Theoretical work showed that fields of Earth's strength can change the reaction yield, and that the change depends on how the radical pair is aligned with the field, if the coupling of an electron to nearby nuclear spins – the hyperfine coupling – is anisotropic [5](#ref-5){:.cite}. In the laboratory, a synthetic molecule built of a carotenoid, a porphyrin and a fullerene showed exactly this: the lifetime of its radical pair changed in fields of 50 µT or less, and the response depended on the field's direction [3](#ref-3){:.cite}.
 
@@ -261,7 +261,7 @@ What the result teaches:
 
 - **Tiny energy, clear signal.** The magnetic energy is only 2 × 10<sup>−7</sup> of the thermal energy, yet the singlet yield changes from 50 % (field along the molecule's axis) to 25.6 % (across it): the compass signal is 24 % of all pairs in this idealised model. Spin dynamics, not equilibrium, makes this possible.
 - **North and south look alike.** The yield at θ equals the yield at 180° − θ to twelve digits – the simulated sensor reads the axis of the field, just like the robin's inclination compass [2](#ref-2){:.cite}.
-- **The right timescale.** The spins precess at 1.4 MHz; a pair that lives 1 µs has time for about one turn. That is why radio-frequency fields in the megahertz range can interfere [6](#ref-6){:.cite}.
+- **The right timescale.** The spins precess at 1.4 MHz; a pair that lives 1 µs has time for about one turn. This is consistent with the finding that radio-frequency fields in the megahertz range disorient robins [6](#ref-6){:.cite}.
 
 Try it yourself:
 
@@ -277,7 +277,7 @@ Try it yourself:
 
 ## Physical AI lens: quantum sensors and a compass made of molecules
 
-Physical AI is about machines that sense and act in the real world – and sensing is where the robin is ahead. Its compass would be a **quantum sensor** grown by evolution: a system whose quantum states respond to the quantity to be measured. Quantum sensing is a fast-growing field of technology in which a few quantum systems, often called qubits, serve as the working part of a sensor [10](#ref-10){:.cite}.
+Physical AI is about machines that sense and act in the real world. If the leading hypothesis is right, the robin's compass would be a **quantum sensor** grown by evolution: a system whose quantum states respond to the quantity to be measured. In quantum sensing, a growing field of precision measurement, the working part of the sensor contains one or a few qubits – quantum systems chosen and tailored for sensitivity [10](#ref-10){:.cite}.
 
 The chemical side is already in the laboratory. The carotenoid–porphyrin–fullerene molecule of Kiminori Maeda and colleagues showed that a synthetic radical pair can respond to fields as weak as Earth's and to their direction – the feasibility of a chemical compass, and a guide to the design features such a sensor needs [3](#ref-3){:.cite}.
 
@@ -287,4 +287,4 @@ The robin also shows a lesson in design. Its compass is not a separate instrumen
 
 ## Open questions
 
-The radical-pair compass is the leading hypothesis; the primary sensory mechanism is still unclear [4](#ref-4){:.cite}. Among the open questions: which radical pair in which cryptochrome carries the signal in the living bird [1](#ref-1){:.cite}, and how a chemical yield becomes a direction the bird can use. The robin, a familiar garden bird, keeps one of the deepest puzzles of sensory biology – and a link between quantum physics and the behaviour of a whole animal.
+The radical-pair compass is the leading hypothesis; as of the 2016 review by Hore and Mouritsen, the primary sensory mechanism was still unclear [4](#ref-4){:.cite}. Among the open questions: which radical pair in which cryptochrome carries the signal in the living bird [1](#ref-1){:.cite}, and how a chemical yield becomes a direction the bird can use. The robin, a familiar garden bird, keeps an open puzzle of sensory biology – and a possible link between quantum physics and the behaviour of a whole animal.
