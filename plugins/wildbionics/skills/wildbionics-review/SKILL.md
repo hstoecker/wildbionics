@@ -37,9 +37,10 @@ Go through every area the change touches; skip areas it doesn't touch and say so
    If you could not run it, say so in the report and give no ✅ for Facts. Must-fix: unsupported,
    contradicted or over-precise claims; unresolved or mismatching DOIs; calculations that don't
    reproduce; hypotheses stated as facts.
-   **Read the research notes first:** `_data/source_notes/<ref>.yml` records, per source, what the
-   author read (abstract, full text, scanned PDF) and where each claim comes from. Pass them to the
-   fact-checker. A claim backed by a note on a source you cannot open (paywall, scan, bot check) is
+   **Read the research notes first – in addition to the fact-checker, never instead of it:**
+   `_data/source_notes/<ref>.yml` records, per source, what the author read (abstract, full text,
+   scanned PDF) and where each claim comes from. Pass them to the fact-checker. Only for a source
+   that neither of you can open (paywall, scan, bot check) is a claim backed by a note
    *documented*, not "unchecked": spot-check what you can reach (DOI, abstract) and list it as
    "per research notes", without a must-fix. Raise a must-fix only for a contradiction you can
    show, a claim with no note behind it, or a note that does not match the source you can read.

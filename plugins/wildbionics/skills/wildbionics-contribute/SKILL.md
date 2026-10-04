@@ -80,6 +80,11 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
    or agent) adds the label `ready-for-review` right after the push (`gh pr edit <n> --add-label
    ready-for-review`). The maintainer merges only when the most recent review was posted after
    the last content change and has no must-fix findings.
+   **After a change to `.github/workflows/claude-review.yml` on `main`,** merge `main` into every
+   open PR branch before its next review: the review action only runs when the branch's workflow
+   file is identical to `main`'s – otherwise it stops after a few seconds ("Workflow validation
+   failed") and the job only posts "finished without a report". A PR that edits the review
+   workflow itself gets no Claude review; its change takes effect after merging.
    Work on one article per session: a fresh session with the skills is faster and cheaper than a
    long one that carries every earlier step along.
 7. **Maintainer approval:** Hendrik Stöcker reviews and merges. Only merged changes deploy
@@ -106,6 +111,10 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
 **Branch protection on `main`:** changes only via pull requests; required checks `build` and
 `plugin` must pass; one approving review from the code owner; new commits dismiss earlier
 approvals; no force-push or deletion. Admins may merge their own PRs (GitHub forbids self-approval).
+PRs that Claude Code opens with the maintainer's `gh` login count as the maintainer's own: GitHub
+shows "Review required" and offers no Approve. Merge them with **"Merge without waiting for
+requirements to be met (bypass branch protections)"** – only after the latest review postdates the
+last content change and has no must-fix findings, and `build` and `plugin` are green.
 
 Claude in CI needs the repository secret `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) and the
 Claude GitHub App; without them the review job only prints a notice. Fork PRs receive no secrets –
