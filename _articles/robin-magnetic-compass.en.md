@@ -45,7 +45,7 @@ faq:
   - q: "Why does electromagnetic noise disturb robins?"
     a: "In experiments, robins could not use their magnetic compass in wooden huts exposed to the background electromagnetic noise of a university campus. When the huts were screened with grounded aluminium, which weakened the noise between 50 kHz and 5 MHz about a hundredfold, the birds oriented again. This fits a radical-pair compass, which radio-frequency fields can disturb."
   - q: "Why do robins sing at night in cities?"
-    a: "A study of urban European robins found that they sing at night in places that are noisy during the day. Daytime noise predicted night singing much better than artificial light – the birds seem to avoid the acoustic interference of traffic."
+    a: "A study of urban European robins found that they sing at night in places that are noisy during the day. Daytime noise predicted night singing much better than artificial light. According to the authors, the robins reduce acoustic interference this way."
   - q: "Can engineers build a compass like the robin's?"
     a: "Chemists have shown that a synthetic molecule can work as a chemical compass in the laboratory: its radical pair responds to fields of Earth's strength and to their direction. Quantum sensors are a growing field of technology. A robin-like quantum compass for robots or vehicles is still a research idea."
 sources:

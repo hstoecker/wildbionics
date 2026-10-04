@@ -45,7 +45,7 @@ faq:
   - q: "Warum stört elektromagnetisches Rauschen Rotkehlchen?"
     a: "In Versuchen konnten Rotkehlchen ihren Magnetkompass in Holzhütten nicht nutzen, die dem elektromagnetischen Hintergrundrauschen eines Universitätsgeländes ausgesetzt waren. Wurden die Hütten mit geerdetem Aluminium abgeschirmt, das das Rauschen zwischen 50 kHz und 5 MHz etwa hundertfach schwächte, orientierten sich die Vögel wieder. Das passt zu einem Radikalpaar-Kompass, den Hochfrequenzfelder stören können."
   - q: "Warum singen Rotkehlchen in Städten nachts?"
-    a: "Eine Studie an Rotkehlchen in der Stadt fand, dass sie nachts an Orten singen, an denen es tagsüber laut ist. Der Lärm am Tag sagte den Nachtgesang viel besser voraus als künstliches Licht – die Vögel weichen offenbar dem Verkehrslärm aus."
+    a: "Eine Studie an Rotkehlchen in der Stadt fand, dass sie nachts an Orten singen, an denen es tagsüber laut ist. Der Lärm am Tag sagte den Nachtgesang viel besser voraus als künstliches Licht. Laut den Autoren verringern die Rotkehlchen so akustische Störungen."
   - q: "Können Ingenieure einen Kompass wie den des Rotkehlchens bauen?"
     a: "Chemiker haben gezeigt, dass ein künstliches Molekül im Labor als chemischer Kompass arbeiten kann: Sein Radikalpaar reagiert auf Felder von der Stärke des Erdfelds und auf deren Richtung. Quantensensoren sind ein wachsendes Technikfeld. Ein Quantenkompass nach dem Vorbild des Rotkehlchens für Roboter oder Fahrzeuge ist aber noch eine Forschungsidee."
 sources:
