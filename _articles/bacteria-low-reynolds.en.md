@@ -10,6 +10,7 @@ dek: "If you were the size of a bacterium, water would feel like honey. The mome
 date: 2026-10-03
 permalink: /articles/bacteria-low-reynolds/
 image: /assets/og/bacteria-low-reynolds-en.jpg
+og: { eyebrow: "Biology · Fluid dynamics", title: "Swimming in <em>honey</em>: the physics of bacteria", sub: "Why water feels like syrup to a bacterium – and how E. coli swims anyway.", title_px: 58 }
 image_alt: "Schematic of an E. coli bacterium swimming in a food gradient: it runs straight with its flagella in a bundle, tumbles, and sets off in a new direction – runs towards more food last longer."
 hero_figure: svg/bacteria-run-tumble.svg
 hero_caption: "<span class=\"caption__label\">Fig. 1</span> Run and tumble. During a run, the rotating flagella of E. coli bundle together and push the cell forward like a corkscrew. When a motor reverses, the flagella no longer turn together and the cell tumbles; the next run starts in a new direction. Runs that lead towards more food last longer – so the cell drifts up the gradient."

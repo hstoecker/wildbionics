@@ -65,17 +65,19 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
 2. **Create a branch** (`article/<slug>`, `fix/<topic>`, …) – never commit to `main` directly.
 3. **Work with the matching skill.** Content changes follow the order research → English text →
    figures → German translation → knowledge-graph data.
-4. **Run the gates locally** before pushing:
+4. **Run the gates locally** before pushing – one command, one line per gate, in CI order:
    ```bash
-   ruby .github/scripts/check_terms.rb
-   ruby .github/scripts/check_content.rb
-   ruby .github/scripts/check_plugin.rb
-   python3 .github/scripts/code_examples.py --check   # needs examples/requirements.txt installed
-   bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
+   .github/scripts/check_all.sh                 # all gates (needs examples/requirements.txt in .venv)
+   .github/scripts/check_all.sh --only <ref>    # while working on one article: only its code examples
    ```
-5. **Self-review** with `wildbionics-review` and fix every must-fix finding.
+   Stop `jekyll serve` first – it rewrites `_site` while the gates read it (the script warns).
+5. **Self-review** with `wildbionics-review` and fix every must-fix finding – before the PR, so
+   the CI review usually needs one round only.
 6. **Open a pull request** using the template. CI runs all gates, builds a preview (downloadable
-   artifact with screenshots) and – for branches in this repository – posts a Claude review.
+   artifact with screenshots) and – for branches in this repository – posts a Claude review once.
+   For another review after fixes, add the label `ready-for-review` (the job removes it again).
+   Work on one article per session: a fresh session with the skills is faster and cheaper than a
+   long one that carries every earlier step along.
 7. **Maintainer approval:** Hendrik Stöcker reviews and merges. Only merged changes deploy
    (GitHub Actions → GitHub Pages → IndexNow).
 
@@ -84,12 +86,13 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
 | Workflow / script | When | What |
 |---|---|---|
 | `.github/workflows/deploy.yml` | every push to `main` and every PR | gates `check_terms.rb`, `check_content.rb`, `check_plugin.rb` (PR: `--base` → version bump), `code_examples.py --check` (Python 3.12), Jekyll build, `check_site.py`; PR: `preview_shots.sh` + preview artifact; `main`: deploy to Pages, then `indexnow.py` notifies search engines of the changed pages |
-| `.github/workflows/claude-review.yml` | PR opened/updated (branches of this repo) | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment; the transcript is kept as artifact `claude-review-pr-<n>`, blocked tool calls appear as warnings; if Claude did not post its report, the job posts Claude's final message (or a notice). Changes to this workflow are only tested after merging – the action refuses to run on a PR that edits its own workflow |
+| `.github/workflows/claude-review.yml` | PR opened, reopened or marked ready, and whenever the label `ready-for-review` is added (branches of this repo) – not on every push | Claude runs `wildbionics-review` from the marketplace on `main` and posts one review comment; the transcript is kept as artifact `claude-review-pr-<n>`, blocked tool calls appear as warnings; if Claude did not post its report, the job posts Claude's final message (or a notice). Changes to this workflow are only tested after merging – the action refuses to run on a PR that edits its own workflow |
 | `.github/workflows/claude.yml` | `@claude` in an issue, PR comment or review | Claude works on the request with these skills, pushes a branch after every major step and posts a link to create the pull request; for small, focused tasks (turn limit, maintainer's tokens) – whole articles are written with Claude Code |
+| `.github/scripts/check_all.sh` | local | all gates below in CI order with a one-line summary each; `--only <ref>` limits the code examples to one page |
 | `.github/scripts/check_terms.rb` | CI + local | glossary terms, EN/DE consistency, typography, taxonomy/beings/thought experiments/lenses |
-| `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures |
+| `.github/scripts/check_content.rb` | CI + local | article front matter, lens panels, citations ↔ sources, DOIs, figures, research notes `_data/source_notes/<ref>.yml` (one per source; required for articles from 2026-10-04) |
 | `.github/scripts/check_plugin.rb` | CI + local | manifests, skill links, referenced paths exist, coverage, version bump |
-| `.github/scripts/code_examples.py` | CI + local | runs every Python example; writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
+| `.github/scripts/code_examples.py` | CI + local | runs every Python example (`--only <ref>`: one page's, other generated files untouched); writes output (`_data/code_examples.yml`), charts, `.py` downloads and Colab notebooks; `--check` fails on errors or stale files – and still rewrites them, so run it on a clean tree and look at `git status` (charts can differ slightly outside CI's Python 3.12; don't commit those) |
 | `.github/scripts/figures.py` | CI + local (after `jekyll build`) | writes `/figures/<name>.<lang>.svg` for every figure in `_data/figures.yml`: cut from the built page, CSS from `main.css`, font subsets embedded (needs `.github/scripts/requirements.txt`: fonttools, brotli) |
 | `.github/scripts/check_site.py` | CI + local | titles, descriptions, canonical/hreflang, JSON-LD (resolving `@id`s, breadcrumbs, licensed preview image), links, sitemap, graph.json ; image sitemap complete (every figure and chart listed, every listed image exists) |
 | `.github/scripts/preview_shots.sh` | CI (PR) | screenshots of key pages and changed articles (1440 px, 390 px) |

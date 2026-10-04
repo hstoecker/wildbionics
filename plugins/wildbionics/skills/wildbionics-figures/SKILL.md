@@ -97,29 +97,23 @@ Other good examples: `hero-echolocation.svg` (scene + measured quantities + inse
    lists its figures as `ImageObject`s in its JSON-LD. Keep figure styles scoped by the figure's
    class or by these context classes – `figures.py` copies only rules that can match.
 7. **Finish:** regenerate OG images that contain the figure, update captions and alt texts in both
-   languages (`image_alt` describes the OG image), then run the gates. **OG image recipe** (one
-   per article and language, 1200×630 JPEG in `assets/og/<slug>-<lang>.jpg`):
-   ```bash
-   cat > og-tmp.html <<'OG'     # temporary page – never commit it
-   ---
-   layout: null
-   lang: en
-   sitemap: false
-   permalink: /og-tmp/card.html
-   ---
-   {% include og-card.html eyebrow="Physics · Biology" title="How geckos <em>stick</em> to walls" sub="One line that says why it matters." figure="svg/gecko.svg" bg1="#0d1a16" bg2="#0a1512" %}
-   OG
-   bundle exec jekyll build && (cd _site && python3 -m http.server 4000 &)
-   plugins/wildbionics/skills/wildbionics-figures/scripts/shots.sh page http://localhost:4000/og-tmp/card.html card.png 1200 0 630
-   sips -s format jpeg -s formatOptions 85 card.png --out assets/og/<slug>-en.jpg     # macOS
-   # Linux: python3 -c "from PIL import Image; Image.open('card.png').convert('RGB').save('assets/og/<slug>-en.jpg', quality=85, optimize=True)"
-   rm og-tmp.html card.png
+   languages (`image_alt` describes the OG image), then run the gates. **OG images** (one per
+   article and language, 1200×630 JPEG at the front matter's `image:` path): the card text lives
+   in the front matter of each language version, so a card can always be re-rendered exactly –
+   after a figure, the logo or the text changed:
+   ```yaml
+   og: { eyebrow: "Physics · Biology", title: "How geckos <em>stick</em> to walls",
+         sub: "One line that says why it matters.", title_px: 58 }   # optional: figure, bg1, bg2
    ```
-   Repeat with `lang: de` and German texts. Title size: `title_px` (default 64) – not `size`, which
-   Liquid reserves. Check the JPEG: exactly 1200×630, under 300 KB, no clipped text. Gates:
    ```bash
-   ruby .github/scripts/check_terms.rb && bundle exec jekyll build && python3 .github/scripts/figures.py _site && python3 .github/scripts/check_site.py _site
+   python3 plugins/wildbionics/skills/wildbionics-figures/scripts/og.py <ref>   # EN + DE, ~10 s
    ```
+   The script includes `_includes/og-card.html` (figure defaults to `hero_figure`), builds the
+   site, serves it on a free local port and renders with `shots.sh`. Title size: `title_px`
+   (default 64) – not `size`, which Liquid reserves; no straight double quotes in the texts.
+   Check the JPEG: exactly 1200×630, under 300 KB, no clipped text. Older articles without
+   `og:` keep their committed images; add `og:` when you touch one. Gates:
+   `.github/scripts/check_all.sh --only <ref>`.
    Then **show the user the final render** (send the large PNG) before committing, and say
    honestly if something is still schematic or simplified.
 

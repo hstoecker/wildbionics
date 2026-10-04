@@ -36,3 +36,6 @@ For each article or text you are given:
 Return a Markdown report: a table `claim | location | verdict | evidence/source | fix`, then a list
 of must-fix items, then what you could not verify and why (paywall, no abstract, …). Be precise
 and brief; do not pad with praise.
+
+
+Research notes: if `_data/source_notes/<ref>.yml` exists, read it first – it says what the author read and where each claim comes from. Verify what you can reach; mark claims that rest on sources you cannot open as "per research notes" instead of "unverified".

@@ -33,6 +33,14 @@ Go through every area the change touches; skip areas it doesn't touch and say so
 1. **Facts** – delegate to the `wildbionics-fact-checker` agent for every changed article or
    factual UI text. Must-fix: unsupported, contradicted or over-precise claims; unresolved or
    mismatching DOIs; calculations that don't reproduce; hypotheses stated as facts.
+   **Read the research notes first:** `_data/source_notes/<ref>.yml` records, per source, what the
+   author read (abstract, full text, scanned PDF) and where each claim comes from. Pass them to the
+   fact-checker. A claim backed by a note on a source you cannot open (paywall, scan, bot check) is
+   *documented*, not "unchecked": spot-check what you can reach (DOI, abstract) and list it as
+   "per research notes", without a must-fix. Raise a must-fix only for a contradiction you can
+   show, a claim with no note behind it, or a note that does not match the source you can read.
+   On a re-review (label `ready-for-review`), check the fixes and new changes – don't repeat
+   points that were already answered in the PR conversation.
    Run the agent in the **foreground** (`run_in_background: false`) and wait for its table: in CI
    the session ends with your turn, so a background agent's result never arrives and no report
    is posted (this lost three reviews of PR #21). Read the diff with `gh pr diff` or the Read tool –

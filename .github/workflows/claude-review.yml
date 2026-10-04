@@ -1,5 +1,8 @@
-# Claude reviews every pull request with the project's own review skill
+# Claude reviews pull requests with the project's own review skill
 # (plugins/wildbionics/skills/wildbionics-review) and posts one summary comment.
+# When: automatically once when a PR is opened (or reopened / marked ready), and again whenever
+# the label "ready-for-review" is added – not on every push, because a full review with fact
+# checks is expensive. The job removes the label when it is done, so adding it again re-runs it.
 # The skill is loaded from the marketplace on main, so a PR cannot weaken its own review.
 # Needs the repository secret CLAUDE_CODE_OAUTH_TOKEN (or ANTHROPIC_API_KEY); without it the
 # job only prints a notice. Fork PRs get no secrets – the maintainer reviews those manually.
@@ -7,7 +10,7 @@ name: Claude review
 
 on:
   pull_request:
-    types: [opened, synchronize, ready_for_review, reopened]
+    types: [opened, reopened, ready_for_review, labeled]
 
 permissions:
   contents: read
@@ -21,7 +24,10 @@ concurrency:
 
 jobs:
   review:
-    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (github.event.action != 'labeled' || github.event.label.name == 'ready-for-review')
     runs-on: ubuntu-26.04
     timeout-minutes: 30
     env:
@@ -87,3 +93,6 @@ jobs:
             gh pr comment "$pr" --body "⚠️ The Claude review finished without a report. Transcript and blocked tool calls: [run ${{ github.run_id }}]($run_url) (artifact \`claude-review-pr-$pr\`). Re-run the job or run \`wildbionics-review\` locally."
             echo "::warning::No review report – see the artifact."
           fi
+      - name: Remove the ready-for-review label (add it again for another review)
+        if: always() && github.event.action == 'labeled'
+        run: gh pr edit ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --remove-label ready-for-review || true

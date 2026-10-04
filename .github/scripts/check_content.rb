@@ -79,6 +79,25 @@ articles.each do |a|
   cited.each { |n| errors << "#{f}: citation [#{n}] has no source" if n < 1 || n > sources.size }
   (1..sources.size).each { |n| errors << "#{f}: source #{n} (#{sources[n - 1]['title']}) is never cited" unless cited.include?(n) }
 
+  # research notes (_data/source_notes/<ref>.yml): what was read and which claims rest on each
+  # source – the review reads them instead of re-searching paywalled papers. Required for
+  # articles dated 2026-10-04 or later; checked once per article (on the EN file).
+  if fm["lang"] == "en"
+    notes_file = "_data/source_notes/#{fm['ref']}.yml"
+    if File.exist?(notes_file)
+      notes = (YAML.load_file(notes_file) || {}).transform_keys { |k| k.to_s.downcase }
+      dois = sources.map { |s| s["doi"].to_s.downcase }
+      (notes.keys - dois).each { |d| errors << "#{notes_file}: #{d} is not a source of #{f}" }
+      (dois - notes.keys).each { |d| errors << "#{notes_file}: no note for source #{d}" }
+      notes.each do |d, n|
+        n = n.is_a?(Hash) ? n : {}
+        errors << "#{notes_file}: #{d} needs read: and claims:" if n["read"].to_s.empty? || Array(n["claims"]).empty?
+      end
+    elsif Date.parse(fm["date"].to_s) >= Date.new(2026, 10, 4)
+      errors << "#{f}: research notes missing – write #{notes_file} (wildbionics-article, research protocol)"
+    end
+  end
+
   # lenses: front matter ↔ tab bar ↔ panels
   fl = Array(fm["lenses"])
   fl.each { |l| errors << "#{f}: lens #{l} missing in _data/lenses.yml" unless lenses.key?(l) }
