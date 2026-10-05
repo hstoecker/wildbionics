@@ -63,7 +63,8 @@ short_title: "…"               # breadcrumb and graph label
 kicker: "Flagship article · Fluid dynamics"
 description: "…"               # 50–160 characters, answer-first (search snippet)
 dek: "…"                       # longer teaser under the title (optional)
-date: 2026-09-26
+date: 2026-09-26               # calendar day in Germany (`timezone: Europe/Berlin` in _config.yml) – never a future
+                               # date: Jekyll does not build future-dated articles
 updated: 2026-09-27           # set on every later change of facts, text or figures: visible date,
                                # JSON-LD dateModified, sitemap lastmod (never fake it with the build time)
 permalink: /articles/<slug>/   # DE: /de/artikel/<german-slug>/
