@@ -52,6 +52,7 @@
   read: "Abstract (OpenAlex/PubMed)"
   claims:
     - "Inverted-pendulum model: gravity provides the centripetal force that keeps the pendulum in contact with the ground; ratio (mv²/L)/(mg) = Froude number v²/(gL)"
+    - "Hence Fr ≤ 1 for walking: above it gravity cannot keep the pendulum in contact – cited for the speed limit √(gL) (key fact 4, mathematics lens); the number 2.97 m/s is our own calculation"
     - "Humans and other bipeds with different leg lengths switch from walk to run at different speeds but at about the same Froude number (0.5)"
     - "In simulated reduced gravity (an upward force at the centre of mass, treadmill), transition at progressively slower speeds but about the same Froude number – supports that the transition is triggered by inverted-pendulum dynamics"
 "10.1249/00005768-199310000-00012":
