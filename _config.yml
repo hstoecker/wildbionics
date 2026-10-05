@@ -6,6 +6,11 @@ languages: [en, de]   # first entry lives at the site root
 repository_url: "https://github.com/hstoecker/wildbionics"
 contact_domain: "wildbionics.com"   # e-mail domain (_includes/email.html), independent of url
 
+# Dates in front matter (date:, updated:) are calendar days in Germany, where the site is
+# edited. Without this, Jekyll uses the build machine's zone (UTC in CI) and skips an
+# article dated "today" as a future post when CI runs before midnight UTC.
+timezone: Europe/Berlin
+
 # IndexNow (https://www.indexnow.org): the key is public by design and must be
 # served at /<key>.txt. The deploy workflow reads it from here.
 indexnow_key: "25858893bc7b0d8f97cb8693d857d252"
