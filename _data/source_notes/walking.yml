@@ -1,0 +1,132 @@
+# Where the claims of "Walking" come from – written while researching, read by the review
+# (wildbionics-review). One entry per source, keyed by DOI: what was read, and which claims rest on it.
+# All DOIs resolved at Crossref (sources.py, 2026-10-05). Abstracts from OpenAlex/PubMed. The three
+# Science Robotics papers were read in the authors' versions on arXiv (2303.03381, 2304.13653,
+# 1901.08652). JEB, Nature, Science and SAGE pages were behind a bot check or paywall, so for those
+# only the abstract was read. Kram et al.: Crossref spells the third author "Ferriss", PubMed
+# "Ferris DP" – the article follows PubMed. Hreljac: Crossref pages "1158???1162" = 1158–1162 (PubMed).
+"10.1152/ajpregu.1977.233.5.r243":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Walking in all animals (as in man) involves an alternate transfer between gravitational-potential and kinetic energy within each stride, as in a pendulum"
+    - "This transfer is greatest at intermediate walking speeds and can account for up to 70 % of the total energy changes within a stride, leaving only 30 % to be supplied by muscles"
+    - "No kinetic–gravitational transfer during running, hopping and trotting; energy is conserved by another mechanism: an elastic 'bounce' of the body"
+    - "Animals measured: rhea, turkey, dogs, macaques, ram, kangaroo, springhare"
+"10.1007/s00421-002-0654-9":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Walking and running can be described with two simple models: an inverted pendulum and a spring"
+    - "Muscle work partly relieved by the interplay of potential and kinetic energy in walking, elastic energy in running"
+    - "Optimal walking speed with minimal metabolic cost of about 2 J/(kg·m) at about 1.11 m/s; cost of running about 4 J/(kg·m), constant and independent of speed"
+    - "Walking mechanics of children, pygmies and dwarfs not different from taller individuals when speed is expressed as Froude number"
+    - "Gravity determines the optimal walking speed and the walk–run transition speed; above 1 g easier to walk than run, below 1 g the opposite"
+"10.1016/0021-9290(89)90224-8":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Simple spring-mass model: a massless spring attached to a point mass describes running and hopping of humans as a function of speed"
+    - "A human hopper selects a frequency where the largest amount of energy can be delivered and still be stored elastically"
+"10.1038/325147a0":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Large mammals including humans save much of the energy needed for running by elastic structures in legs and feet"
+    - "Energy removed in the first half of stance is stored as elastic strain energy and returned in the second half by elastic recoil – 'like a rubber ball bouncing along'"
+    - "Tendons of distal leg muscles are important; the elastic properties of the arch of the human foot are also important"
+"10.1242/jeb.01950":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "One-legged hopping, ten male participants: on average 38 J recovered from Achilles tendon recoil, 16 % of the total mechanical work of a hop (254 J)"
+    - "Average peak strain 8.3 %; stiffness, modulus and hysteresis vary between individuals (IQR stiffness 145–231 N/mm)"
+"10.1098/rspb.2000.1361":
+  read: "Abstract (PubMed); PMC1088596 full text exists but could not be retrieved"
+  claims:
+    - "Six men walking at 3 km/h on a treadmill, ultrasound of the gastrocnemius medialis"
+    - "Muscle fascicles contracted near-isometrically during stance (~50 mm)"
+    - "Tendon stretched by about 7 mm during single support and recoiled in push-off: spring-like storage and release of elastic strain energy"
+"10.1038/nature03052":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Striding bipedalism is a key derived behaviour of hominids that possibly originated soon after the divergence of chimpanzee and human lineages"
+    - "Humans perform remarkably well at endurance running; the capability is a derived feature of the genus Homo, originating about 2 million years ago, and may have been instrumental in the evolution of the human body form"
+    - "Humans, like apes, are poor sprinters compared with most quadrupeds"
+"10.1242/jeb.200.4.821":
+  read: "Abstract (OpenAlex/PubMed)"
+  claims:
+    - "Inverted-pendulum model: gravity provides the centripetal force that keeps the pendulum in contact with the ground; ratio (mv²/L)/(mg) = Froude number v²/(gL)"
+    - "Hence Fr ≤ 1 for walking: above it gravity cannot keep the pendulum in contact – cited for the speed limit √(gL) (key fact 4, mathematics lens); the number 2.97 m/s is our own calculation"
+    - "Humans and other bipeds with different leg lengths switch from walk to run at different speeds but at about the same Froude number (0.5)"
+    - "In simulated reduced gravity (an upward force at the centre of mass, treadmill), transition at progressively slower speeds but about the same Froude number – supports that the transition is triggered by inverted-pendulum dynamics"
+"10.1249/00005768-199310000-00012":
+  read: "Abstract (OpenAlex/PubMed)"
+  claims:
+    - "20 young adults on a treadmill; preferred transition speed 2.06 m/s; energetically optimal transition speed 2.24 m/s, significantly higher"
+    - "Perceived exertion higher for walking than running at the preferred transition speed (13.5 vs 10.0)"
+    - "Conclusion: gait transition does not take place to minimise metabolic energy consumption"
+    - "Leg length of the subjects not in the abstract – the article's Fr values use an assumed leg length of 0.90 m and say so"
+"10.1177/027836498400300205":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Mammals of different sizes tend to move in dynamically similar fashion when their Froude numbers u²/(gh) are equal, h = hip height"
+    - "Patterns of force in human walking and running minimise the work required of the muscles at each speed"
+    - "Much of the energy otherwise needed for running is saved by tendon elasticity"
+"10.1111/j.1469-7998.1983.tb04266.x":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Dynamic similarity hypothesis: mammals move in a dynamically similar fashion at equal Froude numbers; predicts stride length, duty factor etc. across sizes"
+    - "Tenable for cursorial quadrupeds; reasonable approximation also for comparisons with bipedal mammals and birds"
+"10.1097/00003677-200504000-00006":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Walking like an inverted pendulum reduces muscle force and work during single support"
+    - "But it unavoidably requires mechanical work to redirect the centre of mass in the transition between steps; this work exacts a proportional metabolic cost that is a major determinant of the overall cost of walking"
+"10.1016/j.humov.2007.04.003":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Inverted pendulum: the stance leg makes the centre of mass move on a circular arc rather than a horizontal path"
+    - "Hence the body is highest in mid-stance (top of the arc) – cited for step phase 2"
+    - "A flattened COM trajectory increases muscle work and force; the pure pendulum paradoxically predicts no work – resolved by dynamic walking"
+    - "Demonstrations: passive dynamic walking machines that descend a gentle slope, active dynamic walking robots on level ground"
+    - "Step-to-step transition is an unavoidable energetic consequence of the inverted-pendulum gait"
+"10.1177/027836499000900206":
+  read: "Abstract (SAGE via OpenAlex)"
+  claims:
+    - "A class of two-legged machines for which walking is a natural dynamic mode; on a shallow slope it settles into a steady gait comparable to human walking without active control or energy input"
+    - "Experiments with a test machine verify the effect; can be combined with active energy input for walking on a broad range of terrain"
+"10.1126/science.1107799":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Passive-dynamic walkers: solid parts connected by joints, walk stably down a slope with no motors or controllers, remarkably humanlike motions; cannot walk on level ground"
+    - "Three robots with small active power sources substituted for gravity walk on level ground, use less control and less energy than other powered robots, walk more naturally"
+"10.1177/027836498400300207":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "3D one-legged machine that hops and runs on one springy leg and balances on an open floor without support"
+    - "Control decomposed into three parts: forward running velocity, body attitude, hopping height"
+"10.1126/scirobotics.aau5872":
+  read: "Abstract (OpenAlex) and full text of the authors' version (arXiv 1901.08652)"
+  claims:
+    - "Reinforcement learning; neural network policy trained in simulation and transferred to ANYmal, a medium-dog-sized quadruped – abstract"
+    - "Follows velocity commands more precisely and energy-efficiently than prior controllers, runs faster, recovers from falls – abstract"
+    - "Previous speed record of ANYmal broken by 25 % – Introduction"
+    - "All training sessions on a personal computer with one CPU and one GPU, none longer than eleven hours – Methods"
+"10.1126/scirobotics.adi9579":
+  read: "Abstract (OpenAlex) and full text of the authors' version (arXiv 2303.03381)"
+  claims:
+    - "Fully learning-based controller for real-world humanoid locomotion: a causal transformer takes the history of proprioceptive observations and actions and predicts the next action – abstract"
+    - "Trained with large-scale model-free RL on randomized environments in simulation, deployed zero-shot; walks over outdoor terrains, robust to disturbances, adapts in context – abstract"
+    - "Authors: humanoid robots that operate autonomously 'have the potential to help address labor shortages in factories, assist elderly at home, and colonize new planets' – abstract, first sentence (quoted as the authors' outlook, not as fact)"
+    - "Robot: Digit, about 1.6 m tall, 45 kg – Results"
+    - "Simulation in Isaac Gym on four A100 GPUs with thousands of randomized environments – Fig. 7 caption"
+    - "One week of full-day outdoor testing without observed falls – Results (arXiv version)"
+    - "Robust to external disturbances: a yoga ball thrown at the robot, pushes with a wooden stick, pulls from behind – Indoor experiments (arXiv version)"
+    - "In-context adaptation compared with 'in-context learning often found in large transformer models like GPT-3' – Introduction (supports: a transformer, a type of network also used in large language models)"
+"10.1126/scirobotics.adi8022":
+  read: "Abstract (OpenAlex) and full text of the authors' version (arXiv 2304.13653)"
+  claims:
+    - "Deep RL trained a low-cost miniature humanoid to play simplified 1v1 soccer; skills: fall recovery, walking, turning, kicking; trained in simulation, transferred zero-shot – abstract"
+    - "Walked 181 % faster, turned 302 % faster, 63 % less time to get up than scripted baseline – abstract"
+    - "Robot: Robotis OP3, 51 cm tall, 3.5 kg, 20 servomotors – Methods"
+"10.1109/jas.2023.124140":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "Review of humanoid robots; challenges named: deeper understanding of biological motion mechanisms, structural design, materials, drive and control methods, efficient energy use"
+    - "Integration of bionics, brain-inspired intelligence, mechanics and control seen as a promising direction (authors' outlook)"

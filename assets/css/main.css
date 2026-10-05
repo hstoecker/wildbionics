@@ -2401,6 +2401,51 @@ a.cite:hover { text-decoration: underline; }
   .ifl-svg .label-taxon { font-size: 19px; }
 }
 
+/* Walking human and humanoid robot as inverted pendulums, hero of the walking article (_includes/svg/walking.svg) */
+.wk-svg { width: 100%; height: auto; overflow: visible; }
+.wk-svg .grid { color: rgba(238, 242, 234, 0.045); }
+.wk-svg .ground { stroke: url(#wk-ground); stroke-width: 2; }
+.wk-svg .skin { fill: url(#wk-skin); stroke: rgba(60, 30, 15, 0.45); stroke-width: 1; }
+.wk-svg .skin--far { fill: #93644a; }
+.wk-svg .hair { fill: #3b2a20; }
+.wk-svg .ear, .wk-svg .brow { fill: none; stroke: rgba(70, 35, 20, 0.6); stroke-width: 1.4; stroke-linecap: round; }
+.wk-svg .shirt, .wk-svg .sleeve { fill: url(#wk-shirt); stroke: rgba(5, 25, 35, 0.5); stroke-width: 1; }
+.wk-svg .belt { stroke: #22272e; stroke-width: 4; }
+.wk-svg .trousers { fill: url(#wk-trousers); stroke: rgba(0, 0, 0, 0.35); stroke-width: 1; }
+.wk-svg .trousers--far { fill: #2c323b; }
+.wk-svg .shoe { fill: #e9e4da; stroke: rgba(0, 0, 0, 0.4); stroke-width: 1; }
+.wk-svg .shoe--far { fill: #b9b3a8; }
+.wk-svg .panel { fill: url(#wk-panel); stroke: rgba(10, 20, 25, 0.5); stroke-width: 1; }
+.wk-svg .panel--far { fill: #7f8a90; }
+.wk-svg .panel--chest, .wk-svg .panel--head { fill: url(#wk-panel); }
+.wk-svg .joint { fill: #39444b; stroke: #8b989f; stroke-width: 1.4; }
+.wk-svg .joint--far { fill: #2a3237; stroke: #5d686e; }
+.wk-svg .sole { fill: #39444b; stroke: rgba(0, 0, 0, 0.4); stroke-width: 1; }
+.wk-svg .seam { stroke: rgba(10, 20, 25, 0.35); stroke-width: 1.2; }
+.wk-svg .trim { stroke: #6f7c83; stroke-width: 2.4; stroke-linecap: round; }
+.wk-svg .visor { fill: #12232a; stroke: rgba(0, 0, 0, 0.5); stroke-width: 1; }
+.wk-svg .visor-shine { stroke: rgba(170, 220, 230, 0.55); stroke-width: 2; stroke-linecap: round; }
+.wk-svg .rod { stroke: var(--signal); stroke-width: 4; stroke-linecap: round; }
+.wk-svg .bob { fill: var(--accent); stroke: #fff6e0; stroke-width: 1.6; }
+.wk-svg .pivot { fill: var(--signal); }
+.wk-svg .ghost-rod { stroke: var(--signal); stroke-width: 2; stroke-dasharray: 4 5; opacity: 0.5; }
+.wk-svg .ghost-bob { fill: none; stroke: var(--accent); stroke-width: 1.6; opacity: 0.6; }
+.wk-svg .arc { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-dasharray: 2 6; stroke-linecap: round; }
+.wk-svg .arc-head { fill: var(--accent); }
+.wk-svg .leader { fill: none; stroke: rgba(238, 242, 234, 0.55); stroke-width: 1; }
+.wk-svg .dot { fill: var(--on-dark); }
+.wk-svg .label-strong { fill: var(--on-dark); font-weight: 600; }
+.wk-svg .label-accent.label-strong { fill: var(--accent); }
+.wk-svg .label-signal.label-strong { fill: var(--signal); }
+.wk-svg .label-title { font-family: var(--font-display); font-size: 20px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
+.wk-svg .label-taxon { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0; fill: var(--text-2); }
+.wk-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .wk-svg .label, .wk-svg .label-tick { font-size: 19px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .wk-svg .label-title { font-size: 24px; }
+  .wk-svg .label-taxon { font-size: 19px; }
+}
+
 /* Early atmosphere, hero of the oxygen article (_includes/svg/early-atmosphere.svg) */
 .atmo-svg { width: 100%; height: auto; overflow: visible; }
 .atmo-svg .grid { color: rgba(238, 242, 234, 0.07); }

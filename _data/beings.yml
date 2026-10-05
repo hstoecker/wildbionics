@@ -12,3 +12,4 @@ e-coli: { en: "E. coli", de: "Kolibakterium", taxon: "Escherichia coli", wikidat
 honey-bee: { en: "Honeybee", de: "Honigbiene", taxon: "Apis mellifera", wikidata: Q30034 }
 fruit-fly: { en: "Fruit fly", de: "Taufliege", taxon: "Drosophila melanogaster", wikidata: Q130888 }
 european-robin: { en: "European robin", de: "Rotkehlchen", taxon: "Erithacus rubecula", wikidata: Q25334 }
+human: { en: "Human", de: "Mensch", taxon: "Homo sapiens", wikidata: Q15978631 }
