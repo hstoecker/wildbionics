@@ -1,6 +1,6 @@
 ---
 name: wildbionics-article
-description: "Write or extend a WildBionics article – research protocol with verified sources (DOI via Crossref/PubMed), article structure and front matter, lens panels (biology, physics, mathematics, computer science, Physical AI), key facts, FAQ, citations, worked calculations and runnable code, SEO/AEO/GEO fields and OG image. Use for new articles, new sections or lenses, and any change to factual content."
+description: "Write or extend a WildBionics article – research protocol with verified sources (DOI via Crossref/PubMed), article structure and front matter, lens panels (biology, physics, mathematics, chemistry, computer science, Physical AI), key facts, FAQ, citations, worked calculations and runnable code, SEO/AEO/GEO fields and OG image. Use for new articles, new sections or lenses, and any change to factual content."
 ---
 
 # Writing a WildBionics article
@@ -94,6 +94,22 @@ status: draft | published
 3. `{% include lens-tabs.html lenses="biology,physics,math,cs" %}` followed by one panel per lens:
    `{% include lens-start.html lens="physics" %}` · `## Physics lens: …` · content ·
    `{% include lens-end.html %}` – the panels must match `lenses:` exactly and in order.
+
+   **The lenses** (keys in `_data/lenses.yml`, tab names `lens.<key>.tab` in `_data/i18n.yml`, panel
+   headings `<Name> lens: …` / `<Name>-Linse: …`; pick at least three, in this order):
+
+   | Key | Lens | What it adds |
+   |---|---|---|
+   | `biology` | Biology | the organism, its anatomy, behaviour, ecology and evolution |
+   | `physics` | Physics | the mechanism as physics: forces, energy, waves, scaling laws |
+   | `math` | Mathematics | the formula or model, derived or worked through with numbers |
+   | `chemistry` | Chemistry | the substances and reactions behind the phenomenon: materials (e.g. collagen and hydroxyapatite in bone), reactions with formulas (e.g. hydroxyapatite → fluorapatite in fossilisation), molecular evidence and dating. Controversial molecular findings (e.g. dinosaur proteins) are shown with both positions and their sources. First used in `trex-running` |
+   | `cs` | Computer science | a tested code example (section 4) |
+   | `physical-ai` | Physical AI | robots and simulated bodies that sense and act in the physical world – bio-inspired machines, learned or evolved gaits; company claims only as "according to …". First used in `gecko-adhesion` |
+
+   A new lens needs an entry in `_data/lenses.yml` (graph target, see `wildbionics-graph`), a tab
+   name in `_data/i18n.yml` (EN + DE), its names in `scripts/new_article.py`, this table and a
+   line in `CLAUDE.md` ("Core USP").
 4. An outlook section: bionics, technology, medicine, open questions.
 5. FAQ, sources and graph tags are rendered by the layout from front matter – do not repeat them.
 

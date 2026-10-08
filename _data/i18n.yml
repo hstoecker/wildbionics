@@ -77,6 +77,8 @@ en:
       svg_dt: "Δt = 17.5 ms"
     physical-ai:
       tab: "Physical AI"
+    chemistry:
+      tab: "Chemistry"
     cs:
       tab: "Computer science"
       kicker: "Signal processing · Sonar"
@@ -734,6 +736,8 @@ de:
     graph_cta: "Wissensgraph erkunden"
     items:
       - key: time
+    chemistry:
+      tab: "Chemie"
         title: "Zeit"
         sub: "Evolution & Geologie"
         text: "Vom Urknall bis zu humanoiden Robotern – und weiter zur offenen Frage der Superintelligenz: Wann ist eine Lösung entstanden, und wie lange haben Natur oder Technik sie verfeinert?"

@@ -3,5 +3,6 @@
 biology: term:biology
 physics: dim:physics            # the "Rules" dimension
 math: term:mathematics
+chemistry: term:chemistry
 cs: term:computer-science
 physical-ai: term:physical-ai

@@ -16,7 +16,7 @@ organisms (beings) or thought experiments and, through its lenses, to discipline
 | `_data/taxonomy.yml` | ontology terms: `slug: { dim, order?, en, de }` | `dim` ∈ `time`, `space`, `physics` (= "Rules"), `adjacent_sciences`; time terms need an integer `order` on the axis Big Bang → … → future; names in every language; optional `wikidata: Q…` only when a Wikidata item is *exactly* this concept – verify label and description via the Wikidata API (becomes `sameAs`) |
 | `_data/beings.yml` | organisms (later also machines): `slug: { en, de, taxon, wikidata }` | verify the Wikidata ID; `taxon` is the scientific name (rendered in italics) |
 | `_data/thought_experiments.yml` | thought experiments – imagined setups, not real organisms or experiments: `slug: { en, de, author, year, wikidata }` | node type `thought-experiment` (dashed lilac circle, legend "Thought experiment"); never put them in `beings.yml`; the article's kicker and hero figure say "thought experiment" too |
-| `_data/lenses.yml` | lens key → graph node (`term:<slug>` or `dim:<dimension>`) | every lens in `_data/i18n.yml` `lens.*` needs an entry |
+| `_data/lenses.yml` | lens key → graph node (`term:<slug>` or `dim:<dimension>`): `biology` → `term:biology`, `physics` → `dim:physics`, `math` → `term:mathematics`, `chemistry` → `term:chemistry`, `cs` → `term:computer-science`, `physical-ai` → `term:physical-ai` | every lens in `_data/i18n.yml` `lens.*` needs an entry; a new lens points to an existing discipline term (lens list: `wildbionics-article`, section 3) |
 | article front matter | `dimensions`, `beings`, `thought_experiments`, `lenses` | slugs must exist and sit under the matching dimension |
 
 ## Ontology rules

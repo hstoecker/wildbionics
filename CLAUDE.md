@@ -11,6 +11,7 @@ Each article can be viewed through switchable lenses on the same phenomenon, e.g
 - Biology lens: sensory ecology, bat–moth arms race
 - Physics lens: acoustics, Doppler effect
 - Math lens: trigonometry of distance measurement
+- Chemistry lens (key `chemistry`, first used in the T. rex article: the chemistry of fossilisation, the dinosaur soft-tissue controversy, radiometric dating): substances, reactions and molecular evidence behind the phenomenon
 - CS lens: code for radar/sonar algorithms of autonomous drones
 - Physical AI lens (key `physical-ai`, first used in the gecko article: gecko-inspired climbing robots and grippers): embodied AI and robots that sense and act in the physical world, e.g. sonar-guided robots
 
