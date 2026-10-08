@@ -201,6 +201,19 @@ terms:
   - { en: "legged robot*", de: "Laufroboter*", de_alt: ["Schreitroboter*"] }
   - { en: "gait*", de: "Gang*", de_alt: ["Gangart*"] }
 
+  # --- Palaeontology / chemistry --------------------------------------------------
+  - { en: "trace fossil*", de: "Spurenfossil*", avoid: ["Spuren-Fossil*"], level: warn, why: "Fachbegriff der Paläontologie (Ichnofossil): versteinerte Lebensspur, z. B. Fährte, Bau, Kotballen." }
+  - { en: "trackway*", de: "Fährte*", de_alt: ["*fährte*"], avoid: ["Spurweg*", "Fußspurenweg*"], why: "Paläontologie: eine Folge von Fußabdrücken desselben Tieres heißt Fährte." }
+  - { en: "stride length*", de: "Doppelschrittlänge*", de_alt: ["Schrittlänge*"], why: "Fährtenkunde: stride (λ) = Abstand zweier Abdrücke desselben Fußes = Doppelschritt(länge); pace = Schritt (linker zu rechter Fuß). In Fährtentexten Doppelschrittlänge verwenden, damit λ eindeutig ist." }
+  - { en: "evolutionary robotics", de: "evolutionäre Robotik" }
+  - { en: "hip height*", de: "Hüfthöhe*" }
+  - { en: "permineraliz*", de: "Permineralisation*", de_alt: ["permineralisiert*"], avoid: ["Permineralisierung*"], level: warn, why: "Fachbegriff der Fossilisation: Minerale füllen Poren und Kanäle des Knochens." }
+  - { en: "hydroxyapatite", de: "Hydroxylapatit", avoid: ["Hydroxyapatit"], level: warn, why: "Mineralogischer Name im Deutschen: Hydroxylapatit; Hydroxyapatit ist ein Anglizismus." }
+  - { en: "fluorapatite", de: "Fluorapatit" }
+  - { en: "diagenesis", de: "Diagenese" }
+  - { en: "collagen", de: "Kollagen", avoid: ["Collagen"], level: warn, why: "Deutsche Schreibweise mit K." }
+  - { en: "biofilm*", de: "Biofilm*" }
+  - { en: "square–cube law", de: "Quadrat-Kubik-Gesetz", avoid: ["Quadrat-Würfel-Gesetz"], level: warn, why: "Etablierte Übersetzung (Galilei); so auch im Artikel Insektenflug." }
   # --- Artificial intelligence / robotics -----------------------------------------
   - { en: "quantum sensor*", de: "Quantensensor*" }
   - { en: "microrobot*", de: "Mikroroboter*" }
