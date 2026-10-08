@@ -198,6 +198,17 @@ def check_graph(where, nodes, page_url, noindex, crumbs, imgs=()):
                 target = url_to_file(it.get("url", ""))
                 if not target or not target.exists():
                     errors.append(f"{where}: ItemList links to a missing page {it.get('url')}")
+    for ds in (n for n in nodes if "Dataset" in types_of(n)):    # Google Dataset rich results
+        if not ds.get("name"):
+            errors.append(f"{where}: Dataset lacks name")
+        if not 50 <= len(ds.get("description") or "") <= 5000:
+            errors.append(f"{where}: Dataset description must be 50–5000 characters")
+        parents = ds.get("isPartOf")
+        for parent in (parents if isinstance(parents, list) else [parents] if parents else []):
+            target = by_id.get(parent.get("@id"), parent) if isinstance(parent, dict) else None
+            if isinstance(parent, dict) and "Dataset" not in types_of(target):
+                errors.append(f"{where}: Dataset isPartOf must be a larger Dataset (or a URL), not "
+                              f"{parent.get('@id') or types_of(parent)} – link the page with WebPage.mainEntity instead")
     for bc in (n for n in nodes if "BreadcrumbList" in types_of(n)):
         items = bc.get("itemListElement", [])
         if noindex:

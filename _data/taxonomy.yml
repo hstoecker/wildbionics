@@ -12,6 +12,7 @@ big-bang:                { dim: time, order: 10, en: "Big Bang", de: "Urknall", 
 archean:                 { dim: time, order: 20, en: "Archean", de: "Archaikum", wikidata: Q104168 }
 proterozoic:             { dim: time, order: 25, en: "Proterozoic", de: "Proterozoikum", wikidata: Q104162 }
 cambrian:                { dim: time, order: 30, en: "Cambrian", de: "Kambrium", wikidata: Q79064 }
+mesozoic:                { dim: time, order: 40, en: "Mesozoic", de: "Erdmittelalter", wikidata: Q83222 }
 cenozoic:                { dim: time, order: 50, en: "Cenozoic", de: "Känozoikum", wikidata: Q102416 }
 modern-era:              { dim: time, order: 70, en: "Modern era", de: "Neuzeit", wikidata: Q3281534 }
 age-of-ai:               { dim: time, order: 80, en: "Age of AI", de: "KI-Zeitalter" }

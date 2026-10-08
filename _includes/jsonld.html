@@ -232,7 +232,6 @@
       "license": "{{ content_license }}",
       "isAccessibleForFree": true,
       "creator": { "@id": "{{ site_url }}#organization" },
-      "isPartOf": { "@id": "{{ site_url }}#website" },
       "keywords": ["knowledge graph", "bionics", "biology", "physics", "Physical AI", "ontology"],
       "distribution": [
         { "@type": "DataDownload", "encodingFormat": "application/ld+json", "contentUrl": {{ '/graph.jsonld' | absolute_url | jsonify }} },

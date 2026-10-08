@@ -18,11 +18,11 @@ ROOT = Path(__file__).resolve().parents[5]
 TEXT = {
     "en": dict(kicker="Article · ", perma="/articles/{ref}/", fig="Fig.", intro="## TODO: the phenomenon",
                steps="## TODO: the process in steps", lens="## {name} lens: TODO", outlook="## TODO: outlook",
-               names={"biology": "Biology", "physics": "Physics", "math": "Mathematics", "cs": "Computer science",
+               names={"biology": "Biology", "physics": "Physics", "math": "Mathematics", "chemistry": "Chemistry", "cs": "Computer science",
                       "physical-ai": "Physical AI"}),
     "de": dict(kicker="Artikel · ", perma="/de/artikel/{slug}/", fig="Abb.", intro="## TODO: das Phänomen",
                steps="## TODO: der Ablauf in Schritten", lens="## {name}-Linse: TODO", outlook="## TODO: Ausblick",
-               names={"biology": "Biologie", "physics": "Physik", "math": "Mathematik", "cs": "Informatik",
+               names={"biology": "Biologie", "physics": "Physik", "math": "Mathematik", "chemistry": "Chemie", "cs": "Informatik",
                       "physical-ai": "Physical-AI"}),
 }
 
