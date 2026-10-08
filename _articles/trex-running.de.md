@@ -465,7 +465,7 @@ plt.show()
 
 Was das Ergebnis lehrt:
 
-- **Die Fährten zeigen ein Gehen.** Die Tyrannosauridenfährte ergibt 6,5 km/h mit gestrecktem und 8,4 km/h mit gebeugtem Bein – das passt bis auf Rundung zu den von McCrea und Kollegen veröffentlichten 6,4–8,5 km/h. Auf einen ausgewachsenen T. rex skaliert, ergibt dieselbe Fährte 7,2 km/h bei einer Froude-Zahl von nur 0,13.
+- **Die Fährten zeigen ein Gehen.** Die Tyrannosauridenfährte ergibt 6,5 km/h mit gestrecktem und 8,4 km/h mit gebeugtem Bein – auf 0,1 km/h genau die von McCrea und Kollegen veröffentlichten 6,4–8,5 km/h, die die Formel mit gerundeten Exponenten verwendeten. Auf einen ausgewachsenen T. rex skaliert, ergibt dieselbe Fährte 7,2 km/h bei einer Froude-Zahl von nur 0,13.
 - **Die Größe ändert alles.** Derselbe Doppelschritt von 3,5 m wäre für einen Menschen ein schneller Lauf, für T. rex dagegen ein Bummeln: Im Verhältnis zu seinen langen Beinen ist der Doppelschritt kurz. Der Vergleich der Froude-Zahlen – 0,13 für T. rex, 0,27 für einen Menschen, der mit 5,6 km/h geht – zeigt, dass der Riese für seine Größe nicht „schnell“ ging.
 - **Robust und unsicher zugleich.** Mit der Streuung der Regel lässt die skalierte Fährte alles von 5 bis 11 km/h zu – die genaue Zahl ist unsicher, die Gangart nicht.
 - **Wo das Gehen endet.** Im Pendelmodell endet das Gehen bei *Fr* = 1, hier bei 5,5 m/s oder 20 km/h – eine theoretische Obergrenze, keine gemessene Geschwindigkeit. Das reine Muskelmodell erreichte 8,0 m/s, was *Fr* = 2,1 entspricht – eine Gangart des Rennens. Ob T. rex sie erreichen konnte, ist genau das, was das Knochenspannungsmodell infrage stellt (Physical-AI-Linse).

@@ -465,7 +465,7 @@ plt.show()
 
 What the result teaches:
 
-- **The trackways record a walk.** The tyrannosaurid trackway gives 6.5 km/h with a straight leg and 8.4 km/h with a bent leg – matching the 6.4–8.5 km/h published by McCrea and colleagues within rounding. Scaled to an adult T. rex, the same trackway gives 7.2 km/h at a Froude number of only 0.13.
+- **The trackways record a walk.** The tyrannosaurid trackway gives 6.5 km/h with a straight leg and 8.4 km/h with a bent leg – within 0.1 km/h of the 6.4–8.5 km/h published by McCrea and colleagues, who used the formula with rounded exponents. Scaled to an adult T. rex, the same trackway gives 7.2 km/h at a Froude number of only 0.13.
 - **Size changes everything.** The same stride of 3.5 m would be a fast run for a person, but a stroll for T. rex: relative to its long legs, the stride is short. Comparing the Froude numbers – 0.13 for T. rex, 0.27 for a person walking at 5.6 km/h – shows that the giant was not walking "fast" for its size.
 - **Robust and uncertain at once.** With the scatter of the rule, the scaled trackway allows anything from 5 to 11 km/h – the exact number is uncertain, the gait is not.
 - **Where walking ends.** In the pendulum model, walking ends at *Fr* = 1, here at 5.5 m/s or 20 km/h – a theoretical upper limit, not a measured speed. The muscle-only model reached 8.0 m/s, which corresponds to *Fr* = 2.1 – a running gait. Whether T. rex could reach it is exactly what the bone-stress model questions (Physical AI lens).
