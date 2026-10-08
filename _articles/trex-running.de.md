@@ -65,14 +65,6 @@ sources:
     volume: 339
     pages: "684–687"
     doi: "10.1126/science.1230492"
-  - authors: ["Mitchell, J. L.", "Barbi, M.", "McKellar, R. C.", "Cliveti, M.", "Coulson, I. M."]
-    year: 2025
-    title: "In situ analysis of vascular structures in fractured Tyrannosaurus rex rib"
-    journal: "Scientific Reports"
-    volume: 15
-    pages: "20327"
-    doi: "10.1038/s41598-025-06981-z"
-    open_access: true
   - authors: ["Horner, J. R.", "Goodwin, M. B.", "Myhrvold, N."]
     year: 2011
     title: "Dinosaur Census Reveals Abundant Tyrannosaurus and Rare Ontogenetic Stages in the Upper Cretaceous Hell Creek Formation (Maastrichtian), Montana, USA"
@@ -80,6 +72,14 @@ sources:
     volume: 6
     pages: "e16574"
     doi: "10.1371/journal.pone.0016574"
+    open_access: true
+  - authors: ["Mitchell, J. L.", "Barbi, M.", "McKellar, R. C.", "Cliveti, M.", "Coulson, I. M."]
+    year: 2025
+    title: "In situ analysis of vascular structures in fractured Tyrannosaurus rex rib"
+    journal: "Scientific Reports"
+    volume: 15
+    pages: "20327"
+    doi: "10.1038/s41598-025-06981-z"
     open_access: true
   - authors: ["Hutchinson, J. R.", "Bates, K. T.", "Molnar, J.", "Allen, V.", "Makovicky, P. J."]
     year: 2011
@@ -104,7 +104,6 @@ sources:
     volume: 415
     pages: "1018–1021"
     doi: "10.1038/4151018a"
-    open_access: true
   - authors: ["McCrea, R. T.", "Buckley, L. G.", "Farlow, J. O.", "Lockley, M. G.", "Currie, P. J.", "Matthews, N. A.", "Pemberton, S. G."]
     year: 2014
     title: "A ‘Terror of Tyrannosaurs’: The First Trackways of Tyrannosaurids and Evidence of Gregariousness and Pathology in Tyrannosauridae"
@@ -136,7 +135,6 @@ sources:
     volume: 294
     pages: "119–131"
     doi: "10.1002/ar.21290"
-    open_access: true
   - authors: ["van Bijlert, P. A.", "van Soest, A. J.", "Schulp, A. S."]
     year: 2021
     title: "Natural Frequency Method: estimating the preferred walking speed of Tyrannosaurus rex based on tail natural frequency"
@@ -152,7 +150,6 @@ sources:
     volume: 303
     pages: "656–672"
     doi: "10.1002/ar.24118"
-    open_access: true
   - authors: ["Bell, P. R.", "Campione, N. E.", "Persons, W. S.", "Currie, P. J.", "Larson, P. L.", "Tanke, D. H.", "Bakker, R. T."]
     year: 2017
     title: "Tyrannosauroid integument reveals conflicting patterns of gigantism and feather evolution"
@@ -182,7 +179,6 @@ sources:
     volume: 262
     pages: "441–461"
     doi: "10.1002/jmor.10240"
-    open_access: true
   - authors: ["Schweitzer, M. H.", "Suo, Z.", "Avci, R.", "Asara, J. M.", "Allen, M. A.", "Arce, F. T.", "Horner, J. R."]
     year: 2007
     title: "Analyses of Soft Tissue from Tyrannosaurus rex Suggest the Presence of Protein"
@@ -190,7 +186,6 @@ sources:
     volume: 316
     pages: "277–280"
     doi: "10.1126/science.1138709"
-    open_access: true
   - authors: ["Saitta, E. T.", "Liang, R.", "Lau, M. C.", "Brown, C. M.", "Longrich, N. R.", "Kaye, T. G.", "Novak, B. J.", "Salzberg, S. L.", "Norell, M. A.", "Abbott, G. D.", "Dickinson, M. R.", "Vinther, J.", "Bull, I. D.", "Brooker, R. A.", "Martin, P.", "Donohoe, P.", "Knowles, T. D.", "Penkman, K. E.", "Onstott, T."]
     year: 2019
     title: "Cretaceous dinosaur bone contains recent organic material and provides an environment conducive to microbial communities"
@@ -206,7 +201,6 @@ sources:
     volume: 101
     pages: "1943–1951"
     doi: "10.2138/am-2016-5737"
-    open_access: true
   - authors: ["Kim, J. K.", "Kwon, Y. E.", "Lee, S. G.", "Kim, C. Y.", "Kim, J. G.", "Huh, M.", "Lee, E.", "Kim, Y. J."]
     year: 2017
     title: "Correlative microscopy of the constituents of a dinosaur rib fossil and hosting mudstone: Implications on diagenesis and fossil preservation"
@@ -222,7 +216,6 @@ sources:
     volume: 307
     pages: "1952–1955"
     doi: "10.1126/science.1108397"
-    open_access: true
   - authors: ["Asara, J. M.", "Schweitzer, M. H.", "Freimark, L. M.", "Phillips, M.", "Cantley, L. C."]
     year: 2007
     title: "Protein Sequences from Mastodon and Tyrannosaurus Rex Revealed by Mass Spectrometry"
@@ -230,7 +223,6 @@ sources:
     volume: 316
     pages: "280–285"
     doi: "10.1126/science.1137614"
-    open_access: true
   - authors: ["Schweitzer, M. H.", "Zheng, W.", "Cleland, T. P.", "Goodwin, M. B.", "Boatman, E.", "Theil, E.", "Marcus, M. A.", "Fakra, S. C."]
     year: 2014
     title: "A role for iron and oxygen chemistry in preserving soft tissues, cells and molecules from deep time"
@@ -278,7 +270,6 @@ sources:
     volume: 565
     pages: "351–355"
     doi: "10.1038/s41586-018-0851-2"
-    open_access: true
   - authors: ["Perricone, V.", "Santulli, C.", "Rendina, F.", "Langella, C."]
     year: 2021
     title: "Organismal Design and Biomimetics: A Problem of Scale"
@@ -292,7 +283,7 @@ status: published
 
 ## Ein Riese auf zwei Beinen
 
-*Tyrannosaurus rex* lebte ganz am Ende des Zeitalters der Dinosaurier, kurz vor dem Massenaussterben vor etwa 66 Millionen Jahren [1](#ref-1){:.cite}. Seine Skelette stammen aus Gesteinen der Oberkreide Nordamerikas – „Scotty“ zum Beispiel aus Saskatchewan in Kanada, aus etwa 67 Millionen Jahre alten Schichten [2](#ref-2){:.cite} – und aus der Hell-Creek-Formation in Montana, wo Skelette von *Tyrannosaurus* im oberen Teil der Formation etwa so häufig sind wie die des Pflanzenfressers *Edmontosaurus* [3](#ref-3){:.cite}. Ausgewachsene Tiere wogen etwa **6.000–8.000 kg** – das größte bekannte Exemplar, „Sue“, vielleicht um 9.500 kg – und wuchsen in weniger als 20 Jahren aus Schlüpflingen von weniger als 10 kg zu dieser Größe heran [4](#ref-4){:.cite}.
+*Tyrannosaurus rex* lebte ganz am Ende des Zeitalters der Dinosaurier, kurz vor dem Massenaussterben vor etwa 66 Millionen Jahren [1](#ref-1){:.cite} [2](#ref-2){:.cite}. Seine Skelette stammen aus Gesteinen der Oberkreide Nordamerikas – „Scotty“ zum Beispiel aus Saskatchewan in Kanada, aus etwa 67 Millionen Jahre alten Schichten [3](#ref-3){:.cite} – und aus der Hell-Creek-Formation in Montana, wo Skelette von *Tyrannosaurus* im oberen Teil der Formation etwa so häufig sind wie die des Pflanzenfressers *Edmontosaurus* [2](#ref-2){:.cite}. Ausgewachsene Tiere wogen etwa **6.000–8.000 kg** – das größte bekannte Exemplar, „Sue“, vielleicht um 9.500 kg – und wuchsen in weniger als 20 Jahren aus Schlüpflingen von weniger als 10 kg zu dieser Größe heran [4](#ref-4){:.cite}.
 
 Wie schnell konnte sich ein solches Tier bewegen? Die Frage entscheidet mit darüber, wie T. rex lebte – als Hetzjäger oder nicht [5](#ref-5){:.cite} –, und sie ist seit Langem umstritten. Manche Studien hielten T. rex für auf das Gehen beschränkt oder bestenfalls 11 m/s schnell; andere sprachen sich für Laufgeschwindigkeiten von mindestens 20 m/s aus [6](#ref-6){:.cite}. Biomechanische Modelle allein ergeben Höchstgeschwindigkeiten irgendwo zwischen 5 und 15 m/s [5](#ref-5){:.cite}.
 
@@ -313,9 +304,9 @@ Niemand kann einen Dinosaurier stoppen. Aber seine Fußspuren, die Festigkeit se
 
 **Eine Wippe auf zwei Beinen.** T. rex ging auf zwei Beinen. Sein Schwanz machte etwa die Hälfte der Körperlänge oder mehr aus und hielt dem schweren Kopf und Rumpf die Waage: In 3D-Rekonstruktionen liegt der Schwerpunkt nahe der Hüfte, etwas davor. Die Hüftstreckmuskeln mussten den Körper gegen das Kippen nach vorn halten – ein vorgeschlagener Grund dafür, dass sie so groß waren [4](#ref-4){:.cite}.
 
-**Ein Schwanz voller Muskeln.** Der Schwanz war nicht nur ein Gegengewicht. Scott Persons und Philip Currie rekonstruierten die Schwanzmuskeln anhand von Ansatznarben an den Schwanzknochen: Der **M. caudofemoralis**, der vom Schwanz zum Oberschenkelknochen zieht, war bei *Tyrannosaurus* außergewöhnlich groß. Er ist der wichtigste Muskel, der das Bein bei jedem Schritt nach hinten zieht, und Persons und Currie sehen in seiner Größe einen Hinweis auf größere Sportlichkeit – beim Laufen, beim Gleichgewicht und bei schnellen Wendungen [10](#ref-10){:.cite}. Beim Gehen hing der Schwanz an Bändern, die elastische Energie speichern konnten [11](#ref-11){:.cite}.
+**Ein Schwanz voller Muskeln.** Der Schwanz war nicht nur ein Gegengewicht. Scott Persons und Philip Currie rekonstruierten die Schwanzmuskeln anhand von Ansatznarben an den Schwanzknochen: Der **M. caudofemoralis**, der vom Schwanz zum Oberschenkelknochen zieht, war bei vielen Theropoden außer den Vögeln außergewöhnlich groß und bei *Tyrannosaurus* noch weiter vergrößert. Er ist der wichtigste Muskel, der das Bein bei jedem Schritt nach hinten zieht, und Persons und Currie sehen in seiner Größe einen Hinweis auf größere Sportlichkeit – beim Laufen, beim Gleichgewicht und bei schnellen Wendungen [10](#ref-10){:.cite}. Beim Gehen hing der Schwanz an Bändern, die elastische Energie speichern konnten [11](#ref-11){:.cite}.
 
-**Mächtige Oberschenkel, wachsender Rumpf.** John Hutchinson und Kollegen scannten vier große Skelette und ein mutmaßliches Jungtier in 3D und bauten ihre Körper im Computer nach. T. rex hatte wahrscheinlich relativ größere Hüft- und Oberschenkelmuskeln als jedes heute lebende Tier. Während er wuchs, wurde sein Rumpf länger und schwerer, die Beine dagegen relativ kürzer und leichter – Veränderungen, die die relative Leistungsfähigkeit großer Tiere bei der Fortbewegung wohl weiter verringert hätten; die Autoren nennen die Folgen für die Fortbewegung insgesamt allerdings unklar [4](#ref-4){:.cite}. 2020 beschrieben Persons, Currie und Gregory Erickson das Skelett `RSM P2523.8`, bekannt als „Scotty“: einen ausgewachsenen T. rex, dessen geschätzte Körpermasse die aller anderen bekannten Exemplare übertrifft [12](#ref-12){:.cite} [2](#ref-2){:.cite}.
+**Mächtige Oberschenkel, wachsender Rumpf.** John Hutchinson und Kollegen scannten vier große Skelette und ein mutmaßliches Jungtier in 3D und bauten ihre Körper im Computer nach. T. rex hatte wahrscheinlich relativ größere Hüft- und Oberschenkelmuskeln als jedes heute lebende Tier. Während er wuchs, wurde sein Rumpf länger und schwerer, die Beine dagegen relativ kürzer und leichter – Veränderungen, die die relative Leistungsfähigkeit großer Tiere bei der Fortbewegung wohl weiter verringert hätten; die Autoren nennen die Folgen für die Fortbewegung insgesamt allerdings unklar [4](#ref-4){:.cite}. 2020 beschrieben Persons, Currie und Gregory Erickson das Skelett `RSM P2523.8`, bekannt als „Scotty“: einen ausgewachsenen T. rex, dessen geschätzte Körpermasse die aller anderen bekannten Exemplare übertrifft [12](#ref-12){:.cite} [3](#ref-3){:.cite}.
 
 **Schuppen statt Federkleid.** Hautabdrücke von *Tyrannosaurus* und anderen großen Tyrannosauriden zeigen schuppige, reptilienartige Haut. Einige frühe Verwandte von T. rex trugen ein ausgedehntes Federkleid, das aber verloren ging, bevor die großen Tyrannosauriden entstanden [13](#ref-13){:.cite}. Jedes Bild eines lebenden T. rex ist eine Rekonstruktion.
 
@@ -369,15 +360,15 @@ In dieser Form geben William Sellers und Phillip Manning die Regel an [9](#ref-9
 
 ## Chemie-Linse: wie Knochen zu Stein wird
 
-**Woraus Knochen besteht.** Lebender Knochen ist ein Verbundwerkstoff: ein Gerüst aus dem Protein **Kollagen** – Kollagen I ist sein wichtigster organischer Bestandteil [17](#ref-17){:.cite} –, versteift durch winzige Kristalle eines Calciumphosphat-Minerals, **Hydroxylapatit**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) [2](#ref-2){:.cite}.
+**Woraus Knochen besteht.** Lebender Knochen ist ein Verbundwerkstoff: ein Gerüst aus dem Protein **Kollagen** – Kollagen I ist sein wichtigster organischer Bestandteil [17](#ref-17){:.cite} –, versteift durch winzige Kristalle eines Calciumphosphat-Minerals, **Hydroxylapatit**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) [3](#ref-3){:.cite}.
 
 **Diagenese: der langsame chemische Umbau.** Nach der Einbettung bleibt Knochen nicht einfach erhalten. Er ist ein poröses, offenes System, durch das Wasser, Moleküle und Mikroben wandern können [18](#ref-18){:.cite}, und seine Minerale verändern sich mit der Zeit. Diese Veränderungen heißen **Diagenese**. Das Mineral des Knochens, Bioapatit, wandelt sich über geologische Zeiträume in thermodynamisch stabilere Phasen um; wie schnell das geschieht und wie stark Ablagerungsumgebung und Mikroben es steuern, ist noch nicht vollständig verstanden [19](#ref-19){:.cite}.
 
-**Vom Hydroxylapatit zum Fluorapatit.** Eine dieser Veränderungen lässt sich an T. rex direkt messen. In einer Rippe von „Scotty“ fanden Mitchell und Kollegen in der Knochenmatrix Calcium, Phosphor, Sauerstoff und **Fluor**: Der ursprüngliche Hydroxylapatit ist zumindest teilweise in **Fluorapatit**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F, umgewandelt, wobei Fluoridionen die Plätze von Hydroxidionen eingenommen haben [2](#ref-2){:.cite}. In einer Dinosaurierrippe aus Südkorea fanden Jung-Kyun Kim und Kollegen ebenfalls Fluorapatitkristalle als Zeichen der diagenetischen Umwandlung des ursprünglichen Bioapatits [20](#ref-20){:.cite}.
+**Vom Hydroxylapatit zum Fluorapatit.** Eine dieser Veränderungen lässt sich an T. rex direkt messen. In einer Rippe von „Scotty“ fanden Mitchell und Kollegen in der Knochenmatrix Calcium, Phosphor, Sauerstoff und **Fluor**: Der ursprüngliche Hydroxylapatit ist zumindest teilweise in **Fluorapatit**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F, umgewandelt, wobei Fluoridionen die Plätze von Hydroxidionen eingenommen haben [3](#ref-3){:.cite}. In einer Dinosaurierrippe aus Südkorea fanden Jung-Kyun Kim und Kollegen ebenfalls Fluorapatitkristalle als Zeichen der diagenetischen Umwandlung des ursprünglichen Bioapatits [20](#ref-20){:.cite}.
 
 <div class="formula" role="math" aria-label="Hydroxylapatit plus Fluorid ergibt Fluorapatit plus Hydroxid">Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) + F<sup>−</sup> → Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F + OH<sup>−</sup></div>
 
-**Poren füllen: Permineralisation.** Knochen ist von Kanälen für Blutgefäße durchzogen. Bei der **Permineralisation** kristallisieren vom Grundwasser herangetragene Minerale in diesen Hohlräumen aus. In der koreanischen Rippe füllte vor allem **Calcit** (Calciumcarbonat) die Gefäßkanäle und Risse, während Tonminerale die kleinen Poren besetzten [20](#ref-20){:.cite}. In Scottys Rippe erwiesen sich netzartige Strukturen, die wie Blutgefäße aussehen, als Abgüsse aus **Pyrit** (Eisensulfid), teilweise zu den Eisenoxiden Goethit oder Hämatit oxidiert – permineralisierte Abgüsse, kein ursprüngliches Gewebe [2](#ref-2){:.cite}.
+**Poren füllen: Permineralisation.** Knochen ist von Kanälen für Blutgefäße durchzogen. Bei der **Permineralisation** kristallisieren vom Grundwasser herangetragene Minerale in diesen Hohlräumen aus. In der koreanischen Rippe füllte vor allem **Calcit** (Calciumcarbonat) die Gefäßkanäle und Risse, während Tonminerale die kleinen Poren besetzten [20](#ref-20){:.cite}. In Scottys Rippe erwiesen sich netzartige Strukturen, die wie Blutgefäße aussehen, als Abgüsse aus **Pyrit** (Eisensulfid), teilweise zu den Eisenoxiden Goethit oder Hämatit oxidiert – permineralisierte Abgüsse, kein ursprüngliches Gewebe [3](#ref-3){:.cite}.
 
 **Die Weichgewebe-Kontroverse.** Kann ursprüngliches organisches Material 66 Millionen Jahre überdauern? Hier sind sich die Forschenden uneinig, und die Frage ist offen.
 
@@ -482,7 +473,7 @@ Was das Ergebnis lehrt:
 Probier es selbst:
 
 - Nimm die Beinlänge von „Sue“, 3,30 m, als ungefähre Hüfthöhe für den ausgewachsenen T. rex: Setze `HIP_TREX = 3.30`. Die skalierte Fährte sinkt auf 6,7 km/h, und die Grenze des Gehens steigt auf 5,7 m/s – ein größeres Tier geht mit demselben Doppelschritt relativ langsamer.
-- Setze den Doppelschritt des reinen Muskelmodells ein, 9,56 m: Ändere `(3.88, HIP_TREX)` in `(9.56, HIP_TREX)`. Die Regel liefert nun 9,0 m/s bei *Fr* = 2,66 – nahe an den 8,0 m/s der Simulation, die selbst gut zur Regel passt [9](#ref-9){:.cite}. Ein solcher Doppelschritt ist aus keiner Tyrannosauridenfährte bekannt.
+- Setze den Doppelschritt des reinen Muskelmodells ein, 9,56 m: Ändere `(3.88, HIP_TREX)` in `(9.56, HIP_TREX)`. Die Regel liefert nun 9,0 m/s bei *Fr* = 2,66 – etwa 12 % über den 8,0 m/s der Simulation; Sellers und Manning fanden, dass die simulierten Doppelschritte gut zur Regel passen [9](#ref-9){:.cite}. Ein solcher Doppelschritt ist aus keiner Tyrannosauridenfährte bekannt.
 
 {% include code-variant.html file="trex_speed.py" id="sue" replace="HIP_TREX = 3.10 " with="HIP_TREX = 3.30 " expect="6.7 5.7" %}
 {% include code-variant.html file="trex_speed.py" id="sprint" replace="(3.88, HIP_TREX)" with="(9.56, HIP_TREX)" expect="9.0 2.66" %}
@@ -511,4 +502,4 @@ Physical AI – verkörperte künstliche Intelligenz, also Maschinen, die in der
 
 Knochenspannungs- und Muskelmodelle stimmen im Kern überein, und die bekannten Fußspuren passen dazu: Ein ausgewachsener T. rex rannte sehr wahrscheinlich nicht mit allen Füßen in der Luft – auch wenn die Fährten, von Verwandten mit kleineren Füßen hinterlassen, nur zeigen, wie diese gingen, nicht wie schnell sie sein konnten [7](#ref-7){:.cite}. Wie schnell er ging und wie sich seine Fortbewegung veränderte, während er vom leichten Jungtier zum Riesen heranwuchs, ist weiter umstritten, denn Muskeln und Sehnen versteinern nicht, und jedes Modell hängt von Annahmen über sie ab [5](#ref-5){:.cite} [4](#ref-4){:.cite}. Mehr Fährten würden helfen: Die bekannten Tyrannosauridenfährten zeigen nur Gehen, und künftige Modelle können sie als Kontrolle nutzen [7](#ref-7){:.cite}.
 
-Die Chemie fossiler Knochen bleibt ebenso offen. Neue Werkzeuge wie Synchrotron-Röntgenstrahlung erlauben es, Strukturen im Inneren eines Knochens abzubilden und ihre Chemie zu kartieren, und heilende Brüche, reich an neuen Blutgefäßen, könnten künftig gute Orte für die Suche nach erhaltenem Weichgewebe sein [2](#ref-2){:.cite}. Ob ursprüngliche Dinosaurierproteine zig Millionen Jahre überdauern können, werden nur sorgfältige Studien ohne Verunreinigung beantworten [18](#ref-18){:.cite} [23](#ref-23){:.cite}.
+Die Chemie fossiler Knochen bleibt ebenso offen. Neue Werkzeuge wie Synchrotron-Röntgenstrahlung erlauben es, Strukturen im Inneren eines Knochens abzubilden und ihre Chemie zu kartieren, und heilende Brüche, reich an neuen Blutgefäßen, könnten künftig gute Orte für die Suche nach erhaltenem Weichgewebe sein [3](#ref-3){:.cite}. Ob ursprüngliche Dinosaurierproteine zig Millionen Jahre überdauern können, werden nur sorgfältige Studien ohne Verunreinigung beantworten [18](#ref-18){:.cite} [23](#ref-23){:.cite}.

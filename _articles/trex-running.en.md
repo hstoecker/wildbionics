@@ -65,14 +65,6 @@ sources:
     volume: 339
     pages: "684–687"
     doi: "10.1126/science.1230492"
-  - authors: ["Mitchell, J. L.", "Barbi, M.", "McKellar, R. C.", "Cliveti, M.", "Coulson, I. M."]
-    year: 2025
-    title: "In situ analysis of vascular structures in fractured Tyrannosaurus rex rib"
-    journal: "Scientific Reports"
-    volume: 15
-    pages: "20327"
-    doi: "10.1038/s41598-025-06981-z"
-    open_access: true
   - authors: ["Horner, J. R.", "Goodwin, M. B.", "Myhrvold, N."]
     year: 2011
     title: "Dinosaur Census Reveals Abundant Tyrannosaurus and Rare Ontogenetic Stages in the Upper Cretaceous Hell Creek Formation (Maastrichtian), Montana, USA"
@@ -80,6 +72,14 @@ sources:
     volume: 6
     pages: "e16574"
     doi: "10.1371/journal.pone.0016574"
+    open_access: true
+  - authors: ["Mitchell, J. L.", "Barbi, M.", "McKellar, R. C.", "Cliveti, M.", "Coulson, I. M."]
+    year: 2025
+    title: "In situ analysis of vascular structures in fractured Tyrannosaurus rex rib"
+    journal: "Scientific Reports"
+    volume: 15
+    pages: "20327"
+    doi: "10.1038/s41598-025-06981-z"
     open_access: true
   - authors: ["Hutchinson, J. R.", "Bates, K. T.", "Molnar, J.", "Allen, V.", "Makovicky, P. J."]
     year: 2011
@@ -104,7 +104,6 @@ sources:
     volume: 415
     pages: "1018–1021"
     doi: "10.1038/4151018a"
-    open_access: true
   - authors: ["McCrea, R. T.", "Buckley, L. G.", "Farlow, J. O.", "Lockley, M. G.", "Currie, P. J.", "Matthews, N. A.", "Pemberton, S. G."]
     year: 2014
     title: "A ‘Terror of Tyrannosaurs’: The First Trackways of Tyrannosaurids and Evidence of Gregariousness and Pathology in Tyrannosauridae"
@@ -136,7 +135,6 @@ sources:
     volume: 294
     pages: "119–131"
     doi: "10.1002/ar.21290"
-    open_access: true
   - authors: ["van Bijlert, P. A.", "van Soest, A. J.", "Schulp, A. S."]
     year: 2021
     title: "Natural Frequency Method: estimating the preferred walking speed of Tyrannosaurus rex based on tail natural frequency"
@@ -152,7 +150,6 @@ sources:
     volume: 303
     pages: "656–672"
     doi: "10.1002/ar.24118"
-    open_access: true
   - authors: ["Bell, P. R.", "Campione, N. E.", "Persons, W. S.", "Currie, P. J.", "Larson, P. L.", "Tanke, D. H.", "Bakker, R. T."]
     year: 2017
     title: "Tyrannosauroid integument reveals conflicting patterns of gigantism and feather evolution"
@@ -182,7 +179,6 @@ sources:
     volume: 262
     pages: "441–461"
     doi: "10.1002/jmor.10240"
-    open_access: true
   - authors: ["Schweitzer, M. H.", "Suo, Z.", "Avci, R.", "Asara, J. M.", "Allen, M. A.", "Arce, F. T.", "Horner, J. R."]
     year: 2007
     title: "Analyses of Soft Tissue from Tyrannosaurus rex Suggest the Presence of Protein"
@@ -190,7 +186,6 @@ sources:
     volume: 316
     pages: "277–280"
     doi: "10.1126/science.1138709"
-    open_access: true
   - authors: ["Saitta, E. T.", "Liang, R.", "Lau, M. C.", "Brown, C. M.", "Longrich, N. R.", "Kaye, T. G.", "Novak, B. J.", "Salzberg, S. L.", "Norell, M. A.", "Abbott, G. D.", "Dickinson, M. R.", "Vinther, J.", "Bull, I. D.", "Brooker, R. A.", "Martin, P.", "Donohoe, P.", "Knowles, T. D.", "Penkman, K. E.", "Onstott, T."]
     year: 2019
     title: "Cretaceous dinosaur bone contains recent organic material and provides an environment conducive to microbial communities"
@@ -206,7 +201,6 @@ sources:
     volume: 101
     pages: "1943–1951"
     doi: "10.2138/am-2016-5737"
-    open_access: true
   - authors: ["Kim, J. K.", "Kwon, Y. E.", "Lee, S. G.", "Kim, C. Y.", "Kim, J. G.", "Huh, M.", "Lee, E.", "Kim, Y. J."]
     year: 2017
     title: "Correlative microscopy of the constituents of a dinosaur rib fossil and hosting mudstone: Implications on diagenesis and fossil preservation"
@@ -222,7 +216,6 @@ sources:
     volume: 307
     pages: "1952–1955"
     doi: "10.1126/science.1108397"
-    open_access: true
   - authors: ["Asara, J. M.", "Schweitzer, M. H.", "Freimark, L. M.", "Phillips, M.", "Cantley, L. C."]
     year: 2007
     title: "Protein Sequences from Mastodon and Tyrannosaurus Rex Revealed by Mass Spectrometry"
@@ -230,7 +223,6 @@ sources:
     volume: 316
     pages: "280–285"
     doi: "10.1126/science.1137614"
-    open_access: true
   - authors: ["Schweitzer, M. H.", "Zheng, W.", "Cleland, T. P.", "Goodwin, M. B.", "Boatman, E.", "Theil, E.", "Marcus, M. A.", "Fakra, S. C."]
     year: 2014
     title: "A role for iron and oxygen chemistry in preserving soft tissues, cells and molecules from deep time"
@@ -278,7 +270,6 @@ sources:
     volume: 565
     pages: "351–355"
     doi: "10.1038/s41586-018-0851-2"
-    open_access: true
   - authors: ["Perricone, V.", "Santulli, C.", "Rendina, F.", "Langella, C."]
     year: 2021
     title: "Organismal Design and Biomimetics: A Problem of Scale"
@@ -292,7 +283,7 @@ status: published
 
 ## A giant on two legs
 
-*Tyrannosaurus rex* lived at the very end of the age of dinosaurs, shortly before the mass extinction about 66 million years ago [1](#ref-1){:.cite}. Its skeletons are found in rocks of the Late Cretaceous of North America – "Scotty", for example, in Saskatchewan, Canada, in rocks about 67 million years old [2](#ref-2){:.cite} – and in the Hell Creek Formation of Montana, where, in the upper part of the formation, *Tyrannosaurus* skeletons are about as common as those of the plant-eater *Edmontosaurus* [3](#ref-3){:.cite}. Adults weighed about **6,000–8,000 kg** – the largest known specimen, "Sue", perhaps around 9,500 kg – and grew to that size from hatchlings of less than 10 kg in under 20 years [4](#ref-4){:.cite}.
+*Tyrannosaurus rex* lived at the very end of the age of dinosaurs, shortly before the mass extinction about 66 million years ago [1](#ref-1){:.cite} [2](#ref-2){:.cite}. Its skeletons are found in rocks of the Late Cretaceous of North America – "Scotty", for example, in Saskatchewan, Canada, in rocks about 67 million years old [3](#ref-3){:.cite} – and in the Hell Creek Formation of Montana, where, in the upper part of the formation, *Tyrannosaurus* skeletons are about as common as those of the plant-eater *Edmontosaurus* [2](#ref-2){:.cite}. Adults weighed about **6,000–8,000 kg** – the largest known specimen, "Sue", perhaps around 9,500 kg – and grew to that size from hatchlings of less than 10 kg in under 20 years [4](#ref-4){:.cite}.
 
 How fast could such an animal move? The question matters for how T. rex lived – as a pursuit hunter or not [5](#ref-5){:.cite} – and it has long been controversial. Some studies argued that T. rex was limited to walking or at best reached 11 m/s; others argued for running speeds of at least 20 m/s [6](#ref-6){:.cite}. Biomechanical models alone give top speeds anywhere from 5 to 15 m/s [5](#ref-5){:.cite}.
 
@@ -313,9 +304,9 @@ Nobody can time a dinosaur. But its footprints, the strength of its bones and th
 
 **A seesaw on two legs.** T. rex walked on two legs. Its tail made up about half of its body length or more and balanced the heavy head and trunk: in 3D reconstructions, the centre of mass lies close to the hips, slightly in front of them. The hip extensor muscles had to hold the body against tipping forwards – one proposed reason why they were so large [4](#ref-4){:.cite}.
 
-**A tail full of muscle.** The tail was not only a counterweight. Scott Persons and Philip Currie reconstructed the tail muscles from scars on the tail bones: the **M. caudofemoralis**, which runs from the tail to the thigh bone, was exceptionally large in *Tyrannosaurus*. It is the main muscle that pulls the leg backwards in each step, and Persons and Currie see its large size as evidence in favour of greater athleticism – in running ability, balance and turning agility [10](#ref-10){:.cite}. In walking, the tail was suspended by ligaments that could store elastic energy [11](#ref-11){:.cite}.
+**A tail full of muscle.** The tail was not only a counterweight. Scott Persons and Philip Currie reconstructed the tail muscles from scars on the tail bones: the **M. caudofemoralis**, which runs from the tail to the thigh bone, was exceptionally large in many non-avian theropods and further enlarged in *Tyrannosaurus*. It is the main muscle that pulls the leg backwards in each step, and Persons and Currie see its large size as evidence in favour of greater athleticism – in running ability, balance and turning agility [10](#ref-10){:.cite}. In walking, the tail was suspended by ligaments that could store elastic energy [11](#ref-11){:.cite}.
 
-**Massive thighs, growing torso.** John Hutchinson and colleagues scanned four large skeletons and a putative juvenile in 3D and rebuilt their bodies in the computer. T. rex probably had hip and thigh muscles relatively larger than those of any living animal. As it grew, its torso became longer and heavier while its limbs became relatively shorter and lighter – changes that would have further reduced the relative locomotor performance of large adults, although the authors call the overall consequences for locomotion ambiguous [4](#ref-4){:.cite}. In 2020, Persons, Currie and Gregory Erickson described the skeleton `RSM P2523.8`, known as "Scotty": a skeletally mature T. rex whose estimated body mass exceeds that of all other known specimens [12](#ref-12){:.cite} [2](#ref-2){:.cite}.
+**Massive thighs, growing torso.** John Hutchinson and colleagues scanned four large skeletons and a putative juvenile in 3D and rebuilt their bodies in the computer. T. rex probably had hip and thigh muscles relatively larger than those of any living animal. As it grew, its torso became longer and heavier while its limbs became relatively shorter and lighter – changes that would have further reduced the relative locomotor performance of large adults, although the authors call the overall consequences for locomotion ambiguous [4](#ref-4){:.cite}. In 2020, Persons, Currie and Gregory Erickson described the skeleton `RSM P2523.8`, known as "Scotty": a skeletally mature T. rex whose estimated body mass exceeds that of all other known specimens [12](#ref-12){:.cite} [3](#ref-3){:.cite}.
 
 **Scales, not a feather coat.** Skin impressions of *Tyrannosaurus* and other large tyrannosaurids show scaly, reptile-like skin. Some early relatives of T. rex had extensive feather coverings, but these were lost before the large tyrannosaurids evolved [13](#ref-13){:.cite}. Every picture of a living T. rex is a reconstruction.
 
@@ -369,15 +360,15 @@ This is the form William Sellers and Phillip Manning give [9](#ref-9){:.cite}. S
 
 ## Chemistry lens: how bone turns to stone
 
-**What bone is made of.** Living bone is a composite: a framework of the protein **collagen** – collagen I is its main organic component [17](#ref-17){:.cite} – stiffened by tiny crystals of a calcium phosphate mineral, **hydroxyapatite**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) [2](#ref-2){:.cite}.
+**What bone is made of.** Living bone is a composite: a framework of the protein **collagen** – collagen I is its main organic component [17](#ref-17){:.cite} – stiffened by tiny crystals of a calcium phosphate mineral, **hydroxyapatite**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) [3](#ref-3){:.cite}.
 
 **Diagenesis: the slow chemical makeover.** After burial, bone is not simply preserved. It is a porous, open system through which water, molecules and microbes can move [18](#ref-18){:.cite}, and its minerals change over time. These changes are called **diagenesis**. The mineral of bone, bioapatite, transforms over geological time into thermodynamically more stable phases; how fast this happens, and how much the burial environment and microbes control it, is still not fully understood [19](#ref-19){:.cite}.
 
-**From hydroxyapatite to fluorapatite.** One of these changes can be measured directly in T. rex. In a rib of "Scotty", Mitchell and colleagues found calcium, phosphorus, oxygen and **fluorine** in the bone matrix: the original hydroxyapatite has been at least partially transformed into **fluorapatite**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F, with fluoride ions taking the place of hydroxide ions [2](#ref-2){:.cite}. In a dinosaur rib from South Korea, Jung-Kyun Kim and colleagues likewise found fluorapatite crystals as a sign of diagenetic alteration of the original bioapatite [20](#ref-20){:.cite}.
+**From hydroxyapatite to fluorapatite.** One of these changes can be measured directly in T. rex. In a rib of "Scotty", Mitchell and colleagues found calcium, phosphorus, oxygen and **fluorine** in the bone matrix: the original hydroxyapatite has been at least partially transformed into **fluorapatite**, Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F, with fluoride ions taking the place of hydroxide ions [3](#ref-3){:.cite}. In a dinosaur rib from South Korea, Jung-Kyun Kim and colleagues likewise found fluorapatite crystals as a sign of diagenetic alteration of the original bioapatite [20](#ref-20){:.cite}.
 
 <div class="formula" role="math" aria-label="hydroxyapatite plus fluoride gives fluorapatite plus hydroxide">Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>(OH) + F<sup>−</sup> → Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F + OH<sup>−</sup></div>
 
-**Filling the pores: permineralization.** Bone is full of channels for blood vessels. In **permineralization**, minerals carried by groundwater crystallise in these cavities. In the Korean rib, **calcite** (calcium carbonate) mostly filled the vascular channels and cracks, while clay minerals occupied the small pores [20](#ref-20){:.cite}. In Scotty's rib, network-like structures that look like blood vessels turned out to be casts of **pyrite** (iron sulfide), partly oxidised to the iron oxides goethite or hematite – permineralized casts, not original tissue [2](#ref-2){:.cite}.
+**Filling the pores: permineralization.** Bone is full of channels for blood vessels. In **permineralization**, minerals carried by groundwater crystallise in these cavities. In the Korean rib, **calcite** (calcium carbonate) mostly filled the vascular channels and cracks, while clay minerals occupied the small pores [20](#ref-20){:.cite}. In Scotty's rib, network-like structures that look like blood vessels turned out to be casts of **pyrite** (iron sulfide), partly oxidised to the iron oxides goethite or hematite – permineralized casts, not original tissue [3](#ref-3){:.cite}.
 
 **The soft-tissue controversy.** Can any original organic material survive 66 million years? Here researchers disagree, and the question is open.
 
@@ -482,7 +473,7 @@ What the result teaches:
 Try it yourself:
 
 - Use the leg length of "Sue", 3.30 m, as an approximate hip height for the adult T. rex: set `HIP_TREX = 3.30`. The scaled trackway drops to 6.7 km/h and the walking limit rises to 5.7 m/s – a taller animal walks relatively slower with the same stride.
-- Put in the stride of the muscle-only model, 9.56 m: change `(3.88, HIP_TREX)` to `(9.56, HIP_TREX)`. The rule now gives 9.0 m/s at *Fr* = 2.66 – close to the 8.0 m/s of the simulation, which itself agrees well with the rule [9](#ref-9){:.cite}. Such a stride is not known from any tyrannosaurid trackway.
+- Put in the stride of the muscle-only model, 9.56 m: change `(3.88, HIP_TREX)` to `(9.56, HIP_TREX)`. The rule now gives 9.0 m/s at *Fr* = 2.66 – about 12 % above the 8.0 m/s of the simulation; Sellers and Manning found their simulated strides in good agreement with the rule [9](#ref-9){:.cite}. Such a stride is not known from any tyrannosaurid trackway.
 
 {% include code-variant.html file="trex_speed.py" id="sue" replace="HIP_TREX = 3.10 " with="HIP_TREX = 3.30 " expect="6.7 5.7" %}
 {% include code-variant.html file="trex_speed.py" id="sprint" replace="(3.88, HIP_TREX)" with="(9.56, HIP_TREX)" expect="9.0 2.66" %}
@@ -511,4 +502,4 @@ Physical AI – machines that sense and act in the physical world – usually me
 
 Bone-stress and muscle models agree on the main point, and the known footprints fit it: an adult T. rex most likely did not run with all feet off the ground – although the trackways, made by relatives with smaller feet, only show how they walked, not how fast they could go [7](#ref-7){:.cite}. How fast it walked, and how its locomotion changed as it grew from a light juvenile to a giant, is still debated, because muscles and tendons do not fossilise and every model depends on assumptions about them [5](#ref-5){:.cite} [4](#ref-4){:.cite}. More trackways would help: the known tyrannosaurid trackways record only walking, and future models can use them as a control [7](#ref-7){:.cite}.
 
-The chemistry of fossil bones remains just as open. New tools such as synchrotron X-rays let researchers image structures inside a bone and map their chemistry, and healing fractures, rich in new blood vessels, may be a good place to look for preserved soft tissue in the future [2](#ref-2){:.cite}. Whether original dinosaur proteins can survive for tens of millions of years is a question that only careful, contamination-free studies will answer [18](#ref-18){:.cite} [23](#ref-23){:.cite}.
+The chemistry of fossil bones remains just as open. New tools such as synchrotron X-rays let researchers image structures inside a bone and map their chemistry, and healing fractures, rich in new blood vessels, may be a good place to look for preserved soft tissue in the future [3](#ref-3){:.cite}. Whether original dinosaur proteins can survive for tens of millions of years is a question that only careful, contamination-free studies will answer [18](#ref-18){:.cite} [23](#ref-23){:.cite}.
