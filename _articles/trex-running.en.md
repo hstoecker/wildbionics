@@ -305,7 +305,7 @@ Nobody can time a dinosaur. But its footprints, the strength of its bones and th
 
 **A seesaw on two legs.** T. rex walked on two legs. Its tail made up about half of its body length or more and balanced the heavy head and trunk: in 3D reconstructions, the centre of mass lies close to the hips, slightly in front of them. The hip extensor muscles had to hold the body against tipping forwards – one proposed reason why they were so large [4](#ref-4){:.cite}.
 
-**A tail full of muscle.** The tail was not only a counterweight. Scott Persons and Philip Currie reconstructed the tail muscles from scars on the tail bones: the **M. caudofemoralis**, which runs from the tail to the thigh bone, was exceptionally large in *Tyrannosaurus*. It is the main muscle that pulls the leg backwards in each step, and Persons and Currie see its size as evidence for more athleticism than often assumed [10](#ref-10){:.cite}. In walking, the tail was suspended by ligaments that could store elastic energy [11](#ref-11){:.cite}.
+**A tail full of muscle.** The tail was not only a counterweight. Scott Persons and Philip Currie reconstructed the tail muscles from scars on the tail bones: the **M. caudofemoralis**, which runs from the tail to the thigh bone, was exceptionally large in *Tyrannosaurus*. It is the main muscle that pulls the leg backwards in each step, and Persons and Currie see its large size as evidence in favour of greater athleticism – in running ability, balance and turning agility [10](#ref-10){:.cite}. In walking, the tail was suspended by ligaments that could store elastic energy [11](#ref-11){:.cite}.
 
 **Massive thighs, growing torso.** John Hutchinson and colleagues scanned four large skeletons and a putative juvenile in 3D and rebuilt their bodies in the computer. T. rex probably had hip and thigh muscles relatively larger than those of any living animal. As it grew, its torso became longer and heavier while its limbs became relatively shorter and lighter – changes that would have further reduced the relative locomotor performance of large adults, although the authors call the overall consequences for locomotion ambiguous [4](#ref-4){:.cite}. In 2020, Persons, Currie and Gregory Erickson described the skeleton known as "Scotty": a skeletally mature T. rex whose estimated body mass exceeds that of all other known specimens [12](#ref-12){:.cite} [2](#ref-2){:.cite}.
 
@@ -349,7 +349,7 @@ This is the form William Sellers and Phillip Manning give [9](#ref-9){:.cite}. S
 
 <div class="formula" role="math" aria-label="v is approximately 0.25 times the square root of g times lambda to the power 1.67 times h to the power minus 1.17"><var>v</var> ≈ 0.25 · √<var>g</var> · λ<sup>1.67</sup> · <var>h</var><sup>−1.17</sup></div>
 
-**A worked example.** In the tyrannosaurid trackway described by McCrea and colleagues, the stride length is **3.46 m** and the footprints are 57.9 cm long on average. From a regression on tyrannosaurid skeletons, McCrea and colleagues estimate a hip height of 2.87 m for a straight leg (the simple four-times rule would give about 2.3 m); with the knee and ankle bent as in walking, the hip height is 2.30 m. The formula then gives **6.4 to 8.5 km/h** – a walk [7](#ref-7){:.cite}. The computer science lens below repeats this calculation.
+**A worked example.** In the tyrannosaurid trackway described by McCrea and colleagues, the stride length is **3.46 m** and the footprints are 57.9 cm long on average. With a hip-height equation that McCrea and colleagues fitted to the leg bones of tyrannosaurids such as *Albertosaurus*, *Gorgosaurus* and *Daspletosaurus*, the hip height of a straight leg is 2.87 m (the simple four-times rule would give about 2.3 m – close to, but independent of, the bent-leg value below); with the knee and ankle bent as in walking, the hip height is 2.30 m. The formula then gives **6.4 to 8.5 km/h** – a walk [7](#ref-7){:.cite}. The computer science lens below repeats this calculation.
 
 **How precise is it?** Not very. The empirical points for mammals scatter widely around the regression line: a given stride length can occur at speeds that differ from the prediction by a factor of up to 1.5. The hip height estimated from the footprint and the state of the ground add further errors. Still, Alexander notes, there is no danger of confusing a stroll with a sprint [8](#ref-8){:.cite}.
 
@@ -378,7 +378,7 @@ This is the form William Sellers and Phillip Manning give [9](#ref-9){:.cite}. S
 
 The debate is not settled: each side has explanations for the other side's findings, and claims of original dinosaur proteins remain contested.
 
-**A clock in the rock.** The age of the rocks is measured with a clock that chemists read: in <sup>40</sup>Ar/<sup>39</sup>Ar dating, the slow radioactive decay of potassium into argon in minerals gives the age of a rock layer. With high-precision <sup>40</sup>Ar/<sup>39</sup>Ar dates of the layers around the Cretaceous–Paleogene boundary, Paul Renne and colleagues showed that the Chicxulub impact and the mass extinction that ended the age of the non-avian dinosaurs about 66 million years ago happened within 32,000 years of each other [1](#ref-1){:.cite}.
+**A clock in the rock.** The age of the rocks is measured with a clock that chemists read: in <sup>40</sup>Ar/<sup>39</sup>Ar dating, the slow radioactive decay of potassium-40 into argon-40 in minerals gives the age of a rock layer. With high-precision <sup>40</sup>Ar/<sup>39</sup>Ar dates of the layers around the Cretaceous–Paleogene boundary, Paul Renne and colleagues showed that the Chicxulub impact and the mass extinction that ended the age of the non-avian dinosaurs about 66 million years ago happened within 32,000 years of each other [1](#ref-1){:.cite}.
 
 {% include lens-end.html %}
 
@@ -386,7 +386,7 @@ The debate is not settled: each side has explanations for the other side's findi
 
 ## Computer science lens: a speedometer for footprints
 
-How fast did the makers of the tyrannosaurid trackways walk, how does T. rex compare with a person, and where does walking end? The program below applies Alexander's rule λ/*h* ≈ 2.3 *Fr*<sup>0.3</sup> [9](#ref-9){:.cite} to the measured trackway [7](#ref-7){:.cite}, scales it to an adult T. rex and compares the result with the walking limit and with a computer model limited only by muscle. **Inputs and assumptions:** the stride length of 3.46 m and the two hip heights of 2.87 m and 2.30 m [7](#ref-7){:.cite}; a stride of 3.88 m (two steps of 1.94 m) and a hip height of 3.10 m for the adult T. rex "Trix" [11](#ref-11){:.cite}; a scatter of the rule by a factor of 1.5 [8](#ref-8){:.cite}; the top speed of 8.0 m/s and leg length of 3.089 m of the muscle-only model [9](#ref-9){:.cite}. The human stride of 1.40 m and hip height of 0.90 m are assumed, typical of an adult.
+How fast did the makers of the tyrannosaurid trackways walk, how does T. rex compare with a person, and where does walking end? The program below applies Alexander's rule λ/*h* ≈ 2.3 *Fr*<sup>0.3</sup> [9](#ref-9){:.cite} to the measured trackway [7](#ref-7){:.cite}, scales it to an adult T. rex and compares the result with the walking limit and with a computer model limited only by muscle. **Inputs and assumptions:** the stride length of 3.46 m and the two hip heights of 2.87 m and 2.30 m [7](#ref-7){:.cite}; a stride of 3.88 m (two steps of 1.94 m), which van Bijlert and colleagues obtained by scaling the tyrannosaurid trackway to the footprint length of the adult T. rex "Trix", and its hip height of 3.10 m [11](#ref-11){:.cite}; a scatter of the rule by a factor of 1.5 [8](#ref-8){:.cite}; the top speed of 8.0 m/s and leg length of 3.089 m of the muscle-only model [9](#ref-9){:.cite}. The human stride of 1.40 m and hip height of 0.90 m are assumed, typical of an adult.
 
 ```python
 import numpy as np
@@ -400,7 +400,7 @@ UNCERTAINTY = 1.5        # mammal data scatter around the rule by factors up to 
 TRACKWAYS = {            # name: (stride length λ in m, hip height h in m)
     "tyrannosaurid trackway, straight leg": (3.46, 2.87),
     "tyrannosaurid trackway, bent leg": (3.46, 2.30),
-    "same trackway scaled to T. rex": (3.88, HIP_TREX),
+    "same trackway scaled to T. rex": (3.88, HIP_TREX),   # scaled to the foot of "Trix" by van Bijlert et al.
     "human walking (assumed)": (1.40, HIP_HUMAN),
 }
 SIMULATED_TOP_SPEED = 8.0    # T. rex model limited by muscle only (m/s), leg length 3.089 m
@@ -473,7 +473,7 @@ What the result teaches:
 
 Try it yourself:
 
-- Use the leg length of "Sue", 3.30 m, for the adult T. rex: set `HIP_TREX = 3.30`. The scaled trackway drops to 6.7 km/h and the walking limit rises to 5.7 m/s – a taller animal walks relatively slower with the same stride.
+- Use the leg length of "Sue", 3.30 m, as an approximate hip height for the adult T. rex: set `HIP_TREX = 3.30`. The scaled trackway drops to 6.7 km/h and the walking limit rises to 5.7 m/s – a taller animal walks relatively slower with the same stride.
 - Put in the stride of the muscle-only model, 9.56 m: change `(3.88, HIP_TREX)` to `(9.56, HIP_TREX)`. The rule now gives 9.0 m/s at *Fr* = 2.66 – close to the 8.0 m/s of the simulation, which itself agrees well with the rule [9](#ref-9){:.cite}. Such a stride is not known from any tyrannosaurid trackway.
 
 {% include code-variant.html file="trex_speed.py" id="sue" replace="HIP_TREX = 3.10 " with="HIP_TREX = 3.30 " expect="6.7 5.7" %}

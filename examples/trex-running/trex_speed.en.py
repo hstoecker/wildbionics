@@ -14,7 +14,7 @@ UNCERTAINTY = 1.5        # mammal data scatter around the rule by factors up to 
 TRACKWAYS = {            # name: (stride length λ in m, hip height h in m)
     "tyrannosaurid trackway, straight leg": (3.46, 2.87),
     "tyrannosaurid trackway, bent leg": (3.46, 2.30),
-    "same trackway scaled to T. rex": (3.88, HIP_TREX),
+    "same trackway scaled to T. rex": (3.88, HIP_TREX),   # scaled to the foot of "Trix" by van Bijlert et al.
     "human walking (assumed)": (1.40, HIP_HUMAN),
 }
 SIMULATED_TOP_SPEED = 8.0    # T. rex model limited by muscle only (m/s), leg length 3.089 m

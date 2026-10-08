@@ -38,12 +38,14 @@
     - "M. caudofemoralis exceptionally large in many non-avian theropods; in Tyrannosaurus further increased by lengthened hemal arches – abstract"
     - "M. caudofemoralis is the primary hind limb retractor – abstract"
     - "Reconstruction from scarring on hemal spines (muscle boundaries) – abstract"
+    - "Large M. caudofemoralis masses give new evidence in favor of greater athleticism, in terms of overall cursoriality, balance, and turning agility – abstract (last sentence)"
 "10.1371/journal.pone.0103613":
   read: "Full text (Europe PMC), equations as images from journals.plos.org"
   claims:
     - "First trackways attributable to tyrannosaurids, new ichnotaxon Bellatoripes fredlundi, Upper Cretaceous (Campanian–Maastrichtian) of northeastern British Columbia – abstract"
     - "Three trackways bearing southeast in an 8.5 m wide corridor, made concurrently → gregariousness; first record of the walking gait of tyrannosaurids – abstract"
     - "Trackway A: stride length 346 cm, mean footprint length 57.9 cm (Table 1)"
+    - "Hip-height equation tailored to tyrannosaurids from hindlimb data of Albertosaurus, Gorgosaurus and Daspletosaurus (regression, Fig. 5; Methods: 'sufficient osteometric data available to tailor this hip height equation specifically for tyrannosaurids'); for Trackway A h = 2.87 m, general large-theropod equation 2.80 m – Methods/Discussion"
     - "Hip height 2.87 m (straight leg) and 2.30 m (knee 110°, ankle 140° flexion); relative velocities 6.40–8.50 km/h – Results/Discussion"
     - "Alexander's hip height ≈ 4.0 × footprint length – Methods"
     - "Formula (1): S ≅ 3.60 (0.783 λ^1.67 h^-1.17) km/h, λ stride length, h hip height – Methods"
@@ -55,7 +57,7 @@
     - "Alexander (1976) estimated dinosaur speeds from stride lengths; dynamically similar animals have equal relative stride lengths; graphs of relative stride length vs Froude number from mammals – section 3"
     - "Empirical points scatter: stride length may occur at speeds differing from prediction by factors as large as 1.5; hip height from footprint size adds errors – section 3"
     - "'no likelihood of confusing a stroll with a sprint' – section 3"
-    - "Strength indicator proportional to (body mass)^-0.33 for geometrically similar animals; Farlow et al. (1995): T. rex unlikely to have run faster than 10 m/s – section 3"
+    - "Strength indicator proportional to (body mass)^-0.33 for geometrically similar animals; Farlow et al. (1995), as summarised by Alexander (secondhand, not read): T. rex unlikely to have run faster than 10 m/s – section 3"
 "10.1242/jeb.01520":
   read: "Abstract (PubMed)"
   claims:
@@ -95,12 +97,12 @@
   claims:
     - "Tail suspended passively by caudal interspinous ligaments, allowing elastic energy storage – abstract"
     - "Tail natural frequency 0.66 s⁻¹ (0.41–0.84); preferred walking speed 1.28 m/s (0.80–1.64) – abstract"
-    - "Step length 1.94 m scaled from a large tyrannosaurid trackway (McCrea et al.) for specimen RGM.792000 ('Trix'); hip height 3.1 m – Methods"
+    - "Step length 1.94 m determined by scaling a large tyrannosaurid trackway (McCrea et al., ref. 45) based on footprint length of RGM.792000 ('Trix'); hip height 3.1 m used in the tail model – Methods"
     - "Alexander's equation from a regression of predominantly mammalian walking data; DS estimates for large theropods tend to range between 2 and 3 m/s – Discussion"
 "10.1038/s41598-025-06981-z":
   read: "Full text (Europe PMC)"
   claims:
-    - "Rib of RSKM P2523.8 ('Scotty'), Frenchman Formation, ~67 Ma, Saskatchewan – Introduction/Methods"
+    - "Rib of RSKM P2523.8, Frenchman Formation, ~67 Ma, Saskatchewan – Introduction/Methods; nickname 'Scotty' in ref. 31 (Kolaceke et al. 2018, 'nearly complete Tyrannosaurus rex skeleton (Scotty)')"
     - "Ca, P, O and F: bone hydroxyapatite at least partially replaced by fluorine ions to form fluorapatite – Results"
     - "Vessel-like structures of pyrite partially oxidized to goethite or hematite, permineralized casts; no original soft tissues recovered – abstract"
     - "Synchrotron micro-CT and X-ray fluorescence; bone healing as a target for future soft-tissue searches – abstract"
@@ -147,6 +149,7 @@
   read: "Full text (Europe PMC)"
   claims:
     - "Bone is a porous open system allowing microbial/molecular flux – abstract"
+    - "Bone samples from a monodominant bonebed of the horned dinosaur Centrosaurus apertus (Ceratopsidae) – Materials and methods; eLife digest: 'a horned dinosaur called Centrosaurus'"
     - "Fresh excavation with aseptic protocols; 'soft tissues' differed from collagen chemically and structurally; dinosaur bone hosted an abundant microbial community – abstract"
 "10.1098/rspb.2013.2741":
   read: "Abstract (OpenAlex)"

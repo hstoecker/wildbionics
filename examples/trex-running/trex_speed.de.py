@@ -14,7 +14,7 @@ UNCERTAINTY = 1.5        # Säugetierdaten streuen um die Regel bis zum Faktor 1
 TRACKWAYS = {            # Name: (Doppelschrittlänge λ in m, Hüfthöhe h in m)
     "Tyrannosauridenfährte, gestrecktes Bein": (3.46, 2.87),
     "Tyrannosauridenfährte, gebeugtes Bein": (3.46, 2.30),
-    "dieselbe Fährte, auf T. rex skaliert": (3.88, HIP_TREX),
+    "dieselbe Fährte, auf T. rex skaliert": (3.88, HIP_TREX),   # von van Bijlert et al. auf den Fuß von „Trix“ skaliert
     "Mensch beim Gehen (angenommen)": (1.40, HIP_HUMAN),
 }
 SIMULATED_TOP_SPEED = 8.0    # T.-rex-Modell, nur durch Muskeln begrenzt (m/s), Beinlänge 3,089 m

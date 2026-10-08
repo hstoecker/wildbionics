@@ -305,7 +305,7 @@ Niemand kann einen Dinosaurier stoppen. Aber seine Fußspuren, die Festigkeit se
 
 **Eine Wippe auf zwei Beinen.** T. rex ging auf zwei Beinen. Sein Schwanz machte etwa die Hälfte der Körperlänge oder mehr aus und hielt dem schweren Kopf und Rumpf die Waage: In 3D-Rekonstruktionen liegt der Schwerpunkt nahe der Hüfte, etwas davor. Die Hüftstreckmuskeln mussten den Körper gegen das Kippen nach vorn halten – ein vorgeschlagener Grund dafür, dass sie so groß waren [4](#ref-4){:.cite}.
 
-**Ein Schwanz voller Muskeln.** Der Schwanz war nicht nur ein Gegengewicht. Scott Persons und Philip Currie rekonstruierten die Schwanzmuskeln anhand von Ansatznarben an den Schwanzknochen: Der **M. caudofemoralis**, der vom Schwanz zum Oberschenkelknochen zieht, war bei *Tyrannosaurus* außergewöhnlich groß. Er ist der wichtigste Muskel, der das Bein bei jedem Schritt nach hinten zieht, und Persons und Currie sehen in seiner Größe einen Hinweis auf mehr Sportlichkeit als oft angenommen [10](#ref-10){:.cite}. Beim Gehen hing der Schwanz an Bändern, die elastische Energie speichern konnten [11](#ref-11){:.cite}.
+**Ein Schwanz voller Muskeln.** Der Schwanz war nicht nur ein Gegengewicht. Scott Persons und Philip Currie rekonstruierten die Schwanzmuskeln anhand von Ansatznarben an den Schwanzknochen: Der **M. caudofemoralis**, der vom Schwanz zum Oberschenkelknochen zieht, war bei *Tyrannosaurus* außergewöhnlich groß. Er ist der wichtigste Muskel, der das Bein bei jedem Schritt nach hinten zieht, und Persons und Currie sehen in seiner Größe einen Hinweis auf größere Sportlichkeit – beim Laufen, beim Gleichgewicht und bei schnellen Wendungen [10](#ref-10){:.cite}. Beim Gehen hing der Schwanz an Bändern, die elastische Energie speichern konnten [11](#ref-11){:.cite}.
 
 **Mächtige Oberschenkel, wachsender Rumpf.** John Hutchinson und Kollegen scannten vier große Skelette und ein mutmaßliches Jungtier in 3D und bauten ihre Körper im Computer nach. T. rex hatte wahrscheinlich relativ größere Hüft- und Oberschenkelmuskeln als jedes heute lebende Tier. Während er wuchs, wurde sein Rumpf länger und schwerer, die Beine dagegen relativ kürzer und leichter – Veränderungen, die die relative Leistungsfähigkeit großer Tiere bei der Fortbewegung wohl weiter verringert hätten; die Autoren nennen die Folgen für die Fortbewegung insgesamt allerdings unklar [4](#ref-4){:.cite}. 2020 beschrieben Persons, Currie und Gregory Erickson das Skelett „Scotty“: einen ausgewachsenen T. rex, dessen geschätzte Körpermasse die aller anderen bekannten Exemplare übertrifft [12](#ref-12){:.cite} [2](#ref-2){:.cite}.
 
@@ -349,7 +349,7 @@ In dieser Form geben William Sellers und Phillip Manning die Regel an [9](#ref-9
 
 <div class="formula" role="math" aria-label="v ist ungefähr 0,25 mal Wurzel aus g mal Lambda hoch 1,67 mal h hoch minus 1,17"><var>v</var> ≈ 0,25 · √<var>g</var> · λ<sup>1,67</sup> · <var>h</var><sup>−1,17</sup></div>
 
-**Ein Rechenbeispiel.** In der von McCrea und Kollegen beschriebenen Tyrannosauridenfährte beträgt die Doppelschrittlänge **3,46 m**, und die Fußabdrücke sind im Mittel 57,9 cm lang. Aus einer Regression an Tyrannosauridenskeletten schätzen McCrea und Kollegen für ein gestrecktes Bein eine Hüfthöhe von 2,87 m (die einfache Vierfach-Regel ergäbe etwa 2,3 m); mit beim Gehen gebeugtem Knie und Sprunggelenk beträgt sie 2,30 m. Die Formel liefert dann **6,4 bis 8,5 km/h** – ein Gehen [7](#ref-7){:.cite}. Die Informatik-Linse unten wiederholt diese Rechnung.
+**Ein Rechenbeispiel.** In der von McCrea und Kollegen beschriebenen Tyrannosauridenfährte beträgt die Doppelschrittlänge **3,46 m**, und die Fußabdrücke sind im Mittel 57,9 cm lang. Mit einer Hüfthöhengleichung, die McCrea und Kollegen an die Beinknochen von Tyrannosauriden wie *Albertosaurus*, *Gorgosaurus* und *Daspletosaurus* angepasst haben, beträgt die Hüfthöhe bei gestrecktem Bein 2,87 m (die einfache Vierfach-Regel ergäbe etwa 2,3 m – nahe am, aber unabhängig vom Wert für das gebeugte Bein unten); mit beim Gehen gebeugtem Knie und Sprunggelenk beträgt sie 2,30 m. Die Formel liefert dann **6,4 bis 8,5 km/h** – ein Gehen [7](#ref-7){:.cite}. Die Informatik-Linse unten wiederholt diese Rechnung.
 
 **Wie genau ist das?** Nicht sehr. Die Messpunkte der Säugetiere streuen weit um die Regressionsgerade: Eine bestimmte Doppelschrittlänge kann bei Geschwindigkeiten auftreten, die bis zum Faktor 1,5 von der Vorhersage abweichen. Die aus dem Fußabdruck geschätzte Hüfthöhe und die Beschaffenheit des Bodens bringen weitere Fehler. Trotzdem, schreibt Alexander, besteht keine Gefahr, einen Spaziergang mit einem Sprint zu verwechseln [8](#ref-8){:.cite}.
 
@@ -378,7 +378,7 @@ In dieser Form geben William Sellers und Phillip Manning die Regel an [9](#ref-9
 
 Die Debatte ist nicht entschieden: Jede Seite hat Erklärungen für die Befunde der anderen, und Behauptungen über ursprüngliche Dinosaurierproteine bleiben umstritten.
 
-**Eine Uhr im Gestein.** Das Alter der Gesteine misst man mit einer Uhr, die Chemiker ablesen: Bei der <sup>40</sup>Ar/<sup>39</sup>Ar-Datierung liefert der langsame radioaktive Zerfall von Kalium zu Argon in Mineralen das Alter einer Gesteinsschicht. Mit hochpräzisen <sup>40</sup>Ar/<sup>39</sup>Ar-Altern der Schichten an der Kreide-Paläogen-Grenze zeigten Paul Renne und Kollegen, dass der Chicxulub-Einschlag und das Massenaussterben, das vor etwa 66 Millionen Jahren das Zeitalter der Nicht-Vogel-Dinosaurier beendete, höchstens 32.000 Jahre auseinanderliegen [1](#ref-1){:.cite}.
+**Eine Uhr im Gestein.** Das Alter der Gesteine misst man mit einer Uhr, die Chemiker ablesen: Bei der <sup>40</sup>Ar/<sup>39</sup>Ar-Datierung liefert der langsame radioaktive Zerfall von Kalium-40 zu Argon-40 in Mineralen das Alter einer Gesteinsschicht. Mit hochpräzisen <sup>40</sup>Ar/<sup>39</sup>Ar-Altern der Schichten an der Kreide-Paläogen-Grenze zeigten Paul Renne und Kollegen, dass der Chicxulub-Einschlag und das Massenaussterben, das vor etwa 66 Millionen Jahren das Zeitalter der Nicht-Vogel-Dinosaurier beendete, höchstens 32.000 Jahre auseinanderliegen [1](#ref-1){:.cite}.
 
 {% include lens-end.html %}
 
@@ -386,7 +386,7 @@ Die Debatte ist nicht entschieden: Jede Seite hat Erklärungen für die Befunde 
 
 ## Informatik-Linse: ein Tacho für Fußspuren
 
-Wie schnell gingen die Erzeuger der Tyrannosauridenfährten, wie schneidet T. rex im Vergleich zum Menschen ab, und wo endet das Gehen? Das Programm unten wendet Alexanders Regel λ/*h* ≈ 2,3 *Fr*<sup>0,3</sup> [9](#ref-9){:.cite} auf die gemessene Fährte an [7](#ref-7){:.cite}, skaliert sie auf einen ausgewachsenen T. rex und vergleicht das Ergebnis mit der Grenze des Gehens und mit einem Computermodell, das nur durch die Muskeln begrenzt ist. **Eingaben und Annahmen:** die Doppelschrittlänge von 3,46 m und die beiden Hüfthöhen von 2,87 m und 2,30 m [7](#ref-7){:.cite}; ein Doppelschritt von 3,88 m (zwei Schritte zu 1,94 m) und eine Hüfthöhe von 3,10 m für den ausgewachsenen T. rex „Trix“ [11](#ref-11){:.cite}; eine Streuung der Regel um den Faktor 1,5 [8](#ref-8){:.cite}; die Höchstgeschwindigkeit von 8,0 m/s und die Beinlänge von 308,9 cm des reinen Muskelmodells [9](#ref-9){:.cite}. Doppelschritt (1,40 m) und Hüfthöhe (0,90 m) des Menschen sind angenommen, typisch für Erwachsene.
+Wie schnell gingen die Erzeuger der Tyrannosauridenfährten, wie schneidet T. rex im Vergleich zum Menschen ab, und wo endet das Gehen? Das Programm unten wendet Alexanders Regel λ/*h* ≈ 2,3 *Fr*<sup>0,3</sup> [9](#ref-9){:.cite} auf die gemessene Fährte an [7](#ref-7){:.cite}, skaliert sie auf einen ausgewachsenen T. rex und vergleicht das Ergebnis mit der Grenze des Gehens und mit einem Computermodell, das nur durch die Muskeln begrenzt ist. **Eingaben und Annahmen:** die Doppelschrittlänge von 3,46 m und die beiden Hüfthöhen von 2,87 m und 2,30 m [7](#ref-7){:.cite}; ein Doppelschritt von 3,88 m (zwei Schritte zu 1,94 m), den van Bijlert und Kollegen durch Skalieren der Tyrannosauridenfährte auf die Fußabdrucklänge des ausgewachsenen T. rex „Trix“ erhielten, und dessen Hüfthöhe von 3,10 m [11](#ref-11){:.cite}; eine Streuung der Regel um den Faktor 1,5 [8](#ref-8){:.cite}; die Höchstgeschwindigkeit von 8,0 m/s und die Beinlänge von 308,9 cm des reinen Muskelmodells [9](#ref-9){:.cite}. Doppelschritt (1,40 m) und Hüfthöhe (0,90 m) des Menschen sind angenommen, typisch für Erwachsene.
 
 ```python
 import numpy as np
@@ -400,7 +400,7 @@ UNCERTAINTY = 1.5        # Säugetierdaten streuen um die Regel bis zum Faktor 1
 TRACKWAYS = {            # Name: (Doppelschrittlänge λ in m, Hüfthöhe h in m)
     "Tyrannosauridenfährte, gestrecktes Bein": (3.46, 2.87),
     "Tyrannosauridenfährte, gebeugtes Bein": (3.46, 2.30),
-    "dieselbe Fährte, auf T. rex skaliert": (3.88, HIP_TREX),
+    "dieselbe Fährte, auf T. rex skaliert": (3.88, HIP_TREX),   # von van Bijlert et al. auf den Fuß von „Trix“ skaliert
     "Mensch beim Gehen (angenommen)": (1.40, HIP_HUMAN),
 }
 SIMULATED_TOP_SPEED = 8.0    # T.-rex-Modell, nur durch Muskeln begrenzt (m/s), Beinlänge 3,089 m
@@ -473,7 +473,7 @@ Was das Ergebnis lehrt:
 
 Probier es selbst:
 
-- Nimm die Beinlänge von „Sue“, 3,30 m, für den ausgewachsenen T. rex: Setze `HIP_TREX = 3.30`. Die skalierte Fährte sinkt auf 6,7 km/h, und die Grenze des Gehens steigt auf 5,7 m/s – ein größeres Tier geht mit demselben Doppelschritt relativ langsamer.
+- Nimm die Beinlänge von „Sue“, 3,30 m, als ungefähre Hüfthöhe für den ausgewachsenen T. rex: Setze `HIP_TREX = 3.30`. Die skalierte Fährte sinkt auf 6,7 km/h, und die Grenze des Gehens steigt auf 5,7 m/s – ein größeres Tier geht mit demselben Doppelschritt relativ langsamer.
 - Setze den Doppelschritt des reinen Muskelmodells ein, 9,56 m: Ändere `(3.88, HIP_TREX)` in `(9.56, HIP_TREX)`. Die Regel liefert nun 9,0 m/s bei *Fr* = 2,66 – nahe an den 8,0 m/s der Simulation, die selbst gut zur Regel passt [9](#ref-9){:.cite}. Ein solcher Doppelschritt ist aus keiner Tyrannosauridenfährte bekannt.
 
 {% include code-variant.html file="trex_speed.py" id="sue" replace="HIP_TREX = 3.10 " with="HIP_TREX = 3.30 " expect="6.7 5.7" %}
