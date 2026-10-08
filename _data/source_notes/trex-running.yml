@@ -109,7 +109,7 @@
 "10.1002/ar.24118":
   read: "Abstract (OpenAlex)"
   claims:
-    - "RSM P2523.8: robust, skeletally mature T. rex with estimated body mass exceeding all other known specimens – abstract"
+    - "RSM P2523.8 (specimen number used in the article for Scotty): robust, skeletally mature T. rex with estimated body mass exceeding all other known specimens – abstract"
 "10.2138/am-2016-5737":
   read: "Abstract (OpenAlex)"
   claims:
@@ -156,6 +156,12 @@
   claims:
     - "Iron particles (goethite) associated with soft tissues of two Mesozoic dinosaurs; role for iron in preserving and masking proteins – abstract"
     - "Haemoglobin increased tissue stability more than 200-fold in an ostrich blood vessel model testing fixation by cross-linking or peroxidation – abstract"
+"10.1038/s41598-019-51680-1":
+  read: "Full text (PMC6821828)"
+  claims:
+    - "Blood vessel structures from cortical bone of T. rex USNM 555000 (formerly MOR 555); endogeneity of the vessel tissues and type I collagen in the outermost vessel layers shown by imaging, diffraction, spectroscopy and immunohistochemistry – abstract"
+    - "Non-enzymatic crosslinking (Fenton chemistry and glycation) likely contributed to stabilizing and preserving these vessels – abstract"
+    - "Authors note the idea of persisting original soft tissue is controversial – abstract (first sentence)"
 "10.1038/s41586-018-0851-2":
   read: "Abstract (PubMed)"
   claims:
