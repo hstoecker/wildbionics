@@ -18,10 +18,13 @@
     - "COM position cranial to (in front of) the hip (Table 7); hip extensors needed to counter the flexor moment of the COM about the hip – Discussion"
     - "Torso became longer and heavier, limbs proportionately shorter and lighter during ontogeny; would have worsened decline of maximal locomotor performance; hip and thigh muscles relatively larger than any extant animal's – abstract"
     - "Ontogenetic changes of locomotion in tyrannosaurids remain ambiguous – Discussion (outlook)"
+    - "3D-scanned computer models of four large, well-preserved specimens and a putative juvenile – abstract"
+    - "Sue was the largest specimen of this 2011 study (~9500 kg) – abstract (Scotty, Persons et al. 2020, is larger)"
 "10.1371/journal.pone.0016574":
   read: "Full text (Europe PMC)"
   claims:
     - "Upper Cretaceous Hell Creek Formation, Montana (Maastrichtian, title); Tyrannosaurus skeletons as abundant as Edmontosaurus (an herbivore) in the upper Hell Creek Formation – abstract, Methodology/Principal Findings"
+    - "Hell Creek Formation is Maastrichtian (title), the last stage of the Cretaceous; with Renne 2013 → T. rex lived shortly before the K–Pg extinction"
 "10.1126/science.1230492":
   read: "Abstract (PubMed) and editor's summary (Crossref)"
   claims:
@@ -39,18 +42,24 @@
     - "M. caudofemoralis is the primary hind limb retractor – abstract"
     - "Reconstruction from scarring on hemal spines (muscle boundaries) – abstract"
     - "Large M. caudofemoralis masses give new evidence in favor of greater athleticism, in terms of overall cursoriality, balance, and turning agility – abstract (last sentence)"
+    - "Digital muscle reconstructions based on measurements of fossil specimens and dissections of modern reptiles – abstract"
 "10.1371/journal.pone.0103613":
   read: "Full text (Europe PMC), equations as images from journals.plos.org"
   claims:
     - "First trackways attributable to tyrannosaurids, new ichnotaxon Bellatoripes fredlundi, Upper Cretaceous (Campanian–Maastrichtian) of northeastern British Columbia – abstract"
     - "Three trackways bearing southeast in an 8.5 m wide corridor, made concurrently → gregariousness; first record of the walking gait of tyrannosaurids – abstract"
-    - "Trackway A: stride length 346 cm, mean footprint length 57.9 cm (Table 1)"
+    - "Trackway A: stride length 346 cm, mean footprint length 57.9 cm (Table 1, row X = mean of prints A1–A3: FL 52.3, 62.0, 59.5 cm; SL 346 cm – Table 1 is text in the Europe PMC XML, not an image)"
     - "Hip-height equation tailored to tyrannosaurids from hindlimb data of Albertosaurus, Gorgosaurus and Daspletosaurus (regression, Fig. 5; Methods: 'sufficient osteometric data available to tailor this hip height equation specifically for tyrannosaurids'); for Trackway A h = 2.87 m, general large-theropod equation 2.80 m – Methods/Discussion"
     - "Hip height 2.87 m (straight leg) and 2.30 m (knee 110°, ankle 140° flexion); relative velocities 6.40–8.50 km/h – Results/Discussion"
     - "Alexander's hip height ≈ 4.0 × footprint length – Methods"
     - "Formula (1): S ≅ 3.60 (0.783 λ^1.67 h^-1.17) km/h, λ stride length, h hip height – Methods"
     - "Tyrannosauripus pillmorei almost certainly a track of T. rex, prints ~40 % longer than Bellatoripes; trackway characteristics unknown (single footprint) – Comparative ichnology"
     - "If tyrannosaurids were capable of higher-velocity gaits, these would be above 8.50 km/h; future models can use the track record as an analytical control – Discussion"
+    - "Footprints attributable to tyrannosaurids are rare; previously only single footprints – Introduction"
+    - "Diagnosis: pace length ~175 cm, stride length ~350 cm (stride = two paces = distance between prints of the same foot) – Systematic ichnology; Table 1 (PL 173/174, SL 346 cm)"
+    - "Hip height used as leg length ('hip height (h, leg length)', Fig. 5 caption); Alexander's h ≈ 4.0 × FL, with variations of this ratio (secondhand via McCrea) – Methods"
+    - "Relative velocities 6.40–8.50 km/h ± 0.40 km/h; trackways show a normal walking gait – Results/Discussion"
+    - "Straight-leg hip height 'not anatomically accurate'; flexed hip height (knee 110°, ankle 140°) gives 2.30 m – Discussion"
 "10.1098/rspb.2006.3532":
   read: "Full text (PMC1634776)"
   claims:
@@ -58,20 +67,27 @@
     - "Empirical points scatter: stride length may occur at speeds differing from prediction by factors as large as 1.5; hip height from footprint size adds errors – section 3"
     - "'no likelihood of confusing a stroll with a sprint' – section 3"
     - "Strength indicator proportional to (body mass)^-0.33 for geometrically similar animals; Farlow et al. (1995), as summarised by Alexander (secondhand, not read): T. rex unlikely to have run faster than 10 m/s – section 3"
+    - "Leg length usually estimated from footprint size; misleading if erosion removed the original surface or the substrate was very soft – section 3"
+    - "Equal relative stride lengths at equal Froude numbers approximately true for bipedal and quadrupedal mammals (Alexander & Jayes 1983, secondhand) – section 3"
 "10.1242/jeb.01520":
   read: "Abstract (PubMed)"
   claims:
     - "Area:volume scaling predicts that stresses increase with size – abstract"
     - "Larger mammals become more erect, increasing limb EMA, keeping bone and muscle stresses fairly constant across 0.04–300 kg; above this size, extremely large mammals show more pronounced skeletal allometry and reduced locomotor ability – abstract"
+    - "Terrestrial mammals change posture when running, larger mammals becoming more erect – abstract"
 "10.1038/s41559-017-0241-4":
   read: "Abstract (PubMed)"
   claims:
     - "Hump-shaped relation of maximum speed with body mass from a finite acceleration time; explains why the largest animals are not the fastest; 474 species, 30 µg to 100 tonnes – abstract"
+    - "Hump shape results from a finite acceleration time – abstract"
 "10.1038/4151018a":
   read: "Abstract (PubMed)"
   claims:
     - "Controversy: some studies limited Tyrannosaurus to walking or at best 11 m/s, others argued for at least 20 m/s – abstract"
     - "Minimum extensor muscle mass method, validated for alligators and chickens; small dinosaurs competent runners; adult Tyrannosaurus would have needed unreasonably large extensor muscle mass, even with generous assumptions – abstract"
+    - "Doubtful that Tyrannosaurus and other huge dinosaurs (~6000 kg) were capable runners or could reach high speeds – abstract"
+    - "Small dinosaurs could have been competent runners – abstract"
+    - "Summary of the earlier debate (walking or at best 11 m/s vs at least 20 m/s) – abstract, first sentences"
 "10.1002/jmor.10240":
   read: "Abstract (Wiley/OpenAlex)"
   claims:
@@ -84,6 +100,8 @@
     - "Table 1: Tyrannosaurus 6000 kg, 8.0 m/s, stride 9.559 m, leg length 3.089 m, u²/gh 2.10; Struthio 15.4 m/s; Homo 7.9 m/s – Results"
     - "Literature top speeds: Struthio 17 m/s, Homo 10 m/s; reasonably good correspondence – Results"
     - "λ/h ≈ 2.3 (u²/gh)^0.3 (Alexander 1976); simulations agree extremely well with it – Results"
+    - "Evolutionary robotics models require no knowledge of locomotor kinematics and generate gaits de novo – Introduction"
+    - "Top speeds of extant species compared with values cited in the literature (Dromaius 14, Struthio 17, Homo 10 m/s) – Results"
 "10.7717/peerj.3420":
   read: "Full text (Europe PMC)"
   claims:
@@ -92,6 +110,12 @@
     - "Maximum velocity 7.7 m/s for high stress limits (>200 MPa); Froude number at 100 MPa is 1.0, typically the upper limit for walking – Results"
     - "Typical maximum bone stress not more than 100 MPa; all simulations with true running gaits exceed it; T. rex not mechanically capable of true running gaits – Discussion"
     - "Open source GaitSym system – Methods"
+    - "Running ability relevant to interpretations of feeding behaviour; being limited to walking contradicts high-speed pursuit predation – abstract"
+    - "Previous models (Sellers & Manning 2007) considered only muscular constraints on maximal performance – Discussion"
+    - "Total muscle mass set at the highest plausible value of 50 % ('generous muscles') – Methods"
+    - "Stress-limited simulation minimises vertical movement of the centre of mass; low impact, bird-style grounded running may be an appropriate gait for bipedal dinosaurs – Results (energy analysis)/Discussion"
+    - "Soft tissue parameters are almost never preserved in dinosaur fossils – Introduction"
+    - "True running gaits would probably lead to unacceptably high skeletal loads in T. rex – abstract"
 "10.1098/rsos.201441":
   read: "Full text (Europe PMC)"
   claims:
@@ -99,6 +123,9 @@
     - "Tail natural frequency 0.66 s⁻¹ (0.41–0.84); preferred walking speed 1.28 m/s (0.80–1.64) – abstract"
     - "Step length 1.94 m determined by scaling a large tyrannosaurid trackway (McCrea et al., ref. 45) based on footprint length of RGM.792000 ('Trix'); hip height 3.1 m used in the tail model – Methods"
     - "Alexander's equation from a regression of predominantly mammalian walking data; DS estimates for large theropods tend to range between 2 and 3 m/s – Discussion"
+    - "Elastic energy storage in the tail ligaments high only if step and natural frequencies match, reducing the metabolic cost of transport – abstract"
+    - "Hip height of 3.1 m assumed in the simulation ('1.94 m long steps at a hip height of 3.1 m') – Results"
+    - "Walking-speed estimates differ by method: 1.28 m/s from the tail natural frequency vs 2–3 m/s from dynamic similarity → 'how fast it walked is still debated' – abstract/Discussion"
 "10.1038/s41598-025-06981-z":
   read: "Full text (Europe PMC)"
   claims:
@@ -106,6 +133,9 @@
     - "Ca, P, O and F: bone hydroxyapatite at least partially replaced by fluorine ions to form fluorapatite – Results"
     - "Vessel-like structures of pyrite partially oxidized to goethite or hematite, permineralized casts; no original soft tissues recovered – abstract"
     - "Synchrotron micro-CT and X-ray fluorescence; bone healing as a target for future soft-tissue searches – abstract"
+    - "No original soft tissues could be recovered with the current techniques; morphology and sole presence in a fractured area of the rib suggest angiogenic origin (vessels grown during healing) – abstract"
+    - "Ca, P, O and F 'suggests' hydroxyapatite at least partially replaced to fluorapatite – Results (probe 1)"
+    - "Fractures lead to a rapid increase in vascular activity (angiogenesis) → 'healing fractures, rich in new blood vessels' – Introduction"
 "10.1002/ar.24118":
   read: "Abstract (OpenAlex)"
   claims:
@@ -136,21 +166,25 @@
   read: "Abstract (OpenAlex)"
   claims:
     - "Authentication tests from ancient DNA: mastodon samples pass, T. rex does not (no amino acid composition data, no deamidation evidence, collagen sequences associated with amphibians rather than birds) – abstract"
+    - "Evidence 'suggest[s] that T. rex does not' pass the authentication tests – abstract"
 "10.1021/pr900349r":
-  read: "Abstract (OpenAlex)"
+  read: "Abstract (OpenAlex); full text (PMC2738754) read by the fact-checker"
   claims:
     - "Reanalysis of Asara et al.'s spectra: common laboratory contaminants, soil bacteria and bird-like hemoglobin and collagen – abstract"
+    - "Identification of bird-like collagen at the protein level is clearly significant; bird haemoglobin peptide statistically confirmed – Introduction/Results (full text PMC2738754, read by the fact-checker)"
 "10.1371/journal.pone.0002808":
   read: "Full text (Europe PMC)"
   claims:
     - "Coatings found extensively in porous trabecular bone of many dinosaur and mammal species, interpreted as bacterial biofilms – abstract"
     - "Carbon dating points to relatively modern origin; blood-cell-size iron–oxygen spheres = oxidized former pyrite framboids – abstract"
+    - "Spheres in the vessels 'were identified as' an oxidized form of formerly pyritic framboids – abstract"
 "10.7554/elife.46205":
   read: "Full text (Europe PMC)"
   claims:
     - "Bone is a porous open system allowing microbial/molecular flux – abstract"
     - "Bone samples from a monodominant bonebed of the horned dinosaur Centrosaurus apertus (Ceratopsidae) – Materials and methods; eLife digest: 'a horned dinosaur called Centrosaurus'"
     - "Fresh excavation with aseptic protocols; 'soft tissues' differed from collagen chemically and structurally; dinosaur bone hosted an abundant microbial community – abstract"
+    - "Fresh excavation with aseptic protocols – abstract"
 "10.1098/rspb.2013.2741":
   read: "Abstract (OpenAlex)"
   claims:
@@ -162,6 +196,7 @@
     - "Blood vessel structures from cortical bone of T. rex USNM 555000 (formerly MOR 555); endogeneity of the vessel tissues and type I collagen in the outermost vessel layers shown by imaging, diffraction, spectroscopy and immunohistochemistry – abstract"
     - "Non-enzymatic crosslinking (Fenton chemistry and glycation) likely contributed to stabilizing and preserving these vessels – abstract"
     - "Authors note the idea of persisting original soft tissue is controversial – abstract (first sentence)"
+    - "Persistence of original soft tissue and native proteins called controversial, in part because rigorous, testable preservation mechanisms are not well defined – abstract"
 "10.1038/s41586-018-0851-2":
   read: "Abstract (PubMed)"
   claims:
