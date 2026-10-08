@@ -109,7 +109,10 @@ Rules for the JSON-LD graph (enforced by `check_site.py`):
   keeps "[3]" where a source list follows). The gate fails on `**`, `{:` or `](#` in either.
 - **Collection and data pages:** a `CollectionPage` has `mainEntity` → `ItemList` of its articles;
   a page with `dataset: true` has `mainEntity` → its own `#dataset` node (one per language) with
-  two distributions, `/graph.jsonld` (application/ld+json) and `/graph.json`.
+  two distributions, `/graph.jsonld` (application/ld+json) and `/graph.json`. The `Dataset` has a
+  `name` and a 50–5000-character `description` and **no `isPartOf` → `#website`**: Google accepts only a
+  larger `Dataset` there (Search Console: "Invalid object type for field isPartOf"); the page links
+  it to the site through `WebPage.mainEntity` and `WebPage.isPartOf`. `check_site.py` enforces this.
 - **Articles link into the graph:** `keywords` = the free keywords plus every ontology term as a
   `DefinedTerm` with the stable IRI `<site>/graph/#term-<slug>` and `inDefinedTermSet`; lenses are
   `educationalAlignment` (educationalSubject → the lens's discipline IRI). See `wildbionics-graph`.
