@@ -214,6 +214,25 @@ terms:
   - { en: "collagen", de: "Kollagen", avoid: ["Collagen"], level: warn, why: "Deutsche Schreibweise mit K." }
   - { en: "biofilm*", de: "Biofilm*" }
   - { en: "square–cube law", de: "Quadrat-Kubik-Gesetz", avoid: ["Quadrat-Würfel-Gesetz"], level: warn, why: "Etablierte Übersetzung (Galilei); so auch im Artikel Insektenflug." }
+  # --- Bioelectricity --------------------------------------------------------------
+  - { en: "electric eel*", de: "Zitteraal*", de_alt: ["*aal*"], avoid: ["Elektroaal*", "Elektrischer Aal", "Elektrische* Aale*"], level: warn, why: "Etablierter deutscher Name der Gattung Electrophorus; kein echter Aal, sondern ein Neuwelt-Messerfisch." }
+  - { en: "knifefish*", de: "Messerfisch*" }
+  - { en: "electrocyte*", de: "Elektrozyt*", avoid: ["Elektrocyt*", "Elektrozelle*"], level: warn, why: "Deutsche Fachschreibweise mit z (wie Erythrozyt); gemeint ist die Zelle des elektrischen Organs." }
+  - { en: "electric organ*", de: "elektrische* Organ*", de_alt: ["*organ*"] }
+  - { en: "internal resistance*", de: "Innenwiderstand*", de_alt: ["Innenwiderstände*"], avoid: ["interne* Widerstand*"], level: warn, why: "Fachbegriff der Elektrotechnik für den Widerstand einer realen Spannungsquelle." }
+  - { en: "electromotive force*", de: "Quellenspannung*", de_alt: ["Urspannung*", "elektromotorische* Kraft"], why: "Heute üblicher Begriff (DIN 1323: Quellenspannung); elektromotorische Kraft ist historisch." }
+  - { en: "maximum power transfer", de: "Leistungsanpassung", why: "Fachbegriff der Elektrotechnik: Lastwiderstand gleich Innenwiderstand." }
+  - { en: "Thévenin equivalent", de: "Ersatzspannungsquelle", de_alt: ["Thévenin*"] }
+  - { en: "equivalent circuit*", de: "Ersatzschaltbild*", de_alt: ["Ersatzschaltung*", "Schaltung*"] }
+  - { en: "ion gradient*", de: "Ionengradient*" }
+  - { en: "action potential*", de: "Aktionspotenzial*", avoid: ["Aktionspotential*"], level: warn, why: "Einheitliche Schreibweise auf der Website: Potenzial (Duden-Empfehlung)." }
+  - { en: "sodium–potassium pump", de: "Natrium-Kalium-Pumpe" }
+  - { en: "acetylcholine receptor*", de: "Acetylcholinrezeptor*", avoid: ["Azetylcholinrezeptor*", "Acetylcholin-Rezeptor*"], level: warn, why: "Fachschreibweise der Biochemie: Acetylcholin, zusammengeschrieben." }
+  - { en: "motor neuron*", de: "Motoneuron*", de_alt: ["motorische* Nervenzelle*"], avoid: ["Motorneuron*"], level: warn, why: "Deutscher Fachbegriff der Neurophysiologie: Motoneuron." }
+  - { en: "nociceptor*", de: "Nozizeptor*" }
+  - { en: "electroreception", de: "Elektrorezeption" }
+  - { en: "active electrolocation", de: "aktive* Elektroortung", avoid: ["Elektrolokation", "Elektrolokalisation"], level: warn, why: "Analog zu Echoortung: einheitlich Elektroortung verwenden." }
+  - { en: "particle filter*", de: "Partikelfilter*" }
   # --- Artificial intelligence / robotics -----------------------------------------
   - { en: "quantum sensor*", de: "Quantensensor*" }
   - { en: "microrobot*", de: "Mikroroboter*" }

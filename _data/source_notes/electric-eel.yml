@@ -1,0 +1,111 @@
+# Where the claims of "How the electric eel shocks" come from – written while researching, read by the
+# review (wildbionics-review). One entry per source, keyed by DOI: what was read, and which claims rest
+# on it. All DOIs resolved at Crossref (sources.py, 2026-10-25). Full texts from Europe PMC / PMC where
+# available. Catania 2017 (Current Biology) could not be read beyond the abstract (no PMC copy, the Cell
+# Press PDF sits behind a bot check), so it carries no open_access flag; its circuit values are taken
+# from Catania 2019 (open access), Fig. 12, which reproduces them "from Catania, 2017a, b". Catania 2014
+# (Science), Xu & Lavan 2008 (PMC page behind a bot check) and Solberg et al. 2007 (IEEE) were read as
+# abstracts only. Derived numbers (Thévenin equivalent, maximum power, cells in series) are computed in
+# the article's program eel_circuit.py and labelled as calculations for this article.
+"10.1038/s41467-019-11690-z":
+  read: "Full text (Europe PMC, PMC6736962)"
+  claims:
+    - "Electric eels long assumed to be a single species, Electrophorus electricus, since Linnaeus 250 years ago, broadly distributed through Greater Amazonia (Amazon, Orinoco, coastal drainages of the Guianas) – Introduction, 1st paragraph; 'two and a half centuries' – abstract"
+    - "Genetic, morphological and ecological data reject a single species; three major lineages, two new species (E. voltai, E. varii) – abstract"
+    - "860 V recorded for one new species, well above 650 V previously cited, 'the strongest living bioelectricity generator' – abstract; 'strongest bioelectricity generator known' – Discussion"
+    - "860 V at 1219 mm TL, n = 1, E. voltai – Results (EOD) and species description; FAQ '1.2 metres'"
+    - "Measurement: specimen stretched on a dry non-conductive plastic sheet, DC-coupled voltage reading from snout to distal tail – Methods, High-voltage EOD amplitudes (FAQ 'measured out of the water from snout to tail')"
+    - "107 specimens examined – Results / Methods"
+    - "E. electricus restricted to the Guiana Shield; E. voltai in north-flowing rivers of the Brazilian Shield and south-flowing rivers of the Guiana Shield; E. varii in lowland floodplain and terra-firme systems of the Amazon Basin – Discussion"
+    - "Shield rivers normoxic, low conductivity (<30 µS/cm), rocky substrates, rapids; lowland waters blackwater (<30) and whitewater (60–350 µS/cm), seasonally hypoxic floodplains – Discussion"
+    - "Lineages diverged during Miocene and Pliocene – abstract; E. voltai/E. electricus divergence 3.6 Ma – Discussion"
+    - "Species not distinguishable by body shape and pigmentation; separated by skull/cleithrum characters and COI nucleotides – Results, Diagnoses"
+    - "Electric eels up to 2.5 m – Introduction (citing ref. 10; marked 'as the authors note')"
+    - "Low-voltage EODs from Sachs' organ/posterior Hunter's organ, high-voltage from main/anterior Hunter's organ, in all three species – Results (EOD)"
+    - "Outlook: field-based EOD studies, genomes of the three species, further population/species diversity with specimens from the upper Negro and Orinoco drainages – Discussion, last paragraph"
+"10.1038/nature24670":
+  read: "Full text (PMC author manuscript, PMC6436395)"
+  claims:
+    - "'The electric organ of the knifefish Electrophorus electricus (commonly known as the electric eel)' – abstract (quoted in the intro)"
+    - "Peak potential differences of 600 V and currents of 1 A – abstract"
+    - "Electrocytes in parallel stacks span the rear 80 % of the eel's body – main text, first feature"
+    - "Resting: open K+ channels in both membranes give equal and opposite potentials of −85 mV, total zero; firing: Na+ channels in the posterior (innervated) membrane open, K+ channels close, action potential +65 mV, transcellular potential ~150 mV – Fig. 1b legend and main text"
+    - "Large electric eels stack thousands of electrocytes in series and generate over 600 V; parallel stacks enable peak currents approaching 1 A at short circuit – main text"
+    - "Anterior membrane K+-selective, posterior Na+-selective in the firing state: energy from opposing gradients of two different cations between low-resistivity physiological solutions – 'a non-obvious strategy the eel evolved to maximize power output' – Discussion"
+    - "Na+/K+-ATPase rebuilds gradients after a discharge – third feature"
+    - "~1 m long organ, ~2 ms discharge; nerve impulses too slow, eel slows the arrival of impulses at the parts closest to the command nucleus – second feature"
+    - "Conventional batteries not designed to be biocompatible, mechanically flexible and to harness chemical energy inside living systems – abstract (Physical AI lens)"
+    - "Four hydrogels as analogues of the electrocyte's compartments and membranes; high- and low-salinity gels separated by cation- and anion-selective gels; each tetrameric gel cell 130–185 mV, comparable to one electrocyte; 2,449 gels in series reach 110 V – main text, Fig. 1–2"
+    - "Simultaneous contact: printed complementary gel arrays overlaid; Miura-ori fold developed for unfolding solar panels in space – main text, Fig. 3"
+    - "Soft, flexible, transparent, potentially biocompatible – abstract"
+    - "Printed version limited to 50 µW across 2,449 gels; best folded geometry 2–3 orders of magnitude below the eel's electrocyte layers – main text and Table 1"
+    - "Thinner, more selective membranes as improvement; possible use for pacemakers, implantable sensors, prosthetic devices (abstract) and as deformable power sources in soft robots (main text)"
+    - "Only approaching useful power for the lowest-power implants; closing the gap by one or two orders of magnitude may open the door to metabolically sustained power for implants, wearables and other mobile devices – last paragraph (outlook)"
+    - "0.15 V per electrocyte used as CELL_EMF in the program; cells-in-series estimates (1,320 / 4,000 / 5,733) are a calculation for this article"
+"10.1126/science.1254432":
+  read: "Full text (PMC author manuscript, PMC5541775)"
+  claims:
+    - "Myogenic electric organ evolved (at least) six times independently in fishes – abstract and main text"
+    - "Genome of E. electricus assembled; transcriptomes from three independently evolved lineages; similar transcription factors and developmental and cellular pathways despite different electrocyte morphology – abstract"
+    - "'Like all Gymnotiformes, E. electricus has a weak EO' – main text (intro: Gymnotiformes all produce weak electric fields)"
+    - "Three electric organs: main, Sachs' and Hunter's – main text"
+    - "Electrocytes originate from myogenic precursors, are larger than muscle fibres and lack (or have disarrayed) contractile machinery – main text, Fig. 1B"
+    - "Innervated surface with cation-specific channels, opposite invaginated surface enriched in sodium pumps; in-series arrangement allows summation of voltages, 'much like batteries stacked in series in a flashlight' – main text (quoted in the physics lens)"
+    - "Cholinergic nerve terminals on the innervated face – Fig. 1B legend (chemistry lens)"
+"10.3389/fnint.2019.00023":
+  read: "Full text (Europe PMC, PMC6646469) and PDF figures (Frontiers)"
+  claims:
+    - "Pivotal for animal electricity in the 1700s, investigated by Humboldt and Faraday in the 1800s, used to isolate the acetylcholine receptor in the 20th century – abstract"
+    - "Anatomy helped inspire Volta to develop the battery, which he called an artificial electric organ – Introduction (citing Finger and Piccolino 2011; marked 'as Catania recounts')"
+    - "Two EOD types, each a roughly 1 ms monophasic head-positive pulse; low-voltage at low rate at rest, 10–20 Hz when hunting (citing Bauer 1979); high-voltage volleys up to 500 Hz – section 'Electric eels have two forms of EOD', Fig. 1 legend"
+    - "Low-voltage EOD used for active electroreception – section 'Active electroreception'"
+    - "Doublets cause prey twitch; water movement detected by mechanoreceptors (neuromasts); eel responds 20–40 ms later with a full volley and strike – abstract and doublet section"
+    - "Voluntary prey movement arrested within 3–4 ms of the first EOD – section 'High-voltage EODs temporarily immobilize prey'"
+    - "Weak EOD: action potential to every electrocyte, only low-threshold subset fires; strong EOD: high rate of action potentials, temporal summation activates every electrocyte (citing Bennett) – section on the two EODs (marked 'as Catania summarises')"
+    - "Dipole field, positive pole around the head and negative pole around the tail; fish near the head feels mostly the positive pole – section 'The dipole attack', Fig. 7"
+    - "Eels cannot increase the magnitude of the high-voltage output during volleys (every electrocyte active); curling concentrates the field 'much like focusing the fixed power of a flashlight into a smaller area' – section 'Measuring field strength'"
+    - "High-voltage EOD used to track fast-moving prey (conductors) – abstract and section 'The use of high-voltage for active electroreception'"
+    - "Electrocytes can be analysed with methods used for batteries; V vs I with a variable resistor gives a straight line with slope −r – section 'The equivalent circuit'"
+    - "EMF and internal resistance of five eels: 198 V/960 Ω, 179 V/707 Ω, 301 V/492 Ω, 316 V/438 Ω, 382 V/450 Ω (range 179–382 V, 438–960 Ω) – Fig. 12A; growing eels: EMF increases, internal resistance decreases – text"
+    - "Smallest eel's leap circuit: ε = 198 V, r = 960 Ω, water ≈ 400 Ω, return path Ro ≈ 2,400 Ω; arm ≈ 2,100 Ω; currents ≈ 0.08 A (eel), ≈ 0.037 A (Ro), ≈ 0.043 A (arm) – Fig. 12B, E; arm resistance calculated from the measured current – text 'Completing the circuit'"
+    - "Return path as a volume control – section 'The equivalent circuit' ('turning up the volume')"
+    - "Open questions: diet in the wild, whether other strongly electric fishes activate prey motor neurons, how an eel protects its own nervous system – Summary, last paragraph (FAQ quote is a translation of 'How does an eel protect its own nervous system from the high-voltage EOD?')"
+"10.3390/toxins13010048":
+  read: "Full text (Europe PMC, PMC7826911)"
+  claims:
+    - "Pulses roughly 2 ms, form similar to an action potential – main text (with Catania 2019's ~1 ms → 'one to two milliseconds')"
+    - "Curling brings the tail to the opposite side of large or precariously held prey and more than doubles the field strength inside the prey; then volleys at ~100 Hz cause muscle fatigue; analogy with venoms that paralyse the neuromuscular junction – abstract"
+    - "Curare blocks acetylcholine receptors; curarised fish preparation shows no tension responses → eel acts via motor neurons – Fig. 1e legend and text"
+    - "'the author can attest to the efficiency of the former in the absence of the latter [28]' – the human arm in the 2017 study was Catania's own (physics lens)"
+"10.1126/science.1260807":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "High-voltage discharges activate prey motor neurons and hence muscles, allowing eels to remotely control their target – abstract"
+    - "High-frequency volleys induce immobilising whole-body tetanus – abstract"
+    - "Hidden prey: periodic volleys of two or three discharges cause massive involuntary twitch, revealing the prey's location – abstract"
+    - "Series of experiments with high-speed video and simultaneous recordings (method context from the abstract and from Catania 2019's account of the study)"
+"10.1073/pnas.1604009113":
+  read: "Full text (PMC, PMC4922196)"
+  claims:
+    - "Humboldt, March 1800: fishermen herded horses into a pool; eels attacked by pressing against the horses while discharging; exhausted eels collected safely; later investigators sceptical – abstract and Introduction"
+    - "Eels leap out of the water, pressing the chin against a threatening conductor while discharging high-voltage volleys – abstract"
+    - "Behaviour appears ubiquitous for comparatively large eels (over 60 cm) – Introduction/Results"
+    - "Short-circuits the electric organ through the threat; increasing power diverted to the threat as the eel attains greater height – abstract"
+    - "Measured voltage and current increased dramatically as the eels ascended – Results"
+    - "Faraday 1838: with one hand in the water the shock was felt only in that hand and was not very strong – Discussion (quoted)"
+    - "Eels likely defend themselves in the dry season when trapped in small pools; obligate air breathers suited to deoxygenated pools – Significance and Discussion (marked 'as he summarises')"
+"10.1016/j.cub.2017.08.034":
+  read: "Abstract (Crossref/OpenAlex); full text not readable (bot check)"
+  claims:
+    - "Comparatively small eel; current through a human subject's arm peaked at 40–50 mA, greatly exceeding nociceptor thresholds for humans and horses – abstract"
+    - "No subjective sensation of involuntary tetanus; aversive sensations restricted to the affected limb – abstract"
+    - "Main purpose of the leap: strongly deter potential predators by briefly causing intense pain – abstract ('Results suggest')"
+"10.1038/nnano.2008.274":
+  read: "Abstract (PubMed 18989332)"
+  claims:
+    - "Mathematical calculation of the conversion of ion gradients into action potentials across nanoscale conductors in a model electrocyte; artificial cell designed from an optimised selection of conductors; higher power output density and greater energy conversion efficiency; suggested to power medical implants and tiny devices – abstract ('designed – so far on paper': the abstract suggests methods for producing them)"
+"10.1109/robot.2007.364231":
+  read: "Abstract (Crossref/OpenAlex)"
+  claims:
+    - "Robot locates objects underwater by active movement of an electric field emitter and sensor apparatus, inspired by active electrolocation in two groups of freshwater fishes emitting weak fields – abstract"
+    - "Successful electrolocation in low-conductivity water and in water of ocean salinity, where it is not observed in nature; target belief maintained by a particle filter refined with each measurement – abstract"
