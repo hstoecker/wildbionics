@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # How much power does a leaping electric eel push through a threat? An equivalent circuit.
 CELL_EMF = 0.150         # voltage of one firing electrocyte (V), Schroeder et al. 2017
-# Measured on a small eel by Catania (summarised in Catania 2019, Fig. 12):
+# Circuit of a small eel, measured or estimated by Catania (summarised in Catania 2019, Fig. 12):
 EMF, R_INTERNAL = 198.0, 960.0   # electromotive force (V) and internal resistance (Ω)
 R_WATER = 400.0          # resistance of the water path back to the tail (Ω)
 RETURN_PATH = 2400.0     # head-to-water path along the eel at the top of the leap (Ω)

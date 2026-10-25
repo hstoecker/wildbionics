@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # Wie viel Leistung treibt ein springender Zitteraal durch einen Angreifer? Ein Ersatzschaltbild.
 CELL_EMF = 0.150         # Spannung eines feuernden Elektrozyten (V), Schroeder et al. 2017
-# Gemessen an einem kleinen Aal durch Catania (zusammengefasst in Catania 2019, Abb. 12):
+# Schaltung eines kleinen Aals, von Catania gemessen bzw. abgeschätzt (zusammengefasst in Catania 2019, Abb. 12):
 EMF, R_INTERNAL = 198.0, 960.0   # Quellenspannung (V) und Innenwiderstand (Ω)
 R_WATER = 400.0          # Widerstand des Wasserwegs zurück zum Schwanz (Ω)
 RETURN_PATH = 2400.0     # Rückweg vom Kopf am Aal entlang ins Wasser, am höchsten Punkt des Sprungs (Ω)
@@ -33,7 +33,7 @@ def target_power(r_target, v_th, r_th):
 
 r_eel = R_INTERNAL / ROWS                 # parallele Reihen teilen den Innenwiderstand
 for volts in (EMF, 600.0, 860.0):
-    print(f"{volts:.0f} V brauchen etwa {volts / CELL_EMF:.0f} Elektrozyten in Reihe")
+    print(f"{volts:.0f} V brauchen etwa {volts / CELL_EMF:,.0f} Elektrozyten in Reihe".replace(",", "."))
 
 v_th, r_th = thevenin(EMF, r_eel, RETURN_PATH)
 print(f"vom Ziel aus gesehen: {v_th:.0f} V hinter {r_th:.0f} Ω")
