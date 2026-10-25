@@ -27,6 +27,10 @@
     - "Tar seeps and playbacks: dying herbivores lure multiple predators; predatory mammals and birds far outnumber herbivores – abstract"
     - "Fossil records n = 3324; dire wolf 51 %, Smilodon 33 % – abstract"
     - "Playbacks: lions and spotted hyenas (social) make up 84 % of attendants; predominance of Smilodon supports the conclusion that Smilodon was social – abstract"
+    - "n = 3324 = minimum numbers of individuals of carnivore species (Table 1 lists carnivores only) – Methods, Table 1"
+    - "Carnivores lured by dying herbivores and trapped in sticky asphalt; carnivores outnumber herbivores – Introduction"
+    - "Playbacks: pre-recorded sounds of herbivore prey in distress – Methods"
+    - "Dire wolf described as 'presumably social' – abstract"
 "10.1098/rsbl.2009.0008":
   read: "Full text (PMC2781900)"
   claims:
@@ -41,6 +45,7 @@
     - "Humeri reinforced by cortical thickening to a greater degree than in any living felid or P. atrox; femur thickened but not beyond the normal variation of other felids – abstract"
     - "Interpretation: greater ability to subdue prey with the forelimbs, to protect the elongate canines from fracture and position the bite for a quick kill – abstract"
     - "Elongate canines more vulnerable to fracture than those of modern felids – abstract (Background)"
+    - "'Few extinct predators are as well-known as the saber tooth cats' – Introduction, first sentence"
 "10.1038/s41559-017-0131":
   read: "Abstract (PubMed)"
   claims:
@@ -54,6 +59,9 @@
     - "Presence of a P3 (third premolar) in the subadult dentaries suggests inheritance, a rare instance of familial relatedness in the fossil record – abstract"
     - "Siblings at least two years old, associated with an adult that was likely their mother → prolonged parental care – abstract"
     - "Growth rate similar to a tiger combined with the extended growth period of a lion – abstract"
+    - "S. fatalis known predominantly from 'predator trap' deposits; hypotheses on its life history and social strategy largely based on Rancho La Brea data → 'Much of what we know about how it lived comes from Rancho La Brea' – Summary; Introduction"
+    - "Adult P3 present in both subadult dentaries; at Rancho La Brea a P3 occurs in only 2.4–6 % of S. fatalis – Results/Discussion"
+    - "Assemblage likely derived from a catastrophic mass mortality event ('died together') – abstract"
 "10.1073/pnas.0706086104":
   read: "Full text (PMC2042153)"
   claims:
@@ -62,6 +70,7 @@
     - "Skull poorly optimized to resist loadings from struggling prey; better optimized for bites on restrained prey augmented by cervical musculature – abstract"
     - "Prey brought to ground and restrained before the killing bite; killing bite most likely directed to the neck – abstract"
     - "Low bite forces might reflect an ability to kill large prey more quickly, avoiding prolonged (asphyxiating) bites as in lions – abstract"
+    - "S. fatalis 'among the most charismatic of fossil carnivores' – abstract, first sentence"
 "10.1098/rspb.2004.2986":
   read: "Full text (PMC1564077)"
   claims:
@@ -78,6 +87,8 @@
     - "Osteological proxies for jaw muscle fascicle lengths and previously validated techniques applied to S. fatalis – abstract"
     - "Anatomical bite force estimates 1283.74 N at the canine and 4671.41 N at the carnassial, similar to estimates for the much smaller P. onca (jaguar), not the largest felids – abstract"
     - "Angular maximum bony gape significantly larger than in extant felids; linear gape at the canine tip not significantly different – abstract"
+    - "1283.74 N is the mean of corrected estimates; bite force from osteological proxies for jaw-muscle size plus leverage – Methods/Results"
+    - "Estimates align with predictions of canine-shear bites produced in part by force contributions of the postcranial muscles – abstract"
 "10.1371/journal.pone.0107456":
   read: "Full text (Europe PMC)"
   claims:
@@ -101,7 +112,13 @@
     - "Beam theory with an elliptical cross-section: bending strength around the AP axis S = I/(h·y), I = π x y³ /4 (x AP length, y ML width) – Methods; the article uses the standard semi-axis form W = π a b²/4"
     - "Cross-sectional geometry optimized for increased bending strength with erupted height, but changes exaggerate rather than minimize lateral deflection – abstract"
     - "Deciduous and adult canines present together for >50 % of the adult canine eruption period; dual-canine buttressing brings strength and stiffness closer to theoretical optima – abstract"
-    - "Table S1 'morpho' models: cusp height, AP length and ML width per eruption stage for AMNH FM55576 (40.62–137.76 mm; final 32.17 × 18.00 mm) and KU S2255 (20.20–95.03 mm) – used verbatim in the code example (CC BY 4.0)"
+    - "Table S1 'morpho' models: cusp height, AP length and ML width per simulated eruption stage for AMNH FM55576 (40.62–137.76 mm; final 32.17 × 18.00 mm) and KU S2255 (20.20–95.03 mm) – used verbatim in the code example (article CC BY-NC-ND 4.0; values quoted with citation)"
+    - "Eruption simulated in reverse: adult canine models shifted in 10 mm steps against a hypothetical gumline; AP and ML measured at the alveolar plane – Methods"
+    - "Article licence CC BY-NC-ND 4.0 – front matter"
+    - "Joint presence of deciduous and adult canines for >50 % of eruption is taken from Wysocki et al. 2015 – Discussion 4.2"
+    - "Table S1 morpho series: AMNH FM55576 11 stages 40.62–137.76 mm; LACM RLB P23-4739 26.74–109.70 mm; KU S2255 20.20–95.03 mm"
+    - "Computed in the article, not in the source: side/front stress ratio = a/b = 32.17/18.00 = 1.79 (1.79–2.30 over all AMNH stages); side stress 18.1 → 13.5 MPa for 100 N (×0.74, height ×3.4); KU S2255 ratio 2.21, ×0.49; round section 10.1 MPa"
+    - "Typical extant felid crown height 20–40 mm (grey band in Fig. 2) – Methods"
 "10.1371/journal.pone.0129847":
   read: "Full text (Europe PMC)"
   claims:
@@ -109,6 +126,7 @@
     - "Upper canine eruption rate 6.0 mm per month, similar to a previously published enamel growth rate of 5.8 mm/month derived from stable oxygen isotope values in enamel – abstract/Methods"
     - "Permanent dentition except upper canines fully erupted by 14–22 months; upper canines finished erupting at about 34–41 months – abstract"
     - "Delayed dental development compared with similar-sized extant felids – abstract"
+    - "Eruption rate 6.0 mm/month 'implied' by combining the δ18O-derived enamel growth rate with μCT lengths of mineralised enamel – abstract, Methods"
 "10.58782/flmnh.psyo5090":
   read: "Abstract (OpenAlex); PDF behind a bot check"
   claims:
@@ -117,6 +135,7 @@
     - "Carbon isotope results suggest consumption of animals that depended only on C3 plants; overlap rules some prey in or out (e.g. Equus, Mammuthus probably excluded) – abstract"
     - "More negative δ13C of S. gracilis than prey may indicate prey captured in a closed environment (or unsampled prey species) – abstract"
     - "Stable isotope ratios in tooth enamel can be used to exclude taxa from a predator's diet – abstract"
+    - "Single canine of one individual of S. gracilis from Leisey 1A, Florida; Equus and Mammuthus probably excluded from its diet – abstract"
 "10.1016/j.cub.2020.01.009":
   read: "Title and short summary (Semantic Scholar/PubMed); full text behind a bot check"
   claims:

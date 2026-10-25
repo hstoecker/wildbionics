@@ -7,8 +7,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # How strong is a sabre? The upper canine of Smilodon fatalis as a cantilever beam with an
-# elliptical cross-section, measured at the gum line at each stage of its eruption.
-# Data: Tseng (2025), Table S1, "morpho" models (CC BY 4.0): (erupted height, front-to-back
+# elliptical cross-section, measured at the gum line of each stage of a simulated eruption (the adult tooth shifted step by step into the jaw).
+# Data: Tseng (2025), Table S1, "morpho" models (article licensed CC BY-NC-ND 4.0; measurement values quoted with citation): (erupted height, front-to-back
 # length x, side-to-side width y) in mm.
 CANINES = {
     "AMNH FM55576": [(40.62, 21.58, 10.28), (50.23, 24.64, 11.18), (58.62, 26.75, 11.63),
@@ -19,7 +19,7 @@ CANINES = {
                  (54.85, 26.80, 11.96), (65.21, 29.56, 13.25), (75.16, 31.41, 13.94),
                  (85.12, 33.21, 14.94), (95.03, 34.63, 15.65)],
 }
-SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the most complete eruption series (up to 138 mm); 1: KU S2255
+SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the longest series in Table S1 (11 stages, 41–138 mm); 1: KU S2255
 SPECIMEN = list(CANINES)[SPECIMEN_INDEX]
 LOAD_N = 100.0              # force at the tip (N) – an assumed round value for comparison
 ROUND = False               # True: same cross-sectional area, but a round tooth

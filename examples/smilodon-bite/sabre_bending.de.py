@@ -7,8 +7,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Wie fest ist ein Säbel? Der obere Eckzahn von Smilodon fatalis als Kragbalken mit
-# elliptischem Querschnitt, gemessen am Zahnfleischrand in jedem Stadium seines Durchbruchs.
-# Daten: Tseng (2025), Tabelle S1, „morpho“-Modelle (CC BY 4.0): (Durchbruchshöhe, Länge x
+# elliptischem Querschnitt, gemessen am Zahnfleischrand in jedem Stadium eines simulierten Durchbruchs (der ausgewachsene Zahn schrittweise in den Kiefer verschoben).
+# Daten: Tseng (2025), Tabelle S1, „morpho“-Modelle (Artikel unter CC BY-NC-ND 4.0; Messwerte mit Quellenangabe zitiert): (Durchbruchshöhe, Länge x
 # von vorn nach hinten, Breite y von Seite zu Seite) in mm.
 CANINES = {
     "AMNH FM55576": [(40.62, 21.58, 10.28), (50.23, 24.64, 11.18), (58.62, 26.75, 11.63),
@@ -19,7 +19,7 @@ CANINES = {
                  (54.85, 26.80, 11.96), (65.21, 29.56, 13.25), (75.16, 31.41, 13.94),
                  (85.12, 33.21, 14.94), (95.03, 34.63, 15.65)],
 }
-SPECIMEN_INDEX = 0          # 0: AMNH FM55576, die vollständigste Durchbruchsreihe (bis 138 mm); 1: KU S2255
+SPECIMEN_INDEX = 0          # 0: AMNH FM55576, die längste Reihe in Tabelle S1 (11 Stadien, 41–138 mm); 1: KU S2255
 SPECIMEN = list(CANINES)[SPECIMEN_INDEX]
 LOAD_N = 100.0              # Kraft an der Spitze (N) – ein angenommener runder Vergleichswert
 ROUND = False               # True: gleiche Querschnittsfläche, aber ein runder Zahn
@@ -56,7 +56,7 @@ ax.plot(height, side, "o-", lw=2.5, color="#c0392b", label="Last von der Seite")
 ax.plot(height, front, "s--", lw=2.5, color="#1f6f8b", label="Last von vorn")
 ax.set_ylim(0, 1.15 * side.max())
 ax.axvspan(20, 40, color="grey", alpha=0.15)
-ax.text(30, 1.12 * side.max(), "typische\nKatze", ha="center", va="top", fontsize=11)
+ax.text(30, 1.12 * side.max(), "typischer\nKatzenzahn", ha="center", va="top", fontsize=11)
 ax.set_xlabel("Durchbruchshöhe des Eckzahns (mm)")
 ax.set_ylabel(f"Biegespannung an der Basis (MPa)\nbei {LOAD_N:.0f} N an der Spitze")
 ax.set_xlim(15, 145)
