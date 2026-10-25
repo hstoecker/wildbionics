@@ -214,6 +214,14 @@ terms:
   - { en: "collagen", de: "Kollagen", avoid: ["Collagen"], level: warn, why: "Deutsche Schreibweise mit K." }
   - { en: "biofilm*", de: "Biofilm*" }
   - { en: "square–cube law", de: "Quadrat-Kubik-Gesetz", avoid: ["Quadrat-Würfel-Gesetz"], level: warn, why: "Etablierte Übersetzung (Galilei); so auch im Artikel Insektenflug." }
+  - { en: "sabre-toothed cat*", de: "Säbelzahnkatze*", avoid: ["Säbelzahn-Katze*"], level: warn, why: "Smilodon ist kein Tiger, sondern gehört zu den Säbelzahnkatzen (Machairodontinae); den Alltagsnamen „Säbelzahntiger“ nur erklärend nennen." }
+  - { en: "cantilever*", de: "Kragbalken*", de_alt: ["Kragträger*"], why: "Einseitig eingespannter Balken; Fachbegriff der Technischen Mechanik." }
+  - { en: "bending stress*", de: "Biegespannung*" }
+  - { en: "section modul*", de: "Widerstandsmoment*", avoid: ["Sektionsmodul*"], level: warn, why: "Fachbegriff der Festigkeitslehre: (axiales) Widerstandsmoment W." }
+  - { en: "spongy bone", de: "Spongiosa", de_alt: ["schwammartige* Knochen*"] }
+  - { en: "carnassial*", de: "Reißzahn*", de_alt: ["Reißzähne*"] }
+  - { en: "dire wol*", de: "Schreckenswolf*", de_alt: ["Schreckenswölfe*"] }
+  - { en: "tooth eruption", de: "Zahndurchbruch*", de_alt: ["*durchbr*"] }
   # --- Artificial intelligence / robotics -----------------------------------------
   - { en: "quantum sensor*", de: "Quantensensor*" }
   - { en: "microrobot*", de: "Mikroroboter*" }

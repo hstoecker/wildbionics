@@ -14,3 +14,4 @@ fruit-fly: { en: "Fruit fly", de: "Taufliege", taxon: "Drosophila melanogaster",
 european-robin: { en: "European robin", de: "Rotkehlchen", taxon: "Erithacus rubecula", wikidata: Q25334 }
 human: { en: "Human", de: "Mensch", taxon: "Homo sapiens", wikidata: Q15978631 }
 t-rex: { en: "Tyrannosaurus rex", de: "Tyrannosaurus rex", taxon: "Tyrannosaurus rex", wikidata: Q13098211 }
+smilodon: { en: "Sabre-toothed cat", de: "Säbelzahnkatze", taxon: "Smilodon fatalis", wikidata: Q1956565 }
