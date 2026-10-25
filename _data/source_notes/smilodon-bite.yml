@@ -1,5 +1,133 @@
-# Research notes for smilodon-bite – one entry per source, keyed by DOI (wildbionics-article).
-# "10.xxxx/yyyy":
-#   read: "Abstract (PubMed)"
-#   claims:
-#     - "claim – where in the source"
+# Where the claims of "How the sabre-toothed cat killed" come from – written while researching,
+# read by the review (wildbionics-review). One entry per source, keyed by DOI: what was read, and
+# which claims rest on it (with the place in the source).
+# All DOIs resolved at Crossref (sources.py, 2026-10-10). Abstracts from OpenAlex/PubMed; full texts
+# from Europe PMC / PMC where open access. Cell Press (Current Biology), Science, Nature Ecology &
+# Evolution, Wiley (J Zool) and the Florida Museum bulletin PDF were behind a bot check or paywall, so
+# for those only the abstract (or, for the two Current Biology correspondences, the short summary) was
+# read. Coltrain et al. 2004 and Fuller et al. 2014 had no readable abstract and are not cited.
+# Crossref years: Carbone 2009 (online 2008), Deutsch 2025 and Tseng 2025 (online 2024) – the article
+# uses the Crossref (issue) years. Crossref truncates Feranec's title ("Analysi"); the article gives the
+# full title "… Stable Isotope Analysis".
+"10.1016/j.cub.2017.09.033":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Saber-toothed cats (Machairodontinae) are among the best-known representatives of the Pleistocene megafauna – abstract, first sentence"
+    - "Machairodontinae form a well-supported clade distinct from all living felids → 'not a tiger', distinct from all living cats incl. tigers and lions – abstract"
+    - "Deep divergence between Smilodon and Homotherium (~18 million years) – abstract"
+"10.1016/j.cub.2019.06.059":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Fossils of the Rancho La Brea 'tar' seeps span the past ~50,000 years – abstract"
+    - "Multi-proxy approach with hundreds of carnivoran and herbivore specimens ('several independent lines of evidence') – abstract"
+    - "Canids (especially the dire wolf) consumed prey from more open environments than felids; minimal competition for prey; overturning the idea that they heavily competed for similar prey – abstract"
+"10.1098/rsbl.2008.0526":
+  read: "Full text (PMC2657756)"
+  claims:
+    - "Tar seeps and playbacks: dying herbivores lure multiple predators; predatory mammals and birds far outnumber herbivores – abstract"
+    - "Fossil records n = 3324; dire wolf 51 %, Smilodon 33 % – abstract"
+    - "Playbacks: lions and spotted hyenas (social) make up 84 % of attendants; predominance of Smilodon supports the conclusion that Smilodon was social – abstract"
+"10.1098/rsbl.2009.0008":
+  read: "Full text (PMC2781900)"
+  claims:
+    - "Comment questioning the comparability of tar seeps and playbacks – full text"
+    - "Heavier individuals intrinsically more likely to get stuck in the asphalt – full text"
+    - "Attraction by calls and carcasses lasted longer in the tar seeps than in playbacks, changing species ratios – full text"
+    - "Comparison assumes the Late Pleistocene North American guild was similar to extant African savannahs – full text"
+"10.1371/journal.pone.0011412":
+  read: "Full text (Europe PMC)"
+  claims:
+    - "Radiographs of Smilodon fatalis, 28 extant felid species and the larger extinct Panthera atrox – abstract"
+    - "Humeri reinforced by cortical thickening to a greater degree than in any living felid or P. atrox; femur thickened but not beyond the normal variation of other felids – abstract"
+    - "Interpretation: greater ability to subdue prey with the forelimbs, to protect the elongate canines from fracture and position the bite for a quick kill – abstract"
+    - "Elongate canines more vulnerable to fracture than those of modern felids – abstract (Background)"
+"10.1038/s41559-017-0131":
+  read: "Abstract (PubMed)"
+  claims:
+    - "Over 1,900 pathological elements from Rancho La Brea – abstract"
+    - "Trauma frequency Smilodon 4.3 % vs dire wolf 2.8 %; killing behaviour of S. fatalis entailed greater risk of injury – abstract"
+    - "Smilodon (ambush predator, as classified by the authors) injured more often than expected in lumbar vertebrae and shoulders; dire wolf (pursuit predator) in limbs and cervical vertebrae – abstract"
+"10.1016/j.isci.2020.101916":
+  read: "Full text (Europe PMC)"
+  claims:
+    - "Association of at least two subadult and one adult S. fatalis from Pleistocene coastal deposits in Ecuador, likely a mass mortality event – abstract"
+    - "Presence of a P3 (third premolar) in the subadult dentaries suggests inheritance, a rare instance of familial relatedness in the fossil record – abstract"
+    - "Siblings at least two years old, associated with an adult that was likely their mother → prolonged parental care – abstract"
+    - "Growth rate similar to a tiger combined with the extended growth period of a lion – abstract"
+"10.1073/pnas.0706086104":
+  read: "Full text (PMC2042153)"
+  claims:
+    - "Most detailed computer reconstructions yet developed for the vertebrate skull (finite element model) – abstract"
+    - "Bite force driven by jaw muscles relatively weak, one third that of a lion of comparable size – abstract"
+    - "Skull poorly optimized to resist loadings from struggling prey; better optimized for bites on restrained prey augmented by cervical musculature – abstract"
+    - "Prey brought to ground and restrained before the killing bite; killing bite most likely directed to the neck – abstract"
+    - "Low bite forces might reflect an ability to kill large prey more quickly, avoiding prolonged (asphyxiating) bites as in lions – abstract"
+"10.1098/rspb.2004.2986":
+  read: "Full text (PMC1564077)"
+  claims:
+    - "Bite force quotient (bite force relative to body mass) relatively low in Smilodon fatalis; consistent with the 'canine-shear bite' model – abstract"
+"10.1016/j.cub.2018.08.012":
+  read: "Abstract (PubMed)"
+  claims:
+    - "S. fatalis had an extremely thick skull and relatively little trabecular (spongy) bone, consistent with a large investment in cranial strength for a stabbing canine-shear bite – abstract"
+    - "Homotherium serum (scimitar-toothed) had more trabecular bone and most likely used a behaviour more similar to the lion's clamp-and-hold technique – abstract"
+    - "Method: relative amount and distribution of cortical and trabecular bone in coronal skull sections plus finite element analysis – abstract"
+"10.1002/ar.25529":
+  read: "Full text (Europe PMC)"
+  claims:
+    - "Osteological proxies for jaw muscle fascicle lengths and previously validated techniques applied to S. fatalis – abstract"
+    - "Anatomical bite force estimates 1283.74 N at the canine and 4671.41 N at the carnassial, similar to estimates for the much smaller P. onca (jaguar), not the largest felids – abstract"
+    - "Angular maximum bony gape significantly larger than in extant felids; linear gape at the canine tip not significantly different – abstract"
+"10.1371/journal.pone.0107456":
+  read: "Full text (Europe PMC)"
+  claims:
+    - "Computer-assisted manipulation of digitized images of a replica of an S. fatalis neck and skull: rotation of the cranium by the ventral neck flexors does not close the jaws – abstract"
+    - "Proposes a forelimb-powered Class 1 lever: mandible immobilized against the prey's neck, forelimbs rotate the cranium forward at the jaw joint – abstract"
+"10.1098/rspb.2020.1818":
+  read: "Full text (PMC7542828)"
+  claims:
+    - "Sabre-like canines acquired in multiple vertebrate clades during the last 265 Myr (convergent evolution) – abstract"
+    - "Biomechanical simulations of gape angle, bending strength and bite force show remarkably high functional diversity; different killing strategies evolved within clades – abstract"
+"10.1111/j.1469-7998.1987.tb02910.x":
+  read: "Abstract (Wiley/OpenAlex)"
+  claims:
+    - "Canine modelled as a cantilever with an elliptical cross-section, bending strength from beam theory – abstract"
+    - "Canines of sabretooth cats more similar in shape and strength to living canids than felids – abstract"
+"10.1002/ar.25447":
+  read: "Full text (Europe PMC) and Table S1 (supplementary CSV, Europe PMC supplementaryFiles)"
+  claims:
+    - "The adult canine is one of the most specialized dental structures known – abstract (first sentence)"
+    - "Simulated eruption sequences from ~20 mm to full erupted height of 100–140 mm; typical extant felid crown height 20–40 mm – Methods"
+    - "Beam theory with an elliptical cross-section: bending strength around the AP axis S = I/(h·y), I = π x y³ /4 (x AP length, y ML width) – Methods; the article uses the standard semi-axis form W = π a b²/4"
+    - "Cross-sectional geometry optimized for increased bending strength with erupted height, but changes exaggerate rather than minimize lateral deflection – abstract"
+    - "Deciduous and adult canines present together for >50 % of the adult canine eruption period; dual-canine buttressing brings strength and stiffness closer to theoretical optima – abstract"
+    - "Table S1 'morpho' models: cusp height, AP length and ML width per eruption stage for AMNH FM55576 (40.62–137.76 mm; final 32.17 × 18.00 mm) and KU S2255 (20.20–95.03 mm) – used verbatim in the code example (CC BY 4.0)"
+"10.1371/journal.pone.0129847":
+  read: "Full text (Europe PMC)"
+  claims:
+    - "New technique combining stable oxygen isotope analyses and micro-computed tomography – abstract"
+    - "Upper canine eruption rate 6.0 mm per month, similar to a previously published enamel growth rate of 5.8 mm/month derived from stable oxygen isotope values in enamel – abstract/Methods"
+    - "Permanent dentition except upper canines fully erupted by 14–22 months; upper canines finished erupting at about 34–41 months – abstract"
+    - "Delayed dental development compared with similar-sized extant felids – abstract"
+"10.58782/flmnh.psyo5090":
+  read: "Abstract (OpenAlex); PDF behind a bot check"
+  claims:
+    - "δ13C and δ18O analysed along a canine of Smilodon gracilis – abstract"
+    - "Oxygen isotope results show a 5 mm/month growth rate and a duration of growth of about 16 months – abstract"
+    - "Carbon isotope results suggest consumption of animals that depended only on C3 plants; overlap rules some prey in or out (e.g. Equus, Mammuthus probably excluded) – abstract"
+    - "More negative δ13C of S. gracilis than prey may indicate prey captured in a closed environment (or unsampled prey species) – abstract"
+    - "Stable isotope ratios in tooth enamel can be used to exclude taxa from a predator's diet – abstract"
+"10.1016/j.cub.2020.01.009":
+  read: "Title and short summary (Semantic Scholar/PubMed); full text behind a bot check"
+  claims:
+    - "Van Valkenburgh et al. challenge the conclusion that sabertooth cats and dire wolves did not compete for similar prey; title: 'Problems with inferring a lack of competition … based on dental enamel' – summary/title"
+"10.1016/j.cub.2020.01.011":
+  read: "Title and short summary (Semantic Scholar); full text behind a bot check"
+  claims:
+    - "DeSantis et al. respond to the concerns raised by Van Valkenburgh et al. – summary"
+"10.1126/science.abo3594":
+  read: "Abstract (OpenAlex)"
+  claims:
+    - "172 new radiocarbon dates on megafauna from Rancho La Brea spanning 15.6 to 10.0 ka – abstract"
+    - "Seven species of extinct megafauna disappeared by 12.9 ka, before the Younger Dryas – abstract"
+    - "Disappearances coincided with an ecological state shift following aridification and vegetation change; time-series modelling implicates large-scale fires as the primary cause; mounting human impacts may have been the catalyst – abstract"
