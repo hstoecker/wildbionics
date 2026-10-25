@@ -123,6 +123,7 @@
     - "Table S1 morpho series: AMNH FM55576 11 stages 40.62–137.76 mm; LACM RLB P23-4739 26.74–109.70 mm; KU S2255 20.20–95.03 mm"
     - "Computed in the article, not in the source: side/front stress ratio = a/b = 32.17/18.00 = 1.79 (1.79–2.30 over all AMNH stages); side stress 18.1 → 13.5 MPa for 100 N (×0.74, height ×3.4); KU S2255 ratio 2.21, ×0.49; round section 10.1 MPa"
     - "Typical extant felid crown height 20–40 mm (grey band in Fig. 2) – Methods"
+    - "Axis convention: Tseng writes S_AP = I_AP/(h·y) with I_AP = π x y³/4, x and y the full AP length and ML width; the textbook ellipse with full axes gives I = π x y³/64 – the constant differs, the ratio of side to front stress (x/y = a/b) does not. The article uses semi-axes a = x/2, b = y/2: W = π a b²/4 – Methods; derivation in the article"
 "10.1371/journal.pone.0129847":
   read: "Full text (Europe PMC)"
   claims:

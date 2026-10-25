@@ -34,7 +34,7 @@ key_facts:
   - "Bite force from the jaw muscles of *Smilodon fatalis* was relatively weak – in a 3D computer model about **one third** of that of a lion of comparable size; the skull was better suited to bites on prey that was already restrained [7](#ref-7){:.cite}."
   - "The upper arm bones of *Smilodon fatalis* were reinforced by thicker bone walls than in any living cat – interpreted by the authors as a sign of powerful forelimbs used to subdue prey and protect the long canines from breaking [1](#ref-1){:.cite}."
   - "In Tseng's digital eruption model of one specimen (AMNH FM55576), the fully erupted sabre is, at the gum line, about 32 mm long from front to back but only 18 mm wide; by beam theory, a load from the side stresses it about **1.8 times** as much as the same load from the front – calculated in this article from those measurements [6](#ref-6){:.cite}."
-  - "Oxygen isotopes in the enamel, combined with CT scans, act as a clock: the upper canine erupted at about **6 mm per month**, and finished erupting at an estimated **34–41 months** of age [16](#ref-16){:.cite}."
+  - "An enamel growth rate from oxygen isotopes, combined with CT scans, acts as a clock: the upper canine erupted at about **6 mm per month**, and finished erupting at an estimated **34–41 months** of age [16](#ref-16){:.cite}."
   - "Whether sabre-toothed cats and dire wolves competed for the same prey at Rancho La Brea is debated: a multi-proxy study found little competition for prey [4](#ref-4){:.cite}, other researchers question that conclusion [18](#ref-18){:.cite}."
 faq:
   - q: "Was the sabre-toothed tiger a tiger?"
@@ -256,7 +256,7 @@ The following sequence is the reconstruction favoured by several studies; parts 
 
 ## Mathematics lens: the sabre as a beam
 
-**A tooth is a cantilever.** A canine is fixed in the jaw at one end and free at the other – a **cantilever beam**. Blaire Van Valkenburgh and Christopher Ruff modelled canines in this way, with an elliptical cross-section, and found that the canines of sabre-toothed cats resemble those of the living dog family (canids) more than those of living cats in shape and strength [15](#ref-15){:.cite}. Tseng used the same beam model and computer simulations to follow the sabre of *Smilodon* through its eruption [6](#ref-6){:.cite}.
+**A tooth is a cantilever.** A canine is fixed in the jaw at one end and free at the other – a **cantilever beam**. Blaire Van Valkenburgh and Christopher Ruff modelled canines in this way, with an elliptical cross-section, and found that the canines of sabre-toothed cats resemble those of the living dog family (canids) more than those of living cats in shape and strength [15](#ref-15){:.cite}. Tseng used beam theory as well, together with finite element simulations, to follow the sabre of *Smilodon* through its eruption [6](#ref-6){:.cite}.
 
 A force *F* at the tip of a tooth of height *h* bends it with the moment *M* = *F* · *h*. In this simple model, the largest stress occurs at the base, on the surface farthest from the bending axis:
 
@@ -354,7 +354,7 @@ ax.set_title("Sideways, the sabre is the weak spot")
 ax.legend(loc="lower right", fontsize=11)
 plt.show()
 ```
-{% include code-result.html file="sabre_bending.py" label="Fig. 2" caption="Output of the program above: the bending stress at the base of the upper canine of Smilodon fatalis (specimen AMNH FM55576) for a load of 100 N at the tip, from the side (solid) and from the front (dashed), at each simulated stage of its eruption. Cross-sections from Tseng’s (2025) simulated eruption series; the load is an assumed value. The grey band marks the canine height of typical living cats." alt="A chart of bending stress in megapascals against the erupted height of the canine from 40 to 138 millimetres. The curve for a load from the side starts at 18.1 megapascals and dips to about 12 and ends at 13.5; the curve for a load from the front starts at 8.6 and stays between about 6 and 7.5. At every height the side load causes roughly twice the stress of the front load. A grey band from 20 to 40 millimetres marks the height of a typical cat canine." %}
+{% include code-result.html file="sabre_bending.py" label="Fig. 2" caption="Output of the program above: the bending stress at the base of the upper canine of Smilodon fatalis (specimen AMNH FM55576) for a load of 100 N at the tip, from the side (solid) and from the front (dashed), at each simulated stage of its eruption. Cross-sections from Tseng’s (2025) simulated eruption series; the load is an assumed value. The grey band marks the canine height of typical living cats." alt="A chart of bending stress in megapascals against the erupted height of the canine from 40 to 138 millimetres. The curve for a load from the side starts at 18.1 megapascals and dips to about 12 and ends at 13.5; the curve for a load from the front starts at 8.6, falls to about 6.2 and ends at 7.5. At every height the side load causes roughly twice the stress of the front load. A grey band from 20 to 40 millimetres marks the height of a typical cat canine." %}
 
 What the result teaches:
 
