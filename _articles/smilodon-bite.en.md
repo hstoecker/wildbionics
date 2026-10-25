@@ -205,7 +205,7 @@ status: published
 
 ## A cat with sabres
 
-*Smilodon fatalis* is a sabre-toothed cat – and few extinct predators are as well known as the sabre-toothed cats [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA – from the South American *Smilodon populator* and from *Homotherium* – shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that *Smilodon* split from its sabre-toothed relative *Homotherium* about 18 million years ago [2](#ref-2){:.cite}.
+*Smilodon fatalis* is a sabre-toothed cat – and few extinct predators are as well known as the sabre-toothed cats [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA – from the South American *Smilodon populator* and from *Homotherium* – shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that the mitochondrial lineages of *Smilodon* and its sabre-toothed relative *Homotherium* diverged about 18 million years ago [2](#ref-2){:.cite}.
 
 Much of what we know about how *Smilodon fatalis* lived comes from an unusual place: the asphalt seeps of Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Their fossils span the past ~50,000 years [4](#ref-4){:.cite}. Dying plant-eaters stuck in the asphalt lured predators, which could become trapped in turn – and so predators far outnumber plant-eaters among the fossils [5](#ref-5){:.cite}. Among 3,324 carnivores counted in one study (as minimum numbers of individuals), 51 % were dire wolves and 33 % *Smilodon* [5](#ref-5){:.cite}.
 
@@ -378,4 +378,4 @@ Try it yourself:
 
 Bones and tooth mechanics agree on a picture of a cat that held its prey before it bit – but how exactly the bite worked is still debated, between a neck-powered canine-shear bite [7](#ref-7){:.cite} [11](#ref-11){:.cite} and a forelimb-powered lever [13](#ref-13){:.cite}. Whether *Smilodon* lived in groups [5](#ref-5){:.cite} [9](#ref-9){:.cite}, and how much it competed with dire wolves [4](#ref-4){:.cite} [18](#ref-18){:.cite}, remain open questions.
 
-New tools keep adding evidence: computer models that test how sabre-toothed skulls of different lineages worked [14](#ref-14){:.cite}, chemical clocks in the enamel [16](#ref-16){:.cite}, and ever more precise radiocarbon dates that tie the disappearance of the Ice Age giants at La Brea to a changing, burning landscape [20](#ref-20){:.cite}.
+New tools keep adding evidence: computer models that test how sabre-toothed skulls of different lineages worked [14](#ref-14){:.cite}, chemical clocks in the enamel [16](#ref-16){:.cite}, and ever more precise radiocarbon dates that link the disappearance of the Ice Age giants at La Brea to a changing, fire-prone landscape, as one study argues [20](#ref-20){:.cite}.
