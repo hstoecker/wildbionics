@@ -6,7 +6,7 @@ title: "Sabre-Toothed Cat: Weak Bite, Sabres at Risk of Breaking"
 short_title: "Sabre-toothed cat"
 kicker: "Article · Palaeobiology"
 description: "Smilodon had huge sabres but a weak bite. Its bones and tooth mechanics suggest it pinned prey with its forelimbs, then bit the neck."
-dek: "The sabre-toothed cat Smilodon fatalis carried upper canines with an erupted height of up to about 14 centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in sabre-tooth teeth adds a growth clock and, from a related species, clues to the menu. This article shows how we know, and where researchers still disagree."
+dek: "The sabre-toothed cat Smilodon fatalis carried upper canines that, in digital models, reach an erupted height of up to about 14 centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in sabre-tooth teeth adds a growth clock and, from a related species, clues to the menu. This article shows how we know, and where researchers still disagree."
 date: 2026-10-10
 permalink: /articles/smilodon-bite/
 image: /assets/og/smilodon-bite-en.jpg
@@ -209,7 +209,7 @@ status: published
 
 Much of what we know about how *Smilodon fatalis* lived comes from an unusual place: the asphalt seeps of Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Their fossils span the past ~50,000 years [4](#ref-4){:.cite}. Dying plant-eaters stuck in the asphalt lured predators, which could become trapped in turn – and so predators far outnumber plant-eaters among the fossils [5](#ref-5){:.cite}. Among 3,324 carnivores counted in one study (as minimum numbers of individuals), 51 % were dire wolves and 33 % *Smilodon* [5](#ref-5){:.cite}.
 
-Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, fully erupted canines reach heights of up to about 140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues: bones and mechanics for how such an animal killed, chemistry for how it grew, what sabre-toothed cats ate and when they disappeared.
+Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, in Tseng's digital models, fully erupted canines reach heights of up to about 140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues: bones and mechanics for how such an animal killed, chemistry for how it grew, what sabre-toothed cats ate and when they disappeared.
 
 ## The kill in four steps
 
@@ -232,7 +232,7 @@ The following sequence is the reconstruction favoured by several studies; parts 
 
 **Alone or in groups?** Chris Carbone and colleagues compared the fossil counts at La Brea with predators that come to recordings of distressed prey in Africa. In both, two species dominate – the social lions and spotted hyenas in Africa, the presumably social dire wolf and *Smilodon* at La Brea – and the authors conclude that *Smilodon* was social [5](#ref-5){:.cite}. Christian Kiffner questioned the comparison: in the asphalt seeps, heavier animals were more likely to get stuck, the lure lasted longer than a playback, and the Ice Age predators of North America need not have behaved like those of an African savannah [9](#ref-9){:.cite}.
 
-**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult that probably died together. Both young have a rare extra tooth, a lower third premolar, which, as Reynolds and colleagues report from earlier studies, occurs in only 2.4–6 % of *Smilodon* at Rancho La Brea. This suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* may have grown about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
+**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult that probably died together. Both young have a rare extra tooth, a third premolar in the lower jaw, which, as Reynolds and colleagues report from earlier studies, occurs in only 2.4–6 % of *Smilodon* at Rancho La Brea. This suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* may have grown about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
 
 {% include lens-end.html %}
 
@@ -265,6 +265,8 @@ A force *F* at the tip of a tooth of height *h* bends it with the moment *M* = *
 Here *W* is the section modulus, which describes how well the cross-section resists bending. For an ellipse with semi-axis *a* front to back and *b* side to side, standard beam theory gives (a calculation for this article):
 
 <div class="formula" role="math" aria-label="W side equals pi times a times b squared over 4, W front equals pi times b times a squared over 4"><var>W</var><sub>side</sub> = π · <var>a</var> · <var>b</var><sup>2</sup> / 4 &nbsp;·&nbsp; <var>W</var><sub>front</sub> = π · <var>b</var> · <var>a</var><sup>2</sup> / 4</div>
+
+Tseng writes the same quantities with the full length *x* and width *y* of the cross-section (*I* = π · *x* · *y*<sup>3</sup> / 4); the constant differs, but the ratio of the two stresses does not [6](#ref-6){:.cite}.
 
 **The weak direction.** The ratio of the two stresses for the same force is simply *a*/*b*: a tooth twice as long as it is wide is stressed twice as much from the side as from the front. In Tseng's digital eruption model of specimen AMNH FM55576, the cross-section of the fully erupted canine at the gum line is 32.17 mm by 18.00 mm [6](#ref-6){:.cite} – so a sideways load stresses it about **1.8 times** as much as a load from the front. This ratio alone does not show that the sabre was fragile: every flattened tooth is weaker from the side. The comparison with living cats comes from Van Valkenburgh and Ruff: cats have relatively stronger canines than dogs, particularly against bending by sideways loads, while the canines of sabre-toothed cats resemble those of dogs [15](#ref-15){:.cite}. Meachen-Samuels and Van Valkenburgh likewise describe the long sabres as more vulnerable to fracture than the canines of living cats [1](#ref-1){:.cite}.
 
@@ -359,8 +361,8 @@ plt.show()
 What the result teaches:
 
 - **Sideways is the weak direction.** For the fully erupted canine, a load from the side causes 13.5 MPa, a load from the front 7.5 MPa – the side load causes about **1.8 times** as much stress. The side is the weak direction at every stage, because the ratio of the two stresses is just the tooth's length-to-width ratio – between 1.8 and 2.3 in this specimen.
-- **A longer sabre is not a weaker sabre.** The erupted part becomes 3.4 times taller, yet the side stress falls to 0.74 times its starting value: the cross-section grows fast enough to more than compensate for the longer lever. This matches Tseng's finding that the cross-section is optimised for bending strength [6](#ref-6){:.cite} – although, by his results, it also bends more easily sideways.
-- **Robust and limited.** The direction effect follows from the measured shape alone. The absolute numbers depend on the assumed load and ignore the jaw bone and the milk canine that supported the growing tooth.
+- **A longer sabre is not a weaker sabre.** In Tseng's simulated series the erupted part becomes 3.4 times taller, yet the side stress falls to 0.74 times its starting value: the section at the gum line widens fast enough to more than compensate for the longer lever. This matches Tseng's finding that the cross-section is optimised for bending strength [6](#ref-6){:.cite} – although, by his results, it also bends more easily sideways.
+- **Robust and limited.** The direction effect follows from the measured shape alone. The absolute numbers depend on the assumed load and ignore the jaw bone and the milk canine that supported the growing tooth. And the series is one adult tooth shifted step by step against a hypothetical gum line, with the same load at every stage – not a record of a growing tooth.
 
 Try it yourself:
 
