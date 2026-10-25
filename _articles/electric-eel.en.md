@@ -5,8 +5,8 @@ ref: electric-eel
 title: "Electric Eel: 860 Volts from Living Batteries"
 short_title: "Electric eel"
 kicker: "Article · Bioelectricity"
-description: "Electric eels stack thousands of cells like batteries in a torch – up to 860 volts that remote-control prey. How it works, from ions to circuits."
-dek: "An electric eel can deliver a shock of up to 860 volts – from cells that each produce only about 0.15 volts. The trick is the same as in a torch: many small batteries in a row. This article shows how the eel builds its voltage from ion gradients, how it uses each pulse to remote-control the muscles of its prey, why it leaps out of the water to defend itself – and what engineers are learning from it."
+description: "Electric eels stack thousands of cells like batteries in a torch – one eel reached 860 volts. How the shock remote-controls prey, from ions to circuits."
+dek: "In one electric eel, a discharge of 860 volts was measured – from cells that each produce only about 0.15 volts. The trick is the same as in a torch: many small batteries in a row. This article shows how the eel builds its voltage from ion gradients, how it uses each pulse to remote-control the muscles of its prey, why it leaps out of the water to defend itself – and what engineers are learning from it."
 date: 2026-10-25
 permalink: /articles/electric-eel/
 image: /assets/og/electric-eel-en.jpg
@@ -56,7 +56,7 @@ faq:
   - q: "Is the electric eel really an eel?"
     a: "No. Despite its name, the electric eel is not a true eel but a South American knifefish (order Gymnotiformes), related to other electric fishes of South America. Since 2019, three species are recognised: Electrophorus electricus, Electrophorus voltai and Electrophorus varii."
   - q: "How many volts can an electric eel produce?"
-    a: "The highest value reported, in 2019, is 860 volts, from an Electrophorus voltai about 1.2 metres long, measured out of the water from snout to tail. Before, about 650 volts was the figure cited for electric eels. The voltage depends on the size of the eel: in five eels of different sizes, Kenneth Catania measured electromotive forces between 179 and 382 volts."
+    a: "The highest value reported, in 2019, is 860 volts, from an Electrophorus voltai about 1.2 metres long, measured out of the water from snout to tail. Before, about 650 volts was the figure cited for electric eels. The voltage tends to grow with the size of the eel: in five eels of different sizes, Kenneth Catania measured electromotive forces between 179 and 382 volts."
   - q: "How does an electric eel make electricity?"
     a: "With cells called electrocytes, which evolved from muscle cells. At rest, the two faces of a flat electrocyte carry equal and opposite voltages, so the cell produces nothing. When a nerve signal arrives, sodium channels open on one face only, and the cell suddenly has about 0.15 volts across it. Thousands of electrocytes lie in series, like batteries in a torch, so their voltages add up."
   - q: "Why do electric eels jump out of the water?"
@@ -200,7 +200,7 @@ Electric eels give off two kinds of electric pulses, each a head-positive pulse 
 
 <div class="formula" role="math" aria-label="V equals epsilon minus I times r"><var>V</var> = <var>ε</var> − <var>I</var> · <var>r</var></div>
 
-This is how Catania measured ε and *r* of living eels: an adjustable resistor is put into the circuit, *V* and *I* are measured for each high-voltage pulse, and the points form a straight line whose slope is −*r* [4](#ref-4){:.cite}. For five eels of different sizes, Catania found – as read from Fig. 12 of his 2019 review, which shows the data of his 2017 studies – electromotive forces between 179 and 382 V and internal resistances between 438 and 960 Ω; as an eel grows and adds electrocytes, its electromotive force rises and its internal resistance falls [4](#ref-4){:.cite}.
+This is how Catania measured ε and *r* of living eels: an adjustable resistor is put into the circuit, *V* and *I* are measured for each high-voltage pulse, and the points form a straight line whose slope is −*r* [4](#ref-4){:.cite}. For five eels of different sizes, Catania found – as read from Fig. 12 of his 2019 review, which shows the data of his 2017 studies – electromotive forces between 179 and 382 V and internal resistances between 438 and 960 Ω; as an eel grows and adds electrocytes, Catania writes, its electromotive force increases and its internal resistance decreases – a trend rather than a strict rule: in his figure, the largest eel has a slightly higher internal resistance (450 Ω) than the next smaller one (438 Ω) [4](#ref-4){:.cite}.
 
 **The circuit of the leap.** For a small eel – the top one in Catania’s figure of the five – the values in the same Fig. 12 were ε = 198 V and *r* = 960 Ω; the water path back to the tail had about 400 Ω, and the return path from the head down to the water reached about 2,400 Ω at the top of the leap. A human arm, the target, had about 2,100 Ω [4](#ref-4){:.cite}. The return path *R*<sub>o</sub> and the target *R* are connected in parallel: both lead from the eel’s head back to the water. Catania compares the return path to a volume control: the higher the eel leaps, the larger *R*<sub>o</sub>, and the "louder" the attack [4](#ref-4){:.cite}.
 
