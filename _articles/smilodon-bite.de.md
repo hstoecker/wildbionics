@@ -2,15 +2,15 @@
 id: smilodon-bite
 lang: de
 ref: smilodon-bite
-title: "Wie die Säbelzahnkatze tötete: schwacher Biss, zerbrechliche Säbel"
+title: "Säbelzahnkatze: schwacher Biss, zerbrechliche Säbel"
 short_title: "Säbelzahnkatze"
 kicker: "Artikel · Paläobiologie"
-description: "Smilodon hatte riesige Säbel, aber einen schwachen Biss. Knochen, Zahnmechanik und Chemie deuten darauf hin: erst festhalten, dann in den Hals beißen."
-dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne von deutlich über zehn Zentimetern Länge – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen, die Mechanik ihrer Zähne und die Chemie, die in ihnen gespeichert ist, zeigen einen vorsichtigen Jäger: Beute festhalten, dann zubeißen. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
+description: "Smilodon hatte riesige Säbel, aber einen schwachen Biss. Knochen und Zahnmechanik deuten darauf hin: erst festhalten, dann in den Hals beißen."
+dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne von deutlich über zehn Zentimetern Länge – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne zeigen einen vorsichtigen Jäger: Beute festhalten, dann zubeißen. Die Chemie, die in ihren Zähnen gespeichert ist, liefert eine Wachstumsuhr und Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
 date: 2026-10-10
 permalink: /de/artikel/saebelzahnkatze/
 image: /assets/og/smilodon-bite-de.jpg
-og: { eyebrow: "Biologie · Physik · Chemie", title: "Warum die Säbelzahnkatze <em>erst</em> festhielt", sub: "Riesige Säbel, schwacher Biss: Zahnmechanik und Chemie deuten darauf hin, dass sie ihre Beute vor dem Biss festhielt.", title_px: 56 }
+og: { eyebrow: "Biologie · Physik · Chemie", title: "Warum die Säbelzahnkatze <em>erst</em> festhielt", sub: "Riesige Säbel, schwacher Biss: Knochen und Zahnmechanik deuten darauf hin, dass sie ihre Beute vor dem Biss festhielt.", title_px: 56 }
 image_alt: "Eine Säbelzahnkatze in Seitenansicht, die ein Beutetier mit ihren kräftigen Vorderbeinen festhält. Ein Einschub zeigt den langen oberen Eckzahn als Balken mit elliptischem Querschnitt: Eine Last von vorn trifft die lange Achse der Ellipse, eine Last von der Seite die kurze."
 hero_figure: svg/smilodon-bite.svg
 hero_caption: "<span class=\"caption__label\">Abb. 1</span> Erst festhalten, dann beißen. Smilodon fatalis hielt große Beute vermutlich mit den kräftigen Vorderbeinen fest, bevor ein schneller Biss in den Hals folgte. Der Einschub zeigt, warum: Der obere Eckzahn ist eine flache Klinge, von vorn nach hinten lang und seitlich schmal, und hält deshalb eine Last von vorn viel besser aus als eine von der Seite. Körperbau nach Fossilien; Fellfarbe und Muster sind eine Rekonstruktion."

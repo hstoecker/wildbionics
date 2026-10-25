@@ -2,15 +2,15 @@
 id: smilodon-bite
 lang: en
 ref: smilodon-bite
-title: "How the Sabre-Toothed Cat Killed: Weak Bite, Fragile Sabres"
+title: "Sabre-Toothed Cat: Weak Bite, Fragile Sabres"
 short_title: "Sabre-toothed cat"
 kicker: "Article · Palaeobiology"
-description: "Smilodon had huge sabres but a weak bite. Bone, tooth mechanics and chemistry suggest it pinned prey with its forelimbs, then bit the neck."
-dek: "The sabre-toothed cat Smilodon fatalis carried upper canines that grew to well over ten centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones, the mechanics of its teeth and the chemistry recorded in them point to a careful killer: hold the prey still, then bite. This article shows how we know, and where researchers still disagree."
+description: "Smilodon had huge sabres but a weak bite. Its bones and tooth mechanics suggest it pinned prey with its forelimbs, then bit the neck."
+dek: "The sabre-toothed cat Smilodon fatalis carried upper canines that grew to well over ten centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in its teeth adds a growth clock and clues to its menu. This article shows how we know, and where researchers still disagree."
 date: 2026-10-10
 permalink: /articles/smilodon-bite/
 image: /assets/og/smilodon-bite-en.jpg
-og: { eyebrow: "Biology · Physics · Chemistry", title: "Why the sabre-toothed cat held <em>first</em>", sub: "Huge sabres, a weak bite: tooth mechanics and chemistry suggest the cat pinned its prey before it bit.", title_px: 60 }
+og: { eyebrow: "Biology · Physics · Chemistry", title: "Why the sabre-toothed cat held <em>first</em>", sub: "Huge sabres, a weak bite: bones and tooth mechanics suggest the cat pinned its prey before it bit.", title_px: 60 }
 image_alt: "A sabre-toothed cat in side view pinning a prey animal with its strong forelimbs. An inset shows the long upper canine as a beam with an elliptical cross-section: a load from the front meets the long axis of the ellipse, a load from the side the short one."
 hero_figure: svg/smilodon-bite.svg
 hero_caption: "<span class=\"caption__label\">Fig. 1</span> Hold first, then bite. Smilodon fatalis is thought to have pinned large prey with its strong forelimbs before a fast bite to the neck. The inset shows why: the upper canine is a flattened blade, long from front to back and narrow from side to side, so it resists a load from the front much better than one from the side. Body shape after fossils; coat colour and pattern are a reconstruction."

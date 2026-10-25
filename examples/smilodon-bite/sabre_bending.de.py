@@ -1,4 +1,4 @@
-# sabre_bending.py – Aus „Wie die Säbelzahnkatze tötete: schwacher Biss, zerbrechliche Säbel“
+# sabre_bending.py – Aus „Säbelzahnkatze: schwacher Biss, zerbrechliche Säbel“
 # https://wildbionics.com/de/artikel/saebelzahnkatze/ · Code: MIT-Lizenz
 # Braucht: python3 -m pip install numpy matplotlib
 # Starten: python3 sabre_bending.py   (https://wildbionics.com/de/code-ausfuehren/)
