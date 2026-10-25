@@ -2,11 +2,11 @@
 id: smilodon-bite
 lang: en
 ref: smilodon-bite
-title: "Sabre-Toothed Cat: Weak Bite, Fragile Sabres"
+title: "Sabre-Toothed Cat: Weak Bite, Sabres at Risk of Breaking"
 short_title: "Sabre-toothed cat"
 kicker: "Article · Palaeobiology"
 description: "Smilodon had huge sabres but a weak bite. Its bones and tooth mechanics suggest it pinned prey with its forelimbs, then bit the neck."
-dek: "The sabre-toothed cat Smilodon fatalis carried upper canines with an erupted height of up to about 14 centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in its teeth adds a growth clock and clues to its menu. This article shows how we know, and where researchers still disagree."
+dek: "The sabre-toothed cat Smilodon fatalis carried upper canines with an erupted height of up to about 14 centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in sabre-tooth teeth adds a growth clock and, from a related species, clues to the menu. This article shows how we know, and where researchers still disagree."
 date: 2026-10-10
 permalink: /articles/smilodon-bite/
 image: /assets/og/smilodon-bite-en.jpg
@@ -40,7 +40,7 @@ faq:
   - q: "Was the sabre-toothed tiger a tiger?"
     a: "No. Smilodon belongs to the sabre-toothed cats (Machairodontinae), an extinct group that ancient DNA shows to be distinct from all living cats, including tigers and lions. That is why the name sabre-toothed cat is more accurate."
   - q: "How strong was the bite of Smilodon?"
-    a: "Weaker than you might expect. A detailed computer model suggests that its jaw muscles produced about one third of the bite force of a lion of comparable size. A recent anatomical estimate gives about 1,280 newtons at the canine – similar to a jaguar rather than to the largest living cats. According to the computer model, the neck muscles helped to drive the canines in – an idea that not all researchers accept."
+    a: "Weaker than you might expect. A detailed computer model suggests that its jaw muscles produced about one third of the bite force of a lion of comparable size. A recent anatomical estimate, made with a different method, gives about 1,280 newtons at the canine – similar to a jaguar rather than to the largest living cats. According to the computer model, the neck muscles helped to drive the canines in – an idea that not all researchers accept."
   - q: "Why did Smilodon need strong forelimbs?"
     a: "Its long, flattened canines could break under sideways loads from struggling prey. Its upper arm bones were reinforced more than in any living cat, which suggests that it held prey still with its forelimbs before it bit, protecting its canines and positioning the bite for a quick kill."
   - q: "How do scientists know how fast its sabres grew?"
@@ -205,11 +205,11 @@ status: published
 
 ## A cat with sabres
 
-*Smilodon fatalis* is a sabre-toothed cat – and few extinct predators are as well known as the sabre-toothed cats [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that *Smilodon* split from its sabre-toothed relative *Homotherium* about 18 million years ago [2](#ref-2){:.cite}.
+*Smilodon fatalis* is a sabre-toothed cat – and few extinct predators are as well known as the sabre-toothed cats [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA – from the South American *Smilodon populator* and from *Homotherium* – shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that *Smilodon* split from its sabre-toothed relative *Homotherium* about 18 million years ago [2](#ref-2){:.cite}.
 
 Much of what we know about how *Smilodon fatalis* lived comes from an unusual place: the asphalt seeps of Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Their fossils span the past ~50,000 years [4](#ref-4){:.cite}. Dying plant-eaters stuck in the asphalt lured predators, which could become trapped in turn – and so predators far outnumber plant-eaters among the fossils [5](#ref-5){:.cite}. Among 3,324 carnivores counted in one study (as minimum numbers of individuals), 51 % were dire wolves and 33 % *Smilodon* [5](#ref-5){:.cite}.
 
-Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, they reached a fully erupted height of 100–140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues: bones and mechanics for how such an animal killed, chemistry for how it grew, what it ate and when it disappeared.
+Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, fully erupted canines reach heights of up to about 140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues: bones and mechanics for how such an animal killed, chemistry for how it grew, what sabre-toothed cats ate and when they disappeared.
 
 ## The kill in four steps
 
@@ -232,7 +232,7 @@ The following sequence is the reconstruction favoured by several studies; parts 
 
 **Alone or in groups?** Chris Carbone and colleagues compared the fossil counts at La Brea with predators that come to recordings of distressed prey in Africa. In both, two species dominate – the social lions and spotted hyenas in Africa, the presumably social dire wolf and *Smilodon* at La Brea – and the authors conclude that *Smilodon* was social [5](#ref-5){:.cite}. Christian Kiffner questioned the comparison: in the asphalt seeps, heavier animals were more likely to get stuck, the lure lasted longer than a playback, and the Ice Age predators of North America need not have behaved like those of an African savannah [9](#ref-9){:.cite}.
 
-**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult that probably died together. Both young have a rare extra tooth, a lower third premolar, which occurs in only 2.4–6 % of *Smilodon* at Rancho La Brea. This suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* grew about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
+**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult that probably died together. Both young have a rare extra tooth, a lower third premolar, which occurs in only 2.4–6 % of *Smilodon* at Rancho La Brea. This suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* may have grown about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
 
 {% include lens-end.html %}
 

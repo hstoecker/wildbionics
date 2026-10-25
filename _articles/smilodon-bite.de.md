@@ -2,11 +2,11 @@
 id: smilodon-bite
 lang: de
 ref: smilodon-bite
-title: "Säbelzahnkatze: schwacher Biss, zerbrechliche Säbel"
+title: "Säbelzahnkatze: schwacher Biss, bruchgefährdete Säbel"
 short_title: "Säbelzahnkatze"
 kicker: "Artikel · Paläobiologie"
 description: "Riesige Säbel, schwacher Biss: Knochen und Zahnmechanik deuten darauf hin, dass Smilodon Beute erst mit den Vorderbeinen festhielt, dann in den Hals biss."
-dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne mit einer Durchbruchshöhe von bis zu etwa 14 Zentimetern – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne deuten auf einen vorsichtigen Jäger hin: Beute festhalten, dann zubeißen. Die Chemie, die in ihren Zähnen gespeichert ist, liefert eine Wachstumsuhr und Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
+dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne mit einer Durchbruchshöhe von bis zu etwa 14 Zentimetern – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne deuten auf einen vorsichtigen Jäger hin: Beute festhalten, dann zubeißen. Die Chemie in Säbelzahn-Zähnen liefert eine Wachstumsuhr und, von einer verwandten Art, Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
 date: 2026-10-10
 permalink: /de/artikel/saebelzahnkatze/
 image: /assets/og/smilodon-bite-de.jpg
@@ -40,7 +40,7 @@ faq:
   - q: "War der Säbelzahntiger ein Tiger?"
     a: "Nein. Smilodon gehört zu den Säbelzahnkatzen (Machairodontinae), einer ausgestorbenen Gruppe, die nach Analysen alter DNA von allen lebenden Katzen getrennt ist, auch von Tigern und Löwen. Deshalb ist der Name Säbelzahnkatze treffender."
   - q: "Wie stark war der Biss von Smilodon?"
-    a: "Schwächer, als man erwarten würde. Ein detailliertes Computermodell deutet darauf hin, dass seine Kaumuskeln etwa ein Drittel der Beißkraft eines gleich großen Löwen erzeugten. Eine neuere anatomische Schätzung ergibt etwa 1.280 Newton am Eckzahn – ähnlich wie beim Jaguar, nicht wie bei den größten lebenden Katzen. Nach dem Computermodell halfen die Nackenmuskeln, die Eckzähne hineinzutreiben – eine Vorstellung, die nicht alle Forschenden teilen."
+    a: "Schwächer, als man erwarten würde. Ein detailliertes Computermodell deutet darauf hin, dass seine Kaumuskeln etwa ein Drittel der Beißkraft eines gleich großen Löwen erzeugten. Eine neuere anatomische Schätzung mit einer anderen Methode ergibt etwa 1.280 Newton am Eckzahn – ähnlich wie beim Jaguar, nicht wie bei den größten lebenden Katzen. Nach dem Computermodell halfen die Nackenmuskeln, die Eckzähne hineinzutreiben – eine Vorstellung, die nicht alle Forschenden teilen."
   - q: "Warum brauchte Smilodon kräftige Vorderbeine?"
     a: "Seine langen, flachen Eckzähne konnten unter seitlichen Lasten einer sich wehrenden Beute brechen. Seine Oberarmknochen waren stärker verstärkt als bei jeder lebenden Katze. Das deutet darauf hin, dass er die Beute mit den Vorderbeinen festhielt, bevor er zubiss – so schützte er seine Eckzähne und setzte den Biss für eine schnelle Tötung an."
   - q: "Woher weiß man, wie schnell die Säbel wuchsen?"
@@ -205,11 +205,11 @@ status: published
 
 ## Eine Katze mit Säbeln
 
-*Smilodon fatalis* ist eine Säbelzahnkatze – und nur wenige ausgestorbene Raubtiere sind so bekannt wie die Säbelzahnkatzen [1](#ref-1){:.cite}. Trotz ihres Alltagsnamens war der „Säbelzahntiger“ kein Tiger: Alte DNA zeigt, dass die Säbelzahnkatzen (Machairodontinae) eine Gruppe bilden, die von allen lebenden Katzen getrennt ist, und dass sich *Smilodon* vor etwa 18 Millionen Jahren von seinem säbelzahnigen Verwandten *Homotherium* trennte [2](#ref-2){:.cite}.
+*Smilodon fatalis* ist eine Säbelzahnkatze – und nur wenige ausgestorbene Raubtiere sind so bekannt wie die Säbelzahnkatzen [1](#ref-1){:.cite}. Trotz ihres Alltagsnamens war der „Säbelzahntiger“ kein Tiger: Alte DNA – von der südamerikanischen Art *Smilodon populator* und von *Homotherium* – zeigt, dass die Säbelzahnkatzen (Machairodontinae) eine Gruppe bilden, die von allen lebenden Katzen getrennt ist, und dass sich *Smilodon* vor etwa 18 Millionen Jahren von seinem säbelzahnigen Verwandten *Homotherium* trennte [2](#ref-2){:.cite}.
 
 Vieles, was wir über die Lebensweise von *Smilodon fatalis* wissen, stammt von einem ungewöhnlichen Ort: den Asphaltgruben von Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Ihre Fossilien umfassen die letzten rund 50.000 Jahre [4](#ref-4){:.cite}. Sterbende Pflanzenfresser, die im Asphalt steckenblieben, lockten Raubtiere an, die dann selbst gefangen werden konnten – deshalb übertreffen Raubtiere unter den Fossilien die Pflanzenfresser bei Weitem [5](#ref-5){:.cite}. Unter 3.324 Raubtieren, die eine Studie zählte (als Mindestzahl von Individuen), waren 51 % Schreckenswölfe und 33 % *Smilodon* [5](#ref-5){:.cite}.
 
-Seine oberen Eckzähne gehören zu den am stärksten spezialisierten Zähnen überhaupt [6](#ref-6){:.cite}. Bei den von Zhijie Jack Tseng untersuchten Exemplaren erreichten sie voll durchgebrochen eine Höhe von 100–140 mm [6](#ref-6){:.cite}. Der Biss, der sie antrieb, war jedoch vergleichsweise schwach [7](#ref-7){:.cite}. Dieser Artikel folgt den Spuren: Knochen und Mechanik zu der Frage, wie ein solches Tier tötete, Chemie zu der Frage, wie es wuchs, was es fraß und wann es verschwand.
+Seine oberen Eckzähne gehören zu den am stärksten spezialisierten Zähnen überhaupt [6](#ref-6){:.cite}. Bei den von Zhijie Jack Tseng untersuchten Exemplaren erreichen voll durchgebrochene Eckzähne eine Höhe von bis zu etwa 140 mm [6](#ref-6){:.cite}. Der Biss, der sie antrieb, war jedoch vergleichsweise schwach [7](#ref-7){:.cite}. Dieser Artikel folgt den Spuren: Knochen und Mechanik zu der Frage, wie ein solches Tier tötete, Chemie zu der Frage, wie es wuchs, was Säbelzahnkatzen fraßen und wann sie verschwanden.
 
 ## Die Jagd in vier Schritten
 
@@ -232,7 +232,7 @@ Der folgende Ablauf ist die Rekonstruktion, die mehrere Studien bevorzugen; Teil
 
 **Allein oder in Gruppen?** Chris Carbone und Kollegen verglichen die Fossilzahlen von La Brea mit Raubtieren, die in Afrika von abgespielten Notrufen von Beutetieren angelockt werden. In beiden Fällen überwiegen zwei Arten – die sozialen Löwen und Tüpfelhyänen in Afrika, der vermutlich soziale Schreckenswolf und *Smilodon* in La Brea –, und die Autoren schließen daraus, dass *Smilodon* sozial lebte [5](#ref-5){:.cite}. Christian Kiffner stellte den Vergleich infrage: In den Asphaltgruben blieben schwerere Tiere leichter stecken, die Lockwirkung hielt länger an als ein abgespielter Ruf, und die eiszeitlichen Raubtiere Nordamerikas müssen sich nicht wie die einer afrikanischen Savanne verhalten haben [9](#ref-9){:.cite}.
 
-**Eine Familie in Ecuador.** Küstenablagerungen in Ecuador bewahrten mindestens zwei junge *Smilodon fatalis* und ein ausgewachsenes Tier, die wahrscheinlich zusammen starben. Beide Jungtiere besitzen einen seltenen zusätzlichen Zahn, einen unteren dritten Prämolaren, den in Rancho La Brea nur 2,4–6 % der *Smilodon* haben. Das deutet auf Vererbung hin – ein seltener Hinweis auf Verwandtschaft im Fossilbericht. Die Jungtiere waren mindestens zwei Jahre alt und wurden mit einem ausgewachsenen Tier gefunden, wahrscheinlich ihrer Mutter, was auf eine lange Brutpflege hindeutet. Nach Ashley Reynolds und Kollegen wuchs *Smilodon* etwa so schnell wie ein Tiger, aber so lange wie ein Löwe [3](#ref-3){:.cite}.
+**Eine Familie in Ecuador.** Küstenablagerungen in Ecuador bewahrten mindestens zwei junge *Smilodon fatalis* und ein ausgewachsenes Tier, die wahrscheinlich zusammen starben. Beide Jungtiere besitzen einen seltenen zusätzlichen Zahn, einen unteren dritten Prämolaren, den in Rancho La Brea nur 2,4–6 % der *Smilodon* haben. Das deutet auf Vererbung hin – ein seltener Hinweis auf Verwandtschaft im Fossilbericht. Die Jungtiere waren mindestens zwei Jahre alt und wurden mit einem ausgewachsenen Tier gefunden, wahrscheinlich ihrer Mutter, was auf eine lange Brutpflege hindeutet. Nach Ashley Reynolds und Kollegen wuchs *Smilodon* möglicherweise etwa so schnell wie ein Tiger, aber so lange wie ein Löwe [3](#ref-3){:.cite}.
 
 {% include lens-end.html %}
 

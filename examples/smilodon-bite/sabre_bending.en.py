@@ -1,4 +1,4 @@
-# sabre_bending.py – From “Sabre-Toothed Cat: Weak Bite, Fragile Sabres”
+# sabre_bending.py – From “Sabre-Toothed Cat: Weak Bite, Sabres at Risk of Breaking”
 # https://wildbionics.com/articles/smilodon-bite/ · Code: MIT licence
 # Needs: python3 -m pip install numpy matplotlib
 # Run: python3 sabre_bending.py   (https://wildbionics.com/run-code/)
