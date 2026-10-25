@@ -31,6 +31,7 @@ lab:                     { dim: space, en: "Laboratory", de: "Labor", wikidata: 
 microcosm:               { dim: space, en: "Microcosm", de: "Mikrokosmos" }
 outer-space:             { dim: space, en: "Outer space", de: "Weltraum", wikidata: Q4169 }
 wetland:                 { dim: space, en: "Wetlands", de: "Feuchtgebiete", wikidata: Q170321 }
+freshwater:              { dim: space, en: "Rivers and lakes", de: "Flüsse und Seen", wikidata: Q2890135 }
 
 # --- Rules: physics ----------------------------------------------------------------
 mechanics:               { dim: physics, en: "Mechanics", de: "Mechanik", wikidata: Q41217 }

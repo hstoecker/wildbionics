@@ -15,3 +15,4 @@ european-robin: { en: "European robin", de: "Rotkehlchen", taxon: "Erithacus rub
 human: { en: "Human", de: "Mensch", taxon: "Homo sapiens", wikidata: Q15978631 }
 t-rex: { en: "Tyrannosaurus rex", de: "Tyrannosaurus rex", taxon: "Tyrannosaurus rex", wikidata: Q13098211 }
 smilodon: { en: "Sabre-toothed cat", de: "Säbelzahnkatze", taxon: "Smilodon fatalis", wikidata: Q1956565 }
+electric-eel: { en: "Electric eel", de: "Zitteraal", taxon: "Electrophorus", wikidata: Q18926800 }

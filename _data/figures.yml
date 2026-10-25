@@ -30,3 +30,4 @@ insect-flight:     { id: ifl,          i18n: figures.insect_flight,  context: "a
 walking:           { id: wk,           i18n: figures.walking,        context: "article-header",                     bg: "var(--ocean)", page: walking }
 trex-running:      { id: tx,           i18n: figures.trex_running,   context: "article-header",                     bg: "var(--ocean)", page: trex-running }
 smilodon-bite:     { id: sb,           i18n: figures.smilodon_bite,  context: "article-header",                     bg: "var(--ocean)", page: smilodon-bite }
+electric-eel:      { id: eel,          i18n: figures.electric_eel,   context: "article-header",                     bg: "var(--ocean)", page: electric-eel }

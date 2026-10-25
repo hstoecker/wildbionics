@@ -2528,6 +2528,46 @@ a.cite:hover { text-decoration: underline; }
   .tx-svg .label-title { font-size: 26px; }
 }
 
+/* Electric eel with its electric organ as cells in series, hero of the electric eel article (_includes/svg/electric-eel.svg) */
+.eel-svg { width: 100%; height: auto; overflow: visible; }
+.eel-svg .grid { color: rgba(238, 242, 234, 0.045); }
+.eel-svg .field { fill: none; stroke: var(--signal); stroke-width: 1.4; stroke-opacity: .55; stroke-dasharray: 5 4; }
+.eel-svg .field-head { fill: var(--signal); fill-opacity: .8; }
+.eel-svg .body { fill: url(#eel-skin); stroke: rgba(238, 242, 234, 0.28); stroke-width: 1.1; stroke-linejoin: round; }
+.eel-svg .fin { fill: rgba(150, 146, 112, 0.55); stroke: rgba(238, 242, 234, 0.22); stroke-width: .8; }
+.eel-svg .fin-ray { fill: none; stroke: rgba(30, 34, 24, 0.35); stroke-width: .8; }
+.eel-svg .dorsal { fill: none; stroke: rgba(20, 24, 16, 0.35); stroke-width: 7; }
+.eel-svg .belly { fill: none; stroke: rgba(214, 205, 160, 0.30); stroke-width: 5; }
+.eel-svg .throat { fill: rgba(222, 136, 52, 0.55); }
+.eel-svg .pect { fill: rgba(150, 146, 112, 0.75); stroke: rgba(20, 24, 16, 0.4); stroke-width: .8; }
+.eel-svg .gill, .eel-svg .mouth { fill: none; stroke: rgba(20, 22, 14, 0.75); stroke-width: 1.4; stroke-linecap: round; }
+.eel-svg .eye { fill: #1b1d14; stroke: #d9c27a; stroke-width: 1; }
+.eel-svg .window { fill: #2a1d0c; stroke: var(--accent); stroke-width: 1.6; }
+.eel-svg .plate { fill: none; stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; }
+.eel-svg .pole circle { fill: var(--ocean); stroke: var(--signal); stroke-width: 2; }
+.eel-svg .pole path { fill: none; stroke: var(--signal); stroke-width: 2.4; stroke-linecap: round; }
+.eel-svg .zoom { fill: none; stroke: rgba(227, 169, 58, 0.55); stroke-width: 1; stroke-dasharray: 3 4; }
+.eel-svg .inset-box { fill: rgba(8, 23, 30, 0.92); stroke: rgba(227, 169, 58, 0.6); stroke-width: 1.2; }
+.eel-svg .cell { fill: url(#eel-cell); stroke: rgba(20, 14, 4, 0.6); stroke-width: .8; }
+.eel-svg .cell-nub { fill: #f6d78e; }
+.eel-svg .inset-dot { fill: var(--accent); }
+.eel-svg .wire { fill: none; stroke: var(--on-dark-2); stroke-width: 1.6; }
+.eel-svg .brace, .eel-svg .extent { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.eel-svg .prey-body { fill: #c9d3cf; stroke: rgba(8, 23, 30, 0.6); stroke-width: .8; }
+.eel-svg .prey-tail, .eel-svg .prey-fin { fill: #9fb0aa; }
+.eel-svg .prey-eye { fill: #08171e; }
+.eel-svg .label text { paint-order: stroke; stroke: var(--ocean); stroke-width: 5px; stroke-linejoin: round; }   /* halo: labels stay clean where field lines pass */
+.eel-svg .label-strong { fill: var(--on-dark); font-weight: 600; }
+.eel-svg .label-accent.label-strong { fill: var(--accent); }
+.eel-svg .label-signal.label-strong { fill: var(--signal); }
+.eel-svg .label-title { font-family: var(--font-display); font-style: italic; font-size: 22px; font-weight: 450; letter-spacing: 0; fill: var(--text); }
+.eel-svg .label-taxon { font-style: italic; }
+.eel-svg .label-tick { font-size: 12px; }
+@media (max-width: 600px) {
+  .eel-svg .label, .eel-svg .label-tick { font-size: 19px; }   /* 720-unit viewBox at ~330 px: ≥ 9 px effective */
+  .eel-svg .label-title { font-size: 26px; }
+}
+
 /* Early atmosphere, hero of the oxygen article (_includes/svg/early-atmosphere.svg) */
 .atmo-svg { width: 100%; height: auto; overflow: visible; }
 .atmo-svg .grid { color: rgba(238, 242, 234, 0.07); }
