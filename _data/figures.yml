@@ -29,3 +29,4 @@ graph-shared:      { id: gx-shared,    i18n: graph.explain.shared,   context: "g
 insect-flight:     { id: ifl,          i18n: figures.insect_flight,  context: "article-header",                     bg: "var(--ocean)", page: insect-flight }
 walking:           { id: wk,           i18n: figures.walking,        context: "article-header",                     bg: "var(--ocean)", page: walking }
 trex-running:      { id: tx,           i18n: figures.trex_running,   context: "article-header",                     bg: "var(--ocean)", page: trex-running }
+smilodon-bite:     { id: sb,           i18n: figures.smilodon_bite,  context: "article-header",                     bg: "var(--ocean)", page: smilodon-bite }
