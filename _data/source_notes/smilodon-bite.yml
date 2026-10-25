@@ -47,6 +47,7 @@
     - "Interpretation: greater ability to subdue prey with the forelimbs, to protect the elongate canines from fracture and position the bite for a quick kill – abstract"
     - "Elongate canines more vulnerable to fracture than those of modern felids – abstract (Background)"
     - "'Few extinct predators are as well-known as the saber tooth cats' – Introduction, first sentence"
+    - "'Their elongate canine teeth were more vulnerable to fracture than those of modern felids' – abstract (Background), attributed to the authors in the text"
 "10.1038/s41559-017-0131":
   read: "Abstract (PubMed)"
   claims:
@@ -106,6 +107,7 @@
   claims:
     - "Canine modelled as a cantilever with an elliptical cross-section, bending strength from beam theory – abstract"
     - "Canines of sabretooth cats more similar in shape and strength to living canids than felids – abstract"
+    - "Felids have relatively stronger canines than canids, particularly in bending about the anteroposterior axis (i.e. against mediolateral/sideways loads); sabretooth canines more similar to canids → comparison with living cats in the math lens – abstract"
 "10.1002/ar.25447":
   read: "Full text (Europe PMC) and Table S1 (supplementary CSV, Europe PMC supplementaryFiles)"
   claims:
@@ -131,6 +133,7 @@
     - "Eruption rate 6.0 mm/month 'implied' by combining the δ18O-derived enamel growth rate with μCT lengths of mineralised enamel – abstract, Methods"
     - "Deciduous upper canines appear retained until ~23–30 months; erupted dC1 and erupting C1 present together for about 11 months; C1 eruption took nearly 22 months – Discussion"
     - "Sabre-tooth upper canines at greater risk of fracture from medio-laterally directed forces than conical felid canines (citing ref. 63) – Discussion"
+    - "11 months of overlap out of ~22 months of C1 eruption = about half; Tseng describes it as more than 50 % – Discussion (Wysocki) / Introduction (Tseng)"
 "10.58782/flmnh.psyo5090":
   read: "Abstract (OpenAlex); PDF behind a bot check"
   claims:

@@ -6,7 +6,7 @@ title: "Säbelzahnkatze: schwacher Biss, zerbrechliche Säbel"
 short_title: "Säbelzahnkatze"
 kicker: "Artikel · Paläobiologie"
 description: "Riesige Säbel, schwacher Biss: Knochen und Zahnmechanik deuten darauf hin, dass Smilodon Beute erst mit den Vorderbeinen festhielt, dann in den Hals biss."
-dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne, die bis zu etwa 14 Zentimeter aus dem Kiefer ragten – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne deuten auf einen vorsichtigen Jäger hin: Beute festhalten, dann zubeißen. Die Chemie, die in ihren Zähnen gespeichert ist, liefert eine Wachstumsuhr und Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
+dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne mit einer Durchbruchshöhe von bis zu etwa 14 Zentimetern – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne deuten auf einen vorsichtigen Jäger hin: Beute festhalten, dann zubeißen. Die Chemie, die in ihren Zähnen gespeichert ist, liefert eine Wachstumsuhr und Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
 date: 2026-10-10
 permalink: /de/artikel/saebelzahnkatze/
 image: /assets/og/smilodon-bite-de.jpg
@@ -32,8 +32,8 @@ beings: ["smilodon"]
 lenses: ['biology', 'physics', 'math', 'chemistry', 'cs']
 key_facts:
   - "Die Beißkraft der Kaumuskeln von *Smilodon fatalis* war vergleichsweise schwach – in einem 3D-Computermodell etwa **ein Drittel** der eines gleich großen Löwen; der Schädel war besser für Bisse in bereits festgehaltene Beute geeignet [7](#ref-7){:.cite}."
-  - "Die Oberarmknochen von *Smilodon fatalis* waren durch dickere Knochenwände verstärkt als bei jeder lebenden Katze – ein Zeichen kräftiger Vorderbeine, mit denen er Beute bezwang und die langen Eckzähne vor dem Brechen schützte [1](#ref-1){:.cite}."
-  - "Der voll durchgebrochene Säbel eines von Tseng vermessenen Exemplars (AMNH FM55576) ist am Zahnfleischrand von vorn nach hinten etwa 32 mm lang, aber nur 18 mm breit; nach der Balkentheorie belastet ihn eine Last von der Seite etwa **1,8-mal** stärker als dieselbe Last von vorn – berechnet in diesem Artikel aus diesen Maßen [6](#ref-6){:.cite}."
+  - "Die Oberarmknochen von *Smilodon fatalis* waren durch dickere Knochenwände verstärkt als bei jeder lebenden Katze – nach Deutung der Autoren ein Zeichen kräftiger Vorderbeine, mit denen er Beute bezwang und die langen Eckzähne vor dem Brechen schützte [1](#ref-1){:.cite}."
+  - "In Tsengs digitalem Durchbruchsmodell eines Exemplars (AMNH FM55576) ist der voll durchgebrochene Säbel am Zahnfleischrand von vorn nach hinten etwa 32 mm lang, aber nur 18 mm breit; nach der Balkentheorie belastet ihn eine Last von der Seite etwa **1,8-mal** stärker als dieselbe Last von vorn – berechnet in diesem Artikel aus diesen Maßen [6](#ref-6){:.cite}."
   - "Sauerstoffisotope im Zahnschmelz dienen zusammen mit CT-Aufnahmen als Uhr: Der obere Eckzahn brach mit etwa **6 mm pro Monat** durch und war nach Schätzung erst mit **34–41 Monaten** vollständig durchgebrochen [16](#ref-16){:.cite}."
   - "Ob Säbelzahnkatzen und Schreckenswölfe in Rancho La Brea um dieselbe Beute konkurrierten, ist umstritten: Eine Multi-Proxy-Studie fand kaum Konkurrenz um Beute [4](#ref-4){:.cite}, andere Forschende bezweifeln diesen Schluss [18](#ref-18){:.cite}."
 faq:
@@ -266,9 +266,9 @@ Dabei ist *W* das Widerstandsmoment, das beschreibt, wie gut der Querschnitt der
 
 <div class="formula" role="math" aria-label="W seitlich gleich Pi mal a mal b Quadrat durch 4, W vorn gleich Pi mal b mal a Quadrat durch 4"><var>W</var><sub>seitlich</sub> = π · <var>a</var> · <var>b</var><sup>2</sup> / 4 &nbsp;·&nbsp; <var>W</var><sub>vorn</sub> = π · <var>b</var> · <var>a</var><sup>2</sup> / 4</div>
 
-**Die schwache Richtung.** Das Verhältnis der beiden Spannungen bei gleicher Kraft ist einfach *a*/*b*: Ein Zahn, der doppelt so lang wie breit ist, wird von der Seite doppelt so stark belastet wie von vorn. Für den voll durchgebrochenen Eckzahn des Exemplars AMNH FM55576 misst der Querschnitt am Zahnfleischrand 32,17 mm mal 18,00 mm [6](#ref-6){:.cite} – eine seitliche Last belastet ihn also etwa **1,8-mal** stärker als eine Last von vorn. Das passt zu der Ansicht, dass eine sich wehrende Beute die langen Säbel gefährdete, die leichter brachen als die Eckzähne lebender Katzen [1](#ref-1){:.cite}.
+**Die schwache Richtung.** Das Verhältnis der beiden Spannungen bei gleicher Kraft ist einfach *a*/*b*: Ein Zahn, der doppelt so lang wie breit ist, wird von der Seite doppelt so stark belastet wie von vorn. In Tsengs digitalem Durchbruchsmodell des Exemplars AMNH FM55576 misst der Querschnitt des voll durchgebrochenen Eckzahns am Zahnfleischrand 32,17 mm mal 18,00 mm [6](#ref-6){:.cite} – eine seitliche Last belastet ihn also etwa **1,8-mal** stärker als eine Last von vorn. Dieses Verhältnis allein zeigt noch nicht, dass der Säbel zerbrechlich war: Jeder abgeflachte Zahn ist von der Seite schwächer. Den Vergleich mit lebenden Katzen liefern Van Valkenburgh und Ruff: Katzen haben relativ stärkere Eckzähne als Hunde, besonders gegen Biegung durch seitliche Lasten, während die Eckzähne der Säbelzahnkatzen denen der Hunde ähneln [15](#ref-15){:.cite}. Auch Meachen-Samuels und Van Valkenburgh beschreiben die langen Säbel als bruchanfälliger als die Eckzähne lebender Katzen [1](#ref-1){:.cite}.
 
-**In die Festigkeit hineinwachsen.** Tseng fand, dass der Querschnitt des Säbels so mit seiner Höhe wächst, dass seine Biegefestigkeit zunimmt, auch wenn er sich mit wachsender Höhe seitlich leichter verbiegt. Nach Wysocki und Kollegen blieb der Milcheckzahn vermutlich etwa 11 der rund 22 Monate erhalten, die der Säbel zum Durchbrechen brauchte [16](#ref-16){:.cite} – nach Tsengs Lesart mehr als die Hälfte der Durchbruchszeit. Nebeneinander verbreiterten die beiden Eckzähne den Zahn effektiv, was Tsengs Schätzungen von Festigkeit und Steifigkeit näher an theoretische Optima brachte [6](#ref-6){:.cite}.
+**In die Festigkeit hineinwachsen.** Tseng fand, dass der Querschnitt des Säbels so mit seiner Höhe wächst, dass seine Biegefestigkeit zunimmt, auch wenn er sich mit wachsender Höhe seitlich leichter verbiegt. Nach Wysocki und Kollegen standen Milcheckzahn und durchbrechender Säbel etwa 11 der rund 22 Monate nebeneinander, die der Säbel zum Durchbrechen brauchte – etwa die Hälfte der Durchbruchszeit [16](#ref-16){:.cite}, die Tseng als mehr als die Hälfte beschreibt. Nebeneinander verbreiterten die beiden Eckzähne den Zahn effektiv, was Tsengs Schätzungen von Festigkeit und Steifigkeit näher an theoretische Optima brachte [6](#ref-6){:.cite}.
 
 {% include lens-end.html %}
 
@@ -290,7 +290,7 @@ Dabei ist *W* das Widerstandsmoment, das beschreibt, wie gut der Querschnitt der
 
 ## Informatik-Linse: Spannung in einem wachsenden Säbel
 
-Wie stark zählt die Richtung einer Last, und wird ein längerer Säbel schwächer? Das Programm unten nimmt die Querschnitte eines ausgewachsenen Eckzahns von *Smilodon fatalis*, die Tseng in aufeinanderfolgenden Höhen gemessen hat, um seinen Durchbruch zu simulieren [6](#ref-6){:.cite}, und berechnet mit den Balkenformeln aus der Mathematik-Linse die Biegespannung an der Basis für eine Last von der Seite und von vorn. **Annahmen:** Der Querschnitt ist eine Ellipse; die Last von 100 N an der Spitze ist ein angenommener runder Wert zum Vergleich, keine gemessene Kraft; aussagekräftig sind nur das Verhältnis der Spannungen und ihr Verlauf, nicht die absoluten Werte.
+Wie stark zählt die Richtung einer Last, und wird ein längerer Säbel schwächer? Das Programm unten nimmt die Querschnitte eines ausgewachsenen Eckzahns von *Smilodon fatalis*, die Tseng an digitalen 3D-Modellen in aufeinanderfolgenden Höhen eines simulierten Durchbruchs bestimmt hat [6](#ref-6){:.cite}, und berechnet mit den Balkenformeln aus der Mathematik-Linse die Biegespannung an der Basis für eine Last von der Seite und von vorn. **Annahmen:** Der Querschnitt ist eine Ellipse; die Last von 100 N an der Spitze ist ein angenommener runder Wert zum Vergleich, keine gemessene Kraft; aussagekräftig sind nur das Verhältnis der Spannungen und ihr Verlauf, nicht die absoluten Werte.
 
 ```python
 import numpy as np
@@ -309,7 +309,7 @@ CANINES = {
                  (54.85, 26.80, 11.96), (65.21, 29.56, 13.25), (75.16, 31.41, 13.94),
                  (85.12, 33.21, 14.94), (95.03, 34.63, 15.65)],
 }
-SPECIMEN_INDEX = 0          # 0: AMNH FM55576, die längste Reihe in Tabelle S1 (11 Stadien, 41–138 mm); 1: KU S2255
+SPECIMEN_INDEX = 0          # 0: AMNH FM55576, die längste „morpho“-Reihe in Tabelle S1 (11 Stadien, 41–138 mm); 1: KU S2255
 SPECIMEN = list(CANINES)[SPECIMEN_INDEX]
 LOAD_N = 100.0              # Kraft an der Spitze (N) – ein angenommener runder Vergleichswert
 ROUND = False               # True: gleiche Querschnittsfläche, aber ein runder Zahn
@@ -359,7 +359,7 @@ plt.show()
 Was das Ergebnis lehrt:
 
 - **Seitlich ist die schwache Richtung.** Beim voll durchgebrochenen Eckzahn verursacht eine Last von der Seite 13,5 MPa, eine Last von vorn 7,5 MPa – die seitliche Last verursacht also etwa **1,8-mal** so viel Spannung. Seitlich ist der Zahn in jedem Stadium schwächer, weil das Verhältnis der beiden Spannungen einfach das Verhältnis von Länge zu Breite des Zahns ist – bei diesem Exemplar zwischen 1,8 und 2,3.
-- **Ein längerer Säbel ist kein schwächerer Säbel.** Der Zahn wird 3,4-mal höher, doch die seitliche Spannung sinkt auf das 0,74-Fache: Der Querschnitt wächst schnell genug, um den längeren Hebel mehr als auszugleichen. Das passt zu Tsengs Befund, dass der Querschnitt auf Biegefestigkeit optimiert ist [6](#ref-6){:.cite} – auch wenn er sich nach seinen Ergebnissen seitlich leichter verbiegt.
+- **Ein längerer Säbel ist kein schwächerer Säbel.** Der durchgebrochene Teil wird 3,4-mal höher, doch die seitliche Spannung sinkt auf das 0,74-Fache: Der Querschnitt wächst schnell genug, um den längeren Hebel mehr als auszugleichen. Das passt zu Tsengs Befund, dass der Querschnitt auf Biegefestigkeit optimiert ist [6](#ref-6){:.cite} – auch wenn er sich nach seinen Ergebnissen seitlich leichter verbiegt.
 - **Robust und begrenzt.** Der Richtungseffekt folgt allein aus der gemessenen Form. Die absoluten Zahlen hängen von der angenommenen Last ab und lassen den Kieferknochen und den Milcheckzahn außer Acht, die den wachsenden Zahn stützten.
 
 Probier es selbst:

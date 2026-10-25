@@ -6,7 +6,7 @@ title: "Sabre-Toothed Cat: Weak Bite, Fragile Sabres"
 short_title: "Sabre-toothed cat"
 kicker: "Article · Palaeobiology"
 description: "Smilodon had huge sabres but a weak bite. Its bones and tooth mechanics suggest it pinned prey with its forelimbs, then bit the neck."
-dek: "The sabre-toothed cat Smilodon fatalis carried upper canines that stood up to about 14 centimetres out of the jaw – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in its teeth adds a growth clock and clues to its menu. This article shows how we know, and where researchers still disagree."
+dek: "The sabre-toothed cat Smilodon fatalis carried upper canines with an erupted height of up to about 14 centimetres – yet its jaw muscles produced a weaker bite than a lion's. Its bones and the mechanics of its teeth point to a careful killer: hold the prey still, then bite. The chemistry stored in its teeth adds a growth clock and clues to its menu. This article shows how we know, and where researchers still disagree."
 date: 2026-10-10
 permalink: /articles/smilodon-bite/
 image: /assets/og/smilodon-bite-en.jpg
@@ -32,8 +32,8 @@ beings: ["smilodon"]
 lenses: ['biology', 'physics', 'math', 'chemistry', 'cs']
 key_facts:
   - "Bite force from the jaw muscles of *Smilodon fatalis* was relatively weak – in a 3D computer model about **one third** of that of a lion of comparable size; the skull was better suited to bites on prey that was already restrained [7](#ref-7){:.cite}."
-  - "The upper arm bones of *Smilodon fatalis* were reinforced by thicker bone walls than in any living cat – a sign of powerful forelimbs used to subdue prey and protect the long canines from breaking [1](#ref-1){:.cite}."
-  - "The fully erupted sabre of one specimen measured by Tseng (AMNH FM55576) is, at the gum line, about 32 mm long from front to back but only 18 mm wide; by beam theory, a load from the side stresses it about **1.8 times** as much as the same load from the front – calculated in this article from those measurements [6](#ref-6){:.cite}."
+  - "The upper arm bones of *Smilodon fatalis* were reinforced by thicker bone walls than in any living cat – interpreted by the authors as a sign of powerful forelimbs used to subdue prey and protect the long canines from breaking [1](#ref-1){:.cite}."
+  - "In Tseng's digital eruption model of one specimen (AMNH FM55576), the fully erupted sabre is, at the gum line, about 32 mm long from front to back but only 18 mm wide; by beam theory, a load from the side stresses it about **1.8 times** as much as the same load from the front – calculated in this article from those measurements [6](#ref-6){:.cite}."
   - "Oxygen isotopes in the enamel, combined with CT scans, act as a clock: the upper canine erupted at about **6 mm per month**, and finished erupting at an estimated **34–41 months** of age [16](#ref-16){:.cite}."
   - "Whether sabre-toothed cats and dire wolves competed for the same prey at Rancho La Brea is debated: a multi-proxy study found little competition for prey [4](#ref-4){:.cite}, other researchers question that conclusion [18](#ref-18){:.cite}."
 faq:
@@ -266,9 +266,9 @@ Here *W* is the section modulus, which describes how well the cross-section resi
 
 <div class="formula" role="math" aria-label="W side equals pi times a times b squared over 4, W front equals pi times b times a squared over 4"><var>W</var><sub>side</sub> = π · <var>a</var> · <var>b</var><sup>2</sup> / 4 &nbsp;·&nbsp; <var>W</var><sub>front</sub> = π · <var>b</var> · <var>a</var><sup>2</sup> / 4</div>
 
-**The weak direction.** The ratio of the two stresses for the same force is simply *a*/*b*: a tooth twice as long as it is wide is stressed twice as much from the side as from the front. For the fully erupted canine of specimen AMNH FM55576, the cross-section at the gum line measures 32.17 mm by 18.00 mm [6](#ref-6){:.cite} – so a sideways load stresses it about **1.8 times** as much as a load from the front. This fits the view that struggling prey endangered the long sabres, which were more vulnerable to fracture than the canines of living cats [1](#ref-1){:.cite}.
+**The weak direction.** The ratio of the two stresses for the same force is simply *a*/*b*: a tooth twice as long as it is wide is stressed twice as much from the side as from the front. In Tseng's digital eruption model of specimen AMNH FM55576, the cross-section of the fully erupted canine at the gum line is 32.17 mm by 18.00 mm [6](#ref-6){:.cite} – so a sideways load stresses it about **1.8 times** as much as a load from the front. This ratio alone does not show that the sabre was fragile: every flattened tooth is weaker from the side. The comparison with living cats comes from Van Valkenburgh and Ruff: cats have relatively stronger canines than dogs, particularly against bending by sideways loads, while the canines of sabre-toothed cats resemble those of dogs [15](#ref-15){:.cite}. Meachen-Samuels and Van Valkenburgh likewise describe the long sabres as more vulnerable to fracture than the canines of living cats [1](#ref-1){:.cite}.
 
-**Growing into strength.** Tseng found that the cross-section of the sabre grows with its height in a way that increases its bending strength, although it bends more easily sideways as it grows. According to Wysocki and colleagues, the milk canine was probably retained for about 11 of the roughly 22 months the sabre took to erupt [16](#ref-16){:.cite} – by Tseng's reading, more than half of the eruption period. Standing side by side, the two canines effectively widened the tooth, which brought Tseng's estimates of strength and stiffness closer to theoretical optima [6](#ref-6){:.cite}.
+**Growing into strength.** Tseng found that the cross-section of the sabre grows with its height in a way that increases its bending strength, although it bends more easily sideways as it grows. According to Wysocki and colleagues, the milk canine and the erupting sabre were present together for about 11 of the roughly 22 months the sabre took to erupt – about half of the eruption period [16](#ref-16){:.cite}, which Tseng describes as more than half. Standing side by side, the two canines effectively widened the tooth, which brought Tseng's estimates of strength and stiffness closer to theoretical optima [6](#ref-6){:.cite}.
 
 {% include lens-end.html %}
 
@@ -290,7 +290,7 @@ Here *W* is the section modulus, which describes how well the cross-section resi
 
 ## Computer science lens: stress in a growing sabre
 
-How much does the direction of a load matter, and does a longer sabre become weaker? The program below takes the cross-sections of a fully grown *Smilodon fatalis* canine that Tseng measured at successive heights to simulate its eruption [6](#ref-6){:.cite}, and calculates, with the beam formulas from the mathematics lens, the bending stress at the base for a load from the side and from the front. **Assumptions:** the cross-section is an ellipse; the load of 100 N at the tip is an assumed round value for comparison, not a measured force; only the ratio of the stresses and their trend are meaningful, not the absolute values.
+How much does the direction of a load matter, and does a longer sabre become weaker? The program below takes the cross-sections of a fully grown *Smilodon fatalis* canine that Tseng took from digital 3D models at successive heights of a simulated eruption [6](#ref-6){:.cite}, and calculates, with the beam formulas from the mathematics lens, the bending stress at the base for a load from the side and from the front. **Assumptions:** the cross-section is an ellipse; the load of 100 N at the tip is an assumed round value for comparison, not a measured force; only the ratio of the stresses and their trend are meaningful, not the absolute values.
 
 ```python
 import numpy as np
@@ -309,7 +309,7 @@ CANINES = {
                  (54.85, 26.80, 11.96), (65.21, 29.56, 13.25), (75.16, 31.41, 13.94),
                  (85.12, 33.21, 14.94), (95.03, 34.63, 15.65)],
 }
-SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the longest series in Table S1 (11 stages, 41–138 mm); 1: KU S2255
+SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the longest “morpho” series in Table S1 (11 stages, 41–138 mm); 1: KU S2255
 SPECIMEN = list(CANINES)[SPECIMEN_INDEX]
 LOAD_N = 100.0              # force at the tip (N) – an assumed round value for comparison
 ROUND = False               # True: same cross-sectional area, but a round tooth
@@ -359,7 +359,7 @@ plt.show()
 What the result teaches:
 
 - **Sideways is the weak direction.** For the fully erupted canine, a load from the side causes 13.5 MPa, a load from the front 7.5 MPa – the side load causes about **1.8 times** as much stress. The side is the weak direction at every stage, because the ratio of the two stresses is just the tooth's length-to-width ratio – between 1.8 and 2.3 in this specimen.
-- **A longer sabre is not a weaker sabre.** The tooth grows 3.4 times taller, yet the side stress falls to 0.74 times its starting value: the cross-section grows fast enough to more than compensate for the longer lever. This matches Tseng's finding that the cross-section is optimised for bending strength [6](#ref-6){:.cite} – although, by his results, it also bends more easily sideways.
+- **A longer sabre is not a weaker sabre.** The erupted part becomes 3.4 times taller, yet the side stress falls to 0.74 times its starting value: the cross-section grows fast enough to more than compensate for the longer lever. This matches Tseng's finding that the cross-section is optimised for bending strength [6](#ref-6){:.cite} – although, by his results, it also bends more easily sideways.
 - **Robust and limited.** The direction effect follows from the measured shape alone. The absolute numbers depend on the assumed load and ignore the jaw bone and the milk canine that supported the growing tooth.
 
 Try it yourself:

@@ -19,7 +19,7 @@ CANINES = {
                  (54.85, 26.80, 11.96), (65.21, 29.56, 13.25), (75.16, 31.41, 13.94),
                  (85.12, 33.21, 14.94), (95.03, 34.63, 15.65)],
 }
-SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the longest series in Table S1 (11 stages, 41–138 mm); 1: KU S2255
+SPECIMEN_INDEX = 0          # 0: AMNH FM55576, the longest “morpho” series in Table S1 (11 stages, 41–138 mm); 1: KU S2255
 SPECIMEN = list(CANINES)[SPECIMEN_INDEX]
 LOAD_N = 100.0              # force at the tip (N) – an assumed round value for comparison
 ROUND = False               # True: same cross-sectional area, but a round tooth
