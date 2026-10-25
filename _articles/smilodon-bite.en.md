@@ -32,7 +32,7 @@ beings: ["smilodon"]
 lenses: ['biology', 'physics', 'math', 'chemistry', 'cs']
 key_facts:
   - "Bite force from the jaw muscles of *Smilodon fatalis* was relatively weak – in a 3D computer model about **one third** of that of a lion of comparable size; the skull was better suited to bites on prey that was already restrained [7](#ref-7){:.cite}."
-  - "Its upper arm bones were reinforced by thicker bone walls than in any living cat – a sign of powerful forelimbs used to subdue prey and protect the long canines from breaking [1](#ref-1){:.cite}."
+  - "The upper arm bones of *Smilodon fatalis* were reinforced by thicker bone walls than in any living cat – a sign of powerful forelimbs used to subdue prey and protect the long canines from breaking [1](#ref-1){:.cite}."
   - "The fully erupted sabre of one specimen measured by Tseng (AMNH FM55576) is, at the gum line, about 32 mm long from front to back but only 18 mm wide; by beam theory, a load from the side stresses it about **1.8 times** as much as the same load from the front – calculated in this article from those measurements [6](#ref-6){:.cite}."
   - "Oxygen isotopes in the enamel, combined with CT scans, act as a clock: the upper canine erupted at about **6 mm per month**, and finished erupting at an estimated **34–41 months** of age [16](#ref-16){:.cite}."
   - "Whether sabre-toothed cats and dire wolves competed for the same prey at Rancho La Brea is debated: a multi-proxy study found little competition for prey [4](#ref-4){:.cite}, other researchers question that conclusion [18](#ref-18){:.cite}."
@@ -40,7 +40,7 @@ faq:
   - q: "Was the sabre-toothed tiger a tiger?"
     a: "No. Smilodon belongs to the sabre-toothed cats (Machairodontinae), an extinct group that ancient DNA shows to be distinct from all living cats, including tigers and lions. That is why the name sabre-toothed cat is more accurate."
   - q: "How strong was the bite of Smilodon?"
-    a: "Weaker than you might expect. A detailed computer model suggests that its jaw muscles produced about one third of the bite force of a lion of comparable size. A recent anatomical estimate gives about 1,280 newtons at the canine – similar to a jaguar rather than to the largest living cats. According to that model, the neck muscles helped to drive the canines in – an idea that not all researchers accept."
+    a: "Weaker than you might expect. A detailed computer model suggests that its jaw muscles produced about one third of the bite force of a lion of comparable size. A recent anatomical estimate gives about 1,280 newtons at the canine – similar to a jaguar rather than to the largest living cats. According to the computer model, the neck muscles helped to drive the canines in – an idea that not all researchers accept."
   - q: "Why did Smilodon need strong forelimbs?"
     a: "Its long, flattened canines could break under sideways loads from struggling prey. Its upper arm bones were reinforced more than in any living cat, which suggests that it held prey still with its forelimbs before it bit, protecting its canines and positioning the bite for a quick kill."
   - q: "How do scientists know how fast its sabres grew?"
@@ -205,11 +205,11 @@ status: published
 
 ## A cat with sabres
 
-*Smilodon fatalis* is one of the best-known sabre-toothed cats; few extinct predators are as well known [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that *Smilodon* split from its sabre-toothed relative *Homotherium* about 18 million years ago [2](#ref-2){:.cite}.
+*Smilodon fatalis* is a sabre-toothed cat – and few extinct predators are as well known as the sabre-toothed cats [1](#ref-1){:.cite}. Despite its popular name, the "sabre-toothed tiger" was not a tiger: ancient DNA shows that the sabre-toothed cats (Machairodontinae) form a group that is distinct from all living cats, and that *Smilodon* split from its sabre-toothed relative *Homotherium* about 18 million years ago [2](#ref-2){:.cite}.
 
-Much of what we know about how *Smilodon fatalis* lived comes from an unusual place: the asphalt seeps of Rancho La Brea in the middle of Los Angeles [3](#ref-3){:.cite}. Their fossils span the past ~50,000 years [4](#ref-4){:.cite}. Dying plant-eaters stuck in the asphalt lured predators, which could become trapped in turn – and so predators far outnumber plant-eaters among the fossils [5](#ref-5){:.cite}. Among 3,324 carnivores counted in one study (as minimum numbers of individuals), 51 % were dire wolves and 33 % *Smilodon* [5](#ref-5){:.cite}.
+Much of what we know about how *Smilodon fatalis* lived comes from an unusual place: the asphalt seeps of Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Their fossils span the past ~50,000 years [4](#ref-4){:.cite}. Dying plant-eaters stuck in the asphalt lured predators, which could become trapped in turn – and so predators far outnumber plant-eaters among the fossils [5](#ref-5){:.cite}. Among 3,324 carnivores counted in one study (as minimum numbers of individuals), 51 % were dire wolves and 33 % *Smilodon* [5](#ref-5){:.cite}.
 
-Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, they reached a fully erupted height of 100–140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues – bones, mechanics and chemistry – to how such an animal killed.
+Its upper canines are among the most specialised teeth known [6](#ref-6){:.cite}. In the specimens studied by Zhijie Jack Tseng, they reached a fully erupted height of 100–140 mm [6](#ref-6){:.cite}. Yet the bite that drove them was relatively weak [7](#ref-7){:.cite}. This article follows the clues: bones and mechanics for how such an animal killed, chemistry for how it grew, what it ate and when it disappeared.
 
 ## The kill in four steps
 
@@ -232,7 +232,7 @@ The following sequence is the reconstruction favoured by several studies; parts 
 
 **Alone or in groups?** Chris Carbone and colleagues compared the fossil counts at La Brea with predators that come to recordings of distressed prey in Africa. In both, two species dominate – the social lions and spotted hyenas in Africa, the presumably social dire wolf and *Smilodon* at La Brea – and the authors conclude that *Smilodon* was social [5](#ref-5){:.cite}. Christian Kiffner questioned the comparison: in the asphalt seeps, heavier animals were more likely to get stuck, the lure lasted longer than a playback, and the Ice Age predators of North America need not have behaved like those of an African savannah [9](#ref-9){:.cite}.
 
-**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult, probably died together. A rare extra tooth – a lower third premolar, found in only 2.4–6 % of *Smilodon* at Rancho La Brea – present in both young suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* grew about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
+**A family in Ecuador.** Coastal deposits in Ecuador preserved at least two young *Smilodon fatalis* and one adult that probably died together. Both young have a rare extra tooth, a lower third premolar, which occurs in only 2.4–6 % of *Smilodon* at Rancho La Brea. This suggests inheritance – a rare sign of relatedness in the fossil record. The young were at least two years old and were found with an adult that was probably their mother, which indicates prolonged parental care. According to Ashley Reynolds and colleagues, *Smilodon* grew about as fast as a tiger, but for as long as a lion [3](#ref-3){:.cite}.
 
 {% include lens-end.html %}
 
@@ -268,7 +268,7 @@ Here *W* is the section modulus, which describes how well the cross-section resi
 
 **The weak direction.** The ratio of the two stresses for the same force is simply *a*/*b*: a tooth twice as long as it is wide is stressed twice as much from the side as from the front. For the fully erupted canine of specimen AMNH FM55576, the cross-section at the gum line measures 32.17 mm by 18.00 mm [6](#ref-6){:.cite} – so a sideways load stresses it about **1.8 times** as much as a load from the front. This fits the view that struggling prey endangered the long sabres, which were more vulnerable to fracture than the canines of living cats [1](#ref-1){:.cite}.
 
-**Growing into strength.** Tseng found that the cross-section of the sabre grows with its height in a way that increases its bending strength, although it bends more easily sideways as it grows. For more than half of the eruption period – a timing taken from Wysocki and colleagues [16](#ref-16){:.cite} – the milk canine and the permanent canine stood side by side, which effectively widened the tooth and brought Tseng's estimates of strength and stiffness closer to theoretical optima [6](#ref-6){:.cite}.
+**Growing into strength.** Tseng found that the cross-section of the sabre grows with its height in a way that increases its bending strength, although it bends more easily sideways as it grows. According to Wysocki and colleagues, the milk canine was probably retained for about 11 of the roughly 22 months the sabre took to erupt [16](#ref-16){:.cite} – by Tseng's reading, more than half of the eruption period. Standing side by side, the two canines effectively widened the tooth, which brought Tseng's estimates of strength and stiffness closer to theoretical optima [6](#ref-6){:.cite}.
 
 {% include lens-end.html %}
 
@@ -290,7 +290,7 @@ Here *W* is the section modulus, which describes how well the cross-section resi
 
 ## Computer science lens: stress in a growing sabre
 
-How much does the direction of a load matter, and does a longer sabre become weaker? The program below takes the cross-sections of a fully grown *Smilodon fatalis* canine that Tseng measured at successive heights to simulate its eruption [6](#ref-6){:.cite} and calculates, with the beam formulas from the mathematics lens, the bending stress at the base for a load from the side and from the front. **Assumptions:** the cross-section is an ellipse; the load of 100 N at the tip is an assumed round value for comparison, not a measured force; only the ratio of the stresses and their trend are meaningful, not the absolute values.
+How much does the direction of a load matter, and does a longer sabre become weaker? The program below takes the cross-sections of a fully grown *Smilodon fatalis* canine that Tseng measured at successive heights to simulate its eruption [6](#ref-6){:.cite}, and calculates, with the beam formulas from the mathematics lens, the bending stress at the base for a load from the side and from the front. **Assumptions:** the cross-section is an ellipse; the load of 100 N at the tip is an assumed round value for comparison, not a measured force; only the ratio of the stresses and their trend are meaningful, not the absolute values.
 
 ```python
 import numpy as np
@@ -336,7 +336,7 @@ side, front = bending_stress(LOAD_N, height, x, y)
 print(f"{SPECIMEN}, load {LOAD_N:.0f} N at the tip")
 for h, s, f in ((height[0], side[0], front[0]), (height[-1], side[-1], front[-1])):
     print(f"  height {h:.0f} mm: {s:.1f} MPa from the side, {f:.1f} MPa from the front")
-print(f"fully erupted, a side load stresses the tooth {side[-1] / front[-1]:.1f} times more than a front load")
+print(f"at the last stage, a side load stresses the tooth {side[-1] / front[-1]:.1f} times more than a front load")
 print(f"from first to last stage, the side stress changes by a factor of {side[-1] / side[0]:.2f}, "
       f"while the height grows {height[-1] / height[0]:.1f} times")
 

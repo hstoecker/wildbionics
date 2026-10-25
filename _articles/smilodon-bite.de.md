@@ -5,7 +5,7 @@ ref: smilodon-bite
 title: "Säbelzahnkatze: schwacher Biss, zerbrechliche Säbel"
 short_title: "Säbelzahnkatze"
 kicker: "Artikel · Paläobiologie"
-description: "Smilodon hatte riesige Säbel, aber einen schwachen Biss. Knochen und Zahnmechanik deuten darauf hin: erst festhalten, dann in den Hals beißen."
+description: "Riesige Säbel, schwacher Biss: Knochen und Zahnmechanik deuten darauf hin, dass Smilodon Beute erst mit den Vorderbeinen festhielt, dann in den Hals biss."
 dek: "Die Säbelzahnkatze Smilodon fatalis trug obere Eckzähne, die bis zu etwa 14 Zentimeter aus dem Kiefer ragten – doch ihre Kaumuskeln bissen schwächer zu als die eines Löwen. Ihre Knochen und die Mechanik ihrer Zähne deuten auf einen vorsichtigen Jäger hin: Beute festhalten, dann zubeißen. Die Chemie, die in ihren Zähnen gespeichert ist, liefert eine Wachstumsuhr und Hinweise auf den Speiseplan. Dieser Artikel zeigt, woher wir das wissen und wo Forschende noch uneins sind."
 date: 2026-10-10
 permalink: /de/artikel/saebelzahnkatze/
@@ -32,7 +32,7 @@ beings: ["smilodon"]
 lenses: ['biology', 'physics', 'math', 'chemistry', 'cs']
 key_facts:
   - "Die Beißkraft der Kaumuskeln von *Smilodon fatalis* war vergleichsweise schwach – in einem 3D-Computermodell etwa **ein Drittel** der eines gleich großen Löwen; der Schädel war besser für Bisse in bereits festgehaltene Beute geeignet [7](#ref-7){:.cite}."
-  - "Seine Oberarmknochen waren durch dickere Knochenwände verstärkt als bei jeder lebenden Katze – ein Zeichen kräftiger Vorderbeine, mit denen er Beute bezwang und die langen Eckzähne vor dem Brechen schützte [1](#ref-1){:.cite}."
+  - "Die Oberarmknochen von *Smilodon fatalis* waren durch dickere Knochenwände verstärkt als bei jeder lebenden Katze – ein Zeichen kräftiger Vorderbeine, mit denen er Beute bezwang und die langen Eckzähne vor dem Brechen schützte [1](#ref-1){:.cite}."
   - "Der voll durchgebrochene Säbel eines von Tseng vermessenen Exemplars (AMNH FM55576) ist am Zahnfleischrand von vorn nach hinten etwa 32 mm lang, aber nur 18 mm breit; nach der Balkentheorie belastet ihn eine Last von der Seite etwa **1,8-mal** stärker als dieselbe Last von vorn – berechnet in diesem Artikel aus diesen Maßen [6](#ref-6){:.cite}."
   - "Sauerstoffisotope im Zahnschmelz dienen zusammen mit CT-Aufnahmen als Uhr: Der obere Eckzahn brach mit etwa **6 mm pro Monat** durch und war nach Schätzung erst mit **34–41 Monaten** vollständig durchgebrochen [16](#ref-16){:.cite}."
   - "Ob Säbelzahnkatzen und Schreckenswölfe in Rancho La Brea um dieselbe Beute konkurrierten, ist umstritten: Eine Multi-Proxy-Studie fand kaum Konkurrenz um Beute [4](#ref-4){:.cite}, andere Forschende bezweifeln diesen Schluss [18](#ref-18){:.cite}."
@@ -40,7 +40,7 @@ faq:
   - q: "War der Säbelzahntiger ein Tiger?"
     a: "Nein. Smilodon gehört zu den Säbelzahnkatzen (Machairodontinae), einer ausgestorbenen Gruppe, die nach Analysen alter DNA von allen lebenden Katzen getrennt ist, auch von Tigern und Löwen. Deshalb ist der Name Säbelzahnkatze treffender."
   - q: "Wie stark war der Biss von Smilodon?"
-    a: "Schwächer, als man erwarten würde. Ein detailliertes Computermodell deutet darauf hin, dass seine Kaumuskeln etwa ein Drittel der Beißkraft eines gleich großen Löwen erzeugten. Eine neuere anatomische Schätzung ergibt etwa 1.280 Newton am Eckzahn – ähnlich wie beim Jaguar, nicht wie bei den größten lebenden Katzen. Nach diesem Modell halfen die Nackenmuskeln, die Eckzähne hineinzutreiben – eine Vorstellung, die nicht alle Forschenden teilen."
+    a: "Schwächer, als man erwarten würde. Ein detailliertes Computermodell deutet darauf hin, dass seine Kaumuskeln etwa ein Drittel der Beißkraft eines gleich großen Löwen erzeugten. Eine neuere anatomische Schätzung ergibt etwa 1.280 Newton am Eckzahn – ähnlich wie beim Jaguar, nicht wie bei den größten lebenden Katzen. Nach dem Computermodell halfen die Nackenmuskeln, die Eckzähne hineinzutreiben – eine Vorstellung, die nicht alle Forschenden teilen."
   - q: "Warum brauchte Smilodon kräftige Vorderbeine?"
     a: "Seine langen, flachen Eckzähne konnten unter seitlichen Lasten einer sich wehrenden Beute brechen. Seine Oberarmknochen waren stärker verstärkt als bei jeder lebenden Katze. Das deutet darauf hin, dass er die Beute mit den Vorderbeinen festhielt, bevor er zubiss – so schützte er seine Eckzähne und setzte den Biss für eine schnelle Tötung an."
   - q: "Woher weiß man, wie schnell die Säbel wuchsen?"
@@ -205,11 +205,11 @@ status: published
 
 ## Eine Katze mit Säbeln
 
-*Smilodon fatalis* ist eine der bekanntesten Säbelzahnkatzen; nur wenige ausgestorbene Raubtiere sind so bekannt [1](#ref-1){:.cite}. Trotz ihres Alltagsnamens war der „Säbelzahntiger“ kein Tiger: Alte DNA zeigt, dass die Säbelzahnkatzen (Machairodontinae) eine Gruppe bilden, die von allen lebenden Katzen getrennt ist, und dass sich *Smilodon* vor etwa 18 Millionen Jahren von seinem säbelzahnigen Verwandten *Homotherium* trennte [2](#ref-2){:.cite}.
+*Smilodon fatalis* ist eine Säbelzahnkatze – und nur wenige ausgestorbene Raubtiere sind so bekannt wie die Säbelzahnkatzen [1](#ref-1){:.cite}. Trotz ihres Alltagsnamens war der „Säbelzahntiger“ kein Tiger: Alte DNA zeigt, dass die Säbelzahnkatzen (Machairodontinae) eine Gruppe bilden, die von allen lebenden Katzen getrennt ist, und dass sich *Smilodon* vor etwa 18 Millionen Jahren von seinem säbelzahnigen Verwandten *Homotherium* trennte [2](#ref-2){:.cite}.
 
-Vieles, was wir über die Lebensweise von *Smilodon fatalis* wissen, stammt von einem ungewöhnlichen Ort: den Asphaltgruben von Rancho La Brea mitten in Los Angeles [3](#ref-3){:.cite}. Ihre Fossilien umfassen die letzten rund 50.000 Jahre [4](#ref-4){:.cite}. Sterbende Pflanzenfresser, die im Asphalt steckenblieben, lockten Raubtiere an, die dann selbst gefangen werden konnten – deshalb übertreffen Raubtiere unter den Fossilien die Pflanzenfresser bei Weitem [5](#ref-5){:.cite}. Unter 3.324 Raubtieren, die eine Studie zählte (als Mindestzahl von Individuen), waren 51 % Schreckenswölfe und 33 % *Smilodon* [5](#ref-5){:.cite}.
+Vieles, was wir über die Lebensweise von *Smilodon fatalis* wissen, stammt von einem ungewöhnlichen Ort: den Asphaltgruben von Rancho La Brea in Los Angeles [3](#ref-3){:.cite}. Ihre Fossilien umfassen die letzten rund 50.000 Jahre [4](#ref-4){:.cite}. Sterbende Pflanzenfresser, die im Asphalt steckenblieben, lockten Raubtiere an, die dann selbst gefangen werden konnten – deshalb übertreffen Raubtiere unter den Fossilien die Pflanzenfresser bei Weitem [5](#ref-5){:.cite}. Unter 3.324 Raubtieren, die eine Studie zählte (als Mindestzahl von Individuen), waren 51 % Schreckenswölfe und 33 % *Smilodon* [5](#ref-5){:.cite}.
 
-Seine oberen Eckzähne gehören zu den am stärksten spezialisierten Zähnen überhaupt [6](#ref-6){:.cite}. Bei den von Zhijie Jack Tseng untersuchten Exemplaren erreichten sie voll durchgebrochen eine Höhe von 100–140 mm [6](#ref-6){:.cite}. Der Biss, der sie antrieb, war jedoch vergleichsweise schwach [7](#ref-7){:.cite}. Dieser Artikel folgt den Spuren – Knochen, Mechanik und Chemie – zu der Frage, wie ein solches Tier tötete.
+Seine oberen Eckzähne gehören zu den am stärksten spezialisierten Zähnen überhaupt [6](#ref-6){:.cite}. Bei den von Zhijie Jack Tseng untersuchten Exemplaren erreichten sie voll durchgebrochen eine Höhe von 100–140 mm [6](#ref-6){:.cite}. Der Biss, der sie antrieb, war jedoch vergleichsweise schwach [7](#ref-7){:.cite}. Dieser Artikel folgt den Spuren: Knochen und Mechanik zu der Frage, wie ein solches Tier tötete, Chemie zu der Frage, wie es wuchs, was es fraß und wann es verschwand.
 
 ## Die Jagd in vier Schritten
 
@@ -232,7 +232,7 @@ Der folgende Ablauf ist die Rekonstruktion, die mehrere Studien bevorzugen; Teil
 
 **Allein oder in Gruppen?** Chris Carbone und Kollegen verglichen die Fossilzahlen von La Brea mit Raubtieren, die in Afrika von abgespielten Notrufen von Beutetieren angelockt werden. In beiden Fällen überwiegen zwei Arten – die sozialen Löwen und Tüpfelhyänen in Afrika, der vermutlich soziale Schreckenswolf und *Smilodon* in La Brea –, und die Autoren schließen daraus, dass *Smilodon* sozial lebte [5](#ref-5){:.cite}. Christian Kiffner stellte den Vergleich infrage: In den Asphaltgruben blieben schwerere Tiere leichter stecken, die Lockwirkung hielt länger an als ein abgespielter Ruf, und die eiszeitlichen Raubtiere Nordamerikas müssen sich nicht wie die einer afrikanischen Savanne verhalten haben [9](#ref-9){:.cite}.
 
-**Eine Familie in Ecuador.** Küstenablagerungen in Ecuador bewahrten mindestens zwei junge *Smilodon fatalis* und ein ausgewachsenes Tier, die wahrscheinlich zusammen starben. Ein seltener zusätzlicher Zahn – ein unterer dritter Prämolar, den in Rancho La Brea nur 2,4–6 % der *Smilodon* besitzen –, den beide Jungtiere haben, deutet auf Vererbung hin – ein seltener Hinweis auf Verwandtschaft im Fossilbericht. Die Jungtiere waren mindestens zwei Jahre alt und wurden mit einem ausgewachsenen Tier gefunden, wahrscheinlich ihrer Mutter, was auf eine lange Brutpflege hindeutet. Nach Ashley Reynolds und Kollegen wuchs *Smilodon* etwa so schnell wie ein Tiger, aber so lange wie ein Löwe [3](#ref-3){:.cite}.
+**Eine Familie in Ecuador.** Küstenablagerungen in Ecuador bewahrten mindestens zwei junge *Smilodon fatalis* und ein ausgewachsenes Tier, die wahrscheinlich zusammen starben. Beide Jungtiere besitzen einen seltenen zusätzlichen Zahn, einen unteren dritten Prämolaren, den in Rancho La Brea nur 2,4–6 % der *Smilodon* haben. Das deutet auf Vererbung hin – ein seltener Hinweis auf Verwandtschaft im Fossilbericht. Die Jungtiere waren mindestens zwei Jahre alt und wurden mit einem ausgewachsenen Tier gefunden, wahrscheinlich ihrer Mutter, was auf eine lange Brutpflege hindeutet. Nach Ashley Reynolds und Kollegen wuchs *Smilodon* etwa so schnell wie ein Tiger, aber so lange wie ein Löwe [3](#ref-3){:.cite}.
 
 {% include lens-end.html %}
 
@@ -244,7 +244,7 @@ Der folgende Ablauf ist die Rekonstruktion, die mehrere Studien bevorzugen; Teil
 
 **Ein steifer Schädel für einen Stich.** Borja Figueirido und Kollegen verglichen den Anteil kompakter und schwammartiger Knochensubstanz (Spongiosa) in den Schädeln von *Smilodon* und der Krummsäbelkatze *Homotherium*. *Smilodon* hatte einen extrem dicken Schädel mit vergleichsweise wenig Spongiosa – passend zu großem Aufwand für Schädelfestigkeit bei einem stechenden „Canine-Shear“-Biss. *Homotherium* hatte mehr Spongiosa und tötete vermutlich eher wie ein Löwe, mit einem Klammerbiss [11](#ref-11){:.cite}.
 
-**Wie weit, wie fest?** Aus Schädelmaßen, die für Größe und Hebelarme der Kaumuskeln stehen schätzen Ashley Deutsch und Kollegen eine Beißkraft von etwa **1.280 N** am Eckzahn und etwa **4.670 N** am Reißzahn, dem scherenden Backenzahn. Das ähnelt Schätzungen für den viel kleineren Jaguar, nicht für die größten lebenden Katzen. Der Winkel, um den *Smilodon* den Kiefer öffnen konnte, war signifikant größer als bei lebenden Katzen, die an den Eckzahnspitzen gemessene Öffnungsweite dagegen nicht. Die Autoren schreiben, dass ihre Schätzungen zu der Vorstellung passen, dass Muskeln von Hals und Rumpf einen Canine-Shear-Biss mit antrieben [12](#ref-12){:.cite}.
+**Wie weit, wie fest?** Aus Schädelmaßen, die für Größe und Hebelarme der Kaumuskeln stehen, schätzen Ashley Deutsch und Kollegen eine Beißkraft von etwa **1.280 N** am Eckzahn und etwa **4.670 N** am Reißzahn, dem scherenden Backenzahn. Das ähnelt Schätzungen für den viel kleineren Jaguar, nicht für die größten lebenden Katzen. Der Winkel, um den *Smilodon* den Kiefer öffnen konnte, war signifikant größer als bei lebenden Katzen, die an den Eckzahnspitzen gemessene Öffnungsweite dagegen nicht. Die Autoren schreiben, dass ihre Schätzungen zu der Vorstellung passen, dass Muskeln von Hals und Rumpf einen Canine-Shear-Biss mit antrieben [12](#ref-12){:.cite}.
 
 **Ein alternatives Modell.** Nicht alle teilen die Vorstellung eines vom Nacken angetriebenen Bisses. In einer Studie mit einer digitalisierten Nachbildung von Schädel und Hals fand Jeffrey Brown, dass eine Drehung des Schädels durch die Nackenmuskeln die Kiefer nicht schließt. Er schlägt stattdessen vor, dass der Unterkiefer gegen den Hals der Beute gestemmt wurde, während die Vorderbeine den Schädel wie einen Hebel nach vorn drehten [13](#ref-13){:.cite}.
 
@@ -268,7 +268,7 @@ Dabei ist *W* das Widerstandsmoment, das beschreibt, wie gut der Querschnitt der
 
 **Die schwache Richtung.** Das Verhältnis der beiden Spannungen bei gleicher Kraft ist einfach *a*/*b*: Ein Zahn, der doppelt so lang wie breit ist, wird von der Seite doppelt so stark belastet wie von vorn. Für den voll durchgebrochenen Eckzahn des Exemplars AMNH FM55576 misst der Querschnitt am Zahnfleischrand 32,17 mm mal 18,00 mm [6](#ref-6){:.cite} – eine seitliche Last belastet ihn also etwa **1,8-mal** stärker als eine Last von vorn. Das passt zu der Ansicht, dass eine sich wehrende Beute die langen Säbel gefährdete, die leichter brachen als die Eckzähne lebender Katzen [1](#ref-1){:.cite}.
 
-**In die Festigkeit hineinwachsen.** Tseng fand, dass der Querschnitt des Säbels so mit seiner Höhe wächst, dass seine Biegefestigkeit zunimmt, auch wenn er sich mit wachsender Höhe seitlich leichter verbiegt. Mehr als die Hälfte der Durchbruchszeit – eine Zeitangabe nach Wysocki und Kollegen [16](#ref-16){:.cite} – standen Milch- und Dauereckzahn nebeneinander, was den Zahn effektiv verbreiterte und Tsengs Schätzungen von Festigkeit und Steifigkeit näher an theoretische Optima brachte [6](#ref-6){:.cite}.
+**In die Festigkeit hineinwachsen.** Tseng fand, dass der Querschnitt des Säbels so mit seiner Höhe wächst, dass seine Biegefestigkeit zunimmt, auch wenn er sich mit wachsender Höhe seitlich leichter verbiegt. Nach Wysocki und Kollegen blieb der Milcheckzahn vermutlich etwa 11 der rund 22 Monate erhalten, die der Säbel zum Durchbrechen brauchte [16](#ref-16){:.cite} – nach Tsengs Lesart mehr als die Hälfte der Durchbruchszeit. Nebeneinander verbreiterten die beiden Eckzähne den Zahn effektiv, was Tsengs Schätzungen von Festigkeit und Steifigkeit näher an theoretische Optima brachte [6](#ref-6){:.cite}.
 
 {% include lens-end.html %}
 
@@ -290,7 +290,7 @@ Dabei ist *W* das Widerstandsmoment, das beschreibt, wie gut der Querschnitt der
 
 ## Informatik-Linse: Spannung in einem wachsenden Säbel
 
-Wie stark zählt die Richtung einer Last, und wird ein längerer Säbel schwächer? Das Programm unten nimmt die Querschnitte eines ausgewachsenen Eckzahns von *Smilodon fatalis*, die Tseng in aufeinanderfolgenden Höhen gemessen hat, um seinen Durchbruch zu simulieren [6](#ref-6){:.cite} und berechnet mit den Balkenformeln aus der Mathematik-Linse die Biegespannung an der Basis für eine Last von der Seite und von vorn. **Annahmen:** Der Querschnitt ist eine Ellipse; die Last von 100 N an der Spitze ist ein angenommener runder Wert zum Vergleich, keine gemessene Kraft; aussagekräftig sind nur das Verhältnis der Spannungen und ihr Verlauf, nicht die absoluten Werte.
+Wie stark zählt die Richtung einer Last, und wird ein längerer Säbel schwächer? Das Programm unten nimmt die Querschnitte eines ausgewachsenen Eckzahns von *Smilodon fatalis*, die Tseng in aufeinanderfolgenden Höhen gemessen hat, um seinen Durchbruch zu simulieren [6](#ref-6){:.cite}, und berechnet mit den Balkenformeln aus der Mathematik-Linse die Biegespannung an der Basis für eine Last von der Seite und von vorn. **Annahmen:** Der Querschnitt ist eine Ellipse; die Last von 100 N an der Spitze ist ein angenommener runder Wert zum Vergleich, keine gemessene Kraft; aussagekräftig sind nur das Verhältnis der Spannungen und ihr Verlauf, nicht die absoluten Werte.
 
 ```python
 import numpy as np
@@ -336,7 +336,7 @@ side, front = bending_stress(LOAD_N, height, x, y)
 print(f"{SPECIMEN}, Last {LOAD_N:.0f} N an der Spitze")
 for h, s, f in ((height[0], side[0], front[0]), (height[-1], side[-1], front[-1])):
     print(f"  Höhe {h:.0f} mm: {s:.1f} MPa von der Seite, {f:.1f} MPa von vorn")
-print(f"voll durchgebrochen belastet eine seitliche Last den Zahn {side[-1] / front[-1]:.1f}-mal stärker als eine Last von vorn")
+print(f"im letzten Stadium belastet eine seitliche Last den Zahn {side[-1] / front[-1]:.1f}-mal stärker als eine Last von vorn")
 print(f"vom ersten zum letzten Stadium ändert sich die seitliche Spannung um den Faktor {side[-1] / side[0]:.2f}, "
       f"während die Höhe {height[-1] / height[0]:.1f}-mal zunimmt")
 

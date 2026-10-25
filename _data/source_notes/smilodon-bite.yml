@@ -7,12 +7,13 @@
 # for those only the abstract (or, for the two Current Biology correspondences, the short summary) was
 # read. Coltrain et al. 2004 and Fuller et al. 2014 had no readable abstract and are not cited.
 # Crossref years: Carbone 2009 (online 2008), Deutsch 2025 and Tseng 2025 (online 2024) – the article
-# uses the Crossref (issue) years. Crossref truncates Feranec's title ("Analysi"); the article gives the
+# uses the Crossref (issue) years. open_access is set only where the full text was freely readable for us:
+# the five Current Biology papers are 'bronze' on cell.com but behind a bot check, so they are not flagged. Crossref truncates Feranec's title ("Analysi"); the article gives the
 # full title "… Stable Isotope Analysis".
 "10.1016/j.cub.2017.09.033":
   read: "Abstract (PubMed)"
   claims:
-    - "Saber-toothed cats (Machairodontinae) are among the best-known representatives of the Pleistocene megafauna – abstract, first sentence"
+    - "Saber-toothed cats (Machairodontinae) are among the most widely recognized representatives of the Pleistocene megafauna – abstract, first sentence"
     - "Machairodontinae form a well-supported clade distinct from all living felids → 'not a tiger', distinct from all living cats incl. tigers and lions – abstract"
     - "Deep divergence between Smilodon and Homotherium (~18 million years) – abstract"
 "10.1016/j.cub.2019.06.059":
@@ -62,6 +63,7 @@
     - "S. fatalis known predominantly from 'predator trap' deposits; hypotheses on its life history and social strategy largely based on Rancho La Brea data → 'Much of what we know about how it lived comes from Rancho La Brea' – Summary; Introduction"
     - "Adult P3 present in both subadult dentaries; at Rancho La Brea a P3 occurs in only 2.4–6 % of S. fatalis – Results/Discussion"
     - "Assemblage likely derived from a catastrophic mass mortality event ('died together') – abstract"
+    - "Rancho La Brea, California – Introduction; location in Los Angeles: common knowledge (La Brea Tar Pits)"
 "10.1073/pnas.0706086104":
   read: "Full text (PMC2042153)"
   claims:
@@ -115,7 +117,7 @@
     - "Table S1 'morpho' models: cusp height, AP length and ML width per simulated eruption stage for AMNH FM55576 (40.62–137.76 mm; final 32.17 × 18.00 mm) and KU S2255 (20.20–95.03 mm) – used verbatim in the code example (article CC BY-NC-ND 4.0; values quoted with citation)"
     - "Eruption simulated in reverse: adult canine models shifted in 10 mm steps against a hypothetical gumline; AP and ML measured at the alveolar plane – Methods"
     - "Article licence CC BY-NC-ND 4.0 – front matter"
-    - "Joint presence of deciduous and adult canines for >50 % of eruption is taken from Wysocki et al. 2015 – Discussion 4.2"
+    - "Tseng: deciduous canine may have remained in place for more than 50 % of eruption, citing Wysocki et al. 2015 – Introduction/Discussion 4.2"
     - "Table S1 morpho series: AMNH FM55576 11 stages 40.62–137.76 mm; LACM RLB P23-4739 26.74–109.70 mm; KU S2255 20.20–95.03 mm"
     - "Computed in the article, not in the source: side/front stress ratio = a/b = 32.17/18.00 = 1.79 (1.79–2.30 over all AMNH stages); side stress 18.1 → 13.5 MPa for 100 N (×0.74, height ×3.4); KU S2255 ratio 2.21, ×0.49; round section 10.1 MPa"
     - "Typical extant felid crown height 20–40 mm (grey band in Fig. 2) – Methods"
@@ -127,6 +129,8 @@
     - "Permanent dentition except upper canines fully erupted by 14–22 months; upper canines finished erupting at about 34–41 months – abstract"
     - "Delayed dental development compared with similar-sized extant felids – abstract"
     - "Eruption rate 6.0 mm/month 'implied' by combining the δ18O-derived enamel growth rate with μCT lengths of mineralised enamel – abstract, Methods"
+    - "Deciduous upper canines appear retained until ~23–30 months; erupted dC1 and erupting C1 present together for about 11 months; C1 eruption took nearly 22 months – Discussion"
+    - "Sabre-tooth upper canines at greater risk of fracture from medio-laterally directed forces than conical felid canines (citing ref. 63) – Discussion"
 "10.58782/flmnh.psyo5090":
   read: "Abstract (OpenAlex); PDF behind a bot check"
   claims:

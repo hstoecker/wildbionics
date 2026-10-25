@@ -46,7 +46,7 @@ side, front = bending_stress(LOAD_N, height, x, y)
 print(f"{SPECIMEN}, Last {LOAD_N:.0f} N an der Spitze")
 for h, s, f in ((height[0], side[0], front[0]), (height[-1], side[-1], front[-1])):
     print(f"  Höhe {h:.0f} mm: {s:.1f} MPa von der Seite, {f:.1f} MPa von vorn")
-print(f"voll durchgebrochen belastet eine seitliche Last den Zahn {side[-1] / front[-1]:.1f}-mal stärker als eine Last von vorn")
+print(f"im letzten Stadium belastet eine seitliche Last den Zahn {side[-1] / front[-1]:.1f}-mal stärker als eine Last von vorn")
 print(f"vom ersten zum letzten Stadium ändert sich die seitliche Spannung um den Faktor {side[-1] / side[0]:.2f}, "
       f"während die Höhe {height[-1] / height[0]:.1f}-mal zunimmt")
 

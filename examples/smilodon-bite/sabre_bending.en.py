@@ -46,7 +46,7 @@ side, front = bending_stress(LOAD_N, height, x, y)
 print(f"{SPECIMEN}, load {LOAD_N:.0f} N at the tip")
 for h, s, f in ((height[0], side[0], front[0]), (height[-1], side[-1], front[-1])):
     print(f"  height {h:.0f} mm: {s:.1f} MPa from the side, {f:.1f} MPa from the front")
-print(f"fully erupted, a side load stresses the tooth {side[-1] / front[-1]:.1f} times more than a front load")
+print(f"at the last stage, a side load stresses the tooth {side[-1] / front[-1]:.1f} times more than a front load")
 print(f"from first to last stage, the side stress changes by a factor of {side[-1] / side[0]:.2f}, "
       f"while the height grows {height[-1] / height[0]:.1f} times")
 
