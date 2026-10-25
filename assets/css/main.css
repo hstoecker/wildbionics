@@ -2457,7 +2457,7 @@ a.cite:hover { text-decoration: underline; }
 .sb-svg .sabre { fill: #f1ead8; stroke: rgba(60, 50, 30, 0.6); stroke-width: 1; }
 .sb-svg .tooth-small { fill: #f6efdd; stroke: rgba(60, 40, 20, 0.5); stroke-width: .6; }
 .sb-svg .tongue { fill: #c46b6b; stroke: rgba(70, 20, 15, 0.5); stroke-width: .8; }
-.sb-svg .gum { fill: none; stroke: #8a3a32; stroke-width: 2; stroke-linecap: round; }
+.sb-svg .gum { fill: none; stroke: #b8645c; stroke-width: 3; stroke-linecap: round; }
 .sb-svg .fur--jaw { fill: #c9975a; }
 .sb-svg .mouth { fill: #3a1410; stroke: rgba(30, 10, 5, 0.7); stroke-width: 1; }
 .sb-svg .muscle { fill: none; stroke: rgba(90, 55, 20, 0.35); stroke-width: 1.4; stroke-linecap: round; }
