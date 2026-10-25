@@ -25,7 +25,7 @@ mentions:
   - { name: "Pleistozän", wikidata: Q25546 }
 dimensions:
   time: ["cenozoic", "pleistocene"]
-  space: ["urban", "lab"]
+  space: ["forest", "lab"]
   physics: ["mechanics"]
   adjacent_sciences: ["biology", "chemistry", "mathematics", "computer-science", "materials-science"]
 beings: ["smilodon"]
@@ -282,7 +282,7 @@ Tseng schreibt dieselben Größen mit der vollen Länge *x* und Breite *y* des Q
 
 **Ein Speiseplan im Zahnschmelz.** Kohlenstoffisotope (δ¹³C) zeigen, welche Pflanzen am Anfang der Nahrungskette standen. In einem Eckzahn von *Smilodon gracilis* aus Florida deuten die Kohlenstoffisotopenwerte auf Beute hin, die sich nur von sogenannten C3-Pflanzen ernährte; das schließt einige Beutetiere wie Pferde und Mammuts wahrscheinlich aus, und die Werte könnten auf Beute aus einem geschlossenen Lebensraum hindeuten – oder auf noch nicht untersuchte Beutearten, so Feranec [17](#ref-17){:.cite}.
 
-**Konkurrenz – eine Debatte.** In Rancho La Brea kombinierten Larisa DeSantis und Kollegen mehrere Belegarten (einen Multi-Proxy-Ansatz) an Hunderten von Fossilien von Raub- und Pflanzenfressern. Sie schließen, dass Schreckenswölfe Beute aus offeneren Lebensräumen fraßen als die Katzen und dass Säbelzahnkatzen und Schreckenswölfe kaum um Beute konkurrierten – entgegen einer früheren Annahme [4](#ref-4){:.cite}. Blaire Van Valkenburgh und Kollegen widersprachen diesem Schluss: Fehlende Konkurrenz aus den Daten des Zahnschmelzes abzuleiten, sei problematisch [18](#ref-18){:.cite}; DeSantis und Kollegen antworteten auf diese Einwände [19](#ref-19){:.cite}. Die Frage ist offen.
+**Konkurrenz – eine Debatte.** In Rancho La Brea kombinierten Larisa DeSantis und Kollegen mehrere Belegarten (einen Multi-Proxy-Ansatz) an Hunderten von Fossilien von Raub- und Pflanzenfressern. Sie schließen, dass Schreckenswölfe Beute aus offeneren Lebensräumen fraßen als die Katzen und dass Säbelzahnkatzen und Schreckenswölfe kaum um Beute konkurrierten – entgegen einer früheren Annahme [4](#ref-4){:.cite}. Damit lägen die Jagdgründe der Katzen eher in bewaldetem, weniger offenem Gelände – das ist unser Schluss aus den Beutedaten, kein direkter Befund. Blaire Van Valkenburgh und Kollegen widersprachen diesem Schluss: Fehlende Konkurrenz aus den Daten des Zahnschmelzes abzuleiten, sei problematisch [18](#ref-18){:.cite}; DeSantis und Kollegen antworteten auf diese Einwände [19](#ref-19){:.cite}. Die Frage ist offen.
 
 **Radiokarbon und das Ende.** Die Radiokarbondatierung nutzt den Zerfall des radioaktiven Isotops Kohlenstoff-14 in einst lebendem Material. Robin O'Keefe und Kollegen gewannen 172 neue Radiokarbondaten von Großtieren aus Rancho La Brea. Sieben ausgestorbene Arten der Megafauna verschwanden dort bis vor 12.900 Jahren. Die Autoren bringen das mit einem Umbruch des Ökosystems nach Austrocknung und Vegetationswandel in Verbindung, Zeitreihenmodelle deuten auf große Brände als Hauptursache, und zunehmender menschlicher Einfluss könnte der Auslöser gewesen sein – eine Hypothese, kein gesichertes Ergebnis [20](#ref-20){:.cite}.
 

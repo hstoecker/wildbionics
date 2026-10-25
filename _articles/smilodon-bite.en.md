@@ -25,7 +25,7 @@ mentions:
   - { name: "Pleistocene", wikidata: Q25546 }
 dimensions:
   time: ["cenozoic", "pleistocene"]
-  space: ["urban", "lab"]
+  space: ["forest", "lab"]
   physics: ["mechanics"]
   adjacent_sciences: ["biology", "chemistry", "mathematics", "computer-science", "materials-science"]
 beings: ["smilodon"]
@@ -282,7 +282,7 @@ Tseng writes the same quantities with the full length *x* and width *y* of the c
 
 **A menu in the enamel.** Carbon isotopes (δ¹³C) record the plants at the base of the food chain. In one canine of *Smilodon gracilis* from Florida, the carbon isotope values point to prey that fed only on so-called C3 plants; this probably rules out some prey animals such as horses and mammoths, and the values may indicate prey caught in a closed habitat – or prey species not yet analysed, according to Feranec [17](#ref-17){:.cite}.
 
-**Competition – a debate.** At Rancho La Brea, Larisa DeSantis and colleagues combined several lines of evidence (a multi-proxy approach) from hundreds of carnivore and herbivore fossils. They conclude that dire wolves ate prey from more open habitats than the cats, and that sabre-toothed cats and dire wolves competed little for prey – overturning an earlier view [4](#ref-4){:.cite}. Blaire Van Valkenburgh and colleagues challenged this conclusion, pointing to problems with inferring a lack of competition from the dental enamel data [18](#ref-18){:.cite}; DeSantis and colleagues replied to these concerns [19](#ref-19){:.cite}. The question remains open.
+**Competition – a debate.** At Rancho La Brea, Larisa DeSantis and colleagues combined several lines of evidence (a multi-proxy approach) from hundreds of carnivore and herbivore fossils. They conclude that dire wolves ate prey from more open habitats than the cats, and that sabre-toothed cats and dire wolves competed little for prey – overturning an earlier view [4](#ref-4){:.cite}. That would place the cats' hunting grounds in more wooded, less open country – our inference from the prey, not a direct finding. Blaire Van Valkenburgh and colleagues challenged this conclusion, pointing to problems with inferring a lack of competition from the dental enamel data [18](#ref-18){:.cite}; DeSantis and colleagues replied to these concerns [19](#ref-19){:.cite}. The question remains open.
 
 **Radiocarbon and the end.** Radiocarbon dating uses the decay of the radioactive isotope carbon-14 in once-living material. Robin O'Keefe and colleagues obtained 172 new radiocarbon dates from megafauna at Rancho La Brea. Seven extinct species of megafauna disappeared there by 12,900 years ago. The authors link this to a shift of the ecosystem after aridification and vegetation change, time-series models point to large fires as the primary cause, and growing human impact may have been the trigger – a hypothesis, not a settled result [20](#ref-20){:.cite}.
 
