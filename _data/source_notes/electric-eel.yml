@@ -2,9 +2,11 @@
 # review (wildbionics-review). One entry per source, keyed by DOI: what was read, and which claims rest
 # on it. All DOIs resolved at Crossref (sources.py, 2026-10-25). Full texts from Europe PMC / PMC where
 # available. Catania 2017 (Current Biology) could not be read beyond the abstract (no PMC copy, the Cell
-# Press PDF sits behind a bot check), so it carries no open_access flag; its circuit values are taken
+# Press PDF sits behind a bot check; Crossref lists a CC BY-NC-ND licence, but we could not confirm a
+# freely readable copy), so it carries no open_access flag; its circuit values are taken
 # from Catania 2019 (open access), Fig. 12, which reproduces them "from Catania, 2017a, b". Catania 2014
-# (Science), Xu & Lavan 2008 (PMC page behind a bot check) and Solberg et al. 2007 (IEEE) were read as
+# (Science), Xu & Lavan 2008 (free NIH manuscript PMC2767210 exists – hence open_access – but its PMC page
+# was behind a bot check) and Solberg et al. 2007 (IEEE) were read as
 # abstracts only. Derived numbers (Thévenin equivalent, maximum power, cells in series) are computed in
 # the article's program eel_circuit.py and labelled as calculations for this article.
 "10.1038/s41467-019-11690-z":
@@ -67,7 +69,8 @@
     - "High-voltage EOD used to track fast-moving prey (conductors) – abstract and section 'The use of high-voltage for active electroreception'"
     - "Electrocytes can be analysed with methods used for batteries; V vs I with a variable resistor gives a straight line with slope −r – section 'The equivalent circuit'"
     - "EMF and internal resistance of five eels: 198 V/960 Ω, 179 V/707 Ω, 301 V/492 Ω, 316 V/438 Ω, 382 V/450 Ω (range 179–382 V, 438–960 Ω) – Fig. 12A; growing eels: EMF increases, internal resistance decreases – text"
-    - "Smallest eel's leap circuit: ε = 198 V, r = 960 Ω, water ≈ 400 Ω, return path Ro ≈ 2,400 Ω; arm ≈ 2,100 Ω; currents ≈ 0.08 A (eel), ≈ 0.037 A (Ro), ≈ 0.043 A (arm) – Fig. 12B, E; arm resistance calculated from the measured current – text 'Completing the circuit'"
+    - "Small eel (the top one in Fig. 12A; text: 'the small eel illustrated in Figure 12A (top eel)') – leap circuit: ε = 198 V, r = 960 Ω, water ≈ 400 Ω, return path Ro ≈ 2,400 Ω; arm ≈ 2,100 Ω; currents ≈ 0.08 A (eel), ≈ 0.037 A (Ro), ≈ 0.043 A (arm) – Fig. 12B, E; arm resistance calculated from the measured current – text 'Completing the circuit'"
+    - "Equivalent circuit 'thought to develop'; the return path along the eel becomes more resistant as the eel ascends (Fig. 10D legend and text) – hedged as 'presumably' in the article"
     - "Return path as a volume control – section 'The equivalent circuit' ('turning up the volume')"
     - "Open questions: diet in the wild, whether other strongly electric fishes activate prey motor neurons, how an eel protects its own nervous system – Summary, last paragraph (FAQ quote is a translation of 'How does an eel protect its own nervous system from the high-voltage EOD?')"
 "10.3390/toxins13010048":
@@ -83,6 +86,7 @@
     - "High-voltage discharges activate prey motor neurons and hence muscles, allowing eels to remotely control their target – abstract"
     - "High-frequency volleys induce immobilising whole-body tetanus – abstract"
     - "Hidden prey: periodic volleys of two or three discharges cause massive involuntary twitch, revealing the prey's location – abstract"
+    - "High-speed video recordings of hunting eels (Catania 2019 citing Catania 2014) – the intro sentence cites [6] and [4]"
     - "Series of experiments with high-speed video and simultaneous recordings (method context from the abstract and from Catania 2019's account of the study)"
 "10.1073/pnas.1604009113":
   read: "Full text (PMC, PMC4922196)"
@@ -92,6 +96,7 @@
     - "Behaviour appears ubiquitous for comparatively large eels (over 60 cm) – Introduction/Results"
     - "Short-circuits the electric organ through the threat; increasing power diverted to the threat as the eel attains greater height – abstract"
     - "Measured voltage and current increased dramatically as the eels ascended – Results"
+    - "Power distributed through the water 'may have little effect on a terrestrial animal with only a small portion of its body submerged'; a new, progressively higher-resistance path from head to water 'presumably develops' – Discussion and Results (hedged in the article)"
     - "Faraday 1838: with one hand in the water the shock was felt only in that hand and was not very strong – Discussion (quoted)"
     - "Eels likely defend themselves in the dry season when trapped in small pools; obligate air breathers suited to deoxygenated pools – Significance and Discussion (marked 'as he summarises')"
 "10.1016/j.cub.2017.08.034":

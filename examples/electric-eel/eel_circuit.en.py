@@ -1,4 +1,4 @@
-# eel_circuit.py – From “How the Electric Eel Shocks: 860 Volts from Living Batteries”
+# eel_circuit.py – From “Electric Eel: 860 Volts from Living Batteries”
 # https://wildbionics.com/articles/electric-eel/ · Code: MIT licence
 # Needs: python3 -m pip install numpy matplotlib
 # Run: python3 eel_circuit.py   (https://wildbionics.com/run-code/)
@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # How much power does a leaping electric eel push through a threat? An equivalent circuit.
 CELL_EMF = 0.150         # voltage of one firing electrocyte (V), Schroeder et al. 2017
-# Measured on the smallest of five eels by Catania (summarised in Catania 2019, Fig. 12):
+# Measured on a small eel by Catania (summarised in Catania 2019, Fig. 12):
 EMF, R_INTERNAL = 198.0, 960.0   # electromotive force (V) and internal resistance (Ω)
 R_WATER = 400.0          # resistance of the water path back to the tail (Ω)
 RETURN_PATH = 2400.0     # head-to-water path along the eel at the top of the leap (Ω)
