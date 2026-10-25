@@ -56,7 +56,7 @@ faq:
   - q: "Is the electric eel really an eel?"
     a: "No. Despite its name, the electric eel is not a true eel but a South American knifefish (order Gymnotiformes), related to other electric fishes of South America. Since 2019, three species are recognised: Electrophorus electricus, Electrophorus voltai and Electrophorus varii."
   - q: "How many volts can an electric eel produce?"
-    a: "The highest value reported, in 2019, is 860 volts, from an Electrophorus voltai about 1.2 metres long, measured out of the water from snout to tail. Before, about 650 volts was the figure cited for electric eels. The voltage tends to grow with the size of the eel: in five eels of different sizes, Kenneth Catania measured electromotive forces between 179 and 382 volts."
+    a: "The highest value reported, in 2019, is 860 volts, from an Electrophorus voltai about 1.2 metres long, measured out of the water from snout to tail. Before, about 650 volts was the figure cited for electric eels. In Catania’s data, the voltage tends to grow with the size of the eel: in five eels of different sizes, Kenneth Catania measured electromotive forces between 179 and 382 volts."
   - q: "How does an electric eel make electricity?"
     a: "With cells called electrocytes, which evolved from muscle cells. At rest, the two faces of a flat electrocyte carry equal and opposite voltages, so the cell produces nothing. When a nerve signal arrives, sodium channels open on one face only, and the cell suddenly has about 0.15 volts across it. Thousands of electrocytes lie in series, like batteries in a torch, so their voltages add up."
   - q: "Why do electric eels jump out of the water?"
