@@ -607,6 +607,15 @@ en:
       name: "Honeybee"
       taxon: "Apis mellifera"
       note: "Schematic · not to scale"
+    smilodon_bite:
+      title: "Hold first, then bite: a sabre-toothed cat pins its prey, and the cross-section of its sabre shows why"
+      desc: "Schematic side view of the sabre-toothed cat Smilodon fatalis with its short tail, sloping back and massive forelimbs. It stands on its hind legs and presses its forelimbs onto the neck and shoulder of a large prey animal lying on the ground; its head is lowered over the prey's neck with the jaw opened wide, showing the incisors, the small lower canine and the cheek teeth, and its long, flattened upper canine points down for the bite. An inset shows the canine as a beam fixed in the jaw and, next to it, its cross-section at the gum line: an ellipse about 1.8 times as long from front to back as it is wide from side to side. An arrow from the front runs along the long axis of the ellipse and is labelled “front 1×”; an arrow from the side runs across its narrow width and is labelled “side 1.8×” – about 1.8 times the bending stress. Coat colour and pattern are a reconstruction."
+      note: "Schematic · coat reconstructed"
+      name: "Smilodon fatalis"
+      prey: "large prey (schematic)"
+      inset: "upper canine"
+      front: "front 1×"
+      side: "side 1.8×"
     electric_eel:
       title: "Many small voltages make a big one: an electric eel with its electric organ as cells in series, like batteries in a torch"
       desc: "Schematic side view of an electric eel: a long, dark, cylindrical body without a dorsal fin, a long fin ribbon along the belly that runs to the tip of the tail, a broad head with a wide mouth, a small eye and an orange throat. A cut-away in the rear half of the body shows the electric organ as many thin plates, the electrocytes, stacked one behind the other. An inset enlarges them as batteries in a row: each cell adds about 0.15 volts, and thousands in series give hundreds of volts, with the minus pole at the tail and the plus pole at the front end of the organ, behind the head. Around the eel, curved field lines run through the water from the plus pole to the minus pole; one of them passes through a small fish above the front of the eel, so the current also flows through the prey. A bracket marks the electric organ along the rear 80 percent of the body."
@@ -1279,6 +1288,15 @@ de:
       name: "Honigbiene"
       taxon: "Apis mellifera"
       note: "Schema · nicht maßstabsgetreu"
+    smilodon_bite:
+      title: "Erst festhalten, dann beißen: Eine Säbelzahnkatze hält ihre Beute fest, und der Querschnitt ihres Säbels zeigt, warum"
+      desc: "Schematische Seitenansicht der Säbelzahnkatze Smilodon fatalis mit kurzem Schwanz, abfallendem Rücken und mächtigen Vorderbeinen. Sie steht auf den Hinterbeinen und drückt die Vorderbeine auf Hals und Schulter eines großen Beutetiers, das am Boden liegt; ihr Kopf ist mit weit geöffnetem Maul über den Hals der Beute gesenkt, sodass Schneidezähne, der kleine untere Eckzahn und die Backenzähne zu sehen sind, und ihr langer, flacher oberer Eckzahn zeigt für den Biss nach unten. Ein Einschub zeigt den Eckzahn als im Kiefer eingespannten Balken und daneben seinen Querschnitt am Zahnfleischrand: eine Ellipse, die von vorn nach hinten etwa 1,8-mal so lang ist wie von Seite zu Seite breit. Ein Pfeil von vorn verläuft entlang der langen Achse der Ellipse und ist mit „vorn 1×“ beschriftet; ein Pfeil von der Seite verläuft quer zur schmalen Breite und ist mit „seitlich 1,8×“ beschriftet – etwa 1,8-fache Biegespannung. Fellfarbe und Muster sind eine Rekonstruktion."
+      note: "Schematisch · Fell rekonstruiert"
+      name: "Smilodon fatalis"
+      prey: "große Beute (schematisch)"
+      inset: "oberer Eckzahn"
+      front: "vorn 1×"
+      side: "seitlich 1,8×"
     electric_eel:
       title: "Viele kleine Spannungen ergeben eine große: ein Zitteraal mit seinem elektrischen Organ aus Zellen in Reihe, wie Batterien in einer Taschenlampe"
       desc: "Schematische Seitenansicht eines Zitteraals: ein langer, dunkler, walzenförmiger Körper ohne Rückenflosse, ein langer Flossensaum am Bauch, der bis zur Schwanzspitze reicht, ein breiter Kopf mit weitem Maul, einem kleinen Auge und orangefarbener Kehle. Ein Ausschnitt in der hinteren Körperhälfte zeigt das elektrische Organ als viele dünne Platten, die Elektrozyten, hintereinander gestapelt. Ein Einschub vergrößert sie als Batterien in einer Reihe: Jede Zelle trägt etwa 0,15 Volt bei, und Tausende in Reihe ergeben Hunderte Volt, mit dem Minuspol am Schwanz und dem Pluspol am vorderen Ende des Organs, hinter dem Kopf. Um den Aal verlaufen gekrümmte Feldlinien durch das Wasser vom Pluspol zum Minuspol; eine davon führt durch einen kleinen Fisch über dem vorderen Teil des Aals, sodass der Strom auch durch die Beute fließt. Eine Klammer markiert das elektrische Organ über die hinteren 80 Prozent des Körpers."
