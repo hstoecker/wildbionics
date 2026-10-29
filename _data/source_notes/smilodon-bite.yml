@@ -10,6 +10,9 @@
 # uses the Crossref (issue) years. open_access is set only where the full text was freely readable for us:
 # the five Current Biology papers are 'bronze' on cell.com but behind a bot check, so they are not flagged. Crossref truncates Feranec's title ("Analysi"); the article gives the
 # full title "… Stable Isotope Analysis".
+# Wikidata IDs resolved 2026-10-25 (wikidata.org EntityData): Q1956565 Smilodon fatalis, Q188717 Smilodon,
+# Q778615 Machairodontinae, Q1147168 La Brea Tar Pits, Q25546 Pleistocene – labels match the intended items.
+# Chart alt minima recomputed from the Table S1 values in the code: side 12.13 MPa (118 mm), front 6.22 MPa (78 mm).
 "10.1016/j.cub.2017.09.033":
   read: "Abstract (PubMed)"
   claims:
