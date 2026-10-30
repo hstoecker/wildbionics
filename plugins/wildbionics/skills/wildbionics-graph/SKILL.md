@@ -24,7 +24,12 @@ organisms (beings) or thought experiments and, through its lenses, to discipline
 - **Time** runs from the Big Bang through evolution and geology into technology: … → `modern-era`
   → `age-of-ai` → `future-scenarios`. Superintelligence and future humanoid robots belong to
   `future-scenarios` and are always framed as hypotheses/scenarios with sources.
-- **Space**: habitats and scales (microcosm, deep sea, coral reef, desert, stratosphere, lab, urban).
+- **Space**: habitats and scales (microcosm, deep sea, coral reef, forests, rivers and lakes,
+  stratosphere, lab, urban). A habitat term says where the organism lives or lived, or where the
+  phenomenon happens – not where its fossils or specimens are found today (the La Brea tar pits lie
+  in Los Angeles, but *Smilodon* gets `forest`, not `urban`). The article text must support the
+  term; if the evidence is indirect, the text says so ("our inference from the prey"). If no term
+  fits well, take the nearest one and mention the gap in the PR, or add a new term.
 - **Rules**: fields of physics (mechanics, fluid dynamics, thermodynamics, optics, acoustics,
   electromagnetism, quantum, relativity).
 - **Adjacent sciences**: biology, chemistry, mathematics, computer science, artificial

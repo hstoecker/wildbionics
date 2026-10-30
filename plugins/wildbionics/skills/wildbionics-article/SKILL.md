@@ -48,6 +48,26 @@ PR is opened and when the label `ready-for-review` is added (see `wildbionics-co
    page come from an actual run, never from typing.
 7. Anything speculative or hypothetical (e.g. superintelligence, future robots) is written as a
    scenario with sources for the positions described – never as fact.
+8. **Say what the source actually measured** (lessons from `smilodon-bite`):
+   - *Unit of count:* write what was counted – "3,324 fossil records (minimum numbers of
+     individuals)", not "3,324 animals"; "the mitochondrial lineages diverged", not "the species split".
+   - *Simulated vs measured:* a modelled series (e.g. a digital eruption model) is called simulated
+     in the text, the caption and the code comment – never presented as a growth record.
+   - *Supplementary data:* name the place where it is quoted ("(Table S1)"), check the licence of
+     the paper and its supplement (CC BY-NC-ND: quote the values with citation, do not republish the
+     file) and state the licence in the code comment.
+   - *Source wording first:* when you paraphrase a technical phrase, give the source's term and mark
+     your own reading ("bending about the front-to-back axis (in our reading of the abstract: by a
+     load from the side)"). Your own conclusions are labelled as such ("our inference from …, not a
+     direct finding").
+   - *Rounding:* round consistently and never past the source's precision ("about 1,280 N" for
+     1283.74 N); bold titles such as "weak bite" are qualified in the key facts and FAQ.
+   - *Debates:* when a finding is contested, show the study, the objection and the reply, each with
+     its source, and end with "the question remains open" – in every lens, not only in chemistry.
+   - *Extinct organisms:* everything not preserved (coat, soft tissue, behaviour) is a
+     reconstruction or an inference and is labelled so – in text, figure note and alt text.
+   - *Wikidata:* resolve every ID in `about`, `mentions`, beings and terms and note the check
+     (date, labels) in the research notes header, so the review can rely on it.
 
 ## 2. File and front matter
 
@@ -158,7 +178,7 @@ which the script writes; never edit them by hand. Code inside an include (home p
   not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
   valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if
   they were real; distinguish curves by more than colour (direct labels or line styles). Every chart needs `alt` (what the
-  chart shows, with the key numbers) and a numbered `label`/`caption` like any figure – all three
+  chart shows, with the key numbers – start, end and extrema recomputed from the run, not read off the plot) and a numbered `label`/`caption` like any figure – all three
   also become the chart's `ImageObject` in the JSON-LD (search engines index it as an image).
 - Print only as many digits as are **stable across platforms** – CI runs Linux, you may run macOS.
   Quantities that depend strongly on solver steps (peaks, minima, anything raised to a high power)
@@ -177,6 +197,9 @@ which the script writes; never edit them by hand. Code inside an include (home p
    `{% include code-variant.html file="x.py" id="bigger" replace="R_MAX = 3.0e-3" with="R_MAX = 6.0e-3" expect="551 557" %}`.
    The gate replaces `replace` (must occur exactly once), runs the program and fails unless every
    number in `expect` – list all numbers the text quotes for this change – appears in the output.
+   `replace`/`with` are double-quoted Liquid strings and cannot contain quotes: to switch between
+   named cases (specimens, materials), select them by a number (`SPECIMEN_INDEX = 0` → `1`), not by
+   a quoted name.
    The page shows the variant's output as a collapsible "Tested output with …" (optional
    `label="…"` names the change when `with` alone is unclear).
 Numbers quoted in the text must match the Output box; rerun the script after every code change.
