@@ -71,6 +71,8 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
    .github/scripts/check_all.sh --only <ref>    # while working on one article: only its code examples
    ```
    Stop `jekyll serve` first – it rewrites `_site` while the gates read it (the script warns).
+   Activate the venv (`source .venv/bin/activate`) or the code gate fails with
+   `ModuleNotFoundError: matplotlib`.
 5. **Self-review** with `wildbionics-review` and fix every must-fix finding – before the PR, so
    the CI review usually needs one round only.
 6. **Open a pull request** using the template. CI runs all gates, builds a preview (downloadable
@@ -85,6 +87,14 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
    file is identical to `main`'s – otherwise it stops after a few seconds ("Workflow validation
    failed") and the job only posts "finished without a report". A PR that edits the review
    workflow itself gets no Claude review; its change takes effect after merging.
+   **If the review job fails or posts "finished without a report"** for another reason (a crash,
+   a timeout), start it again: `gh pr edit <n> --remove-label ready-for-review` and then
+   `--add-label ready-for-review` (adding a label that is still set triggers nothing).
+   **Merge conflicts between parallel article PRs** are usually two insertions at the same spot
+   (`_data/beings.yml`, `_data/figures.yml`, `_data/i18n.yml`, `_data/glossary.yml`,
+   `assets/css/main.css`): merge `origin/main` (never rebase or force-push), keep both sides, do not
+   hand-edit `_data/code_examples.yml` but regenerate it with `code_examples.py`, then run all gates
+   (`check_all.sh`, not only `--only <ref>`) before pushing.
    Work on one article per session: a fresh session with the skills is faster and cheaper than a
    long one that carries every earlier step along.
 7. **Maintainer approval:** Hendrik Stöcker reviews and merges. Only merged changes deploy
