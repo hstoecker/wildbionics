@@ -29,7 +29,7 @@ def changing_pose(x):
 
 
 def frozen_pose(x):
-    return 1.75, 0.88    # the middle of the cruise phase, held from launch to landing
+    return 1.75, 0.88    # midpoint of the values implied for the cruise phase, held from launch to landing
 
 
 def no_wing(x):

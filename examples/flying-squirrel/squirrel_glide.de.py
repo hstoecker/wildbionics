@@ -29,7 +29,7 @@ def changing_pose(x):
 
 
 def frozen_pose(x):
-    return 1.75, 0.88    # die Mitte der Gleitphase, vom Absprung bis zur Landung gehalten
+    return 1.75, 0.88    # Mitte der für die Gleitphase abgeleiteten Werte, vom Absprung bis zur Landung gehalten
 
 
 def no_wing(x):
