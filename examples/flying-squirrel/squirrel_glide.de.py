@@ -18,7 +18,7 @@ TREE = 18.0              # horizontale Entfernung zum Landebaum (m)
 DIVE_CL = 0.01           # Auftriebsbeiwert auf den ersten 3 m (das Paper nennt auch 0.05)
 END_CL = 5.6             # Auftriebsbeiwert bei der Ankunft: 1.4 plus etwa 300 %, sehr unsicher
 
-# Äquivalente Kraftbeiwerte entlang des Gleitflugs, wie im Text des Papers angegeben
+# Äquivalente Kraftbeiwerte entlang des Gleitflugs, unsere Lesart des Paper-Texts
 X_NODES = [0.0, 3.0, 3.6, 12.0, 18.0]             # horizontale Strecke (m)
 CL_NODES = [DIVE_CL, DIVE_CL, 1.4, 2.1, END_CL]   # 1.4 beim Eintritt ins Kamerabild, +50 % bis 12 m
 CD_NODES = [0.05, 0.05, 0.78, 0.975, 0.0]         # 0.78 beim Eintritt, +25 %, dann gegen 0

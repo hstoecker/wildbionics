@@ -632,8 +632,8 @@ en:
       field: "current through the water"
     flying_squirrel:
       title: "A glide is a steered fall: a flying squirrel dives, pulls up and reaches the next tree climbing"
-      desc: "A flying squirrel seen from above with all four limbs spread: a broad fur membrane stretches between wrists and ankles, a slender cartilage rod extends the membrane outward from each wrist, and a flat, fluffy tail trails behind. Below it, a side view of the glide computed from measured values: from a branch on the left tree, the path first falls steeply, then flattens and curves upward just before the right tree, 18 metres away and 7.6 metres lower. Arrows at three points show lift, drag and weight: lift grows and tilts backward on the way to the tree. A dashed line shows that a frozen pose would end about 2.5 metres lower, a dotted line that a thrown stone would hit the ground long before the tree."
-      note: "Path computed from measured values · animal not to scale"
+      desc: "A flying squirrel seen from above with all four limbs spread: a broad fur membrane stretches between wrists and ankles, a slender cartilage rod extends the membrane outward from each wrist, and a flat, fluffy tail trails behind. Below it, a side view of the glide computed from field data: from a branch on the left tree, the path first falls steeply, then flattens and curves upward just before the right tree, 18 metres away and 7.6 metres lower. Arrows at three points show lift, drag and weight: lift grows and tilts backward on the way to the tree. A dashed line shows that a frozen pose at the cruise midpoint would end about 2.5 metres lower, a dotted line that a thrown stone would hit the ground long before the tree."
+      note: "Path computed from field data · animal not to scale"
       name: "Flying squirrel"
       taxon: "Glaucomys sabrinus"
       tail: "flat tail"
@@ -1329,8 +1329,8 @@ de:
       field: "Strom durch das Wasser"
     flying_squirrel:
       title: "Gleiten ist gesteuertes Fallen: Ein Gleithörnchen stürzt, fängt sich ab und erreicht den nächsten Baum steigend"
-      desc: "Ein Gleithörnchen von oben mit vier gespreizten Gliedmaßen: Zwischen Handgelenken und Fußgelenken spannt sich eine breite, behaarte Flughaut, an jedem Handgelenk verlängert ein schlanker Knorpelsporn die Haut nach außen, hinten liegt ein flacher, buschiger Schwanz. Darunter die Seitenansicht des aus Messwerten berechneten Gleitflugs: Von einem Ast am linken Baum fällt die Bahn zuerst steil, wird dann flacher und biegt kurz vor dem rechten Baum, 18 Meter entfernt und 7,6 Meter tiefer, nach oben ab. Pfeile an drei Punkten zeigen Auftrieb, Widerstand und Gewicht: Der Auftrieb wächst und kippt auf dem Weg zum Baum nach hinten. Eine gestrichelte Linie zeigt, dass eine starre Haltung etwa 2,5 Meter tiefer enden würde, eine gepunktete, dass ein geworfener Stein lange vor dem Baum auf dem Boden aufschlüge."
-      note: "Bahn aus Messwerten berechnet · Tier nicht maßstäblich"
+      desc: "Ein Gleithörnchen von oben mit vier gespreizten Gliedmaßen: Zwischen Handgelenken und Fußgelenken spannt sich eine breite, behaarte Flughaut, an jedem Handgelenk verlängert ein schlanker Knorpelsporn die Haut nach außen, hinten liegt ein flacher, buschiger Schwanz. Darunter die Seitenansicht des aus Felddaten berechneten Gleitflugs: Von einem Ast am linken Baum fällt die Bahn zuerst steil, wird dann flacher und biegt kurz vor dem rechten Baum, 18 Meter entfernt und 7,6 Meter tiefer, nach oben ab. Pfeile an drei Punkten zeigen Auftrieb, Widerstand und Gewicht: Der Auftrieb wächst und kippt auf dem Weg zum Baum nach hinten. Eine gestrichelte Linie zeigt, dass eine starre Haltung in der Mitte der Gleitphase etwa 2,5 Meter tiefer enden würde, eine gepunktete, dass ein geworfener Stein lange vor dem Baum auf dem Boden aufschlüge."
+      note: "Bahn aus Felddaten berechnet · Tier nicht maßstäblich"
       name: "Gleithörnchen"
       taxon: "Glaucomys sabrinus"
       tail: "flacher Schwanz"

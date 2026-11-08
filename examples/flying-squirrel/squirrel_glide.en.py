@@ -18,7 +18,7 @@ TREE = 18.0              # horizontal distance to the landing tree (m)
 DIVE_CL = 0.01           # lift coefficient in the first 3 m (the paper also gives 0.05)
 END_CL = 5.6             # lift coefficient on arrival: 1.4 plus about 300 %, very uncertain
 
-# Equivalent force coefficients along the glide, as stated in the text of the paper
+# Equivalent force coefficients along the glide, our reading of the text of the paper
 X_NODES = [0.0, 3.0, 3.6, 12.0, 18.0]             # horizontal distance (m)
 CL_NODES = [DIVE_CL, DIVE_CL, 1.4, 2.1, END_CL]   # 1.4 on entering the camera view, +50 % by 12 m
 CD_NODES = [0.05, 0.05, 0.78, 0.975, 0.0]         # 0.78 on entering the view, +25 %, then towards 0

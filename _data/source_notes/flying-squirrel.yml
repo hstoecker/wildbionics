@@ -16,6 +16,7 @@
     - "Membrane may be partly open in the first metres – 4.2; first 3 m not filmed – 3.4, 4.2"
     - "Equilibrium within 16 m / 8 m for all simulations; about half of the glides 10 m or shorter – 4.1"
     - "AGV +27 % at equal GR, GR +46 % at equal AGV – 3.4"
+    - "Glides do not maximise GR; faster commute reduces exposure to predators; no constant-coefficient simulation superior on both GR and AGV – 4.4"
     - "Total energy decreases over all glides – 3.2; ways to change wing shape – 1.2; high CL, partly separated flow, leading-edge vortices – 4.3"
 "10.7554/elife.39270":
   read: "Full text (Europe PMC, PMC6177260, relevant sections)"
@@ -32,7 +33,7 @@
 "10.1038/s41467-026-72822-w":
   read: "Full text (nature.com, relevant sections)"
   claims:
-    - "0.689 kg, span 0.7 m; four limbs and tail; passive ribs raise CL by more than 0.1 below 24°; outdoor gusts up to 10 m/s; propellers; cascaded PID; roll-pitch coupling and planned control methods"
+    - "0.689 kg, span 0.7 m; four limbs and tail; roll and pitch by limbs and tail, yaw by differential thrust; outdoor flight manually piloted via RC, gusts from KNMI records; passive ribs raise CL by more than 0.1 below 24°; outdoor gusts up to 10 m/s; propellers; cascaded PID; roll-pitch coupling and planned control methods"
 "10.1111/1749-4877.12655":
   read: "Abstract of the published paper; full text of the preprint (Research Square rs-499384/v3), which includes Glaucomys specimens with emission spectra"
   claims:
