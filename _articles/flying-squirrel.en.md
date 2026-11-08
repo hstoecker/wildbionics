@@ -294,7 +294,7 @@ The 23 glides to the 18-metre tree followed a consistent pattern [1](#ref-1){:.c
 1. **Launch.** The squirrel jumps off with about 5.4 m/s (five launches filmed, 3.3–8.4 m/s). In short jumps in the laboratory, the take-off forces reached 1 to 10 body weights [6](#ref-6){:.cite}.
 2. **Dive.** For the first 3 metres, the only way to match the later trajectory in a simulation was almost no aerodynamic force: a nearly ballistic start. This stretch was not filmed. The result could mean a streamlined body or a membrane that is only partly open [1](#ref-1){:.cite}. Gravity turns height into speed.
 3. **Pull-out.** Then the force coefficients rise sharply. On entering the camera view, the path is about 45° steep, and at that angle lift, which acts at right angles to the path, points partly forward. It pushed forward about twice as hard as drag pushed back, so the animal kept accelerating horizontally. Speed peaked at about 8.5 m/s, 5 to 6 metres from the start [1](#ref-1){:.cite}.
-4. **Arrival.** During the last third, the squirrels raised the lift coefficient and lowered the drag coefficient at the same time. The path bent upward, and the animal met the trunk with its body nearly vertical [1](#ref-1){:.cite}. The full gliding posture spreads the impact over all four limbs [6](#ref-6){:.cite}.
+4. **Arrival.** During the last third, the squirrels raised the lift coefficient and lowered the drag coefficient at the same time. The path bent upward, and the animal met the trunk with its body nearly vertical [1](#ref-1){:.cite}. In short laboratory jumps, the full gliding posture spreads the impact over all four limbs [6](#ref-6){:.cite}.
 
 {% include lens-tabs.html lenses="biology,physics,math,cs,physical-ai" %}
 
@@ -354,7 +354,7 @@ Here *C*<sub>L</sub> and *C*<sub>D</sub> are the **lift coefficient** and the **
 
 **A worked example (calculation for this article).** With the values Bahlman and colleagues used, *m* = 92.7 g, *S* = 154 cm², *ρ* = 1.204 kg/m³ [1](#ref-1){:.cite}, and the midpoint of the values implied by the reported start values and percentage changes for the cruise, *C*<sub>L</sub> = 1.75 and *C*<sub>D</sub> = 0.88, the formulas give *θ* ≈ 27° and *V* ≈ 7.1 m/s. Simulations in the paper reach equilibrium within at most 16 metres of horizontal travel, and about half of the filmed glides were 10 metres or shorter, so for those, the simulations suggest, equilibrium is out of reach. On longer glides it would be possible, but the animals do not use it [1](#ref-1){:.cite}.
 
-**Why the forward push?** At a path angle θ, the forward component of lift is *L* sin θ, and the rearward component of drag is *D* cos θ. Their ratio is (*C*<sub>L</sub>/*C*<sub>D</sub>) · tan θ. With the values at the start of the filmed part (1.4 and 0.78) and θ = 45°, this gives about 1.8 (our calculation), in line with the “approximately twice” in the paper [1](#ref-1){:.cite}.
+**Why the forward push?** At a path angle θ, the forward component of lift is *L* sin θ, and the rearward component of drag is *D* cos θ. Their ratio is (*C*<sub>L</sub>/*C*<sub>D</sub>) · tan θ. With the values at the start of the filmed part (1.4 and 0.78) and θ = 45°, this gives about 1.8 (our calculation). The paper’s own estimate is “approximately twice”, while its reported starting L/D of about 1.5 would give about 1.5, so the agreement is only rough [1](#ref-1){:.cite}.
 
 **Big and small squirrels.** Among flying squirrels, weight varies by a factor of almost 64 and membrane area by a factor of almost 16, close to what geometry predicts: if every length grows fourfold, area grows 4² = 16-fold and weight 4³ = 64-fold. So the **wing loading**, weight per area, grows roughly fourfold, estimated from about 30 N/m² in small species to 110 N/m² in large ones [3](#ref-3){:.cite}. Since the formula above gives *V* ∝ √(*mg*/*S*), a fourfold loading means twice the speed for the same pose (calculation for this article). Thorington and Heaney considered it probable that large squirrels must fly faster for their best glide ratio, and that small ones are more manoeuvrable [3](#ref-3){:.cite}.
 
@@ -465,11 +465,11 @@ Try it yourself:
 
 - Lower the arrival lift: set `END_CL = 4.0`. The drop grows to 8.2 m and the final climb shrinks to +13°.
 - Use the other value the paper gives for the dive: set `DIVE_CL = 0.05`. The result hardly changes: the drop stays at 7.3 m, because almost no force acts in either case.
-- Launch at the lowest measured speed: set `LAUNCH = 3.3`. The drop rises to 11.3 m: most of the difference from the frozen pose disappears, because the animal must first make up the missing speed by falling.
+- Launch at the lowest measured speed: set `LAUNCH = 3.3`. The drop rises to 11.3 m, and the frozen pose from the same launch loses 11.6 m: most of the difference disappears, because the animal must first make up the missing speed by falling.
 
 {% include code-variant.html file="squirrel_glide.py" id="end" replace="END_CL = 5.6" with="END_CL = 4.0" expect="8.2 +13" %}
 {% include code-variant.html file="squirrel_glide.py" id="dive" replace="DIVE_CL = 0.01" with="DIVE_CL = 0.05" expect="7.3" %}
-{% include code-variant.html file="squirrel_glide.py" id="launch" replace="LAUNCH = 5.37" with="LAUNCH = 3.3" expect="11.3" %}
+{% include code-variant.html file="squirrel_glide.py" id="launch" replace="LAUNCH = 5.37" with="LAUNCH = 3.3" expect="11.3 11.6" %}
 
 {% include lens-end.html %}
 
@@ -477,7 +477,7 @@ Try it yourself:
 
 ## Physical AI lens: robots with skin wings
 
-Physical AI means embodied artificial intelligence: machines that sense and act in the physical world. Flying squirrels are attractive models for it, because one body can climb, jump and glide. A clear limit first: **the two machines below that come closest to the animal are clever mechanics with classical control, not learning systems.**
+Physical AI means embodied artificial intelligence: machines that sense and act in the physical world. Flying squirrels are attractive models for it, because one body can climb, jump and glide. A clear limit first: **the two machines below that come closest to the animal use closed-loop attitude control and are not described as learning systems.**
 
 **A drone that changes its whole body.** Liming Zheng, Alexander van Zuijlen and Salua Hamaza built the SquirrelDrone, a 0.689 kg aircraft with a span of 0.7 m and a soft membrane moved by four limbs and a tail. In a wind tunnel, ribs that were free to deflect under the air increased camber and raised the lift coefficient by more than 0.1 at angles of attack below 24°, compared with fixed ribs. Limbs and tail handled roll and pitch without conventional ailerons or elevators, while yaw came from differential thrust of two propellers. Outdoors, on a windy day with gusts of up to 10 m/s in the weather records, a human pilot flew it by remote control, assisted by onboard attitude stabilisation. Three things to keep in mind: this machine has **propellers**, so it does not glide like an animal; a person steered it; and its stabiliser is a classical cascaded PID controller. The authors name coupling between roll and pitch as a limit and plan other control methods [26](#ref-26){:.cite}.
 
@@ -489,4 +489,4 @@ Physical AI means embodied artificial intelligence: machines that sense and act 
 
 ## What we still do not know
 
-We found no measurement of the airflow around a living flying squirrel in a glide. The landing mechanism remains disputed, the winglet idea untested, and the first 3 metres of the wild glides were inferred rather than filmed [1](#ref-1){:.cite}. The function of the pink glow, if there is one, is unknown [19](#ref-19){:.cite}. A chromosome-level genome of the Siberian flying squirrel was published only in 2025 [5](#ref-5){:.cite}, so, in our view, the genetics of the membrane in this group can now be studied in earnest. Meanwhile, the animals depend on tall trees to start their next glide [13](#ref-13){:.cite}: the physics of their travel is also a reason to keep old forests standing.
+We found no measurement of the airflow around a living flying squirrel in a glide. The landing mechanism remains disputed, the winglet idea untested, and the first 3 metres of the wild glides were inferred rather than filmed [1](#ref-1){:.cite}. The function of the pink glow, if there is one, is unknown [19](#ref-19){:.cite}. A chromosome-level genome of the Siberian flying squirrel was published only in 2025 [5](#ref-5){:.cite}, so, in our view, the genetics of the membrane in this group can now be studied in earnest. Meanwhile, Siberian flying squirrels use tall trees as launch points for further glides [13](#ref-13){:.cite}. In our view, the physics of their travel is also a reason to keep old forests standing.
