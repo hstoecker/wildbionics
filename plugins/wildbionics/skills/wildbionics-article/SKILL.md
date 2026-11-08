@@ -178,7 +178,8 @@ which the script writes; never edit them by hand. Code inside an include (home p
   not to be clipped. Look at the rendered SVG before you commit. Mark where the model stops being
   valid (e.g. dotted lines where an assumption breaks) instead of plotting unphysical results as if
   they were real; distinguish curves by more than colour (direct labels or line styles). Every chart needs `alt` (what the
-  chart shows, with the key numbers – start, end and extrema recomputed from the run, not read off the plot) and a numbered `label`/`caption` like any figure – all three
+  chart shows, with the key numbers – start, end and extrema recomputed from the run, not read
+  off the plot) and a numbered `label`/`caption` like any figure – all three
   also become the chart's `ImageObject` in the JSON-LD (search engines index it as an image).
 - Print only as many digits as are **stable across platforms** – CI runs Linux, you may run macOS.
   Quantities that depend strongly on solver steps (peaks, minima, anything raised to a high power)

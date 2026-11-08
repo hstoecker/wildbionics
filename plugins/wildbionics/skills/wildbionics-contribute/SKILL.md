@@ -92,7 +92,7 @@ selectable with one click, and a `<noscript>` hint (`footer.email_hint`) to repl
    `--add-label ready-for-review` (adding a label that is still set triggers nothing).
    **Merge conflicts between parallel article PRs** are usually two insertions at the same spot
    (`_data/beings.yml`, `_data/figures.yml`, `_data/i18n.yml`, `_data/glossary.yml`,
-   `assets/css/main.css`): merge `origin/main` (never rebase or force-push), keep both sides, do not
+   `_data/taxonomy.yml`, `assets/css/main.css`): merge `origin/main` (never rebase or force-push), keep both sides, do not
    hand-edit `_data/code_examples.yml` but regenerate it with `code_examples.py`, then run all gates
    (`check_all.sh`, not only `--only <ref>`) before pushing.
    Work on one article per session: a fresh session with the skills is faster and cheaper than a
