@@ -2568,6 +2568,56 @@ a.cite:hover { text-decoration: underline; }
   .eel-svg .label-title { font-size: 26px; }
 }
 
+/* Flying squirrel: glide path computed from measured coefficients, hero of the flying squirrel article (_includes/svg/flying-squirrel.svg) */
+.fsq-svg { width: 100%; height: auto; overflow: visible; }
+.fsq-svg .grid { color: rgba(238, 242, 234, 0.045); }
+.fsq-svg .fsq-ground { fill: rgba(8, 23, 30, 0.45); }
+.fsq-svg .fsq-tree { fill: url(#fsq-bark); stroke: rgba(238, 242, 234, 0.14); stroke-width: 1; }
+.fsq-svg .fsq-branch { fill: none; stroke: #4b4436; stroke-width: 9; stroke-linecap: round; }
+.fsq-svg .sq-tail { fill: #6f5e43; stroke: rgba(238, 242, 234, 0.25); stroke-width: 1; }
+.fsq-svg .sq-tailhair { fill: none; stroke: rgba(226, 208, 172, 0.45); stroke-width: 1; }
+.fsq-svg .sq-mem { fill: url(#fsq-mem); stroke: rgba(238, 242, 234, 0.55); stroke-width: 1.4; stroke-linejoin: round; }
+.fsq-svg .sq-line { fill: none; stroke: rgba(50, 40, 24, 0.28); stroke-width: 1; }
+.fsq-svg .sq-limb { fill: none; stroke: #6b5a40; stroke-width: 7; stroke-linecap: round; }
+.fsq-svg .sq-spur { fill: none; stroke: var(--accent); stroke-width: 4.5; stroke-linecap: round; }
+.fsq-svg .sq-paw { fill: #5d4e37; stroke: rgba(238, 242, 234, 0.2); stroke-width: .8; }
+.fsq-svg .sq-body, .fsq-svg .sq-head { fill: url(#fsq-fur); stroke: rgba(238, 242, 234, 0.3); stroke-width: 1; }
+.fsq-svg .sq-stripe { fill: none; stroke: rgba(50, 40, 24, 0.3); stroke-width: 9; stroke-linecap: round; }
+.fsq-svg .sq-ear { fill: #6b5a40; stroke: rgba(238, 242, 234, 0.25); stroke-width: .8; }
+.fsq-svg .sq-eye { fill: #0d0f0c; stroke: #d9c8a2; stroke-width: .8; }
+.fsq-svg .sq-nose { fill: #3c2f22; }
+.fsq-svg .fsq-p1, .fsq-svg .fsq-p2, .fsq-svg .fsq-p3 { fill: none; stroke-linecap: round; stroke-width: 4; }
+.fsq-svg .fsq-p1 { stroke: var(--on-dark-2); stroke-dasharray: 2 7; }
+.fsq-svg .fsq-p2 { stroke: var(--signal); }
+.fsq-svg .fsq-p3 { stroke: var(--accent); }
+.fsq-svg .fsq-frozen { fill: none; stroke: var(--on-dark-2); stroke-width: 1.8; stroke-dasharray: 8 6; }
+.fsq-svg .fsq-throw { fill: none; stroke: var(--on-dark-2); stroke-width: 1.6; stroke-dasharray: 1.5 5; stroke-linecap: round; }
+.fsq-svg .fsq-l { stroke: var(--signal); stroke-width: 3; }
+.fsq-svg .fsq-l-head { fill: var(--signal); }
+.fsq-svg .fsq-d { stroke: #e98a6a; stroke-width: 3; }
+.fsq-svg .fsq-d-head { fill: #e98a6a; }
+.fsq-svg .fsq-w { stroke: var(--on-dark); stroke-width: 2.4; }
+.fsq-svg .fsq-w-head { fill: var(--on-dark); }
+.fsq-svg .fsq-mark { fill: var(--ocean); stroke: var(--on-dark); stroke-width: 1.6; }
+.fsq-svg .fsq-num { font-family: var(--font-mono); font-size: 13px; font-weight: 600; fill: var(--on-dark); }
+.fsq-svg .fsq-lead { fill: none; stroke: var(--on-dark-2); stroke-width: 1; }
+.fsq-svg .fsq-dot { fill: var(--on-dark); }
+.fsq-svg .fsq-dot-a { fill: var(--accent); }
+.fsq-svg .fsq-span { fill: none; stroke: var(--on-dark-2); stroke-width: 1.4; }
+.fsq-svg .label text { paint-order: stroke; stroke: var(--ocean); stroke-width: 5px; stroke-linejoin: round; font-family: var(--font-mono); }
+.fsq-svg .fsq-lab { font-size: 14px; fill: var(--on-dark); }
+.fsq-svg .fsq-small { font-size: 12px; }
+.fsq-svg .fsq-accent { fill: var(--accent); }
+.fsq-svg .fsq-signal { fill: var(--signal); }
+.fsq-svg .fsq-dragc { fill: #e98a6a; }
+.fsq-svg .fsq-muted { fill: var(--on-dark-2); }
+.fsq-svg .label .fsq-name { font-family: var(--font-display); font-style: italic; font-size: 22px; fill: var(--on-dark); }
+.fsq-svg .label .fsq-taxon { font-style: italic; font-size: 13px; fill: var(--on-dark-2); }
+@media (max-width: 600px) {
+  .fsq-svg .fsq-lab, .fsq-svg .fsq-small, .fsq-svg .label .fsq-taxon, .fsq-svg .fsq-num { font-size: 19px; }   /* 720-unit viewBox at ~330 px: >= 9 px effective */
+  .fsq-svg .label .fsq-name { font-size: 26px; }
+}
+
 /* Early atmosphere, hero of the oxygen article (_includes/svg/early-atmosphere.svg) */
 .atmo-svg { width: 100%; height: auto; overflow: visible; }
 .atmo-svg .grid { color: rgba(238, 242, 234, 0.07); }

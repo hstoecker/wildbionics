@@ -1,0 +1,109 @@
+# Where the claims of "Flying Squirrel: The Glide That Ends Going Up" come from – written while researching,
+# read by the review (wildbionics-review). All DOIs resolved at Crossref (sources.py, 2026-11-08).
+# Derived numbers (equilibrium angle and speed, forward/rearward force ratio, the speed factor from wing loading,
+# everything printed by squirrel_glide.py) are calculations for this article and labelled so in the text.
+# Bahlman: Results give CL 0.01 / CD 0.05 for the first 3 m, the Discussion CL 0.05 / CD 0.05; both are tested in the program.
+"10.1098/rsif.2012.0794":
+  read: "Full text (pmc.ncbi.nlm.nih.gov/articles/PMC3565731, methods, results, discussion)"
+  claims:
+    - "Gliding in every major group of terrestrial vertebrates; no equilibrium at any point; lift exceeds body weight – abstract, 3.1, 3.2"
+    - "Maine; 59 recorded, 58 to six trees; at least six individuals; 7–20 m – 2.1, 3.1"
+    - "m 92.7 g from another population, wing loading 59 N/m², S 154 cm², rho 1.204 – 2.6"
+    - "Tree 5 (18 m, n = 23): height change 7.6 ± 0.5 m, GR 2.4 ± 0.2 – Table 1; mean glide velocity 7.2 m/s; about 45° on entry; gaining altitude at landing – 3.2"
+    - "CL 1.4 on entry, about +300 % by landing; CD 0.78, +25 % over 10 m, then towards zero; L/D start about 1.5 – 3.2 (differs from 1.4/0.78 = 1.79; the article uses only the coefficients and marks 1.8 as its own calculation); 95 % CI at end CL 0.56, CD 0.27 – Table 2"
+    - "Launch 5.4 m/s, range 3.3–8.4, n = 5; best match 5.37 m/s – 3.3, 3.4"
+    - "Peak about 8.5 m/s between 5 and 6 m; forward lift component about twice rearward drag; CL +50 %, CD +25 % in middle phase; final third high CL low CD; landing as end product, not stall; body vertical – 4.2"
+    - "Membrane may be partly open in the first metres – 4.2; first 3 m not filmed – 3.4, 4.2"
+    - "Equilibrium within 16 m / 8 m for all simulations; about half of the glides 10 m or shorter – 4.1"
+    - "AGV +27 % at equal GR, GR +46 % at equal AGV – 3.4"
+    - "Glides do not maximise GR; faster commute reduces exposure to predators; no constant-coefficient simulation superior on both GR and AGV – 4.4"
+    - "Total energy decreases over all glides – 3.2; ways to change wing shape – 1.2; high CL, partly separated flow, leading-edge vortices – 4.3"
+"10.7554/elife.39270":
+  read: "Full text (Europe PMC, PMC6177260, relevant sections)"
+  claims:
+    - "Only group of gliding mammals with a remarkable diversity and wide geographical range – abstract; 11.63 Ma, Abocador de Can Mata, more than 80 bones; 1339 g estimate; gliding wrist features; ~23 Ma molecular, split 36.5–24.9 Ma (95 % HPD), ~36 Ma fossils; teeth not unique; little change for almost 12 Myr"
+"10.7717/peerj.17048":
+  read: "Full text (NCBI efetch PMC10977092, relevant sections)"
+  claims:
+    - "Six extant gliding groups, all strictly nocturnal; higher dominant harmonic in gliders; nocturnality only significant UVP predictor (82 species); no link with gliding; variation among preserved specimens, stronger in live animals"
+"10.1073/pnas.2318189121":
+  read: "Full text (Europe PMC, PMC11181051, relevant sections)"
+  claims:
+    - "Warning against assuming communication; environmental light and perception; by-product explanation; function open"
+"10.1038/s41467-026-72822-w":
+  read: "Full text (nature.com, relevant sections)"
+  claims:
+    - "0.689 kg, span 0.7 m; four limbs and tail; roll and pitch by limbs and tail, yaw by differential thrust; outdoor flight manually piloted via RC, gusts from KNMI records; passive ribs raise CL by more than 0.1 below 24°; outdoor gusts up to 10 m/s; propellers; cascaded PID; roll-pitch coupling and planned control methods"
+"10.1111/1749-4877.12655":
+  read: "Abstract of the published paper; full text of the preprint (Research Square rs-499384/v3), which includes Glaucomys specimens with emission spectra"
+  claims:
+    - "Pink-red emission peaks at 600–690 nm in flying squirrels; porphyrins photodegradable; possibly a by-product, seen in crepuscular and nocturnal mammals"
+"10.1242/jeb.02062":
+  read: "Abstract (PubMed)"
+  claims: ["Launch height 4 m; angles of attack 35.4–53.5°, far above typical aircraft stall"]
+"10.1002/jez.447":
+  read: "Abstract (PubMed)"
+  claims: ["First 3D description of turns; two individuals; banked vs crabbed; limb motion without consistent relation to rotation"]
+"10.1242/jeb.02747":
+  read: "Abstract (PubMed)"
+  claims: ["Take-off 1–10, landing 3–10 body weights; forces rise with range 0.5–2.5 m; stall potentially, force spread over four limbs; landing-force hypothesis of origin"]
+"10.1644/06-mamm-s-331r1.1":
+  read: "Abstract (OpenAlex)"
+  claims: ["Angle of attack at landing rises with distance, suggesting active stalling; predator avoidance discussed"]
+"10.1644/1545-1542(2001)082<1026:gpotnf>2.0.co;2":
+  read: "Abstract (OpenAlex)"
+  claims: ["100 glides; glide ratio 1.98; 3.2–45 m, most 5–25 m; launch 9.8 m, landing 2.0 m"]
+"10.1644/1545-1542(2002)083<0553:gbojgf>2.0.co;2":
+  read: "Abstract (OpenAlex)"
+  claims: ["Mean glide ratio 1.87; upper limit about 3–3.5; aspect ratio 1.42"]
+"10.2307/1382860":
+  read: "Abstract (OpenAlex)"
+  claims: ["Only gliding mammals with a wrist cartilage extending the wing tip; hypothenar homologue; upturned tips proposed to reduce induced drag"]
+"10.3106/mammalstudy.26.61":
+  read: "Abstract (OpenAlex)"
+  claims: ["Evidence favours homology of styliform and hypothenar cartilage"]
+"10.2307/1380481":
+  read: "Abstract (OpenAlex)"
+  claims: ["Head and body under 90 to over 400 mm; weight factor almost 64, area almost 16; wing loading 30–110 N/m²; aspect ratio 1.0–2.2; larger squirrels probably faster, small ones more manoeuvrable"]
+"10.1002/ar.23471":
+  read: "Abstract (PubMed)"
+  claims: ["Two hypotheses on homology (pisiform, or an additional carpal structure); both pisiform and styliform present; true palmaris longus inserts on the cartilage; superficial ulnar-derived anlage"]
+"10.1007/s00360-010-0470-1":
+  read: "Abstract (Europe PMC)"
+  claims: ["Oxygen use 1.26–1.65 times predicted; poorly adapted to prolonged quadrupedal locomotion; energy savings of gliding"]
+"10.3832/ifor2954-011":
+  read: "Abstract (OpenAlex)"
+  claims: ["High-ratio glides to shorter trees for foraging or nesting; low-ratio glides to reach tall trees for further gliding"]
+"10.1098/rspb.2007.1684":
+  read: "Abstract (Europe PMC)"
+  claims: ["Colugo landing forces decrease as glide distance increases"]
+"10.1002/ar.25146":
+  read: "Abstract (OpenAlex)"
+  claims: ["No difference in glenoid cortical thickness between aerial and arboreal Sciuromorpha"]
+"10.1038/s41586-024-07305-3":
+  read: "Abstract (Europe PMC)"
+  claims: ["Accelerated cis-regulatory evolution at the Emx2 locus in gliding marsupials; different elements in independent lineages"]
+"10.1002/ece3.71905":
+  read: "Abstract (Europe PMC)"
+  claims: ["Only European Pteromyini; umbrella and flagship species of old-growth boreal forests; Least Concern overall, Vulnerable to Critically Endangered in parts; first chromosome-level genome of a flying squirrel"]
+"10.1371/journal.pone.0073045":
+  read: "Abstract (Europe PMC)"
+  claims: ["Ultrasonic vocalisations, some purely ultrasonic; possible information transfer"]
+"10.1093/jmammal/gyy177":
+  read: "Abstract (OpenAlex)"
+  claims: ["Pink UV fluorescence in all Glaucomys species; 109 museum specimens, 5 wild; three diurnal sciurids did not fluoresce"]
+"10.1038/s41598-022-15952-7":
+  read: "Abstract (Europe PMC)"
+  claims: ["Green fluorescence in keratinised structures of some rodents"]
+"10.2514/1.36694":
+  read: "Abstract (OpenAlex)"
+  claims: ["Compliant low-aspect-ratio wings: higher lift slope and maximum lift, delayed stall; camber under load"]
+"10.3390/biomimetics10100661":
+  read: "Abstract (OpenAlex); publisher PDF returned 403"
+  claims: ["Flexible membrane posture control; closed-loop attitude controller; mean glide ratio 2.02; energy and noise advantages over UAVs"]
+"10.1103/physrevfluids.4.093902":
+  read: "Abstract (OpenAlex)"
+  claims: ["Reinforcement learning finds gliding strategies better than model-based optimal control, robust to perturbations"]
+"10.1109/iros55552.2023.10341386":
+  read: "Abstract (OpenAlex)"
+  claims: ["Foldable silicone wings controlled by reinforcement learning from human demonstrations; intentionally induced drag adds force; drone with thrust"]

@@ -16,3 +16,5 @@ human: { en: "Human", de: "Mensch", taxon: "Homo sapiens", wikidata: Q15978631 }
 t-rex: { en: "Tyrannosaurus rex", de: "Tyrannosaurus rex", taxon: "Tyrannosaurus rex", wikidata: Q13098211 }
 smilodon: { en: "Sabre-toothed cat", de: "Säbelzahnkatze", taxon: "Smilodon fatalis", wikidata: Q1956565 }
 electric-eel: { en: "Electric eel", de: "Zitteraal", taxon: "Electrophorus", wikidata: Q18926800 }
+northern-flying-squirrel: { en: "Northern flying squirrel", de: "Nördliches Gleithörnchen", taxon: "Glaucomys sabrinus", wikidata: Q1094722 }
+siberian-flying-squirrel: { en: "Siberian flying squirrel", de: "Europäisches Gleithörnchen", taxon: "Pteromys volans", wikidata: Q243339 }

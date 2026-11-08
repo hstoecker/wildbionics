@@ -31,3 +31,4 @@ walking:           { id: wk,           i18n: figures.walking,        context: "a
 trex-running:      { id: tx,           i18n: figures.trex_running,   context: "article-header",                     bg: "var(--ocean)", page: trex-running }
 smilodon-bite:     { id: sb,           i18n: figures.smilodon_bite,  context: "article-header",                     bg: "var(--ocean)", page: smilodon-bite }
 electric-eel:      { id: eel,          i18n: figures.electric_eel,   context: "article-header",                     bg: "var(--ocean)", page: electric-eel }
+flying-squirrel:   { id: fsq,          i18n: figures.flying_squirrel, context: "article-header",                    bg: "var(--ocean)", page: flying-squirrel }
