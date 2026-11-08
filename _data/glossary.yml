@@ -94,6 +94,12 @@ terms:
   - { en: "leading-edge vortex", de: "Vorderkantenwirbel*", avoid: ["Führungskantenwirbel*", "Vorderkantenvortex*"], why: "Etablierter Begriff der Strömungsmechanik (auch LEV); Führungskante ist eine Lehnübersetzung." }
   - { en: "lift coefficient", de: "Auftriebsbeiwert*", de_alt: ["Auftriebskoeffizient*"] }
   - { en: "angle of attack", de: "Anstellwinkel*" }
+  - { en: "drag coefficient", de: "Widerstandsbeiwert*", de_alt: ["Widerstandskoeffizient*"] }
+  - { en: "wing loading", de: "Flächenbelastung*" }
+  - { en: "aspect ratio", de: "Streckung*", de_alt: ["Seitenverhältnis*"] }
+  - { en: "glide ratio", de: "Gleitverhältnis*", avoid: ["Gleitzahl*"], why: "Gleitzahl bezeichnet je nach Fachtext L/D oder den Kehrwert D/L; Gleitverhältnis meint eindeutig Strecke durch Höhenverlust." }
+  - { en: "gliding membrane", de: "Flughaut", de_alt: ["Flughäute*", "Patagium"] }
+  - { en: "styliform cartilage", de: "Knorpelsporn*", de_alt: ["Styliform-Knorpel*"] }
   - { en: "delayed stall", de: "verzögerte* Strömungsabriss*" }
   - { en: "dynamic stall", de: "dynamische* Strömungsabriss*" }
   - { en: "clap and fling", de: "Clap-and-Fling", why: "In der deutschen Fachliteratur wird der englische Name verwendet." }
